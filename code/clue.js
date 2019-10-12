@@ -143,8 +143,9 @@ const randomSelector = array => {
 }
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
+// With a killer, a weapon and a room. 
 // The values will be set later.
+const murderer = {killer:"Miss Scarlet", weapon:"axe", room:"Ballroom"};
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
