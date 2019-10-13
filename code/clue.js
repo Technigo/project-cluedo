@@ -1,25 +1,93 @@
-// CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// SUSPECTS AS OBJECTS
 
 const mrGreen = {
-  firstName: "Jacob",
+  title: "Mr",
   lastName: "Green",
   color: "green",
-  description: "He has a lot of connections",
+  description: "Hypocritical Anglican priest",
   age: 45,
   image: "assets/green.png",
   occupation: "Entrepreneur"
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
+const mrsWhite = {
+  title: "Mrs",
+  lastName: "White",
+  color: "white",
+  description: "Frazzled",
+  age: 54,
+  image: "assets/white.png",
+  occupation: "Servant"
+}
 
-const rope = {
-  name: "rope",
+const mrsPeacock = {
+  title: "Mrs",
+  lastName: "Peacock",
+  color: "blue",
+  description: "An elderly, still-attractive woman who nearly always maintains her dignity",
+  age: 68,
+  image: "assets/peacock.png",
+  occupation: "Retired"
+}
+
+const profPlum = {
+  title: "Professor",
+  lastName: "Plum",
+  color: "purple",
+  description: "A quick-witted, young professor with a bow tie and glasses",
+  age: 43,
+  image: "assets/plum.png",
+  occupation: "Professor"
+}
+
+const colMustard = {
+  title: "Colonel",
+  lastName: "Mustard",
+  color: "yellow",
+  description: "A dignified, dapper and dangerous military man",
+  age: 62,
+  image: "assets/mustard.png",
+  occupation: "Colonel"
+}
+
+const missScarlet = {
+  title: "Miss",
+  lastName: "Scarlet",
+  color: "red",
+  description: "A stock femme fatale, young, cunning and attractive",
+  age: 36,
+  image: "assets/scarlet.png",
+  occupation: "Unknown"
+}
+
+// WEAPONS AS OBJECTS
+
+const candelStick = {
+  name: "candelstick",
   weight: 10
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const dagger = {
+  name: "dagger",
+  weight: 2
+}
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
+const pipe = {
+  name: "pipe",
+  weight: 8
+}
+
+const revolver = {
+  name: "revolver",
+  weight: 4
+}
+
+const rope = {
+  name: "rope",
+  weight: 6
+}
+
+// ARRAYS FOR SUSPECTS, WEAPONS AND ROOMS
 
 const suspects = [
   mrGreen,
@@ -27,38 +95,85 @@ const suspects = [
   profPlum,
   missScarlet,
   mrsPeacock,
-  mrMustard
+  colMustard
 ]
 
-const weapons = []
+const weapons = [
+  candelStick,
+  dagger,
+  pipe,
+  revolver,
+  rope
+]
 
-const rooms = []
+const rooms = [
+  'kitchen',
+  'ballroom',
+  'conservatory',
+  'billiard room',
+  'library',
+  'study',
+  'hall',
+  'lounge',
+  'dining room'
+]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
+let windowKiller = null 
+let windowWeapon = null
+let windowRoom = null
+
+
+// SELECTING RANDOM 
+function randomOptionSelector (optionsArray) {
+  const randomIndex = Math.floor(Math.random() * optionsArray.length)
+  return optionsArray[randomIndex]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+ //PICKING RANDOM KILLER
 
-// FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
-// This function will be invoked when you click on the killer card.
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
+ 
+  const killer = randomOptionSelector(suspects)
+  windowKiller = killer
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
-  const theKiller = document.getElementById("killer")
-  const theKillerName = document.getElementById("killerName")
-
-  theKiller.style.background = mystery.killer.color
-  theKillerName.innerHTML =
-    mystery.killer.firstName + " " + mystery.killer.lastName
+  const killerDiv = document.getElementById("killer")
+  const killerNameParagraf = document.getElementById("killerName")
+  const killerAgeParagraf = document.getElementById("killerAge")
+  const killerOccupationParagraf = document.getElementById("killerOccupation")
+  const killerDescriptionParagraf = document.getElementById("killerDescription")
+  
+  killerDiv.style.background = killer.color
+  killerNameParagraf.innerHTML = killer.title + " " + killer.lastName
+  killerAgeParagraf.innerHTML = killer.age
+  killerOccupationParagraf.innerHTML = killer.occupation
+  killerDescriptionParagraf.innerHTML = killer.description
 }
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+ //PICKING RANDOM WEAPON
 
-// CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+const pickWeapon = () => {
+  const weapon = randomOptionSelector(weapons)
+  windowWeapon = weapon
+
+  const weaponNameParagraf = document.getElementById("weaponName")
+  const weaponWeightParagraf = document.getElementById("weaponWeight")
+
+  weaponNameParagraf.innerHTML = weapon.name
+  weaponWeightParagraf.innerHTML = weapon.weight
+}
+
+ //PICKING RANDOM ROOM
+
+const pickRoom = () => {
+  const room = randomOptionSelector(rooms)
+  windowRoom = room
+
+  const roomNameParagraf = document.getElementById("roomName")
+
+  roomNameParagraf.innerHTML = room
+}
+
+const revealMystery = () => {
+  const mysteryH1 = document.getElementById("mystery")
+  mysteryH1.innerHTML = (`The murder was committed by ${windowKiller.title + " " + windowKiller.lastName}, in the ${windowRoom} with the ${windowWeapon.name}.`)
+}
