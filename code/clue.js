@@ -9,7 +9,6 @@ class Suspect {
     this.age = age
     this.image = image
     this.occupation = occupation
-    this.known = false
   }
 
 }
@@ -28,7 +27,6 @@ class Weapon {
     this.name = name
     this.weight = weight
     this.image = image
-    this.known = false
   }
 }
 
@@ -48,7 +46,6 @@ class Room {
   constructor(name, image) {
     this.name = name
     this.image = image
-    this.known = false
   }
 }
 
