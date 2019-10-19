@@ -45,16 +45,16 @@ const pistol = new Weapon("pistol", 20, "assets/pistol.png")
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 class Room {
-  constructor(name, image){
+  constructor(name, image) {
     this.name = name
     this.image = image
     this.known = false
   }
 }
 
-const dinningRoom = new Room ("dinning room", "assets/dinningroom.png")
+const dinningRoom = new Room("dinning room", "assets/dinningroom.png")
 const conservatory = new Room("conservatory", "assets/conservatory.png")
-const kitchen = new Room ("kitchen", "assets/kitchen.png")
+const kitchen = new Room("kitchen", "assets/kitchen.png")
 const study = new Room("study", "assets/study.png")
 const library = new Room("library", "assets/library.png")
 const billiardRoom = new Room("billiard room", "assets/billiardroom.png")
@@ -122,6 +122,12 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 
+const mystery = {
+  killer,
+  weapon,
+  room
+}
+
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -133,8 +139,8 @@ const pickKiller = () => {
   const theKillerName = document.getElementById("killerName")
 
   theKiller.style.background = mystery.killer.color
-  theKillerName.innerHTML =
-    mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerName.innerHTML = mystery.killer.firstName + " " + mystery.killer.lastName
+  
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
