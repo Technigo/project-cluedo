@@ -88,7 +88,7 @@ const poison = {
 
 const axe = {
   name: "Axe",
-  weight: 26
+  weight: 30
 }
 
 const bat = {
@@ -103,7 +103,7 @@ const trophy = {
 
 const pistol = {
   name: "Pistol",
-  weight: 10
+  weight: 8
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -119,7 +119,17 @@ const suspects = [
   mrMustard
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
 const rooms = ["Dinning Room", "Conservatory", "Kitchen", "Study", "Library", "Billiard Room", "Lounge Ballroom", "Hall", "Spa", "Living Room", "Observatory", "Theater", "Guest House", "Patio"]
 
