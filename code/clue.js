@@ -78,7 +78,7 @@ const candlestick = {
 
 const dumbbell = {
   name: "Dumbbell",
-  weight: 13
+  weight: 25
 }
 
 const poison = {
@@ -88,22 +88,22 @@ const poison = {
 
 const axe = {
   name: "Axe",
-  weight: 30
+  weight: 35
 }
 
 const bat = {
   name: "Bat",
-  weight: 18
+  weight: 20
 }
 
 const trophy = {
   name: "Trophy",
-  weight: 20
+  weight: 15
 }
 
 const pistol = {
   name: "Pistol",
-  weight: 8
+  weight: 12
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -133,6 +133,10 @@ const weapons = [
 
 const rooms = ["Dinning Room", "Conservatory", "Kitchen", "Study", "Library", "Billiard Room", "Lounge Ballroom", "Hall", "Spa", "Living Room", "Observatory", "Theater", "Guest House", "Patio"]
 
+console.log(suspects)
+console.log(weapons)
+console.log(rooms)
+
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
@@ -141,6 +145,11 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+// const mistery = {
+//   killer = "",
+//   weapon = "",
+//   room = ""
+// }
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
