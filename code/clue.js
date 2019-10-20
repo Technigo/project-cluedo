@@ -63,47 +63,56 @@ const mrMustard = {
 
 const rope = {
   name: "Rope",
-  weight: 10
+  weight: 10,
+  image: "assets/rope.png"
 }
 
 const knife = {
-  name: "Knife",
-  weight: 10
+  name: "Dagger",
+  weight: 10,
+  image: "assets/dagger.png"
 }
 
 const candlestick = {
   name: "Candlestick",
-  weight: 21
+  weight: 21,
+  image: "assets/unlit-candelabra.png"
 }
 
 const dumbbell = {
-  name: "Dumbbell",
-  weight: 25
+  name: "Monkey Wrench",
+  weight: 25,
+  image: "assets/monkey-wrench.png"
 }
 
 const poison = {
   name: "Poison",
-  weight: 5
+  weight: 5,
+  image: "assets/poison.png"
 }
 
 const axe = {
   name: "Axe",
-  weight: 35
+  weight: 35,
+  image: "assets/wood-axe.png"
 }
 
-const bat = {
-  name: "Bat",
-  weight: 20
+const leadPipe = {
+  name: "Lead Pipe",
+  weight: 20,
+  image: "assets/lead-pipe.png"
 }
 
 const trophy = {
-  name: "Trophy",
-  weight: 15
+  name: "Blunderbuss",
+  weight: 15,
+  image: "assets/blunderbuss.png"
 }
 
 const pistol = {
   name: "Pistol",
-  weight: 12
+  weight: 12,
+  image: "assets/revolver.png"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -126,7 +135,7 @@ const weapons = [
   dumbbell,
   poison,
   axe,
-  bat,
+  leadPipe,
   trophy,
   pistol
 ]
@@ -180,9 +189,11 @@ const pickWeapon = () => {
 
   const theWeaponName = document.getElementById("weaponName")
   const theWeaponWeight = document.getElementById("weaponWeight")
+  const theWeaponImage = document.getElementById("weaponImage")
 
   theWeaponName.innerHTML = mystery.weapon.name
   theWeaponWeight.innerHTML = mystery.weapon.weight
+  theWeaponImage.src = mystery.weapon.image
 }
 
 const pickRoom = () => {
@@ -195,5 +206,9 @@ const pickRoom = () => {
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = () => {
-  alert(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`)
+  if (!mystery.killer || !mystery.weapon || !mystery.room) {
+    alert("No mystery is yet to be revealed.");
+  } else {
+    alert(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`);
+  }
 }
