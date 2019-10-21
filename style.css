@@ -60,3 +60,11 @@ button {
 .disabled {
 	opacity: 0.3;
 }
+
+#killerImage {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	margin: 20px 0;
+	border: 1px solid white;
+}

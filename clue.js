@@ -5,17 +5,17 @@ const mrGreen = {
 	color: 'green',
 	description: 'He has a lot of connections',
 	age: 45,
-	image: 'images	/green.png',
+	image: 'newImages/green.png',
 	occupation: 'Entrepreneur'
 };
 
-const mrsWhite = {
+const mrsOrchid = {
 	firstName: '-',
-	lastName: 'White',
-	color: 'silver',
+	lastName: 'Orchid',
+	color: 'crimson',
 	description: 'TBD',
 	age: 53,
-	image: 'images/white.png',
+	image: 'newImages/orchid.png',
 	occupation: 'Nurse'
 };
 
@@ -25,17 +25,17 @@ const profPlum = {
 	color: 'red',
 	description: 'TBD',
 	age: 67,
-	image: 'images/plum.png',
+	image: 'newImages/plum.png',
 	occupation: 'Professor'
 };
 
 const missScarlet = {
 	firstName: 'Cassandra',
-	lastName: 'Scarlet',
+	lastName: 'Scarlett',
 	color: 'pink',
 	description: 'TBD',
 	age: 48,
-	image: 'images/scarlet.png',
+	image: 'newImages/scarlett.png',
 	occupation: 'TBD'
 };
 
@@ -45,7 +45,7 @@ const mrsPeacock = {
 	color: 'orange',
 	description: '-',
 	age: 47,
-	image: 'images/peacock.png',
+	image: 'newImages/peacock.png',
 	occupation: 'TBD'
 };
 
@@ -55,7 +55,7 @@ const mrMustard = {
 	color: 'yellow',
 	description: '-',
 	age: 55,
-	image: 'images/mustard.png',
+	image: 'newImages/mustard.png',
 	occupation: 'Colonel'
 };
 
@@ -110,7 +110,7 @@ const pistol = {
 
 const suspects = [
 	mrGreen,
-	mrsWhite,
+	mrsOrchid,
 	profPlum,
 	missScarlet,
 	mrsPeacock,
