@@ -10,7 +10,7 @@ const mrGreen = {
     occupation: "Entrepreneur"
 }
 
-const professorPlum = {
+const profPlum = {
     firstName: "Victor",
     lastName: "Plum",
     color: "purple",
@@ -56,8 +56,6 @@ const mrMustard = {
     occupation: "General"
 }
 
-
-
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
@@ -100,21 +98,21 @@ const pistol = {
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-const dinningRoom
-const conservatory
-const kitchen
-const study
-const library
-const billiardRoom
-const lounge
-const ballroom
-const hall
-const spa
-const livingRoom
-const observatory
-const theater
-const guestHouse
-const patio
+const dinningRoom = "Dinning room"
+const conservatory = "Conservatory"
+const kitchen = "Kitchen"
+const study = "Study"
+const library = "Library"
+const billiardRoom = "Billiard Room"
+const lounge = "Lounge"
+const ballroom = "Ballroom"
+const hall = "Hall"
+const spa = "Spa"
+const livingRoom = "Living Room"
+const observatory = "Observatory"
+const theater = "Theater"
+const guestHouse = "Guest House"
+const patio = "Patio"
 
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
@@ -127,10 +125,39 @@ const suspects = [
     mrsPeacock,
     mrMustard
 ]
+console.log(suspects)
 
-const weapons = []
+const weapons = [
+    rope,
+    knife,
+    candlestick,
+    dumbbell,
+    poison,
+    axe,
+    bat,
+    trophy,
+    pistol
+]
+console.log(weapons)
 
-const rooms = []
+const rooms = [
+    dinningRoom,
+    conservatory,
+    kitchen,
+    study,
+    library,
+    billiardRoom,
+    lounge,
+    ballroom,
+    hall,
+    spa,
+    livingRoom,
+    observatory,
+    theater,
+    guestHouse,
+    patio
+]
+console.log(rooms)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
