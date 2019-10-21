@@ -190,6 +190,7 @@ const mystery = {
 
 // Disabling the reveal button at the beginning of the game
 buttonRevealMystery.classList.add('disabled');
+buttonRevealMystery.disabled = true;
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
