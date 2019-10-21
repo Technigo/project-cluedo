@@ -9,13 +9,20 @@
   </head>
   <body>
     <section class="cards">
-      <div class="killer-deck" id="killer" onclick="pickKiller()">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
+      <div class="killer-deck" onclick="pickKiller()">
+        <div class="killer-deck-inner" id="killer-flip">
+          <div class="killer-deck-front">
+            <p>KILLER</p>
+          </div>
+          <div class="killer-deck-back" id="killer">
+            <p>KILLER</p>
+            <p id="killerName"></p>
+            <p id="killerAge"></p>
+            <p id="killerOccupation"></p>
+            <img id="killerImage" src="" height="100" />
+            <p id="killerDescription"></p>
+          </div>
+        </div>
       </div>
       <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
         <p>WEAPON</p>

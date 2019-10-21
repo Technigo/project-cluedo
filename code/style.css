@@ -18,14 +18,42 @@ p {
   justify-content: space-around;
   align-items: center;
 }
+/* .hej:active {
+  transform: rotateY(180deg);
+  transition: transform 0.8s;
+} */
 
 .killer-deck {
   width: 250px;
-  height: 400px;
+  height: 430px;
+  background:transparent;
+  
+}
+.killer-deck-inner {
+  position: relative;
+  height:100%;
+  width:100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.card-flip {
+  transform: rotateY(180deg);
+}
+.killer-deck-front, .killer-deck-back {
   background: #000;
   text-align: center;
+  position:absolute;
+  height: calc(100% - 30px);
+  width: 100%;
   padding-top: 30px;
   border-radius: 16px;
+  backface-visibility: hidden;
+}
+
+.killer-deck-back {
+  transform: rotateY(180deg);
 }
 
 .weapon-deck {

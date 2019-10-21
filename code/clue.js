@@ -68,6 +68,8 @@ const pickKiller = () => {
   theKillerImage.src = mystery.killer.image
   theKillerDescription.innerHTML = mystery.killer.description
   cardClicked.killer = true
+
+  document.getElementById("killer-flip").classList.toggle("card-flip")
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
