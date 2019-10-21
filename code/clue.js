@@ -10,7 +10,7 @@ const mrGreen = {
   occupation: "Entrepreneur"
 }
 
-const professorPlum = {
+const profPlum = {
   firstName: "Victor",
   lastName: "Plum",
   color: "purple",
@@ -40,7 +40,7 @@ const mrsPeacock = {
   occupation: "Socialite"
 }
 
-const colonelMustard = {
+const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
   color: "yellow",
@@ -65,47 +65,47 @@ const mrsWhite = {
 const rope = {
   name: "rope",
   weight: 8,
-  material: "fiber";
+  material: "fiber"
 }
 const knife = {
   name: "knife",
   weight: 1,
-  material: "steel";
+  material: "steel"
 }
 const candlestick = {
   name: "candlestick",
   weight: 3,
-  material: "silver";
+  material: "silver"
 }
 const dumbbell = {
   name: "dumbbell",
   weight: 12,
-  material: "steel";
+  material: "steel"
 }
 const poison = {
   name: "poison",
   weight: 1,
-  material: "fluid";
+  material: "fluid"
 }
 const axe = {
   name: "axe",
   weight: 10,
-  material: "steel";
+  material: "steel"
 }
 const bat = {
   name: "bat",
   weight: 7,
-  material: "wood";
+  material: "wood"
 }
 const trophy = {
   name: "trophy",
   weight: 8,
-  material: "silver";
+  material: "silver"
 }
 const pistol = {
   name: "pistol",
   weight: 2,
-  material: "steel";
+  material: "steel"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -150,6 +150,9 @@ const rooms = [
   "Guest House",
   "Patio"
 ]
+
+//Console.log too see that the objects is correct
+console.log(suspects, weapons, rooms)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
