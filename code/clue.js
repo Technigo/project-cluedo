@@ -64,7 +64,48 @@ const mrsWhite = {
 
 const rope = {
   name: "rope",
-  weight: 10
+  weight: 8,
+  material: "fiber";
+}
+const knife = {
+  name: "knife",
+  weight: 1,
+  material: "steel";
+}
+const candlestick = {
+  name: "candlestick",
+  weight: 3,
+  material: "silver";
+}
+const dumbbell = {
+  name: "dumbbell",
+  weight: 12,
+  material: "steel";
+}
+const poison = {
+  name: "poison",
+  weight: 1,
+  material: "fluid";
+}
+const axe = {
+  name: "axe",
+  weight: 10,
+  material: "steel";
+}
+const bat = {
+  name: "bat",
+  weight: 7,
+  material: "wood";
+}
+const trophy = {
+  name: "trophy",
+  weight: 8,
+  material: "silver";
+}
+const pistol = {
+  name: "pistol",
+  weight: 2,
+  material: "steel";
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -80,9 +121,35 @@ const suspects = [
   mrMustard
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+const rooms = [
+  "Dining Room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Billiard Room",
+  "Lounge",
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "Living Room",
+  "Observatory",
+  "Theater",
+  "Guest House",
+  "Patio"
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
