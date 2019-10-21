@@ -1,6 +1,13 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background: blue;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 p {
@@ -13,7 +20,7 @@ p {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  background:lightblue;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -41,7 +48,15 @@ p {
   width: 250px;
   height: 400px;
   background: midnightblue;
+  text-align: center;
+  padding-top: 30px;
+  border-radius: 16px;
+}
 
+.time-deck {
+  width: 250px;
+  height: 400px;
+  background: black;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -55,4 +70,16 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+h1 {
+  font-size: 18px;
+  color: white;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+h1 {
+  font-size: 24px;
+}
 }
