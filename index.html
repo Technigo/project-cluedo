@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Clue</title>
-  </head>
-  <body>
-    <section class="cards">
-      <div class="killer-deck" id="killer" onclick="pickKiller()">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
-      </div>
-      <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-      </div>
-      <div class="room-deck" id="room" onclick="pickRoom()">
-        <p>ROOM</p>
-        <p id="roomName"></p>
-      </div>
-    </section>
-    <h1 id="mystery"></h1>
-    <button onclick="revealMystery()">REVEAL THE CRIME</button>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Clue</title>
+	</head>
+	<body>
+		<section class="cards">
+			<div class="killer-deck" id="killer">
+				<p>KILLER</p>
+				<p id="killerName"></p>
+				<p id="killerAge"></p>
+				<p id="killerOccupation"></p>
+				<img id="killerImage" src="" height="100" />
+				<p id="killerDescription"></p>
+			</div>
+			<div class="weapon-deck" id="weapon">
+				<p>WEAPON</p>
+				<p id="weaponName"></p>
+				<p id="weaponWeight"></p>
+			</div>
+			<div class="room-deck" id="room">
+				<p>ROOM</p>
+				<p id="roomName"></p>
+			</div>
+		</section>
+		<h1 id="mystery"></h1>
+		<button id="revealMystery">REVEAL THE CRIME</button>
 
-    <script src="clue.js"></script>
-  </body>
+		<script src="clue.js"></script>
+	</body>
 </html>
