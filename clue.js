@@ -156,14 +156,17 @@ const buttonRevealMystery = document.getElementById('revealMystery');
 // EVENT LISTENERS
 theKiller.addEventListener('click', () => {
 	pickKiller();
+	enableRevealButton();
 });
 
 theWeapon.addEventListener('click', () => {
 	pickWeapon();
+	enableRevealButton();
 });
 
 theRoom.addEventListener('click', () => {
 	pickRoom();
+	enableRevealButton();
 });
 
 buttonRevealMystery.addEventListener('click', () => {
@@ -184,6 +187,9 @@ const mystery = {
 	weapon: undefined,
 	room: undefined
 };
+
+// Disabling the reveal button at the beginning of the game
+buttonRevealMystery.classList.add('disabled');
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -237,4 +243,14 @@ const revealMystery = () => {
 	theMystery.innerHTML = `
 		The muder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}. 
 	`;
+};
+
+// Enable reveal button  if all card decks are selected
+
+const enableRevealButton = () => {
+	// Enable reveal button
+	if (mystery.killer && mystery.weapon && mystery.room) {
+		buttonRevealMystery.disabled = false;
+		buttonRevealMystery.classList.remove('disabled');
+	}
 };
