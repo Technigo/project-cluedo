@@ -65,47 +65,56 @@ const mrsWhite = {
 const rope = {
   name: "rope",
   weight: 8,
-  material: "fiber"
+  material: "fiber",
+  color: "tan"
 }
 const knife = {
   name: "knife",
   weight: 1,
-  material: "steel"
+  material: "steel",
+  color: "darkgray"
 }
 const candlestick = {
   name: "candlestick",
   weight: 3,
-  material: "silver"
+  material: "gold",
+  color: "goldenrod"
 }
 const dumbbell = {
   name: "dumbbell",
   weight: 12,
-  material: "steel"
+  material: "steel",
+  color: "black"
 }
 const poison = {
   name: "poison",
   weight: 1,
-  material: "fluid"
+  material: "fluid",
+  color: "darkseagreen"
 }
 const axe = {
   name: "axe",
   weight: 10,
-  material: "steel"
+  material: "wood",
+  color: "burlywood"
 }
 const bat = {
   name: "bat",
   weight: 7,
-  material: "wood"
+  material: "wood",
+  color: "saddlebrown"
 }
 const trophy = {
   name: "trophy",
   weight: 8,
-  material: "silver"
+  material: "silver",
+  color: "lightgray"
 }
 const pistol = {
   name: "pistol",
   weight: 2,
-  material: "steel"
+  material: "steel",
+  color: "darkgray"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -162,9 +171,15 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+const mystery = {
+  killer,
+  weapon,
+  room
+}
+
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
-// This function will be invoked when you click on the killer card.
+//FUNCTION KILLER invoked when you click on the card
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
@@ -172,13 +187,49 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
+  const theKillerAge = document.getElementById("killerAge")
+  const theKillerOccupation = document.getElementById("killerOccupation")
+  const theKillerImage = document.getElementById("killerImage")
+  const theKillerDescription = document.getElementById("killerDescription")
 
   theKiller.style.background = mystery.killer.color
   theKillerName.innerHTML =
     mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerAge.innerHTML = mystery.killer.age
+  theKillerOccupation.innerHTML = mystery.killer.occupation
+  theKillerImage.src = mystery.killer.image
+  theKillerDescription.innerHTML = mystery.killer.description
 }
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+// FUNCTION WEAPON invoked when you click on the card
+const pickWeapon = () => {
+  // This will randomly select a weapon. And add that to the mystery object.
+  mystery.weapon = randomSelector(weapons)
 
+  // This will change the background color of the card to the one connected to the chosen weapon and show weapon name
+  const theWeapon = document.getElementById("weapon")
+  const theWeaponName = document.getElementById("weaponName")
+  const theWeaponWeight = document.getElementById("weaponWeight")
+  const theWeaponMaterial = document.getElementById("weaponMaterial")
+
+  theWeapon.style.background = mystery.weapon.color
+  theWeaponName.innerHTML = mystery.weapon.name
+  // Error pga att weight är nummer och inte text?
+  theWeaponWeight.innerHTML = mystery.weapon.weight
+  theWeaponMaterial.innerHTML = mystery.weapon.material
+}
+
+// FUNCTION ROOM invoked when you click on the card
+const pickRoom = () => {
+  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  mystery.room = randomSelector(rooms)
+
+  // This will change the background color of the card to the one connected to the chosen room and show room name.
+  const theRoom = document.getElementById("room")
+  const theRoomName = document.getElementById("roomName")
+
+  // theRoom.style.background = mystery.room.color
+  theRoomName.innerHTML = mystery.room
+}
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
