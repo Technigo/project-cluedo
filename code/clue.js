@@ -109,7 +109,18 @@ const pistol = {
 
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-const diningroom, conservatory, kitchen, study, library, billiardroom, lounge, ballroom, hall, spa, livingroom;
+const diningroom = "Dining Room";
+const conservatory = "Conservatory"; 
+const kitchen = "Kitchen";
+const study = "Study";
+const library = "Library";
+const billiardroom = "Billiard Room";
+const lounge = "Lounge";
+const ballroom = "Ballroom";
+const hall = "Hall";
+const spa = "Spa";
+const livingroom = "Living Room";
+
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
@@ -121,10 +132,35 @@ const suspects = [
   mrsPeacock,
   mrMustard
 ]
+console.log(suspects);
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
+console.log(weapons);
 
-const rooms = []
+const rooms = [
+  diningroom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardroom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingroom
+]
+console.log(rooms);
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
