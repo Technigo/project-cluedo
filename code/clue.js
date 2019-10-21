@@ -10,11 +10,102 @@ const mrGreen = {
   occupation: "Entrepreneur"
 }
 
+const profPlum = {
+  firstName: "Victor",
+  lastName: "Plum",
+  color: "purple",
+  description: "He is quick-witted and intellectual",
+  age: 36,
+  image: "assets/plum.png",
+  occupation: "Professor"
+}
+
+const missScarlet = {
+  firstName: "Cassandra",
+  lastName: "Scarlet",
+  color: "red",
+  description: "She is weird but beautiful",
+  age: 28,
+  image: "assets/scarlet.png",
+  occupation: "Actress"
+}
+
+const mrsPeacock = {
+  firstName: "Eleanor",
+  lastName: "Peacock",
+  color: "blue",
+  description: "She always maintains her dignity",
+  age: 65,
+  image: "assets/peacock.png",
+  occupation: "Senior Citizen"
+}
+
+const mrMustard = {
+  firstName: "Jack",
+  lastName: "Mustard",
+  color: "yellow",
+  description: "He is dignified, dapper and dangerous",
+  age: 50,
+  image: "assets/mustard.png",
+  occupation: "Colonel"
+}
+
+const mrsWhite = {
+  firstName: "Eulalia",
+  lastName: "White",
+  color: "white",
+  description: "She is a kind, grandmotherly servant",
+  age: 70,
+  image: "assets/white.png",
+  occupation: "Housekeeper"
+}
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: "rope",
-  weight: 10
+  weight: 100,
+  color: "beige",
+}
+const knife = {
+  name: "knife",
+  weight: 50,
+  color: "grey",
+}
+const candlestick = {
+  name: "candlestick",
+  weight: 500,
+  color: "silver",
+}
+const dumbbell = {
+  name: "dumbbell",
+  weight: 1000,
+  color: "black",
+}
+const poison = {
+  name: "poison",
+  weight: 10,
+  color: "green",
+}
+const axe = {
+  name: "axe",
+  weight: 800,
+  color: "brown/silver",
+}
+const bat = {
+  name: "bat",
+  weight: 300,
+  color: "beige",
+}
+const trophy = {
+  name: "trophy",
+  weight: 500,
+  color: "gold",
+}
+const pistol = {
+  name: "pistol",
+  weight: 200,
+  color: "silver",
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
