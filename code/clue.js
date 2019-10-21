@@ -170,6 +170,11 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+let mystery = {
+  killer: this.name,
+  weapon: this.weapon,
+  room: this.room
+}
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
@@ -187,6 +192,21 @@ const pickKiller = () => {
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons)
+  const theWeaponName = document.getElementById("weaponName")
+  const theWeaponWeight = document.getElementById("weaponWeight")
+  theWeaponName.innerHTML = mystery.weapon.name
+  theWeaponWeight.innerHTML = mystery.weapon.weight
+}
+
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+  const theRoomName = document.getElementById("roomName")
+  theRoomName.innerHTML = mystery.room
+}
+
+console.log(mystery);
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
