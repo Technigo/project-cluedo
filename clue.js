@@ -5,7 +5,7 @@ const mrGreen = {
 	color: 'green',
 	description: 'He has a lot of connections',
 	age: 45,
-	image: 'newImages/green.png',
+	image: 'green.png',
 	occupation: 'Entrepreneur'
 };
 
@@ -15,7 +15,7 @@ const mrsOrchid = {
 	color: 'crimson',
 	description: 'TBD',
 	age: 53,
-	image: 'newImages/orchid.png',
+	image: 'orchid.png',
 	occupation: 'Nurse'
 };
 
@@ -25,7 +25,7 @@ const profPlum = {
 	color: 'red',
 	description: 'TBD',
 	age: 67,
-	image: 'newImages/plum.png',
+	image: 'plum.png',
 	occupation: 'Professor'
 };
 
@@ -35,7 +35,7 @@ const missScarlet = {
 	color: 'pink',
 	description: 'TBD',
 	age: 48,
-	image: 'newImages/scarlett.png',
+	image: 'scarlett.png',
 	occupation: 'TBD'
 };
 
@@ -45,7 +45,7 @@ const mrsPeacock = {
 	color: 'orange',
 	description: '-',
 	age: 47,
-	image: 'newImages/peacock.png',
+	image: 'peacock.png',
 	occupation: 'TBD'
 };
 
