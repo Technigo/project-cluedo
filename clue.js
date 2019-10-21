@@ -5,7 +5,7 @@ const mrGreen = {
 	color: 'green',
 	description: 'He has a lot of connections',
 	age: 45,
-	image: 'green.png',
+	image: 'images/green.png',
 	occupation: 'Entrepreneur'
 };
 
@@ -15,7 +15,7 @@ const mrsOrchid = {
 	color: 'crimson',
 	description: 'TBD',
 	age: 53,
-	image: 'orchid.png',
+	image: 'images/orchid.png',
 	occupation: 'Nurse'
 };
 
@@ -25,7 +25,7 @@ const profPlum = {
 	color: 'red',
 	description: 'TBD',
 	age: 67,
-	image: 'plum.png',
+	image: 'images/plum.png',
 	occupation: 'Professor'
 };
 
@@ -35,7 +35,7 @@ const missScarlet = {
 	color: 'pink',
 	description: 'TBD',
 	age: 48,
-	image: 'scarlett.png',
+	image: 'images/scarlett.png',
 	occupation: 'TBD'
 };
 
@@ -45,7 +45,7 @@ const mrsPeacock = {
 	color: 'orange',
 	description: '-',
 	age: 47,
-	image: 'peacock.png',
+	image: 'images/peacock.png',
 	occupation: 'TBD'
 };
 
@@ -55,7 +55,7 @@ const mrMustard = {
 	color: 'yellow',
 	description: '-',
 	age: 55,
-	image: 'newImages/mustard.png',
+	image: 'images/mustard.png',
 	occupation: 'Colonel'
 };
 
@@ -148,14 +148,18 @@ const rooms = [
 
 // DOM REFERENCES
 const theKiller = document.getElementById('killer');
+const theKillerImage = document.getElementById('killerImage');
 const theWeapon = document.getElementById('weapon');
 const theRoom = document.getElementById('room');
 const theMystery = document.getElementById('mystery');
 const buttonRevealMystery = document.getElementById('revealMystery');
 
 // EVENT LISTENERS
-theKiller.addEventListener('click', () => {
+theKiller.addEventListener('click', e => {
+	e.preventDefault();
 	pickKiller();
+	// console.log(theKillerImage.style);
+	theKillerImage.style.display = 'block';
 	enableRevealButton();
 });
 
@@ -173,6 +177,10 @@ buttonRevealMystery.addEventListener('click', () => {
 	revealMystery();
 });
 
+// Disabling the reveal button at the beginning of the game
+buttonRevealMystery.classList.add('disabled');
+buttonRevealMystery.disabled = true;
+
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
 	return array[Math.floor(Math.random() * array.length)];
@@ -187,10 +195,6 @@ const mystery = {
 	weapon: undefined,
 	room: undefined
 };
-
-// Disabling the reveal button at the beginning of the game
-buttonRevealMystery.classList.add('disabled');
-buttonRevealMystery.disabled = true;
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
