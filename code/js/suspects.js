@@ -1,6 +1,6 @@
 // CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
-const mrGreen = {
+  const mrGreen = {
     firstName: "Jacob",
     lastName: "Green",
     color: "green",
@@ -20,7 +20,15 @@ const mrGreen = {
     occupation: "Color blind"
   }
 
-
+  const profPlum = {
+    firstName: "Professor",
+    lastName: "Plum",
+    color: "plum",
+    description: "He has a lot of plums",
+    age: 35,
+    image: "assets/plum.png",
+    occupation: "Plum doctorate"
+  }
   const mrMustard = {
     firstName: "Jacob",
     lastName: "Mustard",
@@ -31,12 +39,6 @@ const mrGreen = {
     occupation: "Mustard Connoeuseur"
   }
 
-  const profPlum = {
-    firstName: "Professor",
-    lastName: "Plum",
-    color: "plum",
-    description: "He has a lot of plums",
-    age: 35,
-    image: "assets/plum.png",
-    occupation: "Plum doctorate"
-  }
+
+
+  
