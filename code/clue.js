@@ -48,6 +48,9 @@ const mystery = {
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
+  if (cardClicked.killer) {
+    return
+  }
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
@@ -69,6 +72,9 @@ const pickKiller = () => {
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
+  if (cardClicked.weapon) {
+    return
+  }
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
   const theWeapon = document.getElementById("weapon")
@@ -80,6 +86,9 @@ const pickWeapon = () => {
   cardClicked.weapon = true
 }
 const pickRoom = () => {
+  if (cardClicked.room) {
+    return
+  }
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.room = randomSelector(rooms)
 
@@ -99,7 +108,7 @@ const revealMystery = () => {
     alert('No mystery is to be solved')
     return
   }
-  
+
   alert(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.toLowerCase()} with a ${mystery.weapon.name.toLowerCase()}.`)
   location.reload()
 }
