@@ -34,15 +34,31 @@ const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
   color: "blue",
-  description: "She is very elegant and attractive",
+  description: "She is very elegant and sofisticated",
   age: 32,
   image: "assets/peacock.png",
   occupation: "Socialite"
 }
 
+const mrsWhite = {
+  firstName: "Blanche",
+  lastName: "White",
+  color: "white",
+  description: "She is quiet and proper",
+  age: 66,
+  image: "assets/white.png",
+  occupation: "Housekeeper"
+}
 
-
-
+const missScarlet = {
+  firstName: "Cassandra",
+  lastName: "Scarlet",
+  color: "scarlet",
+  description: "She is charming and cunning",
+  age: 25,
+  image: "assets/scarlet.png",
+  occupation: "Actress"
+}
 
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
@@ -50,6 +66,45 @@ const mrsPeacock = {
 const rope = {
   name: "rope",
   weight: 10
+}
+
+const knife = {
+  name: "knife",
+  produced: "Sweden"
+}
+
+const candlestick = {
+  name: "candlestick",
+  material: "brass"
+}
+
+const dumbbell = {
+  name: "dumbbell",
+  weight: 12
+}
+
+const poison = {
+  name: "poison"
+}
+
+const axe = {
+  name: "axe",
+  weight: 5
+}
+
+const bat = {
+  name: "bat",
+  material: "wood"
+}
+
+const trophy = {
+  name: "trophy",
+  color: "gold"
+}
+
+const pistol = {
+  name: "pistol",
+  type: "Glock"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -65,9 +120,41 @@ const suspects = [
   mrMustard
 ]
 
-const weapons = []
+console.log(suspects)
 
-const rooms = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
+
+console.log(weapons)
+
+const rooms = [
+  diningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroomHall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
+]
+
+console.log(rooms)
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
