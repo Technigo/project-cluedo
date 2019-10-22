@@ -18,20 +18,36 @@ p {
   justify-content: space-around;
   align-items: center;
 }
+div{
+  border: 15px solid bisque;
+  margin: 5px;
+  box-shadow: 4px 4px 2px 0px rgba(50, 50, 50, 0.5);
+}
+.cardName{
+  font-weight: bold;
+  margin: 0px 50px 20px 50px;
+}
+p{
+  margin: 5px 15px;
+}
 
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: grey;
   text-align: center;
   padding-top: 30px;
+  border-radius: 16px;
+}
+.killerImage{
+  border: 2px solid black;
   border-radius: 16px;
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: teal;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -40,8 +56,7 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: tomato;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -49,10 +64,12 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
-  border: none;
+  background: lightsalmon;
+  color: firebrick;
+  border: 2px solid firebrick;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  box-shadow: 4px 4px 10px 2px gold inset;
 }

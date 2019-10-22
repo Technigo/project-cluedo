@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
-  color: "green",
+  color: "olivedrab",
   description: "He has a lot of connections",
   age: 45,
   image: "assets/green.png",
@@ -13,7 +13,7 @@ const mrGreen = {
 const profPlum = {
   firstName: "Victor",
   lastName: "Plum",
-  color: "purple",
+  color: "darkorchid",
   description: "He is quick-witted and intellectual",
   age: 36,
   image: "assets/plum.png",
@@ -23,7 +23,7 @@ const profPlum = {
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
-  color: "red",
+  color: "crimson",
   description: "She is weird but beautiful",
   age: 28,
   image: "assets/scarlet.png",
@@ -33,7 +33,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
-  color: "blue",
+  color: "cornflowerblue",
   description: "She always maintains her dignity",
   age: 65,
   image: "assets/peacock.png",
@@ -43,7 +43,7 @@ const mrsPeacock = {
 const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
-  color: "yellow",
+  color: "gold",
   description: "He is dignified, dapper and dangerous",
   age: 50,
   image: "assets/mustard.png",
