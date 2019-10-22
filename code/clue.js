@@ -88,7 +88,7 @@ const trophy = {
   name: "trophy",
   weight: 30
 }
-const pistol {
+const pistol = {
   name: "pistol",
   weight: 15
 }
@@ -119,11 +119,38 @@ const suspects = [
   mrsPeacock,
   mrMustard
 ]
+console.log(suspects);
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
+console.log(weapons);
 
-const weapons = []
-
-const rooms = []
-
+const rooms = [
+  diningRoom,
+  conservatory,
+  kicthen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
+]
+console.log(rooms);
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
