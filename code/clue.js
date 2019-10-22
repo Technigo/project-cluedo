@@ -106,38 +106,52 @@ const suspects = [
   profPlum,
   missScarlet,
   mrsPeacock,
-  mrMustard
+  colonelMustard
 ]
+
+suspects.forEach(name => {
+  console.log(name);
+});
 
 const weapons = [
-  Rope, 
-  Knife,
-  Candlestick,
-  Dumbbell,
-  Poison, 
-  Axe, 
-  Bat,
-  Trophy, 
-  Pistol
+  rope, 
+  knife,
+  candlestick,
+  dumbbell,
+  poison, 
+  axe, 
+  bat,
+  trophy, 
+  pistol
 ]
 
+weapons.forEach(name => {
+  console.log(name);
+});
+
 const rooms = [
-  DinningRoom, 
-  Conservatory, 
-  Kitchen, 
-  Study, 
-  Library, 
-  BilliardRoom, 
-  Lounge, 
-  Ballroom, 
-  Hall, 
-  Spa, 
-  LivingRoom, 
-  Observatory, 
-  Theater, 
-  GuestHouse, 
-  Patio
+  "DinningRoom", 
+  "Conservatory", 
+  "Kitchen", 
+  "Study", 
+  "Library", 
+  "BilliardRoom", 
+  "Lounge", 
+  "Ballroom", 
+  "Hall", 
+  "Spa", 
+  "LivingRoom", 
+  "Observatory", 
+  "Theater", 
+  "GuestHouse", 
+  "Patio"
 ]
+
+const orderThem = () => {
+  // order the pokemons alphabetically
+  console.log(rooms.sort());
+};
+orderThem();
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
