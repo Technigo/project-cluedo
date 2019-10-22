@@ -153,6 +153,7 @@ const theWeapon = document.getElementById('weapon');
 const theRoom = document.getElementById('room');
 const theMystery = document.getElementById('mystery');
 const buttonRevealMystery = document.getElementById('revealMystery');
+const buttonPlayAgain = document.getElementById('playAgain');
 
 // EVENT LISTENERS
 theKiller.addEventListener('click', e => {
@@ -249,6 +250,7 @@ const revealMystery = () => {
 		The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}. 
 	`;
 	buttonRevealMystery.classList.add('hide');
+	buttonPlayAgain.classList.remove('hide');
 };
 
 // Enable reveal button  if all card decks are selected
