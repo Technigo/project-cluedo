@@ -183,10 +183,21 @@ const pickKiller = () => {
     //killer and show the full name of the killer.
     const theKiller = document.getElementById("killer")
     const theKillerName = document.getElementById("killerName")
+    const theKillerAge = document.getElementById("killerAge")
+    const theKillerOccupation = document.getElementById("killerOccupation")
+    const thekillerDescription = document.getElementById("killerDescription")
+    const theKillerImage = document.getElementById("killerImage").src = mystery.killer.image
+
+
 
     theKiller.style.background = mystery.killer.color
-    theKillerName.innerHTML =
+    theKillerName.innerHTML = "Name: " +
         mystery.killer.firstName + " " + mystery.killer.lastName
+    theKillerAge.innerHTML = "Age: " + mystery.killer.age
+    theKillerOccupation.innerHTML = "Occupation: " + mystery.killer.occupation
+    thekillerDescription.innerHTML = "Description: " + mystery.killer.description
+    theKillerImage.innerHTML = mystery.killer.image
+
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
@@ -198,8 +209,8 @@ const pickWeapon = () => {
     const theWeaponName = document.getElementById("weaponName")
     const theWeaponWeight = document.getElementById("weaponWeight")
 
-    theWeaponName.innerHTML = mystery.weapon.name
-    theWeaponWeight.innerHTML = mystery.weapon.weight
+    theWeaponName.innerHTML = "Weapon: " + mystery.weapon.name
+    theWeaponWeight.innerHTML = "Weight: " + mystery.weapon.weight
 }
 
 const pickRoom = () => {
@@ -210,7 +221,7 @@ const pickRoom = () => {
         //to the chosen killer and show the full name of the killer.
         const theRoomName = document.getElementById("roomName")
 
-        theRoomName.innerHTML = mystery.room
+        theRoomName.innerHTML = "Room: " + mystery.room
     }
     // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
     // 'The murder was committed by Jacob Green, in the living room with a rope.'
