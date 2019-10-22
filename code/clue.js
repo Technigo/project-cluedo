@@ -8,14 +8,105 @@ const mrGreen = {
   age: 45,
   image: "assets/green.png",
   occupation: "Entrepreneur"
-}
+},
+
+const profrPlum = {
+  firstName: "Victor",
+  lastName: "Plum",
+  color: "purple",
+  description: "He has a lot of connections",
+  age: 45,
+  image: "assets/green.png",
+  occupation: "Entrepreneur"
+},
+
+const mrsPeacock = {
+  firstName: "Eleanor",
+  lastName: "Peacock",
+  color: "blue",
+  description: "He has a lot of connections",
+  age: 45,
+  image: "assets/green.png",
+  occupation: "Entrepreneur"
+},
+
+const missScarlet = {
+  firstName: "Cassandra",
+  lastName: "Scarlet",
+  color: "red",
+  description: "He has a lot of connections",
+  age: 45,
+  image: "assets/green.png",
+  occupation: "Entrepreneur"
+},
+
+const colonelMustard = {
+  firstName: "Jack",
+  lastName: "Mustard",
+  color: "yellow",
+  description: "He has a lot of connections",
+  age: 45,
+  image: "assets/green.png",
+  occupation: "Entrepreneur"
+},
+
+const mrsWhite = {
+  firstName: "Mrs",
+  lastName: "White",
+  color: "White",
+  description: "He has a lot of connections",
+  age: 45,
+  image: "assets/green.png",
+  occupation: "Entrepreneur"
+},
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: "rope",
   weight: 10
-}
+},
+
+const knife = {
+  name: "knife",
+  weight: 12
+},
+
+const candelstick = {
+  name: "Candelstick",
+  weight: 9
+},
+
+const dumbell = {
+  name: "Dumbbell",
+  weight: 8
+},
+
+const poison = {
+  name: "Poison",
+  weight: 11
+},
+
+const axe = {
+  name: "Axe",
+  weight: 13
+},
+
+const bat = {
+  name: "bat",
+  weight: 9
+},
+
+const trophy = {
+  name: "Trophy",
+  weight: 7
+},
+
+const pistol = {
+  name: "Pistol",
+  weight: 11
+},
+
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -30,9 +121,35 @@ const suspects = [
   mrMustard
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candelstick,
+  dumbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+const rooms = [
+  dinningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballRoom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theatre,
+  guestHouse,
+  patio
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
