@@ -29,6 +29,7 @@ div{
 }
 p{
   margin: 5px 15px;
+  border-radius: 5px;
 }
 
 .killer-deck {
@@ -37,10 +38,6 @@ p{
   background: grey;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
-}
-.killerImage{
-  border: 2px solid black;
   border-radius: 16px;
 }
 
@@ -70,6 +67,11 @@ button {
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   box-shadow: 4px 4px 10px 2px gold inset;
+}
+h1{
+  margin:20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
 }

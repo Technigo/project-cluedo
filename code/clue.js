@@ -234,5 +234,5 @@ const pickRoom = () => {
 
 const revealMystery = () => {
   const mysteryAnswer = document.getElementById("mystery")
-  mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} using ${mystery.weapon.name}.`
+  mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room}, with ${mystery.weapon.name}.`
 }
