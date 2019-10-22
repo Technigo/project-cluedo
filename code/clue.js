@@ -37,7 +37,7 @@ const mrsPeacock = {
   description: "A vain high society lady",
   age: 50,
   image: "assets/peacock.png",
-  occupation: "Duchess"
+  occupation: "Singer"
 }
 
 const mrMustard = {
@@ -47,7 +47,7 @@ const mrMustard = {
   description: "A sneaky old man",
   age: 60,
   image: "assets/mustard.png",
-  occupation: "Count"
+  occupation: "Colonel"
 }
 
 const mrsWhite = {
@@ -79,7 +79,12 @@ const candlestick = {
 }
 
 const dumbbell = {
-  name: "poisin",
+  name: "dumbbell",
+  weight: 90
+}
+
+const poison = {
+  name: "poison",
   weight: 15
 }
 
@@ -93,7 +98,7 @@ const bat = {
   weight: 45
 }
 
-const Trophy = {
+const trophy = {
   name: "trophy",
   weight: 60
 }
@@ -147,6 +152,8 @@ const rooms = [
   "Guest House",
   "Patio"
 ]
+
+console.log(suspects, weapons, rooms)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
