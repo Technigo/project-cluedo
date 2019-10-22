@@ -63,49 +63,58 @@ const mrsWhite = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: "rope",
+  name: "a rope",
   weight: 100,
   color: "sienna",
+  image: "assets/rope.png"
 }
 const knife = {
-  name: "knife",
+  name: "a knife",
   weight: 50,
   color: "grey",
+  image: "assets/knife.png"
 }
 const candlestick = {
-  name: "candlestick",
+  name: "a candlestick",
   weight: 500,
   color: "silver",
+  image: "assets/candlestick.png"
 }
 const dumbbell = {
-  name: "dumbbell",
+  name: "a dumbbell",
   weight: 1000,
   color: "blue",
+  image: "assets/dumbbell.png"
 }
 const poison = {
   name: "poison",
   weight: 10,
   color: "yellowgreen",
+  image: "assets/poison.png"
 }
 const axe = {
-  name: "axe",
+  name: "an axe",
   weight: 800,
   color: "tan",
+  image: "assets/axe.png"
 }
 const bat = {
-  name: "bat",
+  name: "a bat",
   weight: 300,
   color: "burlywood",
+  image: "assets/bat.png"
 }
 const trophy = {
-  name: "trophy",
+  name: "a trophy",
   weight: 500,
   color: "gold",
+  image: "assets/trophy.png"
 }
 const pistol = {
-  name: "pistol",
+  name: "a pistol",
   weight: 200,
   color: "silver",
+  image: "assets/pistol.png"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -134,21 +143,21 @@ const weapons = [
 ]
 
 const rooms = [
-  "Dining Room",
-  "Conservatory",
-  "Kitchen",
-  "Study",
-  "Library",
-  "Billiard Room",
-  "Lounge",
-  "Ballroom",
-  "Hall",
-  "Spa",
-  "LivingRoom",
-  "Observatory",
-  "Theater",
-  "Guest House",
-  "Patio"
+  "dining room",
+  "conservatory",
+  "kitchen",
+  "study",
+  "library",
+  "billiard room",
+  "lounge",
+  "ballroom",
+  "hall",
+  "spa",
+  "living room",
+  "observatory",
+  "theater",
+  "guest House",
+  "patio"
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
@@ -197,10 +206,12 @@ const pickWeapon = () => {
   const theWeaponName = document.getElementById("weaponName")
   const theWeaponWeight = document.getElementById("weaponWeight")
   const theWeaponColor = document.getElementById("weaponColor")
+  const theWeaponImage = document.getElementById("weaponImage")
   theWeaponName.innerHTML = mystery.weapon.name
   theWeaponWeight.innerHTML = `Weight: ${mystery.weapon.weight} gram`
-  theWeaponColor.innerHTML = "COLOR"
+  theWeaponColor.innerHTML = "COLOR OF WEAPON"
   theWeaponColor.style.background = mystery.weapon.color
+  theWeaponImage.src = mystery.weapon.image
 }
 
 const pickRoom = () => {
@@ -223,5 +234,5 @@ const pickRoom = () => {
 
 const revealMystery = () => {
   const mysteryAnswer = document.getElementById("mystery")
-  mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} using ${mystery.weapon.name}.`
 }
