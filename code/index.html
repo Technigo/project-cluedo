@@ -15,7 +15,7 @@
   <header class="header-main">
     <div class="header-text">
       <h1>Cluedo - The Mystery</h1>
-      <h2>Click on the cards to se the suspects, the possible weapons and the rooms in the castle</h2>
+      <h2>Click on the cards to see the suspects, the possible weapons and the rooms in the castle</h2>
     </div>
   </header>
 
@@ -27,7 +27,7 @@
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="200" />
+        <img id="killerImage" src="" />
         <p id="killerDescription"></p>
       </div>
       <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
@@ -35,6 +35,7 @@
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
         <p id="weaponMaterial"></p>
+        <img id="weaponImage" src="" />
       </div>
       <div class="room-deck" id="room" onclick="pickRoom()">
         <p>ROOM</p>
@@ -43,7 +44,7 @@
     </section>
 
     <section class="mystery-main">
-      <h3 id="mystery"></h3>
+      <h2 id="mystery"></h2>
     </section>
 
     <button onclick="revealMystery()">REVEAL THE CRIME</button>

@@ -20,16 +20,8 @@ h1 {
 
 h2 {
   font-family: 'Permanent Marker', cursive;
-  font-size: 18px;
-  font-weight: 1;
-  margin: 0;
-  color: #fff;
-}
-
-h3 {
-  font-family: 'Permanent Marker', cursive;
-  font-size: 16px;
-  font-weight: 1;
+  font-size: 20px;
+  font-weight: 100;
   margin: 0;
   color: #fff;
 }
@@ -48,6 +40,7 @@ a {
 
 .header-main{
   height: 180px;
+  padding: 10px;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: row;
@@ -59,18 +52,15 @@ a {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
+  /* padding: 20px; */
   margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
 .cards {
   margin: 10px auto;
   width: 90%;
-  height: 600px;
+  height: 520px;
   /* background: #ccc; */
   display: flex;
   justify-content: space-around;
@@ -78,52 +68,64 @@ a {
 }
 
 .killer-deck {
-  width: 250px;
-  height: 400px;
-  background: #000;
+  width: 27%;
+  height: 420px;
+  background:rgba(0,0,0,0.8);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
 #killerImage {
+  height: 200px;
   border-radius: 50%;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .weapon-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(46,36,60);
+  width: 27%;
+  height: 420px;
+  background: rgb(46,36,60,0.8);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
+#weaponImage {
+  height: 200px;
+  width: 160px;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .room-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(111,91,89);
+  width: 27%;
+  height: 420px;
+  background: rgb(80,76,65,0.95);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
 .mystery-main {
-  padding: 30px;
+  padding: 20px;
 }
 
 button {
   padding: 8px 16px;
   background: #000;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
   color: lightgray;
   border: none;
-  padding: 30px;
+  padding: 20px;
   font-size: 18px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  margin-top: 20px;
 }
 
 footer {
@@ -138,4 +140,38 @@ footer p {
   background: none;
   color: #fff;
   font-size: 16px;
+}
+
+/* MEDIA QUERY TABLET */
+@media (min-width: 667px) and (max-width: 1024px) {
+  .cards {
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.killer-deck, .weapon-deck, .room-deck {
+  width: 30%;
+  height: 370px;
+}
+
+#killerImage {
+  height: 125px;
+}
+}
+
+/* MEDIA QUERY MOBILE */
+@media (max-width: 667px) {
+
+.cards {
+  flex-direction: column;
+  height: auto;
+  flex-wrap: wrap;
+}
+.killer-deck, .weapon-deck, .room-deck {
+  width: 75%;
+  height: 450px;
+  margin-top: 20px;
+}
+
+
 }

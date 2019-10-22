@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
-  color: "green",
+  color: "rgba(48, 75, 59, 0.8)",
   description: "He has a lot of connections",
   age: 45,
   image: "assets/green.png",
@@ -13,7 +13,7 @@ const mrGreen = {
 const profPlum = {
   firstName: "Victor",
   lastName: "Plum",
-  color: "purple",
+  color: "rgba(69, 33, 68, 0.8)",
   description: "He is widely seen as the intellectual",
   age: 36,
   image: "assets/plum.png",
@@ -23,7 +23,7 @@ const profPlum = {
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
-  color: "red",
+  color: "rgba(153, 64, 62, 0.8)",
   description: "She is typically portrayed as young, cunning, and highly attractive",
   age: 25,
   image: "assets/scarlet.png",
@@ -33,7 +33,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
-  color: "blue",
+  color: "rgba(16, 29, 66, 0.8)",
   description: "She is an elderly yet still attractive woman who maintains her dignity in almost all cases",
   age: 60,
   image: "assets/peacock.png",
@@ -43,7 +43,7 @@ const mrsPeacock = {
 const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
-  color: "yellow",
+  color: "rgba(228, 179, 99, 0.8)",
   description: "He is usually a military man both dignified and dangerous",
   age: 55,
   image: "assets/mustard.png",
@@ -53,7 +53,7 @@ const mrMustard = {
 const mrsWhite = {
   firstName: "Blanche",
   lastName: "White",
-  color: "white",
+  color: "rgba(232, 233, 235, 0.8)",
   description: "She is a frazzled servant",
   age: 65,
   image: "assets/white.png",
@@ -63,58 +63,67 @@ const mrsWhite = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: "rope",
-  weight: "8",
-  material: "fiber",
-  color: "tan"
+  name: "Rope",
+  weight: "Weight: 2kg",
+  material: "Material: fiber",
+  color: "rgba(132, 98, 61, 0.8)",
+  image: "assets/rope.jpg"
 }
 const knife = {
-  name: "knife",
-  weight: "1",
-  material: "steel",
-  color: "darkgray"
+  name: "Knife",
+  weight: "Weight: 1kg",
+  material: "Material: steel",
+  color: "rgba(82, 75, 68, 0.8)",
+  image: "assets/knife.jpg"
 }
 const candlestick = {
-  name: "candlestick",
-  weight: "3",
-  material: "gold",
-  color: "goldenrod"
+  name: "Candlestick",
+  weight: "Weight: 2kg",
+  material: "Material: gold",
+  color: "rgba(160, 126, 78, 0.8)",
+  image: "assets/candlestick.jpg"
 }
 const dumbbell = {
-  name: "dumbbell",
-  weight: "12",
-  material: "steel",
-  color: "black"
+  name: "Dumbbell",
+  weight: "Weight: 16kg",
+  material: "Material: steel",
+  color: "rgba(28, 25, 23, 0.8)",
+  image: "assets/dumbbell.jpg"
 }
 const poison = {
-  name: "poison",
-  weight: "1",
-  material: "fluid",
-  color: "darkseagreen"
+  name: "Poison",
+  weight: "Weight: 0.3kg",
+  material: "Material: fluid",
+  color: "rgba(126, 180, 133, 0.8)",
+  image: "assets/poison.jpg"
 }
 const axe = {
-  name: "axe",
-  weight: "10",
-  material: "wood",
-  color: "burlywood"
+  name: "Axe",
+  weight: "Weight: 9kg",
+  material: "Material: wood/steel",
+  color: "burlywood",
+  image: "assets/axe.jpg"
 }
 const bat = {
-  name: "bat",
-  weight: "7",
-  material: "wood",
-  color: "saddlebrown"
+  name: "Bat",
+  weight: "Weight: 3kg",
+  material: "Material: wood",
+  color: "saddlebrown",
+  image: "assets/bat.jpg"
 }
 const trophy = {
-  name: "trophy",
-  weight: "8",
-  material: "silver",
-  color: "lightgray"
+  name: "Trophy",
+  weight: "Weight: 2.5kg",
+  material: "Material: silver",
+  color: "lightgray",
+  image: "assets/trophy.jpg"
 }
 const pistol = {
-  name: "pistol",
-  weight: "2",
-  material: "steel",
-  color: "darkgray"
+  name: "Pistol",
+  weight: "Weight: 0.6kg",
+  material: "Material: steel",
+  color: "rgba(54, 59, 56, 0.8)",
+  image: "assets/pistol.jpg"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -216,12 +225,14 @@ const pickWeapon = () => {
   const theWeaponName = document.getElementById("weaponName")
   const theWeaponWeight = document.getElementById("weaponWeight")
   const theWeaponMaterial = document.getElementById("weaponMaterial")
+  const theWeaponImage = document.getElementById("weaponImage")
 
   // This will change the background color of the card and show info about chosen weapon.
   theWeapon.style.background = mystery.weapon.color
   theWeaponName.innerHTML = mystery.weapon.name
   theWeaponWeight.innerHTML = mystery.weapon.weight
   theWeaponMaterial.innerHTML = mystery.weapon.material
+  theWeaponImage.src = mystery.weapon.image
 }
 
 // FUNCTION ROOM invoked when you click on the card.
