@@ -22,7 +22,7 @@ p {
 .killer-deck {
     width: 250px;
     height: 400px;
-    background: #000;
+    background: rgb(96, 93, 93);
     text-align: center;
     padding-top: 30px;
     border-radius: 16px;
@@ -58,4 +58,5 @@ button {
 
 #mystery {
     text-align: center;
+    margin: 30px;
 }
