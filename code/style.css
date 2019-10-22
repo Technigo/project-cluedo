@@ -52,7 +52,6 @@ a {
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  /* padding: 20px; */
   margin-bottom: 20px;
   align-items: center;
 }
@@ -61,7 +60,6 @@ a {
   margin: 10px auto;
   width: 90%;
   height: 520px;
-  /* background: #ccc; */
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -154,8 +152,9 @@ footer p {
   height: 370px;
 }
 
-#killerImage {
-  height: 125px;
+#killerImage, #weaponImage {
+  height: 135px;
+  width: 130px;
 }
 }
 
@@ -172,6 +171,8 @@ footer p {
   height: 450px;
   margin-top: 20px;
 }
-
-
+#killerImage, #weaponImage {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
 }

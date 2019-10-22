@@ -67,63 +67,63 @@ const rope = {
   weight: "Weight: 2kg",
   material: "Material: fiber",
   color: "rgba(132, 98, 61, 0.8)",
-  image: "assets/rope.jpg"
+  image: "assets/rope.png"
 }
 const knife = {
   name: "Knife",
   weight: "Weight: 1kg",
   material: "Material: steel",
   color: "rgba(82, 75, 68, 0.8)",
-  image: "assets/knife.jpg"
+  image: "assets/knife.png"
 }
 const candlestick = {
   name: "Candlestick",
   weight: "Weight: 2kg",
   material: "Material: gold",
   color: "rgba(160, 126, 78, 0.8)",
-  image: "assets/candlestick.jpg"
+  image: "assets/candlestick.png"
 }
 const dumbbell = {
   name: "Dumbbell",
   weight: "Weight: 16kg",
   material: "Material: steel",
   color: "rgba(28, 25, 23, 0.8)",
-  image: "assets/dumbbell.jpg"
+  image: "assets/dumbbell.png"
 }
 const poison = {
   name: "Poison",
   weight: "Weight: 0.3kg",
   material: "Material: fluid",
-  color: "rgba(126, 180, 133, 0.8)",
-  image: "assets/poison.jpg"
+  color: "rgba(48, 25, 53, 0.8)",
+  image: "assets/poison.png"
 }
 const axe = {
   name: "Axe",
   weight: "Weight: 9kg",
   material: "Material: wood/steel",
-  color: "burlywood",
-  image: "assets/axe.jpg"
+  color: "rgba(86, 73, 58, 0.8)",
+  image: "assets/axe.png"
 }
 const bat = {
   name: "Bat",
   weight: "Weight: 3kg",
   material: "Material: wood",
-  color: "saddlebrown",
-  image: "assets/bat.jpg"
+  color: "rgba(132, 59, 35, 0.8)",
+  image: "assets/bat.png"
 }
 const trophy = {
   name: "Trophy",
   weight: "Weight: 2.5kg",
   material: "Material: silver",
-  color: "lightgray",
-  image: "assets/trophy.jpg"
+  color: "rgba(130, 132, 137, 0.8)",
+  image: "assets/trophy.png"
 }
 const pistol = {
   name: "Pistol",
   weight: "Weight: 0.6kg",
   material: "Material: steel",
   color: "rgba(54, 59, 56, 0.8)",
-  image: "assets/pistol.jpg"
+  image: "assets/pistol.png"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -221,6 +221,7 @@ const pickWeapon = () => {
   // This will randomly select a weapon. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
 
+  //Declare constants 
   const theWeapon = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
   const theWeaponWeight = document.getElementById("weaponWeight")
@@ -240,8 +241,7 @@ const pickRoom = () => {
   // This will randomly select a room. And add that to the mystery object.
   mystery.room = randomSelector(rooms)
 
-  //Not needed if not supposed to change color
-  // const theRoom = document.getElementById("room")
+  //Declare constants 
   const theRoomName = document.getElementById("roomName")
 
   // The rooms are not supposed to have colors?
