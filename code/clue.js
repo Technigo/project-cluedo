@@ -212,7 +212,15 @@ const pickRoom = () => {
 const revealMystery = () => {
   const theMystery = document.getElementById("mystery");
 
-  //Print the reveal message
-  theMystery.innerHTML =
-    "The murder was commited by " + mystery.killer.firstName + " " + mystery.killer.lastName + ", in the " + mystery.room + " with a " + mystery.weapon.name + ".";
+  // If there is no mystery killer, mystery weapon or mystery room set
+  if (!mystery.killer || !mystery.weapon || !mystery.room) {
+    // Print message
+    theMystery.innerHTML = "No mystery is yet to be revealed.";
+
+    // If there is a mystery killer, mystery weapon and mystery room set
+  } else {
+    //Print the reveal message
+    theMystery.innerHTML =
+      "The murder was commited by " + mystery.killer.firstName + " " + mystery.killer.lastName + ", in the " + mystery.room + " with a " + mystery.weapon.name + ".";
+  }
 }
