@@ -42,7 +42,7 @@ const mrsWhite = {
     lastName: "White",
     color: "white",
     description: "A frazzled servant",
-    age: 40,
+    age: 70,
     image: "assets/white.png",
     occupation: "Servant"
 }
@@ -60,38 +60,47 @@ const mrMustard = {
 
 const rope = {
     name: "rope",
+    color: "brown",
     weight: 10
 }
 const knife = {
     name: "Knife",
+    color: "red",
     weight: 2
 }
 const candlestick = {
     name: "Candlestick",
+    color: "orange",
     weight: 3
 }
 const dumbbell = {
     name: "Dumbbell",
+    color: "blue",
     weight: 15
 }
 const poison = {
     name: "Poison",
+    color: "green",
     weight: 1
 }
 const axe = {
     name: "Axe",
+    color: "grey",
     weight: 8
 }
 const bat = {
     name: "Bat",
+    color: "purple",
     weight: 2
 }
 const trophy = {
     name: "Trophy",
+    color: "gold",
     weight: 12
 }
 const pistol = {
     name: "Pistol",
+    color: "pink",
     weight: 6
 }
 
@@ -182,16 +191,13 @@ const pickKiller = () => {
     // This will randomly select a killer from the suspects. And add that to the mystery object.
     mystery.killer = randomSelector(suspects)
 
-    // This will change the background color of the card to the one connected to the chosen 
-    //killer and show the full name of the killer.
+    // This will change the background color of the card to the one connected to the chosen killer and show the full d of the killer.
     const theKiller = document.getElementById("killer")
     const theKillerName = document.getElementById("killerName")
     const theKillerAge = document.getElementById("killerAge")
     const theKillerOccupation = document.getElementById("killerOccupation")
     const thekillerDescription = document.getElementById("killerDescription")
     const theKillerImage = document.getElementById("killerImage").src = mystery.killer.image
-
-
 
     theKiller.style.background = mystery.killer.color
     theKillerName.innerHTML = "Name: " +
@@ -209,9 +215,12 @@ const pickWeapon = () => {
     mystery.weapon = randomSelector(weapons)
 
     // This will show the name and the weight of the weapon.
+    const theWeapon = document.getElementById("weapon")
     const theWeaponName = document.getElementById("weaponName")
     const theWeaponWeight = document.getElementById("weaponWeight")
 
+
+    theWeapon.style.background = mystery.weapon.color
     theWeaponName.innerHTML = "Weapon: " + mystery.weapon.name
     theWeaponWeight.innerHTML = "Weight: " + mystery.weapon.weight
 }

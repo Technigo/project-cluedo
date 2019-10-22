@@ -1,26 +1,47 @@
 body {
     margin: 0;
+    background: whitesmoke;
     font-family: "Courier New", Courier, monospace;
 }
 
+header h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 7em;
+    margin: 40px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
 p {
-    margin: 1px;
+    margin: 6px;
     font-weight: 300;
-    background-color: #fff;
+    background-color: whitesmoke;
 }
 
 .cards {
     margin: 50px auto;
     width: 90%;
     height: 600px;
-    background: #ccc;
+    background: inherit;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
+.killer-deck:hover,
+.room-deck:hover,
+.weapon-deck:hover {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+}
+
 .killer-deck {
-    width: 250px;
+    width: 25%;
     height: 400px;
     background: rgb(96, 93, 93);
     text-align: center;
@@ -29,18 +50,18 @@ p {
 }
 
 .weapon-deck {
-    width: 250px;
+    width: 25%;
     height: 400px;
-    background: rgb(10, 53, 10);
+    background: rgb(96, 93, 93);
     text-align: center;
     padding-top: 30px;
     border-radius: 16px;
 }
 
 .room-deck {
-    width: 250px;
+    width: 25%;
     height: 400px;
-    background: midnightblue;
+    background: rgb(96, 93, 93);
     text-align: center;
     padding-top: 30px;
     border-radius: 16px;
@@ -54,9 +75,63 @@ button {
     border-radius: 8px;
     display: block;
     margin: 0 auto;
+    font-weight: 700;
+}
+
+button:hover {
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
 }
 
 #mystery {
     text-align: center;
     margin: 30px;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        margin-bottom: 30px;
+    }
+    .cards {
+        margin: 50px auto;
+        height: 100%;
+        background: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .killer-deck:hover,
+    .room-deck:hover,
+    .weapon-deck:hover {
+        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    }
+    .killer-deck {
+        width: 80%;
+        height: 300px;
+        padding-top: 30px;
+        margin: 10px;
+    }
+    .weapon-deck {
+        width: 80%;
+        height: 300px;
+        padding-top: 30px;
+        margin: 5px;
+    }
+    .room-deck {
+        width: 80%;
+        height: 300px;
+        padding-top: 30px;
+        margin: 5px;
+    }
 }
