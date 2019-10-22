@@ -1,5 +1,7 @@
 // CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
+let suspects = [
+
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
@@ -8,7 +10,58 @@ const mrGreen = {
   age: 45,
   image: "assets/green.png",
   occupation: "Entrepreneur"
+},
+
+const professorPlum = {
+  firstName: "Victor",
+  lastName: "Plum",
+  color: "purple",
+  description: "He is very clever",
+  age: 56,
+  image: "assets/plum.png",
+  occupation: "Professor"
+},
+
+const missScarlet = {
+  firstName: "Cassandra",
+  lastName: "Scarlet",
+  color: "red",
+  description: "She is good to read people",
+  age: 27,
+  image: "assets/scarlet.png",
+  occupation: "teacher"
+},
+
+const mrsPeacock = {
+  firstName: "Elenor",
+  lastName: "Peacock",
+  color: "blue",
+  description: "A good listener",
+  age: 32,
+  image: "assets/peacock.png",
+  occupation: "accountant"
+},
+
+const colonelMustard = {
+  firstName: "Jack",
+  lastName: "Mustard",
+  color: "yellow",
+  description: "a traditionalist",
+  age: 55,
+  image: "assets/mustard.png",
+  occupation: "lawyer"
+},
+
+const mrsWhite = {
+  firstName: "Mrs",
+  lastName: "White",
+  color: "White",
+  description: "A silent observer",
+  age: 36,
+  image: "assets/white.png",
+  occupation: "unknown"
 }
+]
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
