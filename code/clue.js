@@ -1,6 +1,6 @@
 // CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
-const mrFGreen = {
+const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
   color: "green",
@@ -119,23 +119,62 @@ const pistol = {
 }
 
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE. //KONTROLLERA KOMMATECKEN PÅ RUMMEN?
+// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE. /
+
 
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
 const suspects = [
-  mrGreen,
-  mrsWhite,
-  profPlum,
-  missScarlet,
-  mrsPeacock,
-  mrMustard
+  "mrGreen",
+  "mrsWhite",
+  "profPlum",
+  "missScarlet",
+  "mrsPeacock",
+  "mrMustard"
 ]
 
-const weapons = []
+suspects.forEach(suspects => {
+  console.log(suspects);
+});
 
-const rooms = []
+const weapons = [
+  "rope",
+  "knife",
+  "candlestick",
+  "dumbbell",
+  "poison",
+  "axe",
+  "bat",
+  "trophy",
+  "pistol"
+]
+
+weapons.forEach(weapons => {
+  console.log(weapons);
+});
+
+const rooms = [
+  "diningRoom",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "BillardRoom",
+  "Lounge",
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "LivingRoom",
+  "Observatory",
+  "Theatre",
+  "GuestHouse",
+  "Patio"
+]
+
+rooms.forEach(rooms => {
+  console.log(rooms);
+});
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
