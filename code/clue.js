@@ -10,6 +10,41 @@ const mrGreen = {
   occupation: "Entrepreneur"
 }
 
+const profPlum = {
+  firstName: "Victor",
+  lastName: "Plum",
+  color: "purple",
+  description: "He is witty and intellectual",
+  age: 36,
+  image: "assets/plum.png",
+  occupation: "Professor"
+}
+
+const mrMustard = {
+  firstName: "Jack",
+  lastName: "Mustard",
+  color: "yellow",
+  description: "Both dignified and dangerous",
+  age: 55,
+  image: "assets/mustard.png",
+  occupation: "Colonel"
+}
+
+const mrsPeacock = {
+  firstName: "Eleanor",
+  lastName: "Peacock",
+  color: "blue",
+  description: "She is very elegant and attractive",
+  age: 32,
+  image: "assets/peacock.png",
+  occupation: "Socialite"
+}
+
+
+
+
+
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
