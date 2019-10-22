@@ -167,11 +167,11 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
-const mystery = {
-    killer: "",
-    weapon: "",
-    room: ""
-}
+// const mystery = {
+//     killer: "",
+//     weapon: "",
+//     room: ""
+// }
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
@@ -230,5 +230,5 @@ const revealMystery = () => {
 
     const theMysteryReveal = document.getElementById("mystery")
 
-    theMysteryReveal.innerHTML = "The murder was committed by " + mystery.killer + ", in the " + mystery.room + " with a " + mystery.weapon + "."
+    theMysteryReveal.innerHTML = "The murder was committed by " + mystery.killer.firstName + " " + mystery.killer.lastName + ", in the " + mystery.room + " with a " + mystery.weapon.name + "."
 }
