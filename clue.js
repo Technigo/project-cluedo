@@ -178,8 +178,8 @@ buttonRevealMystery.addEventListener('click', () => {
 });
 
 // Disabling the reveal button at the beginning of the game
-buttonRevealMystery.classList.add('disabled');
-buttonRevealMystery.disabled = true;
+buttonRevealMystery.classList.add('hide');
+// buttonRevealMystery.disabled = true;
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
@@ -246,8 +246,9 @@ const pickRoom = () => {
 
 const revealMystery = () => {
 	theMystery.innerHTML = `
-		The muder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}. 
+		The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}. 
 	`;
+	buttonRevealMystery.classList.add('hide');
 };
 
 // Enable reveal button  if all card decks are selected
@@ -256,6 +257,6 @@ const enableRevealButton = () => {
 	// Enable reveal button
 	if (mystery.killer && mystery.weapon && mystery.room) {
 		buttonRevealMystery.disabled = false;
-		buttonRevealMystery.classList.remove('disabled');
+		buttonRevealMystery.classList.remove('hide');
 	}
 };

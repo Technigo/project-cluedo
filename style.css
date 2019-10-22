@@ -1,22 +1,61 @@
 body {
 	margin: 0;
-	font-family: 'Courier New', Courier, monospace;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+	width: 100%;
+	height: 100%;
+	background-image: url('./images/bg.jpg');
+}
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+	padding: 0px;
+	background-color: rgba(255, 255, 255, 0.7);
 }
 
 p {
 	margin: 1px;
+	padding: 3px;
 	font-weight: 300;
 	background-color: #fff;
 }
 
+h1 {
+	display: block;
+	width: 250px;
+	margin: 40px auto;
+	text-align: center;
+	font-size: 16px;
+}
+
+button {
+	display: none;
+	padding: 8px 16px;
+	background: crimson;
+	border: none;
+	font-size: 20px;
+	border-radius: 8px;
+	display: block;
+	margin: 20px auto;
+	color: white;
+	outline: none;
+}
+
+.bg-image {
+	background-color: rgba(0, 255, 255, 1);
+	width: 100%;
+	height: 100%;
+}
+
 .cards {
-	margin: 50px auto;
-	width: 90%;
-	height: 600px;
-	background: #ccc;
 	display: flex;
-	justify-content: space-around;
 	align-items: center;
+	flex-direction: column;
 }
 
 .killer-deck {
@@ -25,7 +64,9 @@ p {
 	background: #000;
 	text-align: center;
 	padding-top: 30px;
+	margin: 5px 0 20px 0;
 	border-radius: 16px;
+	box-shadow: 0 2px 2px 0 rgba(14, 30, 37, 0.3);
 }
 
 .weapon-deck {
@@ -41,20 +82,26 @@ p {
 	width: 250px;
 	height: 400px;
 	background: midnightblue;
-
+	margin: 20px 0 0px 0;
 	text-align: center;
 	padding-top: 30px;
 	border-radius: 16px;
 }
+.killer-deck,
+.weapon-deck,
+.room-deck {
+	box-shadow: 10px 10px 15px -6px rgba(14, 30, 37, 0.6);
+	border: 1px solid silver;
+}
 
-button {
-	padding: 8px 16px;
-	background: crimson;
-	border: none;
-	font-size: 20px;
-	border-radius: 8px;
-	display: block;
-	margin: 0 auto;
+.killer-deck p:first-of-type,
+.weapon-deck p:first-of-type,
+.room-deck p:first-of-type {
+	font-weight: 600;
+}
+
+.select-card-heading {
+	margin: 20px auto;
 }
 
 .disabled {
@@ -67,4 +114,32 @@ button {
 	border-radius: 50%;
 	margin: 20px 0;
 	border: 1px solid white;
+}
+
+.hide {
+	display: none;
+}
+
+@media screen and (min-width: 858px) {
+	.cards {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding: 10px 20px 20px 20px;
+	}
+	.room-deck,
+	.killer-deck {
+		margin: 0 50px;
+	}
+	h1 {
+		margin: 10px auto;
+		font-size: 25px;
+		width: 500px;
+	}
+	button {
+		margin: 30px auto;
+	}
+	.overlay {
+		height: 100%;
+	}
 }
