@@ -130,7 +130,7 @@ weapons.forEach(name => {
 });
 
 const rooms = [
-  "DinningRoom", 
+  "DiningRoom", 
   "Conservatory", 
   "Kitchen", 
   "Study", 
@@ -148,16 +148,20 @@ const rooms = [
 ]
 
 const orderThem = () => {
-  // order the pokemons alphabetically
   console.log(rooms.sort());
 };
 orderThem();
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
+const randomSelector = suspects => {
+  return suspects[Math.floor(Math.random() * suspects.length)]
 }
-
+const randomSelector = weapons => {
+  return weapons[Math.floor(Math.random() * weapons.length)]
+}
+const randomSelector = rooms => {
+  return rooms[Math.floor(Math.random() * rooms.length)]
+}
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
@@ -178,6 +182,30 @@ const pickKiller = () => {
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+const pickWeapon = () => {
+  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  mystery.weapon = randomSelector(weapons)
 
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
+  const theWeapon = document.getElementById("weapon")
+  const theWeaponName = document.getElementById("weaponName")
+
+  theWeapon.style.background = mystery.weapon.color
+  theWeaponName.innerHTML =
+    mystery.weapon.name + " " 
+}
+
+const pickRoom = () => {
+  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  mystery.room = randomSelector(rooms)
+
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
+  const theRoom = document.getElementById("room")
+  const theRoomName = document.getElementById("roomName")
+
+  theRoom.style.background = mystery.room.color
+  theRoomName.innerHTML =
+    mystery.room.name + " " 
+}
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
