@@ -45,7 +45,7 @@ const mrsPeacock = {
 const colMustard = {
     firstName: "Jack",
     lastName: "Mustard",
-    color: "ruby",
+    color: "red",
     description: "Carries alot of scars",
     age: 63,
     image: "assets/mustard.png",
@@ -180,13 +180,32 @@ const pickKiller = () => {
     // This will randomly select a killer from the suspects. And add that to the mystery object.
     mystery.killer = randomSelector(suspects)
 
+
+
     // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
     const theKiller = document.getElementById("killer")
     const theKillerName = document.getElementById("killerName")
+    const killerAge = document.getElementById("killerAge")
+    const killerOccupation = document.getElementById("killerOccupation")
+    const killerImage = document.getElementById("killerImage")
+
 
     theKiller.style.background = mystery.killer.color
+
     theKillerName.innerHTML =
         mystery.killer.firstName + " " + mystery.killer.lastName
+
+    killerAge.innerHTML =
+        mystery.killer.age
+
+    killerOccupation.innerHTML =
+        mystery.killer.occupation
+
+    killerDescription.innerHTML =
+        mystery.killer.description
+
+    killerImage.src =
+        mystery.killer.image
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
