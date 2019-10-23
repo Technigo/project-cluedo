@@ -190,6 +190,7 @@ const mystery = {
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 //FUNCTION KILLER invoked when you click on the card.
 const pickKiller = () => {
+
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
@@ -201,6 +202,7 @@ const pickKiller = () => {
   const theKillerImage = document.getElementById("killerImage")
   const theKillerDescription = document.getElementById("killerDescription")
 
+  theKiller.classList.add("clicked")
   //Changes background
   theKiller.style.background = mystery.killer.color
   //Changes name
@@ -229,6 +231,7 @@ const pickWeapon = () => {
   const theWeaponImage = document.getElementById("weaponImage")
 
   // This will change the background color of the card and show info about chosen weapon.
+  theWeapon.classList.add("clicked")
   theWeapon.style.background = mystery.weapon.color
   theWeaponName.innerHTML = mystery.weapon.name
   theWeaponWeight.innerHTML = mystery.weapon.weight
@@ -244,8 +247,7 @@ const pickRoom = () => {
   //Declare constants 
   const theRoomName = document.getElementById("roomName")
 
-  // The rooms are not supposed to have colors?
-  // theRoom.style.background = mystery.room.color
+  theRoomName.classList.add("clicked")
   theRoomName.innerHTML = mystery.room
 }
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
@@ -254,5 +256,12 @@ const pickRoom = () => {
 //Just shows the cards user chosen, not the randoms
 const revealMystery = () => {
   const theMystery = document.getElementById("mystery")
+
+  // if (theKiller.class === "killer-deck-clicked" && theWeapon.class === "weapon-deck-clicked" && theRoomName.class === "room-deck-clicked") {
+  //   theMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  // } else
+  //   theMystery.innerHTML = `No mystery to reveal yet`
+
   theMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+
 }
