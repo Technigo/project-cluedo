@@ -53,7 +53,7 @@ const mrsWhite = {
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
-  color: "scarlet",
+  color: "red",
   description: "She is charming and cunning",
   age: 25,
   image: "assets/scarlet.png",
@@ -137,20 +137,20 @@ const weapons = [
 console.log(weapons)
 
 const rooms = [
-  diningRoom,
-  conservatory,
-  kitchen,
-  study,
-  library,
-  billiardRoom,
-  lounge,
-  ballroomHall,
-  spa,
-  livingRoom,
-  observatory,
-  theater,
-  guestHouse,
-  patio
+  "Dining Room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Billiard Room",
+  "Lounge",
+  "Ballroom Hall",
+  "Spa",
+  "Living Room",
+  "Observatory",
+  "Theater",
+  "Guest House",
+  "Patio"
 ]
 
 console.log(rooms)
@@ -165,19 +165,34 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 
+const mystery = {}
+
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
+  console.log(pickKiller);
+
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
+  const theKillerAge = document.getElementById("killerAge")
+  const theKillerOccupation = document.getElementById("killerOccupation")
+  const theKillerDescription = document.getElementById("killerDescription")
+  const theKillerImage = document.getElementById("killerImage")
+
 
   theKiller.style.background = mystery.killer.color
   theKillerName.innerHTML =
     mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerAge.innerHTML =
+    mystery.killer.age
+  theKillerOccupation.innerHTML =
+    mystery.killer.occupation
+  theKillerDescription.innerHTML =
+    mystery.killer.description
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
