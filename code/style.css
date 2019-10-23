@@ -26,6 +26,7 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 .weapon-deck {
@@ -35,6 +36,7 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 .room-deck {
@@ -45,6 +47,7 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 button {
@@ -55,4 +58,5 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  cursor: pointer;
 }
