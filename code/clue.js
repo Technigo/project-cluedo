@@ -1,5 +1,5 @@
 // CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
+//
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
@@ -8,7 +8,7 @@ const mrGreen = {
   age: 45,
   image: "assets/green.png",
   occupation: "Entrepreneur"
-}
+};
 
 const mrsWhite = {
   firstName: "Blanche",
@@ -18,9 +18,9 @@ const mrsWhite = {
   age: 65,
   image: "assets/white.png",
   occupation: "Housekeeper"
-}
+};
 
-const mrPlum = {
+const profPlum = {
   firstName: "Victor",
   lastName: "Plum",
   color: "plum",
@@ -28,7 +28,7 @@ const mrPlum = {
   age: 36,
   image: "assets/plum.png",
   occupation: "Cycietrist"
-}
+};
 
 const missScarlet = {
   firstName: "Cassandra",
@@ -38,7 +38,7 @@ const missScarlet = {
   age: 25,
   image: "assets/scarlet.png",
   occupation: "Actress"
-}
+};
 
 const mrsPeacock = {
   firstName: "Eleanor",
@@ -48,9 +48,9 @@ const mrsPeacock = {
   age: 47,
   image: "assets/peacock.png",
   occupation: "Socialite"
-}
+};
 
-const mrMustard = {
+const colonelMustard = {
   firstName: "Jack",
   lastName: "Mustard",
   color: "mustard yellow",
@@ -58,7 +58,7 @@ const mrMustard = {
   age: 60,
   image: "assets/mustard.png",
   occupation: "Military man"
-}
+};
 
 
 
@@ -67,46 +67,46 @@ const mrMustard = {
 const rope = {
   name: "rope",
   weight: 10
-}
+};
 
 const knife = {
   name: "Knife",
   weight: 5
-}
+};
 
 const candleStick = {
   name: "Candle Stick",
   weight: 2
-}
+};
 
 const dumbBell = {
   name: "Dumbbell",
   weight: 15
-}
+};
 
 const poison = {
   name: "Poison",
   weight: 20
-}
+};
 
 const axe = {
   name: "Axe",
   weight: 30
-}
+};
 
 const bat = {
   name: "Bat",
   weight: 25
-}
+};
 const throphy = {
   name: "Throphy",
   weight: 30
-}
+};
 
 const pistol = {
   name: "Pistol",
   weight: 100
-}
+};
 
 
 // THE ROOMS ONLY HAVE A NAME SO NO NEED FOR OBJECTS THERE.
@@ -137,8 +137,9 @@ const suspects = [
   profPlum,
   missScarlet,
   mrsPeacock,
-  mrMustard
-]
+  colonelMustard
+];
+console.log(suspects);
 
 const weapons = [
   rope,
@@ -150,7 +151,8 @@ const weapons = [
   bat,
   throphy,
   pistol
-]
+];
+console.log(weapons);
 //Dinning Room Conservatory Kitchen Study Library Billiard Room Lounge Ballroom Hall Spa Living Room Observatory Theater Guest House Patio
 const rooms = [
   dinningRoom,
@@ -168,8 +170,9 @@ const rooms = [
   theater,
   guestHouse,
   patio
+];
 
-]
+console.log(rooms);
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
