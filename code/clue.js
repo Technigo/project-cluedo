@@ -8,7 +8,7 @@ const mrGreen = {
   age: 45,
   image: "assets/green.png",
   occupation: "Entrepreneur"
-},
+}
 
 const profPlum = {
   firstName: "Victor",
@@ -18,7 +18,8 @@ const profPlum = {
   age: 36,
   image: "assets/plum.png",
   occupation: "Professor"
-},
+}
+
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
@@ -27,7 +28,8 @@ const missScarlet = {
   age: 25,
   image: "assets/scarlet.png",
   occupation: "Actress"
-},
+}
+
 const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
@@ -36,7 +38,8 @@ const mrsPeacock = {
   age: 52,
   image: "assets/peacock.png",
   occupation: "Socialite"
-},
+}
+
 const mrMustard = {
   firstName: "Jack",
   lastName: "Mustad",
@@ -45,7 +48,8 @@ const mrMustard = {
   age: 58,
   image: "assets/mustard.png",
   occupation: "Colonel"
-},
+}
+
 const mrsWhite = {
   firstName: "Mrs",
   lastName: "White",
@@ -54,7 +58,7 @@ const mrsWhite = {
   age: 62,
   image: "assets/white.png",
   occupation: "Housekeeper"
-}
+};
 
 
 
@@ -62,36 +66,39 @@ const mrsWhite = {
 
 const rope = {
   name: "rope",
-  weight: 10
-},
+  weight: 10,
+  color: "beige"
+}
 const knife = {
   name: "knife",
-  weight: 90
-},
+  weight: 90,
+  color: "burgundy with silver blade"
+}
 const candleStick = {
   name: "candlestick",
-  weight: 180
-},
+  weight: 180,
+  color: "golden brass"
+}
 const dumbBell = {
   name: "dumbbell",
   weight: 500
-},
+}
 const poison = {
   name: "poison",
   weight: 5
-},
+}
 const axe = {
   name: "axe",
   weight: 400
-},
+}
 const bat = {
   name: "bat",
   weight: 120
-},
+}
 const trophy = {
   name: "trophy",
   weight: 180
-},
+}
 const pistol = {
   name: "pistol",
   weight: 250
@@ -103,12 +110,13 @@ const pistol = {
 
 const suspects = [
   mrGreen,
-  mrsWhite,
   profPlum,
   missScarlet,
   mrsPeacock,
-  mrMustard
+  mrMustard,
+  mrsWhite
 ]
+
 
 const weapons = [
   rope,
