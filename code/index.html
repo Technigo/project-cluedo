@@ -1,35 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Clue</title>
-  </head>
-  <body>
-    <section class="cards">
-      <div class="killer-deck" id="killer" onclick="pickKiller()">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
-      </div>
-      <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-      </div>
-      <div class="room-deck" id="room" onclick="pickRoom()">
-        <p>ROOM</p>
-        <p id="roomName"></p>
-      </div>
-    </section>
-    <h1 id="mystery"></h1>
-    <button onclick="revealMystery()">REVEAL THE CRIME</button>
 
-    <script src="clue.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600,900&display=swap" rel="stylesheet">
+  <title>Clue</title>
+</head>
+
+<body>
+  <header class="game-header">
+    <h1 class="game-title">Cluedo</h1>
+  </header>
+  <section class="cards">
+    <div class="killer-deck deck" id="killer" onclick="pickKiller()">
+      <div class="card-inner">
+        <div class="card-front">
+          <p class="card-type">Killer</p>
+        </div>
+        <div id="killerColor" class="card-back">
+          <p class="card-type">Killer</p>
+          <p id="killerName" class="killer-name"></p>
+          <p id="killerAge" class="killer-age"></p>
+          <p id="killerOccupation" class="killer-occupation"></p>
+          <img id="killerImage" class="killer-portrait" src="" />
+          <p id="killerDescription" class="killer-description"></p>
+        </div>
+      </div>
+    </div>
+    <div class="weapon-deck deck" id="weapon" onclick="pickWeapon()">
+      <div class="card-inner">
+        <div class="card-front">
+          <p class="card-type">Weapon</p>
+        </div>
+        <div class="card-back">
+          <p class="card-type">Weapon</p>
+          <p id="weaponName"></p>
+          <p id="weaponWeight"></p>
+        </div>
+      </div>
+    </div>
+    <div class="room-deck deck" id="room" onclick="pickRoom()">
+      <div class="card-inner">
+        <div class="card-front">
+          <p class="card-type">Room</p>
+        </div>
+        <div class="card-back">
+          <p class="card-type">Room</p>
+          <p id="roomName"></p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <section class="mystery">
+    <h1 id="mystery" class="revealed-mystery"></h1>
+    <button onclick="revealMystery()">Reveal the crime</button>
+  </section>
+  <script src="clue.js"></script>
+</body>
+
 </html>

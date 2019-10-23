@@ -155,7 +155,7 @@ console.log(rooms);
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
-
+randomSelector(suspects);
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
@@ -167,9 +167,10 @@ const mystery = {
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
+  mystery.killer = randomSelector(suspects);
 
   const theKiller = document.getElementById("killer");
+  const theKillerColor = document.getElementById("killerColor");
   const theKillerName = document.getElementById("killerName");
   const theKillerAge = document.getElementById("killerAge");
   const theKillerOccupation = document.getElementById("killerOccupation");
@@ -177,7 +178,7 @@ const pickKiller = () => {
   const theKillerDescription = document.getElementById("killerDescription");
 
   // Change the background color to the killer color
-  theKiller.style.background = mystery.killer.color;
+  theKillerColor.style.background = mystery.killer.color;
 
   // Print the killer's first and last name
   theKillerName.innerHTML = mystery.killer.firstName + " " + mystery.killer.lastName;
@@ -193,6 +194,10 @@ const pickKiller = () => {
 
   // Print the killer's description
   theKillerDescription.innerHTML = mystery.killer.description;
+
+  // Add class to killer card
+  theKiller.classList.add("picked");
+
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
@@ -212,6 +217,8 @@ const pickWeapon = () => {
   // Print the weapon's weight
   theWeaponWeight.innerHTML = mystery.weapon.weight;
 
+  // Add class to killer deck
+  theWeapon.classList.add("picked");
 }
 
 // Pick a random room
@@ -225,6 +232,9 @@ const pickRoom = () => {
   // Print room name on card
   theRoomName.innerHTML =
     mystery.room;
+
+  // Add class to killer deck
+  theRoom.classList.add("picked");
 }
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
@@ -240,6 +250,6 @@ const revealMystery = () => {
   } else {
     //Print the reveal message
     theMystery.innerHTML =
-      "The murder was commited by " + mystery.killer.firstName + " " + mystery.killer.lastName + ", in the " + mystery.room + " with a " + mystery.weapon.name + ".";
+      `<span class="reveal-title">The murder was commited by</span><br/> ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with the ${mystery.weapon.name}`;
   }
 }

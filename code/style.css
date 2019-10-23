@@ -1,58 +1,191 @@
-body {
+* {
+  box-sizing: border-box;
+  font-size: 16px;
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  padding: 0;
 }
 
-p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+body {
+  background-color: #aa000e;
+  font-family: "Montserrat", Courier, monospace;
+  font-weight: 600;
 }
+
+/* Header */
+.game-header {
+  align-items: center;
+  background-color: #aa000e;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 0 0;
+}
+
+.game-title {
+  color: #fff;
+  font-size: 4rem;
+}
+
+/* Cards */
 
 .cards {
-  margin: 50px auto;
-  width: 90%;
-  height: 600px;
-  background: #ccc;
-  display: flex;
-  justify-content: space-around;
   align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
-.killer-deck {
-  width: 250px;
-  height: 400px;
-  background: #000;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+.deck {
+  align-items: center;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  height: 430px;
+  justify-content: center;
+  margin: 1rem 1rem;
+  position: relative;
+  width: 280px;
 }
 
-.weapon-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+.card-inner {
+  height: 430px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  width: 280px;
 }
 
-.room-deck {
-  width: 250px;
-  height: 400px;
-  background: midnightblue;
+/* What type of card it is */
 
+.card-front,
+.card-back {
+  align-items: center;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 430px;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 280px;
+}
+
+.card-front {
+  background-color: #000;
+  color: #fff;
+  z-index: 2;
+}
+
+.card-back {
+  background-color: #fff;
+  color: #000;
+  justify-content: flex-start;
   text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+  z-index: 1;
+}
+
+.picked .card-inner {
+  transform: rotateY(180deg);
+}
+
+.picked .card-inner .card-back {
+ transform: rotateY(180deg);
+ backface-visibility: visible;
+ border: 10px solid #000;
+}
+
+.card-type {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.card-back .card-type {
+  color: #fff;
+  font-size: 1.2rem;
+  order: 0;
+  padding: 1rem 0.5rem;
+  width: 100%;
+}
+
+.killer-image {
+  order: 1;
+}
+
+.killer-name {
+  order: 2;
+}
+
+.killer-age {
+  order: 3;
+}
+
+.killer-occupation {
+  order: 4;
+}
+
+.killer-description {
+  font-size: 0.8rem;
+  order: 5;
+  padding: 1rem 2rem;
+}
+
+/* Reveal mystery */
+
+.mystery {
+  background-color: #000;
+  padding: 1.5rem;
+  width: 100%;
 }
 
 button {
-  padding: 8px 16px;
   background: crimson;
   border: none;
-  font-size: 20px;
   border-radius: 8px;
+  color: #fff;
   display: block;
+  font-size: 1rem;
+  font-weight: 900;
   margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.reveal-title {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.revealed-mystery {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Tablet size and up */
+@media only screen and (min-width: 668px) {
+  .game-title {
+    font-size: 6rem;
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-flow: wrap;
+    margin-bottom: 1.5rem;
+  }
+
+  .room-deck {
+    align-self: start;
+  }
+
+  button {
+    font-size: 1.5rem;
+  }
+  
+  .revealed-mystery {
+    font-size: 1.2rem;
+  }
 }
