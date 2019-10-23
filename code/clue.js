@@ -1,6 +1,4 @@
-// CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
-let suspects = [
+// CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS://
 
 const mrGreen = {
   firstName: "Jacob",
@@ -10,7 +8,8 @@ const mrGreen = {
   age: 45,
   image: "assets/green.png",
   occupation: "Entrepreneur"
-},
+}
+
 
 const professorPlum = {
   firstName: "Victor",
@@ -20,7 +19,7 @@ const professorPlum = {
   age: 56,
   image: "assets/plum.png",
   occupation: "Professor"
-},
+}
 
 const missScarlet = {
   firstName: "Cassandra",
@@ -30,7 +29,7 @@ const missScarlet = {
   age: 27,
   image: "assets/scarlet.png",
   occupation: "teacher"
-},
+}
 
 const mrsPeacock = {
   firstName: "Elenor",
@@ -40,7 +39,7 @@ const mrsPeacock = {
   age: 32,
   image: "assets/peacock.png",
   occupation: "accountant"
-},
+}
 
 const colonelMustard = {
   firstName: "Jack",
@@ -50,7 +49,7 @@ const colonelMustard = {
   age: 55,
   image: "assets/mustard.png",
   occupation: "lawyer"
-},
+}
 
 const mrsWhite = {
   firstName: "Mrs",
@@ -61,7 +60,7 @@ const mrsWhite = {
   image: "assets/white.png",
   occupation: "unknown"
 }
-]
+
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
@@ -70,22 +69,97 @@ const rope = {
   weight: 10
 }
 
+const knife = {
+  name: "knife",
+  weight: 3
+}
+
+const candlestick = {
+  name: "candlestick",
+  weight: 8
+}
+
+const dumbbell = {
+  name: "dumbbell",
+  weight: 15
+}
+
+const poison = {
+  name: "poison",
+  weight: 1
+}
+
+const axe = {
+  name: "axe",
+  weight: 13
+}
+
+const bat = {
+  name: "bat",
+  weight: 7
+}
+
+const trophy = {
+  name: "trophy",
+  weight: 8
+}
+
+const pistol = {
+  name: "pistol",
+  weight: 4
+}
+
+
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
-const suspects = [
+let suspects = [
   mrGreen,
   mrsWhite,
-  profPlum,
+  professorPlum,
   missScarlet,
   mrsPeacock,
-  mrMustard
+  colonelMustard
 ]
 
-const weapons = []
+console.log(suspects)
 
-const rooms = []
+let weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
+
+console.log(weapons)
+
+let rooms = [
+  "diningRoom",
+  "conservatory",
+  "kitchen",
+  "study",
+  "library",
+  "billiardRoom",
+  "lounge",
+  "ballroom",
+  "hall",
+  "spa",
+  "LivingRoom",
+  "observatory",
+  "theater",
+  "guestHouse",
+  "patio"
+]
+
+console.log(rooms)
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
