@@ -46,7 +46,6 @@ button {
 	color: white;
 	outline: none;
 	height: 50px;
-	/* box-shadow: 10px 10px 15px -6px rgba(14, 30, 37, 0.6); */
 }
 
 .overlay {
@@ -74,7 +73,6 @@ button {
 	margin: 5px 0 20px 0;
 	border-radius: 16px;
 	transition: opacity 0.2s ease-in-out;
-	/* box-shadow: 0 2px 2px 0 rgba(14, 30, 37, 0.3); */
 }
 
 .weapon-deck {
@@ -97,6 +95,7 @@ button {
 	border-radius: 16px;
 	transition: opacity 0.2s ease-in-out;
 }
+
 .killer-deck,
 .weapon-deck,
 .room-deck {
@@ -114,9 +113,9 @@ button {
 	margin: 20px auto;
 }
 
-.disabled {
+/* .disabled {
 	opacity: 0.3;
-}
+} */
 
 .clickDisabled {
 	pointer-events: none;
@@ -124,15 +123,9 @@ button {
 	transition: opacity 0.2s ease-in-out;
 }
 
-/* .fadeOut {
-	opacity: 0;
-	transition: opacity 0.1 ease-in-out;
+.hide {
+	display: none;
 }
-
-.fadeIn {
-	opacity: 1;
-	transition: opacity 0.2 ease-in-out;
-} */
 
 #killerImage {
 	width: 160px;
@@ -142,16 +135,20 @@ button {
 	border: 2px solid white;
 }
 
-.hide {
-	display: none;
-}
-
 #mystery span {
 	text-decoration: underline;
 	text-decoration-color: red;
 }
 
 @media screen and (min-width: 858px) {
+	h1 {
+		margin: 10px auto;
+		font-size: 25px;
+		width: 600px;
+	}
+	button {
+		margin: 30px auto;
+	}
 	.cards {
 		flex-direction: row;
 		justify-content: center;
@@ -161,14 +158,6 @@ button {
 	.room-deck,
 	.killer-deck {
 		margin: 0 50px;
-	}
-	h1 {
-		margin: 10px auto;
-		font-size: 25px;
-		width: 600px;
-	}
-	button {
-		margin: 30px auto;
 	}
 	.overlay {
 		height: 100%;

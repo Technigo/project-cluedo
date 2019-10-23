@@ -68,8 +68,7 @@ const mrMustard = {
 const rope = {
 	name: 'Rope',
 	weight: 10,
-	indefiniteArticle: 'a',
-	image: 'images/weapons/rope.png'
+	indefiniteArticle: 'a'
 };
 
 const knife = {
@@ -195,7 +194,7 @@ buttonPlayAgain.addEventListener('click', () => {
 });
 
 // Disabling the reveal button at the beginning of the game
-buttonRevealMystery.classList.add('hide');
+// buttonRevealMystery.classList.add('hide');
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
@@ -262,11 +261,14 @@ const revealMystery = () => {
 		mystery.weapon.indefiniteArticle
 	} ${mystery.weapon.name.toLowerCase()}. 
 	`;
+
 	theMystery.style.display = 'block';
 
 	buttonRevealMystery.classList.add('hide');
+
 	buttonPlayAgain.classList.remove('hide');
 	buttonPlayAgain.disabled = false;
+
 	theKiller.classList.add('clickDisabled');
 	theWeapon.classList.add('clickDisabled');
 	theRoom.classList.add('clickDisabled');
@@ -274,7 +276,6 @@ const revealMystery = () => {
 
 // Enable reveal button  if all card decks are selected
 const enableRevealButton = () => {
-	// Enable reveal button
 	if (mystery.killer && mystery.weapon && mystery.room) {
 		buttonRevealMystery.disabled = false;
 		buttonRevealMystery.classList.remove('hide');
