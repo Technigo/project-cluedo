@@ -153,9 +153,9 @@ const randomSelector = array => {
 }
 
 //Checking with console log that they are random
-console.log(randomSelector(suspects).firstName + " " + randomSelector(suspects).lastName); 
-console.log(randomSelector(weapons).name);
-console.log(randomSelector(rooms));
+//console.log(randomSelector(suspects).firstName + " " + randomSelector(suspects).lastName); 
+//console.log(randomSelector(weapons).name);
+//console.log(randomSelector(rooms));
 
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
@@ -168,7 +168,7 @@ const mystery = {
   image: "assets/white.png",
   weapon: "Dumbbell",
   room: "Spa"
-};
+}
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
@@ -224,11 +224,11 @@ const mystery = {
 
 
   //invoking the function revealMystery and sends alert with confirmation 
-const revealMystery = (theKiller) => {
-  alert (`The murder was committed by " + mysteryKiller + ", in the " + mystery.room +" "+ " with a " + mystery.weapon`);
-  }
+function revealMystery() {
+  alert (`The murder was committed by ${mystery.killer} , in the ${mystery.room} with a ${mystery.weapon}`);
+}
   
   //orderConfirmation is sent to the HTML to write it out on the site, connecting with ID from HTML
-  document.getElementById
-  ("mysteryRevealText").innerHTML = (`The murder was committed by ${mystery.killer}, in the ${mystery.room} with ${mystery.weapon}!`
-    );
+  //document.getElementById
+  //("mysteryRevealText").innerHTML = (`The murder was committed by ${mystery.killer}, in the ${mystery.room} with ${mystery.weapon}!`
+  //  );
