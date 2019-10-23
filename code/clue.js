@@ -14,7 +14,7 @@ const profPlum = {
   firstName: "Victor",
   lastName: "Plum",
   color: "purple",
-  description: "He has a lot of connections",
+  description: "He is very smart",
   age: 40,
   image: "assets/plum.png",
   occupation: "Professor"
@@ -24,7 +24,7 @@ const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
   color: "red",
-  description: "She has a lot of connections",
+  description: "She is very hard to read",
   age: 35,
   image: "assets/scarlet.png",
   occupation: "Actress"
@@ -34,17 +34,17 @@ const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
   color: "blue",
-  description: "She has a lot of connections",
+  description: "Her voice can break glass",
   age: 45,
   image: "assets/peacock.png",
   occupation: "Opera singer"
 }
 
-const colMustard = {
+const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
   color: "yellow",
-  description: "He has a lot of connections",
+  description: "He has a bad temper",
   age: 70,
   image: "assets/mustard.png",
   occupation: "Colonel"
@@ -54,7 +54,7 @@ const mrsWhite = {
   firstName: "Mrs",
   lastName: "White",
   color: "white",
-  description: "She has a lot of connections",
+  description: "She knows everything",
   age: 60,
   image: "assets/white.png",
   occupation: "House Maid"
@@ -63,7 +63,7 @@ const mrsWhite = {
 
 const rope = {
   name: "rope",
-  weight: 10
+  weight: 5
 }
 
 const knife = {
@@ -103,25 +103,57 @@ const trophy = {
 
 const pistol = {
   name: "Pistol",
-  weight: 6
+  weight: 2
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
+//These are objects, not strings therfore without ""
+
 const suspects = [
   mrGreen,
-  mrsWhite,
   profPlum,
   missScarlet,
   mrsPeacock,
-  mrMustard
+  mrMustard,
+  mrsWhite
 ]
 
-const weapons = []
+//These are objects, not strings therfore without ""
 
-const rooms = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
+
+//These are strings not objects, therefore ""
+
+const rooms = [
+  "dinningRoom",
+  "conservatory",
+  "kitchen",
+  "study",
+  "library",
+  "billiardRoom",
+  "lounge",
+  "ballroom",
+  "hall",
+  "spa",
+  "livingRoom",
+  "observatory",
+  "theater",
+  "guestHouse",
+  "patio"
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
