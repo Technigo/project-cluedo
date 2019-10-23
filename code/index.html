@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="style.css" />
     <title>Clue</title>
   </head>
+
   <body>
     <section class="cards">
+
       <div class="killer-deck" id="killer" onclick="pickKiller()">
         <p>KILLER</p>
         <p id="killerName"></p>
@@ -17,15 +19,18 @@
         <img id="killerImage" src="" height="100" />
         <p id="killerDescription"></p>
       </div>
+
       <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
         <p>WEAPON</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
       </div>
+
       <div class="room-deck" id="room" onclick="pickRoom()">
         <p>ROOM</p>
         <p id="roomName"></p>
       </div>
+
     </section>
     <h1 id="mystery"></h1>
     <button onclick="revealMystery()">REVEAL THE CRIME</button>
