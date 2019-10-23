@@ -10,14 +10,119 @@ const mrGreen = {
   occupation: "Entrepreneur"
 }
 
+const profPlum = {
+  firstName: "Victor",
+  lastName: "Plum",
+  color: "plum",
+  description: "He has glasses",
+  age: 50,
+  image: "assets/plum.png",
+  occupation: "Biology Professor"
+}
+
+const missScarlett = {
+  firstName: "Cassandra",
+  lastName: "Scarlet",
+  color: "scarlet",
+  description: "She is flirtatious",
+  age: 37,
+  image: "assets/scarlet.png",
+  occupation: "Teacher"
+}
+
+const MrsPeacock = {
+  firstName: "Eleanor",
+  lastName: "Peacock",
+  color: "peacock",
+  description: "She is wealthy",
+  age: 49,
+  image: "assets/peacock.png",
+  occupation: "House Wife"
+}
+
+const clMustard = {
+  firstName: "Jack",
+  lastName: "Mustard",
+  color: "mustard",
+  description: "He is strict",
+  age: 70,
+  image: "assets/mustard.png",
+  occupation: "Colonel"
+}
+
+const mrsWhite = {
+  firstName: "Mrs",
+  lastName: "White",
+  color: "white",
+  description: "She is wise",
+  age: 75,
+  image: "assets/white.png",
+  occupation: "Retired"
+}
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: "rope",
-  weight: 10
+  weight: 500,
+  }
+
+const knife = {
+  name: "knife",
+  weight: 700
+}
+
+const candlestick = {
+  name: "candlestick",
+  weight: 1200
+}
+
+const Dumbbell = {
+  name: "dumbbell",
+  weight: 4000
+}
+
+const poison = {
+  name: "poison",
+  weight: 600
+}
+
+const axe = {
+  name: "axe",
+  weight: 3000
+}
+
+const bat = {
+  name: "bat",
+  weight: 2000
+}
+
+const trophy = {
+  name: "trophy",
+  weight: 800
+}
+
+const pistol = {
+  name: "pistol",
+  weight: 101
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+const diningRoom = "Dining Room"
+const conservatory = "Conservatory"
+const kitchen = "Kitchen"
+const study = "Study"
+const library = "Library"
+const billiardRoom = "Billiard Room"
+const lounge = "Lounge"
+const ballRoom ="Ball room" 
+const hall = "Hall"
+const spa = "Spa"
+const livingRoom ="Living Room"
+const observatory = "Observatory"
+const theater = "Theater"
+const guestHouse = "Guest House"
+const patio = "Patio"
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 

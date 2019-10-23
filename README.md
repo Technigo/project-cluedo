@@ -8,7 +8,7 @@ This week's been all about Javascript, learning about arrays and objects. We're 
 
 ![](https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Cluedo_image1600w.jpg)
 
-The user (who is the game leader and the one that will know all about the murder) should be able to click on three decks of cards, to randomly get a character, a weapon and a room. Then there should also be a button to reveal the mystery.  
+The user (who is the game leader and the one that will know all about the murder) should be able to click on three decks of cards, to randomly get a character, a weapon and a room. Then there should also be a button to reveal the mystery.
 
 The focus on this project is to practice objects and arrays and also to manipulate the DOM with JavaScript.
 
@@ -17,13 +17,13 @@ The focus on this project is to practice objects and arrays and also to manipula
 The suspects and the weapons have several details about them whilst the rooms only has a name.
 
 **The suspects**
- Mr Green - Jacob Green
- Professor Plum - Victor Plum
- Miss Scarlet - Cassandra Scarlet
- Mrs Peacock - Eleanor Peacock
- Colonel Mustard - Jack Mustard
- Mrs White - Mrs White
- 
+Mr Green - Jacob Green
+Professor Plum - Victor Plum
+Miss Scarlet - Cassandra Scarlet
+Mrs Peacock - Eleanor Peacock
+Colonel Mustard - Jack Mustard
+Mrs White - Mrs White
+
 **The Weapons**
 Rope
 Knife
@@ -68,7 +68,7 @@ Try to console log the arrays to see that everyhting is there.
 
 ## Step 3 - Pick a murderer, a weapon and a room
 
-When clicking on the cards, you should invoke the right functions to pick a murderer, a room and a weapon. 
+When clicking on the cards, you should invoke the right functions to pick a murderer, a room and a weapon.
 That should be stored in the mysterty object and we should visually see the chosen cards in the browser.
 
 #### 🚨Before starting with step 4, commit the third iteration to github.
@@ -76,7 +76,7 @@ That should be stored in the mysterty object and we should visually see the chos
 ## Step 4 - Reveal the mystery
 
 When clicking the button Reveal Mystery, we should see a message saying something like:
-*The murder was committed by Jacob Green, in the living room with a rope.*
+_The murder was committed by Jacob Green, in the living room with a rope._
 
 ## What you will learn 🧠
 
