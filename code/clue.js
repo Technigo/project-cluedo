@@ -9,12 +9,107 @@ const mrGreen = {
   image: "assets/green.png",
   occupation: "Entrepreneur"
 }
+const professorPlum = {
+  firstName: "Victor Montgomery",
+  lastName: "Plum",
+  color: "violet",
+  description: "A man with a degree of suspicion",
+  age: 72,
+  image: "assets/plum.png",
+  occupation: "College professor"
+}
+const missScarlet = {
+  firstName: "Cassandra",
+  lastName: "Scarlet",
+  color: "red",
+  description: "A aspiring actress whose passion for fame, fortune, and men will let no one stand in her way.",
+  age: 28,
+  image: "assets/scarlet.png",
+  occupation: "Actor"
+}
+const mrsPeacock = {
+  firstName: "Eleanor",
+  lastName: "Peacock",
+  color: "blue",
+  description: "A woman with a reputation that she would rather forget",
+  age: 42,
+  image: "assets/peacock.png",
+  occupation: "Lady of Arlington Grange"
+}
+const colonelMustard = {
+  firstName: "Jack",
+  lastName: "Mustard",
+  color: "yellow",
+  description: "A gallant military hero whose glittering career hides a tarnished past",
+  age: 24,
+  image: "assets/mustard.png",
+  occupation: "Military veteran"
+}
+const mrsWhite = {
+  firstName: "Blanche",
+  lastName: "White",
+  color: "white",
+  description: "She hides a secret indulgence.",
+  age: 82,
+  image: "assets/white.png",
+  occupation: "House keeper"
+}
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
+Knife Candlestick Dumbbell Poison Axe Bat Trophy Pistol
 
 const rope = {
   name: "rope",
-  weight: 10
+  weight: 10,
+  color: "brown"
+}
+
+const knife = {
+  name: "knife",
+  weight: 5,
+  color: "silver"
+}
+
+const candlestick = {
+  name: "candlestick",
+  weight: 15,
+  color: "gold"
+}
+
+const dumbbell = {
+  name: "dumbbell",
+  weight: 30,
+  color: "black"
+}
+
+const poison = {
+  name: "poison",
+  weight: 1,
+  color: "purple"
+}
+
+const axe = {
+  name: "axe",
+  weight: 20,
+  color: "silver"
+}
+
+const bat = {
+  name: "bat",
+  weight: 10,
+  color: "brown"
+}
+
+const trophy = {
+  name: "trophy",
+  weight: 18,
+  color: "gold"
+}
+
+const pistol = {
+  name: "pistol",
+  weight: 15,
+  color: "silver"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
