@@ -1,11 +1,12 @@
 // SUSPECT OBJECTS
 const mrGreen = {
-	firstName: 'Jacob',
+	firstName: 'John',
 	lastName: 'Green',
 	color: 'green',
-	description: 'He has a lot of connections',
-	age: 45,
-	image: 'images/green.png',
+	description:
+		'Green spends most of his time attending to community affairs and ensuring the peace and quiet of the village is not disrupted.',
+	age: 42,
+	image: 'images/suspects/green.png',
 	occupation: 'Entrepreneur'
 };
 
@@ -13,101 +14,113 @@ const mrsOrchid = {
 	firstName: '-',
 	lastName: 'Orchid',
 	color: 'crimson',
-	description: 'TBD',
+	description: '-',
 	age: 53,
-	image: 'images/orchid.png',
-	occupation: 'Nurse'
+	image: 'images/suspects/orchid.png',
+	occupation: 'Biologist with a Ph.D.'
 };
 
 const profPlum = {
 	firstName: 'Victor',
 	lastName: 'Plum',
 	color: 'red',
-	description: 'TBD',
-	age: 67,
-	image: 'images/plum.png',
+	description:
+		'Inventor, Archaeologist, Professor, Explorer. Plum is all of these and continues his quest for knowledge and innovation.',
+	age: 32,
+	image: 'images/suspects/plum.png',
 	occupation: 'Professor'
 };
 
 const missScarlet = {
-	firstName: 'Cassandra',
-	lastName: 'Scarlett',
+	firstName: 'Josephine',
+	lastName: 'Scarlet',
 	color: 'pink',
-	description: 'TBD',
-	age: 48,
-	image: 'images/scarlett.png',
-	occupation: 'TBD'
+	description:
+		'She is a a huge drama queen and always has to be the center of attention.',
+	age: 24,
+	image: 'images/suspects/scarlett.png',
+	occupation: 'Actress'
 };
 
 const mrsPeacock = {
-	firstName: 'Eleanor',
+	firstName: 'Patricia',
 	lastName: 'Peacock',
 	color: 'orange',
-	description: '-',
-	age: 47,
-	image: 'images/peacock.png',
-	occupation: 'TBD'
+	description:
+		'Mrs. Peacock is a socialite and a terrible gossip. Inviting her to your parties can be a mistake; not inviting her can be far worse.',
+	age: 57,
+	image: 'images/suspects/peacock.png',
+	occupation: 'Married to Colonel Michael Mustard'
 };
 
 const mrMustard = {
-	firstName: 'Jack',
+	firstName: 'Michael',
 	lastName: 'Mustard',
 	color: 'yellow',
-	description: '-',
-	age: 55,
-	image: 'images/mustard.png',
-	occupation: 'Colonel'
+	description:
+		'Colonel Mustard plays in the stereotypical "great white hunter" and is the fiancée of Mrs. Peacock.',
+	age: 62,
+	image: 'images/suspects/mustard.png',
+	occupation: 'Dormer SAS officer'
 };
 
 // WEAPON OBJECTS
-
 const rope = {
 	name: 'Rope',
-	weight: 10
+	weight: 10,
+	indefiniteArticle: 'a',
+	image: 'images/weapons/rope.png'
 };
 
 const knife = {
 	name: 'Knife',
-	weight: 3
+	weight: 3,
+	indefiniteArticle: 'a'
 };
 
 const candlestick = {
 	name: 'Candlestick',
-	weight: 2
+	weight: 2,
+	indefiniteArticle: 'a'
 };
 
 const dumbbell = {
 	name: 'Dumbbell',
-	weight: 20
+	weight: 20,
+	indefiniteArticle: 'a'
 };
 
 const poison = {
 	name: 'Poison',
-	weight: 5
+	weight: 5,
+	indefiniteArticle: ''
 };
 
 const axe = {
 	name: 'Axe',
-	weight: 5
+	weight: 5,
+	indefiniteArticle: 'an'
 };
 
 const bat = {
 	name: 'Bat',
-	weight: 1
+	weight: 1,
+	indefiniteArticle: 'a'
 };
 
 const trophy = {
 	name: 'Trophy',
-	weight: 6
+	weight: 6,
+	indefiniteArticle: 'a'
 };
 
 const pistol = {
 	name: 'Pistol',
-	weight: 4
+	weight: 4,
+	indefiniteArticle: 'a'
 };
 
 // SUSPECTS, WEAPONS AND ROOMS IN ARRAYS
-
 const suspects = [
 	mrGreen,
 	mrsOrchid,
@@ -156,10 +169,9 @@ const buttonRevealMystery = document.getElementById('revealMystery');
 const buttonPlayAgain = document.getElementById('playAgain');
 
 // EVENT LISTENERS
-theKiller.addEventListener('click', e => {
-	e.preventDefault();
+theKiller.addEventListener('click', () => {
 	pickKiller();
-	// console.log(theKillerImage.style);
+
 	theKillerImage.style.display = 'block';
 	enableRevealButton();
 });
@@ -178,9 +190,12 @@ buttonRevealMystery.addEventListener('click', () => {
 	revealMystery();
 });
 
+buttonPlayAgain.addEventListener('click', () => {
+	resetUI();
+});
+
 // Disabling the reveal button at the beginning of the game
 buttonRevealMystery.classList.add('hide');
-// buttonRevealMystery.disabled = true;
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
@@ -188,10 +203,7 @@ const randomSelector = array => {
 };
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
-
-const mystery = {
+let mystery = {
 	killer: undefined,
 	weapon: undefined,
 	room: undefined
@@ -239,26 +251,71 @@ const pickRoom = () => {
 		<p>ROOM</p>
 		<p id="roomName">${mystery.room}</p>
 	`;
-	console.log(mystery);
 };
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
-
 const revealMystery = () => {
 	theMystery.innerHTML = `
-		The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}. 
+		The murder was committed by ${mystery.killer.firstName} ${
+		mystery.killer.lastName
+	} in the ${mystery.room.toLowerCase()} with ${
+		mystery.weapon.indefiniteArticle
+	} ${mystery.weapon.name.toLowerCase()}. 
 	`;
+	theMystery.style.display = 'block';
+
 	buttonRevealMystery.classList.add('hide');
 	buttonPlayAgain.classList.remove('hide');
+	buttonPlayAgain.disabled = false;
+	theKiller.classList.add('clickDisabled');
+	theWeapon.classList.add('clickDisabled');
+	theRoom.classList.add('clickDisabled');
 };
 
 // Enable reveal button  if all card decks are selected
-
 const enableRevealButton = () => {
 	// Enable reveal button
 	if (mystery.killer && mystery.weapon && mystery.room) {
 		buttonRevealMystery.disabled = false;
 		buttonRevealMystery.classList.remove('hide');
 	}
+};
+
+// Reset UI for a new game
+const resetUI = () => {
+	mystery = {
+		killer: undefined,
+		weapon: undefined,
+		room: undefined
+	};
+
+	theMystery.style.display = 'none';
+
+	theKiller.style.background = 'black';
+	theKiller.innerHTML = `
+		<p>KILLER</p>
+		<p id="killerName" class="hide"></p>
+		<p id="killerAge" class="hide"></p>
+		<p id="killerOccupation" class="hide"></p>
+		<img id="killerImage" src="" height="100" class="hide" />
+		<p id="killerDescription" class="hide"></p>
+	`;
+
+	theWeapon.innerHTML = `
+		<p>WEAPON</p>
+		<p id="weaponName" class="hide"></p>
+		<p id="weaponWeight" class="hide"></p>
+	`;
+
+	theRoom.innerHTML = `
+		<p>ROOM</p>
+		<p id="roomName" class="hide"></p>
+	`;
+
+	buttonPlayAgain.disabled = true;
+	buttonPlayAgain.classList.add('hide');
+
+	theKiller.classList.remove('clickDisabled');
+	theWeapon.classList.remove('clickDisabled');
+	theRoom.classList.remove('clickDisabled');
 };
