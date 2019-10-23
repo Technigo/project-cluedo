@@ -11,8 +11,8 @@ const mrGreen = {
 };
 
 const mrsWhite = {
-  firstName: "mrs",
-  lastName: "white",
+  firstName: "White",
+  lastName: "White",
   color: "white",
   description: "She is a good actress",
   age: 63,
@@ -29,7 +29,7 @@ const profPlum = {
   image: "assets/green.png",
   occupation: "Professor"
 };
-const  missScarlet = {
+const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
   color: "red",
@@ -38,73 +38,85 @@ const  missScarlet = {
   image: "assets/green.png",
   occupation: "Fashion designer"
 };
+const mrsPeacock  = {
+  firstName: "Eleanor",
+  lastName: "Peacock",
+  color: "blue",
+  description: "She is verbal",
+  age: 39,
+  image: "assets/green.png",
+  occupation: "Author"
+};
 const mrMustard = {
   firstName: "Colonel",
   lastName: "Mustard",
   color: "yellow",
   description: "He is dangerous",
-  age: 39,
+  age: 26,
   image: "assets/green.png",
   occupation: "Military"
 };
-const mrsPeacock = {
-  firstName: "Eleanor",
-  lastName: "Peacock",
-  color: "blue",
-  description: "She is verbal",
-  age: 26,
-  image: "assets/green.png",
-  occupation: "Author"
-};
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
-const rope = {
-  name: "rope",
-  weight: 10
+const Rope = {
+  name: "Rope",
+  weight: 17
 };
 
-const rope = {
-  name: "knife",
-  weight: 10
+const Knife = {
+  name: "Knife",
+  weight: 2
 };
 
-const rope = {
+const Candlestick = {
   name: "Candlestick",
-  weight: 10
+  weight: 1
 };
-
-const rope = {
+                                         
+const Dumbbell = {
   name: "Dumbbell",
-  weight: 10
+  weight: 23
 };
 
-const rope = {
+const Poison = {
   name: "Poison",
-  weight: 10
+  weight: 8
 };
 
-const rope = {
+const Axe = {
   name: "Axe",
-  weight: 10
+  weight: 6
 };
 
-const rope = {
+const Bat = {
   name: "Bat",
-  weight: 10
+  weight: 3
 };
 
-const rope = {
+const Trophy = {
   name: "Trophy",
-  weight: 10
+  weight: 18
 };
 
-const rope = {
+const Pistol = {
   name: "Pistol",
-  weight: 10
+  weight: 15
 };
 
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const diningroom = "diningroom";
+const conservatory = "conservatory";
+const kitchen = "kitchen";
+const study = " study";
+const library = "library";
+const billiardroom = "billiardroom";
+const lounge = "lounge";
+const ballroom = "ballroom";
+const hall = "hall";
+const spa = "spa";
+const livingroom = "livingroom";
+ 
 
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
@@ -118,9 +130,43 @@ const suspects = [
   mrMustard
 ];
 
-const weapons = [];
+suspects.forEach(suspect => {
+  console.log(`${suspect.firstName} ${suspect.lastName}`);
+});
 
-const rooms = [];
+const weapons = [
+  Knife,
+  Candlestick,
+  Dumbbell,
+  Poison,
+  Axe,
+  Bat,
+  Trophy,
+  Pistol                      
+];
+weapons.forEach(function(element) {
+  console.log(element.name);
+});
+
+
+const rooms = [
+  diningroom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardroom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingroom
+ ]
+ console.log(rooms);
+
+
+ 
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
