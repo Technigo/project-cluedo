@@ -137,17 +137,17 @@ const weapons = [
 ]
 
 const rooms = [
-    "DiningRoom",
+    "Dining room",
     "Conservatory",
     "Kitchen",
     "Study",
     "Library",
-    "BilliardRoom",
+    "Billiard room",
     "Lounge",
     "Ballroom",
     "Hall",
     "Spa",
-    "LivingRoom",
+    "Living room",
     "Observatory",
     "Theater",
     "GuestHouse",
@@ -165,11 +165,11 @@ const randomSelector = (array) => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 
-const theKiller = {
+let mystery = {
 
-    Killer: "",
-    Weapon: "",
-    Room: ""
+    killer: "",
+    weapon: "",
+    room: ""
 
 }
 
@@ -229,7 +229,6 @@ const pickWeapon = () => {
 }
 
 
-
 const pickRoom = () => {
     // This will randomly select a room from the rooms. And add that to the mystery object.
     mystery.room = randomSelector(rooms)
@@ -244,3 +243,12 @@ const pickRoom = () => {
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+
+const revealMystery = () => {
+
+    const theMystery = document.getElementById("mystery")
+
+    theMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`
+
+}
