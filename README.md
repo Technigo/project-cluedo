@@ -1,4 +1,7 @@
-`PROJECT 5`
+`PROJECT 5`- Technigo School project! 
+Link to project: https://project-cludeo-linda.netlify.com/
+
+
 
 # Build a piece of Cluedo
 
