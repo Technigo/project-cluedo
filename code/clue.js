@@ -210,5 +210,37 @@ const pickKiller = () => {
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
+
+const pickWeapon = () => {
+    // This will randomly select a weapon from the weapons. And add that to the mystery object.
+    mystery.weapon = randomSelector(weapons)
+
+
+    const weaponName = document.getElementById("weaponName")
+    const weaponWeight = document.getElementById("weaponWeight")
+
+    weaponName.innerHTML =
+        mystery.weapon.name
+
+    weaponWeight.innerHTML =
+        mystery.weapon.weight
+
+
+}
+
+
+
+const pickRoom = () => {
+    // This will randomly select a room from the rooms. And add that to the mystery object.
+    mystery.room = randomSelector(rooms)
+
+
+    const roomName = document.getElementById("roomName")
+
+    roomName.innerHTML =
+        mystery.room
+
+}
+
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
