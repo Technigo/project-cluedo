@@ -65,22 +65,18 @@ const missScarlet = {
 
 const rope = {
   name: "rope",
-  weight: 10
 }
 
 const knife = {
   name: "knife",
-  produced: "Sweden"
 }
 
 const candlestick = {
   name: "candlestick",
-  material: "brass"
 }
 
 const dumbbell = {
   name: "dumbbell",
-  weight: 12
 }
 
 const poison = {
@@ -89,22 +85,18 @@ const poison = {
 
 const axe = {
   name: "axe",
-  weight: 5
 }
 
 const bat = {
   name: "bat",
-  material: "wood"
 }
 
 const trophy = {
   name: "trophy",
-  color: "gold"
 }
 
 const pistol = {
   name: "pistol",
-  type: "Glock"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -193,9 +185,43 @@ const pickKiller = () => {
     mystery.killer.occupation
   theKillerDescription.innerHTML =
     mystery.killer.description
+  theKillerImage.setAttribute("src", mystery.killer.image)
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons)
+
+  const theWeapon = document.getElementById("weaponName")
+
+  theWeapon.innerHTML =
+    mystery.weapon.name
+
+}
+
+console.log(pickWeapon);
+
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+
+  const theRoom = document.getElementById("roomName")
+
+  theRoom.innerHTML =
+    mystery.room
+
+}
+
+console.log(pickRoom);
+
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+const revealMystery = () => {
+
+  const theMystery = document.getElementById("mystery")
+
+  theMystery.innerHTML =
+    (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`)
+
+}
