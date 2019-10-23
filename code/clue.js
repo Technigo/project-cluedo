@@ -34,7 +34,7 @@ const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
   color: "red",
-  description: "She is very cunning",
+  description: "She is very capable",
   age: 25,
   image: "assets/scarlet.png",
   occupation: "Actress"
@@ -43,7 +43,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
-  color: "cyan blue",
+  color: "cyan",
   description: "She is a social butterfly and great social skills",
   age: 47,
   image: "assets/peacock.png",
@@ -53,7 +53,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: "Jack",
   lastName: "Mustard",
-  color: "mustard yellow",
+  color: "yellow",
   description: "He is an expert in weapons and conspiracy.",
   age: 60,
   image: "assets/mustard.png",
@@ -113,14 +113,14 @@ const pistol = {
 
 const dinningRoom = "Dinning Room"
 const conservatory = "Conservatory"
-const kitchen = "kitchen"
-const study = "study"
-const library = "library"
+const kitchen = "Kitchen"
+const study = "Study"
+const library = "Library"
 const billiardRoom = "Billiar Room"
 const lounge = "Lounge"
 const ballroom = "Ballroom"
-const hall = "hall"
-const spa = "spa"
+const hall = "Hall"
+const spa = "Spa"
 const livingRoom = "Living room"
 const observatory = "Observatory"
 const theater = "Theater"
@@ -192,13 +192,38 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
+  const theKillerAge = document.getElementById("killerAge")
+  const theKillerOccupation = document.getElementById("killerOccupation")
+  const theKillerImage = document.getElementById("killerImage")
+  const theKillerDescription = document.getElementById("killerDescription")
 
   theKiller.style.background = mystery.killer.color
   theKillerName.innerHTML =
     mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerAge.innerHTML = mystery.killer.age
+  theKillerOccupation.innerHTML = mystery.killer.occupation
+  theKillerImage.src = mystery.killer.image
+  theKillerDescription.innerHTML = mystery.killer.description
+}
+// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons)
+  const theWeaponName = document.getElementById("weaponName")
+  const theWeaponWeight = document.getElementById("weaponWeight")
+
+  theWeaponName.innerHTML =
+    mystery.weapon.name
+  theWeaponWeight.innerHTML =
+    mystery.weapon.weight
 }
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+  const theRoomName = document.getElementById("roomName")
+  theRoomName.innerHTML = mystery.room
+}
+
+
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
