@@ -10,14 +10,124 @@ const mrGreen = {
   occupation: "Entrepreneur"
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
+const mrsWhite = {
+  firstName: "Blanche",
+  lastName: "White",
+  color: "white",
+  description: "She handles a knife like no one else.",
+  age: 65,
+  image: "assets/white.png",
+  occupation: "Housekeeper"
+}
 
+const mrPlum = {
+  firstName: "Victor",
+  lastName: "Plum",
+  color: "plum",
+  description: "He knows a lot about chemistry and Egypt",
+  age: 36,
+  image: "assets/plum.png",
+  occupation: "Cycietrist"
+}
+
+const missScarlet = {
+  firstName: "Cassandra",
+  lastName: "Scarlet",
+  color: "red",
+  description: "She is very cunning",
+  age: 25,
+  image: "assets/scarlet.png",
+  occupation: "Actress"
+}
+
+const mrsPeacock = {
+  firstName: "Eleanor",
+  lastName: "Peacock",
+  color: "cyan blue",
+  description: "She is a social butterfly and great social skills",
+  age: 47,
+  image: "assets/peacock.png",
+  occupation: "Socialite"
+}
+
+const mrMustard = {
+  firstName: "Jack",
+  lastName: "Mustard",
+  color: "mustard yellow",
+  description: "He is an expert in weapons and conspiracy.",
+  age: 60,
+  image: "assets/mustard.png",
+  occupation: "Military man"
+}
+
+
+
+// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
+// Rope Knife Candlestick Dumbbell Poison Axe Bat Trophy Pistol
 const rope = {
   name: "rope",
   weight: 10
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const knife = {
+  name: "Knife",
+  weight: 5
+}
+
+const candleStick = {
+  name: "Candle Stick",
+  weight: 2
+}
+
+const dumbBell = {
+  name: "Dumbbell",
+  weight: 15
+}
+
+const poison = {
+  name: "Poison",
+  weight: 20
+}
+
+const axe = {
+  name: "Axe",
+  weight: 30
+}
+
+const bat = {
+  name: "Bat",
+  weight: 25
+}
+const throphy = {
+  name: "Throphy",
+  weight: 30
+}
+
+const pistol = {
+  name: "Pistol",
+  weight: 100
+}
+
+
+// THE ROOMS ONLY HAVE A NAME SO NO NEED FOR OBJECTS THERE.
+
+const dinningRoom = "Dinning Room"
+const conservatory = "Conservatory"
+const kitchen = "kitchen"
+const study = "study"
+const library = "library"
+const billiardRoom = "Billiar Room"
+const lounge = "Lounge"
+const ballroom = "Ballroom"
+const hall = "hall"
+const spa = "spa"
+const livingRoom = "Living room"
+const observatory = "Observatory"
+const theater = "Theater"
+const guestHouse = "Guest House"
+const patio = "Patio"
+
+
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
@@ -30,9 +140,36 @@ const suspects = [
   mrMustard
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candleStick,
+  dumbBell,
+  poison,
+  axe,
+  bat,
+  throphy,
+  pistol
+]
+//Dinning Room Conservatory Kitchen Study Library Billiard Room Lounge Ballroom Hall Spa Living Room Observatory Theater Guest House Patio
+const rooms = [
+  dinningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
 
-const rooms = []
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
