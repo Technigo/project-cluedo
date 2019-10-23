@@ -79,7 +79,7 @@ body {
 }
 
 .card-back {
-  background-color: #fff;
+  background-color: #fbf7f5;
   color: #000;
   justify-content: flex-start;
   text-align: center;
@@ -105,30 +105,56 @@ body {
 .card-back .card-type {
   color: #fff;
   font-size: 1.2rem;
-  order: 0;
-  padding: 1rem 0.5rem;
+  order: 5;
+ padding: 1rem 0.5rem;
   width: 100%;
 }
 
-.killer-image {
+.killer-portrait {
+  height: 220px;
+  object-fit: cover;
+  order: 0;
+  width: 260px;
+}
+
+.killer-info {
+  font-size: 0.9rem;
   order: 1;
+  padding: 1rem;
+  width: 100%;
 }
-
-.killer-name {
-  order: 2;
-}
-
-.killer-age {
-  order: 3;
-}
-
 .killer-occupation {
-  order: 4;
+  order: 2;
+  position: absolute;
+  top: 210px;
+  height:20px;
+  background-color: #fdec9a;
+  font-size: 0.8rem;
+  line-height: 1.6;
 }
-
+.killer-occupation:before {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #fdec9a;
+  content:"";
+  height:0;
+  width:0;
+  left:-10px;
+  position: absolute;
+}
+.killer-occupation:after {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #fdec9a;
+  content:"";
+  height:0;
+  width:0;
+  right:-10px;
+  position: absolute;
+}
 .killer-description {
   font-size: 0.8rem;
-  order: 5;
+  order: 3;
   padding: 1rem 2rem;
 }
 
@@ -184,7 +210,7 @@ button {
   button {
     font-size: 1.5rem;
   }
-  
+
   .revealed-mystery {
     font-size: 1.2rem;
   }
