@@ -53,7 +53,7 @@ const mrMustard = {
 const mrsWhite = {
   firstName: "Lily",
   lastName: "White",
-  color: "White",
+  color: "white",
   description: "A charming old woman with a lot of kids",
   age: 70,
   image: "assets/white.png",
@@ -66,6 +66,7 @@ const mrsWhite = {
 const rope = {
   name: "rope",
   weight: 10
+  
 }
 
 const knife = {
@@ -156,13 +157,19 @@ const rooms = [
 console.log(suspects, weapons, rooms)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
+const randomSelector = mystery => {
+  return mystery[Math.floor(Math.random() * mystery.length)]  
 }
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+
+const mystery = {
+  killer: "",
+  weapon: "",
+  room: ""
+}
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
@@ -173,11 +180,40 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
+  const theKillerAge = document.getElementById("killerAge")
+  const theKillerOccup = document.getElementById("killerOccupation")
+  const theKillerDescript = document.getElementById("killerDescription")
+  const theKillerImage = document.getElementById("killerImage")
 
   theKiller.style.background = mystery.killer.color
-  theKillerName.innerHTML =
-    mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerName.innerHTML = mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerAge.innerHTML = mystery.killer.age
+  theKillerOccup.innerHTML = mystery.killer.occupation
+  theKillerDescript.innerHTML = mystery.killer.description
+  theKillerImage.innerHTML = mystery.killer.image
+
 }
+
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons)
+
+
+  const theWeaponName = document.getElementById("weaponName")
+  const theWepaonWeight = document.getElementById("weaponWeight")
+ 
+  theWeaponName.innerHTML = mystery.weapon.name
+  theWepaonWeight.innerHTML = mystery.weapon.weight
+
+}
+
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+
+  const theRoomName = document.getElementById("roomName")
+
+  theRoomName.innerHTML = mystery.room
+}
+
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
