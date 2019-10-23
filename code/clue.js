@@ -183,8 +183,6 @@ const mystery = {
 }
 
 
-
-
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -245,4 +243,13 @@ const revealMystery = () => {
     const theMysteryReveal = document.getElementById("mystery")
 
     theMysteryReveal.innerHTML = "The murder was committed by " + mystery.killer.firstName + " " + mystery.killer.lastName + ", in the " + mystery.room + " with a " + mystery.weapon.name + "."
+}
+
+const notClicked = () => {
+    if (onclick = pickRoom() === false) {
+        revealMystery()
+    } else {
+        theMysteryReveal.innerHTML = "No mystery is yet to be revealed"
+
+    }
 }
