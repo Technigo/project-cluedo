@@ -26,7 +26,7 @@ var profPlum = new Suspect("Victor", "Plum", "purple", "He is a quick-witted", 4
 var missScarlet = new Suspect("Cassandra", "Scarlet", "red", "She is young and attractive", 30, "Chef", "assets/scarlet.png"  );
 var mrsPeacock = new Suspect("Eleanor", "Peacock", "blue", "She nearly always maintains her dignity ", 55, "Retired", "assets/peacock.png"  );
 var mrMustard = new Suspect("Colonel ", "Mustard", "yellow", "He is a dangerous military man", 60, "Military man", "assets/mustard.png"  );
-var mrsWhite = new Suspect("Mrs", "White", "white", "He does not have a lot of connections", 35, "Servant", "assets/mustard.png"  );
+var mrsWhite = new Suspect("Mrs", "White", "white", "He does not have a lot of connections", 35, "Servant", "assets/white.png"  );
 
 
 
@@ -104,36 +104,72 @@ const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-var suspectCard = randomSelector(suspects)
-console.log(suspectCard)
-
-var roomCard = randomSelector(rooms)
-console.log(roomCard)
-
-var weaponCard = randomSelector(weapons)
-console.log(weaponCard)
-
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
-// The values will be set later.
-
+// The values will be set later .
+var Mystery = {
+  killer: "",
+  weapon: "",
+  room: ""
+}
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
-//const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-//   mystery.killer = randomSelector(suspects)
+const pickKiller = () => {
+  //This will randomly select a killer from the suspects. And add that to the mystery object.
+  Mystery.killer = randomSelector(suspects)
 
-//   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
-//   const theKiller = document.getElementById("killer")
-//   const theKillerName = document.getElementById("killerName")
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
+  const theKiller = document.getElementById("killer")
+  const theKillerName = document.getElementById("killerName")
+  const theKillerAge = document.getElementById("killerAge")
+  const theKillerOccupation = document.getElementById("killerOccupation")
+  const theKillerImage = document.getElementById("killerImage")
+  const theKillerDescription = document.getElementById("killerDescription")
 
-//   theKiller.style.background = mystery.killer.color
-//   theKillerName.innerHTML =
-//     mystery.killer.firstName + " " + mystery.killer.lastName
-// }
+  theKiller.style.background = Mystery.killer.color
+  theKillerName.innerHTML = Mystery.killer.firstName + " " + Mystery.killer.lastName
+  theKillerAge.innerHTML = Mystery.killer.age
+  theKillerOccupation.innerHTML = Mystery.killer.occupation
+  theKillerImage.src = Mystery.killer.image
+  theKillerDescription.innerHTML = Mystery.killer.description
+}
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
+
+const pickWeapon = () => {
+  Mystery.weapon = randomSelector(weapons)
+
+  const theWeaponName = document.getElementById("weaponName")
+  const theWeaponWeight = document.getElementById("weaponWeight")
+
+  theWeaponName.innerHTML = Mystery.weapon.name
+  theWeaponWeight.innerHTML = Mystery.weapon.weight
+}
+
+const pickRoom = () => {
+  Mystery.room = randomSelector(rooms)
+
+  const theRoomName = document.getElementById("roomName")
+
+  theRoomName.innerHTML = Mystery.room
+}
+
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+const revealMystery = () => {
+
+  if (Mystery.killer == "" || Mystery.weapon == "" || Mystery.room == "") {
+    document.getElementById("mystery").innerHTML = `No mystery is yet to be revealed.`
+
+  } else {
+
+    let firstName = Mystery.killer.firstName
+    let lastName = Mystery.killer.lastName
+    let room = Mystery.room
+    let weapon = Mystery.weapon.name
+    document.getElementById("mystery").innerHTML = `The murder was committed by ${firstName} ${lastName}, in the ${room} with a ${weapon}.`
+  }
+}
