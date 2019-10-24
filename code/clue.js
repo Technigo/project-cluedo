@@ -41,7 +41,7 @@ const mystery = {
   weapon,
   room
 }
-// console.log(mystery.killer.type)
+
 // With a killer, a weapon and a room.
 // The values will be set later.
 
