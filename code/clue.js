@@ -4,6 +4,7 @@ const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
   color: "green",
+  trait: "Intellegent",
   description: "He has a lot of connections",
   age: 45,
   image: "assets/green.png",
@@ -14,6 +15,7 @@ const mrsWhite = {
   firstName: "Daniella",
   lastName: "White",
   color: "white",
+  trait: "Eavesdropper",
   description: "Knows every secret of the house",
   age: 74,
   image: "assets/white.png",
@@ -24,6 +26,7 @@ const profPlum = {
   firstName: "Constantine",
   lastName: "Plum",
   color: "purple",
+  trait: "Cultleader",
   description:
     "Graduate from arkham community college with great interest for the occult",
   age: 37,
@@ -35,6 +38,7 @@ const missScarlet = {
   firstName: "Johansson",
   lastName: "Scarlet",
   color: "red",
+  trait: "Charm",
   description: "Looks that kill",
   age: 37,
   image: "assets/scarlet.png",
@@ -45,16 +49,18 @@ const mrsPeacock = {
   firstName: "Agatha",
   lastName: "Peacock",
   color: "Blue",
+  trait: "Cunning",
   description: "Has a drinking problem",
   age: 57,
   image: "assets/peacock.png",
-  occupation: "Stay at home wife"
+  occupation: "Housewife"
 };
 
 const mrMustard = {
   firstName: "Napoleon",
   lastName: "Mustard",
   color: "yellow",
+  trait: "Strength",
   description: "Owner of the house, married to mrs Peacock.",
   age: 73,
   image: "assets/mustard.png",
@@ -65,61 +71,61 @@ const mrMustard = {
 
 const rope = {
   name: "Rope",
-  weight: 10,
-  type: "Other"
+  weight: 1,
+  type: "Strangulation"
 };
 
 const knife = {
   name: "Knife",
-  weight: 5,
+  weight: 0.5,
   type: "Blade"
 };
 
 const candlestick = {
   name: "Candlestick",
-  weight: 20,
+  weight: 2,
   type: "Blunt"
 };
 
 const dumbbell = {
   name: "Dumbbell",
-  weight: 50,
+  weight: 5,
   type: "Blunt"
 };
 
 const poison = {
   name: "Poison",
-  weight: 1,
-  type: "Other"
+  weight: 0.1,
+  type: "Cunning"
 };
 
 const axe = {
   name: "Axe",
-  weight: 20,
+  weight: 2,
   type: "Blade"
 };
 
 const bat = {
   name: "Bat",
-  weight: 15,
+  weight: 1.5,
   type: "Blunt"
 };
 
 const trophy = {
   name: "Trophy",
-  weight: 40,
+  weight: 4,
   type: "Blunt"
 };
 
 const pistol = {
   name: "Pistol",
-  weight: 18,
+  weight: 1.8,
   type: "Projectile"
 };
 
 const crossbow = {
   name: "Crossbow",
-  weight: 45,
+  weight: 4.5,
   type: "Projectile"
 };
 
@@ -147,31 +153,32 @@ const weapons = [
 ];
 
 const rooms = [
-  "diningRoom",
-  "conservatory",
-  "kitchen",
-  "study",
-  "library",
-  "billiardRoom",
-  "lounge",
-  "ballRoom",
-  "hall",
-  "spa",
-  "livingRoom",
-  "observatory",
-  "theatre",
-  "guestHouse",
-  "patio"
+  "Dining room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Billiard room",
+  "Lounge",
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "Living room",
+  "Observatory",
+  "Theatre",
+  "Guest house",
+  "Patio"
 ];
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-const randomSelector = weapons => {
-  return weapons[Math.floor(Math.random() * weapons.length)];
+const randomSelector = array => {
+  return array[Math.floor(Math.random() * array.length)];
 };
-console.log(randomSelector);
+
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+const mystery = {};
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
@@ -181,14 +188,55 @@ const pickKiller = () => {
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer");
-  const theKillerName = document.getElementById("killerName");
-
   theKiller.style.background = mystery.killer.color;
+
+  const theKillerName = document.getElementById("killerName");
+  const theKillerTrait = document.getElementById("killerTrait");
+  const theKillerImage = document.getElementById("killerImage");
+  const theKillerOccupation = document.getElementById("killerOccupation");
+  const theKillerDescription = document.getElementById("killerDescription");
   theKillerName.innerHTML =
     mystery.killer.firstName + " " + mystery.killer.lastName;
+  theKillerTrait.innerHTML = mystery.killer.trait;
+  theKillerImage.src = mystery.killer.image;
+  theKillerOccupation.innerHTML = mystery.killer.occupation;
+  theKillerDescription.innerHTML = mystery.killer.description;
 };
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+// Randomly picks a Weapon
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons);
+
+  const theWeaponName = document.getElementById("weaponName");
+  const theWeaponWeight = document.getElementById("weaponWeight");
+  const theWeaponType = document.getElementById("weaponType");
+
+  theWeaponName.innerHTML = mystery.weapon.name;
+  theWeaponWeight.innerHTML = mystery.weapon.weight;
+  theWeaponType.innerHTML = mystery.weapon.type;
+};
+
+// Randomly picks a room
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms);
+
+  const theRoomName = document.getElementById("roomName");
+
+  theRoomName.innerHTML = mystery.room;
+};
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+const revealMystery = () => {
+  document.getElementById("mystery").innerHTML = `It was the ${
+    mystery.killer.occupation
+  }, ${mystery.killer.firstName +
+    " " +
+    mystery.killer.lastName} who did it! Using a ${
+    mystery.weapon.name
+  } wich is a ${mystery.weapon.type} weapon and weighs ${
+    mystery.weapon.weight
+  }kg. The gruesome murder took place in the ${mystery.room} `;
+};
+
+document.getElementById("mystery").addEventListener("click", randomSelector);
