@@ -9,9 +9,9 @@ const mrGreen = {
   age: 45,
   image: "assets/green.png",
   occupation: "Entrepreneur"
-},
+}
 
-const professorPlum = {
+const profPlum = {
   firstName: "Vicor",
   lastName: "Plum",
   color: "violet",
@@ -19,7 +19,7 @@ const professorPlum = {
   age: 55,
   image: "assets/plum.png",
   occupation: "Professor"
-},
+}
 
 const missScarlet = {
   firstName: "Cassandra",
@@ -29,7 +29,7 @@ const missScarlet = {
   age: 25,
   image: "assets/scarlet.png",
   occupation: "Moviestar"
-},
+}
 
 const mrsPeacock = {
   firstName: "Eleanor",
@@ -39,9 +39,9 @@ const mrsPeacock = {
   age: 65,
   image: "assets/peacock.png",
   occupation: "Socialite"
-},
+}
 
-const colonelMustard = {
+const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
   color: "mustard",
@@ -49,7 +49,7 @@ const colonelMustard = {
   age: 35,
   image: "assets/mustard.png",
   occupation: "Colonel"
-},
+}
 
 const mrsWhite = {
   firstName: "Eben",
@@ -127,22 +127,25 @@ const weapons = [
 ]
 
 const rooms = [
-  dinningRoom,
-  conservatory,
-  kitchen,
-  study,
-  library,
-  billiardRoom,
-  lounge,
-  ballroom,
-  hall,
-  spa,
-  livingRoom,
-  observatory,
-  theater,
-  guestHouse,
-  patio
+  "dinningRoom",
+  "conservatory",
+  "kitchen",
+  "study",
+  "library",
+  "billiardRoom",
+  "lounge",
+  "ballroom",
+  "hall",
+  "spa",
+  "livingRoom",
+  "observatory",
+  "theater",
+  "guestHouse",
+  "patio"
 ]
+
+//IS EVERYTHING THERE?
+console.log(suspects, weapons, rooms)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
