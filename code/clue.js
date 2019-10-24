@@ -98,7 +98,7 @@ const pickRoom = () => {
   const theRoom = document.getElementById("room")
   const theRoomName = document.getElementById("roomName")
   theRoom.style.background = "#991"
-  // theKillerImage.src = mystery.killer.image
+  
   theRoomName.innerHTML = mystery.room
   cardClicked.room = true
 }
