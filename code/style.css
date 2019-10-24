@@ -5,10 +5,10 @@
 body, html {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
-  background-image: url(assets/castle.jpg);
-  background-size: cover;
+  background-image: url(assets/castle_1400px.jpg);
   background-repeat: no-repeat;
   text-align: center;
+  background-size: cover;
 }
 
 h1 {
@@ -65,7 +65,7 @@ a {
   align-items: center;
 }
 
-/* Animation to flip card when clicked */
+/* Animation to cards when clicked */
 .clicked {
   transition: 0.6s;
 	/* transform-style: preserve-3d; */
@@ -101,7 +101,6 @@ a {
 
 #weaponImage {
   height: 200px;
-  /* width: 160px; */
   border-radius: 50%;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -152,9 +151,12 @@ footer p {
 
 /* MEDIA QUERY TABLET */
 @media (min-width: 667px) and (max-width: 1024px) {
-  .cards {
-    width: 100%;
-    justify-content: space-evenly;
+body {
+  background-image: url(assets/castle_900px.jpg);
+}
+.cards {
+  width: 100%;
+  justify-content: space-evenly;
 }
 
 .killer-deck, .weapon-deck, .room-deck {
@@ -164,19 +166,21 @@ footer p {
 
 #killerImage, #weaponImage {
   height: 135px;
-  width: 130px;
 }
 }
 
 /* MEDIA QUERY MOBILE */
 @media (max-width: 667px) {
-  h1 {
-    font-size: 40px;
-  }
+body {
+  background-image: url(assets/castle_900px.jpg);
+}
+h1 {
+  font-size: 40px;
+}
   
-  h2 {
-    font-size: 18px;
-  }
+h2 {
+  font-size: 18px;
+}
 
 .cards {
   flex-direction: column;

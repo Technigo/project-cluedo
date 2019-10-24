@@ -1,11 +1,10 @@
-// CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
+// OBJECTS FOR ALL THE SUSPECTS
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
   color: "rgba(48, 75, 59, 0.8)",
   description: "He has a lot of connections",
-  age: 45,
+  age: "Age: 45",
   image: "assets/green.png",
   occupation: "Entrepreneur"
 }
@@ -15,7 +14,7 @@ const profPlum = {
   lastName: "Plum",
   color: "rgba(69, 33, 68, 0.8)",
   description: "He is widely seen as the intellectual",
-  age: 36,
+  age: "Age: 36",
   image: "assets/plum.png",
   occupation: "Professor"
 }
@@ -25,7 +24,7 @@ const missScarlet = {
   lastName: "Scarlet",
   color: "rgba(153, 64, 62, 0.8)",
   description: "She is typically portrayed as young, cunning, and highly attractive",
-  age: 25,
+  age: "Age: 25",
   image: "assets/scarlet.png",
   occupation: "Actress"
 }
@@ -35,7 +34,7 @@ const mrsPeacock = {
   lastName: "Peacock",
   color: "rgba(16, 29, 66, 0.8)",
   description: "She is an elderly yet still attractive woman who maintains her dignity in almost all cases",
-  age: 60,
+  age: "Age: 60",
   image: "assets/peacock.png",
   occupation: "Socialite"
 }
@@ -45,7 +44,7 @@ const mrMustard = {
   lastName: "Mustard",
   color: "rgba(228, 179, 99, 0.8)",
   description: "He is usually a military man both dignified and dangerous",
-  age: 55,
+  age: "Age: 55",
   image: "assets/mustard.png",
   occupation: "Colonel"
 }
@@ -55,13 +54,12 @@ const mrsWhite = {
   lastName: "White",
   color: "rgba(232, 233, 235, 0.8)",
   description: "She is a frazzled servant",
-  age: 65,
+  age: "Age: 65",
   image: "assets/white.png",
   occupation: "Housekeeper"
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
-
+// OBJECTS FOR ALL THE WEAPONS
 const rope = {
   name: "Rope",
   weight: "Weight: 2kg",
@@ -127,9 +125,7 @@ const pistol = {
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
-
+// GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 const suspects = [
   mrGreen,
   mrsWhite,
@@ -169,7 +165,7 @@ const rooms = [
   "Patio"
 ]
 
-//Console.log too see that the objects is correct
+//Console.log check the arrays
 console.log(suspects, weapons, rooms)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
@@ -185,7 +181,6 @@ const mystery = {
   weapon,
   room
 }
-
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 //FUNCTION KILLER invoked when you click on the card.
@@ -245,23 +240,32 @@ const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
   //Declare constants 
+  const theRoom = document.getElementById("room")
   const theRoomName = document.getElementById("roomName")
 
-  theRoomName.classList.add("clicked")
+  theRoom.classList.add("clicked")
   theRoomName.innerHTML = mystery.room
 }
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
-//Just shows the cards user chosen, not the randoms
+//FUNTION FOR REVEAL BUTTON
 const revealMystery = () => {
   const theMystery = document.getElementById("mystery")
+  const theKiller = document.getElementById("killer")
+  const theKillerClass = theKiller.className
+  const theWeapon = document.getElementById("weapon")
+  const theWeaponClass = theWeapon.className
+  const theRoom = document.getElementById("room")
+  const theRoomClass = theRoom.className
 
-  // if (theKiller.class === "killer-deck-clicked" && theWeapon.class === "weapon-deck-clicked" && theRoomName.class === "room-deck-clicked") {
-  //   theMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
-  // } else
-  //   theMystery.innerHTML = `No mystery to reveal yet`
+  console.log(theKillerClass, theWeaponClass, theRoomClass)
 
-  theMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  if (theKillerClass === "killer-deck clicked" && theWeaponClass === "weapon-deck clicked" && theRoomClass === "room-deck clicked") {
+    theMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  } else
+    theMystery.innerHTML = `No mystery to reveal yet`
+
+  // theMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
 
 }
