@@ -182,7 +182,7 @@ const pickKiller = () => {
   thekillerDescription.innerHTML = mystery.killer.description
   thekillerAge.innerHTML = mystery.killer.age
   thekillerOccupation.innerHTML = mystery.killer.occupation
-  thekillerImage.innerHTML = mystery.killer.image
+  thekillerImage.src = mystery.killer.image
     }
     
 
