@@ -103,10 +103,11 @@ body {
 }
 
 .card-back .card-type {
-  color: #fff;
+  color: #000;
   font-size: 1.2rem;
   order: 5;
- padding: 1rem 0.5rem;
+  margin-top: auto;
+  padding: 1rem 0.5rem;
   width: 100%;
 }
 
@@ -118,12 +119,25 @@ body {
 }
 
 .killer-info {
-  font-size: 0.9rem;
   order: 1;
+}
+.weapon-name,
+.room-name {
+  order: 0;
+}
+.room-name {
+  background-color: #D8BFD8;
+}
+.killer-info,
+.weapon-name,
+.room-name {
+  font-size: 0.9rem;
   padding: 1rem;
   width: 100%;
 }
-.killer-occupation {
+
+.killer-occupation,
+.weapon-weight {
   order: 2;
   position: absolute;
   top: 210px;
@@ -132,7 +146,11 @@ body {
   font-size: 0.8rem;
   line-height: 1.6;
 }
-.killer-occupation:before {
+.weapon-weight {
+  width: 50px;
+}
+.killer-occupation:before,
+.weapon-weight:before {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-right: 10px solid #fdec9a;
@@ -142,7 +160,9 @@ body {
   left:-10px;
   position: absolute;
 }
-.killer-occupation:after {
+
+.killer-occupation:after,
+.weapon-weight:after {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-left: 10px solid #fdec9a;
@@ -152,10 +172,16 @@ body {
   right:-10px;
   position: absolute;
 }
+
 .killer-description {
   font-size: 0.8rem;
   order: 3;
   padding: 1rem 2rem;
+}
+
+.weapon-name,
+.room-name {
+  text-transform: capitalize;
 }
 
 /* Reveal mystery */

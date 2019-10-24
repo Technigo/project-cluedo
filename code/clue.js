@@ -58,56 +58,49 @@ const mrMustard = {
 
 const rope = {
   name: "rope",
+  color: "BurlyWood",
   weight: 10
 }
 const knife = {
   name: "knife",
+  color: "LightGray",
   weight: 20
 }
 const candlestick = {
   name: "candlestick",
+  color: "Moccasin",
   weight: 30
 }
 const dumbbell = {
   name: "dumbbell",
+  color: "Gray",
   weight: 40
 }
 const poison = {
   name: "poison",
+  color: "DarkSeaGreen",
   weight: 1
 }
 const axe = {
   name: "axe",
+  color: "Gainsboro",
   weight: 35
 }
 const bat = {
   name: "bat",
+  color: "RosyBrown",
   weight: 25
 }
 const trophy = {
   name: "trophy",
+  color: "GoldenRod",
   weight: 30
 }
 const pistol = {
   name: "pistol",
+  color: "LightSteelBlue ",
   weight: 15
 }
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-const diningRoom = "dining room";
-const conservatory = "conservatory";
-const kicthen = "kitchen";
-const study = "study";
-const library = "library";
-const billiardRoom = "billiard room";
-const lounge = "lounge";
-const ballroom = "ballroom";
-const hall = "hall";
-const spa = "spa";
-const livingRoom = "living room";
-const observatory = "observatory";
-const theater = "theater";
-const guestHouse = "guest house";
-const patio = "patio";
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
@@ -133,29 +126,31 @@ const weapons = [
 ]
 console.log(weapons);
 
+// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
 const rooms = [
-  diningRoom,
-  conservatory,
-  kicthen,
-  study,
-  library,
-  billiardRoom,
-  lounge,
-  ballroom,
-  hall,
-  spa,
-  livingRoom,
-  observatory,
-  theater,
-  guestHouse,
-  patio
+  "dining room",
+  "conservatory",
+  "kicthen",
+  "study",
+  "library",
+  "billiard room",
+  "lounge",
+  "ballroom",
+  "hall",
+  "spa",
+  "living room",
+  "observatory",
+  "theater",
+  "guest house",
+  "patio"
 ]
 console.log(rooms);
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
-randomSelector(suspects);
+
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
@@ -213,6 +208,9 @@ const pickWeapon = () => {
 
   // Print the weapon's name
   theWeaponName.innerHTML = mystery.weapon.name;
+
+  // Print the weapon's color
+  theWeaponName.style.background = mystery.weapon.color;
 
   // Print the weapon's weight
   theWeaponWeight.innerHTML = mystery.weapon.weight;
