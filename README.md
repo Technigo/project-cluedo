@@ -69,7 +69,7 @@ Try to console log the arrays to see that everyhting is there.
 ## Step 3 - Pick a murderer, a weapon and a room
 
 When clicking on the cards, you should invoke the right functions to pick a murderer, a room and a weapon.
-That should be stored in the mysterty object and we should visually see the chosen cards in the browser.
+That should be stored in the mystery object and we should visually see the chosen cards in the browser.
 
 #### 🚨Before starting with step 4, commit the third iteration to github.
 
