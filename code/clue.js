@@ -26,7 +26,7 @@ var profPlum = new Suspect("Victor", "Plum", "purple", "He is a quick-witted", 4
 var missScarlet = new Suspect("Cassandra", "Scarlet", "red", "She is young and attractive", 30, "Chef", "assets/scarlet.png"  );
 var mrsPeacock = new Suspect("Eleanor", "Peacock", "blue", "She nearly always maintains her dignity ", 55, "Retired", "assets/peacock.png"  );
 var mrMustard = new Suspect("Colonel ", "Mustard", "yellow", "He is a dangerous military man", 60, "Military man", "assets/mustard.png"  );
-var mrsWhite = new Suspect("Mrs", "White", "white", "He does not have a lot of connections", 35, "Servant", "assets/white.png"  );
+var mrsWhite = new Suspect("Mrs", "White", "lightgrey", "He does not have a lot of connections", 35, "Servant", "assets/white.png"  );
 
 
 

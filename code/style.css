@@ -3,6 +3,8 @@ body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 body::after {
   background-image:url("assets/background.jpg");
@@ -23,19 +25,17 @@ p {
   font-weight: 300;
   background-color: #fff;
 }
-
+.container {
+  flex: auto;
+}
 header, footer {
-  background-color: rgba(222, 184, 135, 0.144);
+  background-color: rgba(0, 0, 0, 0.712);
+  color: rgb(189, 189, 189);
   height: 80px;
   line-height: 80px;
   width: 100%;
   display: block;
   text-align: center;
-  
-}
-footer {
-  position: relative;
-  bottom: 0px;
 }
 
 header h1 {
@@ -44,7 +44,6 @@ header h1 {
 
 .cards {
   margin: 0 auto;
-
   width: 90%;
   height: auto;
   display: flex;
@@ -59,6 +58,7 @@ header h1 {
   padding-top: 30px;
   border-radius: 16px;
   margin-top: 15px;
+  box-shadow: rgba(255, 91, 73, 0.336) 5px 5px 5px 5px;
 }
 
 .killer-deck {
@@ -80,12 +80,12 @@ button {
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin: 40px auto;
+  margin: 20px auto;
   color: #fff;
 }
 
 #mystery{
   text-align: center;
-  background-color: rgba(255, 11, 11, 0.392);
+  background-color: rgba(220, 20, 60, 0.666);
   color: #fff;
 }
