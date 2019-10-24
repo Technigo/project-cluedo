@@ -166,6 +166,7 @@ const theRoom = document.getElementById('room');
 const theMystery = document.getElementById('mystery');
 const buttonRevealMystery = document.getElementById('revealMystery');
 const buttonPlayAgain = document.getElementById('playAgain');
+const selectCardHeading = document.querySelector('.select-card-heading');
 
 // EVENT LISTENERS
 theKiller.addEventListener('click', () => {
@@ -262,6 +263,7 @@ const revealMystery = () => {
 	} ${mystery.weapon.name.toLowerCase()}. 
 	`;
 
+	selectCardHeading.classList.add('zeroVisibility');
 	theMystery.style.display = 'block';
 
 	buttonRevealMystery.classList.add('hide');
@@ -319,4 +321,5 @@ const resetUI = () => {
 	theKiller.classList.remove('clickDisabled');
 	theWeapon.classList.remove('clickDisabled');
 	theRoom.classList.remove('clickDisabled');
+	selectCardHeading.classList.remove('zeroVisibility');
 };
