@@ -1,4 +1,5 @@
 body {
+  background-image:url("assets/background.jpg");
   margin: 0;
   font-family: "Courier New", Courier, monospace;
 }
@@ -13,7 +14,6 @@ p {
   margin: 50px auto;
   width: 90%;
   height: auto;
-  background: #ccc;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -55,4 +55,9 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+#mystery{
+  text-align: center;
+  color: #fff;
 }
