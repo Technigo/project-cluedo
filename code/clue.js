@@ -158,6 +158,7 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+const mystery = {};
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
@@ -189,9 +190,14 @@ const pickRoom = () => {
   const theRoom = document.getElementById("room");
   const theRoomName = document.getElementById("roomName");
 
-  theRoom.style.background = mystery.room.color;
-  theRoomName.innerHTML = mystery.room + " " + mystery.room;
+  // theRoom.style.background = mystery.room.color;
+  theRoomName.innerHTML = mystery.room;
 };
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+const revealMystery = () => {
+  document.getElementById(
+    "mystery"
+  ).innerHTML = `The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`;
+};
