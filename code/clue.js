@@ -100,9 +100,6 @@
     weight: 20
   }
 
-
- 
-
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
@@ -131,7 +128,7 @@ Pistol
 console.log(weapons);
 
 const rooms = [
-"DinningRoom",
+"DiningRoom",
 "Conservatory",
 "Kitchen",
 "Study",
@@ -155,16 +152,10 @@ const randomSelector = array => {
 }
 
 const mystery = {
-  killer:"missScarlet",
-  color:"red",
-  image:"assets/scarlet.png",
-  weapon:"Poison",
-  room:"Observatory",
+  killer:"",
+  weapon:"",
+  room:"",
 };
-
-
-
-
 
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
@@ -181,11 +172,19 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
+  const thekillerDescription = document.getElementById("killerDescription")
+  const thekillerAge = document.getElementById("killerAge")
+  const thekillerOccupation = document.getElementById("killerOccupation")
+  const thekillerImage = document.getElementById("killerImage")
 
   theKiller.style.background = mystery.killer.color
-  theKillerName.innerHTML =
-    mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerName.innerHTML = mystery.killer.firstName + " " + mystery.killer.lastName
+  thekillerDescription.innerHTML = mystery.killer.description
+  thekillerAge.innerHTML = mystery.killer.age
+  thekillerOccupation.innerHTML = mystery.killer.occupation
+  thekillerImage.innerHTML = mystery.killer.image
     }
+    
 
 const pickWeapon = () => {
       
@@ -197,8 +196,7 @@ const pickWeapon = () => {
   const theWeaponName = document.getElementById("weaponName")
     
   theWeapon.style.background = mystery.weapon.color
-  theWeaponName.innerHTML =
-    mystery.weapon.name + " " + mystery.weapon.weight
+  theWeaponName.innerHTML = mystery.weapon.name + " " + mystery.weapon.weight
       }
 
 const pickRoom = () => {
