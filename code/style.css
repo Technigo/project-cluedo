@@ -7,7 +7,7 @@
 
 body {
   background-color: #aa000e;
-  font-family: "Montserrat", Courier, monospace;
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
   font-weight: 600;
 }
 
@@ -100,6 +100,7 @@ body {
   color: #fff;
   font-size: 3rem;
   font-weight: 900;
+  text-transform: uppercase;
 }
 
 .card-back .card-type {
@@ -173,7 +174,9 @@ body {
   position: absolute;
 }
 
-.killer-description {
+.killer-description,
+.room-description,
+.weapon-description {
   font-size: 0.8rem;
   order: 3;
   padding: 1rem 2rem;
@@ -195,7 +198,7 @@ body {
 button {
   background: crimson;
   border: none;
-  border-radius: 8px;
+  border-radius: 5rem;
   color: #fff;
   display: block;
   font-size: 1rem;
