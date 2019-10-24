@@ -167,25 +167,66 @@ const rooms = [
   "patio"
 ]
 
+console.log(rooms);
+
+/*
 const writeOutroom = room => {
   console.log(rooms);
 };
 
-writeOutWeapon(rooms);
+writeOutWeapon(rooms);*/
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
+
+
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
+
+/*
+const randomSelectorSuspects = (suspectsGroup) => {
+  return suspectsGroup[Math.floor(Math.random() * suspectsGroup.length)];
+};
+
+const randomSelectorWeapons = (weaponsGroup) => {
+  return weaponsGroup[Math.floor(Math.random() * weaponsGroup.length)];
+};
+
+const randomSelectorRooms = (roomsGroup) => {
+  return roomsGroup[Math.floor(Math.random() * roomsGroup.length)];
+};
+
+console.log(randomSelectorSuspects(suspects).firstName);
+console.log(randomSelectorWeapons(weapons).name);
+console.log(randomSelectorRooms(rooms));*/
+
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
 //suspects, weapons, rooms
 
-let mystery = () => {
-
+const mystery = {
+  killer: "",
+  weapon: "",
+  room: ""
 }
+
+
+/*
+let mystery = (murderMystery) => {
+  const randomSuspects = randomSelector(suspects)
+  const randomWeapons = randomSelector(weapons)
+  const randomRooms = randomSelector(rooms)
+
+  console.log(randomSuspects, randomWeapons, randomRooms)
+}
+
+mystery()
+*/
+
+
+
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
@@ -196,11 +237,40 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
+  const theKillerAge = document.getElementById("killerAge")
+  const theKillerOccupation = document.getElementById("killerOccupation")
+  const theKillerImage = document.getElementById("killerImage")
+  const theKillerDescription = document.getElementById("killerDescription")
 
   theKiller.style.background = mystery.killer.color
   theKillerName.innerHTML =
     mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerAge.innerHTML = mystery.killer.age
+  theKillerOccupation.innerHTML = mystery.killer.occupation
+  theKillerImage.src = mystery.killer.image
+  theKillerDescription.innerHTML = mystery.killer.description
 }
+
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons)
+  console.log(mystery.weapon)
+
+  const theWeaponName = document.getElementById("weaponName")
+  const theWeaponWeight = document.getElementById("weaponWeight")
+
+  theWeaponName.innerHTML = mystery.weapon.name
+  theWeaponWeight.innerHTML = mystery.weapon.weight
+}
+
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+  console.log(mystery.room)
+
+  const theRoomName = document.getElementById("roomName")
+
+  theRoomName.innerHTML = mystery.room
+}
+
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
