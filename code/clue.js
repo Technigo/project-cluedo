@@ -9,7 +9,7 @@ const mrGreen = {
   image: "assets/green.png",
   occupation: "Entrepreneur"
 }
-const mrPlum = {
+const profPlum = {
   firstName: "Victor",
   lastName: "Plum",
   color: "purple",
@@ -104,6 +104,30 @@ const pistol = {
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
+
+const suspects = [
+  mrGreen,
+  profPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
+  mrsWhite
+]
+
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
+
 const rooms = [
   "Dinning",
   "Room",
@@ -125,21 +149,6 @@ const rooms = [
   "House",
   "Patio"
 ]
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
-
-const suspects = [
-  mrGreen,
-  mrsWhite,
-  profPlum,
-  missScarlet,
-  mrsPeacock,
-  mrMustard
-]
-
-const weapons = []
-
-const rooms = []
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
