@@ -10,6 +10,56 @@ const mrGreen = {
   occupation: "Entrepreneur"
 }
 
+const colonelMustard = {
+  firstName: "Jack",
+  lastName: "Mustard",
+  color: "yellow",
+  description: "He has experience from the military",
+  age: 40,
+  image: "assets/mustard.png",
+  occupation: "Colonel"
+}
+
+const mrsPeacock = {
+  firstName: "Eleanor",
+  lastName: "Peacock",
+  color: "blue",
+  description: "A posh lady that never looses her cool",
+  age: 50,
+  image: "assets/scarlet.png",
+  occupation: "Politician"
+}
+
+const profPlum = {
+  firstName: "Victor",
+  lastName: "Plum",
+  color: "purple",
+  description: "He is a quick witted professor",
+  age: 32,
+  image: "assets/plum.png",
+  occupation: "Professor"
+}
+
+const missScarlet = {
+  firstName: "Miss",
+  lastName: "Scarlet",
+  color: "red",
+  description: "She is very clever and manipulative",
+  age: 23,
+  image: "assets/scarlet.png",
+  occupation: "Actress"
+}
+
+const mrsWhite = {
+  firstName: "Blanche",
+  lastName: "White",
+  color: "white",
+  description: "She is a two-faced servant with a grudge",
+  age: 60,
+  image: "assets/white.png",
+  occupation: "Servant"
+}
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
@@ -17,7 +67,65 @@ const rope = {
   weight: 10
 }
 
+const knife = {
+  name: "knife",
+  weight: 6
+}
+
+const candlestick = {
+  name: "candlestick",
+  weight: 9
+}
+
+const dumbbell = {
+  name: "dumbbell",
+  weight: 20
+}
+
+const poison = {
+  name: "poison",
+  weight: 4
+}
+
+const axe = {
+  name: "axe",
+  weight: 18
+}
+
+const bat = {
+  name: "bat",
+  weight: 11
+}
+
+const trophy = {
+  name: "trophy",
+  weight: 7
+}
+
+const pisrol = {
+  name: "pistol",
+  weight: 12
+}
+
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+const rooms = [
+  "Dining Room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Billiard Room",
+  "Lounge"
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "Living Room",
+  "Observatory",
+  "Theater",
+  "Guest House",
+  "Patio"
+]
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
