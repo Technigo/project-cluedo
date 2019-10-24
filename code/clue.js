@@ -243,8 +243,14 @@ const pickRoom = () => {
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-
   let theTruth = document.getElementById("mystery")
-  theTruth.innerHTML =
-    `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+
+  if (mystery.killer && mystery.weapon && mystery.room) {
+    theTruth.innerHTML =
+      `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  }
+  else {
+    theTruth.innerHTML =
+      `No mystery is yet to be revealed`
+  }
 }
