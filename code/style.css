@@ -10,20 +10,13 @@ p {
   font-weight: 300;
   background-color: #fff;
 }
+/****** Header with a Hero Video****/
 
 header {
   height: 350px;
     width: 100%;
     position: relative;
     display: block;
-/**margin: 0;
-  background: mistyrose;
-
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  margin: 0px;
-  font-size: 0.8em;**/
 }
 
 video {
@@ -43,6 +36,7 @@ header h1 {
   margin: 30px 0px;
   font-size: 50px;
 }
+/****** Section for the cards *******/
 
 .cards {
   margin: 50px auto;
@@ -85,6 +79,8 @@ header h1 {
   margin: 10px;
 }
 
+/****** Section for the revealing with a button to click****/
+
 .reveal-mystery {
   background:  rgba(195, 213, 224, 0.877);
   text-align: center;
@@ -97,18 +93,12 @@ button {
   font-weight: 300;
   text-transform: uppercase;
   text-decoration: none;
-
   display: inline-block;
   cursor: pointer;
   padding: 8px 16px;
-  /*background: black;
-  color: #fff;
-  border: none;
-  font-size: 20px;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto;*/
 }
+
+/***Footer***/
 
 footer {
   display: flex;
@@ -151,18 +141,18 @@ footer {
     width: 25%;
     flex-grow: 1;
     margin: 16px;
-  }
+  }*/
   footer {
-    justify-content: space-between;
-    }*/
+    align-items: center;
+    }
 }
 
 @media (min-width: 1024px) {
+  
   header {
     justify-content: space-between;
-    }
+  }
    
-    /*display the form controls vertically instead of horisontally*/
     .cards {
       align-items: center;
       flex-grow: 1;
@@ -186,9 +176,9 @@ footer {
       width: 100%;
       flex-grow: 1;
       margin: 16px;
-    }
-    footer {
-      justify-content: space-between;
     }*/
-}
 
+    footer {
+      align-items: center;
+    }
+}

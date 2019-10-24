@@ -2,7 +2,7 @@
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
-  color: "green",
+  color: "mediumaquamarine",
   description: "He has a lot of connections",
   age: 45,
   image: "assets/green.png",
@@ -12,7 +12,7 @@ const mrGreen = {
 const profPlum = {
   firstName: "Victor",
   lastName: "Plum",
-  color: "purple",
+  color: "thistle",
   description: "He is very smart",
   age: 58,
   image: "assets/plum.png",
@@ -22,7 +22,7 @@ const profPlum = {
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
-  color: "red",
+  color: "violet",
   description: "She is very good at coding",
   age: 28,
   image: "assets/scarlet.png",
@@ -32,7 +32,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
-  color: "blue",
+  color: "lightskyblue",
   description: "She is good at medical treatment",
   age: 33,
   image: "assets/peacock.png",
@@ -42,7 +42,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: "Jack",
   lastName: "Mustard",
-  color: "orange",
+  color: "moccasin",
   description: "He is good with weapons",
   age: 47,
   image: "assets/mustard.png",
@@ -69,37 +69,37 @@ const Rope = {
 }
 const Knife = {
   name: "Knife",
-  color: "purple",
+  color: "mistyrose",
   weight: 2
 }
 const Candlestick = {
   name: "Candlestick",
-  color: "green",
+  color: "lightpink",
   weight: 1
 }
 const Dumbbell = {
   name: "Dumbbell",
-  color: "moccasin",
+  color: "aquamarine",
   weight: 40
 }
 const Poison = {
   name: "Poison",
-  color: "orange",
+  color: "thistle",
   weight: 60
 }
 const Axe = {
   name: "Axe",
-  color: "black",
+  color: "moccasin",
   weight: 50
 }
 const Bat = {
   name: "Bat",
-  color: "brown",
+  color: "azure",
   weight: 15
 }
 const Trophy = {
   name: "Trophy",
-  color: "gold",
+  color: "lightskyblue",
   weight: 3
 }
 const Pistol = {
@@ -161,7 +161,7 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-//Checking with console log that they are random
+//Checking with console log that they are random saving it here just to have it
 //console.log(randomSelector(suspects).firstName + " " + randomSelector(suspects).lastName); 
 //console.log(randomSelector(weapons).name);
 //console.log(randomSelector(rooms));
@@ -175,8 +175,8 @@ const mysteryKiller = {
   name: "Mrs White",
   color: "white",
   image: "assets/white.png",
-  weapon: "Dumbbell",
-  room: "Spa"
+  weapon: "dumbbell",
+  room: "spa"
 }
 
 //const theKillerImage = document.getElementById("killerImage")
@@ -203,6 +203,9 @@ const mysteryKiller = {
     theKiller.style.background = mystery.killer.color
     theKillerName.innerHTML =
       mystery.killer.firstName + " " + mystery.killer.lastName
+
+      const theKillerImage = document.getElementById("killerImage");
+      theKillerImage.src = mystery.killer.image
   }
 
   // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
@@ -241,19 +244,4 @@ const revealMystery = () => {
 theReveal.innerHTML = (`The murder was committed by ${mysteryKiller.name}, in the ${mysteryKiller.room} with a ${mysteryKiller.weapon}!`
 );
 }
-  
-
-
-//invoking the function revealMystery and sends alert with confirmation 
-//function revealMystery() {
-  //alert (`The murder was committed by ${mystery.killer} , in the ${mystery.room} with a ${mystery.weapon}`);
-//}
-  
-  //orderConfirmation is sent to the HTML to write it out on the site, connecting with ID from HTML
-  //document.getElementById
-  //("mysteryRevealText").innerHTML = (`The murder was committed by ${mysteryKiller.name}, in the ${mystery.room} with a ${mystery.weapon}!`
-  //  );
-
-    //document.getElementById(
-      //"orderConfirmation").innerHTML = ("<h1>Great, I'll get started on your "  + orderQuantity +" "+ orderName + " <br> right away, it will cost " + pizzaPrice * orderQuantity + "kr. <br>The pizzas will take " + cookingTime +  " minutes.</h1>");
     
