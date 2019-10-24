@@ -10,13 +10,19 @@
 </head>
 
 <body>
+
+  <header>
+    <h1 class="caption">Cluedo - who is a murder among us?</h1>
+  </header>
+
+  <h2 class="caption">Your are the game-leader. <br> Click on the card and make the mystery start:</h2>
   <section class="cards">
     <div class="killer-deck" id="killer" onclick="pickKiller()">
       <p>KILLER</p>
       <p id="killerName"></p>
       <p id="killerAge"></p>
       <p id="killerOccupation"></p>
-      <img id="killerImage" src="" height="100" />
+      <img id="killerImage" src="" height="200" />
       <p id="killerDescription"></p>
     </div>
     <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
@@ -29,8 +35,12 @@
       <p id="roomName"></p>
     </div>
   </section>
-  <h1 id="mystery"></h1>
+  <h1 class="caption" id="mystery"></h1>
   <button onclick="revealMystery()">REVEAL THE CRIME</button>
+
+  <footer>
+    <h3>the Cluedo-project, by Tecquise-member Nina Månsson 2019</h3>
+  </footer>
 
   <script src="clue.js"></script>
 </body>

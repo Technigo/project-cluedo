@@ -127,17 +127,17 @@ const weapons = [
 ]
 
 const rooms = [
-  "dinningRoom",
+  "dining room",
   "conservatory",
   "kitchen",
   "study",
   "library",
-  "billiardRoom",
+  "billiard room",
   "lounge",
   "ballroom",
   "hall",
   "spa",
-  "livingRoom",
+  "living room",
   "observatory",
   "theater",
   "guestHouse",
@@ -196,10 +196,12 @@ const pickWeapon = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theWeapon = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
+  const theWeaponWeight = document.getElementById("weaponWeight")
 
   theWeapon.style.background = mystery.weapon.color
   theWeaponName.innerHTML =
-    mystery.weapon.name + " " + mystery.weapon.weight
+    mystery.weapon.name
+  theWeaponWeight.innerHTML = mystery.weapon.weight
 }
 
 //PICKROOM
