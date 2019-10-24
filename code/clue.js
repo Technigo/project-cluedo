@@ -41,7 +41,7 @@ const profPlum = {
 }
 
 const missScarlet = {
-  firstName: "Miss",
+  firstName: "Cassandra",
   lastName: "Scarlet",
   color: "red",
   description: "She is very clever and manipulative",
@@ -61,6 +61,7 @@ const mrsWhite = {
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
+
 
 const rope = {
   name: "rope",
@@ -102,7 +103,7 @@ const trophy = {
   weight: 7
 }
 
-const pisrol = {
+const pistol = {
   name: "pistol",
   weight: 12
 }
@@ -119,8 +120,12 @@ const suspects = [
   profPlum,
   missScarlet,
   mrsPeacock,
-  mrMustard
+  colonelMustard
 ]
+
+suspects.forEach(suspects => {
+  console.log(`${suspects.firstName}`);
+ });
 
 const weapons = [
   rope,
@@ -134,6 +139,10 @@ const weapons = [
   pistol
 ]
 
+weapons.forEach(weapons => {
+  console.log(`${weapons.name}`);
+ });
+
 const rooms = [
   "Dining Room",
   "Conservatory",
@@ -141,7 +150,7 @@ const rooms = [
   "Study",
   "Library",
   "Billiard Room",
-  "Lounge"
+  "Lounge",
   "Ballroom",
   "Hall",
   "Spa",
@@ -152,6 +161,11 @@ const rooms = [
   "Patio"
 ]
 
+rooms.forEach(rooms => {
+  console.log(`${rooms}`);
+ });
+
+
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
@@ -160,6 +174,7 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
@@ -177,6 +192,7 @@ const pickKiller = () => {
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
