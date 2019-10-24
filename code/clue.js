@@ -59,48 +59,57 @@ const mrsWhite = {
 
 const rope = {
   name: "Rope",
-  weight: 10
-  feature: "Tight"
+  weight: 10,
+  feature: "Tight",
+  color: "blue"
 }
 const knife = {
   name: "Knife",
-  weight: 5
-  feature: "Sharp"
+  weight: 5,
+  feature: "Sharp",
+  color: "green"
 }
 const candlestick = {
   name: "Candlestick",
-  weight: 15
-  feature: "Light"
+  weight: 15,
+  feature: "Light",
+  color: "red"
 }
 const dumbbell = {
   name: "Dumbbell",
-  weight: 30
-  feature: "Heavy"
+  weight: 30,
+  feature: "Heavy",
+  color: "black"
 }
 const poison = {
   name: "Poison",
-  weight: 7
-  feature: "Poisonous"
+  weight: 7,
+  feature: "Poisonous",
+  color: "pink"
 }
 const axe = {
   name: "Axe",
-  weight: 50
-  feature: "Dangerous"
+  weight: 50,
+  feature: "Dangerous",
+  color: "yellow"
 }
 const bat = {
   name: "Bat",
-  weight: 12
-  feature: "Creepy"
+  weight: 12,
+  feature: "Creepy",
+  color: "white"
 }
 const trophy = {
   name: "Trophy",
-  weight: 18
-  feature: "Shiny"
+  weight: 18,
+  feature: "Shiny",
+  color: "gray"
 }
 const pistol = {
   name: "Pistol",
-  weight: 100
-  feature: "Leathal"
+  weight: 100,
+  feature: "Leathal",
+  color: "purple"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -150,7 +159,8 @@ const rooms = [
   "Patio"
 ]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
+// THIS FUNCTION WILL RANDOMLY SELECT ONE 
+//ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -158,7 +168,9 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+const mystery = {
 
+}
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -168,13 +180,34 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
+  const theKillerAge = document.getElementById("killerAge")
+  const theKillerOccupation = document.getElementById("killerOccupation")
+  const theKillerImage = document.getElementById("killerImage")
+  const theKillerDescription = document.getElementById("killerDescription")
 
   theKiller.style.background = mystery.killer.color
-  theKillerName.innerHTML =
-    mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerName.innerHTML = mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerAge.innerHTML = mystery.killer.age
+  theKillerOccupation.innerHTML = mystery.killer.occupation
+  theKillerImage.setAttribute("src", mystery.killer.image)
+  theKillerDescription.innerHTML = mystery.killer.description
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+const pickWeapon = () => {
+  // This will randomly select a weapon. And add that to the mystery object.
+  mystery.weapon = randomSelector(weapons)
 
+  const theWeapon = document.getElementById("weapon")
+  const theWeaponName = document.getElementById("weaponName")
+  const theWeaponWeight = document.getElementById("weaponWeight")
+  const theWeaponFeature = document.getElementById("weaponFeature")
+
+
+  theWeapon.style.background = mystery.weapon.color
+  theWeaponName.innerHTML = mystery.weapon.name
+  theWeaponWeight.innerHTML = mystery.weapon.weight
+  theWeaponFeature.innerHTML = mystery.weapon.feature
+}
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
