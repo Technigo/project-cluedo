@@ -218,44 +218,48 @@ const pickKiller = () => {
   theKillerOccupation.innerHTML =
     mystery.killer.occupation
 
-  // SUSPECT IMAGE //
-  //const theKillerImage = document.getElementById("killerImage")
-  //theKillerImage.innerHTML =
-  //mystery.killer.image
+  const theKillerImage = document.getElementById("killerImage")
+  theKillerImage.src = mystery.killer.image
 
-  // CREATE FUNCTIONS 
-  // weapon //
-  const pickWeapon = () => {
-    mystery.weapon = randomSelector(weapons)
+}
 
-    const theWeapon = document.getElementById("weaponName");
-    theWeapon.innerHTML = mystery.weapon.name
 
-    const theWeaponWeight = document.getElementById("weaponWeight")
-    theWeaponWeight.innerHTML = mystery.weapon.weight
+// CREATE FUNCTIONS 
+// weapon //
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons)
 
-    const theWeaponColor = document.getElementById("weaponColor")
-    theWeaponColor.innerHTML = mystery.weapon.color
-  }
+  const theWeapon = document.getElementById("weaponName");
+  theWeapon.innerHTML = mystery.weapon.name
 
-  // room //
-  const pickRoom = () => {
-    mystery.room = randomSelector(rooms)
+  const theWeaponWeight = document.getElementById("weaponWeight")
+  theWeaponWeight.innerHTML = mystery.weapon.weight
 
-    const theRoomName = document.getElementById("roomName");
-    theRoomName.innerHTML = mystery.room
-  }
+  //const theWeaponImage = document.getElementById("weaponImage")
+  //theWeaponImage.src = mystery.tool.image
 
-  // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-  // 'The murder was committed by Jacob Green, in the living room with a rope.'
+  //const theWeaponColor = document.getElementById("weaponColor")
+  //theWeaponColor.innerHTML = mystery.weapon.color
+}
 
-  // Invoking the function reveal the mystery and send alert //
+// room //
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
 
-  function revealMystery() {
-    alert(`The murder was committed by mrs Peacock, with a trophe in the theatre`)
-  };
+  const theRoomName = document.getElementById("roomName");
+  theRoomName.innerHTML = mystery.room
+}
+// CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
+// 'The murder was committed by Jacob Green, in the living room with a rope.'
 
-// Mina notes
-//on click -------- something is sent to the HTML file that makes it show in the DOM incl id from html
+// Invoking the function reveal the mystery and send alert //
+function revealMystery() {
+  alert(`The murder was committed by mrs Peacock,
+with a trophe in the theatre`)
+};
+
+// on click -------- something is sent to the HTML file that makes it show in the DOM incl id from html
+//document.getElementById(
+  //"mystery"
 //).innerHTML = (`The murder was committed by ${mystery.killer}, with a ${mystery.weapon} in the ${mystery.room}`)
-//revealMystery(theKiller)
+//revealMystery(theKiller);
