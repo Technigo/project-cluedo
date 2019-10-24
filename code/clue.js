@@ -23,116 +23,124 @@
 
 const suspects = [
   {
-  alias: "Mr. Green"
-  firstName: "Jacob",
-  lastName: "Green",
-  color: "green",
-  description: "He has a lot of connections",
-  age: 45,
-  image: "assets/green.png",
-  occupation: "Entrepreneur"
- },
- {
-  alias: "Mrs. White"
-  firstName: "Blanche",
-  lastName: "White",
-  color: "White",
-  description: "She is the long time nanny and cook to Mr. Boddy/Dr. Black",
-  age: 70,
-  image: "assets/white.png",
-  occupation: "Housekeeper"
- },
- {
-  alias: "Professor Plum"
-  firstName: "Peter",
-  lastName: "Plum",
-  color: "purple",
-  description: "Plum has come to Boddy/Black, looking for some fun.",
-  age: 36,
-  image: "assets/plum.png",
-  occupation: "Professor"
- },
- {
-  alias: "Miss Scarlet"
-  firstName: "Josephine",
-  lastName: "Scarlett",
-  color: "red",
-  description: "She is described as a movie star who will do anything to stay in the spotlight.",
-  age: 25,
-  image: "assets/scarlet.png",
-  occupation: "Actress"
- },
- {
-  alias: "Mrs. Peacock"
-  firstName: "Patricia",
-  lastName: "Peakock",
-  color: "blue",
-  description: "Despite her innocent looks, she is a formidable politician.",
-  age: 55,
-  image: "assets/peacock.png",
-  occupation: "Socialite"
- },
- {
-  alias: "Colonel Mustard"
-  firstName: "Michael",
-  lastName: "Mustard",
-  color: "yellow",
-  description: "Michael is a retired military man trying to pen his autobiography to supplement a dwindling income.",
-  age: 57,
-  image: "assets/mustard.png",
-  occupation: "Colonel"
- }
-]
+    alias: "Mr. Green",
+    firstName: "Jacob",
+    lastName: "Green",
+    color: "green",
+    description: "He has a lot of connections",
+    age: 45,
+    image: "assets/green.png",
+    occupation: "Entrepreneur"
+  },
+  {
+    alias: "Mrs. White",
+    firstName: "Blanche",
+    lastName: "White",
+    color: "White",
+    description: "She is the long time nanny and cook to Mr. Boddy/Dr. Black",
+    age: 70,
+    image: "assets/white.png",
+    occupation: "Housekeeper"
+  },
+  {
+    alias: "Professor Plum",
+    firstName: "Peter",
+    lastName: "Plum",
+    color: "purple",
+    description: "Plum has come to Boddy/Black, looking for some fun.",
+    age: 36,
+    image: "assets/plum.png",
+    occupation: "Professor"
+  },
+  {
+    alias: "Miss Scarlet",
+    firstName: "Josephine",
+    lastName: "Scarlett",
+    color: "red",
+    description:
+      "She is described as a movie star who will do anything to stay in the spotlight.",
+    age: 25,
+    image: "assets/scarlet.png",
+    occupation: "Actress"
+  },
+  {
+    alias: "Mrs. Peacock",
+    firstName: "Patricia",
+    lastName: "Peakock",
+    color: "blue",
+    description: "Despite her innocent looks, she is a formidable politician.",
+    age: 55,
+    image: "assets/peacock.png",
+    occupation: "Socialite"
+  },
+  {
+    alias: "Colonel Mustard",
+    firstName: "Michael",
+    lastName: "Mustard",
+    color: "yellow",
+    description:
+      "Michael is a retired military man trying to pen his autobiography to supplement a dwindling income.",
+    age: 57,
+    image: "assets/mustard.png",
+    occupation: "Colonel"
+  }
+];
 
 const weapons = [
   {
     name: "rope",
-    weight: 10
+    weight: 10,
     special: "Thick rope around 2 meters in length"
   },
   {
     name: "knife",
-    weight: 7
+    weight: 7,
     special: "A military knife from the 2nd world war"
   },
   {
     name: "candlestick",
-    weight: 9
+    weight: 9,
     special: "An old four-armed candelstick in copper"
   },
   {
     name: "dumbbell",
-    weight: 12
+    weight: 12,
     special: "Not really a heavy wheight but still a dumbell"
   },
   {
     name: "posion",
-    weight: 1
+    weight: 1,
     special: "Unokwn substanse in a bottle with a scull on the label"
   },
   {
     name: "axe",
-    weight: 13
+    weight: 13,
     special: "A medival axe that probably does best on the wall"
   },
   {
     name: "bat",
-    weight: 11
+    weight: 11,
     special: "An old baseball bat signed by Jackie Robinson"
   },
   {
     name: "trophy",
-    weight: 15
+    weight: 15,
     special: "A trophy award for best in show"
   },
   {
     name: "pistol",
-    weight: 9
+    weight: 9,
     special: "9mm beretta with a silencer"
-  },
-]
+  }
+];
 
+// suspects.forEach(suspects => {
+//   console.log(`${suspects.firstName}`);
+// });
 
+// weapons.forEach(weapons => {
+//   console.log(`${weapons.name}`);
+// });
 
 const rooms = [
   "Dinning Room",
@@ -150,12 +158,16 @@ const rooms = [
   "Theater",
   "Guest House",
   "Patio"
-]
+];
+
+// rooms.forEach(rooms => {
+//   console.log(`${rooms}`);
+// });
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
-}
+  return array[Math.floor(Math.random() * array.length)];
+};
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
@@ -165,16 +177,54 @@ const randomSelector = array => {
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
+  mystery.killer = randomSelector(suspects);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
-  const theKiller = document.getElementById("killer")
-  const theKillerName = document.getElementById("killerName")
+  const theKiller = document.getElementById("killer");
+  const theKillerAlias = document.getElementById("killerAlias");
+  const theKillerName = document.getElementById("killerName");
+  const theKillerAge = document.getElementById("killerAge");
+  const theKillerOccupation = document.getElementById("killerOccupation");
+  const theKillerImage = document.getElementById("killerImage");
+  const theKillerDescription = document.getElementById("killerDescription");
 
-  theKiller.style.background = mystery.killer.color
+  theKiller.style.background = mystery.killer.color;
+  theKillerAlias.innerHTML = mystery.killer.alias;
   theKillerName.innerHTML =
-    mystery.killer.firstName + " " + mystery.killer.lastName
-}
+    mystery.killer.firstName + " " + mystery.killer.lastName;
+  theKillerAge.innerHTML = mystery.killer.age + " years of age";
+  theKillerOccupation.innerHTML = mystery.killer.occupation;
+  theKillerImage.src = mystery.killer.image;
+  theKillerDescription.innerHTML = mystery.killer.description;
+};
+
+const pickWeapon = () => {
+  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  mystery.weapon = randomSelector(weapons);
+
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
+
+  const theWeaponName = document.getElementById("weaponName");
+  const theWeaponWeight = document.getElementById("weaponWeight");
+  const theWeaponSpec = document.getElementById("weaponSpec");
+
+  // theKiller.style.background = mystery.killer.color;
+  theWeaponName.innerHTML = mystery.weapon.name;
+  theWeaponWeight.innerHTML = mystery.weapon.weight;
+  theWeaponSpec.innerHTML = mystery.weapon.special;
+};
+
+const pickRoom = () => {
+  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  mystery.room = randomSelector(rooms);
+
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
+
+  const theRoom = document.getElementById("roomName");
+
+  // theKiller.style.background = mystery.killer.color;
+  theRoom.innerHTML = mystery.room;
+};
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 

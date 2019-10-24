@@ -10,21 +10,23 @@
   <body>
     <section class="cards">
       <div class="killer-deck" id="killer" onclick="pickKiller()">
-        <p>KILLER</p>
+        <h2>KILLER</h2>
+        <h3 id="killerAlias"></h3>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
+        <img id="killerImage" src="" />
         <p id="killerDescription"></p>
       </div>
       <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
+        <h2>WEAPON</h2>
+        <h3 id="weaponName"></h3>
         <p id="weaponWeight"></p>
+        <p id="weaponSpec"></p>
       </div>
       <div class="room-deck" id="room" onclick="pickRoom()">
-        <p>ROOM</p>
-        <p id="roomName"></p>
+        <h2>ROOM</h2>
+        <h3 id="roomName"></h3>
       </div>
     </section>
     <h1 id="mystery"></h1>
