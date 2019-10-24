@@ -2,7 +2,13 @@ body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
 }
-
+header{
+  display:flex;
+  margin: 30px;
+}
+header p{
+  font-size: 16px;
+}
 p {
   margin: 1px;
   font-weight: 300;
@@ -10,8 +16,7 @@ p {
 }
 
 .cards {
-  margin: 50px auto;
-  width: 90%;
+  margin: 10px 0px;
   /* height: 600px; */
   background: #ccc;
   display: flex;
@@ -76,6 +81,10 @@ img{
 
 /***TABLET***/
 @media (min-width: 668px) and (max-width: 1024px){
+  header p{
+    font-size: 40px;
+  }
+  
   .cards{
     flex-direction: row;
     flex-wrap: wrap;
@@ -87,6 +96,9 @@ img{
 }
   /***DESKTOP***/
 @media (min-width: 1025px){
+  header p{
+    font-size: 50px;
+  }
   .cards{
     flex-direction: row;
   }
