@@ -211,3 +211,6 @@ document
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
+const revealMystery = () => {
+  mystery.innerHTML = (`The killer is ${mystery.killer.firstName} ${mystery.killer.lastName}, with a ${mystery.weapon.name} in the ${mystery.room}`)
+}
