@@ -61,6 +61,7 @@ header h1 {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 10px;
   
 }
 
@@ -71,6 +72,7 @@ header h1 {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 10px;
 }
 
 .room-deck {
@@ -80,6 +82,7 @@ header h1 {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 10px;
 }
 
 .reveal-mystery {
@@ -94,10 +97,11 @@ button {
   font-weight: 300;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 5px;
+
   display: inline-block;
-  cursor: pointer;/*padding: 8px 16px;
-  background: black;
+  cursor: pointer;
+  padding: 8px 16px;
+  /*background: black;
   color: #fff;
   border: none;
   font-size: 20px;
@@ -117,18 +121,18 @@ footer {
 }
 
 /*******MEDIA QUERIES *********/
-/*
+
 @media (min-width: 650px) {
   header {
   justify-content: space-between;
   }
  
   /*display the form controls vertically instead of horisontally*/
-  /*.cards {
-    margin: 10px 0;
-    align-items: center;
+  .cards {
+    align-items: block;
+    flex-grow: 1;
   }
- .killer-deck {
+ /*.killer-deck {
     width: 33%;
     flex-grow: 1;
     margin: 16px;
@@ -150,8 +154,7 @@ footer {
   }
   footer {
     justify-content: space-between;
-    
-    }
+    }*/
 }
 
 @media (min-width: 1024px) {
@@ -160,11 +163,11 @@ footer {
     }
    
     /*display the form controls vertically instead of horisontally*/
-   /* .cards {
-      margin: 10px 0;
+    .cards {
       align-items: center;
+      flex-grow: 1;
     }
-   .killer-deck {
+   /*.killer-deck {
       width: 33%;
       flex-grow: 1;
       margin: 16px;
@@ -186,6 +189,6 @@ footer {
     }
     footer {
       justify-content: space-between;
-    }
+    }*/
 }
 

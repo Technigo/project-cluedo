@@ -171,13 +171,17 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 
-const mystery = {
-  killer: "Mrs White",
+const mysteryKiller = {
+  name: "Mrs White",
   color: "white",
   image: "assets/white.png",
   weapon: "Dumbbell",
   room: "Spa"
 }
+
+//const theKillerImage = document.getElementById("killerImage")
+
+//theKillerImage.src = mystery.killer.image
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
@@ -231,16 +235,24 @@ const mystery = {
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
+const revealMystery = () => {
+  const theReveal = document.getElementById("mystery")
 
-  //invoking the function revealMystery and sends alert with confirmation 
-function revealMystery() {
-  alert (`The murder was committed by ${mystery.killer} , in the ${mystery.room} with a ${mystery.weapon}`);
+theReveal.innerHTML = (`The murder was committed by ${mysteryKiller.name}, in the ${mysteryKiller.room} with a ${mysteryKiller.weapon}!`
+);
 }
   
+
+
+//invoking the function revealMystery and sends alert with confirmation 
+//function revealMystery() {
+  //alert (`The murder was committed by ${mystery.killer} , in the ${mystery.room} with a ${mystery.weapon}`);
+//}
+  
   //orderConfirmation is sent to the HTML to write it out on the site, connecting with ID from HTML
-  document.getElementById
-  ("mysteryRevealText").innerHTML = (`The murder was committed by ${mystery.killer}, in the ${mystery.room} with a ${mystery.weapon}!`
-    );
+  //document.getElementById
+  //("mysteryRevealText").innerHTML = (`The murder was committed by ${mysteryKiller.name}, in the ${mystery.room} with a ${mystery.weapon}!`
+  //  );
 
     //document.getElementById(
       //"orderConfirmation").innerHTML = ("<h1>Great, I'll get started on your "  + orderQuantity +" "+ orderName + " <br> right away, it will cost " + pizzaPrice * orderQuantity + "kr. <br>The pizzas will take " + cookingTime +  " minutes.</h1>");
