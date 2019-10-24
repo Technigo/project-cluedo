@@ -12,7 +12,7 @@ const mrGreen = {
 }
 
 const profPlum = {
-  firstName: "Vicor",
+  firstName: "Victor",
   lastName: "Plum",
   color: "violet",
   description: "He knows alot",
@@ -176,10 +176,15 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
+  const theKillerOccupation = document.getElementById("killerOccupation")
+  const theKillerImage = document.getElementById("killerImage")
 
   theKiller.style.background = mystery.killer.color
   theKillerName.innerHTML =
-    mystery.killer.firstName + "" + mystery.killer.lastName
+    mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerOccupation.innerHTML = mystery.killer.occupation
+  theKillerImage.src = mystery.killer.image
+
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
@@ -220,8 +225,3 @@ const revealMystery = () => {
 }
 //revealMystery()
 //console.log(revealMystery)
-
-
-
-//document.getElementById("mystery")
-  //document.getElementByID.onclick(showRevealMystery);
