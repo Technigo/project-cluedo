@@ -83,7 +83,7 @@ const pickWeapon = () => {
   const theWeaponName = document.getElementById("weaponName")
   const theWeaponWeight = document.getElementById("weaponWeight")
   theWeapon.style.background = "#333"
-  theWeaponName.innerHTML = "Weapon: " + mystery.weapon.name
+  theWeaponName.innerHTML = mystery.weapon.name
   theWeaponWeight.innerHTML = "Weight: " + mystery.weapon.weight  
   cardClicked.weapon = true
 }
