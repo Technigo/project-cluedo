@@ -60,8 +60,6 @@ const mrsWhite = {
   occupation: "Housekeeper"
 };
 
-
-
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
@@ -131,33 +129,62 @@ const weapons = [
 ]
 
 const rooms = [
-  diningRoom,
-  conservatory,
-  kitchen,
-  study,
-  library,
-  billiardRoom,
-  lounge,
-  ballRoom,
-  hall,
-  spa,
-  livingRoom
+  // Detta ska vara strings eftersom det ej är "länkar" till objekt som de andra stringsen är. 
+  "diningRoom",
+  "conservatory",
+  "kitchen",
+  "study",
+  "library",
+  "billiardRoom",
+  "lounge",
+  "ballRoom",
+  "hall",
+  "spa",
+  "livingRoom"
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
+
+// Denna kod har de gett oss, den ser ut så här. 
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
-}
+};
+
+// Här evokar jag funktionen och sätter in varje array som jag vill dra igenom. 
+randomSelector(suspects);
+randomSelector(weapons);
+randomSelector(rooms);
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
 
+const mysteryKeeper{
+
+}
+
+// Detta kallades handlePickIngredients under föreläsningen?
+
+const secret { }
+const mysteryKeeper = () => {
+  const pickKiller = randomSelector(suspects)
+  const pickWeapon = randomSelector(weapons)
+  const pickRoom = randomSelector(rooms)
+
+  secret.suspects = pickKiller;
+  secret.weapons = pickWeapon;
+  secret.rooms = pickRooms;
+};
+
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
+
+document.getElementById().onclick = mysteryKeeper
+
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
+  mystery.killer = randomSelector(suspects);
+  mysteryKeeper.push(mystery.Killer);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
@@ -167,6 +194,8 @@ const pickKiller = () => {
   theKillerName.innerHTML =
     mystery.killer.firstName + " " + mystery.killer.lastName
 }
+
+pickKiller()
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 

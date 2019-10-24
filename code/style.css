@@ -28,6 +28,10 @@ p {
   border-radius: 16px;
 }
 
+.killer {
+  background: purple;
+}
+
 .weapon-deck {
   width: 250px;
   height: 400px;
