@@ -159,6 +159,15 @@ const rooms = [
   "guest House",
   "patio"
 ]
+const times = [
+  "in the morning",
+  "at noon",
+  "in the afternoon",
+  "in the evening",
+  "during the night"
+]
+
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
@@ -226,6 +235,13 @@ const pickRoom = () => {
 //  room: pickRoom(),
 // }
 
+const pickTime = () => {
+  mystery.time = randomSelector(times)
+
+  const theTimeOfDay = document.getElementById("timeOfDay")
+  theTimeOfDay.innerHTML = mystery.time
+}
+
 
 
 
@@ -234,5 +250,5 @@ const pickRoom = () => {
 
 const revealMystery = () => {
   const mysteryAnswer = document.getElementById("mystery")
-  mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room}, with ${mystery.weapon.name}.`
+  mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room}, ${mystery.time} with ${mystery.weapon.name}.`
 }
