@@ -1,5 +1,7 @@
 // CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
+killerPicked = false;
+weaponPicked = false;
+roomPicked = false;
 const mrGreen = {
     firstName: "Jacob",
     lastName: "Green",
@@ -13,7 +15,7 @@ const mrGreen = {
 const profPlum = {
     firstName: "Victor",
     lastName: "Plum",
-    color: "purple",
+    color: "    ",
     description: "A quick-witted middle-aged man",
     age: 35,
     image: "assets/plum.png",
@@ -186,6 +188,7 @@ const mystery = {
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
+    killerPicked = true;
     // This will randomly select a killer from the suspects. And add that to the mystery object.
     mystery.killer = randomSelector(suspects)
 
@@ -209,6 +212,7 @@ const pickKiller = () => {
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
+    weaponPicked = true;
     // This will randomly select a weapon from the weapons. And add that to the mystery object.
     mystery.weapon = randomSelector(weapons)
 
@@ -224,6 +228,7 @@ const pickWeapon = () => {
 }
 
 const pickRoom = () => {
+    roomPicked = true;
     // This will randomly select a room from the rooms. And add that to the mystery object.
     mystery.room = randomSelector(rooms)
 
@@ -239,17 +244,10 @@ console.log(mystery);
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = () => {
-
     const theMysteryReveal = document.getElementById("mystery")
-
-    theMysteryReveal.innerHTML = "The murder was committed by " + mystery.killer.firstName + " " + mystery.killer.lastName + ", in the " + mystery.room + " with a " + mystery.weapon.name + "."
-}
-
-const notClicked = () => {
-    if (onclick = pickRoom() === false) {
-        revealMystery()
+    if (killerPicked && weaponPicked && roomPicked === true) {
+        theMysteryReveal.innerHTML = "The murder was committed by " + mystery.killer.firstName + " " + mystery.killer.lastName + ", in the " + mystery.room + " with a " + mystery.weapon.name + "."
     } else {
         theMysteryReveal.innerHTML = "No mystery is yet to be revealed"
-
     }
 }
