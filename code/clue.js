@@ -9,15 +9,122 @@ const mrGreen = {
   image: "assets/green.png",
   occupation: "Entrepreneur"
 }
+const mrPlum = {
+  firstName: "Victor",
+  lastName: "Plum",
+  color: "purple",
+  description: "He is rich",
+  age: 55,
+  image: "assets/plum.png",
+  occupation: "Director"
+}
+const missScarlet = {
+  firstName: "Cassandra",
+  lastName: "Scarlet",
+  color: "red",
+  description: "She is very clever",
+  age: 25,
+  image: "assets/scarlet.png",
+  occupation: "Hair dresser"
+}
+const mrsPeacock = {
+  firstName: "Eleanor",
+  lastName: "Peacock",
+  color: "blue",
+  description: "She has secret powers",
+  age: 50,
+  image: "assets/peacock.png",
+  occupation: "Bank clerk"
+}
+const colonelMustard = {
+  firstName: "Jack",
+  lastName: "Mustard",
+  color: "black",
+  description: "He has dark connections",
+  age: 35,
+  image: "assets/mustard.png",
+  occupation: "Butcher"
+}
+const mrsWhite = {
+  firstName: "Lilly",
+  lastName: "White",
+  color: "white",
+  description: "She has a sweet-talking power",
+  age: 30,
+  image: "assets/white.png",
+  occupation: "Dancer"
+}
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: "rope",
+  name: "Rope",
   weight: 10
+  feature: "Tight"
+}
+const knife = {
+  name: "Knife",
+  weight: 5
+  feature: "Sharp"
+}
+const candlestick = {
+  name: "Candlestick",
+  weight: 15
+  feature: "Light"
+}
+const dumbbell = {
+  name: "Dumbbell",
+  weight: 30
+  feature: "Heavy"
+}
+const poison = {
+  name: "Poison",
+  weight: 7
+  feature: "Poisonous"
+}
+const axe = {
+  name: "Axe",
+  weight: 50
+  feature: "Dangerous"
+}
+const bat = {
+  name: "Bat",
+  weight: 12
+  feature: "Creepy"
+}
+const trophy = {
+  name: "Trophy",
+  weight: 18
+  feature: "Shiny"
+}
+const pistol = {
+  name: "Pistol",
+  weight: 100
+  feature: "Leathal"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const rooms = [
+  "Dinning",
+  "Room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Billiard",
+  "Room",
+  "Lounge",
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "Living",
+  "Room",
+  "Observatory",
+  "Theater",
+  "Guest",
+  "House",
+  "Patio"
+]
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
