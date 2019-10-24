@@ -8,6 +8,13 @@
     <title>Clue</title>
   </head>
   <body>
+    <header>
+      <img
+        src="https://cdn02.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_Cluedo_image1600w.jpg"
+        alt=""
+      />
+    </header>
+    <h1>Pick your card!</h1>
     <section class="cards">
       <div class="killer-deck" id="killer" onclick="pickKiller()">
         <p>KILLER</p>
@@ -21,13 +28,14 @@
         <p>WEAPON</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
+        <img id="weaponImage" src="" />
       </div>
       <div class="room-deck" id="room" onclick="pickRoom()">
         <p>ROOM</p>
         <p id="roomName"></p>
       </div>
     </section>
-    <h1 id="mystery"></h1>
+    <h2 id="mystery"></h2>
     <button onclick="revealMystery()">REVEAL THE CRIME</button>
 
     <script src="clue.js"></script>

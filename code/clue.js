@@ -65,47 +65,56 @@ const mrsWhite = {
 
 const rope = {
   name: "Rope",
-  weight: 10
+  weight: 10,
+  image: "assets/rope.png"
 };
 
 const knife = {
   name: "Knife",
-  weight: 20
+  weight: 20,
+  image: "assets/knife.png"
 };
 
 const candlestick = {
   name: "Candlestick",
-  weight: 5
+  weight: 5,
+  image: "assets/candlestick.png"
 };
 
 const dumbbell = {
   name: "Dumbbell",
-  weight: 30
+  weight: 30,
+  image: "assets/dumbbell.png"
 };
 
 const poison = {
   name: "Poison",
-  weight: 2
+  weight: 2,
+  image: "assets/poison.png"
 };
 
 const axe = {
   name: "Axe",
-  weight: 80
+  weight: 80,
+  image: "assets/axe.png"
 };
 
 const bat = {
   name: "Bat",
-  weight: 25
+  weight: 25,
+  image: "assets/bat.png"
 };
 
 const trophy = {
   name: "Trophy",
-  weight: 45
+  weight: 45,
+  image: "assets/trophy.png"
 };
 
 const pistol = {
   name: "Pistol",
-  weight: 29
+  weight: 29,
+  image: "assets/gun.png"
 };
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -169,8 +178,10 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer");
   const theKillerName = document.getElementById("killerName");
+  const theKillerImage = document.getElementById("killerImage");
 
   theKiller.style.background = mystery.killer.color;
+  theKillerImage.src = mystery.killer.image;
   theKillerName.innerHTML =
     mystery.killer.firstName + " " + mystery.killer.lastName;
 };
@@ -180,8 +191,10 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
   const theWeapon = document.getElementById("weapon");
   const theWeaponName = document.getElementById("weaponName");
+  const theWeaponImage = document.getElementById("weaponImage");
 
   theWeapon.style.background = mystery.weapon.color;
+  theWeaponImage.src = mystery.weapon.image;
   theWeaponName.innerHTML = mystery.weapon.name + " " + mystery.weapon.weight;
 };
 
@@ -197,7 +210,16 @@ const pickRoom = () => {
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = () => {
-  document.getElementById(
-    "mystery"
-  ).innerHTML = `The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`;
+  if (!mystery.killer || !mystery.room || !mystery.weapon) {
+    document.getElementById("mystery").innerHTML =
+      '<img src="https://media.giphy.com/media/RaLIOPl8MLyWA/source.gif" />';
+  } else {
+    document.getElementById(
+      "mystery"
+    ).innerHTML = `The murder was comitted by ${mystery.killer.firstName} ${
+      mystery.killer.lastName
+    } in the ${mystery.room || "void"} with a ${mystery.weapon.name}.`;
+  }
 };
+
+//document.getElementById("mystery").style.display = "block";

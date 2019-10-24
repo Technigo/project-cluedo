@@ -1,8 +1,30 @@
 body {
-  margin: 0;
+  margin: auto;
   font-family: "Courier New", Courier, monospace;
+  height: 100%;
+  max-width: 1200px;
+  background: rgb(79, 79, 157);
 }
 
+header {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header img {
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2 {
+  text-align: center;
+  font-size: 28px;
+}
+h1 {
+  color: #fff;
+}
 p {
   margin: 1px;
   font-weight: 300;
@@ -10,18 +32,21 @@ p {
 }
 
 .cards {
-  margin: 50px auto;
+  margin: 10px auto;
   width: 90%;
-  height: 600px;
-  background: #ccc;
-  display: flex;
-  justify-content: space-around;
   align-items: center;
 }
 
+.cards img {
+  height: 50%;
+  width: auto;
+  margin-top: 20px;
+}
+
 .killer-deck {
+  margin: 20px auto;
   width: 250px;
-  height: 400px;
+  height: 300px;
   background: #000;
   text-align: center;
   padding-top: 30px;
@@ -29,8 +54,9 @@ p {
 }
 
 .weapon-deck {
+  margin: 20px auto;
   width: 250px;
-  height: 400px;
+  height: 300px;
   background: rgb(10, 53, 10);
   text-align: center;
   padding-top: 30px;
@@ -39,9 +65,9 @@ p {
 
 .room-deck {
   width: 250px;
-  height: 400px;
+  height: 300px;
+  margin: 20px auto;
   background: midnightblue;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -54,5 +80,77 @@ button {
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 50px;
+}
+
+#mystery {
+  /* display: none; */
+  width: 80%;
+  margin: 10px auto 20px;
+  /*padding: 10px 10px;*/
+  background: #fff;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#mystery img {
+  display: block;
+  margin: auto;
+}
+
+/** Media Queries**/
+
+@media (min-width: 668px) {
+  h2 {
+    margin-top: 40px;
+    text-align: center;
+  }
+  .cards {
+    display: flex;
+  }
+
+  .killer-deck {
+    width: 200px;
+    height: 350px;
+  }
+
+  .weapon-deck {
+    width: 200px;
+    height: 350px;
+  }
+
+  .room-deck {
+    width: 200px;
+    height: 350px;
+  }
+
+  #mystery {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1025px) {
+  header img {
+    width: 80%;
+    margin-top: 40px;
+  }
+
+  .killer-deck {
+    width: 250px;
+    height: 400px;
+  }
+
+  .weapon-deck {
+    width: 250px;
+    height: 400px;
+  }
+
+  .room-deck {
+    width: 250px;
+    height: 400px;
+  }
+
+  #mystery {
+    margin: 40px auto;
+  }
 }
