@@ -44,7 +44,7 @@ const colonelMustard = {
   firstName: "Jack",
   lastName: "Mustard",
   color: "yellow",
-  description: "He is a former Navy Seal",
+  description: "A hard headed man",
   age: 61,
   image: "assets/mustard.png",
   occupation: "Retired Navy SEAL"
@@ -54,7 +54,7 @@ const mrsWhite = {
   firstName: "Alice",
   lastName: "White",
   color: "white",
-  description: "She is a nurse",
+  description: "A sweet and caring young woman",
   age: 24,
   image: "assets/white.png",
   occupation: "Nurse at County General Hospital Chicago "
@@ -64,57 +64,57 @@ const mrsWhite = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: "rope",
+  name: "Rope",
   weight: 10,
-  //color: "brown"
+  color: "black",
 }
 
 const knife = {
-  name: "knife",
+  name: "Knife",
   weight: 25,
-  //color: "brown"
+  color: "brown",
 }
 
 const candlestick = {
-  name: "candlestick",
+  name: "Candlestick",
   weight: 20,
-  //color: "silver"
+  color: "grey",
 }
 
 const dumbbell = {
-  name: "dumbbell",
+  name: "Dumbbell",
   weight: 40,
-  //color: "pink"
+  color: "pink",
 }
 
 const poison = {
-  name: "poison",
+  name: "Poison",
   weight: 2,
-  //color: "black"
+  color: "darkgrey",
 }
 
 const axe = {
-  name: "axe",
+  name: "Axe",
   weight: 35,
-  //color: "lightbrown"
+  color: "lightpink",
 }
 
 const bat = {
-  name: "bat",
+  name: "Bat",
   weight: 35,
-  //color: "red"
+  color: "lightblue",
 }
 
 const trophy = {
-  name: "trophy",
+  name: "Trophy",
   weight: 60,
-  //color: "gold"
+  color: "yellow",
 }
 
 const pistol = {
-  name: "pistol",
+  name: "Pistol",
   weight: 30,
-  //color: "black"
+  color: "darkgreen",
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE. /
@@ -182,7 +182,7 @@ console.log(randomSelector(rooms));
 // With a killer, a weapon and a room.
 // The values will be set later.
 
-const mystery = {
+const theMystery = {
   killer: "mrs Peacock",
   color: "blue",
   image: "assets/peacock.png",
@@ -190,7 +190,7 @@ const mystery = {
   room: "theatre"
 };
 
-
+// This will randomly select a killer from the suspects. And add that to the mystery object.
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 
@@ -202,36 +202,60 @@ const pickKiller = () => {
 
   theKiller.style.background = mystery.killer.color
   theKillerName.innerHTML =
-    mystery.killer.firstname + " " + mystery.killer.lastName
-}
+    mystery.killer.firstName + " " + mystery.killer.lastName
 
-// This will randomly select a killer from the suspects. And add that to the mystery object.
+  /// REMAINING OBJECT INFO ///
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+  const theKillerAge = document.getElementById("killerAge")
+  theKillerAge.innerHTML =
+    mystery.killer.age
 
-const pickWeapon = () => {
-  mystery.weapon = randomSelector(weapons)
+  const theKillerDescription = document.getElementById("killerDescription")
+  theKillerDescription.innerHTML =
+    mystery.killer.description
 
-  const theWeapon = document.getElementById("weaponName");
-  theWeapon.innerHTML = mystery.weapon.name
-}
+  const theKillerOccupation = document.getElementById("killerOccupation")
+  theKillerOccupation.innerHTML =
+    mystery.killer.occupation
 
-const pickRoom = () => {
-  mystery.room = randomSelector(rooms)
+  // SUSPECT IMAGE //
+  //const theKillerImage = document.getElementById("killerImage")
+  //theKillerImage.innerHTML =
+  //mystery.killer.image
 
-  const theRoomName = document.getElementById("roomName");
-  theRoomName.innerHTML = mystery.room
-}
-// CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+  // CREATE FUNCTIONS 
+  // weapon //
+  const pickWeapon = () => {
+    mystery.weapon = randomSelector(weapons)
 
-// Invoking the function reveal the mystery and send alert //
-function revealMystery() {
-  alert(`The murder was committed by mrs Peacock, with a trophe in the theatre`)
-};
+    const theWeapon = document.getElementById("weaponName");
+    theWeapon.innerHTML = mystery.weapon.name
 
-// on click -------- something is sent to the HTML file that makes it show in the DOM incl id from html
-//document.getElementById(
-  //"mystery"
+    const theWeaponWeight = document.getElementById("weaponWeight")
+    theWeaponWeight.innerHTML = mystery.weapon.weight
+
+    const theWeaponColor = document.getElementById("weaponColor")
+    theWeaponColor.innerHTML = mystery.weapon.color
+  }
+
+  // room //
+  const pickRoom = () => {
+    mystery.room = randomSelector(rooms)
+
+    const theRoomName = document.getElementById("roomName");
+    theRoomName.innerHTML = mystery.room
+  }
+
+  // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
+  // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+  // Invoking the function reveal the mystery and send alert //
+
+  function revealMystery() {
+    alert(`The murder was committed by mrs Peacock, with a trophe in the theatre`)
+  };
+
+// Mina notes
+//on click -------- something is sent to the HTML file that makes it show in the DOM incl id from html
 //).innerHTML = (`The murder was committed by ${mystery.killer}, with a ${mystery.weapon} in the ${mystery.room}`)
-//revealMystery(theKiller);
+//revealMystery(theKiller)
