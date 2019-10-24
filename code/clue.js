@@ -64,47 +64,47 @@ const mrsWhite = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: "rope",
+  name: "Rope",
   weight: 10
 };
 
 const knife = {
-  name: "knife",
+  name: "Knife",
   weight: 20
 };
 
 const candlestick = {
-  name: "candlestick",
+  name: "Candlestick",
   weight: 5
 };
 
 const dumbbell = {
-  name: "dumbbell",
+  name: "Dumbbell",
   weight: 30
 };
 
 const poison = {
-  name: "poison",
+  name: "Poison",
   weight: 2
 };
 
 const axe = {
-  name: "axe",
+  name: "Axe",
   weight: 80
 };
 
 const bat = {
-  name: "bat",
+  name: "Bat",
   weight: 25
 };
 
 const trophy = {
-  name: "trophy",
+  name: "Trophy",
   weight: 45
 };
 
 const pistol = {
-  name: "pistol",
+  name: "Pistol",
   weight: 29
 };
 
@@ -175,6 +175,23 @@ const pickKiller = () => {
 };
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons);
+  const theWeapon = document.getElementById("weapon");
+  const theWeaponName = document.getElementById("weaponName");
+
+  theWeapon.style.background = mystery.weapon.color;
+  theWeaponName.innerHTML = mystery.weapon.name + " " + mystery.weapon.weight;
+};
+
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms);
+  const theRoom = document.getElementById("room");
+  const theRoomName = document.getElementById("roomName");
+
+  theRoom.style.background = mystery.room.color;
+  theRoomName.innerHTML = mystery.room + " " + mystery.room;
+};
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
