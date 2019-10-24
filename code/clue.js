@@ -276,3 +276,10 @@ const pickRoom = () => {
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // The murder was committed by Jacob Green, in the living room with a rope.
+
+const revealMystery = () => {
+  document.getElementById("mystery").innerHTML = `The murder was commit by ${mystery.killer.firstName} ${mystery.killer.lastName}, in ${mystery.room} with a ${mystery.weapon.name}`
+}
+
+//revealMystery.onclick(revealMystery); -kommentar: onclick behövs inte i javascript om onclick finns i HTML på en knapp(button)
+
