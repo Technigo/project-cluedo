@@ -12,9 +12,10 @@ p {
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
+  height: auto;
   background: #ccc;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }

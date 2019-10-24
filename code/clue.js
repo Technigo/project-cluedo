@@ -36,20 +36,21 @@ var mrsWhite = new Suspect("Mrs", "White", "white", "He does not have a lot of c
 //  weight: 10
 // }
 
-function Weapon(name, weight) {
+function Weapon(name, weight, image) {
   this.name = name;
-  this.weight= weight;
+  this.weight = weight;
+  this.image = image;
 } 
 
-var rope = new Weapon("Rope",0.5);
-var knife = new Weapon("Knife",0.3);
-var candlestick = new Weapon("Candlestick",0.9);
-var dumbbell = new Weapon("Dumbbell",10);
-var poison = new Weapon("Poison",0.01);
-var axe = new Weapon("Axe",3);
-var bat = new Weapon("Bat",1.2);
-var trophy = new Weapon("Trophy",3);
-var pistol = new Weapon("Pistol",0.8);
+var rope = new Weapon("Rope",0.5, "assets/rope.png");
+var knife = new Weapon("Knife",0.3, "assets/knife.png");
+var candlestick = new Weapon("Candlestick",0.9, "assets/candlestick.png");
+var dumbell = new Weapon("Dumbell",5, "assets/dumbell.png");
+var poison = new Weapon("Poison",0.01, "assets/poison.png");
+var axe = new Weapon("Axe",3, "assets/axe.png");
+var bat = new Weapon("Bat",1.2, "assets/bat.png");
+var trophy = new Weapon("Trophy",3, "assets/trophy.png");
+var pistol = new Weapon("Pistol",0.8, "assets/pistol.png");
 
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -71,7 +72,7 @@ const weapons = [
   rope,
   knife,
   candlestick,
-  dumbbell,
+  dumbell,
   poison, 
   axe, 
   bat,
@@ -143,9 +144,11 @@ const pickWeapon = () => {
 
   const theWeaponName = document.getElementById("weaponName")
   const theWeaponWeight = document.getElementById("weaponWeight")
+  const theWeaponImage = document.getElementById("weaponImage")
 
   theWeaponName.innerHTML = Mystery.weapon.name
   theWeaponWeight.innerHTML = Mystery.weapon.weight
+  theWeaponImage.src = Mystery.weapon.image
 }
 
 const pickRoom = () => {
