@@ -52,7 +52,7 @@ const colonelMustard = {
 const mrsWhite = {
   firstName: "Mrs",
   lastName: "White",
-  color: "white",
+  color: "beige",
   description: "She has a good fighting technique",
   age: 31,
   image: "assets/white.png",
@@ -64,38 +64,47 @@ const mrsWhite = {
 
 const Rope = {
   name: "Rope",
+  color: "pink",
   weight: 10
 }
 const Knife = {
   name: "Knife",
+  color: "purple",
   weight: 2
 }
 const Candlestick = {
   name: "Candlestick",
+  color: "green",
   weight: 1
 }
 const Dumbbell = {
   name: "Dumbbell",
+  color: "moccasin",
   weight: 40
 }
 const Poison = {
   name: "Poison",
+  color: "orange",
   weight: 60
 }
 const Axe = {
   name: "Axe",
+  color: "black",
   weight: 50
 }
 const Bat = {
   name: "Bat",
+  color: "brown",
   weight: 15
 }
 const Trophy = {
   name: "Trophy",
+  color: "gold",
   weight: 3
 }
 const Pistol = {
   name: "Pistol",
+  color: "grey",
   weight: 90
 }
 
@@ -229,6 +238,10 @@ function revealMystery() {
 }
   
   //orderConfirmation is sent to the HTML to write it out on the site, connecting with ID from HTML
-  //document.getElementById
-  //("mysteryRevealText").innerHTML = (`The murder was committed by ${mystery.killer}, in the ${mystery.room} with ${mystery.weapon}!`
-  //  );
+  document.getElementById
+  ("mysteryRevealText").innerHTML = (`The murder was committed by ${mystery.killer}, in the ${mystery.room} with a ${mystery.weapon}!`
+    );
+
+    //document.getElementById(
+      //"orderConfirmation").innerHTML = ("<h1>Great, I'll get started on your "  + orderQuantity +" "+ orderName + " <br> right away, it will cost " + pizzaPrice * orderQuantity + "kr. <br>The pizzas will take " + cookingTime +  " minutes.</h1>");
+    
