@@ -12,11 +12,13 @@ p {
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
+  /* height: 600px; */
   background: #ccc;
   display: flex;
+  flex-direction:column;
   justify-content: space-around;
   align-items: center;
+  padding: 20px;
 }
 div{
   border: 15px solid bisque;
@@ -66,4 +68,30 @@ h1{
   margin:20px;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
+}
+
+img{
+  border-radius: 20px;
+}
+
+/***TABLET***/
+@media (min-width: 668px) and (max-width: 1024px){
+  .cards{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  div{
+    margin:10px;
+    width: 40%;
+  }
+}
+  /***DESKTOP***/
+@media (min-width: 1025px){
+  .cards{
+    flex-direction: row;
+  }
+  div{
+    margin:10px;
+    width: 20%;
+  }
 }
