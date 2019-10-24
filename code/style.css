@@ -32,12 +32,26 @@
         text-align: center;
         padding-top: 30px;
         border-radius: 16px;
+        background-image: url("assets/card.png");
+        /* You must set a specified height */
+        background-position: center;
+        /* Center the image */
+        background-repeat: no-repeat;
+        /* Do not repeat the image */
+        /* Resize the background image to cover the entire container */
     }
     
     .weapon-deck {
         width: 250px;
         height: 400px;
         background: rgb(10, 53, 10);
+        background-image: url("assets/card.png");
+        /* You must set a specified height */
+        background-position: center;
+        /* Center the image */
+        background-repeat: no-repeat;
+        /* Do not repeat the image */
+        /* Resize the background image to cover the entire container */
         text-align: center;
         padding-top: 30px;
         border-radius: 16px;
@@ -50,6 +64,13 @@
         text-align: center;
         padding-top: 30px;
         border-radius: 16px;
+        background-image: url("assets/card.png");
+        /* You must set a specified height */
+        background-position: center;
+        /* Center the image */
+        background-repeat: no-repeat;
+        /* Do not repeat the image */
+        /* Resize the background image to cover the entire container */
     }
     
     .reveal {
