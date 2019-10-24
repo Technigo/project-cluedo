@@ -9,7 +9,7 @@ const mrGreen = {
   age: 45,
   image: "assets/green.png",
   occupation: "Entrepreneur"
-},
+};
 
 const professorPlum = {
   firstName: "Victor",
@@ -19,9 +19,9 @@ const professorPlum = {
   age: 38,
   image: "assets/plum.png",
   occupation: "Professor"
-},
+};
 
-const missScarlet= {
+const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
   color: "red",
@@ -29,7 +29,7 @@ const missScarlet= {
   age: 20,
   image: "assets/scarlet.png",
   occupation: "Actress"
-},
+};
 
 const mrsPeacock = {
   firstName: "Eleanor",
@@ -39,7 +39,7 @@ const mrsPeacock = {
   age: 32,
   image: "assets/peacock.png",
   occupation: "Socialite"
-},
+};
 
 const colonelMustard = {
   firstName: "Jack",
@@ -49,7 +49,7 @@ const colonelMustard = {
   age: 60,
   image: "assets/mustard.png",
   occupation: "Colonel"
-},
+};
 
 const mrsWhite = {
   firstName: "Mrs",
@@ -59,99 +59,101 @@ const mrsWhite = {
   age: 70,
   image: "assets/white.png",
   occupation: "Housekeeper"
-}
-
-
+};
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: "rope",
   weight: 10
-},
+};
 
 const knife = {
   name: "knife",
   weight: 20
-},
+};
 
 const candlestick = {
   name: "candlestick",
   weight: 5
-},
+};
 
 const dumbbell = {
   name: "dumbbell",
   weight: 30
-},
+};
 
 const poison = {
   name: "poison",
   weight: 2
-},
+};
 
-const axe= {
+const axe = {
   name: "axe",
   weight: 80
-},
+};
 
 const bat = {
   name: "bat",
   weight: 25
-},
+};
 
 const trophy = {
   name: "trophy",
   weight: 45
-},
+};
 
 const pistol = {
   name: "pistol",
   weight: 29
-}
-
-
+};
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 const rooms = [
-  'Dinning Room',
-  'Conservatory',
-  'Kitchen',
-  'Study',
-  'Library',
-  'Billiard Room',
-  'Lounge',
-  'Ballroom',
-  'Hall',
-  'Spa',
-  'Living Room,'
-  'Observatory',
-  'Theater',
-  'Guest House,'
-  'Patio'
-]
+  "Dinning Room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Billiard Room",
+  "Lounge",
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "Living Room",
+  "Observatory",
+  "Theater",
+  "Guest House",
+  "Patio"
+];
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
 const suspects = [
   mrGreen,
   mrsWhite,
-  profPlum,
+  professorPlum,
   missScarlet,
   mrsPeacock,
-  mrMustard
-]
+  colonelMustard
+];
 
 const weapons = [
-
-]
-
-const rooms = []
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+];
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
-}
+  return array[Math.floor(Math.random() * array.length)];
+};
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
@@ -161,16 +163,16 @@ const randomSelector = array => {
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
+  mystery.killer = randomSelector(suspects);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
-  const theKiller = document.getElementById("killer")
-  const theKillerName = document.getElementById("killerName")
+  const theKiller = document.getElementById("killer");
+  const theKillerName = document.getElementById("killerName");
 
-  theKiller.style.background = mystery.killer.color
+  theKiller.style.background = mystery.killer.color;
   theKillerName.innerHTML =
-    mystery.killer.firstName + " " + mystery.killer.lastName
-}
+    mystery.killer.firstName + " " + mystery.killer.lastName;
+};
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
