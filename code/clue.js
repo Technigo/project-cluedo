@@ -117,6 +117,15 @@ const pistol = {
   color: "darkgreen",
 }
 
+const weaponsImage = {
+  image: "axe.jpg",
+  image: "bat.jpg",
+  image: "candlestick",
+  image: "dumbbell.jpg",
+  image: "knife",
+  image: "pistol",
+  image: "poison"
+}
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE. /
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
@@ -235,8 +244,8 @@ const pickWeapon = () => {
   const theWeaponWeight = document.getElementById("weaponWeight")
   theWeaponWeight.innerHTML = mystery.weapon.weight
 
-  //const theWeaponImage = document.getElementById("weaponImage")
-  //theWeaponImage.src = mystery.tool.image
+  const theWeaponImage = document.getElementById("weaponImage")
+  heWeaponImage.src = mystery.weapon.image
 
   //const theWeaponColor = document.getElementById("weaponColor")
   //theWeaponColor.innerHTML = mystery.weapon.color
