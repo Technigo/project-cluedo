@@ -250,5 +250,13 @@ const pickTime = () => {
 
 const revealMystery = () => {
   const mysteryAnswer = document.getElementById("mystery")
+
+
   mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room}, ${mystery.time} with ${mystery.weapon.name}.`
 }
+
+/*if () {
+  mysteryAnswer.innerHTML = "No mystery is yet to be revealed"
+}
+else {
+}*/
