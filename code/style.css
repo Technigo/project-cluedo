@@ -1,22 +1,61 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background:
+radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 9%, hsla(0, 100%, 20%, 0) 9%) 0 0,
+radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 8%, hsla(0, 100%, 20%, 0) 10%) 50px 50px,
+radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 50px 0,
+radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 0 50px,
+radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 50px 0,
+radial-gradient(hsla(0, 100%, 20%, 1) 35%, hsla(0, 100%, 20%, 0) 60%) 100px 50px,
+radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 0 0,
+radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 50px 50px,
+linear-gradient(45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0,
+linear-gradient(-45deg, hsla(0, 100%, 20%, 0) 49%, hsla(0, 100%, 0%, 1) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0;
+background-color: #300;
+background-size: 100px 100px;
 }
 
-p {
+p, h4 {
   margin: 1px;
   font-weight: 300;
-  background-color: #fff;
+  color: white;
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 20px;
+  margin-bottom: 5%;
+}
+
+p.weapon {
+  color: black;
+}
+
+
+h1 {
+  font-size: 60px;
+  color: white;
+  width: 80%;
+  text-align: center;
+  
+}
+
+.mysteryText {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
-  background: #ccc;
+  height: 500px;
+  background: none;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .killer-deck {
@@ -24,14 +63,15 @@ p {
   height: 400px;
   background: #000;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 50px;
   border-radius: 16px;
+  
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: white;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -55,6 +95,60 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 100px;
+
+}
+
+#weaponImage {
+  margin-top: 5%;
+  height: 150px;
+}
+
+#pickAllCard {
+  display: none;
+}
+
+.revealMysteryTop {
+  display: none;
+}
+
+#startOver {
+
+}
+
+
+
+@media (max-width: 600px) {
+h1 {
+  margin-top: 0%;
+  padding: 15px;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.cards{
+  height: 100%;
+}
+.killer-deck {
+  margin-bottom: 5%;
+}
+.weapon-deck {
+  margin-bottom: 5%;
+}
+
+#pickAllCard {
+  display: block;
+}
+
+.revealMysteryTop {
+  display: block;
+  margin-bottom: 0;
+}
+
+.revealMysteryBottom {
+  display: none;
+}
+
 }
 
 

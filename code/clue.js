@@ -43,7 +43,7 @@ const mrsPeacock = {
 const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
-  color: "Yellow",
+  color: "Orange",
   description: "A sneaky old man",
   age: 60,
   image: "assets/mustard.png",
@@ -53,7 +53,7 @@ const mrMustard = {
 const mrsWhite = {
   firstName: "Lily",
   lastName: "White",
-  color: "white",
+  color: "lightgrey",
   description: "A charming old woman with a lot of kids",
   age: 70,
   image: "assets/white.png",
@@ -64,49 +64,57 @@ const mrsWhite = {
 
 
 const rope = {
-  name: "rope",
-  weight: 10
-  
+  name: "Rope",
+  weight: 10,
+  image: "assets/rope.jpg"
 }
 
 const knife = {
-  name: "knife",
-  weight: 20
+  name: "Knife",
+  weight: 20,
+  image: "assets/knife.jpg"
 }
 
 const candlestick = {
-  name: "candlestick",
-  weight: 40
+  name: "Candlestick",
+  weight: 40,
+  image: "assets/candlestick.jpg"
 }
 
 const dumbbell = {
-  name: "dumbbell",
-  weight: 90
+  name: "Dumbbell",
+  weight: 90,
+  image: "assets/dumbbell.jpg"
 }
 
 const poison = {
-  name: "poison",
-  weight: 15
+  name: "Poison",
+  weight: 15,
+  image: "assets/poison.png"
 }
 
 const axe = {
-  name: "axe",
-  weight: 50
+  name: "Axe",
+  weight: 50,
+  image: "assets/axe.jpg"
 }
 
 const bat = {
-  name: "bat",
-  weight: 45
+  name: "Bat",
+  weight: 45,
+  image: "assets/bat.jpg"
 }
 
 const trophy = {
-  name: "trophy",
-  weight: 60
+  name: "Trophy",
+  weight: 60,
+  image: "assets/trophy.jpg"
 }
 
 const pistol = {
-  name: "pistol",
-  weight: 55
+  name: "Pistol",
+  weight: 55,
+  image: "assets/pistol.jpg"
 }
 
 
@@ -201,9 +209,11 @@ const pickWeapon = () => {
 
   const theWeaponName = document.getElementById("weaponName")
   const theWepaonWeight = document.getElementById("weaponWeight")
+  const theWeaponImage = document.getElementById("weaponImage")
  
   theWeaponName.innerHTML = mystery.weapon.name
   theWepaonWeight.innerHTML = mystery.weapon.weight
+  theWeaponImage.src = mystery.weapon.image
 
 }
 
@@ -214,7 +224,6 @@ const pickRoom = () => {
 
   theRoomName.innerHTML = mystery.room
 }
-
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
@@ -228,11 +237,26 @@ const pickMystery = () => {
 
 }
 
-const revealMystery = () => {
 
-  document.getElementById("mystery").innerHTML = `The murder was commited by ${mystery.killer.firstName} in the ${mystery.room} with a ${mystery.weapon.name}`
+
+const revealMystery = () => {
+  if (mystery.killer || mystery.weapon || mystery.room === onclick) {
+    document.getElementById("mystery").innerHTML = `The murder was commited by ${mystery.killer.firstName + " " + mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`
+    document.getElementById("allCards").style.display = "none"
+    document.getElementById("mystery").style.marginTop = "200px"
+   
+  } else {
+    alert(`You have to pick the cards to reveal the mystery`)
+  }
+  
 }
 
-document.getElementById("pickAllCards").addEventListener("click", pickMystery)
 
-document.getElementsByID("mystery").addEventListener("click", revealMystery)
+const reloadPage = () => {
+  location.reload()
+}
+
+
+
+
+

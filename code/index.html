@@ -8,30 +8,43 @@
     <title>Clue</title>
   </head>
   <body>
-    <section class="cards">
+    <button id="pickAllCard" onclick="pickMystery()">PICK MYSTERY</button> 
+    <button id="revealMystery" class="revealMysteryTop" onclick="revealMystery()">REVEAL THE CRIME</button>
+
+
+    <section class="cards" id="allCards">
       <div class="killer-deck" id="killer" onclick="pickKiller()">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
+        <h4 class="killer">KILLER</h4>
+        <p class="killer" id="killerName"></p>
+        <p class="killer" id="killerAge"></p>
+        <p class="killer" id="killerOccupation"></p>
         <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
+        <p class="killer" id="killerDescription"></p>
       </div>
       <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
+        <p class="weapon" >WEAPON</p>
+        <p class="weapon" id="weaponName"></p>
+        <p class="weapon" id="weaponWeight"></p>
+        <img id="weaponImage" src="" width="100" />
       </div>
       <div class="room-deck" id="room" onclick="pickRoom()">
-        <p>ROOM</p>
-        <p id="roomName"></p>
+        <p class="room">ROOM</p>
+        <p class="room" id="roomName"></p>
       </div>
-    </section>
-    <h1 id="pickAllCard"></h1>
-    <button onclick="pickMystery()">PICK MYSTERY</button>
 
+      
+
+    </section>
+
+    <div class="mysteryText">
     <h1 id="mystery"></h1>
-    <button id="revealMystery" onclick="revealMystery()">REVEAL THE CRIME</button>
+    </div>
+    <button id="revealMystery" class="revealMysteryBottom" onclick="revealMystery()">REVEAL THE CRIME</button>
+    <button id="startOver" onclick="reloadPage()">START OVER</button>
+
+
+     
+      
 
     <script src="clue.js"></script>
   </body>
