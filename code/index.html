@@ -14,9 +14,12 @@
         alt=""
       />
     </header>
-    <h1>Pick your card!</h1>
+    <h1>
+      Pick your cards<br />
+      and reveal the crime!
+    </h1>
     <section class="cards">
-      <div class="killer-deck" id="killer" onclick="pickKiller()">
+      <div class="deck" id="killer" onclick="pickKiller()">
         <p>KILLER</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
@@ -24,20 +27,30 @@
         <img id="killerImage" src="" height="100" />
         <p id="killerDescription"></p>
       </div>
-      <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
+      <div class="deck" id="weapon" onclick="pickWeapon()">
         <p>WEAPON</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
         <img id="weaponImage" src="" />
       </div>
-      <div class="room-deck" id="room" onclick="pickRoom()">
+      <div class="deck" id="room" onclick="pickRoom()">
         <p>ROOM</p>
         <p id="roomName"></p>
+        <img id="roomImage" src="" alt="" />
+      </div>
+      <div class="deck" id="times" onclick="pickTime()">
+        <p>TIME</p>
+        <p id="timeName"></p>
+        <img id="timeImage" src="" alt="" />
       </div>
     </section>
     <h2 id="mystery"></h2>
     <button onclick="revealMystery()">REVEAL THE CRIME</button>
 
     <script src="clue.js"></script>
+
+    <footer>
+      <p>A Technigo Boot Camp project 2019</p>
+    </footer>
   </body>
 </html>

@@ -2,8 +2,9 @@ body {
   margin: auto;
   font-family: "Courier New", Courier, monospace;
   height: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   background: rgb(79, 79, 157);
+  text-align: center;
 }
 
 header {
@@ -15,6 +16,9 @@ header {
 header img {
   width: 100%;
   height: auto;
+  max-height: 480px;
+  object-fit: cover;
+  object-position: center top;
 }
 
 h1,
@@ -32,7 +36,7 @@ p {
 }
 
 .cards {
-  margin: 10px auto;
+  margin: 20px auto 40px;
   width: 90%;
   align-items: center;
 }
@@ -43,34 +47,34 @@ p {
   margin-top: 20px;
 }
 
-.killer-deck {
+.deck {
   margin: 20px auto;
   width: 250px;
   height: 300px;
+  text-align: center;
+  padding-top: 30px;
+  border-radius: 16px;
+}
+
+.deck:hover {
+  transform: translateY(-10px);
+  transition: 0.3s ease-out;
+}
+
+#killer {
   background: #000;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
 }
 
-.weapon-deck {
-  margin: 20px auto;
-  width: 250px;
-  height: 300px;
+#weapon {
   background: rgb(10, 53, 10);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
 }
 
-.room-deck {
-  width: 250px;
-  height: 300px;
-  margin: 20px auto;
+#room {
   background: midnightblue;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+}
+
+#times {
+  background: rgb(12, 92, 191);
 }
 
 button {
@@ -84,44 +88,55 @@ button {
 }
 
 #mystery {
-  /* display: none; */
   width: 80%;
   margin: 10px auto 20px;
-  /*padding: 10px 10px;*/
-  background: #fff;
   text-align: center;
+}
+
+#mystery p {
+  background: #fff;
   border-radius: 10px;
+  padding: 5px;
 }
 
 #mystery img {
   display: block;
+  width: 100%;
+  max-width: 400px;
   margin: auto;
+  animation: boing 0.5s;
+}
+
+footer p {
+  padding: 20px;
+  background: rgb(79, 79, 157);
+  text-align: center;
 }
 
 /** Media Queries**/
 
 @media (min-width: 668px) {
+  h1 {
+    font-size: 34px;
+    line-height: 40px;
+  }
   h2 {
     margin-top: 40px;
     text-align: center;
   }
   .cards {
     display: flex;
+    flex-wrap: wrap;
   }
 
-  .killer-deck {
-    width: 200px;
-    height: 350px;
+  .deck {
+    width: 250px;
+    height: 400px;
   }
 
-  .weapon-deck {
-    width: 200px;
-    height: 350px;
-  }
-
-  .room-deck {
-    width: 200px;
-    height: 350px;
+  .deck:hover {
+    transform: translateY(-20px);
+    transition: 0.3s ease-out;
   }
 
   #mystery {
@@ -132,25 +147,43 @@ button {
 @media (min-width: 1025px) {
   header img {
     width: 80%;
-    margin-top: 40px;
   }
 
-  .killer-deck {
-    width: 250px;
-    height: 400px;
+  h1 {
+    font-size: 38px;
   }
 
-  .weapon-deck {
-    width: 250px;
-    height: 400px;
+  .deck:hover {
+    transform: translateY(-20px);
   }
 
-  .room-deck {
+  .deck {
     width: 250px;
     height: 400px;
   }
 
   #mystery {
     margin: 40px auto;
+  }
+}
+
+@keyframes boing {
+  15%,
+  40%,
+  75%,
+  100% {
+    transform-origin: center center;
+  }
+  15% {
+    transform: scale(1.2, 1.1);
+  }
+  40% {
+    transform: scale(0.95, 0.95);
+  }
+  75% {
+    transform: scale(1.05, 1);
+  }
+  100% {
+    transform: scale(1, 1);
   }
 }
