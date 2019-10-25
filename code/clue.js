@@ -1,21 +1,135 @@
-// CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
   color: "green",
   description: "He has a lot of connections",
-  age: 45,
+  age: 32,
   image: "assets/green.png",
   occupation: "Entrepreneur"
 }
 
+const profPlum = {
+  firstName: "Victor",
+  lastName: "Plum",
+  color: "Purple",
+  description: "He is a mansplainer",
+  age: 45,
+  image: "assets/green.png",
+  occupation: "Professor"
+}
+
+const missScarlet = {
+  firstName: "Cassandra",
+  lastName: "Scarlet",
+  color: "Red",
+  description: "She knows all the winners in Eurovision Song Contest",
+  age: 36,
+  image: "assets/green.png",
+  occupation: "Kennel owner"
+}
+
+const mrsPeacock = {
+  firstName: "Eleanor",
+  lastName: "Peacock",
+  color: "Blue",
+  description: "She is the riches of them all",
+  age: 49,
+  image: "assets/green.png",
+  occupation: "Ceo and founder of a big bank"
+}
+
+const colMustard = {
+  firstName: "Jack",
+  lastName: "Mustard",
+  color: "Yellow",
+  description: "He is a ventriloquist",
+  age: 54,
+  image: "assets/green.png",
+  occupation: "Some secret army stuff"
+}
+
+const mrsWhite = {
+  firstName: "Andrea",
+  lastName: "White",
+  color: "White",
+  description: "She is a freediver",
+  age: 54,
+  image: "assets/green.png",
+  occupation: "Some secret army stuff"
+}
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: "rope",
-  weight: 10
+  weight: 10,
+  color: "brown"
 }
+
+const knife = {
+  name: "knife",
+  weight: 3,
+  color: "metal"
+}
+
+const candlestick = {
+  name: "candlestick",
+  weight: 20,
+  color: "gold"
+}
+
+const dumbbell = {
+  name: "dumbbell",
+  weight: 15,
+  color: "black"
+}
+
+const poison = {
+  name: "poison",
+  weight: 0.1,
+  color: "green"
+}
+
+const axe = {
+  name: "axe",
+  weight: 12,
+  color: "steely"
+}
+
+const bat = {
+  name: "bat",
+  weight: 3,
+  color: "wood"
+}
+
+const trophy = {
+  name: "trophy",
+  weight: 8,
+  color: "silver"
+}
+
+const pistol = {
+  name: "pistol",
+  weight: 2,
+  color: "metal"
+}
+
+let diningRoom
+// göra const eller let eller nåt helt tredje?
+let conservatory
+let kitchen
+let study
+let library
+let billiardRoom
+let lounge
+let ballroom
+let hall
+let spa
+let livingRoom
+let observatory
+let theater
+let guestHouse
+let patio
+
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -27,12 +141,38 @@ const suspects = [
   profPlum,
   missScarlet,
   mrsPeacock,
-  mrMustard
+  colMustard
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+const rooms = [
+  diningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
