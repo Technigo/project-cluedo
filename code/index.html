@@ -4,21 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Mystery+Quest&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Clue</title>
   </head>
 
   <body>
+
     <header>
 
-      <h1>Welcome to Cluedo</h1>
+      <h1> A Murder Mystery</h1>
 
     </header>
+
     <div class="container">
+
       <section class="cards">
 
         <div class="killer-deck" id="killer" onclick="pickKiller()">
-          <p>KILLER</p>
+          <p id="killerTitle">KILLER</p>
           <p id="killerName"></p>
           <p id="killerAge"></p>
           <p id="killerOccupation"></p>
@@ -27,22 +31,27 @@
         </div>
 
         <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
-          <p>WEAPON</p>
+          <p id="weaponTitle">WEAPON</p>
           <img id="weaponImage" src="" height="100" />
           <p id="weaponName"></p>
           <p id="weaponWeight"></p>
         </div>
 
         <div class="room-deck" id="room" onclick="pickRoom()">
-          <p>ROOM</p>
+          <p id="roomTitle">ROOM</p>
           <p id="roomName"></p>
         </div>
+        
       </section>
 
-      <h2 id="mystery"></h2>
-      <button onclick="revealMystery()">REVEAL THE CRIME</button>
+      <section class="controls">
+
+        <div id="mystery"></div>
+        <button onclick="revealMystery()">Reveal the crime</button>
+      </section>
 
     </div>
+
     <footer>
       &copy;2019 Nasim Mahzoun
     </footer>

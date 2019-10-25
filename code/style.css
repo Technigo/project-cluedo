@@ -1,11 +1,13 @@
 body {
   min-height: 100vh;
+  font-size: large;
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Mystery Quest', cursive;
   position: relative;
   display: flex;
   flex-direction: column;
 }
+
 body::after {
   background-image:url("assets/background.jpg");
   background-repeat: no-repeat;
@@ -25,9 +27,14 @@ p {
   font-weight: 300;
   background-color: #fff;
 }
+
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   flex: auto;
 }
+
 header, footer {
   background-color: rgba(0, 0, 0, 0.712);
   color: rgb(189, 189, 189);
@@ -52,40 +59,70 @@ header h1 {
   align-items: center;
 }
 .killer-deck, .weapon-deck, .room-deck {
-  width: 250px;
+  background-image:url("assets/card.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 280px;
   height: 400px;
   text-align: center;
-  padding-top: 30px;
   border-radius: 16px;
-  margin-top: 15px;
-  box-shadow: rgba(255, 91, 73, 0.336) 5px 5px 5px 5px;
+  box-shadow: rgba(49, 47, 47, 0.336) 25px 25px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
-.killer-deck {
-  background: #000;
+.killer-deck img, .weapon-deck img {
+  align-self: center;
 }
 
-.weapon-deck {
-  background: rgb(10, 53, 10);
+#killerTitle, #weaponTitle {
+  margin-top: -200px;
+}
+#roomTitle {
+  margin-top: -300px;
 }
 
-.room-deck {
-  background: midnightblue;
+.killer-deck:hover, .weapon-deck:hover, .room-deck:hover {
+  outline: rgba(220, 20, 60, 0.666) 5px solid;
+  outline-offset: -5px;
 }
-
 button {
   padding: 8px 16px;
   background: crimson;
   border: none;
+  font-family: 'Mystery Quest', cursive;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 20px auto;
   color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 4px 4px #999;
 }
 
-#mystery{
+button:hover {
+  background-color: rgb(134, 11, 36);
+}
+
+button:active {
+  background-color: rgb(134, 11, 36);
+  box-shadow: 0 0px #666;
+  transform: translateY(2px) translateX(2px);
+}
+
+.controls {
+  text-align: center;
+}
+#mystery {
+  max-width: 75%;
+  display: inline-block;
   text-align: center;
   background-color: rgba(220, 20, 60, 0.666);
   color: #fff;
+  margin-top: 20px;
+  padding: 0px 40px;
+  border-radius: 90px;
 }

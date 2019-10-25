@@ -36,7 +36,7 @@ var mrsWhite = new Suspect("Mrs", "White", "lightgrey", "He does not have a lot 
 //  weight: 10
 // }
 
-function Weapon(name, weight, image) {
+function Weapon(name, weight, image,) {
   this.name = name;
   this.weight = weight;
   this.image = image;
@@ -101,6 +101,7 @@ const rooms = [
 console.log(rooms)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
+
 const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -108,6 +109,7 @@ const randomSelector = (array) => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later .
+
 var Mystery = {
   killer: "",
   weapon: "",
@@ -116,19 +118,22 @@ var Mystery = {
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
+
 const pickKiller = () => {
-  //This will randomly select a killer from the suspects. And add that to the mystery object.
+//This will randomly select a killer from the suspects. And add that to the mystery object.
   Mystery.killer = randomSelector(suspects)
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
-  const theKiller = document.getElementById("killer")
+  const theKillerTitle = document.getElementById("killerTitle")
+  const theKillerColor = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
   const theKillerAge = document.getElementById("killerAge")
   const theKillerOccupation = document.getElementById("killerOccupation")
   const theKillerImage = document.getElementById("killerImage")
   const theKillerDescription = document.getElementById("killerDescription")
 
-  theKiller.style.background = Mystery.killer.color
+  theKillerTitle.style.display = "none"
+  theKillerColor.style.background = Mystery.killer.color
   theKillerName.innerHTML = Mystery.killer.firstName + " " + Mystery.killer.lastName
   theKillerAge.innerHTML = Mystery.killer.age
   theKillerOccupation.innerHTML = Mystery.killer.occupation
@@ -141,11 +146,15 @@ const pickKiller = () => {
 
 const pickWeapon = () => {
   Mystery.weapon = randomSelector(weapons)
-
+  
+  const theWeaponTitle = document.getElementById("weaponTitle")
+  const theCardColor = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
   const theWeaponWeight = document.getElementById("weaponWeight")
   const theWeaponImage = document.getElementById("weaponImage")
 
+  theWeaponTitle.style.display = "none"
+  theCardColor.style.background = "rgb(10, 53, 10)"
   theWeaponName.innerHTML = Mystery.weapon.name
   theWeaponWeight.innerHTML = Mystery.weapon.weight
   theWeaponImage.src = Mystery.weapon.image
@@ -154,8 +163,12 @@ const pickWeapon = () => {
 const pickRoom = () => {
   Mystery.room = randomSelector(rooms)
 
+  const theRoomTitle = document.getElementById("roomTitle")
+  const theCardColor = document.getElementById("room")
   const theRoomName = document.getElementById("roomName")
 
+  theRoomTitle.style.display = "none"
+  theCardColor.style.background = "midnightblue"
   theRoomName.innerHTML = Mystery.room
 }
 
@@ -165,7 +178,7 @@ const pickRoom = () => {
 const revealMystery = () => {
 
   if (Mystery.killer == "" || Mystery.weapon == "" || Mystery.room == "") {
-    document.getElementById("mystery").innerHTML = `No mystery is yet to be revealed.`
+    document.getElementById("mystery").innerHTML = `<h2>No mystery is yet to be revealed.</h2>`
 
   } else {
 
@@ -173,6 +186,6 @@ const revealMystery = () => {
     let lastName = Mystery.killer.lastName
     let room = Mystery.room
     let weapon = Mystery.weapon.name
-    document.getElementById("mystery").innerHTML = `The murder was committed by ${firstName} ${lastName}, in the ${room} with a ${weapon}.`
+    document.getElementById("mystery").innerHTML = `<h2>The murder was committed by ${firstName} ${lastName}, in the ${room} with a ${weapon}.</h2>`
   }
 }
