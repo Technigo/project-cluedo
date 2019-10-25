@@ -167,9 +167,9 @@ const randomSelector = (array) => {
 
 let mystery = {
 
-    killer: "",
-    weapon: "",
-    room: ""
+    killer: "no",
+    weapon: "no",
+    room: "no"
 
 }
 
@@ -249,6 +249,15 @@ const revealMystery = () => {
 
     const theMystery = document.getElementById("mystery")
 
-    theMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`
+    if (mystery.killer != "no" && mystery.room != "no" && mystery.weapon != "no") {
+
+        theMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`
+
+    } else {
+
+        theMystery.innerHTML = `The murder has not been solved yet!`
+
+
+    }
 
 }
