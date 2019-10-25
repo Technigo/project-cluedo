@@ -180,7 +180,8 @@ const randomSelector = array => {
 const mystery = {
   killer: "",
   weapon: "",
-  room: ""
+  room: "",
+  time: "",
 }
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
@@ -250,9 +251,13 @@ const pickTime = () => {
 
 const revealMystery = () => {
   const mysteryAnswer = document.getElementById("mystery")
+  if (mystery.killer.firstName === undefined || mystery.weapon.name === undefined || mystery.time === null) {
+    mysteryAnswer.innerHTML = "No mystery is yet to be revealed"
+  }
+  else {
+    mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room}, ${mystery.time} with ${mystery.weapon.name}.`
+  }
 
-
-  mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room}, ${mystery.time} with ${mystery.weapon.name}.`
 }
 
 /*if () {
