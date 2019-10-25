@@ -206,22 +206,26 @@ const pickKiller = () => {
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
 
-
+  const theWeapon = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
   const theWepaonWeight = document.getElementById("weaponWeight")
   const theWeaponImage = document.getElementById("weaponImage")
  
+
   theWeaponName.innerHTML = mystery.weapon.name
   theWepaonWeight.innerHTML = mystery.weapon.weight
   theWeaponImage.src = mystery.weapon.image
+  theWeapon.style.background = "white";
 
 }
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
+  const theRoom = document.getElementById("room")
   const theRoomName = document.getElementById("roomName")
 
+  theRoom.style.background = "gold"
   theRoomName.innerHTML = mystery.room
 }
 
@@ -243,8 +247,8 @@ const revealMystery = () => {
   if (mystery.killer || mystery.weapon || mystery.room === onclick) {
     document.getElementById("mystery").innerHTML = `The murder was commited by ${mystery.killer.firstName + " " + mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`
     document.getElementById("allCards").style.display = "none"
-    document.getElementById("mystery").style.marginTop = "200px"
-   
+    document.getElementById("mystery").style.marginTop = "200px";
+    document.getElementById("startOver").style.display = "block"
   } else {
     alert(`You have to pick the cards to reveal the mystery`)
   }
@@ -255,6 +259,11 @@ const revealMystery = () => {
 const reloadPage = () => {
   location.reload()
 }
+
+const mysteryText = (mystery) => {
+  mystery.map(textBig => textBig.toUpperCase()) 
+}
+mysteryText(mystery)
 
 
 

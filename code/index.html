@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Kalam|Luckiest+Guy&display=swap" rel="stylesheet"> 
     <title>Clue</title>
   </head>
   <body>
+    <h1 class="header">CLUEDO</h1>
     <button id="pickAllCard" onclick="pickMystery()">PICK MYSTERY</button> 
     <button id="revealMystery" class="revealMysteryTop" onclick="revealMystery()">REVEAL THE CRIME</button>
 
@@ -18,17 +20,17 @@
         <p class="killer" id="killerName"></p>
         <p class="killer" id="killerAge"></p>
         <p class="killer" id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
+        <img id="killerImage" src="" height="200" />
         <p class="killer" id="killerDescription"></p>
       </div>
       <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
-        <p class="weapon" >WEAPON</p>
+        <h4 class="weapon" >WEAPON</h4>
         <p class="weapon" id="weaponName"></p>
         <p class="weapon" id="weaponWeight"></p>
         <img id="weaponImage" src="" width="100" />
       </div>
       <div class="room-deck" id="room" onclick="pickRoom()">
-        <p class="room">ROOM</p>
+        <h4 class="room">ROOM</h4>
         <p class="room" id="roomName"></p>
       </div>
 
@@ -36,12 +38,12 @@
 
     </section>
 
-    <div class="mysteryText">
-    <h1 id="mystery"></h1>
+    <div class="mysteryContainer">
+      <h1 id="mystery"></h1>
     </div>
     <button id="revealMystery" class="revealMysteryBottom" onclick="revealMystery()">REVEAL THE CRIME</button>
     <button id="startOver" onclick="reloadPage()">START OVER</button>
-
+  
 
      
       
