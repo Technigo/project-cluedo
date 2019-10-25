@@ -23,6 +23,7 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+        box-shadow: inset 50px 50px 50px rgba(0, 0, 0, .5);
     }
     
     .killer-deck {
@@ -33,6 +34,7 @@
         padding-top: 30px;
         border-radius: 16px;
         background-image: url("assets/card.png");
+        /*filter: blur(10px);
         /* You must set a specified height */
         background-position: center;
         /* Center the image */
@@ -97,4 +99,36 @@
         display: block;
         margin: 0 auto;
         margin-bottom: 20px;
+    }
+    
+    @media (max-width:850px) {
+        .cards {
+            border-radius: 15px;
+            margin: 50px auto;
+            width: 90%;
+            height: 100%;
+            background-image: url("assets/cluedo.jpeg");
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 50px 50px 50px rgba(0, 0, 0, .5);
+        }
+        .killer-deck {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .weapon-deck {
+            margin-bottom: 30px;
+        }
+        .room-deck {
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 1.2rem;
+        }
+        button {
+            font-size: 1rem;
+        }
     }
