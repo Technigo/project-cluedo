@@ -79,7 +79,7 @@ body {
 }
 
 .card-back {
-  background-color: #fbf7f5;
+  background-color: #f8e2b9;
   color: #000;
   justify-content: flex-start;
   text-align: center;
@@ -126,15 +126,17 @@ body {
 .room-name {
   order: 0;
 }
+
+.weapon-name,
 .room-name {
-  background-color: #D8BFD8;
+  background-color: #aba0a0;
 }
 .killer-info,
 .weapon-name,
 .room-name {
   font-size: 0.9rem;
   padding: 1rem;
-  width: 100%;
+  width: 99.9%;
 }
 
 .killer-occupation,
@@ -143,7 +145,7 @@ body {
   position: absolute;
   top: 210px;
   height:20px;
-  background-color: #fdec9a;
+  background-color: #e7cb96;
   font-size: 0.8rem;
   line-height: 1.6;
 }
@@ -154,7 +156,7 @@ body {
 .weapon-weight:before {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-right: 10px solid #fdec9a;
+  border-right: 10px solid #e7cb96;
   content:"";
   height:0;
   width:0;
@@ -166,7 +168,7 @@ body {
 .weapon-weight:after {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-left: 10px solid #fdec9a;
+  border-left: 10px solid #e7cb96;
   content:"";
   height:0;
   width:0;

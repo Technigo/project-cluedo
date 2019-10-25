@@ -3,28 +3,28 @@
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
-  color: "darkseagreen",
+  color: "MediumSeagreen",
   description: "He has a lot of connections.",
   age: 45,
-  image: "assets/green.png",
+  image: "assets/mrgreen.png",
   occupation: "Entrepreneur"
 }
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
-  color: "salmon",
+  color: "Salmon",
   description: "She will do anything to stay in the spotlight.",
   age: 25,
-  image: "assets/scarlet.png",
+  image: "assets/msscarlet.png",
   occupation: "Actress"
 }
 const mrsWhite = {
   firstName: "Blanche",
   lastName: "White",
-  color: "floralwhite",
+  color: "Seashell",
   description: "She will do anything for justice, including turning vigilante.",
-  age: 60,
-  image: "assets/white.png",
+  age: 50,
+  image: "assets/mrswhite.png",
   occupation: "Lawyer"
 }
 const profPlum = {
@@ -33,81 +33,81 @@ const profPlum = {
   color: "plum",
   description: "He is an inventor and a genius. To challenge him could be dangerous.",
   age: 36,
-  image: "assets/plum.png",
+  image: "assets/mrplum.png",
   occupation: "Professor"
 }
 const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
-  color: "cornflowerblue",
+  color: "CornflowerBlue",
   description: "Despite her looks, she's a formidable politician.",
   age: 32,
-  image: "assets/peacock.png",
+  image: "assets/mrspeacock.png",
   occupation: "Politician"
 }
 const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
-  color: "yellow",
+  color: "Yellow",
   description: "A casually dressed expert martial artist.",
   age: 50,
-  image: "assets/mustard.png",
+  image: "assets/mrmustard.png",
   occupation: "Colonel"
 }
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: "rope",
-  color: "BurlyWood",
   description: "Some frayed rope. Looks like a noose.",
+  image: "assets/rope.png",
   weight: 10
 }
 const knife = {
   name: "knife",
-  color: "LightGray",
   description: "A rusty kitchen knife that has seen better days.",
+  image: "assets/knife.png",
   weight: 20
 }
 const candlestick = {
   name: "candlestick",
-  color: "Moccasin",
   description: "All this candlestick needs is a candle.",
+  image: "assets/candlestick.png",
   weight: 30
 }
 const dumbbell = {
   name: "dumbbell",
-  color: "Gray",
   description: "Perfect for exercise or as a paper weight.",
+  image: "assets/dumbbells.png",
   weight: 40
 }
 const poison = {
   name: "poison",
-  color: "DarkSeaGreen",
   description: "Arsenic? Cyanide? Who knows.",
+  image: "assets/poison.png",
   weight: 1
 }
 const axe = {
   name: "axe",
-  color: "Gainsboro",
   description: "Someone has been using this axe for something other than wood.",
+  image: "assets/axe.png",
   weight: 35
 }
 const bat = {
   name: "bat",
-  color: "RosyBrown",
   description: "A baseball bat.",
+  image: "assets/bat.png",
   weight: 25
 }
 const trophy = {
   name: "trophy",
-  color: "GoldenRod",
   description: "This trophy needs polishing.",
+  image: "assets/trophy.png",
   weight: 30
 }
 const pistol = {
   name: "pistol",
-  color: "LightSteelBlue ",
   description: "One bullet is missing from this pistol.",
+  image: "assets/pistol.png",
   weight: 15
 }
 
@@ -115,77 +115,92 @@ const pistol = {
 
 const theDiningRoom = {
   name: "dining room",
-  description: "The fondest memories are made when gathered around the table."
+  description: "The fondest memories are made when gathered around the table.",
+  image: "assets/diningroom.png"
 }
 
 const theKitchen = {
   name: "kitchen",
-  description: "Everything happens in the kitchen. Life happens in the kitchen."
+  description: "Everything happens in the kitchen. Life happens in the kitchen.",
+  image: "assets/kitchen.png"
 }
 
 const theConservatory = {
   name: "conservatory",
-  description: "Prepare for a bitter harvest. Winter has come at last."
+  description: "Prepare for a bitter harvest. Winter has come at last.",
+  image: "assets/conservatory.png"
 }
 
 const theStudy = {
   name: "study",
-  description: "When I'm in here, that means that I am working."
+  description: "When I'm in here, that means that I am working.",
+  image: "assets/study.png"
 }
 
 const theLibrary = {
   name: "library",
-  description: "When in doubt, go to the library."
+  description: "When in doubt, go to the library.",
+  image: "assets/library.png"
 }
 
 const theBilliardRoom = {
   name: "billiard room",
-  description: "Everything should be approached like a game of billiards. If you bash the ball too hard, you get nowhere."
+  description: "Everything should be approached like a game of billiards. If you bash the ball too hard, you get nowhere.",
+  image: "assets/billiardroom.png"
 }
 
 const theLounge = {
   name: "lounge",
-  description: "The lounge is like a fine old mink coat: opulent, dignified and warm."
+  description: "The lounge is like a fine old mink coat: opulent, dignified and warm.",
+  image: "assets/lounge.png"
 }
 
 const theBallroom = {
   name: "ballroom",
-  description: "We should consider every day lost on which we have not danced at least once."
+  description: "We should consider every day lost on which we have not danced at least once.",
+  image: "assets/ballroom.png"
 }
 
 const theHall = {
   name: "hall",
-  description: "It's just a hall."
+  description: "It's just a hall.",
+  image: "assets/hall.png"
 }
 
 const theSpa = {
   name: "spa",
-  description: "It's always a good idea to do something relaxing prior to making an important decision in your life."
+  description: "It's always a good idea to do something relaxing prior to making an important decision in your life.",
+  image: "assets/spa.png"
 }
 
 const theLivingRoom = {
   name: "living room",
-  description: "Irony is when someone is murdered in the living room."
+  description: "Irony is when someone is murdered in the living room.",
+  image: "assets/livingroom.png"
 }
 
 const theObservatory = {
   name: "observatory",
-  description: "We're all in the gutter, but some of us are looking at the stars."
+  description: "We're all in the gutter, but some of us are looking at the stars.",
+  image: "assets/observatory.png"
 }
 
 const theTheater = {
   name: "theater",
-  description: "To be or not to be, that is the question."
+  description: "To be or not to be, that is the question.",
+  image: "assets/theater.png"
 }
 
 const theGuestHouse = {
   name: "guest house",
-  description: "Hospitality: making your guest feel like they're at home even if you wish they were."
+  description: "Hospitality: making your guest feel like they're at home even if you wish they were.",
+  image: "assets/guesthouse.png"
 }
 
 const thePatio = {
   name: "patio",
-  description: "There's no peace like the peace of a patio on a sunny day."
+  description: "There's no peace like the peace of a patio on a sunny day.",
+  image: "assets/patio.png"
 }
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
@@ -291,18 +306,19 @@ const pickWeapon = () => {
   const theWeaponName = document.getElementById("weaponName");
   const theWeaponWeight = document.getElementById("weaponWeight");
   const theWeaponDescription = document.getElementById("weaponDescription");
+  const theWeaponImage = document.getElementById("weaponImage");
 
   // Print the weapon's name
   theWeaponName.innerHTML = mystery.weapon.name;
 
-  // Print the weapon's color
-  theWeaponName.style.background = mystery.weapon.color;
-
   // Print the weapon's weight
-  theWeaponWeight.innerHTML = mystery.weapon.weight;
+  theWeaponWeight.innerHTML = `${mystery.weapon.weight} kg`;
 
   // Print the weapons's description
   theWeaponDescription.innerHTML = mystery.weapon.description;
+
+  // Set the image to the image of the weapon
+  theWeaponImage.setAttribute("src", mystery.weapon.image);
 
   // Add class to weapon deck for special styling of the card
   theWeapon.classList.add("picked");
@@ -316,9 +332,13 @@ const pickRoom = () => {
   const theRoom = document.getElementById("room");
   const theRoomName = document.getElementById("roomName");
   const theRoomDescription = document.getElementById("roomDescription");
+  const theRoomImage = document.getElementById("roomImage");
 
   // Print the room's description
   theRoomDescription.innerHTML = mystery.room.description;
+
+  // Set the image to the room symbol image
+  theRoomImage.setAttribute("src", mystery.room.image);
 
   // Print room name on card
   theRoomName.innerHTML =
