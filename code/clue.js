@@ -118,6 +118,66 @@ const pistol = {
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const diningRoom = {
+  name: "dining room",
+  image: "assets/rooms/diningroom.png"
+}
+const conservatory = {
+  name: "conservatory",
+  image: "assets/rooms/conservatory.png"
+}
+const kitchen = {
+  name: "kitchen",
+  image: "assets/rooms/kitchen.png"
+}
+const study = {
+  name: "study",
+  image: "assets/rooms/study.png"
+}
+const library = {
+  name: "library",
+  image: "assets/rooms/library.png"
+}
+const billiardRoom = {
+  name: "billiard room",
+  image: "assets/rooms/billiardroom.png"
+}
+const lounge = {
+  name: "lounge",
+  image: "assets/rooms/lounge.png"
+}
+const ballroom = {
+  name: "ballroom",
+  image: "assets/rooms/ballroom.png"
+}
+const hall = {
+  name: "hall",
+  image: "assets/rooms/hall.png"
+}
+const spa = {
+  name: "spa",
+  image: "assets/rooms/spa.png"
+}
+const livingRoom = {
+  name: "living room",
+  image: "assets/rooms/livingroom.png"
+}
+const observatory = {
+  name: "observatory",
+  image: "assets/rooms/observatory.png"
+}
+const theater = {
+  name: "theater",
+  image: "assets/rooms/theater.png"
+}
+const guestHouse = {
+  name: "guest house",
+  image: "assets/rooms/guesthouse.png"
+}
+const patio = {
+  name: "patio",
+  image: "assets/rooms/patio.png"
+}
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
@@ -143,21 +203,21 @@ const weapons = [
 ]
 
 const rooms = [
-  "dining room",
-  "conservatory",
-  "kitchen",
-  "study",
-  "library",
-  "billiard room",
-  "lounge",
-  "ballroom",
-  "hall",
-  "spa",
-  "living room",
-  "observatory",
-  "theater",
-  "guest House",
-  "patio"
+  diningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
 ]
 const times = [
   "in the morning",
@@ -228,7 +288,9 @@ const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
   const theRoomName = document.getElementById("roomName")
-  theRoomName.innerHTML = mystery.room
+  const theRoomImage = document.getElementById("roomImage")
+  theRoomName.innerHTML = mystery.room.name
+  theRoomImage.src = mystery.room.image
 }
 //const mystery = {
 //  killer: pickKiller(),
@@ -251,11 +313,13 @@ const pickTime = () => {
 
 const revealMystery = () => {
   const mysteryAnswer = document.getElementById("mystery")
-  if (mystery.killer.firstName === undefined || mystery.weapon.name === undefined || mystery.time === null) {
+  if (mystery.killer.firstName === undefined
+    || mystery.weapon.name === undefined
+    || mystery.room.name === undefined) {
     mysteryAnswer.innerHTML = "No mystery is yet to be revealed"
   }
   else {
-    mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room}, ${mystery.time} with ${mystery.weapon.name}.`
+    mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name}, ${mystery.time} with ${mystery.weapon.name}.`
   }
 
 }
