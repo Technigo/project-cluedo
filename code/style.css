@@ -95,7 +95,9 @@ body {
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
 }
-
+.picked .card-inner .card-front {
+  z-index: 0;
+}
 .picked .card-inner .card-back {
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
