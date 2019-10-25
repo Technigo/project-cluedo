@@ -100,6 +100,10 @@ body {
   -ms-transform: rotateY(180deg);
 }
 
+.picked .card-inner .card-front {
+  z-index: 0;
+}
+
 /* Make the backside visible */
 .picked .card-inner .card-back {
   -webkit-backface-visibility: visible;
@@ -108,11 +112,9 @@ body {
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
   transform: rotateY(180deg);
-  z-index: 2;
-}
-.picked .card-inner .card-front{
   z-index: 1;
 }
+
 /* Card information */
 
 .card-type {
