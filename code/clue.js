@@ -257,7 +257,6 @@ const mystery = {
 
 }
 
-
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
 
@@ -267,7 +266,6 @@ const pickKiller = () => {
     const theKiller = document.getElementById("killer");
     theKiller.classList.remove("flipped");
 
-    emptyMysteryReveal();
     delete mystery.killer
 
     // Pick a random suspect, print details on card and add the class flipped to the card 
@@ -305,6 +303,7 @@ const pickKiller = () => {
     // Add class to killer deck for special styling of the card
     theKiller.classList.add("flipped");
   }
+  emptyMysteryReveal();
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
@@ -318,7 +317,6 @@ const pickWeapon = () => {
     const theWeapon = document.getElementById("weapon");
     theWeapon.classList.remove("flipped");
 
-    emptyMysteryReveal();
     delete mystery.weapon
 
   } else {
@@ -347,15 +345,9 @@ const pickWeapon = () => {
     // Add class to weapon deck for special styling of the card
     theWeapon.classList.add("flipped");
   }
+  emptyMysteryReveal();
 }
 
-const emptyMysteryReveal = () => {
-  const theMystery = document.getElementById("mystery");
-  const theMysteryDescription = document.getElementById("mysteryDescription");
-
-  theMysteryDescription.innerHTML = "";
-  theMystery.innerHTML = "";
-}
 // Pick a random room
 const pickRoom = () => {
 
@@ -365,7 +357,6 @@ const pickRoom = () => {
     const theRoom = document.getElementById("room");
     theRoom.classList.remove("flipped");
 
-    emptyMysteryReveal();
     delete mystery.room;
 
   } else {
@@ -389,6 +380,7 @@ const pickRoom = () => {
     // Add class to room deck for special styling of the card
     theRoom.classList.add("flipped");
   }
+  emptyMysteryReveal();
 }
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
@@ -408,6 +400,14 @@ const revealMystery = () => {
 
     // Print message
     theMystery.innerHTML = "No mystery is yet to be revealed.";
-
   }
+}
+
+// A function to empty the mystery reveal
+const emptyMysteryReveal = () => {
+  const theMystery = document.getElementById("mystery");
+  const theMysteryDescription = document.getElementById("mysteryDescription");
+
+  theMysteryDescription.innerHTML = "";
+  theMystery.innerHTML = "";
 }
