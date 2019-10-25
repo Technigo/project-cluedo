@@ -6,7 +6,7 @@ const mrGreen = {
   color: "olivedrab",
   description: "He has a lot of connections",
   age: 45,
-  image: "assets/green.png",
+  image: "assets/green.jpg",
   occupation: "Entrepreneur",
 }
 
@@ -16,7 +16,7 @@ const profPlum = {
   color: "darkorchid",
   description: "He is quick-witted and intellectual",
   age: 36,
-  image: "assets/plum.png",
+  image: "assets/plum.jpg",
   occupation: "Professor"
 }
 
@@ -26,7 +26,7 @@ const missScarlet = {
   color: "crimson",
   description: "She is weird but beautiful",
   age: 28,
-  image: "assets/scarlet.png",
+  image: "assets/scarlet.jpg",
   occupation: "Actress"
 }
 
@@ -36,7 +36,7 @@ const mrsPeacock = {
   color: "cornflowerblue",
   description: "She always maintains her dignity",
   age: 65,
-  image: "assets/peacock.png",
+  image: "assets/peacock.jpg",
   occupation: "Senior Citizen"
 }
 
@@ -46,7 +46,7 @@ const mrMustard = {
   color: "gold",
   description: "He is dignified, dapper and dangerous",
   age: 50,
-  image: "assets/mustard.png",
+  image: "assets/mustard.jpg",
   occupation: "Colonel"
 }
 
@@ -56,7 +56,7 @@ const mrsWhite = {
   color: "white",
   description: "She is a kind, grandmotherly servant",
   age: 70,
-  image: "assets/white.png",
+  image: "assets/white.jpg",
   occupation: "Housekeeper"
 }
 
@@ -313,10 +313,7 @@ const pickTime = () => {
 
 const revealMystery = () => {
   const mysteryAnswer = document.getElementById("mystery")
-  if (mystery.killer.firstName === undefined
-    || mystery.weapon.name === undefined
-    || mystery.room.name === undefined
-    || mystery.time === undefined) {
+  if (!mystery.killer || !mystery.room || !mystery.weapon || !mystery.time) {
     mysteryAnswer.innerHTML = "No mystery is yet to be revealed"
   }
   else {
@@ -324,6 +321,12 @@ const revealMystery = () => {
   }
 
 }
+
+
+/*mystery.killer.firstName === undefined
+    || mystery.weapon.name === undefined
+    || mystery.room.name === undefined
+    || mystery.time === undefined
 
 /*if () {
   mysteryAnswer.innerHTML = "No mystery is yet to be revealed"
