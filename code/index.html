@@ -10,9 +10,14 @@
   </head>
   <body>
     <h1 class="header">CLUEDO</h1>
-    <button id="pickAllCard" onclick="pickMystery()">PICK MYSTERY</button> 
-    <button id="revealMystery" class="revealMysteryTop" onclick="revealMystery()">REVEAL THE CRIME</button>
-
+    
+    <!--<button id="revealMystery" class="revealMysteryTop" onclick="revealMystery()">REVEAL THE CRIME</button>
+    -->
+    <div class="buttons">
+        <button id="pickAllCard" onclick="pickMystery()">PICK MYSTERY</button> 
+      <button id="revealMystery" class="revealMysteryBottom" onclick="revealMystery()">REVEAL THE CRIME</button>
+      <button id="startOver" onclick="reloadPage()">START OVER</button>
+    </div>
 
     <section class="cards" id="allCards">
       <div class="killer-deck" id="killer" onclick="pickKiller()">
@@ -41,9 +46,8 @@
     <div class="mysteryContainer">
       <h1 id="mystery"></h1>
     </div>
-    <button id="revealMystery" class="revealMysteryBottom" onclick="revealMystery()">REVEAL THE CRIME</button>
-    <button id="startOver" onclick="reloadPage()">START OVER</button>
-  
+
+   
 
      
       

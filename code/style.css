@@ -5,13 +5,14 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Kalam', cursive;
+  width: 100%;
 }
 
 h1.header {
   font-family: 'Luckiest Guy', cursive;
   font-size: 100px;
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  
 }
 
 p, h4 {
@@ -41,16 +42,17 @@ p.weapon {
 
 h1 {
   font-size: 60px;
-  color: white;
   width: 80%;
   text-align: center;
-  
+  color: crimson;
+
 }
 
 .mysteryContainer {
  display: flex;
  flex-direction: row;
  justify-content: center;
+ 
 }
 
 .cards {
@@ -68,6 +70,7 @@ h1 {
   width: 250px;
   height: 400px;
   background: #000;
+  box-shadow: 4px 4px 6px;
   text-align: center;
   padding-top: 50px;
   border-radius: 16px;
@@ -91,6 +94,7 @@ h1 {
   width: 250px;
   height: 400px;
   background: white;
+  box-shadow: 4px 4px 6px;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -115,7 +119,7 @@ h1 {
   width: 250px;
   height: 400px;
   background: midnightblue;
-
+  box-shadow: 4px 4px 6px;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -134,17 +138,33 @@ h1 {
   background-size: 100px 100px;
 }
 
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 button {
-  padding: 8px 16px;
-  background: crimson;
+  padding: 10px 20px;
+  background: rgb(141, 63, 63);
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
-  margin-bottom: 100px;
-  
+  margin-top: 20px;
+  margin-bottom: 0px;
+  height: 60px;
+  box-shadow: 4px 4px 6px;
 }
+
+button:hover {
+  background: crimson;
+}
+
+button:active {
+  background: crimson;
+}
+
 
 #weaponImage {
   margin-top: 10%;
@@ -174,6 +194,17 @@ h1 {
   font-size: 30px;
 }
 
+button {
+  padding: 8px 16px;
+  width: 150px;
+  font-size: 15px;
+  
+}
+
+button:hover {
+  box-shadow: 0;
+}
+
 .cards{
   height: 100%;
 }
@@ -194,7 +225,11 @@ h1 {
 }
 
 .revealMysteryBottom {
-  display: none;
+  
+}
+
+#mystery {
+  font-size: 30px;
 }
 
 }

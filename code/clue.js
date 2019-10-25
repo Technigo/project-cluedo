@@ -235,9 +235,11 @@ const pickRoom = () => {
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const pickMystery = () => {
+
   mystery.killer = randomSelector(suspects)
   mystery.weapon = randomSelector(weapons)
   mystery.room = randomSelector(rooms)
+  
 
 }
 
@@ -247,7 +249,11 @@ const revealMystery = () => {
   if (mystery.killer || mystery.weapon || mystery.room === onclick) {
     document.getElementById("mystery").innerHTML = `The murder was commited by ${mystery.killer.firstName + " " + mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`
     document.getElementById("allCards").style.display = "none"
-    document.getElementById("mystery").style.marginTop = "200px";
+    document.getElementById("mystery").style.fontSize = "50px"
+    document.getElementById("mystery").style.color = "red"
+    document.getElementById("mystery").style.textTransform = "uppercase"
+    document.getElementById("mystery").style.fontWeight = "bold"
+    document.getElementById("mystery").style.fontFamily = "Luckiest Guy"
     document.getElementById("startOver").style.display = "block"
   } else {
     alert(`You have to pick the cards to reveal the mystery`)
@@ -260,10 +266,7 @@ const reloadPage = () => {
   location.reload()
 }
 
-const mysteryText = (mystery) => {
-  mystery.map(textBig => textBig.toUpperCase()) 
-}
-mysteryText(mystery)
+
 
 
 
