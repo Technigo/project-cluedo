@@ -51,9 +51,9 @@ body {
 .card-inner {
   height: 430px;
   position: relative;
-  transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
   transition: transform 0.8s;
   width: 280px;
 }
@@ -63,6 +63,7 @@ body {
 .card-front,
 .card-back {
   align-items: center;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 0.5rem;
   display: flex;
@@ -95,9 +96,10 @@ body {
 }
 
 .picked .card-inner .card-back {
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
  transform: rotateY(180deg);
- -webkit-transform: rotateY(180deg);
- -ms-transform: rotateY(180deg);
+ -webkit-backface-visibility: visible;
  backface-visibility: visible;
  border: 10px solid #000;
 }
