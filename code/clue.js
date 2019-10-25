@@ -257,92 +257,138 @@ const mystery = {
 
 }
 
+
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects array. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects);
 
-  const theKiller = document.getElementById("killer");
-  const theKillerColor = document.getElementById("killerColor");
-  const theKillerName = document.getElementById("killerName");
-  const theKillerAge = document.getElementById("killerAge");
-  const theKillerOccupation = document.getElementById("killerOccupation");
-  const theKillerImage = document.getElementById("killerImage");
-  const theKillerDescription = document.getElementById("killerDescription");
+  // Check if the card contains the class flipped. If it does, remove the class and remove the killer from the mystery object.
+  if (document.getElementById("killer").classList.contains("flipped")) {
 
-  // Change the background color to the killer color
-  theKillerColor.style.background = mystery.killer.color;
+    const theKiller = document.getElementById("killer");
+    theKiller.classList.remove("flipped");
 
-  // Print the killer's first and last name
-  theKillerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+    emptyMysteryReveal();
+    delete mystery.killer
 
-  // Print the killer's age
-  theKillerAge.innerHTML = mystery.killer.age;
+    // Pick a random suspect, print details on card and add the class flipped to the card 
+  } else {
 
-  // Print the killer's occupation
-  theKillerOccupation.innerHTML = mystery.killer.occupation;
+    // This will randomly select a killer from the suspects array. And add that to the mystery object.
+    mystery.killer = randomSelector(suspects);
 
-  // Set the image to the killer's portrait
-  theKillerImage.setAttribute("src", mystery.killer.image);
+    const theKiller = document.getElementById("killer");
+    const theKillerColor = document.getElementById("killerColor");
+    const theKillerName = document.getElementById("killerName");
+    const theKillerAge = document.getElementById("killerAge");
+    const theKillerOccupation = document.getElementById("killerOccupation");
+    const theKillerImage = document.getElementById("killerImage");
+    const theKillerDescription = document.getElementById("killerDescription");
 
-  // Print the killer's description
-  theKillerDescription.innerHTML = mystery.killer.description;
+    // Change the background color to the killer color
+    theKillerColor.style.background = mystery.killer.color;
 
-  // Add class to killer deck for special styling of the card
-  theKiller.classList.add("picked");
+    // Print the killer's first and last name
+    theKillerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
 
+    // Print the killer's age
+    theKillerAge.innerHTML = mystery.killer.age;
+
+    // Print the killer's occupation
+    theKillerOccupation.innerHTML = mystery.killer.occupation;
+
+    // Set the image to the killer's portrait
+    theKillerImage.setAttribute("src", mystery.killer.image);
+
+    // Print the killer's description
+    theKillerDescription.innerHTML = mystery.killer.description;
+
+    // Add class to killer deck for special styling of the card
+    theKiller.classList.add("flipped");
+  }
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
 // Picka a random weapon
 const pickWeapon = () => {
-  // This will randomly select a weapon from the weapons array. And add that to the mystery object.
-  mystery.weapon = randomSelector(weapons);
 
-  const theWeapon = document.getElementById("weapon");
-  const theWeaponName = document.getElementById("weaponName");
-  const theWeaponWeight = document.getElementById("weaponWeight");
-  const theWeaponDescription = document.getElementById("weaponDescription");
-  const theWeaponImage = document.getElementById("weaponImage");
+  // Check if the card contains the class flipped. If it does, remove the class and remove the weaponfrom the mystery object.
+  if (document.getElementById("weapon").classList.contains("flipped")) {
 
-  // Print the weapon's name
-  theWeaponName.innerHTML = mystery.weapon.name;
+    const theWeapon = document.getElementById("weapon");
+    theWeapon.classList.remove("flipped");
 
-  // Print the weapon's weight
-  theWeaponWeight.innerHTML = `${mystery.weapon.weight} kg`;
+    emptyMysteryReveal();
+    delete mystery.weapon
 
-  // Print the weapons's description
-  theWeaponDescription.innerHTML = mystery.weapon.description;
+  } else {
 
-  // Set the image to the image of the weapon
-  theWeaponImage.setAttribute("src", mystery.weapon.image);
+    // This will randomly select a weapon from the weapons array. And add that to the mystery object.
+    mystery.weapon = randomSelector(weapons);
 
-  // Add class to weapon deck for special styling of the card
-  theWeapon.classList.add("picked");
+    const theWeapon = document.getElementById("weapon");
+    const theWeaponName = document.getElementById("weaponName");
+    const theWeaponWeight = document.getElementById("weaponWeight");
+    const theWeaponDescription = document.getElementById("weaponDescription");
+    const theWeaponImage = document.getElementById("weaponImage");
+
+    // Print the weapon's name
+    theWeaponName.innerHTML = mystery.weapon.name;
+
+    // Print the weapon's weight
+    theWeaponWeight.innerHTML = `${mystery.weapon.weight} kg`;
+
+    // Print the weapons's description
+    theWeaponDescription.innerHTML = mystery.weapon.description;
+
+    // Set the image to the image of the weapon
+    theWeaponImage.setAttribute("src", mystery.weapon.image);
+
+    // Add class to weapon deck for special styling of the card
+    theWeapon.classList.add("flipped");
+  }
 }
 
+const emptyMysteryReveal = () => {
+  const theMystery = document.getElementById("mystery");
+  const theMysteryDescription = document.getElementById("mysteryDescription");
+
+  theMysteryDescription.innerHTML = "";
+  theMystery.innerHTML = "";
+}
 // Pick a random room
 const pickRoom = () => {
-  //This will randomly select a room from the rooms array. And add that to the mystery object.
-  mystery.room = randomSelector(rooms);
 
-  const theRoom = document.getElementById("room");
-  const theRoomName = document.getElementById("roomName");
-  const theRoomDescription = document.getElementById("roomDescription");
-  const theRoomImage = document.getElementById("roomImage");
+  // Check if the card contains the class flipped. If it does, remove the class and remove the room from the mystery object.
+  if (document.getElementById("room").classList.contains("flipped")) {
 
-  // Print the room's description
-  theRoomDescription.innerHTML = mystery.room.description;
+    const theRoom = document.getElementById("room");
+    theRoom.classList.remove("flipped");
 
-  // Set the image to the room symbol image
-  theRoomImage.setAttribute("src", mystery.room.image);
+    emptyMysteryReveal();
+    delete mystery.room;
 
-  // Print room name on card
-  theRoomName.innerHTML = mystery.room.name;
+  } else {
+    //This will randomly select a room from the rooms array. And add that to the mystery object.
+    mystery.room = randomSelector(rooms);
 
-  // Add class to room deck for special styling of the card
-  theRoom.classList.add("picked");
+    const theRoom = document.getElementById("room");
+    const theRoomName = document.getElementById("roomName");
+    const theRoomDescription = document.getElementById("roomDescription");
+    const theRoomImage = document.getElementById("roomImage");
+
+    // Print the room's description
+    theRoomDescription.innerHTML = mystery.room.description;
+
+    // Set the image to the room symbol image
+    theRoomImage.setAttribute("src", mystery.room.image);
+
+    // Print room name on card
+    theRoomName.innerHTML = mystery.room.name;
+
+    // Add class to room deck for special styling of the card
+    theRoom.classList.add("flipped");
+  }
 }
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'

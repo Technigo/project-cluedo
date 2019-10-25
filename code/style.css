@@ -68,39 +68,40 @@ body {
 }
 
 .card-front {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   background-color: #000;
   color: #fff;
   justify-content: center;
-  z-index: 2;
-}
-
-.card-back {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  background-color: #f8e2b9;
-  color: #000;
-  text-align: center;
   z-index: 1;
 }
 
 /* Rotate the card when it gets the class picked and make backside visible */
 
-.picked .card-inner {
+.card-back {
+  background-color: #f8e2b9;
+  border: 10px solid #000;
+  color: #000;
+  text-align: center;
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  z-index: 0;
+}
+
+.flipped .card-inner {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
 }
 
-.picked .card-inner .card-front {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+.flipped .card-inner .card-front {
   z-index: 0;
 }
 
-.picked .card-inner .card-back {
+.flipped .card-inner .card-back {
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
-  border: 10px solid #000;
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
   transform: rotateY(180deg);
