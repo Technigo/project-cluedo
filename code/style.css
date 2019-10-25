@@ -1,4 +1,5 @@
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-size: 16px;
   margin: 0;
@@ -24,9 +25,17 @@ body {
 
 .cards,
 .deck {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin-top: 1rem;
 }
@@ -43,6 +52,7 @@ body {
   background-color: transparent;
   cursor: pointer;
   margin: 1rem 1rem;
+  perspective: 1000px;
   position: relative;
 }
 
@@ -51,17 +61,28 @@ body {
 .card-inner {
   position: relative;
   -webkit-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
   transition: -webkit-transform 0.8s;
+  -webkit-transition: -webkit-transform 0.8s;
+  -o-transition: transform 0.8s;
   transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
 }
 
 .card-front,
 .card-back {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-radius: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   position: absolute;
   top: 0;
@@ -69,9 +90,12 @@ body {
 
 .card-front {
   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: #000;
   color: #fff;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   z-index: 1;
 }
@@ -85,14 +109,16 @@ body {
   text-align: center;
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
   transform: rotateY(180deg);
   z-index: 0;
 }
 
 .flipped .card-inner {
-  transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .flipped .card-inner .card-front {
@@ -101,9 +127,11 @@ body {
 
 .flipped .card-inner .card-back {
   -webkit-backface-visibility: visible;
+  -moz-backface-visibility: visible;
   backface-visibility: visible;
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
   transform: rotateY(180deg);
   z-index: 1;
 }
@@ -226,7 +254,10 @@ button {
   }
 
   .cards {
-    flex-flow: row wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
     margin-bottom: 1.5rem;
   }
 
