@@ -177,9 +177,9 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 const mystery = {
-killer: this.name,
-weapon: this.weapon,
-room: this.room,
+killer: null,
+weapon: null,
+room: null
 
 };
 
@@ -223,26 +223,15 @@ theRoomName.innerHTML = mystery.room
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 
-
 const revealMystery = () => {
-const theMysteryRevealed = document.getElementById("mystery")
-if (mystery.killer === "" || mystery.room === "" || mystery.weapon ==="")
-theMysteryRevealed.innerHTML = `No mystery is yet to be revealed`;
-  
-console.log(theMysteryRevealed)
-
-}
-revealMystery()
- 
-  
-{
-
-theMysteryRevealed.innerHTML = `The murder was commited by
-${mystery.killer.firstName} ${mystery.killer.lastName},
-in the ${mystery.room} with a ${mystery.weapon.name}.`
+  const theMysteryRevealed = document.getElementById("mystery");
+  if (!mystery.killer || !mystery.room  || !mystery.weapon ) {
+    theMysteryRevealed.innerHTML = "No mystery is yet to be revealed"
+  }
+  else {
+  theMysteryRevealed.innerHTML = `The murder was committed by ${mystery.killer.firstName}, ${mystery.killer.lastName}, in the ${mystery.room},
+with a  ${mystery.weapon.name}.`
 
   }
 }
 
- 
-  
