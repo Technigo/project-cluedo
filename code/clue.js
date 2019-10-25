@@ -161,6 +161,12 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+// const mystery = {
+//   pickKiller,
+//   pickRoom,
+//   pickWeapon
+// }
+
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -170,11 +176,12 @@ const pickKiller = () => {
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
   const theKillerDescription = document.getElementById("killerDescription")
+  const theKillerImage = document.getElementById("killerImage")
   theKiller.style.background = mystery.killer.color
   theKillerName.innerHTML =
     mystery.killer.firstName + " " + mystery.killer.lastName
-    theKillerDescription.innerHTML =
-    mystery.killer.description
+  theKillerDescription.innerHTML = mystery.killer.description
+  theKillerImage.src = mystery.killer.image
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
@@ -183,14 +190,17 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
   const theWeapon = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
+  theWeapon.style.background = mystery.killer.color
   theWeaponName.innerHTML =
     mystery.weapon.name
 }
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
-  const theRoom = document.getElementById("roomName")  
-  theRoom.innerHTML =
+  const theRoomName = document.getElementById("roomName") 
+  const theRoom = document.getElementById("room") 
+  theRoom.style.background = mystery.killer.color
+  theRoomName.innerHTML =
     mystery.room
 }
 
@@ -212,5 +222,14 @@ document
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-  mystery.innerHTML = (`The killer is ${mystery.killer.firstName} ${mystery.killer.lastName}, with a ${mystery.weapon.name} in the ${mystery.room}`)
+    if (!mystery.killer || !mystery.weapon || !mystery.room) {
+      document.getElementById("mystery").innerHTML =
+        'You have to find the clues to reveal the mystery....';
+    } else {
+  mystery.innerHTML = (`The killer is ${mystery.killer.firstName} ${mystery.killer.lastName},
+   with a ${mystery.weapon.name} in the ${mystery.room}`)
+    }
+// }
 }
+
+c
