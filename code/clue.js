@@ -321,8 +321,10 @@ const revealMystery = () => {
   }
 
 }
-
-
+const refresh = () => {
+  const playAgain = document.getElementById("playAgain")
+  playAgain = location = location
+}
 /*mystery.killer.firstName === undefined
     || mystery.weapon.name === undefined
     || mystery.room.name === undefined

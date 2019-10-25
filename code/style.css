@@ -58,7 +58,7 @@ p{
 .time-deck {
   background: olive;
 }
-button {
+.reveal {
   padding: 8px 16px;
   background: lightsalmon;
   color: firebrick;
@@ -70,10 +70,25 @@ button {
   box-shadow: 4px 4px 10px 2px gold inset;
   cursor: pointer;
 }
-button:hover{
+.reveal:hover{
   background: firebrick;
   color: gold;
-
+}
+.reload {
+  padding: 8px 16px;
+  background:skyblue;
+  color:navy;
+  border: 2px solid navy;
+  font-size: 20px;
+  border-radius: 8px;
+  display: block;
+  margin: 20px auto;
+  box-shadow: 4px 4px 16px 4px yellowgreen inset;
+  cursor: pointer;
+}
+.reload:hover{
+  background:navy;
+  color:skyblue;
 }
 h1{
   margin:20px;
