@@ -2,6 +2,7 @@
 killerPicked = false;
 weaponPicked = false;
 roomPicked = false;
+
 const mrGreen = {
     firstName: "Jacob",
     lastName: "Green",
@@ -63,46 +64,57 @@ const mrMustard = {
 const rope = {
     name: "rope",
     color: "brown",
-    weight: 10
+    weight: 10,
+    image: "assets/rope.png"
+
 }
 const knife = {
     name: "Knife",
     color: "red",
+    image: "assets/knife2.png",
     weight: 2
 }
 const candlestick = {
     name: "Candlestick",
     color: "orange",
+    image: "assets/candlestick.png",
+
     weight: 3
 }
 const dumbbell = {
     name: "Dumbbell",
+    image: "assets/dumbbell.png",
     color: "blue",
     weight: 15
 }
 const poison = {
     name: "Poison",
+    image: "assets/poison.png",
     color: "green",
     weight: 1
 }
 const axe = {
     name: "Axe",
+    image: "assets/axe.png",
     color: "grey",
     weight: 8
 }
 const bat = {
     name: "Bat",
     color: "purple",
+    image: "assets/bat.png",
     weight: 2
 }
 const trophy = {
     name: "Trophy",
+    image: "assets/trophy.png",
     color: "gold",
     weight: 12
 }
 const pistol = {
     name: "Pistol",
-    color: "pink",
+    image: "assets/pistol.png",
+    color: "lightgreen",
     weight: 6
 }
 
@@ -220,11 +232,14 @@ const pickWeapon = () => {
     const theWeapon = document.getElementById("weapon")
     const theWeaponName = document.getElementById("weaponName")
     const theWeaponWeight = document.getElementById("weaponWeight")
+    const theWeaponImage = document.getElementById("weaponImage").src = mystery.weapon.image
 
 
     theWeapon.style.background = mystery.weapon.color
     theWeaponName.innerHTML = "Weapon: " + mystery.weapon.name
     theWeaponWeight.innerHTML = "Weight: " + mystery.weapon.weight
+    theWeaponImage.innerHTML = mystery.weapon.image
+
 }
 
 const pickRoom = () => {

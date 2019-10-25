@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Parisienne|Playball');
 body {
     margin: 0;
     background: whitesmoke;
@@ -18,7 +19,7 @@ h2 {
 p {
     margin: 6px;
     font-weight: 300;
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
 }
 
 .cards {
@@ -31,6 +32,54 @@ p {
     align-items: center;
 }
 
+.frame {
+    margin: 50px auto;
+    border: 18px solid #222;
+    height: 475px;
+    width: 25%;
+    -webkit-box-shadow: px 2px 3px 1px rgba(0, 0, 0, .5);
+    box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, .3);
+}
+
+.border {
+    background: white;
+    height: 100%;
+    width: 100%;
+    -webkit-box-shadow: inset 10px 10px 10px 4px rgba(0, 0, 0, .4);
+    box-shadow: inset 3px 7px 2px 5px rgba(0, 0, 0, .4);
+    text-align: center;
+}
+
+.killer-deck,
+.room-deck,
+.weapon-deck {
+    width: 15%;
+    position: absolute;
+    height: 350px;
+    margin-left: 50px;
+    margin-top: 50px;
+    -webkit-box-shadow: inset 10px 10px 10px 4px rgba(0, 0, 0, .6);
+    box-shadow: inset 3px 7px 2px 5px rgba(0, 0, 0, .1);
+    border: 2px inset #c9c9c9;
+    text-align: center;
+    padding-top: 30px;
+    background: rgb(96, 93, 93);
+}
+
+.killer-deck p,
+.room-deck p,
+.weapon-deck p {
+    text-align: start;
+    padding-left: 10px;
+}
+
+.text {
+    padding-top: 445px;
+    display: inline-block;
+    font-family: 'Playball', cursive;
+    font-size: 20px;
+}
+
 .killer-deck:hover,
 .room-deck:hover,
 .weapon-deck:hover {
@@ -40,48 +89,25 @@ p {
     cursor: pointer;
 }
 
-.killer-deck {
-    width: 25%;
-    height: 400px;
-    background: rgb(96, 93, 93);
-    text-align: center;
-    padding-top: 30px;
-    border-radius: 16px;
-}
-
-.weapon-deck {
-    width: 25%;
-    height: 400px;
-    background: rgb(96, 93, 93);
-    text-align: center;
-    padding-top: 30px;
-    border-radius: 16px;
-}
-
-.room-deck {
-    width: 25%;
-    height: 400px;
-    background: rgb(96, 93, 93);
-    text-align: center;
-    padding-top: 30px;
-    border-radius: 16px;
-}
-
 button {
-    padding: 8px 16px;
-    background: crimson;
-    border: none;
+    padding: 18px 16px;
+    background: white;
+    border: 1px solid black;
     font-size: 20px;
     border-radius: 8px;
     display: block;
     margin: 0 auto;
-    font-weight: 700;
+    transition: all 0.4s ease 0s;
 }
 
 button:hover {
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    color: #fff !important;
+    background: crimson;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.4s ease 0s;
     cursor: pointer;
 }
 
@@ -96,42 +122,23 @@ footer {
     padding: 10px;
 }
 
+
+/* MOBILE */
+
 @media screen and (max-width: 600px) {
     body {
         margin-bottom: 30px;
     }
     .cards {
-        margin: 50px auto;
         height: 100%;
-        background: inherit;
-        display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
     }
-    .killer-deck:hover,
-    .room-deck:hover,
-    .weapon-deck:hover {
-        -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-        box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    .frame {
+        width: 70%;
     }
-    .killer-deck {
-        width: 80%;
-        height: 300px;
-        padding-top: 30px;
-        margin: 10px;
-    }
+    .killer-deck,
+    .room-deck,
     .weapon-deck {
-        width: 80%;
-        height: 300px;
-        padding-top: 30px;
-        margin: 5px;
-    }
-    .room-deck {
-        width: 80%;
-        height: 300px;
-        padding-top: 30px;
-        margin: 5px;
+        width: 45%;
     }
 }

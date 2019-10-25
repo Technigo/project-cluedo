@@ -15,31 +15,49 @@
         <h1>CLUEDO</h1>
         <h2>"An Unsolved Mystery with the Usual Suspects"</h2>
     </header>
+
     <section class="cards">
         <!-- KILLER -->
-        <div class="killer-deck" id="killer" onclick="pickKiller()">
-            <p>KILLER</p>
-            <p id="killerName"></p>
-            <img id="killerImage" src="assets/killer.png" height="100" />
-            <p id="killerAge"></p>
-            <p id="killerOccupation"></p>
-            <p id="killerDescription"></p>
-
+        <div class="frame">
+            <div class="border">
+                <div class="killer-deck" id="killer" onclick="pickKiller()">
+                    <img id="killerImage" src="assets/killer.png" height="100" />
+                    <p id="killerName"></p>
+                    <p id="killerAge"></p>
+                    <p id="killerOccupation"></p>
+                    <p id="killerDescription"></p>
+                </div>
+                <div class="text">KILLER</div>
+                <!--end border-->
+            </div>
+            <!--end frame-->
         </div>
         <!-- WEAPON -->
-        <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
-            <p>WEAPON</p>
-            <img id="weaponImage" src="assets/knife.png" height="100" />
-            <p id="weaponName"></p>
-            <p id="weaponWeight"></p>
+        <div class="frame">
+            <div class="border">
+                <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
+                    <img id="weaponImage" src="assets/knife.png" height="100" />
+                    <p id="weaponName"></p>
+                    <p id="weaponWeight"></p>
+                </div>
+                <div class="text">WEAPON</div>
+            </div>
+            <!--end border-->
         </div>
+        <!--end frame-->
 
         <!-- ROOM -->
-        <div class="room-deck" id="room" onclick="pickRoom()">
-            <p>ROOM</p>
-            <img id="roomImage" src="assets/room.png" height="100" />
-            <p id="roomName"></p>
+        <div class="frame">
+            <div class="border">
+                <div class="room-deck" id="room" onclick="pickRoom()">
+                    <img id="roomImage" src="assets/room.png" height="100" />
+                    <p id="roomName"></p>
+                </div>
+                <div class="text">ROOM</div>
+            </div>
+            <!--end border-->
         </div>
+        <!--end frame-->
     </section>
 
     <h1 id="mystery"></h1>
