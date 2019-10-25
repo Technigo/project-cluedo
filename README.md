@@ -66,7 +66,7 @@ Try to console log the arrays to see that everyhting is there.
 
 #### 🚨Before starting with step 3, commit the second iteration to github.
 
-## Step 3 - Pick a murderer, a weapon and a room
+## Step 3 - Pick a murderer, a weapon and a roomstep4
 
 When clicking on the cards, you should invoke the right functions to pick a murderer, a room and a weapon. 
 That should be stored in the mysterty object and we should visually see the chosen cards in the browser.

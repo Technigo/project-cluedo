@@ -65,7 +65,8 @@
 
   const Rope = {
     name: "rope",
-    weight: 10
+    weight: 10,
+    image: "assets/rope.jpg"
   }
   const Knife = {
     name: "Knife",
@@ -77,7 +78,8 @@
   }
   const Dumbbell = {
     name: "Dumbbell",
-    weight: 2
+    weight: 2,
+    image: "assets/dumbbell.jpg"
   }
   const Poison = {
     name: "Poison",
@@ -97,7 +99,8 @@
   }
   const Pistol = {
     name: "Pistol",
-    weight: 20
+    weight: 20,
+    image: "assets/pistol2.jpg"
   }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -195,9 +198,11 @@ const pickWeapon = () => {
      
   const theWeapon = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
+  const theWeaponImage = document.getElementById("weaponImage")
     
   theWeapon.style.background = mystery.weapon.color
   theWeaponName.innerHTML = mystery.weapon.name + " " + mystery.weapon.weight
+  theWeaponImage.src = mystery.weapon.image
       }
 
 const pickRoom = () => {
@@ -220,12 +225,12 @@ const pickRoom = () => {
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-  const theReveal = document.getElementById("mystery")
+   
+if (mystery.Killer === undefined||mystery.Weapon === undefined||mystery.Room === undefined){
+  document.getElementById("mystery").innerHTML = `The mystery is yet to be revealed`  
+}
+else {
 
-
-
-theReveal.innerHTML = `The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${ mystery.room} with a ${mystery.weapon.name}`
-
-
- 
+  document.getElementById("mystery").innerHTML = `The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${ mystery.room} with a ${mystery.weapon.name}`
+ }
 }
