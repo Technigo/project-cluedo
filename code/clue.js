@@ -21,7 +21,7 @@
  const missScarlet = {
     firstName: "Cassandra",
     lastName: "Scarlet",
-    color: "red",
+    color: " crimson",
     description: "will do anything to stay in the sportight",
     age:"25",
     image: "assets/scarlet.png",
@@ -30,7 +30,7 @@
   const mrsPeacock = {
     firstName: "Eleanor",
     lastName: "Peacock",
-    color: "blue",
+    color: "#465cbd",
     description: "classy social butterfly",
     age:"32",
     image: "assets/peacock.png",
@@ -39,7 +39,7 @@
   const colonelMustard = {
     firstName: "Jack",
     lastName: "Mustard",
-    color: "yellow",
+    color: "#fdd72c",
     description: "ex-football player",
     age:"50-60",
     image: "assets/mustard.png",
@@ -151,16 +151,17 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-const mystery = {
-  killer:"",
-  weapon:"",
-  room:"",
-};
+
 
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+const mystery = {
+  killer:"",
+  weapon:"",
+  room:"",
+};
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.

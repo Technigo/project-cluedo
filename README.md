@@ -53,7 +53,7 @@ Guest House
 Patio
 
 #### 🚨Before starting with step 2, commit the first iteration to github.
-
+step
 ```
  git add .
  git commit -m "step 1 done"
