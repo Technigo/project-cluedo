@@ -25,7 +25,7 @@ p {
   align-items: center;
   padding: 20px;
 }
-div{
+.killer-deck, .weapon-deck, .room-deck, .time-deck{
   border: 15px solid bisque;
   margin: 5px;
   box-shadow: 4px 4px 2px 0px rgba(50, 50, 50, 0.5);
@@ -66,8 +66,14 @@ button {
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin: 10px auto;
+  margin: 20px auto;
   box-shadow: 4px 4px 10px 2px gold inset;
+  cursor: pointer;
+}
+button:hover{
+  background: firebrick;
+  color: gold;
+
 }
 h1{
   margin:20px;
@@ -78,6 +84,22 @@ h1{
 img{
   border-radius: 20px;
 }
+
+footer{
+display:flex;
+justify-content: space-around;
+}
+footer img {
+  width: 120px;
+  border-radius: 0;
+}
+.footer-text{
+  background: none;
+}
+footer a{
+  text-decoration: none;
+}
+
 
 /***TABLET***/
 @media (min-width: 668px) and (max-width: 1024px){

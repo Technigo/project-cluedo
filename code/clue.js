@@ -140,7 +140,7 @@ const library = {
 }
 const billiardRoom = {
   name: "billiard room",
-  image: "assets/rooms/billiardroom.png"
+  image: "assets/rooms/billiard.png"
 }
 const lounge = {
   name: "lounge",
@@ -315,7 +315,8 @@ const revealMystery = () => {
   const mysteryAnswer = document.getElementById("mystery")
   if (mystery.killer.firstName === undefined
     || mystery.weapon.name === undefined
-    || mystery.room.name === undefined) {
+    || mystery.room.name === undefined
+    || mystery.time === undefined) {
     mysteryAnswer.innerHTML = "No mystery is yet to be revealed"
   }
   else {
