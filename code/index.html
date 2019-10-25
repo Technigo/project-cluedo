@@ -22,10 +22,10 @@
         </div>
         <div class="card-back">
           <p class="card-type">Killer</p>
-          <p id="killerColor" class="killer-info">
+          <p id="killerColor" class="killer-details">
             <span id="killerName" class="killer-name"></span>, <span id="killerAge" class="killer-age"></span>
           </p>
-          <p id="killerOccupation" class="killer-occupation"></p>
+          <p id="killerOccupation" class="badge"></p>
           <img id="killerImage" class="killer-portrait" src="" />
           <p id="killerDescription" class="killer-description"></p>
         </div>
@@ -40,7 +40,7 @@
           <img id="weaponImage" class="weapon-image" src="assets/weapon.png" />
           <p class="card-type">Weapon</p>
           <p id="weaponName" class="weapon-name"></p>
-          <p id="weaponWeight" class="weapon-weight"></p>
+          <p id="weaponWeight" class="badge"></p>
           <p id="weaponDescription" class="weapon-description"></p>
         </div>
       </div>
@@ -61,7 +61,8 @@
     </div>
   </section>
   <section class="mystery">
-    <h1 id="mystery" class="revealed-mystery"></h1>
+    <h1 id="mystery" class="mystery-title"></h1>
+    <p id="mysteryDescription" class="mystery-description"></p>
     <button onclick="revealMystery()">Reveal the crime</button>
   </section>
   <script src="clue.js"></script>

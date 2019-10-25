@@ -1,4 +1,4 @@
-// CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// Objects for all suspects
 
 const mrGreen = {
   firstName: "Jacob",
@@ -54,7 +54,7 @@ const mrMustard = {
   image: "assets/mrmustard.png",
   occupation: "Colonel"
 }
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
+// Objects for all weapons
 
 const rope = {
   name: "rope",
@@ -111,7 +111,7 @@ const pistol = {
   weight: 15
 }
 
-// Made the rooms into objects with more information than just the name
+// Objects for all rooms (because I wanted more information than just room name)
 
 const theDiningRoom = {
   name: "dining room",
@@ -203,7 +203,7 @@ const thePatio = {
   image: "assets/patio.png"
 }
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
+// Grouping suspects, weapons and rooms in arrays
 
 const suspects = [
   mrGreen,
@@ -214,6 +214,7 @@ const suspects = [
   mrMustard
 ]
 console.log(suspects);
+
 const weapons = [
   rope,
   knife,
@@ -251,17 +252,14 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+// Empty mystery object that will store information about the killer, weapon and room
 const mystery = {
 
 }
 
-// FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  // This will randomly select a killer from the suspects array. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
 
   const theKiller = document.getElementById("killer");
@@ -276,7 +274,7 @@ const pickKiller = () => {
   theKillerColor.style.background = mystery.killer.color;
 
   // Print the killer's first and last name
-  theKillerName.innerHTML = mystery.killer.firstName + " " + mystery.killer.lastName;
+  theKillerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
 
   // Print the killer's age
   theKillerAge.innerHTML = mystery.killer.age;
@@ -299,7 +297,7 @@ const pickKiller = () => {
 
 // Picka a random weapon
 const pickWeapon = () => {
-  // This will randomly select a weapon from the weapons. And add that to the mystery object.
+  // This will randomly select a weapon from the weapons array. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons);
 
   const theWeapon = document.getElementById("weapon");
@@ -326,7 +324,7 @@ const pickWeapon = () => {
 
 // Pick a random room
 const pickRoom = () => {
-  //This will randomly select a room from the rooms. And add that to the mystery object.
+  //This will randomly select a room from the rooms array. And add that to the mystery object.
   mystery.room = randomSelector(rooms);
 
   const theRoom = document.getElementById("room");
@@ -341,8 +339,7 @@ const pickRoom = () => {
   theRoomImage.setAttribute("src", mystery.room.image);
 
   // Print room name on card
-  theRoomName.innerHTML =
-    mystery.room.name;
+  theRoomName.innerHTML = mystery.room.name;
 
   // Add class to room deck for special styling of the card
   theRoom.classList.add("picked");
@@ -351,18 +348,19 @@ const pickRoom = () => {
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = () => {
   const theMystery = document.getElementById("mystery");
+  const theMysteryDescription = document.getElementById("mysteryDescription");
 
-  // If there is no mystery killer, mystery weapon or mystery room set
+  // If the mystery object has no killer, weapon or room set
   if (!mystery.killer || !mystery.weapon || !mystery.room) {
 
     // Print message
     theMystery.innerHTML = "No mystery is yet to be revealed.";
 
-    // If there is a mystery killer, mystery weapon and mystery room set
+    // Else (if there is a mystery killer, mystery weapon and mystery room set)
   } else {
 
     //Print the reveal message
-    theMystery.innerHTML =
-      `<span class="reveal-title">The murder was commited by</span><br/> ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with the ${mystery.weapon.name}`;
+    theMystery.innerHTML = "The murder was commited by";
+    theMysteryDescription.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}.`;
   }
 }

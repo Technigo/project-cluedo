@@ -12,9 +12,9 @@ body {
 }
 
 /* Header */
+
 .game-header {
   align-items: center;
-  background-color: #aa000e;
   display: flex;
   justify-content: center;
   padding: 2rem 0 0 0;
@@ -35,54 +35,56 @@ body {
   margin-top: 1rem;
 }
 
+.deck,
+.card-inner,
+.card-front,
+.card-back {
+  height: 430px;
+  width: 280px;
+}
+
 .deck {
   align-items: center;
   background-color: transparent;
   color: #fff;
   cursor: pointer;
   display: flex;
-  height: 430px;
   justify-content: center;
   margin: 1rem 1rem;
   position: relative;
-  width: 280px;
 }
 
+/* Wrapper for card so I can use transform to flip it */
+
 .card-inner {
-  height: 430px;
   position: relative;
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
   transition: -webkit-transform 0.8s;
   transition: transform 0.8s;
-  width: 280px;
 }
-
-/* What type of card it is */
 
 .card-front,
 .card-back {
   align-items: center;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
-  height: 430px;
-  justify-content: center;
   position: absolute;
   top: 0;
-  width: 280px;
 }
 
 .card-front {
   background-color: #000;
   color: #fff;
+  justify-content: center;
   z-index: 2;
 }
 
 .card-back {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   background-color: #f8e2b9;
   color: #000;
   justify-content: flex-start;
@@ -90,22 +92,30 @@ body {
   z-index: 1;
 }
 
+/* Rotate the card when it gets the class picked */
+
 .picked .card-inner {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
 }
+
 .picked .card-inner .card-front {
   z-index: 0;
 }
+
+/* Make the backside visible */
+
 .picked .card-inner .card-back {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  border: 10px solid #000;
   -webkit-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
- transform: rotateY(180deg);
- -webkit-backface-visibility: visible;
- backface-visibility: visible;
- border: 10px solid #000;
+  transform: rotateY(180deg);
 }
+
+/* Card information */
 
 .card-type {
   color: #fff;
@@ -123,26 +133,26 @@ body {
   width: 100%;
 }
 
-.killer-portrait {
+.killer-portrait,
+.room-image,
+.weapon-image {
   height: 220px;
-  object-fit: cover;
   order: 0;
   width: 260px;
 }
 
-.killer-info {
+.killer-details {
   order: 1;
-}
-.weapon-name,
-.room-name {
-  order: 0;
 }
 
 .weapon-name,
 .room-name {
   background-color: #aba0a0;
+  order: 0;
+  text-transform: capitalize;
 }
-.killer-info,
+
+.killer-details,
 .weapon-name,
 .room-name {
   font-size: 0.9rem;
@@ -150,40 +160,40 @@ body {
   width: 99.9%;
 }
 
-.killer-occupation,
-.weapon-weight {
-  order: 2;
-  position: absolute;
-  top: 210px;
-  height:20px;
+.badge {
   background-color: #e7cb96;
   font-size: 0.8rem;
+  height: 20px;
+  order: 2;
   line-height: 1.6;
+  position: absolute;
+  top: 210px;
+  min-width: 50px;
 }
-.weapon-weight {
-  width: 50px;
-}
-.killer-occupation:before,
-.weapon-weight:before {
+
+/* Triangles for occupation and weight badges */
+
+.badge::before {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-right: 10px solid #e7cb96;
-  content:"";
-  height:0;
-  width:0;
-  left:-10px;
+  content: "";
+  height: 0;
+  width: 0;
+  left: -10px;
   position: absolute;
 }
 
-.killer-occupation:after,
-.weapon-weight:after {
+/* Triangles for occupation and weight badges */
+
+.badge::after {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-left: 10px solid #e7cb96;
-  content:"";
-  height:0;
-  width:0;
-  right:-10px;
+  content: "";
+  height: 0;
+  width: 0;
+  right: -10px;
   position: absolute;
 }
 
@@ -195,16 +205,13 @@ body {
   padding: 1rem 2rem;
 }
 
-.weapon-name,
-.room-name {
-  text-transform: capitalize;
-}
-
 /* Reveal mystery */
 
 .mystery {
   background-color: #000;
+  color: #fff;
   padding: 1.5rem;
+  text-align: center;
   width: 100%;
 }
 
@@ -220,17 +227,16 @@ button {
   padding: 1rem 1.5rem;
 }
 
-.reveal-title {
+.mystery-title {
   font-size: 1.5rem;
   font-weight: 900;
+  margin-bottom: 1rem;
 }
 
-.revealed-mystery {
-  color: #fff;
+.mystery-description {
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 1rem;
-  text-align: center;
+  margin-bottom: 2rem;
 }
 
 /* Tablet size and up */
@@ -240,20 +246,15 @@ button {
   }
 
   .cards {
-    flex-direction: row;
-    flex-flow: wrap;
+    flex-flow: row wrap;
     margin-bottom: 1.5rem;
-  }
-
-  .room-deck {
-    align-self: start;
   }
 
   button {
     font-size: 1.5rem;
   }
 
-  .revealed-mystery {
+  .mystery-description {
     font-size: 1.2rem;
   }
 }
