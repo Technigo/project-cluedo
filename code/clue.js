@@ -1,7 +1,11 @@
-// CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+/*Declared booleans to make the website show: "No mystery is yet to be revealed" if you click the reveal button but haven't selected suspect, 
+weapon and room yet.*/
 killerPicked = false;
 weaponPicked = false;
 roomPicked = false;
+
+
+// CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
 const mrGreen = {
     firstName: "Jacob",
@@ -16,7 +20,7 @@ const mrGreen = {
 const profPlum = {
     firstName: "Victor",
     lastName: "Plum",
-    color: "    ",
+    color: "purple",
     description: "A quick-witted middle-aged man",
     age: 35,
     image: "assets/plum.png",
@@ -78,7 +82,6 @@ const candlestick = {
     name: "Candlestick",
     color: "orange",
     image: "assets/candlestick.png",
-
     weight: 3
 }
 const dumbbell = {
@@ -191,9 +194,9 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 const mystery = {
-    killer: this.killer,
-    weapon: this.weapon,
-    room: this.room
+    killer: null,
+    weapon: null,
+    room: null
 }
 
 
@@ -262,6 +265,7 @@ const revealMystery = () => {
     const theMysteryReveal = document.getElementById("mystery")
     if (killerPicked && weaponPicked && roomPicked === true) {
         theMysteryReveal.innerHTML = "The murder was committed by " + mystery.killer.firstName + " " + mystery.killer.lastName + ", in the " + mystery.room + " with a " + mystery.weapon.name + "."
+
     } else {
         theMysteryReveal.innerHTML = "No mystery is yet to be revealed"
     }
