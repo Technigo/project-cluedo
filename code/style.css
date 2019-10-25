@@ -4,15 +4,20 @@ body {
 }
 
 p {
-  margin: 1px;
+  margin: 3px;
   font-weight: 300;
   background-color: #fff;
+}
+
+.victim {
+  margin: 50px auto;
+  width: 90%;
 }
 
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
+  height: 500px;
   background: #ccc;
   display: flex;
   flex-direction: row-reverse;
@@ -27,6 +32,11 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+}
+
+#killerImage {
+  margin: 10px;
+  height: 200px;
 }
 
 .weapon-deck {
@@ -55,4 +65,5 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 100px;
 }

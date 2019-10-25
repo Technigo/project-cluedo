@@ -37,7 +37,7 @@ const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
   color: "blue",
-  description: "She is flirtatious but descreet",
+  description: "She is a natural leader",
   age: 35,
   image: "assets/peacock.png",
   occupation: "Social butterfly"
@@ -48,7 +48,7 @@ const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
   color: "yellow",
-  description: "He knows how to handle a gun",
+  description: "He knows a lot abuout weapons",
   age: 55,
   image: "assets/mustard.png",
   occupation: "Officer"
@@ -170,14 +170,15 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 const mystery = {
-  killer: randomSelector(suspects),
-  weapon: randomSelector(weapons),
-  room: randomSelector(rooms)
+  killer: null,
+  weapon: null,
+  room: null
 }
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
+  mystery.killer = randomSelector(suspects)
   const theKiller = document.getElementById("killer")
   theKiller.style.background = mystery.killer.color
 
@@ -199,27 +200,24 @@ const pickKiller = () => {
 }
 
 const pickWeapon = () => {
-  const theWeapon = document.getElementById("weapon")
-  theWeapon.style.background = mystery.killer.color
+  mystery.weapon = randomSelector(weapons)
 
   const theWeaponName = document.getElementById("weaponName")
-  theWeaponName.innerHTML =
-    mystery.weapon.name
+  theWeaponName.innerHTML = mystery.weapon.name
 
   const theweaponWeight = document.getElementById("weaponWeight")
   theweaponWeight.innerHTML = mystery.weapon.weight + " kg"
 }
 
 const pickRoom = () => {
-    const theRoom = document.getElementById("room")
-    theRoom.style.background = mystery.killer.color
+  mystery.room = randomSelector(rooms)
 
-    const theRoomName = document.getElementById("roomName")
-    theRoomName.innerHTML =
-      mystery.room
-  }
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-  // mystery.killer = randomSelector(suspects)
+  const theRoomName = document.getElementById("roomName")
+  theRoomName.innerHTML = mystery.room
+}
+
+// This will randomly select a killer from the suspects. And add that to the mystery object.
+// mystery.killer = randomSelector(suspects)
 
 // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
 
