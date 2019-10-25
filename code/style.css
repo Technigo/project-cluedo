@@ -54,6 +54,7 @@ body {
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  transition: -webkit-transform 0.8s;
   transition: transform 0.8s;
   width: 280px;
 }
