@@ -21,13 +21,13 @@ body {
 }
 
 h1 {
-  margin: 20px;
   padding-top: 10px;
   text-align: center;
+  display: block;
 }
 
 h2 {
-  margin: 20px
+  display: block;
 }
 
 p {
@@ -95,7 +95,7 @@ footer {
   height: 25px;
   background: pink;
   width: 100%;
-  margin: 0px;
+  margin: 100px 0px 0px;
   text-align: center;
   }
 
