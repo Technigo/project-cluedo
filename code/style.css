@@ -1,10 +1,22 @@
+header {
+  margin: 0;
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+}
+
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-image: url("wood-2045379_960_720.jpg");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 p {
-  margin: 1px;
+  margin: 4px;
   font-weight: 300;
   background-color: #fff;
 }
@@ -13,7 +25,6 @@ p {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -49,10 +60,13 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: rgb(68, 20, 20);
+  color: white;
+  font-weight: bold;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 20px;
 }

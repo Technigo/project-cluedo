@@ -64,39 +64,39 @@ const missScarlet = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: "rope",
+  name: "Rope",
 }
 
 const knife = {
-  name: "knife",
+  name: "Knife",
 }
 
 const candlestick = {
-  name: "candlestick",
+  name: "Candlestick",
 }
 
 const dumbbell = {
-  name: "dumbbell",
+  name: "Dumbbell",
 }
 
 const poison = {
-  name: "poison"
+  name: "Poison"
 }
 
 const axe = {
-  name: "axe",
+  name: "Axe",
 }
 
 const bat = {
-  name: "bat",
+  name: "Bat",
 }
 
 const trophy = {
-  name: "trophy",
+  name: "Trophy",
 }
 
 const pistol = {
-  name: "pistol",
+  name: "Pistol",
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
