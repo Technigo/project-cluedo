@@ -66,41 +66,38 @@
   const Rope = {
     name: "rope",
     weight: 10,
-    image: "assets/rope.jpg"
   }
   const Knife = {
     name: "Knife",
-    weight: 7
+    weight: 7,
   }
   const Candlestick = {
     name: "Candlestick",
-    weight: 12
+    weight: 12,
   }
   const Dumbbell = {
     name: "Dumbbell",
     weight: 2,
-    image: "assets/dumbbell.jpg"
   }
   const Poison = {
     name: "Poison",
-    weight: 8
+    weight: 8,
   }
   const Axe = {
     name: "Axe",
-    weight: 14
+    weight: 14,
   }
   const Bat = {
     name: "Bat",
-    weight: 13
+    weight: 13,
   }
   const Trophy = {
     name: "Trophy",
-    weight: 11
+    weight: 11,
   }
   const Pistol = {
     name: "Pistol",
     weight: 20,
-    image: "assets/pistol2.jpg"
   }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -198,12 +195,10 @@ const pickWeapon = () => {
      
   const theWeapon = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
-  const theWeaponImage = document.getElementById("weaponImage")
     
   theWeapon.style.background = mystery.weapon.color
-  theWeaponName.innerHTML = mystery.weapon.name + " " + mystery.weapon.weight
-  theWeaponImage.src = mystery.weapon.image
-      }
+  theWeaponName.innerHTML = mystery.weapon.name + " " + mystery.weapon.weight 
+}
 
 const pickRoom = () => {
 
@@ -226,7 +221,7 @@ const pickRoom = () => {
 
 const revealMystery = () => {
    
-if (mystery.Killer === undefined||mystery.Weapon === undefined||mystery.Room === undefined){
+if (mystery.killer === ""||mystery.weapon === ""||mystery.room === ""){
   document.getElementById("mystery").innerHTML = `The mystery is yet to be revealed`  
 }
 else {
