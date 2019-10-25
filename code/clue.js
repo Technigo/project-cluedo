@@ -121,9 +121,8 @@ var Mystery = {
 
 const pickKiller = () => {
 //This will randomly select a killer from the suspects. And add that to the mystery object.
-  Mystery.killer = randomSelector(suspects)
+  document.getElementById("mystery").innerHTML = ""
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKillerTitle = document.getElementById("killerTitle")
   const theKillerColor = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
@@ -132,20 +131,39 @@ const pickKiller = () => {
   const theKillerImage = document.getElementById("killerImage")
   const theKillerDescription = document.getElementById("killerDescription")
 
-  theKillerTitle.style.display = "none"
-  theKillerColor.style.background = Mystery.killer.color
-  theKillerName.innerHTML = Mystery.killer.firstName + " " + Mystery.killer.lastName
-  theKillerAge.innerHTML = Mystery.killer.age
-  theKillerOccupation.innerHTML = Mystery.killer.occupation
-  theKillerImage.src = Mystery.killer.image
-  theKillerDescription.innerHTML = Mystery.killer.description
+  if (theKillerTitle.style.display == "none") {
+
+    Mystery.killer = ""
+    
+    theKillerTitle.style.display = "block"
+    theKillerColor.style.backgroundImage = "url('assets/card.png')"
+    theKillerColor.style.backgroundSize = "cover"
+    theKillerName.innerHTML = ""
+    theKillerAge.innerHTML = ""
+    theKillerOccupation.innerHTML = ""
+    theKillerImage.src = ""
+    theKillerDescription.innerHTML = ""
+
+  } else {
+
+    Mystery.killer = randomSelector(suspects)
+
+    theKillerTitle.style.display = "none"
+    theKillerColor.style.background = Mystery.killer.color
+    theKillerName.innerHTML = Mystery.killer.firstName + " " + Mystery.killer.lastName
+    theKillerAge.innerHTML = Mystery.killer.age
+    theKillerOccupation.innerHTML = Mystery.killer.occupation
+    theKillerImage.src = Mystery.killer.image
+    theKillerDescription.innerHTML = Mystery.killer.description
+  }
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
 
 const pickWeapon = () => {
-  Mystery.weapon = randomSelector(weapons)
+  
+  document.getElementById("mystery").innerHTML = ""
   
   const theWeaponTitle = document.getElementById("weaponTitle")
   const theCardColor = document.getElementById("weapon")
@@ -153,23 +171,54 @@ const pickWeapon = () => {
   const theWeaponWeight = document.getElementById("weaponWeight")
   const theWeaponImage = document.getElementById("weaponImage")
 
-  theWeaponTitle.style.display = "none"
-  theCardColor.style.background = "rgb(10, 53, 10)"
-  theWeaponName.innerHTML = Mystery.weapon.name
-  theWeaponWeight.innerHTML = Mystery.weapon.weight
-  theWeaponImage.src = Mystery.weapon.image
+  if (theWeaponTitle.style.display == "none") {
+
+    Mystery.weapon = ""
+
+    theCardColor.style.backgroundImage = "url('assets/card.png')"
+    theCardColor.style.backgroundSize = "cover";
+    theWeaponTitle.style.display = "block"
+    theWeaponName.innerHTML = ""
+    theWeaponWeight.innerHTML = ""
+    theWeaponImage.src = ""
+
+  } else {
+
+    Mystery.weapon = randomSelector(weapons)
+
+    theWeaponTitle.style.display = "none"
+    theCardColor.style.background = "rgb(10, 53, 10)"
+    theWeaponName.innerHTML = Mystery.weapon.name
+    theWeaponWeight.innerHTML = Mystery.weapon.weight
+    theWeaponImage.src = Mystery.weapon.image
+  }
 }
 
 const pickRoom = () => {
-  Mystery.room = randomSelector(rooms)
 
+  document.getElementById("mystery").innerHTML = ""
   const theRoomTitle = document.getElementById("roomTitle")
   const theCardColor = document.getElementById("room")
   const theRoomName = document.getElementById("roomName")
 
-  theRoomTitle.style.display = "none"
-  theCardColor.style.background = "midnightblue"
-  theRoomName.innerHTML = Mystery.room
+
+  if (theRoomTitle.style.display == "none") {
+
+    Mystery.room = ""
+
+    theCardColor.style.backgroundImage = "url('assets/card.png')"
+    theCardColor.style.backgroundSize = "cover";
+    theRoomTitle.style.display = "block"
+    theRoomName.innerHTML = ""
+    
+  } else {
+
+    Mystery.room = randomSelector(rooms)
+
+    theRoomTitle.style.display = "none"
+    theCardColor.style.background = "midnightblue"
+    theRoomName.innerHTML = Mystery.room
+  }
 }
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
