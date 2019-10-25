@@ -183,6 +183,8 @@ const pickKiller = () => {
   const theKillerOccupation = document.getElementById("killerOccupation");
   const theKillerDescription = document.getElementById("killerDescription");
 
+  theKillerImage.src = mystery.killer.image;
+
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   theKiller.style.background = mystery.killer.color;
   theKillerName.innerHTML =
@@ -202,7 +204,8 @@ const pickWeapon = () => {
 
   const theWeaponName = document.getElementById("weaponName");
 
-  theWeaponName.innerHTML = mystery.weapon.name + " " + mystery.weapon.weight;
+  theWeaponName.innerHTML =
+    mystery.weapon.name + " " + mystery.weapon.weight + " kg";
 };
 
 //FUNCTION for picking a Room
