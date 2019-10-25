@@ -16,6 +16,8 @@ body {
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
+  background-attachment: fixed;
+  
 }
 
 h1 {
@@ -90,12 +92,11 @@ button {
 }
 
 footer {
-  height: 60px;
+  height: 25px;
   background: pink;
   width: 100%;
   margin: 0px;
   text-align: center;
-  position: ;
   }
 
 
@@ -112,14 +113,16 @@ footer {
 
   .killer-deck {
     width: 300px;
-    height: 300px;
   }
 
   .weapon-deck {
     width: 300px;
-    height: 300px;
   }
 
   .room-deck {
     width: 300px;
+  }
+
+  footer {
+    height: 50px;
   }
