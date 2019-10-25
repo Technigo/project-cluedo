@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
-  color: "MediumSeagreen",
+  color: "MediumSeaGreen",
   description: "He has a lot of connections.",
   age: 45,
   image: "assets/mrgreen.png",
@@ -21,7 +21,7 @@ const missScarlet = {
 const mrsWhite = {
   firstName: "Blanche",
   lastName: "White",
-  color: "Seashell",
+  color: "SeaShell",
   description: "She will do anything for justice, including turning vigilante.",
   age: 50,
   image: "assets/mrswhite.png",
@@ -48,7 +48,7 @@ const mrsPeacock = {
 const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
-  color: "Yellow",
+  color: "Gold",
   description: "A casually dressed expert martial artist.",
   age: 50,
   image: "assets/mrmustard.png",
@@ -350,17 +350,18 @@ const revealMystery = () => {
   const theMystery = document.getElementById("mystery");
   const theMysteryDescription = document.getElementById("mysteryDescription");
 
-  // If the mystery object has no killer, weapon or room set
-  if (!mystery.killer || !mystery.weapon || !mystery.room) {
-
-    // Print message
-    theMystery.innerHTML = "No mystery is yet to be revealed.";
-
-    // Else (if there is a mystery killer, mystery weapon and mystery room set)
-  } else {
+  // If the mystery object has a killer, weapon or room set
+  if (mystery.killer && mystery.weapon && mystery.room) {
 
     //Print the reveal message
     theMystery.innerHTML = "The murder was commited by";
     theMysteryDescription.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}.`;
+
+    // Else (if there is no a mystery killer, mystery weapon and mystery room set)
+  } else {
+
+    // Print message
+    theMystery.innerHTML = "No mystery is yet to be revealed.";
+
   }
 }

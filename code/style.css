@@ -13,21 +13,17 @@ body {
 
 /* Header */
 
-.game-header {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  padding: 2rem 0 0 0;
-}
-
 .game-title {
   color: #fff;
   font-size: 4rem;
+  padding: 2rem 0 0 0;
+  text-align: center;
 }
 
 /* Cards */
 
-.cards {
+.cards,
+.deck {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -44,12 +40,8 @@ body {
 }
 
 .deck {
-  align-items: center;
   background-color: transparent;
-  color: #fff;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
   margin: 1rem 1rem;
   position: relative;
 }
@@ -87,12 +79,11 @@ body {
   backface-visibility: hidden;
   background-color: #f8e2b9;
   color: #000;
-  justify-content: flex-start;
   text-align: center;
   z-index: 1;
 }
 
-/* Rotate the card when it gets the class picked */
+/* Rotate the card when it gets the class picked and make backside visible */
 
 .picked .card-inner {
   transform: rotateY(180deg);
@@ -101,12 +92,11 @@ body {
 }
 
 .picked .card-inner .card-front {
-  -webkit-backface-visibility: hidden;	
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   z-index: 0;
 }
 
-/* Make the backside visible */
 .picked .card-inner .card-back {
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
@@ -126,31 +116,16 @@ body {
   text-transform: uppercase;
 }
 
-.card-back .card-type {
-  color: #000;
-  font-size: 1.2rem;
-  order: 5;
-  margin-top: auto;
-  padding: 1rem 0.5rem;
-  width: 100%;
-}
-
 .killer-portrait,
 .room-image,
 .weapon-image {
   height: 220px;
-  order: 0;
   width: 260px;
-}
-
-.killer-details {
-  order: 1;
 }
 
 .weapon-name,
 .room-name {
   background-color: #aba0a0;
-  order: 0;
   text-transform: capitalize;
 }
 
@@ -166,45 +141,47 @@ body {
   background-color: #e7cb96;
   font-size: 0.8rem;
   height: 20px;
-  order: 2;
   line-height: 1.6;
   position: absolute;
   top: 210px;
   min-width: 50px;
 }
 
-/* Triangles for occupation and weight badges */
+.badge::before,
+.badge::after {
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+}
 
 .badge::before {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-right: 10px solid #e7cb96;
-  content: "";
-  height: 0;
-  width: 0;
   left: -10px;
-  position: absolute;
 }
-
-/* Triangles for occupation and weight badges */
 
 .badge::after {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-left: 10px solid #e7cb96;
-  content: "";
-  height: 0;
-  width: 0;
   right: -10px;
-  position: absolute;
 }
 
 .killer-description,
 .room-description,
 .weapon-description {
   font-size: 0.8rem;
-  order: 3;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 0 2rem;
+}
+
+.card-back .card-type {
+  color: #000;
+  font-size: 1.2rem;
+  margin-top: auto;
+  padding: 1rem 0.5rem;
+  width: 100%;
 }
 
 /* Reveal mystery */
@@ -254,6 +231,10 @@ button {
 
   button {
     font-size: 1.5rem;
+  }
+
+  .mystery {
+    padding-bottom: 2rem;
   }
 
   .mystery-description {

@@ -15,46 +15,46 @@
     <h1 class="game-title">Cluedo</h1>
   </header>
   <section class="cards">
-    <div class="killer-deck deck" id="killer" onclick="pickKiller()">
+    <div class="deck" id="killer" onclick="pickKiller()">
       <div class="card-inner">
         <div class="card-front">
           <p class="card-type">Killer</p>
         </div>
         <div class="card-back">
-          <p class="card-type">Killer</p>
+          <img id="killerImage" class="killer-portrait" src="" />
           <p id="killerColor" class="killer-details">
             <span id="killerName" class="killer-name"></span>, <span id="killerAge" class="killer-age"></span>
           </p>
           <p id="killerOccupation" class="badge"></p>
-          <img id="killerImage" class="killer-portrait" src="" />
           <p id="killerDescription" class="killer-description"></p>
+          <p class="card-type">Killer</p>
         </div>
       </div>
     </div>
-    <div class="weapon-deck deck" id="weapon" onclick="pickWeapon()">
+    <div class="deck" id="weapon" onclick="pickWeapon()">
       <div class="card-inner">
         <div class="card-front">
           <p class="card-type">Weapon</p>
         </div>
         <div class="card-back">
-          <img id="weaponImage" class="weapon-image" src="assets/weapon.png" />
-          <p class="card-type">Weapon</p>
+          <img id="weaponImage" class="weapon-image" src="" />
           <p id="weaponName" class="weapon-name"></p>
           <p id="weaponWeight" class="badge"></p>
           <p id="weaponDescription" class="weapon-description"></p>
+          <p class="card-type">Weapon</p>
         </div>
       </div>
     </div>
-    <div class="room-deck deck" id="room" onclick="pickRoom()">
+    <div class="deck" id="room" onclick="pickRoom()">
       <div class="card-inner">
         <div class="card-front">
           <p class="card-type">Room</p>
         </div>
         <div class="card-back">
-          <img id="roomImage" class="room-image" src="assets/room.png" />
-          <p class="card-type">Room</p>
+          <img id="roomImage" class="room-image" src="" />
           <p id="roomName" class="room-name"></p>
           <p id="roomDescription" class="room-description"></p>
+          <p class="card-type">Room</p>
         </div>
       </div>
     </div>
