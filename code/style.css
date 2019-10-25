@@ -202,10 +202,6 @@ button:focus {
     outline: none;
 }
 
-
-}
-
-}
 button:hover {
     border: 1px dashed black;
     filter: blur(1px);
@@ -219,6 +215,7 @@ button:hover {
     margin: 0 auto;
     margin-bottom: 20px;
 }
+
 @media (max-width:850px) {
     .cards {
         border-radius: 15px;
