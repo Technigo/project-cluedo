@@ -1,12 +1,17 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Bitter', serif;
 }
 
+h2 {
+  margin: 1px;
+  color: #fff;
+  font-size:1.5rem;
+}
 p {
   margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+  color: #fff;
+  font-weight: 400;
 }
 
 .cards {
@@ -20,31 +25,40 @@ p {
 }
 
 .killer-deck {
-  width: 250px;
+  width: 275px;
   height: 400px;
-  background: #000;
+  background-image: url(./images/cards-01.png);
+  background-size: cover;
+  background-position: center;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 30px;
 }
 
 .weapon-deck {
-  width: 250px;
+  width: 275px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background-image: url(./images/cards-02.png);
+  background-size: cover;
+  background-position: center;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 30px;
 }
 
 .room-deck {
-  width: 250px;
+  width: 275px;
   height: 400px;
-  background: midnightblue;
-
+  background-image: url(./images/cards-03.png);
+  background-size: cover;
+  background-position: center;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 30px;
+}
+
+#killerImage, #weaponImage, #roomImage {
+  margin: 10px; 
 }
 
 button {

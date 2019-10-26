@@ -1,202 +1,237 @@
-const mrGreen = {
-  firstName: "Jacob",
-  lastName: "Green",
-  color: "green",
-  description: "He has a lot of connections",
-  age: 32,
-  image: "assets/green.png",
-  occupation: "Entrepreneur"
-}
 
-const profPlum = {
-  firstName: "Victor",
-  lastName: "Plum",
-  color: "Purple",
-  description: "He is a mansplainer",
-  age: 45,
-  image: "assets/green.png",
-  occupation: "Professor"
-}
-
-const missScarlet = {
-  firstName: "Cassandra",
-  lastName: "Scarlet",
-  color: "Red",
-  description: "She knows all the winners in Eurovision Song Contest",
-  age: 36,
-  image: "assets/green.png",
-  occupation: "Kennel owner"
-}
-
-const mrsPeacock = {
-  firstName: "Eleanor",
-  lastName: "Peacock",
-  color: "Blue",
-  description: "She is the riches of them all",
-  age: 49,
-  image: "assets/green.png",
-  occupation: "Ceo and founder of a big bank"
-}
-
-const colMustard = {
-  firstName: "Jack",
-  lastName: "Mustard",
-  color: "Yellow",
-  description: "He is a ventriloquist",
-  age: 54,
-  image: "assets/green.png",
-  occupation: "Some secret army stuff"
-}
-
-const mrsWhite = {
-  firstName: "Andrea",
-  lastName: "White",
-  color: "White",
-  description: "She is a freediver",
-  age: 54,
-  image: "assets/green.png",
-  occupation: "Some secret army stuff"
-}
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
-
-const rope = {
-  name: "rope",
-  weight: 10,
-  color: "brown"
-}
-
-const knife = {
-  name: "knife",
-  weight: 3,
-  color: "metal"
-}
-
-const candlestick = {
-  name: "candlestick",
-  weight: 20,
-  color: "gold"
-}
-
-const dumbbell = {
-  name: "dumbbell",
-  weight: 15,
-  color: "black"
-}
-
-const poison = {
-  name: "poison",
-  weight: 0.1,
-  color: "green"
-}
-
-const axe = {
-  name: "axe",
-  weight: 12,
-  color: "steely"
-}
-
-const bat = {
-  name: "bat",
-  weight: 3,
-  color: "wood"
-}
-
-const trophy = {
-  name: "trophy",
-  weight: 8,
-  color: "silver"
-}
-
-const pistol = {
-  name: "pistol",
-  weight: 2,
-  color: "metal"
-}
-
-let diningRoom
-// göra const eller let eller nåt helt tredje?
-let conservatory
-let kitchen
-let study
-let library
-let billiardRoom
-let lounge
-let ballroom
-let hall
-let spa
-let livingRoom
-let observatory
-let theater
-let guestHouse
-let patio
-
-
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
 const suspects = [
-  mrGreen,
-  mrsWhite,
-  profPlum,
-  missScarlet,
-  mrsPeacock,
-  colMustard
+  {
+    firstName: "Jacob",
+    lastName: "Green",
+    color: "#8DAB8D",
+    description: "He has fishy connections",
+    age: "32 years",
+    image: "images/suspects/mrGreen.png",
+    occupation: "Entrepreneur"
+  },
+  {
+    firstName: "Victor",
+    lastName: "Plum",
+    color: "#8a728c",
+    description: "He is a mansplainer",
+    age: "45 years",
+    image: "images/suspects/profPlum.png",
+    occupation: "Professor"
+  },
+  {
+    firstName: "Cassandra",
+    lastName: "Scarlet",
+    color: "#f48282",
+    description: "She is a punk rock drummer",
+    age: "36 years",
+    image: "images/suspects/missScarlet.png",
+    occupation: "Kennel Owner"
+  },
+  {
+    firstName: "Eleanor",
+    lastName: "Peacock",
+    color: "#7296aa",
+    description: "She is THE riches",
+    age: "49 years",
+    image: "images/suspects/mrsPeacock.png",
+    occupation: "CEO of a big bank"
+  },
+  {
+    firstName: "Jack",
+    lastName: "Mustard",
+    color: "#f4af53",
+    description: "He is a ventriloquist",
+    age: "54 years",
+    image: "images/suspects/colMustard.png",
+    occupation: "Colonel"
+  },
+  {
+    firstName: "Andrea",
+    lastName: "White",
+    color: "#a09f9f",
+    description: "She is a freediver",
+    age: "54 years",
+    image: "images/suspects/mrsWhite.png",
+    occupation: "Optician"
+  }
 ]
 
 const weapons = [
-  rope,
-  knife,
-  candlestick,
-  dumbbell,
-  poison,
-  axe,
-  bat,
-  trophy,
-  pistol
+  {
+    name: "Rope",
+    weight: "2 kg",
+    color: "#f48282",
+    image: "images/weapons/rope.png"
+  },
+  {
+    name: "Knife",
+    weight: "1 kg",
+    color: "#8a728c",
+    image: "images/weapons/knife.png"
+  },
+  {
+    name: "Candlestick",
+    weight: "3 kg",
+    color: "#f4af53",
+    image: "images/weapons/candlestick.png"
+  },
+  {
+    name: "Dumbbell",
+    weight: "15 kg",
+    color: "#a09f9f",
+    image: "images/weapons/dumbbell.png"
+  },
+  {
+    name: "Poison",
+    weight: "0.5 kg",
+    color: "#8DAB8D",
+    image: "images/weapons/poison.png"
+  },
+  {
+    name: "Axe",
+    weight: "8 kg",
+    color: "#8a728c",
+    image: "images/weapons/axe.png"
+  },
+  {
+    name: "Bat",
+    weight: "2 kg",
+    color: "#f48282",
+    image: "images/weapons/bat.png"
+  },
+  {
+    name: "Trophy",
+    weight: "4 kg",
+    color: "#f4af53",
+    image: "images/weapons/trophy.png"
+  },
+  {
+    name: "Pistol",
+    weight: "2 kg",
+    color: "#7296aa",
+    image: "images/weapons/pistol.png"
+  }
 ]
 
 const rooms = [
-  diningRoom,
-  conservatory,
-  kitchen,
-  study,
-  library,
-  billiardRoom,
-  lounge,
-  ballroom,
-  hall,
-  spa,
-  livingRoom,
-  observatory,
-  theater,
-  guestHouse,
-  patio
+  {
+    name: "Attic",
+    color: "#f48282",
+    image: "images/rooms/attic.png"
+  },
+  {
+    name: "Ballroom",
+    color: "#7296aa",
+    image: "images/rooms/ballroom.png"
+  },
+  {
+    name: "Basement",
+    color: "#f48282",
+    image: "images/rooms/basement.png"
+  },
+  {
+    name: "Bathroom",
+    color: "#8a728c",
+    image: "images/rooms/bathroom.png"
+  },
+  {
+    name: "Greenhouse",
+    color: "#a09f9f",
+    image: "images/rooms/greenhouse.png"
+  },
+  {
+    name: "Guest House",
+    color: "#f4af53",
+    image: "images/rooms/guesthouse.png"
+  },
+  {
+    name: "Gym",
+    color: "#8a728c",
+    image: "images/rooms/gym.png"
+  },
+  {
+    name: "Hall",
+    color: "#f48282",
+    image: "images/rooms/hall.png"
+  },
+  {
+    name: "Kitchen",
+    color: "#a09f9f",
+    image: "images/rooms/kitchen.png"
+  },
+  {
+    name: "Living Room",
+    color: "#f4af53",
+    image: "images/rooms/livingroom.png"
+  },
+  {
+    name: "Lounge",
+    color: "#7296aa",
+    image: "images/rooms/lounge.png"
+  },
+  {
+    name: "Study",
+    color: "#f48282",
+    image: "images/rooms/study.png"
+  }
 ]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
+const randomSelector = (array) => {
+  const randomIndex = Math.floor(Math.random() * array.length)
+  return array[randomIndex]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+let mystery = {
+  killer: "",
+  weapon: "",
+  room: ""
+}
 
-// FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
-// This function will be invoked when you click on the killer card.
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
-
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
+  const theKillerImage = document.getElementById("killerImage")
+  const theKillerAge = document.getElementById("killerAge")
+  const theKillerOccupation = document.getElementById("killerOccupation")
+  const theKillerDescription = document.getElementById("killerDescription")
 
   theKiller.style.background = mystery.killer.color
-  theKillerName.innerHTML =
-    mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerName.innerHTML = mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerImage.src = mystery.killer.image
+  theKillerAge.innerHTML = mystery.killer.age
+  theKillerOccupation.innerHTML = mystery.killer.occupation
+  theKillerDescription.innerHTML = mystery.killer.description
 }
+
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons)
+  const theWeapon = document.getElementById("weapon")
+  const theWeaponName = document.getElementById("weaponName")
+  const theWeaponWeight = document.getElementById("weaponWeight")
+  const theWeaponImage = document.getElementById("weaponImage")
+
+  theWeapon.style.background = mystery.weapon.color
+  theWeaponName.innerHTML = mystery.weapon.name
+  theWeaponWeight.innerHTML = mystery.weapon.weight
+  theWeaponImage.src = mystery.weapon.image
+}
+
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+  const theRoom = document.getElementById("room")
+  const theRoomName = document.getElementById("roomName")
+  const theRoomImage = document.getElementById("roomImage")
+
+  theRoom.style.background = mystery.room.color
+  theRoomName.innerHTML = mystery.room.name
+  theRoomImage.src = mystery.room.image
+}
+
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
