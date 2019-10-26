@@ -1,12 +1,24 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  font-family: 'Cinzel', serif;
+  background-color: #8f8995;
+}
+
+h2 {
+  text-align: center;
+  font-size: 100px;
+  margin: 15px;
+  font-weight: bolder;
+  padding: 0px;
+  text-shadow: 5px 5px #48494b;
 }
 
 p {
-  margin: 1px;
+  margin: 5px;
   font-weight: 300;
   background-color: #fff;
+  background-blend-mode; 0,2;
 }
 
 .cards {
@@ -17,6 +29,7 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  
 }
 
 .killer-deck {
@@ -28,10 +41,15 @@ p {
   border-radius: 16px;
 }
 
+#killerImage {
+  padding: 15px;
+}
+
+
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background:#83878d;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -40,7 +58,7 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
+  background: #48494b;
 
   text-align: center;
   padding-top: 30px;
@@ -49,10 +67,36 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: #cccccc;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  font-family: "Courier New", Courier, monospace;
+  box-shadow: 0 5px #666;
+}
+
+button:hover {
+  background-color: #83878d
+}
+
+button:active {
+  transform: translateY(4px);
+}
+
+button:focus {
+  outline: 0;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  font-family: 'Liu Jian Mao Cao', cursive;
+}
+
+footer{
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
 }
