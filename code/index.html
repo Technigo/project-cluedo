@@ -4,29 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Nosifer&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Clue</title>
   </head>
   <body>
-    <section class="cards">
-      <div class="killer-deck" id="killer" onclick="pickKiller()">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
-      </div>
-      <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-      </div>
-      <div class="room-deck" id="room" onclick="pickRoom()">
-        <p>ROOM</p>
-        <p id="roomName"></p>
-      </div>
-    </section>
+    <div class="before-section">
+      <section class="cards">
+        <div class="killer-deck" id="killer" onclick="pickKiller()">
+          <h3 class="killer-color">KILLER</h3>
+          <p class="killer-color" id="killerName"></p>
+          <p class="killer-color" id="killerAge"></p>
+          <p class="killer-color" id="killerOccupation"></p>
+          <img id="killerImage" src="" height="100" />
+          <p class="killer-color" id="killerDescription">
+        </div>
+        <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
+          <h3 class="weapon-color" id="weaponTitle">WEAPON</h3>
+          <p class="weapon-color" id="weaponName"></p>
+          <p class="weapon-color" id="weaponWeight"></p>
+          <img id="weaponImage">
+        </div>
+        <div class="room-deck" id="room" onclick="pickRoom()">
+          <h3 class="room-color" id="roomTitle">ROOM</h3>
+          <p class="room-color" id="roomName"></p>
+        </div>
+      </section>
+    </div>
     <h1 id="mystery"></h1>
     <button onclick="revealMystery()">REVEAL THE CRIME</button>
 

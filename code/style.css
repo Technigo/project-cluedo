@@ -1,6 +1,19 @@
-body {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(./assets/defoliation.jpg); 
+}
+
+.before-section {
+  background: #870000;
+  width: 100%;
+  margin: 0 auto;
 }
 
 p {
@@ -10,49 +23,165 @@ p {
 }
 
 .cards {
-  margin: 50px auto;
+  margin: 0 auto;
+  margin-top: 30px;
   width: 90%;
-  height: 600px;
-  background: #ccc;
+  height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
 }
 
 .killer-deck {
-  width: 250px;
-  height: 400px;
-  background: #000;
+  width: 90%;
+  height: 70vh;
+  background-image: url(./assets/block-refined.jpg);
+  background-position: center;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: 0px 0px 20px 0px #000; 
+  border: 4px solid #000;
+  cursor: pointer;
+  margin-top: 40px;
+}
+
+.killer-deck p:last-child,
+.weapon-deck p:last-child,
+.room-deck p:last-child {
+  margin-bottom: 40px;
+}
+
+#killerDescription {
+  background: #f6e591;
 }
 
 .weapon-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
+  width: 90%;
+  height: 70vh;
+  /* background: #093637; */
+  background-image: url(./assets/block-refined.jpg);
+  /* background-size: cover; */
+  background-position: center;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin-top: 30px;
+  box-shadow: 0px 0px 20px 0px #000; 
+  border: 4px solid #000;
+  cursor: pointer;
 }
 
 .room-deck {
-  width: 250px;
-  height: 400px;
-  background: midnightblue;
-
+  width: 90%;
+  height: 70vh;
+  background-image: url(./assets/block-refined.jpg);
+  background-position: center;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0px 0px 20px 0px #000; 
+  border: 4px solid #000;
+  cursor: pointer;
+}
+
+#killerName,
+#roomName {
+  margin-top: 20px;
 }
 
 button {
-  padding: 8px 16px;
-  background: crimson;
+  padding: 13px 20px;
+  background: #870000;
+  color: #fff;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 40px;
+  font-family: 'Nosifer', cursive;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #cb0000;
+}
+
+h1 {
+  width: 70%;
+  text-align: center;
+  margin: 70px auto 20px auto;
+  font-size: 24px;
+  color: #870000;
+  font-family: 'Nosifer', cursive;
+  line-height: 40px;
+}
+
+h3 {
+  background: #870000;
+  color: #fff;
+}
+
+#killerImage {
+  border-radius: 48%;
+  width: 50%;
+  height: auto;
+}
+
+#weaponImage {
+  width: 40%;
+  height: auto;
+  margin: 80px auto 0 auto;
+  border-radius: 10px;
+}
+
+@media (min-width: 650px) {
+
+  button {
+    margin-bottom: 0;
+  }
+
+  .cards {
+    flex-direction: row;
+    height: 60vh;
+    margin-top: 100px;
+  }
+
+  .killer-deck {
+    width: 27%;
+    margin-top: 0;
+  }
+
+  .weapon-deck {
+    width: 27%;
+    margin-top: 0;
+  }
+
+  .room-deck {
+    width: 27%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #killerImage {
+    width: 70%;
+    height: auto;
+  }
+
+  #weaponImage {
+    width: 40%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 30px;
+    width: 85%;
+  }
+  
 }
