@@ -10,13 +10,21 @@
 </head>
 
 <body>
+  <header>
+    <img src="assets/trees_logo_white.png" alt="Logo">
+    <nav>
+      <a href="">About</a>
+      <a href="">Menu</a>
+      <a href="">Contact</a>
+    </nav>
+  </header>
   <section class="cards">
     <div class="killer-deck" id="killer" onclick="pickKiller()">
       <p>KILLER</p>
+      <img id="killerImage" src="" height="100" />
       <p id="killerName"></p>
       <p id="killerAge"></p>
       <p id="killerOccupation"></p>
-      <img id="killerImage" src="" height="100" />
       <p id="killerDescription"></p>
     </div>
     <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
@@ -32,6 +40,16 @@
   </section>
   <h1 id="mystery"></h1>
   <button onclick="revealMystery()">REVEAL THE CRIME</button>
+
+  <footer>
+    <p class="copyright">&copy LH Production 2019</p>
+    <div>
+      <a href="contact">Contact</a>
+      <a href="about">About</a>
+      <a href="">FB</a>
+      <a href="">Insta</a>
+    </div>
+  </footer>
 
   <script src="clue.js"></script>
 </body>

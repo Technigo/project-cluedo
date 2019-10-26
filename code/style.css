@@ -1,12 +1,36 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background: black;
+  color: white;
 }
 
+header {
+  background: black;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-bottom: 1px solid;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  margin-left: 16px;
+}
+
+header img {
+  height: 80px;
+  margin: 0 24px;
+}
 p {
   margin: 1px;
-  font-weight: 300;
+  padding: 2px;
+  font-weight: bold;
   background-color: #fff;
+  border-radius: 5px;
 }
 
 .cards {
@@ -17,6 +41,11 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+  background-image: url(assets/cluedo_cover.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
 }
 
 .killer-deck {
@@ -26,6 +55,11 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+}
+
+.killer-deck img {
+  width: 150px;
+  height: auto;
 }
 
 .weapon-deck {
@@ -47,12 +81,42 @@ p {
   border-radius: 16px;
 }
 
+h1 {
+  text-align: center;
+  font-size: 24px;
+}
+
 button {
   padding: 8px 16px;
   background: crimson;
   border: none;
   font-size: 20px;
+  color: white;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin: 16px auto;
+}
+
+footer {
+  background: black;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color:  white;
+  padding: 0 16px;
+  border-top: 1px solid;
+
+}
+
+footer div a {
+  text-decoration: none;
+  color: white;
+  margin-left: 16px;
+}
+
+.copyright {
+  text-decoration: none;
+  color: white;
+  background-color: none;
 }
