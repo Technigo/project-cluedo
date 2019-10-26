@@ -139,7 +139,6 @@ const weapons = [
 
 const rooms = [
   "Dinning",
-  "Room",
   "Conservatory",
   "Kitchen",
   "Study",
@@ -222,3 +221,20 @@ const pickRoom = () => {
 }
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+const revealMystery = () => {
+  /* const randomSuspect = randomSelector(suspects)
+  const randomWeapon = randomSelector(weapons)
+  const randomRoom = randomSelector(rooms) */
+
+  // values are sent to mystery object
+  /* mystery.killer = randomSuspect
+  mystery.weapon = randomWeapon
+  mystery.room = randomRoom */
+
+  mystery.killer = randomSelector(suspects)
+  mystery.weapon = randomSelector(weapons)
+  mystery.room = randomSelector(rooms)
+
+  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+}
