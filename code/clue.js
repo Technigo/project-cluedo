@@ -71,7 +71,7 @@ const suspects = [
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
-const rope = [
+const weapons = [
 
     {
         name: "rope",
