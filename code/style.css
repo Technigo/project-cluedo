@@ -1,13 +1,15 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
-  background: blue;
+  background: darkred;
 }
 
 h2 {
   text-align: center;
   color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 20px;
+  text-shadow: 0px 0px 10px;
 }
 
 p {
@@ -20,7 +22,7 @@ p {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background:lightblue;
+  background: orange;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -33,6 +35,12 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: -1rem 0 3rem #000;
+}
+
+.killer-deck:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
 }
 
 .weapon-deck {
@@ -42,6 +50,12 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: -1rem 0 3rem #000;
+}
+
+.weapon-deck:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
 }
 
 .room-deck {
@@ -51,15 +65,27 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: -1rem 0 3rem #000;
+}
+
+.room-deck:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
 }
 
 .time-deck {
   width: 250px;
   height: 400px;
-  background: black;
+  background: maroon;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: -1rem 0 3rem #000;
+}
+
+.time-deck:hover {
+  transform: translateY(-20px);
+  transition: 0.4s ease-out;
 }
 
 button {
@@ -73,13 +99,23 @@ button {
 }
 
 h1 {
-  font-size: 18px;
+  font-size: 16px;
   color: white;
+  margin-left: 8px;
+}
+
+button {
+  color: white;
+  text-shadow: 0px 0px 10px;
 }
 
 /* MEDIA QUERIES */
 @media (min-width: 768px) {
-h1 {
-  font-size: 24px;
-}
+  h1 {
+    font-size: 20px;
+  }
+  
+  h2 {
+    font-size: 25px;
+  }
 }
