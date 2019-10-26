@@ -214,17 +214,19 @@ const pickKiller = () => {
 	// This will randomly select a killer from the suspects and add that to the mystery object.
 	mystery.killer = randomSelector(suspects);
 
+	const { killer } = mystery;
+
 	// This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
-	theKiller.style.background = mystery.killer.color;
+	theKiller.style.background = killer.color;
 
 	// Updating HTML template for killer card instead of creating DOM references for each p tag individually
 	theKiller.innerHTML = `
 		<p>KILLER</p>
-		<p id="killerName">${mystery.killer.firstName} ${mystery.killer.lastName}</p>	
-		<p id="killerAge">${mystery.killer.age}</p>
-		<p id="killerOccupation">${mystery.killer.occupation}</p>
-		<img id="killerImage" src="${mystery.killer.image}" height="100" />
-		<p id="killerDescription">${mystery.killer.description}</p>
+		<p id="killerName">${killer.firstName} ${killer.lastName}</p>	
+		<p id="killerAge">${killer.age}</p>
+		<p id="killerOccupation">${killer.occupation}</p>
+		<img id="killerImage" src="${killer.image}" height="100" />
+		<p id="killerDescription">${killer.description}</p>
 	`;
 };
 
@@ -233,11 +235,13 @@ const pickWeapon = () => {
 	// This will randomly select a weapon and add that to the mystery object.
 	mystery.weapon = randomSelector(weapons);
 
+	const { weapon } = mystery;
+
 	// Updating HTML template for weapon card instead of creating DOM references for each p tag individually
 	theWeapon.innerHTML = `
 		<p>WEAPON</p>
-		<p id="weaponName">${mystery.weapon.name}</p>
-		<p id="weaponWeight">${mystery.weapon.weight}</p>
+		<p id="weaponName">${weapon.name}</p>
+		<p id="weaponWeight">${weapon.weight}</p>
 	`;
 };
 
@@ -246,21 +250,25 @@ const pickRoom = () => {
 	// This will randomly select a room and add that to the mystery object.
 	mystery.room = randomSelector(rooms);
 
+	const { room } = mystery;
+
 	// Updating HTML template for room card instead of creating DOM references for each p tag individually
 	theRoom.innerHTML = `
 		<p>ROOM</p>
-		<p id="roomName">${mystery.room}</p>
+		<p id="roomName">${room}</p>
 	`;
 };
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 const revealMystery = () => {
+	const { killer, weapon, room } = mystery;
+
 	theMystery.innerHTML = `
-		The murder was committed by ${mystery.killer.firstName} ${
-		mystery.killer.lastName
-	} in the ${mystery.room.toLowerCase()} with ${
-		mystery.weapon.indefiniteArticle
-	} ${mystery.weapon.name.toLowerCase()}. 
+		The murder was committed by ${killer.firstName} ${
+		killer.lastName
+	} in the ${room.toLowerCase()} with ${
+		weapon.indefiniteArticle
+	} ${weapon.name.toLowerCase()}. 
 	`;
 
 	selectCardHeading.classList.add('zeroVisibility');
