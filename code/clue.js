@@ -10,11 +10,97 @@ const mrGreen = {
   occupation: "Entrepreneur"
 }
 
+const profPlum = {
+  firstName: "Victor",
+  lastName: "Plum",
+  color: "plum",
+  description: "He has a lot of connections",
+  age: 51,
+  image: "assets/plum.png",
+  occupation: "Professor"
+}
+
+const missScarlet = {
+  firstName: "Cassandra",
+  lastName: "Scarlet",
+  color: "scarlet",
+  description: "She has a lot of connections",
+  age: 29,
+  image: "assets/scarlet.png",
+  occupation: "Headchef"
+}
+
+const mrsPeacock = {
+  firstName: "Eleanor",
+  lastName: "Peacock",
+  color: "peacock",
+  description: "She has a lot of connections",
+  age: 40,
+  image: "assets/peacock.png",
+  occupation: "Owner of a Zoo"
+}
+
+const mrMustard = {
+  firstName: "Jack",
+  lastName: "Mustard",
+  color: "mustard",
+  description: "He has a lot of connections",
+  age: 63,
+  image: "assets/mustard.png",
+  occupation: "Colonel"
+}
+
+const mrsWhite = {
+  firstName: "Mrs",
+  lastName: "White",
+  color: "white",
+  description: "She has a lot of connections",
+  age: 67,
+  image: "assets/white.png",
+  occupation: "CEO"
+}
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: "rope",
   weight: 10
+}
+
+const knife = {
+  name: "knife",
+  weight: 7,
+  length: 40
+}
+
+const candlestick = {
+  name: "candlestick",
+  weight: 15
+}
+
+const dumbbell = {
+  name : "dumbbell",
+  weight: 25
+}
+
+const poison = {
+  name: "poison"
+}
+
+const axe = {
+  name : "axe"
+}
+
+const bat = {
+  name: "bat"
+}
+
+const trophy = {
+  name: "trohpy"
+}
+
+const pistol = {
+  name: "pistol"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -30,9 +116,35 @@ const suspects = [
   mrMustard
 ]
 
-const weapons = []
+const weapons = [
+  rope, 
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+const rooms = [
+  diningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
