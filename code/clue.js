@@ -131,7 +131,7 @@ const suspects = [
 ];
 
 suspects.forEach(suspect => {
-  console.log(`${suspect.firstName} ${suspect.lastName}`);
+  console.log(`${suspect.firstName} ${suspect.color} ${suspect.description} ${suspect.age}`);
 });
 
 const weapons = [
