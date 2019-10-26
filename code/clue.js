@@ -165,7 +165,7 @@ const rooms = [
   "Patio"
 ]
 
-//Console.log check the arrays
+//Console.log to check the arrays
 console.log(suspects, weapons, rooms)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
@@ -182,7 +182,6 @@ const mystery = {
   room
 }
 
-// FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 //FUNCTION KILLER invoked when you click on the card.
 const pickKiller = () => {
 
@@ -256,9 +255,6 @@ const revealMystery = () => {
   const theWeaponClass = theWeapon.className
   const theRoom = document.getElementById("room")
   const theRoomClass = theRoom.className
-
-  //Just to check if the class .clicked is added or not
-  console.log(theKillerClass, theWeaponClass, theRoomClass)
 
   //If the decks are clicked on they will get classname .clicked added, if all three decks are clicked we reveal the mystery
   if (theKillerClass === "killer-deck clicked" && theWeaponClass === "weapon-deck clicked" && theRoomClass === "room-deck clicked") {
