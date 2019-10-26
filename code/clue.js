@@ -58,48 +58,48 @@ const mrsWhite = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: "rope",
-  material: "hamp",
+  name: "Rope",
+  material: "Hamp",
   weight: 7
 }
 const knife = {
-  name: "knife",
-  material: "steel",
+  name: "Knife",
+  material: "Steel",
   weight: 7
 }
 const candlestick = {
-  name: "candelstick",
-  material: "wax",
+  name: "Candelstick",
+  material: "Wax",
   weight: 3
 }
 const dumbbell = {
-  name: "dumbbell",
-  material: "iron",
+  name: "Dumbbell",
+  material: "Iron",
   weight: 15
 }
 const poison = {
-  name: "poison",
-  material: "plant",
+  name: "Poison",
+  material: "Plant",
   weight: 0.5
 }
 const axe = {
-  name: "axe",
-  material: "iron and wood",
+  name: "Axe",
+  material: "Iron and wood",
   weight: 10
 }
 const bat = {
-  name: "bat",
-  material: "wood",
+  name: "Bat",
+  material: "Wood",
   weight: 8
 }
 const throphy = {
-  name: "throphy",
-  material: "plastic",
+  name: "Throphy",
+  material: "Plastic",
   weight: 2
 }
 const pistol = {
-    name: "pistol",
-    material: "steel",
+    name: "Pistol",
+    material: "Steel",
     weight: 6
   }
   // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -231,7 +231,7 @@ const pickKiller = () => {
 
   theKillerDescription.innerHTML = mystery.killer.description;
 
-  // theKiller.classList.add("picked");
+
 }
 
 const pickWeapon = () => {
@@ -249,7 +249,7 @@ const pickWeapon = () => {
 
   theWeaponWeight.innerHTML = `${mystery.weapon.weight} kg`;
 
-  //theWeapon.classList.add("pickard");
+
 }
 
 const pickRoom = () => {
@@ -260,7 +260,6 @@ const pickRoom = () => {
 
   theRoomName.innerHTML = `${mystery.room.name}`;
 
-  //  theRoom.classList.add("picked")
 }
 
 const revealMystery = () => {
@@ -270,8 +269,7 @@ const revealMystery = () => {
   if (!mystery.killer || !mystery.weapon || !mystery.room) {
     theMystery.innerHTML = "No mystery";
   } else {
-    theMystery.innerHTML = "The murder has been commited by";
-    theMysteryDescription.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+    theMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}`;
   }
 }
 
