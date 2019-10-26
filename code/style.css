@@ -1,58 +1,100 @@
 body {
-  margin: 0;
-  font-family: "Courier New", Courier, monospace;
+    margin: 0;
+    font-family: 'Big Shoulders Text', cursive;
 }
 
 p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+    margin: 1px;
+    font-weight: 300;
+    font-size: 1.3em;
+}
+
+h1 {
+    color: white;
+}
+
+.description {
+    background-color: ;
 }
 
 .cards {
-  margin: 50px auto;
-  width: 90%;
-  height: 600px;
-  background: #ccc;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+    margin: 45px auto;
+    width: 90%;
+    height: 1100px;
+    background-image: url(background3.jpg);
+    background-size: cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 }
 
 .killer-deck {
-  width: 250px;
-  height: 400px;
-  background: #000;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+    width: 250px;
+    height: 400px;
+    background-image: url(cardbackground.jpg);
+    background-size: cover;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 5px;
+    margin: 5px;
 }
 
 .weapon-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+    width: 250px;
+    height: 400px;
+    background-image: url(cardbackground.jpg);
+    background-size: cover;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 5px;
+    margin: 5px;
 }
 
 .room-deck {
-  width: 250px;
-  height: 400px;
-  background: midnightblue;
+    width: 250px;
+    height: 400px;
+    background-image: url(cardbackground.jpg);
+    background-size: cover;
+    text-align: center;
+    padding-top: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
 
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+.final {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 250px;
 }
 
 button {
-  padding: 8px 16px;
-  background: crimson;
-  border: none;
-  font-size: 20px;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto;
+    padding: 8px 16px;
+    background: #a98;
+    border: none;
+    font-size: 20px;
+    border-radius: 8px;
+    display: block;
+    margin: 5px auto;
+}
+
+footer {
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+}
+
+.cread {
+    font-size: 12px;
+}
+
+
+/*Media queries*/
+
+@media (min-width:450px) {
+    .cards {
+        flex-direction: row;
+        height: 600px;
+    }
 }

@@ -6,13 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text&display=swap" rel="stylesheet">
   <title>Clue</title>
 </head>
 
 <body>
   <section class="cards">
     <div class="killer-deck" id="killer" onclick="pickKiller()">
-      <p>KILLER</p>
+      <h1>KILLER</h1>
       <p id="killerName"></p>
       <p id="killerAge"></p>
       <p id="killerOccupation"></p>
@@ -20,20 +21,32 @@
       <p id="killerDiscription"></p>
     </div>
     <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
-      <p>WEAPON</p>
+      <h1>WEAPON</h1>
       <p id="weaponName"></p>
       <p id="weaponMaterial"></p>
       <p id="weaponWeight"></p>
+      <img id="weaponImage" src="" height="100" />
     </div>
-    <div class="room-deck" id="room" onclick="pickRoom()">
-      <p>ROOM</p>
+    <div class="room-deck" id="rooms" onclick="pickRoom()">
+      <h1>ROOM</h1>
       <p id="roomName"></p>
+      <img id="roomImage" src="" height="100" />
+    </div>
+    <div class="final">
+      <h2 id="mystery"></h2>
+      <button onclick="revealMystery()">REVEAL THE CRIME</button>
     </div>
   </section>
-  <h1 id="mystery"></h1>
-  <button onclick="revealMystery()">REVEAL THE CRIME</button>
 
   <script src="clue.js"></script>
+
+  <footer>
+    <p class="cread">Illustrations from Nuon Project by: David Carrero, Phạm Thanh Lộc, Andrejs Kirma, Adib Muhammad, Seona Kim,
+    </p>
+  </footer>
+
 </body>
+
+
 
 </html>

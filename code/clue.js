@@ -3,46 +3,46 @@
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
-  color: "green",
+  color: "#7b7",
   description: "He has a lot of connections",
   age: 45,
-  image: "assets/green.png",
+  image: "assets/green1.png",
   occupation: "Entrepreneur"
 }
 const profPlum = {
   firstName: "Victor",
   lastName: "Plum",
-  color: "purple",
+  color: "#96b",
   description: " A quick-witted, young professor with a bow tie",
   age: 35,
-  image: "assets/plum.png",
+  image: "assets/plum1.png",
   occupation: "Professor"
 }
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
-  color: "red",
+  color: "#e34",
   description: "An attractive young woman, who allegedly is a femme fatale.",
   age: 22,
-  image: "assets/scarlet.png",
+  image: "assets/scarlet1.png",
   occupation: "Spy"
 }
 const mrsPeacock = {
   firstName: "Eleonor",
   lastName: "Peacock",
-  color: "blue",
+  color: "#37a",
   description: "A grande dame, an elderly yet still attractive woman who maintains her dignity in almost all cases.",
   age: 32,
-  image: "assets/peacock.png",
+  image: "assets/peacock1.png",
   occupation: "Socialite"
 }
 const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
-  color: "yellow",
+  color: "#fe8",
   description: "He is a military man both dignified and dangerous.",
   age: 50,
-  image: "assets/mustard.png",
+  image: "assets/mustard1.png",
   occupation: "Colonel"
 }
 const mrsWhite = {
@@ -51,7 +51,7 @@ const mrsWhite = {
   color: "white",
   description: "A frazzled servant.",
   age: 62,
-  image: "assets/white.png",
+  image: "assets/white1.png",
   occupation: "Servant"
 }
 
@@ -60,93 +60,117 @@ const mrsWhite = {
 const rope = {
   name: "Rope",
   material: "Hamp",
-  weight: 7
+  weight: 7,
+  image: "weapons/rope.png"
 }
 const knife = {
   name: "Knife",
   material: "Steel",
-  weight: 7
+  weight: 7,
+  image: "weapons/knife.png"
 }
 const candlestick = {
-  name: "Candelstick",
+  name: "Candlestick",
   material: "Wax",
-  weight: 3
+  weight: 3,
+  image: "weapons/candlestick.png"
 }
 const dumbbell = {
   name: "Dumbbell",
   material: "Iron",
-  weight: 15
+  weight: 15,
+  image: "weapons/dumbbell.png"
 }
 const poison = {
   name: "Poison",
   material: "Plant",
-  weight: 0.5
+  weight: 0.5,
+  image: "weapons/poison.png"
 }
 const axe = {
   name: "Axe",
   material: "Iron and wood",
-  weight: 10
+  weight: 10,
+  image: "weapons/axe.png"
 }
 const bat = {
   name: "Bat",
   material: "Wood",
-  weight: 8
+  weight: 8,
+  image: "weapons/bat.png"
 }
 const throphy = {
   name: "Throphy",
   material: "Plastic",
-  weight: 2
+  weight: 2,
+  image: "weapons/throphy.png"
 }
 const pistol = {
     name: "Pistol",
     material: "Steel",
-    weight: 6
+    weight: 6,
+    image: "weapons/pistol.png"
   }
   // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 const dinningRoom = {
-  name: "Dinning Room"
+  name: "Dinning Room",
+  image: "room/ginningroom.png"
 }
 const conservatory = {
-  name: "Conservatory"
+  name: "Conservatory",
+  image: "room/conservatory.png"
 }
 const kitchen = {
-  name: "Kitchen"
+  name: "Kitchen",
+  image: "room/kitchen.png"
 }
 const study = {
-  name: "Study"
+  name: "Study",
+  image: "room/study.png"
 }
 const library = {
-  name: "Library"
+  name: "Library",
+  image: "room/library.png"
 }
 const billiardRoom = {
-  name: "Billiard Room"
+  name: "Billiard Room",
+  image: "room/billiardroom.png"
 }
 const lounge = {
-  name: "Lounge"
+  name: "Lounge",
+  image: "room/lounge.png"
 }
 const ballroom = {
-  name: "Ballroom"
+  name: "Ballroom",
+  image: "room/ballroom.png"
 }
 const hall = {
-  name: "Hall"
+  name: "Hall",
+  image: "room/hall.png"
 }
 const spa = {
-  name: "Spa"
+  name: "Spa",
+  image: "room/spa.png"
 }
 const livingRoom = {
-  name: "Living Room"
+  name: "Living Room",
+  image: "room/livingroom.png"
 }
 const observatory = {
-  name: "Observatory"
+  name: "Observatory",
+  image: "room/observatory.png"
 }
 const theater = {
-  name: "Theater"
+  name: "Theater",
+  image: "room/theater.png"
 }
 const guestHouse = {
-  name: "Guest House"
+  name: "Guest House",
+  image: "room/guesthouse.png"
 }
 const patio = {
-    name: "Patio"
+    name: "Patio",
+    image: "room/patio.png"
   }
   // ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
@@ -218,8 +242,7 @@ const pickKiller = () => {
   const theKillerImage = document.getElementById("killerImage");
   const theKillerDescription = document.getElementById("killerDiscription");
 
-
-  theKiller.style.background = mystery.killer.color;
+  theKiller.style.background = "#a98";
 
   theKillerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
 
@@ -231,7 +254,7 @@ const pickKiller = () => {
 
   theKillerDescription.innerHTML = mystery.killer.description;
 
-
+  theKillerDescription.style.background = mystery.killer.color;
 }
 
 const pickWeapon = () => {
@@ -242,6 +265,9 @@ const pickWeapon = () => {
   const theWeaponName = document.getElementById("weaponName");
   const theWeaponMaterial = document.getElementById("weaponMaterial");
   const theWeaponWeight = document.getElementById("weaponWeight");
+  const theWeaponImage = document.getElementById("weaponImage");
+
+  theWeapon.style.background = "#a98";
 
   theWeaponName.innerHTML = mystery.weapon.name;
 
@@ -249,16 +275,21 @@ const pickWeapon = () => {
 
   theWeaponWeight.innerHTML = `${mystery.weapon.weight} kg`;
 
-
+  theWeaponImage.src = mystery.weapon.image;
 }
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms);
 
-  /*  const theRoom = document.getElementById("room"); */
+  const theRoom = document.getElementById("rooms");
   const theRoomName = document.getElementById("roomName");
+  const theRoomImage = document.getElementById("roomImage");
+
+  theRoom.style.background = "#a98";
 
   theRoomName.innerHTML = `${mystery.room.name}`;
+
+  theRoomImage.src = mystery.room.image;
 
 }
 
