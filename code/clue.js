@@ -71,7 +71,7 @@ const suspects = [
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
-const weapons = [
+const rope = [
 
     {
         name: "rope",
@@ -149,18 +149,19 @@ const rooms = [
 ]
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
-
-/* const suspects = [
+/* 
+const suspects = [
     mrGreen,
     mrsWhite,
     profPlum,
     missScarlet,
     mrsPeacock,
     mrMustard
-] */
+]
 
-/* const weapons = [] */
+const weapons = []
 
+ */
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
@@ -170,12 +171,6 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
-
-const mystery {
-    killer,
-    weapon,
-    room
-}
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
