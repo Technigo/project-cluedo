@@ -4,7 +4,7 @@ const mrGreen = {
   nickName: "Mr. Green",
   firstName: "Jacob",
   lastName: "Green",
-  color: "green",
+  color: "rgba(13, 102, 0, 0.66)",
   description: "He has a lot of connections",
   age: 45,
   image: "assets/green.png",
@@ -15,7 +15,7 @@ const profPlum = {
   nickName: "Proffessor Plum",
   firstName: "Victor",
   lastName: "Plum",
-  color: "purple",
+  color: "rgba(62, 0, 102, 0.66)",
   description: "He is quick-witted",
   age: 40,
   image: "assets/plum.png",
@@ -26,7 +26,7 @@ const missScarlet = {
   nickName: "Miss Scarlet",
   firstName: "Cassandra",
   lastName: "Scarlet",
-  color: "red",
+  color: "rgba(239, 0, 11, 0.66)",
   description: "She is beautiful and seductive.",
   age: 28,
   image: "assets/scarlet.png",
@@ -36,8 +36,8 @@ const mrsPeacock = {
   nickName: "Mrs Peacock",
   firstName: "Eleanor",
   lastName: "Peacock",
-  color: "blue",
-  description: "She is a natural leader",
+  color: "rgba(2, 82, 180, 0.66)",
+  description: "She is a natural leader with mesmorising charisma",
   age: 35,
   image: "assets/peacock.png",
   occupation: "Social butterfly"
@@ -47,7 +47,7 @@ const mrMustard = {
   nickName: "Colonel Mustard",
   firstName: "Jack",
   lastName: "Mustard",
-  color: "yellow",
+  color: "rgba(218, 228, 15, 0.66)",
   description: "He knows a lot abuout weapons",
   age: 55,
   image: "assets/mustard.png",
@@ -57,7 +57,7 @@ const mrsWhite = {
   nickName: "Mrs White",
   firstName: "Blanche",
   lastName: "White",
-  color: "white",
+  color: "rgba(253, 123, 197, 0.06)",
   description: "She is strict and thorough",
   age: 55,
   image: "assets/white.png",
@@ -107,7 +107,7 @@ const pistol = {
 const dinningRoom = "Dinig Room"
 const conservatory = "Conservatory"
 const kitchen = "Kitchen"
-const study = "Study"
+const study = "Study Room"
 const library = "Library"
 const billiardRoom = "Billiard Room"
 const lounge = "Lounge"
@@ -230,4 +230,5 @@ const pickRoom = () => {
 const revealMystery = () => {
   const mysteryAnswer = document.getElementById("mysteryAnswer")
   mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with ${mystery.weapon.name}.`
+  document.getElementById("mysteryButton").style.visibility = 'hidden'
 }
