@@ -231,7 +231,7 @@ const pickKiller = () => {
 
   theKillerDescription.innerHTML = mystery.killer.description;
 
-  theKiller.classList.add("picked");
+  // theKiller.classList.add("picked");
 }
 
 const pickWeapon = () => {
@@ -249,7 +249,7 @@ const pickWeapon = () => {
 
   theWeaponWeight.innerHTML = `${mystery.weapon.weight} kg`;
 
-  theWeapon.classList.add("pickard");
+  //theWeapon.classList.add("pickard");
 }
 
 const pickRoom = () => {
@@ -260,7 +260,7 @@ const pickRoom = () => {
 
   theRoomName.innerHTML = `${mystery.room.name}`;
 
-  theRoom.classList.add("picked")
+  //  theRoom.classList.add("picked")
 }
 
 const revealMystery = () => {
