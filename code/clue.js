@@ -125,8 +125,7 @@ const rooms = [
   "kitchen",
   "study",
   "library",
-  "billiard",
-  "room",
+  "billiardroom",
   "lounge",
   "ballroom",
   "hall",
@@ -194,6 +193,10 @@ const pickRoom = () => {
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
-const revealMystery = () => {}
+const revealMystery = () => {
+  document.getElementById("mystery").innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`;
+}
 
 //lånad kod kolla damiens video
+
+document.getElementById("mystery").addEventListener('click, revealMystery')
