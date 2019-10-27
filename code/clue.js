@@ -1,4 +1,4 @@
-// CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// OBJECTS FOR ALL THE SUSPECTS:
 
 const mrGreen = {
   firstName: "Jacob",
@@ -60,7 +60,7 @@ const mrsWhite = {
   occupation: "Housekeeper"
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
+// OBJECTS FOR ALL THE WEAPONS:
 
 const rope = {
   name: "rope",
@@ -116,10 +116,7 @@ const pistol = {
   image:"assets/pistol.png"
 }
 
-
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
+// SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
 const suspects = [
   mrGreen,
@@ -167,19 +164,16 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
+// OBJECT THAT KEEPS THE MYSTERY.
 
 const mystery = {}
 
-// FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
-  // const theKillerTitle = document.getElementById("killerTitle")
   const theKillerColor = document.querySelectorAll(".killer-color")
   const theKillerName = document.getElementById("killerName")
   const theKillerImage = document.getElementById("killerImage")
@@ -192,12 +186,7 @@ const pickKiller = () => {
   theKillerColor.forEach((el)=> {
     el.style.background = "#000"
     el.style.color = mystery.killer.color
-  })
-
-  // theKillerTitle.style.background = "#000"
-  // theKillerTitle.style.color = "#fff"
-
-  
+  })  
   
   theKillerName.innerHTML =
     mystery.killer.firstName + " " + mystery.killer.lastName
@@ -207,7 +196,7 @@ const pickKiller = () => {
   theKillerDescription.innerHTML = mystery.killer.description
 }
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+// FUNCTION pickWeapon 
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
@@ -218,56 +207,61 @@ const pickWeapon = () => {
   const theWeaponWeight = document.getElementById("weaponWeight")
   const theWeaponImage = document.getElementById("weaponImage")
 
-  // theWeapon.style.backgroundImage = "url(./assets/defoliation.jpg)"
-  theWeapon.style.background = "#870000"
+  theWeapon.style.background = "#f6e591"
   theWeaponColor.forEach((el) => {
     el.style.background = "#000"
-    el.style.color = "#fff"
   })
-  // theWeaponTitle.style.background = "#000"
-  // theWeaponTitle.style.color = "#fff"
+
 
   theWeaponName.innerHTML =
     mystery.weapon.name
   theWeaponWeight.innerHTML =
     mystery.weapon.weight
   theWeaponImage.src = mystery.weapon.image
-  // theWeaponImage.style.border = "2px solid #000"
 }
+
+// FUNCTION pickRoom
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
   const theRoom = document.getElementById("room")
   const theRoomColor = document.querySelectorAll(".room-color")
-  // const theRoomTitle = document.getElementById("roomTitle")
   const theRoomName = document.getElementById("roomName")
 
-  theRoom.style.background = "#870000"
+  theRoom.style.background = "#f6e591"
 
   theRoomColor.forEach((el) => {
     el.style.background = "#000"
-    el.style.color = "#fff"
   })
-
-  // theRoomTitle.style.background = "#fff"
-  // theRoomTitle.style.color = "#000"
 
   theRoomName.innerHTML =
     mystery.room
 }
 
-// CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// FUNCTION revealMystery that will be invoked when the button is clicked
 
 const revealMystery = () => {
   const theRevealMystery = document.getElementById("mystery")
   const theBeforeSection = document.querySelector(".before-section")
+  const theRoom = document.getElementById("room")
+  const theWeapon = document.getElementById("weapon")
+  const theKiller = document.getElementById("killer")
+  const theKillerColor = document.querySelectorAll(".killer-color")
 
   if (mystery.killer === undefined|| mystery.weapon === undefined || mystery.room === undefined) {
     theRevealMystery.innerHTML = 'No mystery has been revealed yet.'
   } else {
     theRevealMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
     theBeforeSection.style.backgroundImage = "url(./assets/defoliation.jpg)"
+    theRoom.style.background = "#870000"
+    theWeapon.style.background = "#870000"
+    theKiller.style.background = "#870000"
+    theKiller.style.borderColor = "#000"
+
+    theKillerColor.forEach((el)=> {
+      el.style.color = "#fff"
+    })
+    
   }
 }
