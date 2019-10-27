@@ -172,10 +172,10 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 
-mystery = {
-    killer,
-    weapon,
-    room
+let mystery = {
+    killer: undefined,
+    weapon: undefined,
+    room: undefined
 }
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
@@ -227,5 +227,8 @@ const pickRoom = () => {
 
 const revealMystery = () => {
     const theCrime = document.getElementById("mystery")
-    theCrime.innerHTML = `The murder was committed by ${mystery.killer.nickname}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+    console.log(mystery)
+    if (mystery.killer == undefined || mystery.room == undefined || mystery.weapon == undefined) {
+        theCrime.innerHTML = 'No mystery has been revealed yet.'
+    } else { theCrime.innerHTML = `The murder was committed by ${mystery.killer.nickname}, in the ${mystery.room} with a ${mystery.weapon.name}.` }
 }
