@@ -1,4 +1,6 @@
-`PROJECT 5`
+This was another project built under the Technigo Frontend Developer Bootcamp. Below you can find the instructions for it, as well as its stretch goals and deep dive steps.
+
+***
 
 # Build a piece of Cluedo
 
@@ -78,44 +80,6 @@ That should be stored in the mysterty object and we should visually see the chos
 When clicking the button Reveal Mystery, we should see a message saying something like:
 *The murder was committed by Jacob Green, in the living room with a rope.*
 
-## What you will learn 🧠
-
-- Create and manipulate objects
-- Create arrays
-- More about manipulating the DOM using Javascript
-
-## How to get started 💪🏼
-
-1. Fork this repo
-2. Clone this repo into your projects folder on your computer
-3. Open up VS Code and start coding!
-
-## Requirements 🧪
-
-- Code follows Technigo’s code guidelines.
-- Site should have three clickable cards and a clickable button.
-- You should be able to randomly pick suspects, weapons and rooms.
-- You should be able to reveal the mystery.
-- If selected; demo your solution for your team.
-
-## How to hand in the code 🎯
-
-- When you’re finished with the project, push your code to GitHub with these commands:
-
-  ```
-  git add .
-  git commit -m "your commit message"
-  git push origin master
-  ```
-
-- Navigate to your repo and create a Pull Request into the Technigo repo
-- Add a link to your deployed site in the comments of the PR.
-- Wait for the code review from your teachers
-
-## How to get help 🆘
-
-Ask for help and share your knowledge about this project with the 'cluedo-site-project' tag on [Stack Overflow](https://stackoverflow.com/c/technigo/questions). Talk to your team on Slack and help each other out. Do some research about your problem, you are surely not the first one with this problem, Google is your friend 🙂. And you can of course also reach out to your teachers.
-
 ## Stretch Goals 🏃‍♂
 
 Make sure you've commited and pushed a version of your project before starting with the stretch goals.
@@ -130,10 +94,3 @@ Make sure you've commited and pushed a version of your project before starting w
 
 - Add the functionality to say something like: "No mystery is yet to be revealed" if you click the reveal button but haven't selected suspect, weapon and room yet.
 - Add a fourth deck of card, maybe about when the murder was commited.
-
-**_Helpful readings_**
-
-- [W3Schools - Objects](https://www.w3schools.com/js/js_objects.asp)
-- [W3Schools - Arrays](https://www.w3schools.com/js/js_arrays.asp)
-
-#### 🚨 Don't forget to add, commit and push the changes to GitHub when you're done. 🏁
