@@ -5,44 +5,44 @@ const suspects = [
     {
         firstName: "Jacob",
         lastName: "Green",
-        nickname: "Mr. Green",
-        color: "green",
-        description: "He has a lot of connections.",
-        age: 45,
-        image: "code/assets/green.png",
-        occupation: "Entrepreneur"
+        nickname: "Mr Green",
+        color: "#171429",
+        description: "British gentleman with connections. Somewhat cocky.",
+        age: 40,
+        image: "assets/green.jpg",
+        occupation: "Lawyer"
     },
 
     {
         firstName: "Victor",
         lastName: "Plum",
         nickname: "Professor Plum",
-        color: "plum",
-        description: "A quick-witted, young professor with a bow tie and glasses.",
+        color: "#681915",
+        description: "A quick-witted, but hopelessly romantic young professor.",
         age: 35,
-        image: "code/assets/plum.png",
-        occupation: "Professor"
+        image: "assets/plum.jpg",
+        occupation: "Literature Professor"
     },
 
     {
         firstName: "Cassandra",
         lastName: "Scarlet",
-        nickname: "Miss Scarlet",
-        color: "red",
-        description: "Young and attractive American woman.",
-        age: 29,
-        image: "code/assets/scarlet.png",
-        occupation: "A Femme Fatale"
+        nickname: "Mrs Scarlet",
+        color: "#0C352F",
+        description: "Attractive American jazz singer. Divorced.",
+        age: 37,
+        image: "assets/scarlett.jpg",
+        occupation: "Opera singer"
     },
 
     {
         firstName: "Eleanor",
         lastName: "Peacock",
         nickname: "Mrs Peacock",
-        color: "purple",
-        description: "A grande dame, an elderly, still-attractive woman.",
+        color: "#CEA259",
+        description: "Quirky but attractive, and very wealthy woman.",
         age: 49,
-        image: "code/assets/peacock.png",
+        image: "assets/peacock.jpg",
         occupation: "A lady"
     },
 
@@ -50,22 +50,22 @@ const suspects = [
         firstName: "Jack",
         lastName: "Mustard",
         nickname: "Colonel Mustard",
-        color: "yellow",
-        description: "He is a dignified, dapper and dangerous military man.",
+        color: "#3A2007",
+        description: "Dapper and dangerous ex-military American.",
         age: 52,
-        image: "code/assets/mustard.png",
+        image: "assets/mustard.jpg",
         occupation: "Colonel"
     },
 
     {
-        firstName: "Mary",
+        firstName: "Josephine",
         lastName: "White",
         nickname: "Mrs White",
         color: "white",
-        description: "She knows everything about everyone",
-        age: 63,
-        image: "code/assets/white.png",
-        occupation: "Servant"
+        description: "The feminist. She hates all men and most kids.",
+        age: 41,
+        image: "assets/white.jpg",
+        occupation: "Politician"
     }
 ];
 
@@ -193,11 +193,14 @@ const pickKiller = () => {
     theKillerName.innerHTML =
         mystery.killer.firstName + " " + mystery.killer.lastName
 
-    const theKillerAge = document.getElementById("killerAge")
-    theKillerAge.innerHTML = mystery.killer.age
+    /* const theKillerAge = document.getElementById("killerAge")
+    theKillerAge.innerHTML = mystery.killer.age */
 
-    const theKillerOccupation = document.getElementById("killerOccupation")
-    theKillerOccupation.innerHTML = mystery.killer.occupation
+    const theKillerDescription = document.getElementById("killerDescription")
+    theKillerDescription.innerHTML = mystery.killer.description
+
+    /*  const theKillerOccupation = document.getElementById("killerOccupation")
+     theKillerOccupation.innerHTML = mystery.killer.occupation */
 
     const theKillerImage = document.getElementById("killerImage")
     theKillerImage.src = mystery.killer.image
