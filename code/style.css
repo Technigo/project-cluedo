@@ -41,11 +41,13 @@ header h1 {
 .flex-cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
   background: rgba(195, 213, 224, 0.877);
-  justify-content: space-around;
+  width: 90%;
+  height: auto;
   display: flex;
-  flex-flow: wrap;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .killer-deck {
@@ -107,49 +109,4 @@ footer {
   height: 50px;
   margin: 0px;
   font-size: 0.8em;
-}
-
-/*******MEDIA QUERIES *********/
-
-/*@media (min-width: 650px) {
-  header {
-  justify-content: space-between;
-  }
- 
-  /*display the form controls vertically instead of horisontally*/
-  /*.flex-cards {
-    justify-content: space-between;
-  }
-
- .killer-deck {
-  width: 25%;
-  flex-grow: 1;
- 
-  }
-  .weapon-deck {
-    width: 25%;
-    flex-grow: 1;
-   
-  }
-  .room-deck {
-    width: 25%;
-    flex-grow: 1;
- 
-  }
-  .reveal-mystery {
-    width: 100%;
-    flex-grow: 1;
-    margin: 16px;
-  }
-  footer {
-    align-items: center;
-    }
-}
-
-@media (min-width: 1024px) {
-  
-  header {
-    justify-content: space-between;
-  }
-  
 }
