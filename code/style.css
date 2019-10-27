@@ -1,58 +1,125 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Liu Jian Mao Cao', cursive;
 }
 
 p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+  margin: 3px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  /*background-color: #fff;*/
 }
 
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
+  height: auto;
+  /*background-image: \assets\cluedo.jpg;*/
   background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+  border-radius: 16px;
+}
+
+.cards img{
+  margin:16px;
+}
+
+.wichCard p{
+  font-weight: 1500;
+  font-size: 2rem;
+  margin: 16px;
 }
 
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background-color:#def;
+  background-image: radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%),
+  radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%);
+  background-size:80px 80px;
+  background-position:0 0, 40px 40px;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 20px;
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background-color:#def;
+  background-image: radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%),
+  radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%);
+  background-size:80px 80px;
+  background-position:0 0, 40px 40px;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 20px;
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background-color:#def;
+  background-image: radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%),
+  radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.3) 99%);
+  background-size:80px 80px;
+  background-position:0 0, 40px 40px;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 20px;
 }
+
+.reveal {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: #557A95;
+  color: rgb(160, 177, 190);
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+button:hover {
+  background: transparent; 
+  border: 3px solid #557A95;
+}
+
+
+@media (max-width: 668px) {
+
+  .cards {
+    height: auto;
+    background: #ccc;
+  }
+
+  .killer-deck {
+    margin: 10px;
+  }
+
+  .weapon-deck {
+    margin: 10px;
+  }
+
+  .room-deck {
+    margin: 10px;
+  }
+
+button {
+  margin-bottom: 20px;
+}
+
 }

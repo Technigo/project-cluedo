@@ -65,48 +65,143 @@ const mrsWhite = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: "rope",
-  weight: 10
+  name: "Rope",
+  weight: 10,
+  image: "assets/Rope.jpg",
+  color: "white"
 }
 
 const knife = {
-  name: "knife",
-  weight: 12
+  name: "Knife",
+  weight: 12,
+  image: "assets/Knife.jpg",
+  color: "white"
 }
 
 const candelstick = {
   name: "Candelstick",
-  weight: 9
+  weight: 9,
+  image: "assets/Candlestick.jpeg",
+  color: "white"
 }
 
 const dumbell = {
   name: "Dumbbell",
-  weight: 8
+  weight: 8,
+  image: "assets/Dumbbell.jpg",
+  color: "white"
 }
 
 const poison = {
   name: "Poison",
-  weight: 11
+  weight: 11,
+  image: "assets/Poison.jpg",
+  color: "white"
 }
 
 const axe = {
   name: "Axe",
-  weight: 13
+  weight: 13,
+  image: "assets/Axe.jpg",
+  color: "white"
 }
 
 const bat = {
-  name: "bat",
-  weight: 9
+  name: "Bat",
+  weight: 9,
+  image: "assets/Bat.jpg",
+  color: "white"
 }
 
 const trophy = {
   name: "Trophy",
-  weight: 7
+  weight: 7,
+  image: "assets/Trophy.jpg",
+  color: "white"
 }
 
 const pistol = {
   name: "Pistol",
-  weight: 11
+  weight: 11,
+  image: "assets/Pistol.jpg",
+  color: "white"
+}
+
+//Rooms
+
+const DinningRoom = {
+  name: "Dinning Room",
+  color: "white"
+}
+
+const conservatory = {
+  name: "Conservatory",
+  color: "white"
+}
+
+const kitchen = {
+  name: "Kitchen",
+  color: "white"
+}
+
+const study = {
+  name: "Study",
+  color: "white"
+}
+
+const library = {
+  name: "Library",
+  color: "white"
+}
+
+const billiardRoom = {
+  name: "BilliardRoom",
+  color: "white"
+}
+
+const lounge = {
+  name: "Lounge",
+  color: "white"
+}
+
+const ballRoom = {
+  name: "BallRoom",
+  color: "white"
+}
+
+const hall = {
+  name: "Hall",
+  color: "white"
+}
+
+const spa = {
+  name: "Spa",
+  color: "white"
+}
+
+const livingRoom = {
+  name: "LivingRoom",
+  color: "white"
+}
+
+const observatory = {
+  name: "Observatory",
+  color: "white"
+}
+
+const theatre = {
+  name: "Theatre",
+  color: "white"
+}
+
+const guestHouse = {
+  name: "GuestHouse",
+  color: "white"
+}
+
+const patio = {
+  name: "Patio",
+  color: "white"
 }
 
 
@@ -150,31 +245,26 @@ writeOutWeapon(weapons);
 
 
 const rooms = [
-  "dinningRoom",
-  "conservatory",
-  "kitchen",
-  "study",
-  "library",
-  "billiardRoom",
-  "lounge",
-  "ballRoom",
-  "hall",
-  "spa",
-  "livingRoom",
-  "observatory",
-  "theatre",
-  "guestHouse",
-  "patio"
+  DinningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballRoom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theatre,
+  guestHouse,
+  patio
 ]
 
 console.log(rooms);
 
-/*
-const writeOutroom = room => {
-  console.log(rooms);
-};
 
-writeOutWeapon(rooms);*/
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 
@@ -182,23 +272,6 @@ writeOutWeapon(rooms);*/
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
-
-/*
-const randomSelectorSuspects = (suspectsGroup) => {
-  return suspectsGroup[Math.floor(Math.random() * suspectsGroup.length)];
-};
-
-const randomSelectorWeapons = (weaponsGroup) => {
-  return weaponsGroup[Math.floor(Math.random() * weaponsGroup.length)];
-};
-
-const randomSelectorRooms = (roomsGroup) => {
-  return roomsGroup[Math.floor(Math.random() * roomsGroup.length)];
-};
-
-console.log(randomSelectorSuspects(suspects).firstName);
-console.log(randomSelectorWeapons(weapons).name);
-console.log(randomSelectorRooms(rooms));*/
 
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
@@ -211,21 +284,6 @@ const mystery = {
   weapon: "",
   room: ""
 }
-
-
-/*
-let mystery = (murderMystery) => {
-  const randomSuspects = randomSelector(suspects)
-  const randomWeapons = randomSelector(weapons)
-  const randomRooms = randomSelector(rooms)
-
-  console.log(randomSuspects, randomWeapons, randomRooms)
-}
-
-mystery()
-*/
-
-
 
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
@@ -255,20 +313,26 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
   console.log(mystery.weapon)
 
+  const theWeapon = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
   const theWeaponWeight = document.getElementById("weaponWeight")
+  const theWeaponImage = document.getElementById("weaponImage")
 
+  theWeapon.style.background = mystery.weapon.color
   theWeaponName.innerHTML = mystery.weapon.name
   theWeaponWeight.innerHTML = mystery.weapon.weight
+  theWeaponImage.src = mystery.weapon.image
 }
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
   console.log(mystery.room)
 
+  const theRoom = document.getElementById("room")
   const theRoomName = document.getElementById("roomName")
 
-  theRoomName.innerHTML = mystery.room
+  theRoom.style.background = mystery.room.color
+  theRoomName.innerHTML = mystery.room.name
 }
 
 
@@ -278,7 +342,7 @@ const pickRoom = () => {
 // The murder was committed by Jacob Green, in the living room with a rope.
 
 const revealMystery = () => {
-  document.getElementById("mystery").innerHTML = `The murder was commit by ${mystery.killer.firstName} ${mystery.killer.lastName}, in ${mystery.room} with a ${mystery.weapon.name}`
+  document.getElementById("mystery").innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}`
 }
 
 //revealMystery.onclick(revealMystery); -kommentar: onclick behövs inte i javascript om onclick finns i HTML på en knapp(button)
