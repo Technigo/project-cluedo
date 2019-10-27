@@ -30,15 +30,15 @@ class Weapon {
   }
 }
 
-const rope = new Weapon("rope", 10, "assets/rope.jpg")
-const knife = new Weapon("knife", 15, "assets/knife.jpg")
-const candlestick = new Weapon("candlestick", 40, "assets/candlestick.jpg")
-const dumbbell = new Weapon("dumbbell", 12, "assets/dumbbell.jpg")
-const poison = new Weapon("poison", 5, "assets/poison.jpg")
-const axe = new Weapon("axe", 35, "assets/axe.jpg")
-const bat = new Weapon("bat", 13, "assets/bat.jpg")
-const trophy = new Weapon("trophy", 8, "assets/trophy.jpg")
-const pistol = new Weapon("pistol", 20, "assets/pistol.jpg")
+const rope = new Weapon("rope", 10, "assets/rope.png")
+const knife = new Weapon("knife", 15, "assets/knife.png")
+const candlestick = new Weapon("candlestick", 40, "assets/candlestick.png")
+const dumbbell = new Weapon("dumbbell", 12, "assets/dumbbell.png")
+const poison = new Weapon("poison", 5, "assets/poison.png")
+const axe = new Weapon("axe", 35, "assets/axe.png")
+const bat = new Weapon("bat", 13, "assets/bat.png")
+const trophy = new Weapon("trophy", 8, "assets/trophy.png")
+const pistol = new Weapon("pistol", 20, "assets/pistol.png")
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -49,21 +49,21 @@ class Room {
   }
 }
 
-const dinningRoom = new Room("dinning room", "assets/dinningroom.jpg")
-const conservatory = new Room("conservatory", "assets/conservatory.jpg")
-const kitchen = new Room("kitchen", "assets/kitchen.jpg")
-const study = new Room("study", "assets/study.jpg")
-const library = new Room("library", "assets/library.jpg")
-const billiardRoom = new Room("billiard room", "assets/billiardroom.jpg")
-const lounge = new Room("lounge", "assets/lounge.jpg")
-const ballroom = new Room("ballroom", "assets/ballroom.jpg")
-const hall = new Room("hall", "assets/hall.jpg")
-const spa = new Room("spa", "assets/spa.jpg")
-const livingRoom = new Room("living room", "assets/livingroom.jpg")
-const observatory = new Room("observatory", "assets/observatory.jpg")
-const theater = new Room("theater", "assets/theater.jpg")
-const guesttHouse = new Room("guest house", "assets/guesthouse.jpg")
-const patio = new Room("patio", "assets/patio.jpg")
+const dinningRoom = new Room("dinning room", "assets/dinningroom.png")
+const conservatory = new Room("conservatory", "assets/conservatory.png")
+const kitchen = new Room("kitchen", "assets/kitchen.png")
+const study = new Room("study", "assets/study.png")
+const library = new Room("library", "assets/library.png")
+const billiardRoom = new Room("billiard room", "assets/billiardroom.png")
+const lounge = new Room("lounge", "assets/lounge.png")
+const ballroom = new Room("ballroom", "assets/ballroom.png")
+const hall = new Room("hall", "assets/hall.png")
+const spa = new Room("spa", "assets/spa.png")
+const livingRoom = new Room("living room", "assets/livingroom.png")
+const observatory = new Room("observatory", "assets/observatory.png")
+const theater = new Room("theater", "assets/theater.png")
+const guesttHouse = new Room("guest house", "assets/guesthouse.png")
+const patio = new Room("patio", "assets/patio.png")
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
