@@ -5,7 +5,7 @@ const mrGreen = {
   lastName: "Green",
   color: "#537f4c",
   description: "He has a lot of connections",
-  age: 45,
+  age: 56,
   image: "assets/new_green.jpg",
   occupation: "Entrepreneur",
   textColor: "#ffffff"
@@ -27,7 +27,7 @@ const profPlum = {
   lastName: "Plum",
   color: "#452441",
   description: "Widely seen as the intellectual",
-  age: 36,
+  age: 62,
   image: "assets/new_plum.jpg",
   occupation: "Professor",
   textColor: "#ffffff"
@@ -38,7 +38,7 @@ const missScarlet = {
   lastName: "Scarlet",
   color: "#c6533e",
   description: "Young, cunning, and highly attractive",
-  age: 25,
+  age: 39,
   image: "assets/new_scarlet.jpg",
   occupation: "Actress",
   textColor: "#ffffff"
@@ -49,7 +49,7 @@ const mrsPeacock = {
   lastName: "Peacock",
   color: "#6ba2c9",
   description: "The usual classy social butterfly",
-  age: 32,
+  age: 46,
   image: "assets/new_peacock.jpg",
   occupation: "Socialite",
   textColor: "#ffffff"
@@ -60,7 +60,7 @@ const mrMustard = {
   lastName: "Mustard",
   color: "#d9c97e",
   description: "A military man both dignified and dangerous",
-  age: 56,
+  age: 63,
   image: "assets/new_mustard.jpg",
   occupation: "Colonel",
   textColor: "#ffffff"
