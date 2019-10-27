@@ -144,13 +144,11 @@ const rooms = [
   "Study",
   "Library",
   "Billiard",
-  "Room",
   "Lounge",
   "Ballroom",
   "Hall",
   "Spa",
   "Living",
-  "Room",
   "Observatory",
   "Theater",
   "Guest",
@@ -158,8 +156,7 @@ const rooms = [
   "Patio"
 ]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE 
-//ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
+// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -170,6 +167,7 @@ const randomSelector = array => {
 const mystery = {
 
 }
+
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -202,7 +200,6 @@ const pickWeapon = () => {
   const theWeaponWeight = document.getElementById("weaponWeight")
   const theWeaponFeature = document.getElementById("weaponFeature")
 
-
   theWeapon.style.background = mystery.weapon.color
   theWeaponName.innerHTML = mystery.weapon.name
   theWeaponWeight.innerHTML = mystery.weapon.weight
@@ -223,10 +220,6 @@ const pickRoom = () => {
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-
-  /* mystery.killer = randomSelector(suspects)
-  mystery.weapon = randomSelector(weapons)
-  mystery.room = randomSelector(rooms) */
 
   if (mystery.killer === undefined || mystery.weapon === undefined || mystery.room === undefined) {
     document.getElementById('mystery').innerHTML = 'No mystery has been revealed yet.'
