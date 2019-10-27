@@ -116,6 +116,8 @@ const suspects = [
   mrMustard
 ]
 
+console.log(suspects)
+
 const weapons = [
   rope, 
   knife,
@@ -128,23 +130,27 @@ const weapons = [
   pistol
 ]
 
-const rooms = [
-  diningRoom,
-  conservatory,
-  kitchen,
-  study,
-  library,
-  billiardRoom,
-  lounge,
-  ballroom,
-  hall,
-  spa,
-  livingRoom,
-  observatory,
-  theater,
-  guestHouse,
-  patio
+console.log(weapons)
+
+let rooms = [
+  "diningRoom",
+  "conservatory",
+  "kitchen",
+  "study",
+  "library",
+  "billiardRoom",
+  "lounge",
+  "ballroom",
+  "hall",
+  "spa",
+  "livingRoom",
+  "observatory",
+  "theater",
+  "guestHouse",
+  "patio"
 ]
+
+console.log(rooms)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
