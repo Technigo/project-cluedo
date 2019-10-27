@@ -1,3 +1,6 @@
+This is a school project for Technigo Boot Camp 2019.
+The focus on this project was to practice objects and arrays and also to manipulate the DOM with JavaScript.
+
 `PROJECT 5`
 
 # Build a piece of Cluedo

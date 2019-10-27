@@ -7,7 +7,7 @@ const mrGreen = {
   color: "green",
   description: "He has a lot of connections",
   age: 45,
-  image: "assets/green.png",
+  image: "assets/suspects/green.png",
   occupation: "Entrepreneur"
 };
 
@@ -17,7 +17,7 @@ const mrFluffy = {
   color: "black",
   description: "He just grumpy",
   age: 5,
-  image: "assets/cat.jpg",
+  image: "assets/suspects/cat.jpg",
   occupation: "Cat"
 };
 
@@ -27,17 +27,17 @@ const professorPlum = {
   color: "purple",
   description: "He is smart",
   age: 38,
-  image: "assets/plum.png",
+  image: "assets/suspects/plum.png",
   occupation: "Professor"
 };
 
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
-  color: "red",
+  color: "pink",
   description: "femme fatale",
   age: 20,
-  image: "assets/scarlet.png",
+  image: "assets/suspects/scarlet.png",
   occupation: "Actress"
 };
 
@@ -47,7 +47,7 @@ const mrsPeacock = {
   color: "blue",
   description: "Queen-like",
   age: 32,
-  image: "assets/peacock.png",
+  image: "assets/suspects/peacock.png",
   occupation: "Socialite"
 };
 
@@ -57,7 +57,7 @@ const colonelMustard = {
   color: "yellow",
   description: "Military man",
   age: 60,
-  image: "assets/mustard.png",
+  image: "assets/suspects/mustard.png",
   occupation: "Colonel"
 };
 
@@ -67,7 +67,7 @@ const mrsWhite = {
   color: "white",
   description: "",
   age: 70,
-  image: "assets/white.png",
+  image: "assets/suspects/white.png",
   occupation: "Housekeeper"
 };
 
@@ -127,7 +127,8 @@ const pistol = {
   image: "assets/weapons/gun.png"
 };
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+// THE ROOMS
+
 const dinningRoom = {
   name: "Dinning Room",
   image: "assets/rooms/living-room.png"
@@ -202,19 +203,21 @@ const patio = {
   image: "assets/rooms/study.png"
 };
 
+/*TIME OF THE MURDER*/
+
 const morning = {
   name: "in the break of dawn",
-  image: "assets/time.png"
+  image: "assets/time/morningsun.png"
 };
 
 const day = {
   name: "at noon",
-  image: "assets/time.png"
+  image: "assets/time/sun.png"
 };
 
 const night = {
   name: "in the evening",
-  image: "assets/time.png"
+  image: "assets/time/moon.png"
 };
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
@@ -332,8 +335,6 @@ const revealMystery = () => {
   } else {
     document.getElementById(
       "mystery"
-    ).innerHTML = `<p>The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name}, ${mystery.time.name},  with a ${mystery.weapon.name}.</p>`;
+    ).innerHTML = `<p>The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name}, ${mystery.time.name}  with a ${mystery.weapon.name}.</p>`;
   }
 };
-
-//document.getElementById("mystery").style.display = "block";

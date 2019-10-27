@@ -1,38 +1,64 @@
 body {
-  margin: auto;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Chelsea Market", cursive;
   height: 100%;
-  max-width: 1600px;
-  background: rgb(79, 79, 157);
+  background-image: url(assets/1497448.jpg);
+  background-size: cover;
   text-align: center;
+  overflow-x: hidden;
+  color: #fff;
+}
+
+main {
+  max-width: 1600px;
+  margin: auto;
 }
 
 header {
+  height: 250px;
   margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-header img {
-  width: 100%;
-  height: auto;
-  max-height: 480px;
-  object-fit: cover;
-  object-position: center top;
+  font-family: "Fontdiner Swanky", cursive;
 }
 
-h1,
-h2 {
-  text-align: center;
-  font-size: 28px;
+header h1 {
+  font-size: 38px;
 }
-h1 {
-  color: #fff;
+
+.guys {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  z-index: -1;
+  width: 150%;
+  display: flex;
+  justify-content: space-between;
 }
+
+.guy {
+  width: 100%;
+  height: auto;
+}
+
+.guy-point {
+  transform: translateX(-15%);
+}
+
+.guy-up {
+  transform: translateX(-53%);
+}
+
+h2,
+h3 {
+  font-size: 22px;
+}
+
 p {
   margin: 1px;
   font-weight: 300;
   background-color: #fff;
+  color: black;
 }
 
 .cards {
@@ -51,7 +77,6 @@ p {
   margin: 20px auto;
   width: 250px;
   height: 300px;
-  text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
@@ -85,18 +110,19 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto 50px;
+  color: #fff;
 }
 
 #mystery {
   width: 80%;
   margin: 10px auto 20px;
-  text-align: center;
 }
 
 #mystery p {
+  padding: 5px;
   background: #fff;
   border-radius: 10px;
-  padding: 5px;
+  font-weight: 300;
 }
 
 #mystery img {
@@ -105,32 +131,47 @@ button {
   max-width: 400px;
   margin: auto;
   animation: boing 0.5s;
+  border: 5px solid rgb(52, 51, 51);
+  border-radius: 10px;
 }
 
 footer p {
   padding: 20px;
-  background: rgb(79, 79, 157);
-  text-align: center;
+  color: #fff;
+  background-color: transparent;
 }
 
-/** Media Queries**/
+/** Media Queries TABLET**/
 
 @media (min-width: 668px) {
-  h1 {
-    font-size: 34px;
-    line-height: 40px;
+  header h1 {
+    font-size: 50px;
   }
+
   h2 {
-    margin-top: 40px;
-    text-align: center;
+    font-size: 30px;
   }
+
+  h3 {
+    margin-top: 40px;
+  }
+
+  .guys {
+    width: 80%;
+    left: 10%;
+  }
+
+  .guy {
+    transform: none;
+    width: 40%;
+  }
+
   .cards {
     display: flex;
     flex-wrap: wrap;
   }
 
   .deck {
-    width: 250px;
     height: 400px;
   }
 
@@ -144,22 +185,14 @@ footer p {
   }
 }
 
+/** Media Queries DESKTOP**/
+
 @media (min-width: 1025px) {
-  header img {
-    width: 80%;
+  header h1 {
+    font-size: 70px;
   }
-
-  h1 {
-    font-size: 38px;
-  }
-
-  .deck:hover {
-    transform: translateY(-20px);
-  }
-
-  .deck {
-    width: 250px;
-    height: 400px;
+  h2 {
+    font-size: 34px;
   }
 
   #mystery {
