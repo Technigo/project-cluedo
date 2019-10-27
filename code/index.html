@@ -6,19 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Kalam|Luckiest+Guy&display=swap" rel="stylesheet"> 
-    <title>Clue</title>
+    <title>Cluedo Game</title>
   </head>
   <body>
-    <h1 class="header">CLUEDO</h1>
+    <!-- Header text -->
+    <h1 class="header">CLUEDO GAME</h1>
     
-    <!--<button id="revealMystery" class="revealMysteryTop" onclick="revealMystery()">REVEAL THE CRIME</button>
-    -->
+    <!-- Buttons -->
     <div class="buttons">
-        <button id="pickAllCard" onclick="pickMystery()">PICK MYSTERY</button> 
+      <button id="pickAllCard" onclick="pickMystery()">PICK MYSTERY</button> 
       <button id="revealMystery" class="revealMysteryBottom" onclick="revealMystery()">REVEAL THE CRIME</button>
       <button id="startOver" onclick="reloadPage()">START OVER</button>
     </div>
 
+    <!-- Game cards -->
     <section class="cards" id="allCards">
       <div class="killer-deck" id="killer" onclick="pickKiller()">
         <h4 class="killer">KILLER</h4>
@@ -38,19 +39,12 @@
         <h4 class="room">ROOM</h4>
         <p class="room" id="roomName"></p>
       </div>
-
-      
-
     </section>
 
+    <!-- Text of the revealed mystery, replacing the cards after clicking botton "reveal mystery"-->
     <div class="mysteryContainer">
       <h1 id="mystery"></h1>
     </div>
-
-   
-
-     
-      
 
     <script src="clue.js"></script>
   </body>

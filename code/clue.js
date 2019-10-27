@@ -1,4 +1,4 @@
-// CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+//OBJECTS FOR ALL THE SUSPECTS
 
 const mrGreen = {
   firstName: "Jacob",
@@ -60,7 +60,7 @@ const mrsWhite = {
   occupation: "Mother"
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
+// OBJECTS FOR ALL THE WEAPONS
 
 
 const rope = {
@@ -118,10 +118,7 @@ const pistol = {
 }
 
 
-
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
+// ARRAYS FOR SUSPECTS, WEAPONS AND ROOMS 
 
 const suspects = [
   mrGreen,
@@ -169,9 +166,7 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]  
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+// AN OBJECT THAT KEEPS THE MYSTERY.
 
 const mystery = {
   killer: "",
@@ -179,13 +174,12 @@ const mystery = {
   room: ""
 }
 
-// FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
+  // This will change the card to the one connected to the chosen killer id.
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
   const theKillerAge = document.getElementById("killerAge")
@@ -203,9 +197,11 @@ const pickKiller = () => {
 
 }
 
+// This function will be invoked when you click on the weapon card.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
 
+  // This will change the card to the one connected to the chosen weapon id.
   const theWeapon = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
   const theWepaonWeight = document.getElementById("weaponWeight")
@@ -219,9 +215,11 @@ const pickWeapon = () => {
 
 }
 
+// This function will be invoked when you click on the weapon card.
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
+  // This will change the card to the one connected to the chosen room id.
   const theRoom = document.getElementById("room")
   const theRoomName = document.getElementById("roomName")
 
@@ -229,21 +227,20 @@ const pickRoom = () => {
   theRoomName.innerHTML = mystery.room
 }
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
-
-// CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
-
+// This function will pick the mystery when clicking on "pick mystery" button, instead of clicking the cards. 
+// Only visible in phone size. 
 const pickMystery = () => {
 
   mystery.killer = randomSelector(suspects)
   mystery.weapon = randomSelector(weapons)
   mystery.room = randomSelector(rooms)
   
-
+  document.getElementById("pickAllCard").style.display ="none"
 }
 
 
+
+// This function will reveal the mystery and replace the cards with a text of the murder, weapon and room when clicking the button. 
 
 const revealMystery = () => {
   if (mystery.killer || mystery.weapon || mystery.room === onclick) {
@@ -254,18 +251,20 @@ const revealMystery = () => {
     document.getElementById("mystery").style.textTransform = "uppercase"
     document.getElementById("mystery").style.fontWeight = "bold"
     document.getElementById("mystery").style.fontFamily = "Luckiest Guy"
+    document.getElementById("mystery").style.textShadow = "6px 6px black"
     document.getElementById("startOver").style.display = "block"
+    document.getElementById("revealMystery").style.display ="none"
+
   } else {
     alert(`You have to pick the cards to reveal the mystery`)
   }
   
 }
 
-
+//This function will reload the page when clicking on the "start over" button.
 const reloadPage = () => {
   location.reload()
 }
-
 
 
 
