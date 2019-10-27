@@ -65,40 +65,40 @@ const mrsWhite = {
 
 const rope = {
   name: "rope",
-  weight: 10
+  image: "assets/noun_Rope_1120005.png"
 }
 
 const knife = {
   name: "Knife",
-  weight: 15
+  image: "assets/noun_Knife_147948.png"
 }
 const candlestick = {
   name: "Candlestick",
-  weight: 30
+  image: "assets/noun_Candlestick_16264.png"
 }
 const dumbbell = {
   name: "Dumbbell",
-  weight: 10
+  image: "assets/noun_Dumbbell_1649895.png"
 }
 const poison = {
   name: "Poison",
-  weight: 5
+  image: "assets/noun_Poison_1869112.png"
 }
 const axe = {
   name: "Axe",
-  weight: 20
+  image: "assets/noun_Axe_192916.png"
 }
 const bat = {
   name: "Bat",
-  weight: 1
+  image: "assets/noun_Bat_2639631.png"
 }
 const trophy = {
   name: "Trophy",
-  weight: 25
+  image: "assets/noun_ancient ruins_2087414.png"
 }
 const pistol = {
   name: "Pistol",
-  weight: 15
+  image: "assets/noun_Pistol_605747.png"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -200,12 +200,12 @@ const pickWeapon = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theWeapon = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
-  const theWeaponWeight = document.getElementById("weaponWeight")
+  const theWeaponImage = document.getElementById("weaponImage")
 
   theWeapon.style.background = mystery.weapon.color
   theWeaponName.innerHTML =
     mystery.weapon.name
-  theWeaponWeight.innerHTML = mystery.weapon.weight
+  theWeaponImage.src = mystery.weapon.image
 }
 
 //PICKROOM
