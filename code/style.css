@@ -8,7 +8,7 @@ body {
 header h1 {
     font-family: 'Anton', sans-serif;
     font-size: 7em;
-    margin: 40px;
+    margin: auto;
     text-align: center;
 }
 
@@ -53,11 +53,13 @@ p {
 .killer-deck,
 .room-deck,
 .weapon-deck {
-    width: 15%;
-    position: absolute;
+    width: 70%;
+    /* position: inline; */
     height: 350px;
-    margin-left: 50px;
-    margin-top: 50px;
+    margin: auto;
+    transform: translateY(3vw);
+    /* margin-left: 50px;
+    margin-top: 50px; */
     -webkit-box-shadow: inset 10px 10px 10px 4px rgba(0, 0, 0, .6);
     box-shadow: inset 3px 7px 2px 5px rgba(0, 0, 0, .1);
     border: 2px inset #c9c9c9;
@@ -74,8 +76,7 @@ p {
 }
 
 .text {
-    padding-top: 445px;
-    display: inline-block;
+    padding-top: 55px;
     font-family: 'Playball', cursive;
     font-size: 20px;
 }
@@ -126,9 +127,6 @@ footer {
 /* MOBILE */
 
 @media screen and (max-width: 600px) {
-    body {
-        margin-bottom: 30px;
-    }
     .cards {
         height: 100%;
         flex-direction: column;
@@ -139,6 +137,7 @@ footer {
     .killer-deck,
     .room-deck,
     .weapon-deck {
-        width: 45%;
+        width: 70%;
+        transform: translateY(8vw);
     }
 }
