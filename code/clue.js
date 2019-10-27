@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
-  color: "green",
+  color: "#537f4c",
   description: "He has a lot of connections",
   age: 45,
   image: "assets/new_green.jpg",
@@ -14,7 +14,7 @@ const mrGreen = {
 const mrsWhite = {
   firstName: "Mrs",
   lastName: "White",
-  color: "white",
+  color: "#e5e4e0",
   description: "Cheerfully plump middle-aged cook with red hair",
   age: 60,
   image: "assets/new_white.jpg",
@@ -25,7 +25,7 @@ const mrsWhite = {
 const profPlum = {
   firstName: "Victor",
   lastName: "Plum",
-  color: "#dda0dd",
+  color: "#452441",
   description: "Widely seen as the intellectual",
   age: 36,
   image: "assets/new_plum.jpg",
@@ -36,7 +36,7 @@ const profPlum = {
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
-  color: "#ff2400",
+  color: "#c6533e",
   description: "Young, cunning, and highly attractive",
   age: 25,
   image: "assets/new_scarlet.jpg",
@@ -47,7 +47,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
-  color: "blue",
+  color: "#6ba2c9",
   description: "The usual classy social butterfly",
   age: 32,
   image: "assets/new_peacock.jpg",
@@ -58,12 +58,12 @@ const mrsPeacock = {
 const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
-  color: "#ffdb58",
+  color: "#d9c97e",
   description: "A military man both dignified and dangerous",
   age: 56,
   image: "assets/new_mustard.jpg",
   occupation: "Colonel",
-  textColor: "#000000"
+  textColor: "#ffffff"
 }
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
@@ -122,6 +122,50 @@ const pistol = {
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const study = {
+  name: "Study",
+  image: "assets/study.jpg"
+}
+
+const conservatory = {
+  name: "Conservatory",
+  image: "assets/conservatory.jpg"
+}
+
+const kitchen = {
+  name: "Kitchen",
+  image: "assets/kitchen.jpg"
+}
+
+const lounge = {
+  name: "Lounge",
+  image: "assets/lounge.jpg"
+}
+
+const library = {
+  name: "Library",
+  image: "assets/library.jpg"
+}
+
+const hall = {
+  name: "Hall",
+  image: "assets/hall.jpg"
+}
+
+const billiardRoom = {
+  name: "Billiard Room",
+  image: "assets/billiard-room.jpg"
+}
+
+const ballroom = {
+  name: "Ballroom",
+  image: "assets/ballroom.jpg"
+}
+
+const dinningRoom = {
+  name: "Dinning Room",
+  image: "assets/dinning-room.jpg"
+}
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
@@ -146,7 +190,17 @@ const weapons = [
   pistol
 ]
 
-const rooms = ["Dinning Room", "Conservatory", "Kitchen", "Study", "Library", "Billiard Room", "Lounge Ballroom", "Hall", "Spa", "Living Room", "Observatory", "Theater", "Guest House", "Patio"]
+const rooms = [
+  study,
+  conservatory,
+  kitchen,
+  lounge,
+  library,
+  hall,
+  billiardRoom,
+  ballroom,
+  dinningRoom
+]
 
 console.log(suspects)
 console.log(weapons)
@@ -182,7 +236,7 @@ const pickKiller = () => {
   const theKillerDescription = document.getElementById("killerDescription")
 
   theKiller.classList.add('inner-outline')
-  theKiller.textColor = mystery.killer.textColor
+  theKiller.style.color = mystery.killer.textColor
   theKiller.style.background = mystery.killer.color
   theKillerCard.innerHTML = 'KILLER'
   theKillerImage.src = mystery.killer.image
@@ -204,7 +258,7 @@ const pickWeapon = () => {
   const theWeaponWeight = document.getElementById("weaponWeight")
 
   theWeapon.classList.add('inner-outline')
-  theWeapon.style.background = '#CCCCCC'
+  theWeapon.style.background = '#E3B874'
   theWeaponCard.innerHTML = 'WEAPON'
   theWeaponImage.src = mystery.weapon.image
   theWeaponName.innerHTML = mystery.weapon.name
@@ -217,11 +271,13 @@ const pickRoom = () => {
   const theRoom = document.getElementById('room')
   const theRoomCard = document.getElementById('roomCard')
   const theRoomName = document.getElementById("roomName")
+  const theRoomImage = document.getElementById("roomImage")
 
   theRoom.classList.add('inner-outline')
-  theRoom.style.background = '#CCCCCC'
+  theRoom.style.background = '#E3B874'
   theRoomCard.innerHTML = 'ROOM'
-  theRoomName.innerHTML = mystery.room
+  theRoomName.innerHTML = mystery.room.name
+  theRoomImage.src = mystery.room.image
 }
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
@@ -229,6 +285,6 @@ const revealMystery = () => {
   if (!mystery.killer || !mystery.weapon || !mystery.room) {
     alert("No mystery is yet to be revealed.");
   } else {
-    alert(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`);
+    alert(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`);
   }
 }

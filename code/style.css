@@ -42,6 +42,7 @@ p {
   padding-top: 30px;
   border-radius: 16px;
   margin-bottom: 15px;
+  background-color: #fded9f;
 }
 
 .room-deck {
@@ -54,6 +55,11 @@ p {
   margin-bottom: 15px;
 }
 
+#killerCard, #weaponCard, #roomCard {
+  font-family: 'Spicy Rice', cursive;
+  font-size: 30px;
+}
+
 #killerName, #weaponName, #roomName {
   font-size: 20px;
   font-weight: bold;
@@ -64,19 +70,39 @@ p {
   outline-offset: -30px;
 }
 
-img {
+img#killerImage {
   border-radius: 50%;
   display: inline-block;
 }
 
+img#roomImage, img#weaponImage  {
+  border-radius: 15px;
+  margin: 50px 0px 20px 0px;
+}
+
 button {
   padding: 8px 16px;
-  background: crimson;
-  border: none;.
+  background: #926ac7;
+  color: #ffffff;
+  font-family: 'Muli', sans-serif;
+  font-weight: bold;
+  border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  box-shadow: 5px 5px black;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background: #74549f;
+}
+
+button:active {
+  outline: 0;
+  background: #74549f;
+  transform: translateY(4px);
 }
 
 @media (min-width: 650px) {
