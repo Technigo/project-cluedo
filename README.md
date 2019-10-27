@@ -1,5 +1,5 @@
 `PROJECT 5`- Technigo School project! 
-Link to project: https://project-cludeo-linda.netlify.com/
+Link to project: https://project-cluedo-linda.netlify.com/
 
 
 
