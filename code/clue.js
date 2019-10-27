@@ -168,26 +168,16 @@ const randomSelector = array => {
 
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
 
 const mysteryKiller = {
-  name: "Mrs White",
-  color: "white",
-  image: "assets/white.png",
-  weapon: "dumbbell",
-  room: "spa"
+  name: "",
+  weapon: "",
+  room: ""
 }
-
-//const theKillerImage = document.getElementById("killerImage")
-
-//theKillerImage.src = mystery.killer.image
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 
-
-// This sets the color of the card to the killer's color (Note: Ensure that the color can be set as CSS property. For example, "mustard" is not a color, but "orange" is
 
   const pickKiller = () => {
 
@@ -208,7 +198,7 @@ const mysteryKiller = {
       theKillerImage.src = mystery.killer.image
   }
 
-  // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+  // FUNCTIONS pickWeapon and pickRoom
 
   const pickWeapon = () => {
 
@@ -218,16 +208,14 @@ const mysteryKiller = {
     const theWeaponName = document.getElementById("weaponName")
     
     theWeapon.style.background = mystery.weapon.color
-    theWeaponName.innerHTML =
-      mystery.weapon.name + " " + mystery.weapon.weight
-
+    theWeaponName.innerHTML = mystery.weapon.name + " " + mystery.weapon.weight
   }
 
   const pickRoom = () => {
 
     mystery.room = randomSelector(rooms)
 
-    //const theRoom = document.getElementById("room")
+    const theRoom = document.getElementById("room")
     const theRoomName = document.getElementById("roomName")
     
     theRoomName.style.background = mystery.room.color
@@ -235,13 +223,10 @@ const mysteryKiller = {
   }
 
 
-// CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// FUNCTION revealMystery that is invoked upon click the button. 
 
 const revealMystery = () => {
   const theReveal = document.getElementById("mystery")
-
-theReveal.innerHTML = (`The murder was committed by ${mysteryKiller.name}, in the ${mysteryKiller.room} with a ${mysteryKiller.weapon}!`
-);
+  
+  document.getElementById("mystery").innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`
 }
-    

@@ -38,14 +38,14 @@ header h1 {
 }
 /****** Section for the cards *******/
 
-.cards {
+.flex-cards {
   margin: 50px auto;
   width: 90%;
   height: 600px;
   background: rgba(195, 213, 224, 0.877);
-  display: flex;
   justify-content: space-around;
-  align-items: center;
+  display: flex;
+  flex-flow: wrap;
 }
 
 .killer-deck {
@@ -56,7 +56,6 @@ header h1 {
   padding-top: 30px;
   border-radius: 16px;
   margin: 10px;
-  
 }
 
 .weapon-deck {
@@ -112,36 +111,36 @@ footer {
 
 /*******MEDIA QUERIES *********/
 
-@media (min-width: 650px) {
+/*@media (min-width: 650px) {
   header {
   justify-content: space-between;
   }
  
   /*display the form controls vertically instead of horisontally*/
-  .cards {
-    align-items: block;
-    flex-grow: 1;
+  /*.flex-cards {
+    justify-content: space-between;
   }
- /*.killer-deck {
-    width: 33%;
-    flex-grow: 1;
-    margin: 16px;
+
+ .killer-deck {
+  width: 25%;
+  flex-grow: 1;
+ 
   }
   .weapon-deck {
-    width: 33%;
-    flex-grow: 1;
-    margin: 16px;
-  }
-  .room-deck {
-    width: 33%;
-    flex-grow: 1;
-    margin: 16px;
-  }
-  .reveal-mystery {
     width: 25%;
     flex-grow: 1;
+   
+  }
+  .room-deck {
+    width: 25%;
+    flex-grow: 1;
+ 
+  }
+  .reveal-mystery {
+    width: 100%;
+    flex-grow: 1;
     margin: 16px;
-  }*/
+  }
   footer {
     align-items: center;
     }
@@ -152,33 +151,5 @@ footer {
   header {
     justify-content: space-between;
   }
-   
-    .cards {
-      align-items: center;
-      flex-grow: 1;
-    }
-   /*.killer-deck {
-      width: 33%;
-      flex-grow: 1;
-      margin: 16px;
-    }
-    .weapon-deck {
-      width: 33%;
-      flex-grow: 1;
-      margin: 16px;
-    }
-    .room-deck {
-      width: 33%;
-      flex-grow: 1;
-      margin: 16px;
-    }
-    .reveal-mystery {
-      width: 100%;
-      flex-grow: 1;
-      margin: 16px;
-    }*/
-
-    footer {
-      align-items: center;
-    }
+  
 }
