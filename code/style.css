@@ -12,7 +12,6 @@ p {
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
   max-width: 1200px;
   background-image: url("./assets/table.jpg");
   background-size: cover;
@@ -24,6 +23,7 @@ p {
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
+  flex-wrap: wrap;
 }
 
 .killer-deck {
@@ -84,6 +84,11 @@ button {
 img {
   height: 50%;
   margin: auto;
+}
+
+.mystery {
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
