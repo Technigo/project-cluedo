@@ -1,19 +1,18 @@
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
 const suspects = [
   {
+    displayName: "Mr Green",
     firstName: "Jacob",
     lastName: "Green",
     color: "#8DAB8D",
-    description: "He has fishy connections",
+    description: "He is a cat lover",
     age: "32 years",
     image: "images/suspects/mrGreen.png",
     occupation: "Entrepreneur"
   },
   {
+    displayName: "Professor Plum",
     firstName: "Victor",
     lastName: "Plum",
     color: "#8a728c",
@@ -23,15 +22,17 @@ const suspects = [
     occupation: "Professor"
   },
   {
+    displayName: "Miss Scarlet",
     firstName: "Cassandra",
     lastName: "Scarlet",
     color: "#f48282",
-    description: "She is a punk rock drummer",
+    description: "She is a deadlift champion",
     age: "36 years",
     image: "images/suspects/missScarlet.png",
     occupation: "Kennel Owner"
   },
   {
+    displayName: "Mrs Peacock",
     firstName: "Eleanor",
     lastName: "Peacock",
     color: "#7296aa",
@@ -41,6 +42,7 @@ const suspects = [
     occupation: "CEO of a big bank"
   },
   {
+    displayName: "Colonel Mustard",
     firstName: "Jack",
     lastName: "Mustard",
     color: "#f4af53",
@@ -50,6 +52,7 @@ const suspects = [
     occupation: "Colonel"
   },
   {
+    displayName: "Mrs White",
     firstName: "Andrea",
     lastName: "White",
     color: "#a09f9f",
@@ -64,55 +67,55 @@ const weapons = [
   {
     name: "Rope",
     weight: "2 kg",
-    color: "#f48282",
+    color: "#acccca",
     image: "images/weapons/rope.png"
   },
   {
     name: "Knife",
     weight: "1 kg",
-    color: "#8a728c",
+    color: "#acccca",
     image: "images/weapons/knife.png"
   },
   {
     name: "Candlestick",
     weight: "3 kg",
-    color: "#f4af53",
+    color: "#acccca",
     image: "images/weapons/candlestick.png"
   },
   {
     name: "Dumbbell",
     weight: "15 kg",
-    color: "#a09f9f",
+    color: "#acccca",
     image: "images/weapons/dumbbell.png"
   },
   {
     name: "Poison",
     weight: "0.5 kg",
-    color: "#8DAB8D",
+    color: "#acccca",
     image: "images/weapons/poison.png"
   },
   {
     name: "Axe",
     weight: "8 kg",
-    color: "#8a728c",
+    color: "#acccca",
     image: "images/weapons/axe.png"
   },
   {
     name: "Bat",
     weight: "2 kg",
-    color: "#f48282",
+    color: "#acccca",
     image: "images/weapons/bat.png"
   },
   {
     name: "Trophy",
     weight: "4 kg",
-    color: "#f4af53",
+    color: "#acccca",
     image: "images/weapons/trophy.png"
   },
   {
     name: "Pistol",
     weight: "2 kg",
-    color: "#7296aa",
+    color: "#acccca",
     image: "images/weapons/pistol.png"
   }
 ]
@@ -120,7 +123,7 @@ const weapons = [
 const rooms = [
   {
     name: "Attic",
-    color: "#f48282",
+    color: "#d8b8c4",
     image: "images/rooms/attic.png"
   },
   {
@@ -130,7 +133,7 @@ const rooms = [
   },
   {
     name: "Basement",
-    color: "#f48282",
+    color: "#d8b8c4",
     image: "images/rooms/basement.png"
   },
   {
@@ -140,42 +143,42 @@ const rooms = [
   },
   {
     name: "Greenhouse",
-    color: "#a09f9f",
+    color: "#d8b8c4",
     image: "images/rooms/greenhouse.png"
   },
   {
     name: "Guest House",
-    color: "#f4af53",
+    color: "#d8b8c4",
     image: "images/rooms/guesthouse.png"
   },
   {
     name: "Gym",
-    color: "#8a728c",
+    color: "#d8b8c4",
     image: "images/rooms/gym.png"
   },
   {
     name: "Hall",
-    color: "#f48282",
+    color: "#d8b8c4",
     image: "images/rooms/hall.png"
   },
   {
     name: "Kitchen",
-    color: "#a09f9f",
+    color: "#d8b8c4",
     image: "images/rooms/kitchen.png"
   },
   {
     name: "Living Room",
-    color: "#f4af53",
+    color: "#d8b8c4",
     image: "images/rooms/livingroom.png"
   },
   {
     name: "Lounge",
-    color: "#7296aa",
+    color: "#d8b8c4",
     image: "images/rooms/lounge.png"
   },
   {
     name: "Study",
-    color: "#f48282",
+    color: "#d8b8c4",
     image: "images/rooms/study.png"
   }
 ]
@@ -193,6 +196,7 @@ let mystery = {
 
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects)
+
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
   const theKillerImage = document.getElementById("killerImage")
@@ -206,10 +210,13 @@ const pickKiller = () => {
   theKillerAge.innerHTML = mystery.killer.age
   theKillerOccupation.innerHTML = mystery.killer.occupation
   theKillerDescription.innerHTML = mystery.killer.description
+
+  hideTextShowButton()
 }
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
+
   const theWeapon = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
   const theWeaponWeight = document.getElementById("weaponWeight")
@@ -217,12 +224,15 @@ const pickWeapon = () => {
 
   theWeapon.style.background = mystery.weapon.color
   theWeaponName.innerHTML = mystery.weapon.name
-  theWeaponWeight.innerHTML = mystery.weapon.weight
+  //theWeaponWeight.innerHTML = mystery.weapon.weight
   theWeaponImage.src = mystery.weapon.image
+
+  hideTextShowButton()
 }
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
+
   const theRoom = document.getElementById("room")
   const theRoomName = document.getElementById("roomName")
   const theRoomImage = document.getElementById("roomImage")
@@ -230,10 +240,22 @@ const pickRoom = () => {
   theRoom.style.background = mystery.room.color
   theRoomName.innerHTML = mystery.room.name
   theRoomImage.src = mystery.room.image
+
+  hideTextShowButton()
 }
 
+const revealMystery = () => {
+  document.getElementById("mystery").innerHTML = (`The murder was committed by ${mystery.killer.displayName}, in the ${mystery.room.name.toLowerCase()} with the ${mystery.weapon.name.toLowerCase()}.`)
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+  showTextHideButton()
+}
 
-// CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+const showTextHideButton = () => {
+  document.getElementById("mystery").style.display = null;
+  document.getElementById("reveal-button").style.display = "none";
+}
+
+const hideTextShowButton = () => {
+  document.getElementById("mystery").style.display = "none";
+  document.getElementById("reveal-button").style.display = null;
+}
