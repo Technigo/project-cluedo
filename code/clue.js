@@ -4,7 +4,7 @@
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
-  color: "green",
+  color: "white",
   description: "He has a lot of connections",
   age: 45,
   image: "assets/suspects/green.png",
@@ -24,7 +24,7 @@ const mrFluffy = {
 const professorPlum = {
   firstName: "Victor",
   lastName: "Plum",
-  color: "purple",
+  color: "white",
   description: "He is smart",
   age: 38,
   image: "assets/suspects/plum.png",
@@ -34,7 +34,7 @@ const professorPlum = {
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
-  color: "pink",
+  color: "black",
   description: "femme fatale",
   age: 20,
   image: "assets/suspects/scarlet.png",
@@ -44,7 +44,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
-  color: "blue",
+  color: "black",
   description: "Queen-like",
   age: 32,
   image: "assets/suspects/peacock.png",
@@ -54,7 +54,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: "Jack",
   lastName: "Mustard",
-  color: "yellow",
+  color: "white",
   description: "Military man",
   age: 60,
   image: "assets/suspects/mustard.png",
@@ -76,148 +76,175 @@ const mrsWhite = {
 const rope = {
   name: "Rope",
   weight: 10,
-  image: "assets/weapons/rope.png"
+  image: "assets/weapons/rope.png",
+  color: "black"
 };
 
 const knife = {
   name: "Knife",
   weight: 20,
-  image: "assets/weapons/knife.png"
+  image: "assets/weapons/knife.png",
+  color: "white"
 };
 
 const candlestick = {
   name: "Candlestick",
   weight: 5,
-  image: "assets/weapons/candlestick.png"
+  image: "assets/weapons/candlestick.png",
+  color: "black"
 };
 
 const dumbbell = {
   name: "Dumbbell",
   weight: 30,
-  image: "assets/weapons/dumbbell.png"
+  image: "assets/weapons/dumbbell.png",
+  color: "black"
 };
 
 const poison = {
   name: "Poison",
   weight: 2,
-  image: "assets/weapons/poison.png"
+  image: "assets/weapons/poison.png",
+  color: "black"
 };
 
 const axe = {
   name: "Axe",
   weight: 80,
-  image: "assets/weapons/axe.png"
+  image: "assets/weapons/axe.png",
+  color: "black"
 };
 
 const bat = {
   name: "Bat",
   weight: 25,
-  image: "assets/weapons/bat.png"
+  image: "assets/weapons/bat.png",
+  color: "white"
 };
 
 const trophy = {
   name: "Trophy",
   weight: 45,
-  image: "assets/weapons/trophy.png"
+  image: "assets/weapons/trophy.png",
+  color: "black"
 };
 
 const pistol = {
   name: "Pistol",
   weight: 29,
-  image: "assets/weapons/gun.png"
+  image: "assets/weapons/gun.png",
+  color: "black"
 };
 
 // THE ROOMS
 
 const dinningRoom = {
   name: "Dinning Room",
-  image: "assets/rooms/living-room.png"
+  image: "assets/rooms/living-room.png",
+  color: "white"
 };
 
 const conservatory = {
   name: "Conservatory",
-  image: "assets/rooms/conservatory.png"
+  image: "assets/rooms/conservatory.png",
+  color: "white"
 };
 
 const kitchen = {
   name: "Kitchen",
-  image: "assets/rooms/kitchen.png"
+  image: "assets/rooms/kitchen.png",
+  color: "white"
 };
 
 const study = {
   name: "Study",
-  image: "assets/rooms/study.png"
+  image: "assets/rooms/study.png",
+  color: "black"
 };
 
 const library = {
   name: "Library",
-  image: "assets/rooms/study.png"
+  image: "assets/rooms/study.png",
+  color: "black"
 };
 
 const billiardRoom = {
   name: "Billiard Room",
-  image: "assets/rooms/living-room.png"
+  image: "assets/rooms/living-room.png",
+  color: "black"
 };
 
 const lounge = {
   name: "Lounge",
-  image: "assets/rooms/study.png"
+  image: "assets/rooms/study.png",
+  color: "white"
 };
 
 const ballroom = {
   name: "Ballroom",
-  image: "assets/rooms/study.png"
+  image: "assets/rooms/study.png",
+  color: "black"
 };
 
 const hall = {
   name: "Hall",
-  image: "assets/rooms/hall.png"
+  image: "assets/rooms/hall.png",
+  color: "black"
 };
 
 const spa = {
   name: "Spa",
-  image: "assets/rooms/spa.png"
+  image: "assets/rooms/spa.png",
+  color: "white"
 };
 const livingRoom = {
   name: "Living Room",
-  image: "assets/rooms/living-room.png"
+  image: "assets/rooms/living-room.png",
+  color: "black"
 };
 
 const observatory = {
   name: "Observatory",
-  image: "assets/rooms/study.png"
+  image: "assets/rooms/study.png",
+  color: "black"
 };
 
 const theater = {
   name: "Theater",
-  image: "assets/rooms/study.png"
+  image: "assets/rooms/study.png",
+  color: "black"
 };
 
 const guestHouse = {
   name: "Guest House",
-  image: "assets/rooms/guest-house.png"
+  image: "assets/rooms/guest-house.png",
+  color: "white"
 };
 
 const patio = {
   name: "Patio",
-  image: "assets/rooms/study.png"
+  image: "assets/rooms/study.png",
+  color: "black"
 };
 
 /*TIME OF THE MURDER*/
 
 const morning = {
   name: "in the break of dawn",
-  image: "assets/time/morningsun.png"
+  image: "assets/time/morningsun.png",
+  color: "white"
 };
 
 const day = {
   name: "at noon",
-  image: "assets/time/sun.png"
+  image: "assets/time/sun.png",
+  color: "white"
 };
 
 const night = {
   name: "in the evening",
-  image: "assets/time/moon.png"
+  image: "assets/time/moon.png",
+  color: "black"
 };
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
@@ -311,7 +338,7 @@ const pickRoom = () => {
   const theRoomName = document.getElementById("roomName");
   const theRoomImage = document.getElementById("roomImage");
 
-  // theRoom.style.background = mystery.room.color;
+  theRoom.style.background = mystery.room.color;
   theRoomName.innerHTML = mystery.room.name;
   theRoomImage.src = mystery.room.image;
 };
@@ -322,6 +349,7 @@ const pickTime = () => {
   const theTimeName = document.getElementById("timeName");
   const theTimeImage = document.getElementById("timeImage");
 
+  theTime.style.background = mystery.time.color;
   theTimeName.innerHTML = mystery.time.name;
   theTimeImage.src = mystery.time.image;
 };

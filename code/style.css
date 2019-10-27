@@ -82,15 +82,15 @@ p {
 }
 
 #weapon {
-  background: rgb(10, 53, 10);
+  background: black;
 }
 
 #room {
-  background: midnightblue;
+  background: black;
 }
 
 #times {
-  background: rgb(12, 92, 191);
+  background: black;;
 }
 
 button {
