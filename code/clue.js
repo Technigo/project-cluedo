@@ -192,6 +192,15 @@ const pickKiller = () => {
     theKiller.style.background = mystery.killer.color
     theKillerName.innerHTML =
         mystery.killer.firstName + " " + mystery.killer.lastName
+
+    const theKillerAge = document.getElementById("killerAge")
+    theKillerAge.innerHTML = mystery.killer.age
+
+    const theKillerOccupation = document.getElementById("killerOccupation")
+    theKillerOccupation.innerHTML = mystery.killer.occupation
+
+    const theKillerImage = document.getElementById("killerImage")
+    theKillerImage.src = mystery.killer.image
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
