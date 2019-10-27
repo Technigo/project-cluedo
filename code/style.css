@@ -1,58 +1,95 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Muli', sans-serif;
+  background: url('assets/table.jpg');
+  color: #ffffff;
 }
 
 p {
   margin: 1px;
   font-weight: 300;
-  background-color: #fff;
+  margin: 0px 30px 10px 30px;
 }
 
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
-  background: #ccc;
+  background: url('assets/green-velvet.jpg');
+  border-radius: 15px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
+  padding: 20px 0px;
 }
 
 .killer-deck {
-  width: 250px;
+  width: 270px;
   height: 400px;
-  background: #000;
+  background: url('assets/card.jpg');
+  background-repeat: no-repeat;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 15px 0px;
 }
 
 .weapon-deck {
-  width: 250px;
+  width: 270px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: url('assets/card.jpg');
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin-bottom: 15px;
 }
 
 .room-deck {
-  width: 250px;
+  width: 270px;
   height: 400px;
-  background: midnightblue;
-
+  background: url('assets/card.jpg');
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin-bottom: 15px;
+}
+
+#killerName, #weaponName, #roomName {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.inner-outline {
+  outline: 2px solid #ffffff;
+  outline-offset: -30px;
+}
+
+img {
+  border-radius: 50%;
+  display: inline-block;
 }
 
 button {
   padding: 8px 16px;
   background: crimson;
-  border: none;
+  border: none;.
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+@media (min-width: 650px) {
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .cards {
+    margin-bottom: 20px;
+  }
+
+  .weapon-deck, .room-deck {
+    margin-top: 15px;
+  }
 }

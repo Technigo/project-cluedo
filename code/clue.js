@@ -6,8 +6,9 @@ const mrGreen = {
   color: "green",
   description: "He has a lot of connections",
   age: 45,
-  image: "assets/green.png",
-  occupation: "Entrepreneur"
+  image: "assets/new_green.jpg",
+  occupation: "Entrepreneur",
+  textColor: "#ffffff"
 }
 
 const mrsWhite = {
@@ -16,28 +17,31 @@ const mrsWhite = {
   color: "white",
   description: "Cheerfully plump middle-aged cook with red hair",
   age: 60,
-  image: "assets/white.png",
-  occupation: "Housekeeper"
+  image: "assets/new_white.jpg",
+  occupation: "Housekeeper",
+  textColor: "#000000"
 }
 
 const profPlum = {
   firstName: "Victor",
   lastName: "Plum",
-  color: "purple",
+  color: "#dda0dd",
   description: "Widely seen as the intellectual",
   age: 36,
-  image: "assets/plum.png",
-  occupation: "Professor"
+  image: "assets/new_plum.jpg",
+  occupation: "Professor",
+  textColor: "#ffffff"
 }
 
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
-  color: "red",
+  color: "#ff2400",
   description: "Young, cunning, and highly attractive",
   age: 25,
-  image: "assets/scarlet.png",
-  occupation: "Actress"
+  image: "assets/new_scarlet.jpg",
+  occupation: "Actress",
+  textColor: "#ffffff"
 }
 
 const mrsPeacock = {
@@ -46,18 +50,20 @@ const mrsPeacock = {
   color: "blue",
   description: "The usual classy social butterfly",
   age: 32,
-  image: "assets/peacock.png",
-  occupation: "Socialite"
+  image: "assets/new_peacock.jpg",
+  occupation: "Socialite",
+  textColor: "#ffffff"
 }
 
 const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
-  color: "yellow",
+  color: "#ffdb58",
   description: "A military man both dignified and dangerous",
   age: 56,
-  image: "assets/mustard.png",
-  occupation: "Colonel"
+  image: "assets/new_mustard.jpg",
+  occupation: "Colonel",
+  textColor: "#000000"
 }
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
@@ -168,39 +174,53 @@ const pickKiller = () => {
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
+  const theKillerCard = document.getElementById("killerCard")
+  const theKillerImage = document.getElementById("killerImage")
   const theKillerName = document.getElementById("killerName")
   const theKillerAge = document.getElementById("killerAge")
   const theKillerOccupation = document.getElementById("killerOccupation")
-  const theKillerImage = document.getElementById("killerImage")
   const theKillerDescription = document.getElementById("killerDescription")
 
+  theKiller.classList.add('inner-outline')
+  theKiller.textColor = mystery.killer.textColor
   theKiller.style.background = mystery.killer.color
+  theKillerCard.innerHTML = 'KILLER'
+  theKillerImage.src = mystery.killer.image
   theKillerName.innerHTML =
     mystery.killer.firstName + " " + mystery.killer.lastName
-  theKillerAge.innerHTML = mystery.killer.age
-  theKillerOccupation.innerHTML = mystery.killer.occupation
-  theKillerImage.src = mystery.killer.image
-  theKillerDescription.innerHTML = mystery.killer.description
+  theKillerAge.innerHTML = `<b>Age</b><br> ${mystery.killer.age}`
+  theKillerOccupation.innerHTML = `<b>Occupation</b><br> ${mystery.killer.occupation}`
+  theKillerDescription.innerHTML = `<b>Description</b><br>${mystery.killer.description}`
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
 
+  const theWeapon = document.getElementById("weapon")
+  const theWeaponCard = document.getElementById("weaponCard")
+  const theWeaponImage = document.getElementById("weaponImage")
   const theWeaponName = document.getElementById("weaponName")
   const theWeaponWeight = document.getElementById("weaponWeight")
-  const theWeaponImage = document.getElementById("weaponImage")
 
-  theWeaponName.innerHTML = mystery.weapon.name
-  theWeaponWeight.innerHTML = mystery.weapon.weight
+  theWeapon.classList.add('inner-outline')
+  theWeapon.style.background = '#CCCCCC'
+  theWeaponCard.innerHTML = 'WEAPON'
   theWeaponImage.src = mystery.weapon.image
+  theWeaponName.innerHTML = mystery.weapon.name
+  theWeaponWeight.innerHTML = `<b>Weight</b><br>${mystery.weapon.weight}`
 }
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
+  const theRoom = document.getElementById('room')
+  const theRoomCard = document.getElementById('roomCard')
   const theRoomName = document.getElementById("roomName")
 
+  theRoom.classList.add('inner-outline')
+  theRoom.style.background = '#CCCCCC'
+  theRoomCard.innerHTML = 'ROOM'
   theRoomName.innerHTML = mystery.room
 }
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
