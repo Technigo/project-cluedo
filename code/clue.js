@@ -175,6 +175,7 @@ console.log(mystery)
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
+var killerPicked = false
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
@@ -194,9 +195,11 @@ const pickKiller = () => {
   theKillerOccupation.innerHTML = "Occupation: " + mystery.killer.occupation
   theKillerImage.src = mystery.killer.image
   theKillerDescription.innerHTML = mystery.killer.description
+  return killerPicked = true
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+var weaponPicked = false
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
 
@@ -205,14 +208,17 @@ const pickWeapon = () => {
 
   theWeaponName.innerHTML = mystery.weapon.name 
   theWeaponWeight.innerHTML = "Weight: " + mystery.weapon.weight
+  return weaponPicked = true
 }
 
+var roomPicked = false
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
   const theRoom = document.getElementById("roomName")
 
   theRoom.innerHTML = mystery.room
+  return roomPicked = true
 }
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
@@ -220,6 +226,10 @@ const pickRoom = () => {
 
 const revealMystery = () => {
   const theMystery = document.getElementById("mystery")
-
-  theMystery.innerHTML = "The murder was committed by " + mystery.killer.firstName + " " + mystery.killer.lastName + ", in the " + mystery.room + " with a " + mystery.weapon.name + "."
+  if (killerPicked === false || weaponPicked === false || roomPicked === false) {
+    theMystery.innerHTML = "No mystery is yet to be revealed! Pick a killer, a weapon and a room!"
+  } else {
+    theMystery.innerHTML = "The murder was committed by " + mystery.killer.firstName + " " + mystery.killer.lastName + ", in the " + mystery.room + " with a " + mystery.weapon.name + "."
+  }
+  
 }
