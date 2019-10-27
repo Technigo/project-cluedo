@@ -63,18 +63,22 @@ button {
   display: block;
   margin: 0 auto;
 }
+
 h2 {
   text-align: center;
 }
+
 footer {
 text-align: center;
 margin-top: 20px;
 border-top: 1px solid black;
 border-bottom:1px solid black ;
 }
+
 footer p {
   background-color: #f7f6f1;
 }
+
 @media (max-width: 450px){
 .cards {
   display: flex;
@@ -84,13 +88,16 @@ footer p {
   text-align: center;
   max-width: 1100px;
   margin: 0 auto;
-}  
+} 
+
 .killer-deck {
   margin: 10px;
 }
+
 .room-deck {
   margin: 10px;
 }
+
 h2 {
   padding: 0px 10px;
 }
