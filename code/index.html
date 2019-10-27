@@ -13,12 +13,15 @@
     <header>
         <h1> The Cluedo Game - who is the killer?</h1> 
        
-        <video preload="" autoplay="" muted="" loop="">
-          <source src="/Users/theresaulwahn/Desktop/project-cluedo/code/assets/herovideo.mp4" type="video/mP4">
+        <video preload autoplay muted loop>
+          <source src="assets/herovideo.mp4" type="video/mP4">
         </video>   
     </header>
-    
+   
+  <div class="container">
+
     <section class="flex-cards">
+
       <div class="killer-deck" id="killer" onclick="pickKiller()">       
         <p>KILLER</p>
         <p id="killerName"></p>
@@ -27,22 +30,28 @@
         <img id="killerImage" src="" height="200"/>
         <p id="killerDescription"></p>
       </div>
+
       <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
         <p>WEAPON</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
       </div>
+
       <div class="room-deck" id="room" onclick="pickRoom()">
         <p>ROOM</p>
         <p id="roomName"></p>
       </div>
+
     </section>
+    
     <section class="reveal-mystery">
         <h1 id = "mysteryRevealText"></h1>
         <h1 id="mystery"></h1>
        <button onclick="revealMystery()">THE CRIME WAS MADE BY..</button>
     </section>
-   
+
+  </div> 
+
     <footer>
         <p>© 2019 Theresa Ulwahn / IG: <a href="https://www.instagram.com/mrsu_codes/">MrsU_codes</a></p>
     </footer>
