@@ -38,7 +38,7 @@ const missScarlet = {
 const mrsPeacock = {
     firstName: "Eleanor",
     lastName: "Peacock",
-    color: "brown",
+    color: "blue",
     description: "An elderly woman who nearly always maintains her dignity",
     age: 60,
     image: "assets/peacock.png",
