@@ -198,6 +198,7 @@ const pickWeapon = () => {
     
   theWeapon.style.background = mystery.weapon.color
   theWeaponName.innerHTML = mystery.weapon.name + " " + mystery.weapon.weight 
+  theWeapon.style.background = mystery.killer.color
 }
 
 const pickRoom = () => {
@@ -211,6 +212,7 @@ const pickRoom = () => {
 
   theRoom.style.background = mystery.room.color
   theRoomName.innerHTML = mystery.room 
+  theRoom.style.background = mystery.killer.color
   }
  
 
