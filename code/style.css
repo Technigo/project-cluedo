@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  padding: 20px;
   font-family: 'Vollkorn', serif;
 }
 
@@ -9,7 +9,7 @@ p {
 }
 
 h1, h2, h3 {
-  font-family: 'Homemade Apple', cursive;
+  font-family: 'Calligraffitti', cursive;
   margin: 0px;
 
 }
@@ -44,31 +44,45 @@ h1, h2, h3 {
   background: rgb(10, 53, 10);
 }
 
+.text-background {
+background: white;
+width: 380px;
+height: 230px;
+margin: 10px;
+}
+
 .killer-deck:hover, .weapon-deck:hover, .room-deck:hover {
   transform: translateY(-5px) translateX(2px);
   transition: all 0.4s ease;
 }
 
 #reveal {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#mystery {
+
+
+h1#mystery {
   display: flex;
-  align-self: center;
-  width: 80%;
-  margin: 0px;
+  margin: 30px;
 }
 
 button {
   padding: 8px 16px;
-  background: rgb(121, 0, 24);
-  border: none;
+  background:#FFF;
+  border: solid 2px black;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+button:hover {
+  transform: translateY(-5px) translateX(2px);
+  transition: all 0.4s ease;
 }
 
 /* MEDIA QUERIES */
@@ -86,8 +100,15 @@ button {
   border-radius: 16px;
   /* box-shadow: #000 10px 5px 5px; */
 }
-#mystery {
-  width: 50%;
-}
+
+
+.text-background {
+  background: white;
+  width: 230px;
+  height: 380px;
+  margin: 10px;
+  }
+
+
 
 }

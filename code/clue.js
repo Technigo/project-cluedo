@@ -154,6 +154,8 @@ const rooms = [
   "patio",
 ]
 
+
+
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
@@ -190,7 +192,6 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
   const theWeapon = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
-  theWeapon.style.background = mystery.killer.color
   theWeaponName.innerHTML =
     mystery.weapon.name
 }
@@ -198,11 +199,12 @@ const pickWeapon = () => {
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
   const theRoomName = document.getElementById("roomName") 
-  const theRoom = document.getElementById("room") 
-  theRoom.style.background = mystery.killer.color
+  const theRoom = document.getElementById("room")
   theRoomName.innerHTML =
     mystery.room
 }
+
+
 
 document
   .getElementById("killer")
@@ -231,5 +233,3 @@ const revealMystery = () => {
     }
 // }
 }
-
-c
