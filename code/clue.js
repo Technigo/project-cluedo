@@ -24,7 +24,7 @@ const profPlum = {
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
-  color: "scarlet",
+  color: "darkred",
   description: "She is smart",
   age: 25,
   image: "assets/scarlet.png",
@@ -34,7 +34,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
-  color: "peacock",
+  color: "blue",
   description: "She is smart",
   age: 65,
   image: "assets/peacock.png",
@@ -44,7 +44,7 @@ const mrsPeacock = {
 const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
-  color: "mustard",
+  color: "goldenrod",
   description: "He is in the army",
   age: 35,
   image: "assets/mustard.png",
@@ -52,7 +52,7 @@ const mrMustard = {
 }
 
 const mrsWhite = {
-  firstName: "Eben",
+  firstName: "Mrs",
   lastName: "White",
   color: "white",
   description: "She is a frazzled servant",
@@ -176,14 +176,18 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
+  const theKillerAge = document.getElementById("killerAge")
   const theKillerOccupation = document.getElementById("killerOccupation")
   const theKillerImage = document.getElementById("killerImage")
+  const theKillerDescripton = document.getElementById("killerDescription")
 
   theKiller.style.background = mystery.killer.color
   theKillerName.innerHTML =
     mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerAge.innerHTML = mystery.killer.age
   theKillerOccupation.innerHTML = mystery.killer.occupation
   theKillerImage.src = mystery.killer.image
+  theKillerDescripton = ""
 
 }
 
@@ -235,7 +239,7 @@ const revealMystery = () => {
       "No mystery is yet to be revealed, select three cards first!"
   }
   else {
-    document.getElementById("mystery").innerHTML = `The murder was committed by ${mystery.killer.firstName}  ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`
+    document.getElementById("mystery").innerHTML = `The murder was committed by ${mystery.killer.firstName}  ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}. Did you know: ${mystery.killer.description}!`
   }
 }
 
