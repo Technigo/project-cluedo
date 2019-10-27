@@ -138,6 +138,8 @@ const pickKiller = () => {
   const theKillerOccupation = document.getElementById("killerOccupation")
   const theKillerImage = document.getElementById("killerImage")
   const theKillerDescription = document.getElementById("killerDescription")
+  const theKillerText = document.getElementById("killerText")
+
 
   theKiller.style.background = mystery.killer.color
   theKillerName.innerHTML = mystery.killer.firstName + " " + mystery.killer.lastName
@@ -145,6 +147,7 @@ const pickKiller = () => {
   theKillerOccupation.innerHTML = mystery.killer.occupation
   theKillerImage.src = mystery.killer.image
   theKillerDescription.innerHTML = mystery.killer.description
+  theKillerText.classList.remove("hidden")
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
@@ -155,10 +158,12 @@ const pickWeapon = () => {
   const theWeaponName = document.getElementById("weaponName")
   const theWeaponWeight = document.getElementById("weaponWeight")
   const theWeaponImage = document.getElementById("weaponImage")
+  const theWeaponText = document.getElementById("weaponText")
 
   theWeaponName.innerHTML = mystery.weapon.name
   theWeaponWeight.innerHTML = mystery.weapon.weight
   theWeaponImage.src = mystery.weapon.image
+  theWeaponText.classList.remove("hidden")
 }
 
 const pickRoom = () => {
@@ -166,9 +171,11 @@ const pickRoom = () => {
 
   const theRoomName = document.getElementById("roomName")
   const theRoomImage = document.getElementById("roomImage")
+  const theRoomText = document.getElementById("roomText")
 
   theRoomName.innerHTML = mystery.room.name
   theRoomImage.src = mystery.room.image
+  theRoomText.classList.remove("hidden")
 }
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
