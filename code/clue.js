@@ -68,7 +68,7 @@ const mrMustard = {
 const rope = {
     name: "rope",
     color: "brown",
-    weight: 10,
+    weight: 1,
     image: "assets/rope.png"
 
 }
@@ -76,13 +76,13 @@ const knife = {
     name: "Knife",
     color: "red",
     image: "assets/knife2.png",
-    weight: 2
+    weight: 1
 }
 const candlestick = {
     name: "Candlestick",
     color: "orange",
     image: "assets/candlestick.png",
-    weight: 3
+    weight: 2
 }
 const dumbbell = {
     name: "Dumbbell",
@@ -106,19 +106,19 @@ const bat = {
     name: "Bat",
     color: "purple",
     image: "assets/bat.png",
-    weight: 2
+    weight: 5
 }
 const trophy = {
     name: "Trophy",
     image: "assets/trophy.png",
     color: "gold",
-    weight: 12
+    weight: 8
 }
 const pistol = {
     name: "Pistol",
     image: "assets/pistol.png",
     color: "lightgreen",
-    weight: 6
+    weight: 1
 }
 
 
@@ -240,7 +240,7 @@ const pickWeapon = () => {
 
     theWeapon.style.background = mystery.weapon.color
     theWeaponName.innerHTML = "Weapon: " + mystery.weapon.name
-    theWeaponWeight.innerHTML = "Weight: " + mystery.weapon.weight
+    theWeaponWeight.innerHTML = "Weight: " + mystery.weapon.weight + " kg"
     theWeaponImage.innerHTML = mystery.weapon.image
 
 }
@@ -263,9 +263,12 @@ console.log(mystery);
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = () => {
     const theMysteryReveal = document.getElementById("mystery")
+
+
     if (killerPicked && weaponPicked && roomPicked === true) {
         theMysteryReveal.innerHTML = "The murder was committed by " + mystery.killer.firstName + " " + mystery.killer.lastName + ", in the " + mystery.room + " with a " + mystery.weapon.name + "."
-
+        document.getElementById("newGame").style.display = "block";
+        document.getElementById("revealButton").style.display = "none";
     } else {
         theMysteryReveal.innerHTML = "No mystery is yet to be revealed"
     }

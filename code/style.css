@@ -54,12 +54,9 @@ p {
 .room-deck,
 .weapon-deck {
     width: 70%;
-    /* position: inline; */
     height: 350px;
     margin: auto;
     transform: translateY(3vw);
-    /* margin-left: 50px;
-    margin-top: 50px; */
     -webkit-box-shadow: inset 10px 10px 10px 4px rgba(0, 0, 0, .6);
     box-shadow: inset 3px 7px 2px 5px rgba(0, 0, 0, .1);
     border: 2px inset #c9c9c9;
@@ -117,10 +114,17 @@ button:hover {
     margin: 30px;
 }
 
-footer {
-    margin-top: 30px;
+#newGame {
+    display: none;
     text-align: center;
-    padding: 10px;
+    margin: auto;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    padding: 40px 5px;
+    background: rgba(26, 76, 59, 0.331);
 }
 
 
