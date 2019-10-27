@@ -1,5 +1,3 @@
-
-
 const suspects = [
   {
     displayName: "Mr Green",
@@ -128,7 +126,7 @@ const rooms = [
   },
   {
     name: "Ballroom",
-    color: "#7296aa",
+    color: "#d8b8c4",
     image: "images/rooms/ballroom.png"
   },
   {
@@ -138,7 +136,7 @@ const rooms = [
   },
   {
     name: "Bathroom",
-    color: "#8a728c",
+    color: "#d8b8c4",
     image: "images/rooms/bathroom.png"
   },
   {
@@ -183,7 +181,7 @@ const rooms = [
   }
 ]
 
-const randomSelector = (array) => {
+const pickRandom = (array) => {
   const randomIndex = Math.floor(Math.random() * array.length)
   return array[randomIndex]
 }
@@ -195,7 +193,7 @@ let mystery = {
 }
 
 const pickKiller = () => {
-  mystery.killer = randomSelector(suspects)
+  mystery.killer = pickRandom(suspects)
 
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
@@ -215,7 +213,7 @@ const pickKiller = () => {
 }
 
 const pickWeapon = () => {
-  mystery.weapon = randomSelector(weapons)
+  mystery.weapon = pickRandom(weapons)
 
   const theWeapon = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
@@ -224,14 +222,14 @@ const pickWeapon = () => {
 
   theWeapon.style.background = mystery.weapon.color
   theWeaponName.innerHTML = mystery.weapon.name
-  //theWeaponWeight.innerHTML = mystery.weapon.weight
+  theWeaponWeight.innerHTML = mystery.weapon.weight
   theWeaponImage.src = mystery.weapon.image
 
   hideTextShowButton()
 }
 
 const pickRoom = () => {
-  mystery.room = randomSelector(rooms)
+  mystery.room = pickRandom(rooms)
 
   const theRoom = document.getElementById("room")
   const theRoomName = document.getElementById("roomName")
@@ -245,7 +243,7 @@ const pickRoom = () => {
 }
 
 const revealMystery = () => {
-  document.getElementById("mystery").innerHTML = (`The murder was committed by ${mystery.killer.displayName}, in the ${mystery.room.name.toLowerCase()} with the ${mystery.weapon.name.toLowerCase()}.`)
+  document.getElementById("mystery").innerHTML = `The murder was committed by ${mystery.killer.displayName}, in the ${mystery.room.name.toLowerCase()} with the ${mystery.weapon.name.toLowerCase()}.`
 
   showTextHideButton()
 }
