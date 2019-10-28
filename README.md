@@ -13,23 +13,20 @@ The user (who is the game leader and the one that will know all about the murder
 
 The focus on this project is to practice objects and arrays and also to manipulate the DOM with JavaScript.
 
-- *Step 1 - Create the objects for suspects, weapons and rooms.*
-- *Step 2 - Create arrays to group together suspects, weapons and rooms.*
-- *Step 3 - Pick a murderer, a weapon and a room:*
+- **Step 1 - Create the objects for suspects, weapons and rooms.**
+- **Step 2 - Create arrays to group together suspects, weapons and rooms.**
+- **Step 3 - Pick a murderer, a weapon and a room:**
 When clicking on the cards, you should invoke the right functions to pick a murderer, a room and a weapon. 
 That should be stored in the mysterty object and we should visually see the chosen cards in the browser.
 - Step 4 - Reveal the mystery
 When clicking the button Reveal Mystery, we should see a message saying something like:
 *The murder was committed by Jacob Green, in the living room with a rope.*
-- Stretch Goals 🏃‍♂
-
+**- Stretch Goals 🏃‍♂**
 **_Design_**
-
 - Make the site responsive.
 - Spend some time to make it look nice.
 - Add images of your suspects and maybe the weapons.
 
 **_Deep-dive_**
-
 - Add the functionality to say something like: "No mystery is yet to be revealed" if you click the reveal button but haven't selected suspect, weapon and room yet.
 - Add a fourth deck of card, maybe about when the murder was commited.
