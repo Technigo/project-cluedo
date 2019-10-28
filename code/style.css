@@ -14,10 +14,8 @@ p {
   font-weight: 300;
   background-color: #fff;
 }
-
 .cards {
   margin: 10px 0px;
-  /* height: 600px; */
   background: #ccc;
   display: flex;
   flex-direction:column;
@@ -43,15 +41,12 @@ p{
   margin: 5px 15px;
   border-radius: 5px;
 }
-
 .killer-deck {
   background:orange;
 }
-
 .weapon-deck {
   background: teal;
 }
-
 .room-deck {
   background: tomato;
 }
@@ -70,10 +65,6 @@ p{
   box-shadow: 4px 4px 10px 2px gold inset;
   cursor: pointer;
 }
-.reveal:hover{
-  background: firebrick;
-  color: gold;
-}
 .reload {
   padding: 8px 16px;
   background:skyblue;
@@ -86,51 +77,50 @@ p{
   box-shadow: 4px 4px 16px 4px yellowgreen inset;
   cursor: pointer;
 }
-.reload:hover{
-  background:navy;
-  color:skyblue;
-}
 h1{
   margin:20px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
   font-style: italic;
 }
-
 img{
   border-radius: 20px;
 }
-
 footer{
 display:flex;
 justify-content: space-around;
+font-size: 10px;
+background: none;
+align-items: center;
 }
 footer img {
-  width: 120px;
+  width: 70px;
   border-radius: 0;
-}
-.footer-text{
-  background: none;
+  margin: 10px;
 }
 footer a{
   text-decoration: none;
 }
-
 
 /***TABLET***/
 @media (min-width: 668px) and (max-width: 1024px){
   header p{
     font-size: 40px;
   }
-  
   .cards{
     flex-direction: row;
     flex-wrap: wrap;
   }
-  div{
+  .killer-deck, .weapon-deck, .room-deck, .time-deck{
     margin:10px;
     width: 40%;
   }
+  footer img{
+    width: 120px;
+  }
+  footer{
+    font-size: 14px;
+  }
 }
+
   /***DESKTOP***/
 @media (min-width: 1025px){
   header p{
@@ -139,8 +129,22 @@ footer a{
   .cards{
     flex-direction: row;
   }
-  div{
+  .killer-deck, .weapon-deck, .room-deck, .time-deck{
     margin:10px;
     width: 20%;
+  }
+  .reveal:hover{
+    background: firebrick;
+    color: gold;
+  }
+  .reload:hover{
+    background:navy;
+    color:skyblue;
+  }
+  footer img{
+    width: 120px;
+  }
+  footer{
+    font-size: 18px;
   }
 }
