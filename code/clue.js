@@ -37,7 +37,7 @@ const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
   color: "rgba(2, 82, 180, 0.66)",
-  description: "She is a natural leader with mesmorising charisma",
+  description: "She is a natural leader",
   age: 35,
   image: "assets/peacock.png",
   occupation: "Social butterfly"
