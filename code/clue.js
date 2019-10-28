@@ -74,58 +74,109 @@ const rope = {
   color: "beige",
   image: "assets/rope.png"
 }
+
 const knife = {
   name: "knife",
   weight: 90,
   color: "burgundy",
   image: "assets/knife.png"
 }
+
 const candleStick = {
   name: "candlestick",
   weight: 180,
   color: "magenta",
   image: "assets/candlestick.png"
 }
+
 const dumbBell = {
   name: "dumbbell",
   weight: 500,
   color: "blue",
   image: "assets/dumbbell.png"
 }
+
 const poison = {
   name: "poison",
   weight: 5,
   color: "green",
   image: "assets/poison.png"
 }
+
 const axe = {
   name: "axe",
   weight: 400,
   color: "green",
   image: "assets/axe.png"
 }
+
 const bat = {
   name: "bat",
   weight: 120,
   color: "green",
   image: "assets/bat.png"
 }
+
 const trophy = {
   name: "trophy",
   weight: 180,
   color: "yellow",
   image: "assets/trophy.png"
 }
+
 const pistol = {
   name: "pistol",
   weight: 250,
   color: "blue",
   image: "assets/pistol.png"
+};
+
+
+const diningRoom = {
+  name: "Dining room",
+  image: "assets/diningroom.png"
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const conservatory = {
+  name: "Conservatory",
+  image: "assets/conservatory.png"
+}
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
+const kitchen = {
+  name: "Kitchen",
+  image: "assets/kitchen.png"
+}
+
+const library = {
+  name: "Library",
+  image: "assets/Library.png"
+}
+
+const billiardRoom = {
+  name: "Billiard room",
+  image: "assets/billiardRoom.png"
+}
+
+const ballRoom = {
+  name: "Ballroom",
+  image: "assets/ballroom.png"
+}
+
+const hall = {
+  name: "hall",
+  image: "assets/hall.png"
+}
+
+const spa = {
+  name: "Spa",
+  image: "assets/spa.png"
+}
+
+const livingRoom = {
+  name: "Livingroom",
+  image: "assets/livingroom.png"
+};
+
 
 const suspects = [
   mrGreen,
@@ -147,22 +198,19 @@ const weapons = [
   bat,
   trophy,
   pistol
-]
+];
 
 const rooms = [
-  // Detta ska vara strings eftersom det ej är "länkar" till objekt som de andra stringsen är. 
-  "diningRoom",
-  "conservatory",
-  "kitchen",
-  "study",
-  "library",
-  "billiardRoom",
-  "lounge",
-  "ballRoom",
-  "hall",
-  "spa",
-  "livingRoom"
-]
+  diningRoom,
+  conservatory,
+  kitchen,
+  library,
+  billiardRoom,
+  ballRoom,
+  hall,
+  spa,
+  livingRoom
+];
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 
@@ -264,10 +312,18 @@ const pickWeapon = () => {
 
 const pickRoom = () => {
 
-  mystery.room = randomSelector(rooms)
+  mystery.room = randomSelector(rooms);
+  const theRoom = document.getElementById("room")
+  const theRoomHolder = document.getElementById("roomHolder")
   const theRoomName = document.getElementById("roomName")
+  const theRoomImage = document.getElementById("roomImage")
+
+  theRoom.style.background = "beige"
+  theRoomHolder.style.background = "silver"
+  theRoomName.style.background = "silver"
+  theRoomImage.setAttribute("src", mystery.room.image)
   theRoomName.innerHTML =
-    mystery.room
+    mystery.room.name
 }
 
 
