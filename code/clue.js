@@ -120,21 +120,21 @@ const weapons = [
 ]
 
 const rooms = [
-  "diningroom",
-  "conservatory",
-  "kitchen",
-  "study",
-  "library",
-  "billiardroom",
-  "lounge",
-  "ballroom",
-  "hall",
-  "spa",
-  "livingroom",
-  "observatory",
-  "theater",
-  "guesthouse",
-  "patio"
+  "Dining room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Billiard room",
+  "Lounge",
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "Livingroom",
+  "Observatory",
+  "Theater",
+  "Guesthouse",
+  "Patio"
 ]
 console.log(rooms)
 
@@ -161,6 +161,9 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
+  
+  const theKillerImage = document.getElementById("killerImage")
+  theKillerImage.src = mystery.killer.image
 
   theKiller.style.background = mystery.killer.color
   theKillerName.innerHTML =
