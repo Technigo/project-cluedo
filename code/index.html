@@ -6,17 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Roboto+Mono&display=swap" rel="stylesheet">
+
   <title>Clue</title>
 </head>
 
 <body>
+  <h1>CLUEDO</h1>
   <section class="cards">
     <div class="killer-deck" id="killer" onclick="pickKiller()">
       <p>KILLER</p>
-      <p id="killerName"></p>
-      <p id="killerAge"></p>
+      <img id="killerImage" src="" height="200" />
+      <div class="killer-titel" id="killerTitel">
+        <p id="killerName"></p>
+        <p id="killerAge"></p>
+      </div>
       <p id="killerOccupation"></p>
-      <img id="killerImage" src="" height="100" />
       <p id="killerDescription"></p>
     </div>
     <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
@@ -29,7 +34,7 @@
       <p id="roomName"></p>
     </div>
   </section>
-  <h1 id="mystery"></h1>
+  <h2 id="mystery"></h2>
   <button onclick="revealMystery()">REVEAL THE CRIME</button>
 
   <script src="clue.js"></script>

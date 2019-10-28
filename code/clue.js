@@ -4,6 +4,7 @@ const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
   color: "green",
+  nameCol: "beige",
   description: "He has a lot of connections",
   age: 45,
   image: "assets/green.png",
@@ -14,6 +15,7 @@ const profPlum = {
   firstName: "Victor",
   lastName: "Plum",
   color: "purple",
+  nameCol: "beige",
   description: "With his good looks and charm he has found a dark side being sneaky.",
   age: 36,
   image: "assets/plum.png",
@@ -24,9 +26,10 @@ const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
   color: "red",
+  nameCol: "beige",
   description: "A movie star who will do anything to stay in the spotlight",
   age: 25,
-  image: "assets/scarlet.png",
+  image: "scarlett.png",
   occupation: "Actress"
 }
 
@@ -34,6 +37,7 @@ const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
   color: "blue",
+  nameCol: "beige",
   description: "Despite her innocent looks, she is a formidable politician.",
   age: 52,
   image: "assets/peacock.png",
@@ -42,8 +46,9 @@ const mrsPeacock = {
 
 const mrMustard = {
   firstName: "Jack",
-  lastName: "Mustad",
+  lastName: "Mustard",
   color: "orange",
+  nameCol: "beige",
   description: "An expert in weapons and conspiracy",
   age: 58,
   image: "assets/mustard.png",
@@ -54,6 +59,7 @@ const mrsWhite = {
   firstName: "Mrs",
   lastName: "White",
   color: "white",
+  nameCol: "beige",
   description: "Claiming to have loved her employer, but is no longer happy in her work",
   age: 62,
   image: "assets/white.png",
@@ -197,19 +203,34 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
   // id i javasrcirpt, ej class. mer unikt.
+  const theKillerImage = document.getElementById("killerImage")
+  const theKillerTitel = document.getElementById("killerTitel")
   const theKillerName = document.getElementById("killerName")
-
   const theKillerAge = document.getElementById("killerAge")
   const theKillerOccupation = document.getElementById("killerOccupation")
-  const theKillerImage = document.getElementById("killerImage")
   const theKillerDescription = document.getElementById("killerDescription")
+
   // Denna funktion sätter bkagrundsfärg på myster killer, dvs den som visas
-  theKiller.style.background = mystery.killer.color
+  theKiller.style.background = "beige"
+  theKillerTitel.style.background = mystery.killer.color
+  theKillerName.style.background = mystery.killer.color
+  theKillerAge.style.background = mystery.killer.color
+  theKillerOccupation.style.background = mystery.killer.nameCol
+  theKillerDescription.style.background = mystery.killer.nameCol
   // Denna funkton "går in i html" och "skriver om" för att visa namnet på killern, som har skapats/sparats i mystery-objektet. 
-  theKillerName.innerHTML =
-    mystery.killer.firstName + " " + mystery.killer.lastName
-  // Gör för alla andra!
   theKillerImage.setAttribute("src", mystery.killer.image)
+
+  theKillerName.innerHTML =
+    mystery.killer.firstName + " " + mystery.killer.lastName + ","
+
+  theKillerAge.innerHTML =
+    mystery.killer.age
+
+  theKillerOccupation.innerHTML =
+    mystery.killer.occupation
+
+  theKillerDescription.innerHTML =
+    mystery.killer.description
 }
 
 // pickKiller() Ska ej vara med, för att den är evokad i html redan. 
