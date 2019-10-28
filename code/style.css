@@ -1,32 +1,43 @@
 body {
     margin: 0;
     font-family: 'Courgette', cursive;
+    background: url("assets/poker cloth.jpg");
 }
 
 p {
     margin: 0px;
-    padding: 2px;
     font-weight: 300;
     background-color: #E0E0E2;
 }
 
+.killer-deck p {
+    margin: 0px;
+    font-weight: 300;
+    background-color: white;
+}
+
 h1 {
     text-align: center;
-    font-weight: 500;
+    font-size: 65px;
+    color: #E0E0E2;
 }
 
 h2 {
-    margin: 0px;
-    padding: 2px;
-    font-weight: 500;
-    background-color: #E0E0E2;
+    text-align: center;
+    font-size: 32px;
+    color: #E0E0E2;
 }
 
 h3 {
     margin: 0px;
-    padding: 2px;
-    font-weight: 400;
+    font-size: 28px;
     background-color: #E0E0E2;
+}
+
+.killer-deck .title-front h3 {
+    margin: 0px;
+    font-size: 28px;
+    background-color: white;
 }
 
 img {
@@ -34,14 +45,19 @@ img {
 }
 
 .cards {
-    margin: 30px auto;
-    width: 90%;
-    height: 600px;
-    background: darkolivegreen;
+    margin: 15px auto;
+    width: 85%;
+    height: 500px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border-radius: 16px;
+}
+
+.title-front,
+.title-back {
+    position: absolute;
+    width: 250px;
+    height: 400px;
 }
 
 .killer-deck {
@@ -51,6 +67,7 @@ img {
     text-align: center;
     padding-top: 30px;
     border-radius: 16px;
+    transition: background-color 2s;
 }
 
 .weapon-deck {
@@ -81,4 +98,5 @@ button {
     border-radius: 8px;
     display: block;
     margin: 0 auto;
+    margin-bottom: 30px;
 }

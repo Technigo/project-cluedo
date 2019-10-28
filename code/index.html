@@ -17,28 +17,42 @@
     <section class="cards">
 
         <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
-            <h2>Weapon</h2>
-            <h3 id="weaponName"></h3>
-            <p id="weaponWeight"></p>
+            <div class="title-back">
+                <h3>Weapon</h3>
+            </div>
+
+            <div class="title-front">
+                <h3 id="weaponName"></h3>
+                <p id="weaponWeight"></p>
+            </div>
         </div>
 
         <div class="killer-deck" id="killer" onclick="pickKiller()">
-            <h2>Killer</h2>
-            <h3 id="killerName"></h3>
-            <p id="killerAge"></p>
-            <p id="killerOccupation"></p>
-            <p id="killerDescription"></p>
-            <img id="killerImage" src="" />
+            <div class="title-back">
+                <h3>Killer</h3>
+            </div>
+
+            <div class="title-front">
+                <h3 id="killerName"></h3>
+                <p id="killerAge"></p>
+                <img id="killerImage" src="" />
+                <!-- <p id="killerOccupation"></p> -->
+                <p id="killerDescription"></p>
+            </div>
         </div>
 
         <div class="room-deck" id="room" onclick="pickRoom()">
-            <h2>Room</h2>
-            <h3 id="roomName"></h3>
+            <div class="title-back">
+                <h3>Room</h3>
+            </div>
+            <div class="title-front">
+                <h3 id="roomName"></h3>
+            </div>
         </div>
 
     </section>
 
-    <h1 id="mystery"></h1>
+    <h2 id="mystery"></h2>
     <button onclick="revealMystery()">Reveal the crime</button>
 
     <script src="clue.js"></script>

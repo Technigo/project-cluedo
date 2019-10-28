@@ -131,21 +131,21 @@ const weapons = [
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 const rooms = [
-    "Dinning Room",
-    "Conservatory",
-    "Kitchen",
-    "Study",
-    "Library",
-    "Billiard Room",
-    "Lounge",
-    "Ballroom",
-    "Hall",
-    "Spa",
-    "Living Room",
-    "Observatory",
-    "Theater",
-    "Guest House",
-    "Patio"
+    "dinning room",
+    "conservatory",
+    "kitchen",
+    "study",
+    "library",
+    "billiard room",
+    "lounge",
+    "ballroom",
+    "hall",
+    "spa",
+    "living room",
+    "observatory",
+    "theater",
+    "guest house",
+    "patio"
 ]
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
@@ -213,6 +213,9 @@ const pickWeapon = () => {
 
     const theWeapon = document.getElementById("weaponName")
     theWeapon.innerHTML = mystery.weapon.name
+
+    const theWeaponWeight = document.getElementById("weaponWeight")
+    theWeaponWeight.innerHTML = mystery.weapon.weight
 }
 
 const pickRoom = () => {
