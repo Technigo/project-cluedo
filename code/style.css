@@ -1,13 +1,15 @@
 body {
   margin: 0;
   font-family: 'Prociono', serif;
-  background-color: black;
+  background-image: url("assets/background-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
   color: #fff;
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Prociono', serif;
 }
 
@@ -27,14 +29,15 @@ flex: auto;
 .cards {
   margin: 0;
   width: 100%;
-  height: 650px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  background-image: url("assets/background-image.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding-top: 30px;
+}
+
+.killer-deck, .weapon-deck, .room-deck {
+  box-shadow: 5px 5px 5px rgb(32, 32, 32);
 }
 
 .killer-deck {
@@ -76,15 +79,10 @@ flex: auto;
   margin-bottom: 10px;
 }
 
-.container-button {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
 button {
-  padding: 8px 16px;
-  background: crimson;
+  padding: 10px 30px;
+  background: rgb(0, 0, 0);
+  color: white;
   border: none;
   font-size: 20px;
   border-radius: 8px;
@@ -92,4 +90,3 @@ button {
   margin: 0 auto;
   font-family: 'Prociono', serif;
 }
-
