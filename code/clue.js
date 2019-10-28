@@ -257,3 +257,27 @@ const hideTextShowButton = () => {
   document.getElementById("mystery").style.display = "none";
   document.getElementById("reveal-button").style.display = null;
 }
+
+suspects.forEach(suspect => {
+  const link = document.createElement("link")
+  link.rel = "preload"
+  link.href = suspect.image
+  link.as = "image"
+  document.head.appendChild(link)
+})
+
+suspects.forEach(weapon => {
+  const link = document.createElement("link")
+  link.rel = "preload"
+  link.href = weapon.image
+  link.as = "image"
+  document.head.appendChild(link)
+})
+
+suspects.forEach(room => {
+  const link = document.createElement("link")
+  link.rel = "preload"
+  link.href = room.image
+  link.as = "image"
+  document.head.appendChild(link)
+})
