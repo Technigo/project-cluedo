@@ -266,7 +266,7 @@ suspects.forEach(suspect => {
   document.head.appendChild(link)
 })
 
-suspects.forEach(weapon => {
+weapons.forEach(weapon => {
   const link = document.createElement("link")
   link.rel = "preload"
   link.href = weapon.image
@@ -274,7 +274,7 @@ suspects.forEach(weapon => {
   document.head.appendChild(link)
 })
 
-suspects.forEach(room => {
+rooms.forEach(room => {
   const link = document.createElement("link")
   link.rel = "preload"
   link.href = room.image
