@@ -1,6 +1,11 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background: #095e96;
+  /*background-image: url(assets/cluedo.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;*/
+
 }
 
 p {
@@ -9,11 +14,25 @@ p {
   background-color: #fff;
 }
 
+header img {
+ width: 100%;
+}
+
+.whiteborder {
+  width: 100%;
+  padding: 5px;
+  background: white;
+  color: black;
+  text-align: center;
+
+}
+
+
 .cards {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  /*background: #ccc;**/
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -26,6 +45,7 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  border: 2px solid white;
 }
 
 .weapon-deck {
@@ -35,16 +55,17 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  border: 2px solid white;
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
   background: midnightblue;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  border: 2px solid white;
 }
 
 button {
@@ -55,4 +76,18 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  border: 2px solid white;
+
 }
+
+footer {
+color: black;
+width: 100%;
+padding: 20px;
+margin: 0 auto;
+text-align: center;
+
+}
+
+/**MEDIA QUERIES**/
+
