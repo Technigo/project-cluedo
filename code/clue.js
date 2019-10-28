@@ -64,25 +64,25 @@ const suspects = [
 const weapons = [
   {
     name: "Rope",
-    weight: "2 kg",
+    weight: "1 kg",
     color: "#acccca",
     image: "images/weapons/rope.png"
   },
   {
     name: "Knife",
-    weight: "1 kg",
+    weight: "0.5 kg",
     color: "#acccca",
     image: "images/weapons/knife.png"
   },
   {
     name: "Candlestick",
-    weight: "3 kg",
+    weight: "2 kg",
     color: "#acccca",
     image: "images/weapons/candlestick.png"
   },
   {
     name: "Dumbbell",
-    weight: "15 kg",
+    weight: "10 kg",
     color: "#acccca",
     image: "images/weapons/dumbbell.png"
   },
@@ -94,25 +94,25 @@ const weapons = [
   },
   {
     name: "Axe",
-    weight: "8 kg",
+    weight: "3 kg",
     color: "#acccca",
     image: "images/weapons/axe.png"
   },
   {
     name: "Bat",
-    weight: "2 kg",
+    weight: "0.8 kg",
     color: "#acccca",
     image: "images/weapons/bat.png"
   },
   {
     name: "Trophy",
-    weight: "4 kg",
+    weight: "2 kg",
     color: "#acccca",
     image: "images/weapons/trophy.png"
   },
   {
     name: "Pistol",
-    weight: "2 kg",
+    weight: "0.7 kg",
     color: "#acccca",
     image: "images/weapons/pistol.png"
   }
@@ -121,61 +121,73 @@ const weapons = [
 const rooms = [
   {
     name: "Attic",
+    floor: "3rd floor",
     color: "#d8b8c4",
     image: "images/rooms/attic.png"
   },
   {
     name: "Ballroom",
+    floor: "1st floor",
     color: "#d8b8c4",
     image: "images/rooms/ballroom.png"
   },
   {
     name: "Basement",
+    floor: "Lower level 1",
     color: "#d8b8c4",
     image: "images/rooms/basement.png"
   },
   {
     name: "Bathroom",
+    floor: "2nd floor",
     color: "#d8b8c4",
     image: "images/rooms/bathroom.png"
   },
   {
     name: "Greenhouse",
+    floor: "In the garden",
     color: "#d8b8c4",
     image: "images/rooms/greenhouse.png"
   },
   {
     name: "Guest House",
+    floor: "In the garden",
     color: "#d8b8c4",
     image: "images/rooms/guesthouse.png"
   },
   {
     name: "Gym",
+    floor: "Lower level 1",
     color: "#d8b8c4",
     image: "images/rooms/gym.png"
   },
   {
     name: "Hall",
+    floor: "Ground floor",
     color: "#d8b8c4",
     image: "images/rooms/hall.png"
   },
   {
     name: "Kitchen",
+    floor: "Ground floor",
     color: "#d8b8c4",
     image: "images/rooms/kitchen.png"
   },
   {
     name: "Living Room",
+    floor: "1st floor",
     color: "#d8b8c4",
     image: "images/rooms/livingroom.png"
   },
   {
     name: "Lounge",
+    floor: "1st floor",
     color: "#d8b8c4",
     image: "images/rooms/lounge.png"
   },
   {
     name: "Study",
+    floor: "2nd floor",
     color: "#d8b8c4",
     image: "images/rooms/study.png"
   }
@@ -233,10 +245,12 @@ const pickRoom = () => {
 
   const theRoom = document.getElementById("room")
   const theRoomName = document.getElementById("roomName")
+  const theRoomFloor = document.getElementById("roomFloor")
   const theRoomImage = document.getElementById("roomImage")
 
   theRoom.style.background = mystery.room.color
   theRoomName.innerHTML = mystery.room.name
+  theRoomFloor.innerHTML = mystery.room.floor
   theRoomImage.src = mystery.room.image
 
   hideTextShowButton()
