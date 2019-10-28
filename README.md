@@ -23,6 +23,7 @@ When clicking the button Reveal Mystery, we should see a message saying somethin
 *The murder was committed by Jacob Green, in the living room with a rope.*
 
 **Stretch Goals 🏃‍♂**
+
 **_Design_**
 - Make the site responsive.
 - Spend some time to make it look nice.
