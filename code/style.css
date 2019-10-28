@@ -1,6 +1,10 @@
+*{
+  box-sizing: border-box;
+}
 body {
-  margin: 0;
-  font-family: "Courier New", Courier, monospace;
+    margin: 0;
+    font-family: sans-serif, Impact, 'Arial Narrow Bold';
+    font-size: 17px;
 }
 
 p {
@@ -10,13 +14,17 @@ p {
 }
 
 .cards {
-  margin: 50px auto;
-  width: 90%;
-  height: 600px;
+
+  margin: 50px;
+  width: 100%;
+  height: 100%;
   background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 100px;
 }
 
 .killer-deck {
@@ -26,6 +34,7 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 30px;
 }
 
 .weapon-deck {
@@ -35,16 +44,17 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 30px;
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
   background: midnightblue;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 30px;
 }
 
 button {
@@ -55,4 +65,32 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+button:hover {
+  cursor: pointer;
+  background: rgba(245, 241, 241, 0.7);
+}
+@media (max-width: 667px){
+  .cards{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .killer-deck {
+    margin-left: 0; 
+    margin-right: 0;
+    margin-top: 20px;
+}
+.weapon-deck {
+  margin-left: 0; 
+  margin-right: 0;
+  margin-top: 20px; 
+}
+.room-deck {
+  margin-left: 0; 
+  margin-right: 0;
+  margin-top: 20px;
+}
 }
