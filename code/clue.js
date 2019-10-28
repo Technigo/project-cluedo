@@ -15,7 +15,7 @@ const mrPlum = {
   firstName: "Victor",
   lastName: "Plum",
   color: "#5c0470",
-  description: "He knows a lot about chemistry and Egypt",
+  description: "Knowing a lot about chemistry and Egypt",
   age: 36,
   image: "assets/plum.png",
   occupation: "Cycietrist"
@@ -25,7 +25,7 @@ const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
   color: "red",
-  description: "She is very cunning",
+  description: "Being very cunning",
   age: 25,
   image: "assets/scarlet.png",
   occupation: "Actress"
@@ -35,7 +35,7 @@ const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
   color: "#0fb7bd",
-  description: "She is a social butterfly and great social skills",
+  description: "A social butterfly with great social skills",
   age: 47,
   image: "assets/peacock.png",
   occupation: "Socialite"
@@ -45,7 +45,7 @@ const mrMustard = {
   firstName: "Jack",
   lastName: "Mustard",
   color: "#f0b432",
-  description: "He is an expert in weapons and conspiracy.",
+  description: "An expert in weapons and conspiracy.",
   age: 60,
   image: "assets/mustard.png",
   occupation: "Military man"
@@ -55,7 +55,7 @@ const mrsWhite = {
   firstName: "Blanche",
   lastName: "White",
   color: "white",
-  description: "She handles a knife like no one else.",
+  description: "Handles a knife like no one else.",
   age: 65,
   image: "assets/white.png",
   occupation: "Housekeeper"
@@ -65,7 +65,7 @@ const mrsWhite = {
 
 const rope = {
   name: "Rope",
-  weight: 10,
+  //weight: 10,
   description:"Be sure to know your knots"
 };
 
@@ -77,62 +77,62 @@ const knife = {
 
 const candlestick = {
   name: "Candlestick",
-  weight: 85,
-  description:"Often used when the kill is impulsive"
+  //weight: 85,
+  description:"For impulsive kills"
 };
 
 const dumbbell = {
   name: "Dumbbell",
-  weight: 112,
-  description:"It takes strength to get the wanted effect"
+  //weight: 112,
+  description:"It takes strength"
 };
 
 const poison = {
   name: "Poison",
-  weight: 10,
+  //weight: 10,
   description:"Effective but slow"
 };
 
 const axe = {
   name: "Axe",
-  weight: 10,
-  description:"Will split in two"
+  //weight: 10,
+  description:"Split in two for best effect"
 };
 
 const bat = {
   name: "Bat",
-  weight: 10,
-  description:"Keep swinging"
+  //weight: 10,
+  description:"A good swing gets the job done"
 };
 const trophy = {
   name: "Trophy",
-  weight: 210,
-  description: "For champions"
+  //weight: 210,
+  description: "For champions only"
 };
 
 const pistol = {
   name: "Pistol",
-  weight: 150,
-  description: "For everyone"
+ // weight: 150,
+  description: "Everyone can pull the trigger"
 };
 
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-const diningRoom = "Dining room"
-const conservatory = "Conservatory"
-const kitchen = "Kitchen"
-const study = "Study"
-const library = "Library"
-const lounge = "Lounge"
+const diningRoom = "dining room"
+const conservatory = "conservatory"
+const kitchen = "kitchen"
+const study = "study"
+const library = "library"
+const lounge = "lounge"
 const ballroom = "ballroom"
 const hall = "hall"
-const spa = "Spa"
-const livingRoom = "Living room"
-const observatory = "Observatory"
+const spa = "spa"
+const livingRoom = "living room"
+const observatory = "observatory"
 const theater = "theater"
-const guestHouse = "Guest House"
-const patio = "Patio"
-const billiardRoom = "Billiard room"
+const guestHouse = "guest House"
+const patio = "patio"
+const billiardRoom = "billiard room"
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
 
@@ -190,12 +190,12 @@ console.log (randomSelector);
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
-const killer = {
-  killerName:"",
-  weapon:"",
-  room:""
+const mystery = {
+  killer,
+  weapon,
+  room
 }
-console.log(killer)
+console.log(mystery)
 
 // FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
@@ -268,14 +268,15 @@ const pickRoom = () => {
 // FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
-const revealMystery = () => {
-  const randomSuspect = randomSelector (suspects)
-  const randomWeapon = randomSelector (weapons)
-  const randomRoom = randomSelector (rooms)
+//const revealMystery = () => {
+  //const randomSuspect = randomSelector (suspects)
+  //const randomWeapon = randomSelector (weapons)
+  //const randomRoom = randomSelector (rooms)
   
-  console.log(randomSuspect, randomWeapon, randomRoom);
-}
+  //console.log(randomSuspect, randomWeapon, randomRoom);
+//}
 
-document.getElementById("mystery").addEventListener("click", revealMystery)
-  //const revealMystery = () => {
-   theRevealMystery.innerHTML = `The murder was committed by ${mystery.killer.killerName}, in the ${mystery.room.roomName} with a ${mystery.weapon.weaponName}. `
+//document.getElementById("mystery").addEventListener("click", revealMystery)
+const revealMystery = () => {
+  const theRevealMystery = document.getElementById("mystery")
+   theRevealMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`}

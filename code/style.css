@@ -5,7 +5,7 @@ body {
   /*background-image: url(assets/cluedo.jpg);
   background-size: cover;
   background-repeat: no-repeat;*/
-
+  
 }
 
 p {
@@ -27,14 +27,15 @@ header img {
 
 }
 
-
 .cards {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  /*background: #ccc;**/
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  /*justify-content: space-around;*/
+/* justify-content: flex-start;*/
   align-items: center;
 }
 
@@ -46,6 +47,7 @@ header img {
   padding-top: 30px;
   border-radius: 16px;
   border: 2px solid white;
+  /*box-sizing: border-box;*/
 }
 
 .weapon-deck {
@@ -56,6 +58,7 @@ header img {
   padding-top: 30px;
   border-radius: 16px;
   border: 2px solid white;
+  /*box-sizing: border-box;*/
 }
 
 .room-deck {
@@ -66,6 +69,7 @@ header img {
   padding-top: 30px;
   border-radius: 16px;
   border: 2px solid white;
+  /*box-sizing: border-box;*/
 }
 
 button {
@@ -80,6 +84,12 @@ button {
 
 }
 
+.message {
+  width: 600px;
+  margin: 0 auto;
+  color: white;
+}
+
 footer {
 color: black;
 width: 100%;
@@ -90,4 +100,24 @@ text-align: center;
 }
 
 /**MEDIA QUERIES**/
+
+@media (min-width: 650px) and (max-width 1024px){
+
+  .cards {
+   justify-content: space-between;
+  }
+
+}
+
+@media (min-width: 1025px) {
+ 
+  .cards {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .message {
+    width: 80%;
+  }
+}
 
