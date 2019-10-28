@@ -10,6 +10,11 @@ font-family:'Alfa Slab One', cursive, Georgia;
 font-size: 50px;
 }
 
+h2{
+  text-align: center;
+    padding: 7px;
+}
+
 p {
   margin: 5px;
   font-weight: 300;
@@ -111,17 +116,18 @@ p {
   border-radius: 16px;
 }
 
-h2{
-  text-align: center;
-    background: darkgray
-}
+
 
 button {
-  padding: 8px 16px;
-  background: #FF0000;
+  padding: 12px 18px;
+  background: darkgray;
   border: none;
-  font-size: 20px;
+  font-size: 32px;
   border-radius: 8px;
   display: block;
   margin: 0 auto 50px auto;
+}
+
+button:hover{
+  text-decoration: underline;
 }

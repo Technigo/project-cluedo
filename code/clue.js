@@ -1,5 +1,3 @@
-// CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
@@ -66,99 +64,79 @@ const mrsWhite = {
   occupation: "Housekeeper"
 };
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS THE THE WEAPONS IF YOU LIKE.
-
 const rope = {
   name: "rope",
-  weight: 10,
-  color: "beige",
   image: "assets/rope.png"
 }
 
 const knife = {
   name: "knife",
-  weight: 90,
-  color: "burgundy",
   image: "assets/knife.png"
 }
 
 const candleStick = {
   name: "candlestick",
-  weight: 180,
-  color: "magenta",
   image: "assets/candlestick.png"
 }
 
 const dumbBell = {
   name: "dumbbell",
-  weight: 500,
-  color: "blue",
   image: "assets/dumbbell.png"
 }
 
 const poison = {
-  name: "poison",
-  weight: 5,
-  color: "green",
+  name: "drop of poison",
   image: "assets/poison.png"
 }
 
 const axe = {
   name: "axe",
-  weight: 400,
-  color: "green",
   image: "assets/axe.png"
 }
 
 const bat = {
   name: "bat",
-  weight: 120,
-  color: "green",
   image: "assets/bat.png"
 }
 
 const trophy = {
   name: "trophy",
-  weight: 180,
-  color: "yellow",
   image: "assets/trophy.png"
 }
 
 const pistol = {
   name: "pistol",
-  weight: 250,
-  color: "blue",
   image: "assets/pistol.png"
 };
 
 
 const diningRoom = {
-  name: "Dining room",
+  name: "dining room",
   image: "assets/diningroom.png"
 }
 
 const conservatory = {
-  name: "Conservatory",
+  name: "conservatory",
   image: "assets/conservatory.png"
 }
 
 const kitchen = {
-  name: "Kitchen",
+  name: "kitchen",
   image: "assets/kitchen.png"
 }
 
 const library = {
-  name: "Library",
+  name: "library",
   image: "assets/Library.png"
 }
 
 const billiardRoom = {
-  name: "Billiard room",
+  name: "billiard room",
   image: "assets/billiardRoom.png"
 }
 
 const ballRoom = {
-  name: "Ballroom",
+  name: "ballroom",
   image: "assets/ballroom.png"
 }
 
@@ -168,12 +146,12 @@ const hall = {
 }
 
 const spa = {
-  name: "Spa",
+  name: "spa",
   image: "assets/spa.png"
 }
 
 const livingRoom = {
-  name: "Livingroom",
+  name: "livingroom",
   image: "assets/livingroom.png"
 };
 
@@ -212,54 +190,20 @@ const rooms = [
   livingRoom
 ];
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-
-// Denna kod har de gett oss, den ser ut så här. 
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 };
 
-// // Här evokar jag funktionen och sätter in varje array som jag vill dra igenom. 
-// randomSelector(suspects);
-// randomSelector(weapons);
-// randomSelector(rooms);
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
-// Denna ska vara tom till en början, den heter  mysery pga info nedan.
-// objekt har alltid = iunnan fiskmås
 const mystery = {
 }
 
-// Detta kallades handlePickIngredients under föreläsningen?
-
-// const secret { }
-// const mysteryKeeper = () => {
-//   const pickKiller = randomSelector(suspects)
-//   const pickWeapon = randomSelector(weapons)
-//   const pickRoom = randomSelector(rooms)
-
-//   secret.suspects = pickKiller;
-//   secret.weapons = pickWeapon;
-//   secret.rooms = pickRooms;
-// };
-
-// FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
-// This function will be invoked when you click on the killer card.
-
-// Denna är borta pga funktionen onclick skapas redan på html
-// document.getElementById().onclick = mysteryKeeper
 
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-  // .killer fanns inte i mystery inann, men skapas här. 
-  mystery.killer = randomSelector(suspects);
-  // mysteryKeeper.push(mystery.Killer); Behövs ej för dne pushas ej, skpaas ovan
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
+  mystery.killer = randomSelector(suspects);
+
   const theKiller = document.getElementById("killer")
-  // id i javasrcirpt, ej class. mer unikt.
   const theKillerImage = document.getElementById("killerImage")
   const theKillerTitel = document.getElementById("killerTitel")
   const theKillerName = document.getElementById("killerName")
@@ -267,14 +211,12 @@ const pickKiller = () => {
   const theKillerOccupation = document.getElementById("killerOccupation")
   const theKillerDescription = document.getElementById("killerDescription")
 
-  // Denna funktion sätter bkagrundsfärg på myster killer, dvs den som visas
   theKiller.style.background = "beige"
   theKillerTitel.style.background = mystery.killer.color
   theKillerName.style.background = mystery.killer.color
   theKillerAge.style.background = mystery.killer.color
   theKillerOccupation.style.background = mystery.killer.nameCol
   theKillerDescription.style.background = mystery.killer.nameCol
-  // Denna funkton "går in i html" och "skriver om" för att visa namnet på killern, som har skapats/sparats i mystery-objektet. 
   theKillerImage.setAttribute("src", mystery.killer.image)
 
   theKillerName.innerHTML =
@@ -290,9 +232,6 @@ const pickKiller = () => {
     mystery.killer.description
 }
 
-// pickKiller() Ska ej vara med, för att den är evokad i html redan. 
-
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
 
@@ -300,7 +239,6 @@ const pickWeapon = () => {
   const theWeaponHolder = document.getElementById("weaponHolder")
   const theWeaponName = document.getElementById("weaponName")
   const theWeaponImage = document.getElementById("weaponImage")
-  // const theWeaponWeight = document.getElementById("weaponWeight")
 
   theWeapon.style.background = "beige"
   theWeaponHolder.style.background = "silver"
@@ -327,15 +265,12 @@ const pickRoom = () => {
 }
 
 
-// CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
-
 const revealMystery = () => {
   let theTruth = document.getElementById("mystery")
 
   if (mystery.killer && mystery.weapon && mystery.room) {
     theTruth.innerHTML =
-      `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+      `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`
   }
   else {
     theTruth.innerHTML =
