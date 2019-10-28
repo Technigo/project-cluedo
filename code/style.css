@@ -44,6 +44,16 @@ p {
   padding: 7px;
 }
 
+#weaponHolder{
+  margin:0; 
+  padding: 7px;
+}
+
+#weaponName{
+  font-size: 16px;
+  margin: 0;
+}
+
 .cards {
   margin: 50px auto;
   width: 85%;

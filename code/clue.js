@@ -71,47 +71,56 @@ const mrsWhite = {
 const rope = {
   name: "rope",
   weight: 10,
-  color: "beige"
+  color: "beige",
+  image: "assets/rope.png"
 }
 const knife = {
   name: "knife",
   weight: 90,
-  color: "burgundy"
+  color: "burgundy",
+  image: "assets/knife.png"
 }
 const candleStick = {
   name: "candlestick",
   weight: 180,
-  color: "magenta"
+  color: "magenta",
+  image: "assets/candlestick.png"
 }
 const dumbBell = {
   name: "dumbbell",
   weight: 500,
-  color: "blue"
+  color: "blue",
+  image: "assets/dumbbell.png"
 }
 const poison = {
   name: "poison",
   weight: 5,
-  color: "green"
+  color: "green",
+  image: "assets/poison.png"
 }
 const axe = {
   name: "axe",
   weight: 400,
-  color: "green"
+  color: "green",
+  image: "assets/axe.png"
 }
 const bat = {
   name: "bat",
   weight: 120,
-  color: "green"
+  color: "green",
+  image: "assets/bat.png"
 }
 const trophy = {
   name: "trophy",
   weight: 180,
-  color: "yellow"
+  color: "yellow",
+  image: "assets/trophy.png"
 }
 const pistol = {
   name: "pistol",
   weight: 250,
-  color: "blue"
+  color: "blue",
+  image: "assets/pistol.png"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -237,16 +246,18 @@ const pickKiller = () => {
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
-
   mystery.weapon = randomSelector(weapons);
 
   const theWeapon = document.getElementById("weapon")
-
+  const theWeaponHolder = document.getElementById("weaponHolder")
   const theWeaponName = document.getElementById("weaponName")
+  const theWeaponImage = document.getElementById("weaponImage")
+  // const theWeaponWeight = document.getElementById("weaponWeight")
 
-  const theWeaponWeight = document.getElementById("weaponWeight")
-
-  theWeapon.style.background = mystery.weapon.color
+  theWeapon.style.background = "beige"
+  theWeaponHolder.style.background = "silver"
+  theWeaponName.style.background = "silver"
+  theWeaponImage.setAttribute("src", mystery.weapon.image)
   theWeaponName.innerHTML =
     mystery.weapon.name
 }
