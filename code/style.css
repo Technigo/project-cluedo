@@ -1,12 +1,13 @@
 body {
   margin: 0;
   font-family: "Staatliches", cursive;
+  background-color: whitesmoke;
 }
 
 p {
   margin: 1px;
   font-weight: 300;
-  background-color: #fff;
+  background-color: lightgray;
 }
 
 .headtext {
@@ -25,6 +26,7 @@ p {
   background-size: cover;
   background-position: bottom;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -38,6 +40,17 @@ p {
   padding-top: 30px;
   border-radius: 16px;
   text-align: center;
+}
+
+.deck p {
+  background: transparent;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.cardhead {
+  color: lightgray;
 }
 
 .deck:hover {
@@ -80,7 +93,7 @@ button:hover {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 /* Queries for mobile and pads */
@@ -92,6 +105,11 @@ button:hover {
 
   .cards {
     background-image: none;
+    height: auto;
+  }
+
+  .deck {
+    height: 350px;
   }
 
   .reveal {
@@ -102,9 +120,5 @@ button:hover {
   .headtext {
     background-color: black;
     color: white;
-  }
-
-  button {
-    top: 40px;
   }
 }
