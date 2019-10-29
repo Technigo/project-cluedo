@@ -208,5 +208,26 @@ document.getElementById("killer").addEventListener("click", pickKiller);
 document.getElementById("room").addEventListener("click", pickRoom);
 document.getElementById("weapon").addEventListener("click", pickWeapon);
 
+
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+//tried the stretch global, couldn't make it work
+
+/*const revealMystery = () => {
+  const mysteryAnswer = document.getElementById("mystery")
+  if (!mystery.killer || !mystery.room || !mystery.weapon.name) {
+    mystery.Answer.innerHTML = " No mystery is yet to be revealed"
+  }
+  else {
+    mystery.Answer.innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}
+    in the ${mystery.room} with a ${mystery.weapon.name}`
+  }
+} */
+
+
+const revealMystery = () => {
+ document.getElementById("mystery").innerHTML = `The murder was committed by ${mystery.killer.firstName} 
+ ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`;
+} ;
+
