@@ -5,7 +5,7 @@ const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
   color: "green",
-  description: "He has a lot of connections",
+  description: "Has a lot of connections",
   age: 45,
   image: "assets/green.png",
   occupation: "Entrepreneur"
@@ -15,7 +15,7 @@ const mrPlum = {
   firstName: "Victor",
   lastName: "Plum",
   color: "#5c0470",
-  description: "Knowing a lot about chemistry and Egypt",
+  description: "Knows a lot about chemistry and Egypt",
   age: 36,
   image: "assets/plum.png",
   occupation: "Cycietrist"
@@ -25,7 +25,7 @@ const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
   color: "red",
-  description: "Being very cunning",
+  description: "Is very cunning and persuasive",
   age: 25,
   image: "assets/scarlet.png",
   occupation: "Actress"
@@ -76,42 +76,42 @@ const knife = {
 };
 
 const candlestick = {
-  name: "Candlestick",
+  name: "candlestick",
   //weight: 85,
   description:"For impulsive kills"
 };
 
 const dumbbell = {
-  name: "Dumbbell",
+  name: "cumbbell",
   //weight: 112,
   description:"It takes strength"
 };
 
 const poison = {
-  name: "Poison",
+  name: "poison",
   //weight: 10,
   description:"Effective but slow"
 };
 
 const axe = {
-  name: "Axe",
+  name: "axe",
   //weight: 10,
   description:"Split in two for best effect"
 };
 
 const bat = {
-  name: "Bat",
+  name: "bat",
   //weight: 10,
   description:"A good swing gets the job done"
 };
 const trophy = {
-  name: "Trophy",
+  name: "trophy",
   //weight: 210,
   description: "For champions only"
 };
 
 const pistol = {
-  name: "Pistol",
+  name: "pistol",
  // weight: 150,
   description: "Everyone can pull the trigger"
 };
@@ -227,7 +227,7 @@ const pickKiller = () => {
   const theKillerDescription = document.getElementById("killerDescription")
    
   theKiller.style.background = mystery.killer.color
-   theKillerDescription.innerHTML = `Known for: ${mystery.killer.description}`
+   theKillerDescription.innerHTML = mystery.killer.description
 
 }
 

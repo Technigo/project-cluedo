@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   background: #095e96;
+  position: relative;
   /*background-image: url(assets/cluedo.jpg);
   background-size: cover;
   background-repeat: no-repeat;*/
@@ -16,6 +17,7 @@ p {
 
 header img {
  width: 100%;
+ 
 }
 
 .whiteborder {
@@ -101,7 +103,7 @@ text-align: center;
 
 /**MEDIA QUERIES**/
 
-@media (min-width: 650px) and (max-width 1024px){
+@media (min-width: 650px) and (max-width: 1024px){
 
   .cards {
    justify-content: space-between;
