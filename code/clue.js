@@ -179,7 +179,7 @@ const pickKiller = () => {
   const theKillerAge = document.getElementById("killerAge")
   const theKillerOccupation = document.getElementById("killerOccupation")
   const theKillerImage = document.getElementById("killerImage")
-  const theKillerDescripton = document.getElementById("killerDescription")
+  const theKillerDescription = document.getElementById("killerDescription")
 
   theKiller.style.background = mystery.killer.color
   theKillerName.innerHTML =
@@ -187,7 +187,7 @@ const pickKiller = () => {
   theKillerAge.innerHTML = mystery.killer.age
   theKillerOccupation.innerHTML = mystery.killer.occupation
   theKillerImage.src = mystery.killer.image
-  theKillerDescripton = ""
+  theKillerDescription = ""
 
 }
 
