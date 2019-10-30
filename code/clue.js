@@ -73,58 +73,70 @@ const suspects = [
 
 const weapons = [
 
-    {
+    /* {
         name: "rope",
         weight: 8,
         strengh: 4,
-    },
+    }, */
 
     {
         name: "knife",
         weight: 1,
         strengh: 6,
+        image: "assets/knife.png",
+        color: "#171429",
     },
 
-    {
-        name: "candlestick",
-        weight: 3,
-        strengh: 3,
-    },
+    /*  {
+         name: "candlestick",
+         weight: 3,
+         strengh: 3,
+     }, */
 
-    {
+    /* {
         name: "dumbbell",
         weight: 6,
         strengh: 5,
-    },
+    }, */
 
     {
         name: "poison",
         weight: 0,
         strengh: 10,
+        image: "assets/poison.png",
+        color: "white",
     },
 
     {
         name: "axe",
         weight: 3,
         strengh: 8,
+        image: "assets/axe.png",
+        color: "#0C352F",
     },
 
     {
         name: "bat",
         weight: 1,
         strengh: 5,
+        image: "assets/bat.png",
+        color: "#CEA259",
     },
 
     {
         name: "trophy",
         weight: 4,
         strengh: 6,
+        image: "assets/trophy.png",
+        color: "#681915",
     },
 
     {
         name: "pistol",
         weight: 1,
         strengh: 9,
+        image: "assets/pistol.png",
+        color: "#3A2007",
     }
 ];
 
@@ -212,10 +224,14 @@ const pickWeapon = () => {
     mystery.weapon = randomSelector(weapons)
 
     const theWeapon = document.getElementById("weaponName")
+        /*  theWeapon.style.background = mystery.weapon.color */
     theWeapon.innerHTML = mystery.weapon.name
 
-    const theWeaponWeight = document.getElementById("weaponWeight")
-    theWeaponWeight.innerHTML = mystery.weapon.weight
+    /* const theWeaponWeight = document.getElementById("weaponWeight")
+    theWeaponWeight.innerHTML = mystery.weapon.weight */
+
+    const theWeaponImage = document.getElementById("weaponImage")
+    theWeaponImage.src = mystery.weapon.image
 }
 
 const pickRoom = () => {
