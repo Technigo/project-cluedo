@@ -15,7 +15,7 @@ body {
 }
 
 body::after {
-  background-image:url("assets/background.jpg");
+  background-image: url("assets/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -41,7 +41,8 @@ p {
   flex: auto;
 }
 
-header, footer {
+header,
+footer {
   background-color: rgba(0, 0, 0, 0.712);
   color: rgb(189, 189, 189);
   height: 80px;
@@ -65,8 +66,11 @@ header h1 {
   justify-content: space-around;
   align-items: center;
 }
-.killer-deck, .weapon-deck, .room-deck {
-  background-image:url("assets/card.png");
+
+.killer-deck,
+.weapon-deck,
+.room-deck {
+  background-image: url("assets/card.png");
   background-repeat: no-repeat;
   background-size: cover;
   width: 280px;
@@ -80,21 +84,27 @@ header h1 {
   position: relative;
 }
 
-.killer-deck img, .weapon-deck img {
+.killer-deck img,
+.weapon-deck img {
   align-self: center;
 }
 
-#killerTitle, #weaponTitle {
+#killerTitle,
+#weaponTitle {
   margin-top: -200px;
 }
+
 #roomTitle {
   margin-top: -300px;
 }
 
-.killer-deck:hover, .weapon-deck:hover, .room-deck:hover {
+.killer-deck:hover,
+.weapon-deck:hover,
+.room-deck:hover {
   outline: rgba(220, 20, 60, 0.666) 5px solid;
   outline-offset: -5px;
 }
+
 button {
   padding: 8px 16px;
   background: crimson;
@@ -123,6 +133,7 @@ button:active {
 .controls {
   text-align: center;
 }
+
 #mystery {
   max-width: 75%;
   display: inline-block;
@@ -132,4 +143,8 @@ button:active {
   margin-top: 20px;
   padding: 0px 40px;
   border-radius: 90px;
+}
+
+footer {
+  margin: 0px;
 }
