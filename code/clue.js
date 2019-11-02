@@ -6,7 +6,7 @@ const mrGreen = {
   color: "green",
   description: "He has a lot of connections",
   age: 45,
-  image: "assets/green.png",
+  image: "./assets/green.png",
   occupation: "Entrepreneur"
 }
 
@@ -16,7 +16,7 @@ const profPlum = {
   color: "plum",
   description: "He has a lot of connections",
   age: 51,
-  image: "assets/plum.png",
+  image: "./assets/plum.png",
   occupation: "Professor"
 }
 
@@ -26,7 +26,7 @@ const missScarlet = {
   color: "red",
   description: "She has a lot of connections",
   age: 29,
-  image: "assets/scarlet.png",
+  image: "./assets/scarlet.png",
   occupation: "Headchef"
 }
 
@@ -36,7 +36,7 @@ const mrsPeacock = {
   color: "blue",
   description: "She has a lot of connections",
   age: 40,
-  image: "assets/peacock.png",
+  image: "./assets/peacock.png",
   occupation: "Owner of a Zoo"
 }
 
@@ -46,7 +46,7 @@ const mrMustard = {
   color: "yellow",
   description: "He has a lot of connections",
   age: 63,
-  image: "assets/mustard.png",
+  image: "./assets/mustard.png",
   occupation: "Colonel"
 }
 
@@ -56,7 +56,7 @@ const mrsWhite = {
   color: "white",
   description: "She has a lot of connections",
   age: 67,
-  image: "assets/white.png",
+  image: "./assets/white.png",
   occupation: "CEO"
 }
 
