@@ -77,20 +77,8 @@ p {
   transition: 0.3s ease-out;
 }
 
-#killer {
+#killer, #times, #room, #weapon{
   background: #000;
-}
-
-#weapon {
-  background: black;
-}
-
-#room {
-  background: black;
-}
-
-#times {
-  background: black;;
 }
 
 button {
