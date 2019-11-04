@@ -89,58 +89,59 @@ const suspects = [
 const weapons = [
   {
     name: "rope",
-    weight: 10,
-    special: "Thick rope around 2 meters in length"
+    weight: 2,
+    type: "Strangulation",
+    image: "assets/rope.png"
   },
   {
     name: "knife",
-    weight: 7,
-    special: "A military knife from the 2nd world war"
+    weight: 1,
+    type: "Blade",
+    image: "assets/knife.png"
   },
   {
     name: "candlestick",
-    weight: 9,
-    special: "An old four-armed candelstick in copper"
+    weight: 3,
+    type: "Blunt",
+    image: "assets/candlestick.png"
   },
   {
     name: "dumbbell",
-    weight: 12,
-    special: "Not really a heavy wheight but still a dumbell"
+    weight: 2,
+    type: "Blunt",
+    image: "assets/dumbbell.png"
   },
   {
     name: "posion",
-    weight: 1,
-    special: "Unokwn substanse in a bottle with a scull on the label"
+    weight: 0.1,
+    type: "Cunning",
+    image: "assets/poison.png"
   },
   {
     name: "axe",
-    weight: 13,
-    special: "A medival axe that probably does best on the wall"
+    weight: 8,
+    type: "Blade",
+    image: "assets/axe.png"
   },
   {
     name: "bat",
-    weight: 11,
-    special: "An old baseball bat signed by Jackie Robinson"
+    weight: 2,
+    type: "Blunt",
+    image: "assets/bat.png"
   },
   {
     name: "trophy",
-    weight: 15,
-    special: "A trophy award for best in show"
+    weight: 2,
+    type: "Blunt",
+    image: "assets/trophy.png"
   },
   {
     name: "pistol",
-    weight: 9,
-    special: "9mm beretta with a silencer"
+    weight: 0.7,
+    type: "Projectile",
+    image: "assets/pistol.png"
   }
 ];
-
-// suspects.forEach(suspects => {
-//   console.log(`${suspects.firstName}`);
-// });
-
-// weapons.forEach(weapons => {
-//   console.log(`${weapons.name}`);
-// });
 
 const rooms = [
   "Dinning Room",
@@ -160,20 +161,11 @@ const rooms = [
   "Patio"
 ];
 
-// rooms.forEach(rooms => {
-//   console.log(`${rooms}`);
-// });
-
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
-
-// FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
@@ -199,34 +191,31 @@ const pickKiller = () => {
 };
 
 const pickWeapon = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons);
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
-
   const theWeaponName = document.getElementById("weaponName");
+  const theWeaponImage = document.getElementById("weaponImage");
   const theWeaponWeight = document.getElementById("weaponWeight");
-  const theWeaponSpec = document.getElementById("weaponSpec");
 
-  // theKiller.style.background = mystery.killer.color;
   theWeaponName.innerHTML = mystery.weapon.name;
-  theWeaponWeight.innerHTML = mystery.weapon.weight;
-  theWeaponSpec.innerHTML = mystery.weapon.special;
+  theWeaponWeight.innerHTML = mystery.weapon.weight + "kg";
+  theWeaponImage.src = mystery.weapon.image;
 };
 
 const pickRoom = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.room = randomSelector(rooms);
-
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
 
   const theRoom = document.getElementById("roomName");
 
-  // theKiller.style.background = mystery.killer.color;
   theRoom.innerHTML = mystery.room;
 };
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
-
-// CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+const revealMystery = () => {
+  if (!mystery.killer || !mystery.weapon || !mystery.room) {
+    document.getElementById("mystery").innerHTML =
+      "You have to find the clues to reveal the mystery....";
+  } else
+    document.getElementById(
+      "mystery"
+    ).innerHTML = `It was ${mystery.killer.alias}, also known as ${mystery.killer.firstName} ${mystery.killer.lastName}, the ${mystery.killer.occupation} who did it! Using a ${mystery.weapon.name} wich is a ${mystery.weapon.type} weapon and weighs ${mystery.weapon.weight}kg. The gruesome murder took place in the ${mystery.room} `;
+};
