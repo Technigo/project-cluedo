@@ -322,6 +322,7 @@ const revealMystery = () => {
   }
   else {
     mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name}, ${mystery.time} with ${mystery.weapon.name}.`
+    document.getElementById("reload").style.display = "block"
   }
 
 }

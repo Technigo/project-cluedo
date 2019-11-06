@@ -65,14 +65,14 @@ p{
   box-shadow: 4px 4px 10px 2px gold inset;
   cursor: pointer;
 }
-.reload {
+#reload {
+  display:none;
   padding: 8px 16px;
   background:skyblue;
   color:navy;
   border: 2px solid navy;
   font-size: 20px;
   border-radius: 8px;
-  display: block;
   margin: 20px auto;
   box-shadow: 4px 4px 16px 4px yellowgreen inset;
   cursor: pointer;
@@ -85,11 +85,11 @@ img{
   border-radius: 20px;
 }
 footer{
-display:flex;
-justify-content: space-around;
-font-size: 10px;
-background: none;
-align-items: center;
+  display:flex;
+  justify-content: space-around;
+  font-size: 10px;
+  background: none;
+  align-items: center;
 }
 footer img {
   width: 70px;
