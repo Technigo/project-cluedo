@@ -1,8 +1,12 @@
-`PROJECT 5`
+Project 5, build a Cluedo-game, made during my Technigo Bootcamp 2019. 
 
-This project is a part of my Technigo Bootcamp. 
+## 1. What is this?
+This project is to build a piece of the Cluedo board game
 
-This project is to build a piece of the Cluedo board game with Javascript and to use arrays,objects and diffrent functions together with some html and css to reveal a murder mystery. 
+## 2. What did I do?
+I have used Javascript and arrays,objects and different functions together with some html and css to build this game and to finally reveal a murder mystery when submitting the button. If I will have more time on this project I would definetely put more time on the styling and to make it responsive, it is now desktop first and it definetely needs some polishing. 
 
-This week's been all about Javascript, learning about arrays and objects. We're going to hook that up with some html and css in this project!
+## 3. Where can you see it in action?
 
+The deployed project can be found on netlify:
+https://angiescluedogame.netlify.com/
