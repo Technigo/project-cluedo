@@ -1,7 +1,7 @@
-## `PROJECT 5`-  Cluedo
-Link to project: https://project-cluedo-linda.netlify.com/
+## PROJECT 5 -  Cluedo
 
 Project week 5 @ Technigo Bootcamp 2019 was to create a piece from the classic board game Cluedo.
+Link to project: https://project-cluedo-linda.netlify.com/
 
 The user (who is the game leader and the one that will know all about the murder) should be able to click on three decks of cards, to randomly get a character, a weapon and a room. Then there should also be a button to reveal the mystery.
 
