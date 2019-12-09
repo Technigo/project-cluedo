@@ -1,4 +1,4 @@
-`PROJECT 5`-  Cluedo
+## `PROJECT 5`-  Cluedo
 Link to project: https://project-cluedo-linda.netlify.com/
 
 Project week 5 @ Technigo Bootcamp 2019 was to create a piece from the classic board game Cluedo.
