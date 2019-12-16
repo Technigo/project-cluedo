@@ -15,7 +15,6 @@ header h1 {
 h2 {
     text-align: center;
     font-size: 30px;
-
 }
 
 p {
@@ -70,13 +69,14 @@ p {
 .room-deck p,
 .weapon-deck p {
     text-align: start;
-    padding-left: 10px;
+    padding: 5px 0px 0px 10px;
+    font-size: 18px;
 }
 
 .text {
     padding-top: 55px;
     font-family: 'Playball', cursive;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .killer-deck:hover,
@@ -146,4 +146,61 @@ footer {
         width: 70%;
         transform: translateY(8vw);
     }
+}
+
+/* Desktop */
+@media screen and (min-width: 1800px)  {
+  .cards {
+    margin: 50px auto;
+    width: 90%;
+    background: inherit;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.frame {
+  margin: 50px auto;
+  border: 18px solid #222;
+  height: 575px;
+  width: 25%;
+  -webkit-box-shadow: px 2px 3px 1px rgba(0, 0, 0, .5);
+  box-shadow: 0px 3px 10px 4px rgba(0, 0, 0, .3);
+}
+
+.border {
+  background: white;
+  height: 100%;
+  width: 100%;
+  -webkit-box-shadow: inset 10px 10px 10px 4px rgba(0, 0, 0, .4);
+  box-shadow: inset 3px 7px 2px 5px rgba(0, 0, 0, .4);
+  text-align: center;
+}
+
+.killer-deck,
+.room-deck,
+.weapon-deck {
+  width: 70%;
+  max-height: 400px;
+  margin: auto;
+  transform: translateY(3vw);
+  -webkit-box-shadow: inset 10px 10px 10px 4px rgba(0, 0, 0, .6);
+  box-shadow: inset 3px 7px 2px 5px rgba(0, 0, 0, .1);
+  border: 2px inset #c9c9c9;
+  text-align: center;
+  padding-top: 30px;
+  background: rgb(96, 93, 93);
+}
+.text {
+  padding-top: 95px;
+  font-family: 'Playball', cursive;
+  font-size: 40px;
+}
+.killer-deck p,
+.room-deck p,
+.weapon-deck p {
+    text-align: start;
+    padding-left: 10px;
+    font-size: 24px;
+}
 }
