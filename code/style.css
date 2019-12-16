@@ -7,13 +7,15 @@ body {
 
 header h1 {
     font-family: 'Anton', sans-serif;
-    font-size: 7em;
+    font-size: 90px;
     margin: auto;
     text-align: center;
 }
 
 h2 {
     text-align: center;
+    font-size: 30px;
+
 }
 
 p {
@@ -25,7 +27,6 @@ p {
 .cards {
     margin: 50px auto;
     width: 90%;
-    height: 600px;
     background: inherit;
     display: flex;
     justify-content: space-around;
@@ -122,6 +123,7 @@ button:hover {
 
 footer {
     margin-top: 20px;
+    font-size: 20px;
     text-align: center;
     padding: 40px 5px;
     background: rgba(26, 76, 59, 0.331);
