@@ -1,10 +1,10 @@
-`PROJECT 5` My fourth Technigo Boot Camp Project
+**A piece of the famous board game Cluedo.**
 
+https://somekindofcluedo.netlify.com/
+Week 5 of Technigo's Bootcamp
 
-**This week’s project is to create a piece of the famous board game Cluedo.**
+Working with objects and arrays, and also manipulate the DOM with JavaScript. The assignment was to let the user be able to click on three decks of cards, to randomly get a character, a weapon and a room. And then create a button to reveal the mystery.
 
+## Design 🎨
 
-The user (who is the game leader and the one that will know all about the murder) should be able to click on three decks of cards, to randomly get a character, a weapon and a room. Then there should also be a button to reveal the mystery.  
-
-The focus on this project is to practice objects and arrays and also to manipulate the DOM with JavaScript.
-
+The design of the page was up to me to decide, so I decided to go for a style that is more cute and retro, than scary.

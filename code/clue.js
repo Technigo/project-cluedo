@@ -193,7 +193,7 @@ const rooms = [
   }
 ]
 
-const pickRandom = (array) => {
+const pickRandom = array => {
   const randomIndex = Math.floor(Math.random() * array.length)
   return array[randomIndex]
 }
@@ -215,7 +215,8 @@ const pickKiller = () => {
   const theKillerDescription = document.getElementById("killerDescription")
 
   theKiller.style.background = mystery.killer.color
-  theKillerName.innerHTML = mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerName.innerHTML =
+    mystery.killer.firstName + " " + mystery.killer.lastName
   theKillerImage.src = mystery.killer.image
   theKillerAge.innerHTML = mystery.killer.age
   theKillerOccupation.innerHTML = mystery.killer.occupation
@@ -257,19 +258,33 @@ const pickRoom = () => {
 }
 
 const revealMystery = () => {
-  document.getElementById("mystery").innerHTML = `The murder was committed by ${mystery.killer.displayName}, in the ${mystery.room.name.toLowerCase()} with the ${mystery.weapon.name.toLowerCase()}.`
+  if (
+    mystery.killer === undefined ||
+    mystery.room === undefined ||
+    mystery.weapon === undefined
+  ) {
+    document.getElementById(
+      "mystery"
+    ).innerHTML = `No mystery has been revealed yet`
+  } else {
+    document.getElementById(
+      "mystery"
+    ).innerHTML = `The murder was committed by ${
+      mystery.killer.displayName
+    }, in the ${mystery.room.name.toLowerCase()} with the ${mystery.weapon.name.toLowerCase()}.`
+  }
 
   showTextHideButton()
 }
 
 const showTextHideButton = () => {
-  document.getElementById("mystery").style.display = null;
-  document.getElementById("reveal-button").style.display = "none";
+  document.getElementById("mystery").style.display = null
+  document.getElementById("reveal-button").style.display = "none"
 }
 
 const hideTextShowButton = () => {
-  document.getElementById("mystery").style.display = "none";
-  document.getElementById("reveal-button").style.display = null;
+  document.getElementById("mystery").style.display = "none"
+  document.getElementById("reveal-button").style.display = null
 }
 
 suspects.forEach(suspect => {

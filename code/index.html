@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Clue</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link href="https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <title>Clue</title>
-</head>
+  <body>
+    <section class="cards">
+      <div class="killer-deck" id="killer" onclick="pickKiller()">
+        <h2>KILLER</h2>
+        <img id="killerImage" src="" height="250" />
+        <p id="killerName"></p>
+        <p id="killerAge"></p>
+        <p id="killerOccupation"></p>
+        <p id="killerDescription"></p>
+      </div>
+      <div class="room-deck" id="room" onclick="pickRoom()">
+        <h2>ROOM</h2>
+        <img id="roomImage" src="" height="280" />
+        <p id="roomName"></p>
+        <p id="roomFloor"></p>
+      </div>
+      <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
+        <h2>WEAPON</h2>
+        <img id="weaponImage" src="" height="280" />
+        <p id="weaponName"></p>
+        <p id="weaponWeight"></p>
+        <p id="weaponColor"></p>
+      </div>
+    </section>
 
-<body>
-  <section class="cards">
-    <div class="killer-deck" id="killer" onclick="pickKiller()">
-      <h2>KILLER</h2>
-      <img id="killerImage" src="" height="250" />
-      <p id="killerName"></p>
-      <p id="killerAge"></p>
-      <p id="killerOccupation"></p>
-      <p id="killerDescription"></p>
-    </div>
-    <div class="weapon-deck" id="weapon" onclick="pickWeapon()">
-      <h2>WEAPON</h2>
-      <img id="weaponImage" src="" height="280" />
-      <p id="weaponName"></p>
-      <p id="weaponWeight"></p>
-      <p id="weaponColor"></p>
-    </div>
-    <div class="room-deck" id="room" onclick="pickRoom()">
-      <h2>ROOM</h2>
-      <img id="roomImage" src="" height="280">
-      <p id="roomName"></p>
-      <p id="roomFloor"></p>
-    </div>
-  </section>
+    <h1 id="mystery"></h1>
+    <button id="reveal-button" onclick="revealMystery()">
+      REVEAL THE CRIME
+    </button>
 
-  <h1 id="mystery"></h1>
-  <button id="reveal-button" onclick="revealMystery()">REVEAL THE CRIME</button>
+    <footer>
+      • Miss Wærn 2019 •
+    </footer>
 
-  <footer>
-    • Miss Wærn 2019 •
-  </footer>
-
-  <script src="clue.js"></script>
-</body>
-
+    <script src="clue.js"></script>
+  </body>
 </html>
