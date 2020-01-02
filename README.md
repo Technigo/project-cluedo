@@ -2,40 +2,10 @@
 
 # Build a piece of Cluedo
 
-** This project is to create a piece of the famous board game [Cluedo](https://en.wikipedia.org/wiki/Cluedo).**
+** In this project I've created a piece of the famous board game
 
-**The suspects**
- Mr Green - Jacob Green
- Professor Plum - Victor Plum
- Miss Scarlet - Cassandra Scarlet
- Mrs Peacock - Eleanor Peacock
- Colonel Mustard - Jack Mustard
- Mrs White - Mrs White
- 
-**The Weapons**
-Rope
-Knife
-Candlestick
-Dumbbell
-Poison
-Axe
-Bat
-Trophy
-Pistol
+It's built with JavaScript, CSS and HTML. 
 
-**The Rooms**
-Dinning Room
-Conservatory
-Kitchen
-Study
-Library
-Billiard Room
-Lounge
-Ballroom
-Hall
-Spa
-Living Room
-Observatory
-Theater
-Guest House
-Patio
+Gathering the information the user put in to get a response with all elements included.
+
+See it: https://clue-sara.netlify.com/
