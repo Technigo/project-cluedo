@@ -15,9 +15,9 @@ These were some suggestions for stretch goals and a deep-dive in this project:
 
 ## 2. What did I do?
 
-For this project my plan was to build the entire structure on html first and only then I've styled it. 
-I've used flexbox as asked for this assignment to layout the webpage and CSS media queries to control the webpage structure on different devices.
-That become hard to control after a while, so in the future I would start by building blocks and style them after they are done. 
+For this project I started by building the objects and grouping them into arrays so they could be easily randomized. It was built a function to pick a random object when clicking a card, then it was the DOM would show the data for that specific object. 
+It was also introduced some type of validation on the button if there was some card that wasn't flipped yet.
+The website is responsive.
 
 ## 3. Where can you see it in action?
 
