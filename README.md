@@ -21,4 +21,4 @@ The website is responsive.
 
 ## 3. Where can you see it in action?
 
-You can see the project [here](https://github.com/tavferreira/project-cluedo).
+You can see the project [here](https://project-cluedo-tiago.netlify.com/).
