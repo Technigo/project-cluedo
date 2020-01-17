@@ -62,7 +62,7 @@ const spa = new Room("spa", "assets/spa.png")
 const livingRoom = new Room("living room", "assets/livingroom.png")
 const observatory = new Room("observatory", "assets/observatory.png")
 const theater = new Room("theater", "assets/theater.png")
-const guesttHouse = new Room("guest house", "assets/guesthouse.png")
+const guestHouse = new Room("guest house", "assets/guesthouse.png")
 const patio = new Room("patio", "assets/patio.png")
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS.
@@ -102,7 +102,7 @@ const rooms = [
   livingRoom,
   observatory,
   theater,
-  guesttHouse,
+  guestHouse,
   patio
 ]
 
