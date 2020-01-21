@@ -7,9 +7,9 @@ The user selects 3 different cards and gets random instructions from the cards. 
 
 # Includes
 It's built with:
-JavaScript ES6
-CSS 
-HTML5 
+* JavaScript ES6
+* CSS 
+* HTML5 
 
 
 
