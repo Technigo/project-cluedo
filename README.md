@@ -2,10 +2,17 @@
 
 # Build a piece of Cluedo
 
-** In this project I've created a piece of the famous board game
+In this project I've created a piece of the famous board game. 
+The user selects 3 different cards and gets random instructions from the cards. The information then gets presented to the user depending on what they recived on the cards. 
 
-It's built with JavaScript, CSS and HTML. 
+# Includes
+It's built with:
+JavaScript ES6
+CSS 
+HTML5 
 
-Gathering the information the user put in to get a response with all elements included.
 
-See it: https://clue-sara.netlify.com/
+
+Se more: https://clue-sara.netlify.com/
+
+
