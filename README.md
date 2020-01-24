@@ -1,17 +1,23 @@
 # Cluedo Mystery Randomizer
 
-A site where a user can be able to click on three decks of cards, to randomly get a character, a weapon and a room for the game Cluedo. When all three cards are picked the mystery can be revealed. One of my projects during Technigo frontend boot camp.
+A site where a user can be able to click on three decks of cards, to randomly get a character, a weapon and a room for the game Cluedo. When all three cards are picked the mystery can be revealed.
+
+## See the randomizer in action
+
+[Cluedo Mystery Randomizer](https://project5-cluedo-emmie.netlify.com/)
+
+## Tech and techniques
+
+- HTML
+- JavaScript
+- CSS
+- Flexbox
 
 ## What did I do?
 
 I started with a sketch for my design. Then I created the objects I needed to store information for each card type.
 I connected functions for picking a suspect, weapon and murderer to the cards. I also made a function for revealing the mystery. The mystery will only be revealed if he user has picked one card of each type.
 
-In this project I used HTML, CSS, Javascript. The layout was done with flexbox.
-
-## See the randomizer in action
-
-[Cluedo Mystery Randomizer](https://project5-cluedo-emmie.netlify.com/)
 
 # Images in this project
 
