@@ -1,8 +1,6 @@
-This was the first project of the second sprint on the Technigo Frontend Bootcamp, which was focused on Javascript.
-
 ## 1. What is this?
 
-The purpose of this assignment was to practice objects and arrays and also to manipulate the DOM with JavaScript and for that building a webpage that would mimic Cluedo.
+The purpose of this project was to practice objects and arrays and also to manipulate the DOM with JavaScript and for that building a webpage that would mimic Cluedo.
 The user (who is the game leader and the one that will know all about the murder) should be able to click on three decks of cards, to randomly get a character, a weapon and a room. There should also be a button to reveal the mystery.
 
 These were some suggestions for stretch goals and a deep-dive in this project:
