@@ -38,8 +38,8 @@ p {
 }
 
 .killer-deck img {
-  width: 90%;
-  Height: 86%;
+  width: 100%;
+  Height: 90%;
   object-fit: cover;
   border-radius: 5%;
 }
@@ -94,5 +94,7 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  color: #fff;
+  text-shadow: 3px 3px black;
 }
 
