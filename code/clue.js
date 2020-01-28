@@ -59,39 +59,48 @@ const mrsWhite = {
 
 const rope = {
   name: "rope",
-  weight: 10
+  weight: 10,
+  symbol: '➿' 
 }
 const knife = {
   name: "knife",
-  weight: 7
+  weight: 7,
+  symbol: '🗡' 
 }
 const candlestick = {
   name: "candlestick",
-  weight: 30
+  weight: 30,
+  symbol: '🕯'
 }
 const dumbbell = {
   name: "dumbbell",
-  weight: 20
+  weight: 20,
+  symbol: '🛎' 
 }
 const poison = {
   name: "poison",
-  weight: 5
+  weight: 5,
+  symbol: '🍸'  
 }
 const axe = {
   name: "axe",
-  weight: 25
+  weight: 25,
+  symbol: '🔨' 
 }
 const bat = {
   name: "bat",
-  weight: 10
+  weight: 10,
+  symbol: '🦇' 
 }
 const trophy = {
   name: "trophy",
-  weight: 19
+  weight: 19,
+  symbol: '🏆' 
 }
 const pistol = {
   name: "pistol",
-  weight: 10
+  weight: 10,
+  symbol: '🔫' 
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -161,7 +170,7 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   const theKiller = document.getElementById("killer")
   const theKillerName = document.getElementById("killerName")
-  
+
   const theKillerImage = document.getElementById("killerImage")
   theKillerImage.src = mystery.killer.image
 
@@ -175,10 +184,12 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
   const theWeapon = document.getElementById("weapon")
   const theWeaponName = document.getElementById("weaponName")
+  const theWeaponSymbol = document.getElementById("weaponSymbol")
 
   theWeapon.style.background = mystery.weapon
-  theWeaponName.innerHTML =
-  mystery.weapon.name 
+  theWeaponName.innerHTML = mystery.weapon.name 
+  theWeaponSymbol.innerHTML = mystery.weapon.symbol
+
 } 
 
 const pickRoom = () => {

@@ -8,6 +8,9 @@
     <title>Clue</title>
   </head>
   <body>
+    <header>
+      <h2>CL<span>U</span>EDO</h2>
+    </header>
     <section class="cards">
       <div class="killer-deck" id="killer" onclick="pickKiller()">
         <p>KILLER</p>
@@ -21,16 +24,17 @@
         <p>WEAPON</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
+        <p id="weaponSymbol"></p>
       </div>
       <div class="room-deck" id="room" onclick="pickRoom()">
         <p>ROOM</p>
         <p id="roomName"></p>
       </div>
+  
+
     </section>
-    
     <h1 id="mystery"></h1>
     <button onclick="revealMystery()">REVEAL THE CRIME</button>
-
-    <script src="clue.js"></script>
+    <script src="clue.js"></script> 
   </body>
 </html>
