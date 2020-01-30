@@ -179,10 +179,6 @@ const pickKiller = () => {
   mystery.killer.firstName + " " + mystery.killer.lastName  
 }
 
-showImage = () => {
-img.toggle(active)
-}
-
 // OBJECTS FOR ALL THE SUSPECTS:
 
 

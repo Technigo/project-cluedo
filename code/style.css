@@ -6,6 +6,8 @@ body {
   flex-direction: column;
   position: relative;
   background-color: #10182c;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 p {
