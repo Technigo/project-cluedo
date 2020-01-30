@@ -37,13 +37,6 @@ p {
   border-radius: 16px;
 }
 
-.killer-deck img {
-  width: 100%;
-  Height: 90%;
-  object-fit: cover;
-  border-radius: 5%;
-}
-
 .weapon-deck {
   width: 250px;
   height: 400px;

@@ -1,4 +1,4 @@
-// CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// OBJECTS FOR ALL THE SUSPECTS:
 
 const mrGreen = {
   firstName: "Jacob",
@@ -161,7 +161,7 @@ let mystery = {
   room:""
 }
 
-// FINISH THIS FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
+// FUNCTION TO SHOW ALL INFORMATION ABOUT THE KILLER.
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
@@ -178,6 +178,13 @@ const pickKiller = () => {
   theKillerName.innerHTML =
   mystery.killer.firstName + " " + mystery.killer.lastName  
 }
+
+showImage = () => {
+img.toggle(active)
+}
+
+// OBJECTS FOR ALL THE SUSPECTS:
+
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
@@ -204,13 +211,12 @@ const pickRoom = () => {
 
 
 
-// CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
+//FUNCTION revealMystery that will be invoked when you click that button. For example:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
   document.getElementById("mystery").innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`;
 }
 
-//lånad kod kolla damiens video
 
 document.getElementById("mystery").addEventListener('click, revealMystery')
