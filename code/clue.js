@@ -1,23 +1,185 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
-const mrGreen = {
-  firstName: 'Jacob',
-  lastName: 'Green',
-  color: 'green',
-  description: 'He has a lot of connections',
-  age: 45,
-  image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+// Murders
+const cluedoMurders = {
+  mrGreen : {
+    firstName: 'Jacob',
+    lastName: 'Green',
+    color: 'green',
+    description: 'He has a lot of connections',
+    age: 45,
+    image: 'assets/green.jpg',
+    occupation: 'Entrepreneur'
+  },
+  profPlum : {
+    firstName: 'Victor',
+    lastName: 'Plum',
+    color: 'purple',
+    description: 'He is financially ruined',
+    age: 64,
+    image: 'assets/plum.jpg',
+    occupation: 'Looking for opportunities'
+  },
+  missScarlet : {
+    firstName: 'Cassandra',
+    lastName: 'Scarlet',
+    color: 'red',
+    description: 'Golddigger',
+    age: '"25"',
+    image: 'asset/scarlet.jpg',
+    occupation: 'Classified' 
+  }, 
+  mrsPeacock : {
+    firstName: 'Eleonor',
+    lastName: 'Peacock',
+    color: 'blue',
+    description: 'Crazy',
+    age: 51,
+    image: 'asset/peacock.jpg',
+    occupation: 'Hired gun' 
+  },
+  colMustard : {
+    firstName: 'Jack',
+    lastName: 'Mustard',
+    color: 'yellow',
+    description: 'Solid',
+    age: 83,
+    image: 'asset/mustard.jpg',
+    occupation: 'No one knows' 
+  }
 }
+// List all entries
+const entriesMurders = Object.entries(cluedoMurders)
+console.log(entriesMurders)
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
-const rope = {
-  name: 'rope',
-  weight: 10
+// Weapons
+const cluedoWeapons = {
+  rope : {
+    name: 'rope',
+    weight: 2,
+    weightUnit: "kg",
+    length: 20,
+    lengthUnit: "cm"
+  },
+  knife : {
+    name: 'knife',
+    weight: 1,
+    weightUnit: "kg",
+    length: 30,
+    lengthUnit: "cm"
+  },
+  candlestick : {
+    name: 'candlestick',
+    weight: 4,
+    weightUnit: "kg",
+    length: 25,
+    lengthUnit: "cm"
+  },
+  dumbbell : {
+    name: 'dumbbell',
+    weight: 5,
+    weightUnit: "kg",
+    length: 20,
+    lengthUnit: "cm" 
+  },
+  poison : {
+    name: 'posion',
+    weight: 13,
+    weightUnit: "g",
+  },
+  axe : {
+    name: 'axe',
+    weight: 4,
+    weightUnit: "kg",
+    length: 35,
+    lengthUnit: "cm"
+  },
+  bat : {
+    name: 'bat',
+    weight: 3,
+    weightUnit: "kg",
+    length: 25,
+    lengthUnit: "cm"
+  },
+  trophy : {
+    name: 'trophy',
+    weight: 6,
+    weightUnit: "kg",
+    length: 30,
+    lengthUnit: "cm"
+  },
+  pistol : {
+    name: 'pistol',
+    weight: 2,
+    weightUnit: "kg",
+    length: 17,
+    lengthUnit: "cm"
+  }
 }
+// List all entries
+const entriesWeapon = Object.entries(cluedoWeapons)
+console.log(entriesWeapon)
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+// Rooms
+const cluedoRooms = {
+  diningRoom : {
+    name: 'Dining room'
+  },
+  conservatory : {
+    name: "Conservatory"
+  },
+  kitchen : {
+    name: "Kitchen"
+  },
+  study : {
+    name: "Study"
+  },
+  library : {
+    name: "Library"
+  },
+  billiardRoom : {
+    name: "Billiard room"
+  },
+  lounge : {
+    name: "Lounge"
+  },
+  ballroom : {
+    name: "Ballroom"
+  },
+  hall : {
+    name: "Hall"
+  },
+  spa : {
+    name: "Spa"
+  },
+  livingRoom : {
+    name: "Living room"
+  },
+  observatory : {
+    name: "Observatory"
+  },
+  theater : {
+    name: "Theater"
+  },
+  guestHouse : {
+    name: "Guest house"
+  },
+  patio : {
+    name: "Patio"
+  }
+}
+// List all entries
+const entriesRooms = Object.entries(cluedoRooms)
+console.log(entriesRooms)
+
+// test
+// console.log(cluedoMurders.mrGreen.lastName)
+// console.log(cluedoWeapons.rope.name)
+
+
+
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
