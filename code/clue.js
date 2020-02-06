@@ -48,9 +48,27 @@ const cluedoMurders = {
     occupation: 'No one knows' 
   }
 }
-// List all entries
-const entriesMurders = Object.entries(cluedoMurders)
-console.log(entriesMurders)
+
+// Store firstName + lastName from our object to suspects array
+suspects = []
+
+const getMurderNames = (obj) => {
+  for ( let i in obj ) {
+    suspects.push(`${obj[i].firstName} ${obj[i].lastName}`)
+  }
+}
+
+getMurderNames(cluedoMurders)
+
+// Check if suspects array is populated
+console.log(suspects)
+/* THINK WE ARE DONE WITH MURDERS FOR NOW */
+
+
+
+
+
+
 
 
 // Weapons
@@ -117,9 +135,9 @@ const cluedoWeapons = {
     lengthUnit: "cm"
   }
 }
-// List all entries
+// Convert object to array
 const entriesWeapon = Object.entries(cluedoWeapons)
-console.log(entriesWeapon)
+// console.log(entriesWeapon)
 
 
 // Rooms
@@ -170,9 +188,9 @@ const cluedoRooms = {
     name: "Patio"
   }
 }
-// List all entries
+// Convert object to array
 const entriesRooms = Object.entries(cluedoRooms)
-console.log(entriesRooms)
+// console.log(entriesRooms)
 
 // test
 // console.log(cluedoMurders.mrGreen.lastName)
@@ -183,11 +201,11 @@ console.log(entriesRooms)
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
-const suspects = [
-  mrGreen,
-  mrsWhite
-  // ...  and the rest
-]
+// const suspects = [
+//   mrGreen,
+//   mrsWhite
+//   // ...  and the rest
+// ]
 
 const weapons = []
 
