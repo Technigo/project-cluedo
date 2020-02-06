@@ -8,12 +8,16 @@ p {
   font-weight: 300;
   background-color: #fff;
 }
+.container {
+  margin: 10px auto;
+  width: 1080px;
+  background: #ccc;
+}
 
 .cards {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -55,4 +59,57 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1200px){
+.container {
+  width: 90vw;
+  
+}
+
+.cards {
+  margin: 30px auto;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+}
+
+
+
+@media screen and (max-width: 992px){
+  .container {
+  width: 95vw;
+  
+}
+
+.cards {
+  margin: 30px auto;
+  height: auto;
+  background: #ccc;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+}
+
+
+@media screen and (max-width: 576px){
+.cards {
+  margin: 30px auto;
+  background: #ccc;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
 }

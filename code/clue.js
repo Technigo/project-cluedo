@@ -178,15 +178,19 @@ pickRoom = ()=> {
 const revealMystery = (mystery) =>{
   const checkEmpty = (mystery.killer==='blank'||mystery.weapon==='blank'||mystery.room==='blank')
   let bigReveal = ""
+  let hedReveal =""
   console.log(checkEmpty)
   if (checkEmpty) {
   bigReveal = "Sorry haven't unlocked this yet click the cards to reveal"
+  hedReveal ="Mystery still hasn't been solved";
 }
   else{
     bigReveal = `The victim died of a ${mystery.weapon.name} in the ${mystery.room} and the perpitrator was ${mystery.killer.firstName} ${mystery.killer.lastName}.` 
-    
+    hedReveal ="Mystery is solved and the murderer is caught";
 }
 document.getElementById('mysterytext').innerHTML = bigReveal;
+document.getElementById('mystery').innerHTML = hedReveal;
+
 }
 
 document.getElementById('killerCard').onclick = pickKiller
