@@ -153,6 +153,7 @@ const pickKiller = ()=> {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerImage').src = mystery.killer.image
   console.log(mystery.killer.firstName)
 }
 
@@ -175,12 +176,25 @@ pickRoom = ()=> {
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = (mystery) =>{
-
-const bigReveal = `The victim died of a ${mystery.weapon.name} in the ${mystery.room} and the perpitrator was ${mystery.killer.firstName} ${mystery.killer.lastName}.` 
+  const checkEmpty = (mystery.killer==='blank'||mystery.weapon==='blank'||mystery.room==='blank')
+  let bigReveal = ""
+  console.log(checkEmpty)
+  if (checkEmpty) {
+  bigReveal = "Sorry haven't unlocked this yet click the cards to reveal"
+}
+  else{
+    bigReveal = `The victim died of a ${mystery.weapon.name} in the ${mystery.room} and the perpitrator was ${mystery.killer.firstName} ${mystery.killer.lastName}.` 
+    
+}
 document.getElementById('mysterytext').innerHTML = bigReveal;
 }
 
-document.getElementById('killerCard').onclick = pickKiller()
-document.getElementById('weaponCard').onclick = pickWeapon()
-document.getElementById('roomCard').onclick = pickRoom()
-document.getElementById('revealButton').onclick = revealMystery(mystery);
+document.getElementById('killerCard').onclick = pickKiller
+document.getElementById('weaponCard').onclick = pickWeapon
+document.getElementById('roomCard').onclick = pickRoom
+
+
+document.getElementById("revealButton").addEventListener('click', (e) => {
+  e.preventDefault()
+  revealMystery(mystery)
+})
