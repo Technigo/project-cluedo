@@ -1,14 +1,60 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
-const mrGreen = {
-  firstName: 'Jacob',
-  lastName: 'Green',
-  color: 'green',
-  description: 'He has a lot of connections',
-  age: 45,
-  image: 'assets/green.png',
-  occupation: 'Entrepreneur'
-}
+const suspects = [{
+    firstName: 'Jacob',
+    lastName: 'Green',
+    color: 'green',
+    description: 'He has a lot of connections',
+    age: 45,
+    image: 'assets/green.png',
+    occupation: 'Entrepreneur'
+  },
+  {
+    firstName: 'Victor',
+    lastName: 'Plum',
+    color: 'plum',
+    description: 'He is a fellow with a bow tie and glasses',
+    age: 36,
+    image: 'assets/plum.png',
+    occupation: 'Professor'
+  },
+  {
+    firstName: 'Cassandra',
+    lastName: 'Scarlett',
+    color: 'red',
+    description: 'She is highly attractive',
+    age: 25,
+    image: 'assets/scarlet.png',
+    occupation: 'Actress'
+  },
+  {
+    firstName: 'Eleanor',
+    lastName: 'Peacock',
+    color: 'blue',
+    description: 'She an elderly yet still attractive woman',
+    age: 70,
+    image: 'assets/peacock.png',
+    occupation: 'Socialite'
+  },
+  {
+    firstName: 'Jack',
+    lastName: 'Mustard',
+    color: 'yellow',
+    description: 'He is a retired military man',
+    age: 60,
+    image: 'assets/mustard.png',
+    occupation: 'Colonel'
+  },
+  {
+    firstName: 'Mrs',
+    lastName: 'White',
+    color: 'white',
+    description: 'She is a stiff matronly housekeeper',
+    age: 68,
+    image: 'assets/white.png',
+    occupation: 'Housekeeper'
+  }
+]
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
