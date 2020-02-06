@@ -60,14 +60,8 @@ const getMurderNames = (obj) => {
 
 getMurderNames(cluedoMurders)
 
-// Check if suspects array is populated
-console.log(suspects)
-/* THINK WE ARE DONE WITH MURDERS FOR NOW */
-
-
-
-
-
+// Check if suspects array are populated
+// console.log(suspects)
 
 
 
@@ -135,10 +129,6 @@ const cluedoWeapons = {
     lengthUnit: "cm"
   }
 }
-// Convert object to array
-const entriesWeapon = Object.entries(cluedoWeapons)
-// console.log(entriesWeapon)
-
 
 // Rooms
 const cluedoRooms = {
@@ -188,15 +178,22 @@ const cluedoRooms = {
     name: "Patio"
   }
 }
-// Convert object to array
-const entriesRooms = Object.entries(cluedoRooms)
-// console.log(entriesRooms)
 
-// test
-// console.log(cluedoMurders.mrGreen.lastName)
-// console.log(cluedoWeapons.rope.name)
+const weapons = []
+const rooms = []
 
+const getNames = (obj, arr) => {
+  for ( let i in obj ) {
+    arr.push(`${obj[i].name}`)
+  }
+}
 
+getNames(cluedoWeapons, weapons)
+getNames(cluedoRooms, rooms)
+
+// Check if weapons and rooms arrays are populated
+console.log(weapons)
+console.log(rooms)
 
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
@@ -207,9 +204,6 @@ const entriesRooms = Object.entries(cluedoRooms)
 //   // ...  and the rest
 // ]
 
-const weapons = []
-
-const rooms = []
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
