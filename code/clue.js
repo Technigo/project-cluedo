@@ -111,17 +111,68 @@ const knife = {
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
+const diningRoom = 'Dining Room';
+const conservatory = 'Conservatory';
+const billiardRoom = 'Billiard Room';
+const kitchen = 'Kitchen';
+const study = 'Study';
+const library = 'Library';
+const lounge = 'Lounge';
+const ballroom = 'Ballroom';
+const hall = 'Hall';
+const spa = 'Spa';
+const livingRoom = 'Living Room';
+const observatory = 'Observatory';
+const theatre = 'Theatre';
+const guestHouse = 'Guest House';
+const patio = 'Patio';
+
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
+  mrsWhite,
+  missScarlet,
+  professorPlum,
+  mrsPeacock,
+  colonelMustard,
+
+
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  candleStick,
+  knife,
+  axe,
+  poison,
+  trophy,
+  pistol,
+  dumbbell,
+  bat
+]
 
-const rooms = []
+const rooms = [
+  diningRoom,
+  conservatory,
+  billiardRoom,
+  kitchen,
+  study,
+  spa,
+  patio,
+  library,
+  kitchen,
+  lounge,
+  ballroom,
+  theatre,
+  guestHouse,
+  hall,
+  livingRoom,
+]
+
+
+
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
