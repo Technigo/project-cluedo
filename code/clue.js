@@ -141,7 +141,7 @@ const suspects = [
   professorPlum
   ]
 
-  //suspects.forEach((suspect) => { console.log(suspect.occupation) })
+  //suspects.forEach((suspect) => { console.log(suspect.age) })
 
 
   const weapons = [
@@ -157,8 +157,6 @@ const suspects = [
   ]
 
   //weapons.forEach((weapons) => { console.log(weapons.name) })
-
-
 
   const rooms = [
     diningRoom,
@@ -177,7 +175,6 @@ const suspects = [
     guestHouse,
     patio
   ]
-
 
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
