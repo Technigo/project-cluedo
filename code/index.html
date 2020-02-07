@@ -6,23 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
   <title>Technigo Project Cluedo</title>
 </head>
 
 <body>
+  <h1>Cluedo</h1>
+  <h2>Pick a killer, weapon, room and reveal the crime!</h2>
   <section class="cards">
     <article class="killer-deck" id="killerCard" onclick="pickKiller()">
       <p>KILLER</p>
       <p id="killerName"></p>
       <p id="killerAge"></p>
       <p id="killerOccupation"></p>
-      <img id="killerImage" src="" height="100" />
       <p id="killerDescription"></p>
+      <img id="killerImage" src="" height="100" />
     </article>
     <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
       <p>WEAPON</p>
       <p id="weaponName"></p>
       <p id="weaponWeight"></p>
+      <img id="weaponImage" src="" height="100" />
     </article>
     <article class="room-deck" id="roomCard" onclick="pickRoom()">
       <p>ROOM</p>
@@ -31,12 +35,13 @@
   </section>
 
   <h1 id="mystery"></h1>
+  <p id="reveal-text"></p>
+  <button id="reveal-button" onclick="revealMystery()">REVEAL THE CRIME</button>
 
-  <button id="mystery-button" onclick="revealMystery()">REVEAL THE CRIME</button>
-  <p id="reveal-text">blabla</p>
 
 
   <script src="clue.js"></script>
+  <footer>A Technigo Boot Camp project 2020</footer>
 </body>
 
 </html>
