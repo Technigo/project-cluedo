@@ -43,7 +43,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'White',
+  color: 'Orange',
   description: 'He is a proffesional thief',
   age: 25,
   image: '/assets/mustard.png',
@@ -166,9 +166,9 @@ const randomSelector = array => {
 }
 
 const theMystery = {
-  killer: 'pistol',
-  weapon: 30,
-  room: 'something'
+  theKiller: 'Mr Green',
+  theWeapon: 'Pistol',
+  theRoom: 'Spa'
 }
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
@@ -205,5 +205,16 @@ const pickRoom = () => {
   ).innerHTML = `${mystery.room}`
 }
 
+const revealMystery = () => {
+  const x = document.getElementById("reveal-text");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  document.getElementById("reveal-text").innerHTML = `The murder was commited by ${theMystery.theKiller} in the ${theMystery.theRoom} by a ${theMystery.theWeapon} `
+  console.log(`The murder was commited by ${theMystery.theKiller} in the ${theMystery.theRoom} by a ${theMystery.theWeapon} `)
+}
+revealMystery()
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
