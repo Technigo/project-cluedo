@@ -151,7 +151,12 @@ const rooms = [
 ]
 
 console.log(mrGreen.description)
-console.log(axe.weight)
+console.log(axe.w)
+console.log(suspects)
+console.log(weapons)
+console.log(rooms)
+console.log(suspects[0])
+console.log(rooms.slice(-1)[0])
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
