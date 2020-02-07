@@ -110,6 +110,9 @@ const pistol = {
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
+/*console.log(suspects.firstname)
+console.log(mrsWhite.description)*/
+
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
@@ -152,6 +155,9 @@ const rooms = [
   "Patio"
 ];
 
+/*console.log(rooms[0])
+console.log(rooms[9])
+console.log(weapons[5])*/
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
