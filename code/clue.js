@@ -10,12 +10,116 @@ const mrGreen = {
   occupation: 'Entrepreneur'
 }
 
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'plum',
+  description: 'He speaks seven languages',
+  age: 38,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
+
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'scarlet',
+  description: 'She is a trained ninja',
+  age: 32,
+  image: 'assets/scarlet.png',
+  occupation: 'Programmer'
+}
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'peacock',
+  description: 'She owns a zoo',
+  age: 50,
+  image: 'assets/peacock.png',
+  occupation: 'Zoo-owner'
+}
+
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'mustard',
+  description: 'His biggest hobby is playing chess',
+  age: 70,
+  image: 'assets/mustard.png',
+  occupation: 'Retired'
+}
+
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'She has many secrets',
+  age: 67,
+  image: 'assets/white.png',
+  occupation: 'Unknown'
+}
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  material: 'textile',
 }
+
+const knife = {
+  name: 'knife',
+  weight: 10,
+  material: 'steel',
+}
+
+const candlestick = {
+  name: 'candlestick',
+  weight: 10,
+  material: 'brass',
+}
+
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 30,
+  material: 'iron',
+}
+
+const poison = {
+  name: 'poison',
+  weight: 2,
+  material: 'chemical',
+}
+
+const axe = {
+  name: 'axe',
+  weight: 30,
+  material: 'steel',
+}
+
+const bat = {
+  name: 'bat',
+  weight: 25,
+  material: 'wood',
+}
+
+const trophy = {
+  name: 'trophy',
+  weight: 30,
+  material: 'silver',
+}
+
+const pistol = {
+  name: 'pistol',
+  weight: 10,
+  material: 'steel',
+}
+
+console.log(mrsWhite.firstName)
+console.log(trophy.weight)
+console.log(missScarlet.occupationg)
+console.log(bat.material)
+
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
