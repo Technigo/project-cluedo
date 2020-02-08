@@ -53,7 +53,7 @@ const colonelMustard = {
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: 'white',
+  color: 'aliceblue',
   description: 'She knows the law',
   age: 80,
   image: 'assets/suspects/white.png',
@@ -221,7 +221,7 @@ const pickWeapon = () => {
   document.getElementById('weaponCard').style.background = 'darkred';
   document.getElementById(
     'weaponName'
-  ).innerHTML = `${mystery.weapon.name} with a weight of ${mystery.weapon.weight} g`
+  ).innerHTML = `${mystery.weapon.name} with a weight of ${mystery.weapon.weight}`
   const theWeaponImage = document.getElementById(
     'weaponImage');
   theWeaponImage.src = mystery.weapon.image;
