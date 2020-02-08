@@ -258,13 +258,6 @@ const revealMystery = () => {
   } else {
     document.getElementById(
       "reveal-text"
-    ).innerHTML = 'The murder was comitted at midnight by Mrs Peacock with poison in the Spa.';
+    ).innerHTML = `The murder was comitted at ${mystery.time}  by ${mystery.killer.firstName} ${mystery.killer.lastName} with ${mystery.weapon.name} in the ${mystery.room}.`;
   }
 }
-
-/* This code would have selected the same revealMystery as the user. Not sure if that would be pre-selected or not.
-else {
-  document.getElementById(
-    "reveal-text"
-  ).innerHTML = `The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName} with ${mystery.weapon.name} in the ${mystery.room}.`;
-}*/
