@@ -1,19 +1,33 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+:root {
+  --prime-font: 'Alata', sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--prime-font);
+  background-color: #0093E9;
+  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 }
 
 p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+  margin: 1vh 0vh;
+  font-weight: 200;
+}
+
+h2 {
+  margin: 1vh 0vh;
 }
 
 .cards {
-  margin: 50px auto;
-  width: 90%;
-  height: 600px;
-  background: #ccc;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -22,29 +36,61 @@ p {
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  border: 1px solid black;
+  background: #2c3e50;  
+  background: -webkit-linear-gradient(to bottom, #3498db, #2c3e50);  
+  background: linear-gradient(to bottom, #3498db, #2c3e50); 
+  box-shadow: 5px 5px rgba(0, 98, 90, 0.4),
+  10px 10px rgba(0, 98, 90, 0.3),
+  15px 15px rgba(0, 98, 90, 0.2),
+  20px 20px rgba(0, 98, 90, 0.1),
+  25px 25px rgba(0, 98, 90, 0.05);
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  border: 1px solid black;
+  background: #2c3e50;  
+  background: -webkit-linear-gradient(to bottom, #3498db, #2c3e50);  
+  background: linear-gradient(to bottom, #3498db, #2c3e50); 
+  box-shadow: 5px 5px rgba(0, 98, 90, 0.4),
+              10px 10px rgba(0, 98, 90, 0.3),
+              15px 15px rgba(0, 98, 90, 0.2),
+              20px 20px rgba(0, 98, 90, 0.1),
+              25px 25px rgba(0, 98, 90, 0.05);
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  border: 1px solid black;
+  background: #2c3e50;  
+  background: -webkit-linear-gradient(to bottom, #3498db, #2c3e50);  
+  background: linear-gradient(to bottom, #3498db, #2c3e50); 
+  box-shadow: 5px 5px rgba(0, 98, 90, 0.4),
+              10px 10px rgba(0, 98, 90, 0.3),
+              15px 15px rgba(0, 98, 90, 0.2),
+              20px 20px rgba(0, 98, 90, 0.1),
+              25px 25px rgba(0, 98, 90, 0.05);
+}
+
+.reveal-mystery {
+  text-align: center;
+  padding: 3vw;
+}
+
+img {
+  border-radius: 8px;
 }
 
 button {
@@ -54,5 +100,5 @@ button {
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin: 2vw auto;
 }

@@ -52,63 +52,63 @@ const cluedoMurders = {
 // Weapons
 const cluedoWeapons = {
   rope : {
-    name: 'rope',
+    name: 'Rope',
     weight: 2,
     weightUnit: "kg",
     length: 20,
     lengthUnit: "cm"
   },
   knife : {
-    name: 'knife',
+    name: 'Knife',
     weight: 1,
     weightUnit: "kg",
     length: 30,
     lengthUnit: "cm"
   },
   candlestick : {
-    name: 'candlestick',
+    name: 'Candlestick',
     weight: 4,
     weightUnit: "kg",
     length: 25,
     lengthUnit: "cm"
   },
   dumbbell : {
-    name: 'dumbbell',
+    name: 'Dumbbell',
     weight: 5,
     weightUnit: "kg",
     length: 20,
     lengthUnit: "cm" 
   },
   poison : {
-    name: 'posion',
+    name: 'Posion',
     weight: 13,
     weightUnit: "g",
     length: 10,
     lengthUnit: "cm"
   },
   axe : {
-    name: 'axe',
+    name: 'Axe',
     weight: 4,
     weightUnit: "kg",
     length: 35,
     lengthUnit: "cm"
   },
   bat : {
-    name: 'bat',
+    name: 'Bat',
     weight: 3,
     weightUnit: "kg",
     length: 25,
     lengthUnit: "cm"
   },
   trophy : {
-    name: 'trophy',
+    name: 'Trophy',
     weight: 6,
     weightUnit: "kg",
     length: 30,
     lengthUnit: "cm"
   },
   pistol : {
-    name: 'pistol',
+    name: 'Pistol',
     weight: 2,
     weightUnit: "kg",
     length: 17,
@@ -188,7 +188,6 @@ const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
   
-  document.getElementById('killerCard').style.background = mystery.killer[1].color
   document.getElementById('killerName').innerHTML = `${mystery.killer[1].firstName} ${mystery.killer[1].lastName}`
   document.getElementById('killerAge').innerHTML = `Age: ${mystery.killer[1].age}`
   document.getElementById('killerImage').src = mystery.killer[1].image
