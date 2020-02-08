@@ -4,56 +4,56 @@ const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
   color: 'green',
-  description: 'He has a lot of connections',
+  description: 'Conniving and religious',
   age: 45,
   image: 'assets/suspects/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Priest'
 }
 
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
   color: 'purple',
-  description: 'He can throw plums',
+  description: 'Uptight and intelligent',
   age: 60,
   image: 'assets/suspects/plum.png',
-  occupation: 'Farmer'
+  occupation: 'Professor'
 }
 
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
   color: 'red',
-  description: 'She can be invisable',
+  description: 'Sultry and beautiful',
   age: 30,
   image: 'assets/suspects/scarlet.png',
-  occupation: 'Detective'
+  occupation: 'Actress'
 }
 
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
   color: 'yellow',
-  description: 'She knows medicine',
+  description: 'Sinister and political',
   age: 65,
   image: 'assets/suspects/peacock.png',
-  occupation: 'Doctor'
+  occupation: 'Senator'
 }
 
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'Orange',
-  description: 'He is a proffesional thief',
+  color: 'orange',
+  description: 'Militant and athletic',
   age: 25,
   image: 'assets/suspects/mustard.png',
-  occupation: 'Thief'
+  occupation: 'Colonel'
 }
 
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: 'Green',
+  color: 'white',
   description: 'She knows the law',
   age: 80,
   image: 'assets/suspects/white.png',
