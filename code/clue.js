@@ -124,11 +124,11 @@ const conservatory = {
 }
 
 const kitchen = {
-  name: 'kitchen'
+  name: 'Kitchen'
 }
 
 const study = {
-  name: 'study'
+  name: 'Study'
 }
 
 const library = {
@@ -144,15 +144,15 @@ const lounge = {
 }
 
 const ballroom = {
-  name: 'ballroom'
+  name: 'Ballroom'
 }
 
 const hall = {
-  name: 'hall'
+  name: 'Hall'
 }
 
 const spa = {
-  name: 'spa'
+  name: 'Spa'
 }
 
 const livingRoom = {
@@ -164,7 +164,7 @@ const observatory = {
 }
 
 const theater = {
-  name: 'theater'
+  name: 'Theater'
 }
 
 const guestHouse = {
@@ -172,7 +172,7 @@ const guestHouse = {
 }
 
 const patio = {
-  name: 'patio'
+  name: 'Patio'
 }
 
 console.log(mrsWhite.firstName)
@@ -229,9 +229,9 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
-// This function will be invoked when you click on the killer card.
 
-// PICK KILLER
+
+// PICK KILLER when killerCard is clicked.
 
 
 const pickKiller = () => {
@@ -245,14 +245,7 @@ const pickKiller = () => {
 }
 document.getElementById('killerCard').addEventListener('click', pickKiller)
 
-
-//console.log(mystery.killer)
-
-
-//This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.Feel free to add more things to show about the killer.
-
-
-// PICK WEAPON
+// PICK WEAPON when weaponCard is clicked.
 
 const pickWeapon = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
@@ -262,7 +255,7 @@ const pickWeapon = () => {
 }
 document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 
-// PICK ROOM
+// PICK ROOM when roomCard is clicked.
 
 const pickRoom = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
@@ -271,30 +264,11 @@ const pickRoom = () => {
 }
 document.getElementById('roomCard').addEventListener('click', pickRoom)
 
-
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
-
-/*const mystery = () => {
-      const randomSelector = array => {
-        return array[Math.floor(Math.random() * array.length)]
-      }
-      const pickKiller = () => {
-        mystery.killer = randomSelector(suspects)
-      }
-      const pickWeapon = () => {
-        mystery.weapon = randomSelector(weapons)
-      }
-      const pickRoom = () => {
-        mystery.room = randomSelector(rooms)
-      }
-    }
-
-    mystery()
-    console.log(mystery)
-    
-
-
-
-
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope. */
+
+const revealMystery = () => {
+  document.getElementById('mystery').innerHTML = (`The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`)
+
+}
+document.getElementById('btn').addEventListener('click', revealMystery)
