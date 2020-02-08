@@ -63,6 +63,7 @@ rope,
 knife,
 candlestick
 ]
+console.log(weapons[weapons.length - 1]);
 
 const rooms = [ `Dining-room`,`Conservatory`,`Kitchen`, `Study`]
 
