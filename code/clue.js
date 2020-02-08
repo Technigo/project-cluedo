@@ -211,7 +211,7 @@ const pickKiller = () => {
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
-
+  document.getElementById('weaponCard').style.background = 'darkred';
   document.getElementById(
     'weaponName'
   ).innerHTML = `${mystery.weapon.name} with a weight of ${mystery.weapon.weight} g`
@@ -225,7 +225,7 @@ const pickWeapon = () => {
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
-
+  document.getElementById('roomCard').style.background = 'darkslategray';
   document.getElementById(
     'roomName'
   ).innerHTML = `${mystery.room}`
@@ -241,6 +241,6 @@ const revealMystery = () => {
   } else {
     document.getElementById(
       "reveal-text"
-    ).innerHTML = `The murder was comitted by ${mystery.killer.firstName}.`;
+    ).innerHTML = `The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName} with ${mystery.weapon.name} in the ${mystery.room}.`;
   }
 }
