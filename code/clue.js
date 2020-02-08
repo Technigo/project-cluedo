@@ -115,6 +115,66 @@ const pistol = {
   material: 'steel',
 }
 
+const diningRoom = {
+  name: 'Dining Room'
+}
+
+const conservatory = {
+  name: 'Conservatory'
+}
+
+const kitchen = {
+  name: 'kitchen'
+}
+
+const study = {
+  name: 'study'
+}
+
+const library = {
+  name: 'Library'
+}
+
+const billiardRoom = {
+  name: 'Billiard Room'
+}
+
+const lounge = {
+  name: 'Lounge'
+}
+
+const ballroom = {
+  name: 'ballroom'
+}
+
+const hall = {
+  name: 'hall'
+}
+
+const spa = {
+  name: 'spa'
+}
+
+const livingRoom = {
+  name: 'Living Room'
+}
+
+const observatory = {
+  name: 'Observatory'
+}
+
+const theater = {
+  name: 'theater'
+}
+
+const guestHouse = {
+  name: 'Guest House'
+}
+
+const patio = {
+  name: 'patio'
+}
+
 console.log(mrsWhite.firstName)
 console.log(trophy.weight)
 console.log(missScarlet.occupation)
@@ -165,17 +225,44 @@ const rooms = [
 /*const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
+*/
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
-
 // This function will be invoked when you click on the killer card.
+
+
+const mystery = () => {
+  const randomSelector = array => {
+    return array[Math.floor(Math.random() * array.length)]
+  }
+  const pickKiller = () => {
+    mystery.killer = randomSelector(suspects)
+  }
+  const pickWeapon = () => {
+    mystery.weapon = randomSelector(weapons)
+  }
+  const pickRoom = () => {
+    mystery.room = randomSelector(rooms)
+  }
+}
+
+mystery()
+console.log(mystery)
+/*
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
+  
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+}
+
+
+
+
+
+/* This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById(
     'killerName'
