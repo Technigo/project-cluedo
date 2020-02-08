@@ -8,7 +8,7 @@ const cluedoMurders = {
     color: 'green',
     description: 'He has a lot of connections',
     age: 45,
-    image: 'assets/green.jpg',
+    image: 'assets/green.png',
     occupation: 'Entrepreneur'
   },
   profPlum : {
@@ -17,7 +17,7 @@ const cluedoMurders = {
     color: 'purple',
     description: 'He is financially ruined',
     age: 64,
-    image: 'assets/plum.jpg',
+    image: 'assets/plum.png',
     occupation: 'Looking for opportunities'
   },
   missScarlet : {
@@ -26,7 +26,7 @@ const cluedoMurders = {
     color: 'red',
     description: 'Golddigger',
     age: '"25"',
-    image: 'asset/scarlet.jpg',
+    image: 'assets/scarlet.png',
     occupation: 'Classified' 
   }, 
   mrsPeacock : {
@@ -35,7 +35,7 @@ const cluedoMurders = {
     color: 'blue',
     description: 'Crazy',
     age: 51,
-    image: 'asset/peacock.jpg',
+    image: 'assets/peacock.png',
     occupation: 'Hired gun' 
   },
   colMustard : {
@@ -44,7 +44,7 @@ const cluedoMurders = {
     color: 'yellow',
     description: 'Solid',
     age: 83,
-    image: 'asset/mustard.jpg',
+    image: 'assets/mustard.png',
     occupation: 'No one knows' 
   }
 }
@@ -192,11 +192,18 @@ const mystery = {}
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
-  console.log(mystery.killer)
+  
+  // console.log(mystery.killer)
+  // console.log(mystery.killer[1].color)
+  // console.log(mystery.killer[1].description)
+  // console.log(mystery.killer[1].age)
+  // console.log(mystery.killer[1].image)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  // document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerCard').style.background = mystery.killer[1].color
   document.getElementById('killerName').innerHTML = `${mystery.killer[1].firstName} ${mystery.killer[1].lastName}`
+  document.getElementById('killerAge').innerHTML = `Age: ${mystery.killer[1].age}`
+  document.getElementById('killerImage').src = mystery.killer[1].image
+  document.getElementById('killerDescription').innerHTML = `Info: ${mystery.killer[1].description}`
 }
 
 const pickWeapon = () => {
@@ -225,5 +232,5 @@ const pickRoom = () => {
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const clickBait = () => {
   element = document.getElementById("mystery")
-  element.innerHTML = `${mystery.killer[1].firstName} ${mystery.killer[1].lastName} ${mystery.weapon[1].name} ${mystery.room[1].name}`
+  element.innerHTML = `The murder is ${mystery.killer[1].firstName} ${mystery.killer[1].lastName} in ${mystery.room[1].name} with ${mystery.weapon[1].name} `
 }
