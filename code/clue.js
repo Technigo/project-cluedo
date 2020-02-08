@@ -164,6 +164,13 @@ const rooms = [
   "Patio"
 ];
 
+const times = [
+  "Midnight",
+  "Evening",
+  "Afternoon",
+  "Morning"
+];
+
 /*console.log(rooms[0])
 console.log(rooms[9])
 console.log(weapons[5])*/
@@ -231,17 +238,27 @@ const pickRoom = () => {
   ).innerHTML = `${mystery.room}`
 }
 
+//FUNCTION FOR pickTime:
+
+const pickTime = () => {
+  mystery.time = randomSelector(times)
+  document.getElementById('timeCard').style.background = 'burlywood';
+  document.getElementById(
+    'timeName'
+  ).innerHTML = `${mystery.time}`
+}
+
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-  if (!mystery.killer || !mystery.room || !mystery.weapon) {
+  if (!mystery.killer || !mystery.room || !mystery.weapon || !mystery.time) {
     document.getElementById(
       "reveal-text").innerHTML = `Choose you must!`
   } else {
     document.getElementById(
       "reveal-text"
-    ).innerHTML = 'The murder was comitted by Mrs Peacock with poison in the Spa.';
+    ).innerHTML = 'The murder was comitted at midnight by Mrs Peacock with poison in the Spa.';
   }
 }
 

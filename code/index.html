@@ -12,7 +12,7 @@
 
 <body>
   <h1>Cluedo</h1>
-  <h2>Pick a killer, weapon, room and reveal the crime!</h2>
+  <h2>Pick the cards and reveal the mystery!</h2>
   <section class="cards">
     <article class="killer-deck" id="killerCard" onclick="pickKiller()">
       <p>KILLER</p>
@@ -31,6 +31,10 @@
     <article class="room-deck" id="roomCard" onclick="pickRoom()">
       <p>ROOM</p>
       <p id="roomName"></p>
+    </article>
+    <article class="time-deck" id="timeCard" onclick="pickTime()">
+      <p>TIME OF THE MURDER</p>
+      <p id="timeName"></p>
     </article>
   </section>
 
