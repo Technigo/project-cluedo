@@ -8,6 +8,26 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
+}  
+console.log(mrGreen.description);
+
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'He works hard',
+  age: `35`,
+  image: 'assets/plum.png',
+  occupation: 'Teacher'
+}
+const missScarlet ={
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'She is smart',
+  age: `25`,
+  image: 'assets/scarlet.png',
+  occupation: 'Broker'
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
@@ -16,23 +36,40 @@ const rope = {
   name: 'rope',
   weight: 10
 }
+const knife = {
+  name: `knife`,
+  weight: 30
+}
+const candlestick = {
+  name: `candlestick`,
+  weight: 5
+}
+console.log(rope.weight);
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
+  professorPlum,
+  missScarlet
 ]
 
-const weapons = []
+const weapons = [
+rope,
+knife,
+candlestick
+]
 
-const rooms = []
+const rooms = [ `Dining-room`,`Conservatory`,`Kitchen`, `Study`]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+
+
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
