@@ -257,21 +257,20 @@ document.getElementById('killerCard').addEventListener('click', pickKiller)
 const pickWeapon = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
+  document.getElementById('weaponName').innerHTML = mystery.weapon.name;
+  document.getElementById('weaponMaterial').innerHTML = mystery.weapon.material;
 }
-pickWeapon()
-
-console.log(mystery.weapon)
-
+document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 
 // PICK ROOM
 
 const pickRoom = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.room = randomSelector(rooms)
+  document.getElementById('roomName').innerHTML = mystery.room.name
 }
-pickRoom()
+document.getElementById('roomCard').addEventListener('click', pickRoom)
 
-console.log(mystery.room)
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
