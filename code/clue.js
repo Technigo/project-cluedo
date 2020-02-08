@@ -13,7 +13,7 @@ const mrGreen = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'plum',
+  color: 'purple',
   description: 'He speaks seven languages',
   age: 38,
   image: 'assets/plum.png',
@@ -23,7 +23,7 @@ const professorPlum = {
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'scarlet',
+  color: 'red',
   description: 'She is a trained ninja',
   age: 32,
   image: 'assets/scarlet.png',
@@ -33,7 +33,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: 'peacock',
+  color: 'blue',
   description: 'She owns a zoo',
   age: 50,
   image: 'assets/peacock.png',
@@ -43,7 +43,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'mustard',
+  color: 'yellow',
   description: 'His biggest hobby is playing chess',
   age: 70,
   image: 'assets/mustard.png',
@@ -57,7 +57,7 @@ const mrsWhite = {
   description: 'She has many secrets',
   age: 67,
   image: 'assets/white.png',
-  occupation: 'Unknown'
+  occupation: 'Occupation Unknown'
 }
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
@@ -231,43 +231,27 @@ const randomSelector = array => {
 // The values will be set later.
 // This function will be invoked when you click on the killer card.
 
+// PICK KILLER
+
+
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
+  document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerImage').src = mystery.killer.image;
+  document.getElementById('killerOccupation').innerHTML = mystery.killer.occupation;
+  document.getElementById('killerDescription').innerHTML = mystery.killer.description;
 }
-pickKiller()
-
-console.log(mystery.killer)
-/*const mystery = () => {
-      const randomSelector = array => {
-        return array[Math.floor(Math.random() * array.length)]
-      }
-      const pickKiller = () => {
-        mystery.killer = randomSelector(suspects)
-      }
-      const pickWeapon = () => {
-        mystery.weapon = randomSelector(weapons)
-      }
-      const pickRoom = () => {
-        mystery.room = randomSelector(rooms)
-      }
-    }
-
-    mystery()
-    console.log(mystery)
-    
+document.getElementById('killerCard').addEventListener('click', pickKiller)
 
 
+//console.log(mystery.killer)
 
 
+//This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.Feel free to add more things to show about the killer.
 
-     This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-      document.getElementById('killerCard').style.background = mystery.killer.color
-      document.getElementById(
-        'killerName'
-      ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-    }
-    */
+
 // PICK WEAPON
 
 const pickWeapon = () => {
@@ -290,5 +274,28 @@ pickRoom()
 console.log(mystery.room)
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+
+/*const mystery = () => {
+      const randomSelector = array => {
+        return array[Math.floor(Math.random() * array.length)]
+      }
+      const pickKiller = () => {
+        mystery.killer = randomSelector(suspects)
+      }
+      const pickWeapon = () => {
+        mystery.weapon = randomSelector(weapons)
+      }
+      const pickRoom = () => {
+        mystery.room = randomSelector(rooms)
+      }
+    }
+
+    mystery()
+    console.log(mystery)
+    
+
+
+
+
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope. */
