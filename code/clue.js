@@ -211,17 +211,15 @@ const pickWeapon = () => {
   
   mystery.weapon = randomSelector(weapons)
 
-  document.getElementById('weaponCard').style.background = mystery.weapon
   document.getElementById(
     'weaponName'
-  ).innerHTML = `${mystery.weapon.name}`
+  ).innerHTML = `${mystery.weapon.name} ${mystery.weapon.weight}`
 }
 
 const pickRoom = () => {
   
   mystery.room = randomSelector(rooms)
 
-  document.getElementById('roomCard').style.background = mystery.room
   document.getElementById(
     'roomName'
   ).innerHTML = `${mystery.room}`
