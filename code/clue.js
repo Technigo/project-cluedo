@@ -4,7 +4,7 @@ const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
   color: 'green',
-  description: 'He has a lot of connections',
+  description: 'Has a lot of connections',
   age: 45,
   // image: 'assets/green.png',
   occupation: 'Entrepreneur'
@@ -14,7 +14,7 @@ const mrsWhite = {
   firstName: 'Wilma',
   lastName: 'White',
   color: 'white',
-  description: '',
+  description: 'Looks after herself only',
   age: 32,
   // image: 'assets/green.png',
   occupation: 'Teacher'
@@ -24,7 +24,7 @@ const profPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
   color: 'plum',
-  description: 'He has a lot of connections',
+  description: 'Has no patience',
   age: 55,
   // image: 'assets/green.png',
   occupation: 'Professor'
@@ -34,7 +34,7 @@ const missScarlet = {
   firstName: 'Anastasia',
   lastName: 'Scarlet',
   color: 'red',
-  description: 'He has a lot of connections',
+  description: 'Extremely smart',
   age: 27,
   // image: 'assets/green.png',
   occupation: 'Waitress'
@@ -44,7 +44,7 @@ const mrsPeacock = {
   firstName: 'Agda',
   lastName: 'Peacock',
   color: 'blue',
-  description: 'He has a lot of connections',
+  description: 'Never tells the whole truth',
   age: 67,
   // image: 'assets/green.png',
   occupation: 'Former Pilot'
@@ -54,18 +54,68 @@ const mrMustard = {
   firstName: 'Carl',
   lastName: 'Mustard',
   color: 'yellow',
-  description: 'He has a lot of connections',
+  description: 'Can cover his tracks',
   age: 38,
   // image: 'assets/green.png',
   occupation: 'Scientist'
 }
 
+// const mySuspects = () => {
+//   this.firstName = firstName
+//   this.lastName = lastName
+//   this.color = color
+//   this.description = description
+//   this.age = age
+//   this.occupation
+// }
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: 'rope',
+  name: 'Rope',
   weight: 10
 }
+
+const knife = {
+  name: 'Knife',
+  weight: 3
+}
+
+const candlestick = {
+  name: 'Candlestick',
+  weight: 5
+}
+
+const dumbbell = {
+  name: 'Dumbbell',
+  weight: 8
+}
+
+const poison = {
+  name: 'Poison',
+  weight: 1
+}
+
+const axe = {
+  name: 'Axe',
+  weight: 15
+}
+
+const bat = {
+  name: 'Bat',
+  weight: 7
+}
+
+const trophy = {
+  name: 'Trophy',
+  weight: 6
+}
+
+const pistol = {
+  name: 'Pistol',
+  weight: 4
+}
+
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -119,6 +169,12 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 
+const mystery = {
+  killer,
+  weapon,
+  room
+}
+
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
@@ -131,7 +187,17 @@ const pickKiller = () => {
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 }
 
+
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapon)
+
+}
+
+const pickRoom = () {
+  mystery.room = randomSelector(rooms)
+
+}
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
