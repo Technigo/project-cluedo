@@ -13,7 +13,7 @@ const mrGreen = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'plum',
+  color: 'purple',
   description: 'He is a fellow with a bow tie and glasses',
   age: 36,
   image: 'assets/plum.png',
@@ -33,7 +33,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: 'blue',
+  color: 'midnight',
   description: 'She an elderly yet still attractive woman',
   age: 70,
   image: 'assets/peacock.png',
@@ -204,7 +204,11 @@ document.getElementById('roomCard').addEventListener('click', pickRoom)
 
 // Reveals the mystery when reveal button is clicked
 const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`
+  if (mystery.killer === '' || mystery.weapon === '' || mystery.room === '') {
+    document.getElementById('mystery').innerHTML = "No mystery is yet to be revealed."
+  } else {
+    document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`
+  }
 }
 
 document.getElementById('revealButton').addEventListener('click', revealMystery)
