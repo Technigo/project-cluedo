@@ -9,43 +9,52 @@ p {
   background-color: #fff;
 }
 
+/*** MAIN CONTAINER ***/
+
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
+  height: auto;
   background: #ccc;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
+  padding: 10px 0;
 }
+
+/*** DECKS ***/
 
 .killer-deck {
   width: 250px;
-  height: 400px;
+  height: 330px;
   background: #000;
   text-align: center;
+  margin: 10px;
   padding-top: 30px;
   border-radius: 16px;
 }
 
 .weapon-deck {
   width: 250px;
-  height: 400px;
+  height: 330px;
   background: rgb(10, 53, 10);
   text-align: center;
+  margin: 10px;
   padding-top: 30px;
   border-radius: 16px;
 }
 
 .room-deck {
   width: 250px;
-  height: 400px;
+  height: 330px;
   background: midnightblue;
-
   text-align: center;
+  margin: 10px;
   padding-top: 30px;
   border-radius: 16px;
 }
+
+/*** MYSTERY BUTTON ***/
 
 button {
   padding: 8px 16px;
@@ -55,4 +64,54 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+/*** MEDIA QUERIES ***/
+
+@media (min-width: 668px) {
+
+  .cards {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px 0;
+  }
+
+  .killer-deck {
+    width: 225px;
+    height: 300px;
+  }
+
+  .room-deck {
+    width: 225px;
+    height: 300px;
+  }
+
+  .weapon-deck {
+    width: 225px;
+    height: 300px;
+  }
+
+}
+
+@media (min-width: 1025px) {
+
+  .cards {
+    padding: 40px 0;
+  }
+
+  .killer-deck {
+    width: 250px;
+    height: 330px;
+  }
+
+  .room-deck {
+    width: 250px;
+    height: 330px;
+  }
+
+  .weapon-deck {
+    width: 250px;
+    height: 330px;
+  }
+
 }
