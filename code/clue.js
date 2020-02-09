@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// OBJECTS FOR ALL THE SUSPECTS
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -10,26 +10,131 @@ const mrGreen = {
   occupation: 'Entrepreneur'
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
-
-const rope = {
-  name: 'rope',
-  weight: 10
+const colonelMustard = {
+  firstName: 'Michael',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'He has a lot of connections',
+  age: 55,
+  image: 'assets/mustard.png',
+  occupation: 'Colonel'
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const mrsPeacock = {
+  firstName: 'Elizabeth',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'He has a lot of connections',
+  age: 32,
+  image: 'assets/peacock.png',
+  occupation: 'Socialite'
+}
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+const peterPlum = {
+  firstName: 'Peter',
+  lastName: 'Plum',
+  color: 'blue',
+  description: 'He has a lot of connections',
+  age: 36,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
 
-const suspects = [
+const missScarlet = {
+  firstName: 'Josephine',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'He has a lot of connections',
+  age: 25,
+  image: 'assets/scarlet.png',
+  occupation: 'Actress'
+}
+
+const mrsWhite = {
+  firstName: 'Blanche',
+  lastName: 'White',
+  color: 'white',
+  description: 'He has a lot of connections',
+  age: 65,
+  image: 'assets/white.png',
+  occupation: 'Housekeeper'
+}
+
+
+// OBJECTS FOR WEAPONS
+
+const candlestick = {
+  name: 'Candlestick',
+}
+
+const dagger = {
+  name: 'Dagger',
+}
+
+const leadPipe = {
+  name: 'Lead Pipe',
+}
+
+const revolver = {
+  name: 'Revolver',
+}
+
+const rope = {
+  name: 'Rope',
+}
+
+const wrench = {
+  name: 'Wrench',
+}
+
+
+
+// THE ROOMS
+
+const kitchen
+const ballroom
+const conservatory
+const diningRoom
+const cellar
+const billiardRoom
+const library
+const lounge
+const hall
+const study
+
+// SUSPECTS, WEAPONS AND ROOMS IN ARRAYS
+
+const theSuspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
+  colonelMustard,
+  mrsPeacock,
+  peterPlum,
+  missScarlet,
+  mrsWhite,
 ]
 
-const weapons = []
+const weapons = [
+  candlestick,
+  dagger,
+  leadPipe,
+  revolver,
+  rope,
+  wrench,
+]
 
-const rooms = []
+const rooms = [
+  kitchen,
+  ballroom,
+  conservatory,
+  diningRoom,
+  cellar,
+  billiardRoom,
+  library,
+  lounge,
+  hall,
+  study,
+]
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
