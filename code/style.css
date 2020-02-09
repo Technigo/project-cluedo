@@ -19,6 +19,9 @@ p {
   align-items: center;
 }
 
+.cards img {
+  height: max-content;
+}
 .killer-deck {
   width: 250px;
   height: 400px;

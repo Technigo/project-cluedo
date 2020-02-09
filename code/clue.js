@@ -4,19 +4,119 @@ const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
   color: 'green',
-  description: 'He has a lot of connections',
+  description: 'Very well connected, has friend in high places',
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
 
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'Expert in chemistry and posions',
+  age: 32,  
+  image: 'asset/plum.png',
+  occupation: 'Entrepreneur'
+}
+
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'Professional temptress, can seduce anyone.',
+  age: 28,
+  image: 'asset/scarlet.png',
+  occupation: 'Entrepreneur'
+}
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'multicoloured',
+  description: 'Can disguise herself as woman or man alike.',
+  age: 48,
+  image: 'asset/peacock.png',
+  occupation: 'Actress'
+}
+
+const conolelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'Strategies in general, and military strategies especially',
+  age: 71,
+  image: 'asset/mustard.png',
+  occupation: 'Retiered General'
+}
+
+const mrsWhite = {
+  firstName: 'Mable',
+  lastName: 'White',
+  color: 'white',
+  description: 'Skilful pick-pocketer and lock-picker',
+  age: 83,
+  image: 'asset/white.png',
+  occupation: 'Retiered Crafts Teacher'
+}
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: 'rope',
-  weight: 10
+  name: 'Rope',
+  weight: 10,
+  reach: 40,
 }
 
+const knife = {
+  name: 'Knife',
+  weight: 10,
+  reach: 20,
+}
+
+const candlestick = {
+  name: 'Candlestick',
+  weight: 100,
+  reach: 30,
+}
+
+const dumbell = {
+  name: 'Dumbell',
+  weight: 300,
+  reach: 30,
+}
+
+const poison = {
+  name: 'Poison',
+  weight: 5,
+  reach: 200,
+}
+
+const axe = {
+  name: 'Axe',
+  weight: 200,
+  reach: 30,
+}
+
+const bat = {
+  name: 'Bat',
+  weight: 250,
+  reach: 50,
+}
+
+const trophy = {
+  name: 'Trophy',
+  weight: 150,
+  reach: 30,
+}
+
+const pistol = {
+  name: 'Pistol',
+  weight: 40,
+  reach: 300,
+}
+
+console.log(pistol.reach)
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
