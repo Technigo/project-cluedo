@@ -20,7 +20,7 @@ const prPlum = {
 }
 const msScarlett = {
   firstName: 'Cassandra',
-  lastName: 'Scarlet',
+  lastName: 'Scarlett',
   color: 'red',
   description: 'Wraps everyone around her little finger.',
   age: 25,
@@ -107,7 +107,7 @@ const pistol = {
 const suspects = [
   mrGreen,
   prPlum,
-  msScarlet,
+  msScarlett,
   mrsPeacock,
   clMustard,
   mrsWhite
@@ -142,6 +142,7 @@ const rooms = ['Dining Room',
   'Guest House',
   'Patio'
 ]
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
