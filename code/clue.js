@@ -26,7 +26,7 @@ const mrsPeacock = {
   color: 'blue',
   description: 'A beautiful lady with dirty tricks up her sleeve',
   age: 42,
-  image: 'assets/peacook.png',
+  image: 'assets/peacock.png',
   occupation: 'Art Gallery owner'
 }
 
@@ -46,7 +46,7 @@ const mrsWhite = {
   color: 'white',
   description: 'Can hear a whisper from miles away',
   age: 67,
-  imgae: 'assets/white.png',
+  image: 'assets/white.png',
   occupation: 'Housemaid'
 }
 
@@ -62,48 +62,48 @@ const msScarlet = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: 'rope',
+  name: 'Rope',
   weight: 2
 }
 
 const knife = {
-  name: 'knife',
+  name: 'Knife',
   weight: 1
 
 }
 
 const candlestick = {
-  name: 'candlestick',
+  name: 'Candlestick',
   weight: 2
 }
 
 const dumbbell = {
-  name: 'dumbbell',
+  name: 'Dumbbell',
   weight: 20
 }
 
 const poison = {
-  name: 'poison',
+  name: 'Poison',
   weight: 0.1
 }
 
 const axe = {
-  name: 'axe',
+  name: 'Axe',
   weight: 13
 }
 
 const bat = {
-  name: 'bat',
+  name: 'Bat',
   weight: 4
 }
 
 const trophy = {
-  name: 'trophy',
+  name: 'Trophy',
   weight: 8
 }
 
 const pistol = {
-  name: 'pistol',
+  name: 'Pistol',
   weight: 1
 }
 
@@ -176,7 +176,10 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description} `
+  document.getElementById('killerImage').src = `${mystery.killer.image}`
 }
+
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
@@ -195,4 +198,4 @@ const pickRoom = () => {
 
 const revealMystery = () => {
   document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapons.name} that weighted ${mystery.weapons.weight} kg. `
-}
+};

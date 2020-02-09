@@ -1,6 +1,11 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Alata', sans-serif;
+  background: #a990ac;
+}
+
+h1 {
+ text-align: center;
 }
 
 p {
@@ -9,14 +14,21 @@ p {
   background-color: #fff;
 }
 
+img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
-  background: #ccc;
+  height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  margin-top:20px;
+  margin-bottom: 20px;
 }
 
 .killer-deck {
@@ -26,6 +38,9 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin-top:20px;
+  margin-bottom: 20px;
+  box-shadow: 5px 2px 3px 0 #666666;
 }
 
 .weapon-deck {
@@ -35,24 +50,72 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin-top:20px;
+  margin-bottom: 20px;
+  box-shadow: 5px 2px 3px 0 #666666;
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
   background: midnightblue;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin-top:20px;
+  margin-bottom: 20px;
+  box-shadow: 5px 2px 3px 0 #666666;
 }
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: #a10564;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  box-shadow: 5px 2px 3px 0 #666666;
+  font-family: 'Alata', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#mystery {
+  margin: 0 auto;
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+@media screen and (min-width: 668px) {
+  .cards {
+    margin: 50px auto;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:20px;
+    margin-bottom: 20px;
+  }
+
+  .killer-deck{
+    width:200px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .weapon-deck{
+    width:200px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .room-deck{
+    width:200px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
