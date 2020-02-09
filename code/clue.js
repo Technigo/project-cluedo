@@ -139,7 +139,8 @@ const weapons = [
   axe,
   bat,
   trophy,
-  pistol]
+  pistol
+]
 
 const rooms = [
   dinningRoom,
@@ -170,21 +171,33 @@ const randomSelector = array => {
 // The values will be set later.
 
 const mystery = {
-  killer,
-  weapon,
-  room
-}
+};
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
+  const theKiller = document.getElementById('killerCard')
+  theKiller.style.background = mystery.killer.color
+
+  const theKillerName = document.getElementById('killerName')
+  theKillerName.innerHTML = mystery.killer.firstName + " " + mystery.killer.lastName
+
+  const theKillerOccupation = getElementById('killerOccupation')
+  theKillerOccupation.innerHTML = mystery.killer.occupation
+
+  const theKillerAge = document.getElementById('killerAge')
+  theKillerAge.innerHTML = mystery.killer.age
+
+  const theKillerDescription = document.getElementById('killerDescription')
+  theKillerDescription. innerHTML = mystery.killer.description
+
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  // document.getElementById('killerCard').style.background = mystery.killer.color
+  // document.getElementById(
+  //   'killerName'
+  // ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 }
 
 
@@ -192,11 +205,26 @@ const pickKiller = () => {
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapon)
 
+  const theWeapon = document.getElementById('weaponName')
+  theWeapon.innerHTML = mystery.weapon.name
+
+  const theWeight = document.getElementById('weaponWeight')
+  theWeight.innerHTML = mystery.weapon.weight
+
 }
 
-const pickRoom = () {
+const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
+  const theRoom = document.getElementById('roomName')
+  theRoom.innerHTML = mystery.room
+
+}
+
+const revealMystery = () => {
+  const revealCrimne = document.getElementById('mystery')
+  revealCrimne.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}
+  ${mystery.room} ${mystery.weapon.name}`
 }
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:

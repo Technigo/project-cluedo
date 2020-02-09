@@ -11,30 +11,30 @@
 
   <body id="revealing">
     <section class="cards">
-      <article class="killer-deck" onclick="pickKiller()" id="killerCard">
+      <div class="killer-deck" onclick="pickKiller()" id="killerCard">
         <p>KILLER</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
         <img id="killerImage" src="" height="100" />
         <p id="killerDescription"></p>
-      </article>
-      <article class="weapon-deck" onclick="pickWeapon()"id="weaponCard">
+      </div>
+      <div class="weapon-deck" onclick="pickWeapon()" id="weaponCard">
         <p>WEAPON</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
-      </article>
-      <article class="room-deck" onclick="pickRoom()"id="roomCard">
+      </div>
+      <div class="room-deck" onclick="pickRoom()" id="roomCard">
         <p>ROOM</p>
         <p id="roomName"></p>
-      </article>
+      </div>
     </section>
 
     <h1 id="mystery"></h1>
 
-    <button>REVEAL THE CRIME</button>
+    <button onclick="revealCrime()">REVEAL THE CRIME</button>
 
     <script src="clue.js"></script>
   </body>
-  
+
 </html>
