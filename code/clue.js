@@ -10,11 +10,102 @@ const mrGreen = {
   occupation: 'Entrepreneur'
 }
 
+const mrsWhite = {
+  firstName: 'Blanche',
+  lastName: 'White',
+  color: 'white',
+  description: '',
+  age: 65,
+  image: '',
+  occupation: 'Housekeeper'
+}
+
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: '',
+  age: 36,
+  image: '',
+  occupation: 'Professor'
+}
+
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: '',
+  age: 25,
+  image: '',
+  occupation: 'Actress'
+}
+
+const mrsPeacock = {
+  firstName: 'Elizabeth',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: '',
+  age: 32,
+  image: '',
+  occupation: 'Socialite'
+}
+
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: '',
+  age: 55,
+  image: '',
+  occupation: 'Colonel'
+}
+
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
   weight: 10
+}
+
+const knife = {
+  name: 'knife',
+  weight: 7
+}
+
+const candlestick = {
+  name: 'candlestick',
+  weight: 4
+}
+
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 20
+}
+
+const poison = {
+  name: 'poison',
+  weight: 1
+}
+
+const axe = {
+  name: 'axe',
+  weight: 15
+}
+
+const bat = {
+  name: 'bat',
+  weight: 9
+}
+
+const trophy = {
+  name: 'trophy',
+  weight: 9
+}
+
+const pistol = {
+  name: 'pistol',
+  weight: 6
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -23,13 +114,43 @@ const rope = {
 
 const suspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
+  mrsWhite,
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+const rooms = [
+  diningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballRoom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
+]
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
