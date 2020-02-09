@@ -161,9 +161,14 @@ const pickKiller = () => {
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName}
+   ${mystery.killer.lastName}`
+   document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
+   document.getElementById('killerImage').src = mystery.killer.image
+   document.getElementById('killerDescription').innerHTML =`${mystery.killer.description}`
+   
+
+   
   
 }
 
@@ -175,7 +180,7 @@ const pickKiller = () => {
 
 const pickWeapon = () => {
   mystery.weapon =randomSelector(weapons)
-  document.getElementById('weaponCard').style.bacground = mystery.weapon.color
+  document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById(
     'weaponName'
   ).innerHTML = `${mystery.weapon.name} ${mystery.weapon.weight} kg`

@@ -9,6 +9,10 @@ p {
   background-color: #fff;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .cards {
   margin: 50px auto;
   width: 90%;
