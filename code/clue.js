@@ -174,3 +174,4 @@ const pickKiller = () => {
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 console.log(mrGreen.description)
+console.log(weapons[weapons.length - 1])
