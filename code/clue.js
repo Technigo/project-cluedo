@@ -125,9 +125,13 @@ const theater = 'Theater'
 const guestHouse = 'Guest House'
 const patio = 'Patio'
 
+console.log(mrGreen.description)
+console.log(rope.weight)
+console.log(theater)
+
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
-const suspects = [
+/* const suspects = [
   mrGreen,
   professorPlum,
   missScarlet,
@@ -164,12 +168,7 @@ const rooms = [
   theater,
   guestHouse,
   patio,
-]
-
-console.log(mrGreen.description)
-console.log(rope.weight)
-console.log(theater)
-console.log(rooms)
+] */
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
