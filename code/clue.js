@@ -109,6 +109,13 @@ const pistol = {
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
+console.log(mrsWhite.color)
+console.log(missScarlet.occupation)
+console.log(mrsPeacock.description)
+console.log(colonelMustard.occupation)
+console.log(pistol.weight)
+console.log(trophy.weight)
+
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
@@ -150,15 +157,23 @@ const rooms = [
   "patio"
 ]
 
-console.log(mrsWhite.color)
-console.log(missScarlet.occupation)
-console.log(mrsPeacock.description)
-console.log(colonelMustard.occupation)
-console.log(pistol.weight)
 
+let suspectsName = name => {
+  console.log(name);
+};
+suspects.forEach(suspectsName);
 
+let weponsWeight = weight => {
+  console.log(weight);
+};
+weapons.forEach(weponsWeight);
 
+console.log(suspects)
+console.log(weapons)
+console.log(rooms)
 
+console.log(suspects[0]);
+console.log(rooms[rooms.length - 1]);
 
 
 /*
