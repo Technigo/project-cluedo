@@ -3,9 +3,9 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  color: 'DarkGreen',
   description: 'Has a lot of connections',
-  age: 45,
+  age: '45y/o',
   occupation: 'Entrepreneur',
   image: 'assets/green.png'
   // occupation: 'Entrepreneur'
@@ -16,7 +16,7 @@ const mrsWhite = {
   lastName: 'White',
   color: 'white',
   description: 'Looks after herself only',
-  age: 72,
+  age: '72y/o',
   occupation: 'Teacher',
   image: 'assets/white.png'
   // occupation: 'Teacher'
@@ -25,9 +25,9 @@ const mrsWhite = {
 const profPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'plum',
+  color: 'Purple',
   description: 'Has no patience',
-  age: 55,
+  age: '55y/o',
   occupation: 'Professor',
   image: 'assets/plum.png'
   // occupation: 'Professor'
@@ -36,9 +36,9 @@ const profPlum = {
 const missScarlet = {
   firstName: 'Anastasia',
   lastName: 'Scarlet',
-  color: 'red',
+  color: 'DarkRed',
   description: 'Extremely smart',
-  age: 27,
+  age: '27y/o',
   occupation: 'Waitress',
   image: 'assets/scarlet.png'
   // occupation: 'Waitress'
@@ -47,9 +47,9 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: 'Agda',
   lastName: 'Peacock',
-  color: 'blue',
+  color: 'Teal',
   description: 'Never tells the whole truth',
-  age: 67,
+  age: '67y/o',
   occupation: 'Pilot',
   image: 'assets/peacock.png'
   // occupation: 'Former Pilot'
@@ -58,9 +58,9 @@ const mrsPeacock = {
 const mrMustard = {
   firstName: 'Carl',
   lastName: 'Mustard',
-  color: 'yellow',
+  color: 'DarkGoldenrod',
   description: 'Can cover his tracks',
-  age: 68,
+  age: '68y/o',
   occupation: 'Officer',
   image: 'assets/mustard.png'
   // occupation: 'Scientist'
@@ -123,7 +123,83 @@ const pistol = {
 }
 
 
+
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+const dinningRoom = {
+  name: 'Dinning room',
+  image: 'room/dinning.png'
+}
+
+const conservatory = {
+  name: 'Conservatory',
+  image: 'room/conservatory.png'
+}
+
+const kitchen = {
+  name: 'Kitchen',
+  image: 'room/kitchen.png'
+}
+
+const study = {
+  name: 'Study',
+  image: 'room/study.png'
+}
+
+const library = {
+  name: 'Library',
+  image: 'room/library.png'
+}
+
+const billiardRoom = {
+  name: 'Billiard Room',
+  image: 'room/billiard.png'
+}
+
+const lounge = {
+  name: 'Lounge',
+  image: 'room/lounge.png'
+}
+
+const ballroom = {
+  name: 'Ballroom',
+  image: 'room/ballroom.png'
+}
+
+const hall = {
+  name: 'Hall',
+  image: 'room/hallway.png'
+}
+
+const spa = {
+  name: 'Spa',
+  image: 'room/spa.png'
+}
+
+const livingRoom = {
+  name: 'Living room',
+  image: 'room/living.png'
+}
+
+const observatory = {
+  name: 'Observatory',
+  image: 'room/observatory.png'
+}
+
+const theater = {
+  name: 'Theater',
+  image: 'room/theater.png'
+}
+
+const guestHouse = {
+  name: 'Guest House',
+  image: 'room/guest.png'
+}
+
+const patio = {
+  name: 'Patio',
+  image: 'room/patio.png'
+}
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
@@ -149,21 +225,21 @@ const weapons = [
 ]
 
 const rooms = [
-  "Dinning Room",
-  "Conservatory",
-  "Kitchen",
-  "Study",
-  "Library",
-  "Billiard Room",
-  "Lounge",
-  "Ballroom",
-  "Hall",
-  "Spa",
-  "Living Room",
-  "Observatory",
-  "Theater",
-  "Guest House",
-  "Patio"
+  dinningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
@@ -229,7 +305,10 @@ const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
   const theRoom = document.getElementById('roomName')
-  theRoom.innerHTML = mystery.room
+  theRoom.innerHTML = mystery.room.name
+
+  const theImg = document.getElementById('roomImage')
+  theImg.src = mystery.room.image
 
 }
 
@@ -237,7 +316,7 @@ const revealMystery = () => {
   const revealCrimne = document.getElementById('revealing')
   revealCrimne.innerHTML = `The murder was committed by 
   ${mystery.killer.firstName} ${mystery.killer.lastName}
-  in the ${mystery.room} 
+  in the ${mystery.room.name} 
   with a ${mystery.weapons.name}`
 }
 
