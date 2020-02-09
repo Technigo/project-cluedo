@@ -150,6 +150,10 @@ const rooms = [
   "Patio"
 ]
 
+console.log(rooms[5]);
+console.log(weapons[0]);
+console.log(suspects);
+
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
