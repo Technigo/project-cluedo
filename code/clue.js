@@ -143,21 +143,21 @@ const weapons = [
 ]
 
 const rooms = [
-  dinningRoom,
-  conservatory,
-  kitchen,
-  study,
-  library,
-  billiardRoom,
-  lounge,
-  ballroom,
-  hall,
-  spa,
-  livingRoom,
-  observatory,
-  theater,
-  guestHouse,
-  patio
+  "Dinning Room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Billiard Room",
+  "Lounge",
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "Living Room",
+  "Observatory",
+  "Theater",
+  "GuestHouse",
+  "Patio"
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
@@ -171,7 +171,7 @@ const randomSelector = array => {
 // The values will be set later.
 
 const mystery = {
-};
+}
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -184,11 +184,11 @@ const pickKiller = () => {
   const theKillerName = document.getElementById('killerName')
   theKillerName.innerHTML = mystery.killer.firstName + " " + mystery.killer.lastName
 
-  const theKillerOccupation = getElementById('killerOccupation')
-  theKillerOccupation.innerHTML = mystery.killer.occupation
-
   const theKillerAge = document.getElementById('killerAge')
   theKillerAge.innerHTML = mystery.killer.age
+
+  // const theKillerOccupation = getElementById('killerOccupation')
+  // theKillerOccupation.innerHTML = mystery.killer.occupation
 
   const theKillerDescription = document.getElementById('killerDescription')
   theKillerDescription. innerHTML = mystery.killer.description
@@ -203,13 +203,13 @@ const pickKiller = () => {
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
-  mystery.weapon = randomSelector(weapon)
+  mystery.weapons = randomSelector(weapons)
 
   const theWeapon = document.getElementById('weaponName')
-  theWeapon.innerHTML = mystery.weapon.name
+  theWeapon.innerHTML = mystery.weapons.name
 
   const theWeight = document.getElementById('weaponWeight')
-  theWeight.innerHTML = mystery.weapon.weight
+  theWeight.innerHTML = mystery.weapons.weight
 
 }
 
