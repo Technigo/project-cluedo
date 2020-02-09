@@ -15,7 +15,7 @@ h2 {
   color: white;
   text-align: center;
   font-family: 'Luckiest Guy', cursive;
-
+  font-size: 2rem;
 }
 
 p {
@@ -69,6 +69,10 @@ header {
   border-radius: 16px;
 }
 
+.reveal {
+  padding: 20px 20px;
+}
+
 button {
   padding: 8px 16px;
   background: whitesmoke;
@@ -77,4 +81,16 @@ button {
   border-radius: 16px;
   display: block;
   margin: 0 auto;
+}
+
+footer {
+  height: 100px;
+  background-color: black;
+  padding-top: 4rem;
+}
+
+footer p {
+  text-align: center;
+  background-color: black;
+  color: whitesmoke;
 }
