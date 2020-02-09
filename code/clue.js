@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  color: '#b6cdb1',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green2.png',
@@ -13,7 +13,7 @@ const mrGreen = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'purple',
+  color: '#b16889',
   description: 'He is a mathematical genius',
   age: 33,
   image: 'assets/plum2.png',
@@ -23,7 +23,7 @@ const professorPlum = {
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'red',
+  color: '#ea5643',
   description: 'She will do anything to stay in the spotlight',
   age: 35,
   image: 'assets/scarlet2.png',
@@ -33,7 +33,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: 'Elanor',
   lastName: 'Peacock',
-  color: 'blue',
+  color: '#7bccd4',
   description: 'A manners-freak with a nose for politics',
   age: 42,
   image: 'assets/peacock2.png',
@@ -43,9 +43,9 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'yellow',
+  color: '#eeb736',
   description: 'A stiff-lipped gentleman',
-  age: 65,
+  age: 34,
   image: 'assets/mustard2.png',
   occupation: 'Colonel'
 }
@@ -55,7 +55,7 @@ const mrsWhite = {
   lastName: 'White',
   color: 'white',
   description: 'She will do anything for justice',
-  age: 67,
+  age: 28,
   image: 'assets/white2.png',
   occupation: 'Lawyer'
 }
@@ -63,55 +63,55 @@ const mrsWhite = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: 'rope',
+  name: 'Rope',
   weight: 10,
   image: 'assets/rope.png'
 }
 
 const knife = {
-  name: 'knife',
+  name: 'Knife',
   weight: 6,
   image: 'assets/knife.png'
 }
 
 const candlestick = {
-  name: 'candlestick',
+  name: 'Candlestick',
   weight: 12,
   image: 'assets/candlestick.png'
 }
 
 const dumbbell = {
-  name: 'dumbbell',
+  name: 'Dumbbell',
   weight: 20,
   image: 'assets/dumbbell.png'
 }
 
 const poison = {
-  name: 'poison',
+  name: 'Poison',
   weight: 5,
   image: 'assets/poison.png'
 }
 
 const axe = {
-  name: 'axe',
+  name: 'Axe',
   weight: 15,
   image: 'assets/axe.png'
 }
 
 const bat = {
-  name: 'bat',
+  name: 'Bat',
   weight: 9,
   image: 'assets/bat.png'
 }
 
 const trophy = {
-  name: 'trophy',
+  name: 'Trophy',
   weight: 18,
   image: 'assets/trophy.png'
 }
 
 const pistol = {
-  name: 'pistol',
+  name: 'Pistol',
   weight: 9,
   image: 'assets/pistol.png'
 }

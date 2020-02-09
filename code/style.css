@@ -2,6 +2,9 @@ body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
   background: #f9f6e7;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 70px;
 }
 
 p {
@@ -21,20 +24,26 @@ img {
   padding: 30px;
 }
 
+a {
+  text-decoration: none;
+  color: #fdc2ba;
+  font-weight: 100px;
+  cursor: pointer;
+}
+
 /*** HEADER ***/
 
 header {
-  padding: 20px;
+  padding: 10px;
   background: #eeb736;
 }
 
 /*** MAIN CONTAINER ***/
 
 .cards {
-  margin: 50px auto;
+  margin: 20px auto;
   width: 90%;
   height: auto;
-  /* background: #fff; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,20 +52,12 @@ header {
 
 /*** DECKS ***/
 
-/* video {
-  object-fit: cover;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-} */
-
-
 .killer-deck {
   width: 250px;
   height: 330px;
   background: #f7876b;
   text-align: center;
-  margin: 10px;
+  margin: 20px;
   border-radius: 16px;
 }
 
@@ -65,7 +66,7 @@ header {
   height: 330px;
   background: #27706b;
   text-align: center;
-  margin: 10px;
+  margin: 20px;
   border-radius: 16px;
 }
 
@@ -74,7 +75,7 @@ header {
   height: 330px;
   background: #fdc2ba;
   text-align: center;
-  margin: 10px;
+  margin: 20px;
   border-radius: 16px;
 }
 
@@ -102,6 +103,23 @@ header {
   align-items: center;
 }
 
+/*** INSTRUCTIONS ***/
+
+.game-instruction {
+  margin: 0;
+  margin-top: -30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instruction {
+  color: #f7876b;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 /*** MYSTERY BUTTON ***/
 
 button {
@@ -112,18 +130,29 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
-  margin-bottom: 300px;
+  margin-bottom: 100px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #f9f6e7;
+  font-weight: bold;
+}
+
+button:focus {
+  outline: none;
 }
 
 /*** FOOTER ***/
 
 footer {
-  padding: 20px;
-  height: 100px;
+  padding: 20px 0;
+  width: 100%;
+  height: 70px;
   background: #27706b;
+  position: absolute;
+  bottom: 0;
 }
 
-.footer {
+footer p {
+  padding: 10px;
   color: #fdc2ba;
   text-align: center;
 }
@@ -138,42 +167,35 @@ footer {
     padding: 20px 0;
   }
 
- /*  .killer-deck {
-    width: 225px;
-    height: 300px;
-  }
-
-  .room-deck {
-    width: 225px;
-    height: 300px;
-  }
-
-  .weapon-deck {
-    width: 225px;
-    height: 300px;
-  } */
-
 } 
 
 @media (min-width: 1025px) {
 
   .cards {
+    justify-content: center;
     padding: 40px 0;
   }
-/* 
+
   .killer-deck {
-    width: 250px;
-    height: 330px;
+    margin: 50px;
   }
 
   .room-deck {
-    width: 250px;
-    height: 330px;
+    margin: 50px;
   }
 
   .weapon-deck {
-    width: 250px;
-    height: 330px;
-  } */
+    margin: 50px;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p {
+    padding: 0 30px;
+  }
 
 }
