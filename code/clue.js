@@ -10,11 +10,101 @@ const mrGreen = {
   occupation: 'Entrepreneur'
 }
 
+const professorPlum = {
+  firstName: 'Peter',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'He is widely seen as quick-witted',
+  age: 36,
+  image: 'assets/green.png',
+  occupation: 'Professor'
+}
+
+const colonelMustard = {
+  firstName: 'Michael',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'He is usually a dignified, dapper and dangerous military man',
+  age: 55,
+  image: 'assets/green.png',
+  occupation: 'Colonel'
+}
+
+const mrsPeacock = {
+  firstName: 'Elizabeth',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'She is an elderly, still-attractive woman who nearly always maintains her dignity',
+  age: 32,
+  image: 'assets/green.png',
+  occupation: 'Socialite'
+}
+
+const mrsWhite = {
+  firstName: 'Blanche',
+  lastName: 'White',
+  color: 'white',
+  description: 'She is usually a frazzled servant',
+  age: 65,
+  image: 'assets/green.png',
+  occupation: 'Housekeeper'
+}
+
+const missScarlett = {
+  firstName: 'Josephine',
+  lastName: 'Scarlett',
+  color: 'red',
+  description: 'She is a femme fatale',
+  age: 25,
+  image: 'assets/green.png',
+  occupation: 'Actress'
+}
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
-  weight: 10
+  material: 'textile'
+}
+
+const knife = {
+  name: 'knife',
+  material: 'metal'
+}
+
+const candlestick = {
+  name: 'candlestick',
+  material: 'silver'
+}
+
+const dumbbell = {
+  name: 'dumbbell',
+  material: 'iron'
+}
+
+const poison = {
+  name: 'poison',
+  material: 'liquid'
+}
+
+const axe = {
+  name: 'axe',
+  material: 'metal'
+}
+
+const bat = {
+  name: 'bat',
+  material: 'wood'
+}
+
+const trophy = {
+  name: 'trophy',
+  material: 'silver'
+}
+
+const pistol = {
+  name: 'pistol',
+  material: 'metal'
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -23,13 +113,42 @@ const rope = {
 
 const suspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
+  professorPlum,
+  colonelMustard,
+  mrsPeacock,
+  mrsWhite,
+  missScarlett
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+const rooms = [
+  "Dining Room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Billiard Room",
+  "Lounge",
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "Living Room",
+  "Observatory",
+  "Theater",
+  "Guest House",
+  "Patio"
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
