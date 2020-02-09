@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
-  background: #ebeff2;
+  background: #f9f6e7;
 }
 
 p {
@@ -9,6 +9,23 @@ p {
   font-weight: 300;
   color: #fff;
   /* background-color: #fff; */
+}
+
+h1 {
+  text-align: center;
+  color: #f9f6e7;
+  font-size: 50px;
+}
+
+img {
+  padding: 30px;
+}
+
+/*** HEADER ***/
+
+header {
+  padding: 20px;
+  background: #eeb736;
 }
 
 /*** MAIN CONTAINER ***/
@@ -26,10 +43,18 @@ p {
 
 /*** DECKS ***/
 
+/* video {
+  object-fit: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+} */
+
+
 .killer-deck {
   width: 250px;
   height: 330px;
-  background: #000;
+  background: #f7876b;
   text-align: center;
   margin: 10px;
   border-radius: 16px;
@@ -38,7 +63,7 @@ p {
 .weapon-deck {
   width: 250px;
   height: 330px;
-  background: rgb(10, 53, 10);
+  background: #27706b;
   text-align: center;
   margin: 10px;
   border-radius: 16px;
@@ -47,7 +72,7 @@ p {
 .room-deck {
   width: 250px;
   height: 330px;
-  background: midnightblue;
+  background: #fdc2ba;
   text-align: center;
   margin: 10px;
   border-radius: 16px;
@@ -81,12 +106,26 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: #eeb736;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 300px;
+}
+
+/*** FOOTER ***/
+
+footer {
+  padding: 20px;
+  height: 100px;
+  background: #27706b;
+}
+
+.footer {
+  color: #fdc2ba;
+  text-align: center;
 }
 
 /*** MEDIA QUERIES ***/

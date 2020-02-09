@@ -6,7 +6,7 @@ const mrGreen = {
   color: 'green',
   description: 'He has a lot of connections',
   age: 45,
-  image: 'assets/green.png',
+  image: 'assets/green2.png',
   occupation: 'Entrepreneur'
 }
 
@@ -16,7 +16,7 @@ const professorPlum = {
   color: 'purple',
   description: 'He is a mathematical genius',
   age: 33,
-  image: 'assets/plum.png',
+  image: 'assets/plum2.png',
   occupation: 'Professor'
 }
 
@@ -26,7 +26,7 @@ const missScarlet = {
   color: 'red',
   description: 'She will do anything to stay in the spotlight',
   age: 35,
-  image: 'assets/scarlet.png',
+  image: 'assets/scarlet2.png',
   occupation: 'Actress'
 }
 
@@ -36,7 +36,7 @@ const mrsPeacock = {
   color: 'blue',
   description: 'A manners-freak with a nose for politics',
   age: 42,
-  image: 'assets/peacock.png',
+  image: 'assets/peacock2.png',
   occupation: 'Politician'
 }
 
@@ -46,7 +46,7 @@ const colonelMustard = {
   color: 'yellow',
   description: 'A stiff-lipped gentleman',
   age: 65,
-  image: 'assets/mustard.png',
+  image: 'assets/mustard2.png',
   occupation: 'Colonel'
 }
 
@@ -56,7 +56,7 @@ const mrsWhite = {
   color: 'white',
   description: 'She will do anything for justice',
   age: 67,
-  image: 'assets/white.png',
+  image: 'assets/white2.png',
   occupation: 'Lawyer'
 }
 
@@ -64,66 +64,133 @@ const mrsWhite = {
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  image: 'assets/rope.png'
 }
 
 const knife = {
   name: 'knife',
-  weight: 6
+  weight: 6,
+  image: 'assets/knife.png'
 }
 
 const candlestick = {
   name: 'candlestick',
-  weight: 12
+  weight: 12,
+  image: 'assets/candlestick.png'
 }
 
 const dumbbell = {
   name: 'dumbbell',
-  weight: 20
+  weight: 20,
+  image: 'assets/dumbbell.png'
 }
 
 const poison = {
   name: 'poison',
-  weight: 5
+  weight: 5,
+  image: 'assets/poison.png'
 }
 
 const axe = {
   name: 'axe',
-  weight: 15
+  weight: 15,
+  image: 'assets/axe.png'
 }
 
 const bat = {
   name: 'bat',
-  weight: 9
+  weight: 9,
+  image: 'assets/bat.png'
 }
 
 const trophy = {
   name: 'trophy',
-  weight: 18
+  weight: 18,
+  image: 'assets/trophy.png'
 }
 
 const pistol = {
   name: 'pistol',
-  weight: 9
+  weight: 9,
+  image: 'assets/pistol.png'
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE. (I chose to declare the room variables before adding them to the array)
 
-const diningRoom = 'Dining Room'
-const conservatory = 'Conservatory'
-const kitchen = 'Kitchen'
-const study = 'Study'
-const library = 'Library'
-const billiardRoom = 'Billiard Room'
-const lounge = 'Lounge'
-const ballroom = 'Ballroom'
-const hall = 'Hall'
-const spa = 'Spa'
-const livingRoom = 'Living Room'
-const observatory = 'Observatory'
-const theater = 'Theater'
-const guestHouse = 'Guest House'
-const patio = 'Patio'
+const diningRoom = {
+  name: 'Dining Room',
+  image: 'assets/diningroom.png'
+}
+
+const conservatory = {
+  name: 'Conservatory',
+  image: 'assets/conservatory.png'
+}
+
+const kitchen = {
+  name: 'Kitchen',
+  image: 'assets/kitchen.png'
+}
+const study = {
+  name: 'Study',
+  image: 'assets/study.png'
+}
+
+const library = {
+  name: 'Library',
+  image: 'assets/library.png'
+}
+
+const billiardRoom = {
+  name: 'Billiard Room',
+  image: 'assets/billiardroom.png'
+}
+
+const lounge = {
+  name: 'Lounge',
+  image: 'assets/lounge.png'
+}
+
+const ballroom = {
+  name: 'Ballroom',
+  image: 'assets/ballroom.png'
+}
+
+const hall = {
+  name: 'Hall',
+  image: 'assets/hall.png'
+}
+
+const spa = {
+  name: 'Spa',
+  image: 'assets/spa.png'
+}
+
+const livingRoom = {
+  name: 'Living Room',
+  image: 'assets/livingroom.png'
+}
+
+const observatory = {
+  name: 'Observatory',
+  image: 'assets/observatory.png'
+}
+
+const theater = {
+  name: 'Theater',
+  image: 'assets/theater.png'
+}
+
+const guestHouse = {
+  name: 'Guest House',
+  image: 'assets/guesthouse.png'
+}
+
+const patio = {
+  name: 'Patio',
+  image: 'assets/patio.png'
+}
 
 console.log(mrGreen.description)
 console.log(rope.weight)
@@ -203,6 +270,8 @@ const pickKiller = () => {
   document.getElementById(
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById("killerImage");
+  killerImage.src = mystery.killer.image;
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
@@ -211,12 +280,16 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
 
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
+  document.getElementById("weaponImage");
+  weaponImage.src = mystery.weapon.image;
 }
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
-  document.getElementById('roomName').innerHTML = `${mystery.room}`
+  document.getElementById('roomName').innerHTML = `${mystery.room.name}`
+  document.getElementById("weaponImage");
+  roomImage.src = mystery.room.image;
 }
 
 document.getElementById('killerCard').onclick = pickKiller;
@@ -227,7 +300,7 @@ document.getElementById('roomCard').onclick = pickRoom;
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`
 }
 
 document.getElementById('mysteryReveal').onclick = revealMystery
