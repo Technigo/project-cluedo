@@ -175,9 +175,9 @@ const pickKiller = () => {
   mystery.killer = randomSelector(suspects)
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerText').style.background = mystery.killer.color
   document.getElementById(
-    'killerName'
+    'killerText'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 }
 
@@ -187,11 +187,8 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
 
   document.getElementById(
-    'weaponName'
+    'weaponText'
   ).innerHTML = `${mystery.weapon.name}`
-  document.getElementById(
-    'weaponMaterial'
-  ).innerHTML = `${mystery.weapon.material}`
 }
 
 // This function will be invoked when you click on the room card.
@@ -200,13 +197,13 @@ const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
   document.getElementById(
-    'roomName'
+    'roomText'
   ).innerHTML = `${mystery.room}`
 }
 
-document.getElementById('killerCard').addEventListener('click', pickKiller)
-document.getElementById('weaponCard').addEventListener('click', pickWeapon)
-document.getElementById('roomCard').addEventListener('click', pickRoom)
+document.getElementById('killer').addEventListener('click', pickKiller)
+document.getElementById('weapon').addEventListener('click', pickWeapon)
+document.getElementById('room').addEventListener('click', pickRoom)
 
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:

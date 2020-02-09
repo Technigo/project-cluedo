@@ -100,6 +100,8 @@ header p{
 
 .card-text{
   grid-area: text;
+  background: white;
+  border-radius: 0 0 10px 10px;
 }
 
 .card-stats{
