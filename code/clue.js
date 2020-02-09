@@ -268,7 +268,6 @@ document.getElementById('roomCard').addEventListener('click', pickRoom)
 // 'The murder was committed by Jacob Green, in the living room with a rope. */
 
 const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = (`The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`)
-
+  document.getElementById('mystery').innerHTML = (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`)
 }
 document.getElementById('btn').addEventListener('click', revealMystery)

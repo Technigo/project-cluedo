@@ -1,6 +1,21 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background-color: black;
+}
+
+h1 {
+  font-family: 'Luckiest Guy', cursive;
+  color: white;
+  font-size: 5rem;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+
 }
 
 p {
@@ -9,11 +24,18 @@ p {
   background-color: #fff;
 }
 
+header {
+  height: 160px;
+  width: auto;
+  background-color: black;
+  padding-top: 2rem;
+}
+
 .cards {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/cluedo.jpg");
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -49,10 +71,10 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: whitesmoke;
   border: none;
   font-size: 20px;
-  border-radius: 8px;
+  border-radius: 16px;
   display: block;
   margin: 0 auto;
 }
