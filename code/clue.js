@@ -6,8 +6,9 @@ const mrGreen = {
   color: 'green',
   description: 'Has a lot of connections',
   age: 45,
-  // image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur',
+  image: 'assets/green.png'
+  // occupation: 'Entrepreneur'
 }
 
 const mrsWhite = {
@@ -15,9 +16,10 @@ const mrsWhite = {
   lastName: 'White',
   color: 'white',
   description: 'Looks after herself only',
-  age: 32,
-  // image: 'assets/green.png',
-  occupation: 'Teacher'
+  age: 72,
+  occupation: 'Teacher',
+  image: 'assets/white.png'
+  // occupation: 'Teacher'
 }
 
 const profPlum = {
@@ -26,8 +28,9 @@ const profPlum = {
   color: 'plum',
   description: 'Has no patience',
   age: 55,
-  // image: 'assets/green.png',
-  occupation: 'Professor'
+  occupation: 'Professor',
+  image: 'assets/plum.png'
+  // occupation: 'Professor'
 }
 
 const missScarlet = {
@@ -36,8 +39,9 @@ const missScarlet = {
   color: 'red',
   description: 'Extremely smart',
   age: 27,
-  // image: 'assets/green.png',
-  occupation: 'Waitress'
+  occupation: 'Waitress',
+  image: 'assets/scarlet.png'
+  // occupation: 'Waitress'
 }
 
 const mrsPeacock = {
@@ -46,8 +50,9 @@ const mrsPeacock = {
   color: 'blue',
   description: 'Never tells the whole truth',
   age: 67,
-  // image: 'assets/green.png',
-  occupation: 'Former Pilot'
+  occupation: 'Pilot',
+  image: 'assets/peacock.png'
+  // occupation: 'Former Pilot'
 }
 
 const mrMustard = {
@@ -55,65 +60,66 @@ const mrMustard = {
   lastName: 'Mustard',
   color: 'yellow',
   description: 'Can cover his tracks',
-  age: 38,
-  // image: 'assets/green.png',
-  occupation: 'Scientist'
+  age: 68,
+  occupation: 'Officer',
+  image: 'assets/mustard.png'
+  // occupation: 'Scientist'
 }
-
-// const mySuspects = () => {
-//   this.firstName = firstName
-//   this.lastName = lastName
-//   this.color = color
-//   this.description = description
-//   this.age = age
-//   this.occupation
-// }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'Rope',
-  weight: 10
+  weight: 10,
+  image: 'weapon/rope.png'
 }
 
 const knife = {
   name: 'Knife',
-  weight: 3
+  weight: 3,
+  image: 'weapon/knife.png'
 }
 
 const candlestick = {
   name: 'Candlestick',
-  weight: 5
+  weight: '5kg',
+  image: 'weapon/candlestick.png'
 }
 
 const dumbbell = {
   name: 'Dumbbell',
-  weight: 8
+  weight: '8kg',
+  image: 'weapon/dumbbell.png'
 }
 
 const poison = {
   name: 'Poison',
-  weight: 1
+  weight: '1kg',
+  image: 'weapon/poison.png'
 }
 
 const axe = {
   name: 'Axe',
-  weight: 15
+  weight: '15kg',
+  image: 'weapon/axe.png'
 }
 
 const bat = {
   name: 'Bat',
-  weight: 7
+  weight: '7kg',
+  image: 'weapon/bat.png'
 }
 
 const trophy = {
   name: 'Trophy',
-  weight: 6
+  weight: '6kg',
+  image: 'weapon/trophy.png'
 }
 
 const pistol = {
   name: 'Pistol',
-  weight: 4
+  weight: '4kg',
+  image: 'weapon/pistol.png'
 }
 
 
@@ -156,7 +162,7 @@ const rooms = [
   "Living Room",
   "Observatory",
   "Theater",
-  "GuestHouse",
+  "Guest House",
   "Patio"
 ]
 
@@ -187,8 +193,11 @@ const pickKiller = () => {
   const theKillerAge = document.getElementById('killerAge')
   theKillerAge.innerHTML = mystery.killer.age
 
-  // const theKillerOccupation = getElementById('killerOccupation')
-  // theKillerOccupation.innerHTML = mystery.killer.occupation
+  const theKillerOccupation = document.getElementById('killerWork')
+  theKillerOccupation.innerHTML = mystery.killer.occupation
+
+  const theKillerImg = document.getElementById('killerImage')
+  theKillerImg.src = mystery.killer.image
 
   const theKillerDescription = document.getElementById('killerDescription')
   theKillerDescription. innerHTML = mystery.killer.description
@@ -211,6 +220,9 @@ const pickWeapon = () => {
   const theWeight = document.getElementById('weaponWeight')
   theWeight.innerHTML = mystery.weapons.weight
 
+  const theImg = document.getElementById('weaponImage')
+  theImg.src = mystery.weapons.image
+
 }
 
 const pickRoom = () => {
@@ -222,9 +234,11 @@ const pickRoom = () => {
 }
 
 const revealMystery = () => {
-  const revealCrimne = document.getElementById('mystery')
-  revealCrimne.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}
-  ${mystery.room} ${mystery.weapon.name}`
+  const revealCrimne = document.getElementById('revealing')
+  revealCrimne.innerHTML = `The murder was committed by 
+  ${mystery.killer.firstName} ${mystery.killer.lastName}
+  in the ${mystery.room} 
+  with a ${mystery.weapons.name}`
 }
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:

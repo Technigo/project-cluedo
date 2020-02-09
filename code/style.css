@@ -11,11 +11,13 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
-p {
+.cards p {
   margin: 1px;
   font-weight: 300;
   background-color: #fff;
   color: rgb(156, 41, 41);
+  font-family: 'Sawarabi Mincho', sans-serif;
+  font-size: 20px;
 }
 
 .cards {
@@ -68,4 +70,17 @@ button {
 
 button:hover {
   box-shadow: 2px 2px 5px black;
+}
+
+#mystery {
+  color: aliceblue;
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Sawarabi Mincho', sans-serif;
+  font-style: italic;
+}
+
+#killerImage {
+  width: 60%;
+  height: auto;
 }
