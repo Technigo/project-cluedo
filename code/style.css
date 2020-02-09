@@ -1,58 +1,78 @@
-body {
+@import url('https://fonts.googleapis.com/css?family=Paytone+One&display=swap');
+
+
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: basic-sans, sans-serif;
 }
 
-p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+body{
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(circle, rgba(64,64,64,1) 0%, rgba(34,34,34,1) 39%, rgba(13,13,13,1) 85%);
 }
 
-.cards {
-  margin: 50px auto;
-  width: 90%;
-  height: 600px;
-  background: #ccc;
+
+
+@keyframes background-animation {
+  0% {background-position: left;}
+  100% {background-position: right;}
+}
+
+main{
+  height: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-.killer-deck {
-  width: 250px;
-  height: 400px;
-  background: #000;
+header{
+  background: white;
+  border-radius: 10px;
+  width: 500px;
+  box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.75);
+}
+
+h1{
   text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+  padding: 1rem 1rem 0.25rem 1rem;
+  line-height: 0.8;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-family: 'Paytone One', sans-serif;
+  background: linear-gradient(45deg,#845ec2,#d65db1, #ff6f91,#ff9671, #ffc75f, #d0f971);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 300%;
+  animation: background-animation 5s infinite alternate;
 }
 
-.weapon-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
+header p{
   text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+  padding-bottom: 1rem;
+  color: #2F2F2F;
 }
 
-.room-deck {
-  width: 250px;
-  height: 400px;
-  background: midnightblue;
-
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-}
-
-button {
-  padding: 8px 16px;
-  background: crimson;
+#reveal{
+  color: white;
+  border-radius: 10px;
+  width: 500px;
+  font-family: 'Paytone One', sans-serif;
   border: none;
-  font-size: 20px;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto;
+  cursor: pointer;
+  padding: 0.5em 1.5em;
+  font-size: 2rem;
+  background: linear-gradient(45deg,#845ec2,#d65db1, #ff6f91,#ff9671, #ffc75f, #d0f971);
+  background-size: 300%;
+  background-position: left;
+  transition: background-position 1s;
+  box-shadow: 0px 0px 12px 3px rgba(0,0,0,0.75);
+}
+
+#reveal:hover, 
+#reveal:focus{
+  background-position: right;
 }
