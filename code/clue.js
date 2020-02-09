@@ -6,8 +6,58 @@ const mrGreen = {
   color: 'green',
   description: 'He has a lot of connections',
   age: 45,
-  image: 'assets/green.png',
+  // image: 'assets/green.png',
   occupation: 'Entrepreneur'
+}
+
+const mrsWhite = {
+  firstName: 'Wilma',
+  lastName: 'White',
+  color: 'white',
+  description: '',
+  age: 32,
+  // image: 'assets/green.png',
+  occupation: 'Teacher'
+}
+
+const profPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'plum',
+  description: 'He has a lot of connections',
+  age: 55,
+  // image: 'assets/green.png',
+  occupation: 'Professor'
+}
+
+const missScarlet = {
+  firstName: 'Anastasia',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'He has a lot of connections',
+  age: 27,
+  // image: 'assets/green.png',
+  occupation: 'Waitress'
+}
+
+const mrsPeacock = {
+  firstName: 'Agda',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'He has a lot of connections',
+  age: 67,
+  // image: 'assets/green.png',
+  occupation: 'Former Pilot'
+}
+
+const mrMustard = {
+  firstName: 'Carl',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'He has a lot of connections',
+  age: 38,
+  // image: 'assets/green.png',
+  occupation: 'Scientist'
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
