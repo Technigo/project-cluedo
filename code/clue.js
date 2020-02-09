@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS:
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -8,16 +8,125 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
-}
+};
+
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'A quick-witted, young professor with a bow tie and glasses',
+  age: 36,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+};
+
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'A femme fatale typically portrayed as young and attractive',
+  age: 25,
+  image: 'assets/scarlet.png',
+  occupation: 'Actress'
+};
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'A grande dame and still-attractive woman',
+  age: 32,
+  image: 'assets/peacock.png',
+  occupation: 'Socialite'
+};
+
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'He is a military man both dignified and dangerous',
+  age: 55,
+  image: 'assets/mustard.png',
+  occupation: 'Colonel'
+};
+
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'She is a frazzled servant',
+  age: 65,
+  image: 'assets/white.png',
+  occupation: 'Housekeeper'
+};
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
   weight: 10
+};
+
+const knife = {
+  name: 'knife',
+  weight: 4
+};
+
+const candlestick = {
+  name: 'candlestick',
+  weight: 13
 }
 
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 35
+};
+
+const poison = {
+  name: 'poison',
+  weight: 2
+};
+
+const axe = {
+  name: 'axe',
+  weight: 11
+}
+
+const bat = {
+  name: 'bat',
+  weight: 6
+};
+
+const trophy = {
+  name: 'trophy',
+  weight: 7
+};
+
+const pistol = {
+  name: 'pistol',
+  weight: 9
+};
+
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+const rooms = [
+  'Dining Room',
+  'Conservatory',
+  'Kitchen',
+  'Study',
+  'Library',
+  'Billiard Room',
+  'Lounge',
+  'Ballroom',
+  'Hall',
+  'Spa',
+  'Living Room',
+  'Observatory',
+  'Theater',
+  'Guest House',
+  'Patio',
+]
+
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
