@@ -128,7 +128,7 @@ header {
 
 button {
   display: block;
-  margin: 0 auto 100 x auto;
+  margin: 0 auto 100px auto;
   padding: 8px 16px;
   border: none;
   border-radius: 8px;
@@ -207,7 +207,6 @@ footer p {
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    
   }
 
   footer p {
