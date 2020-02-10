@@ -66,37 +66,43 @@ const msScarlet = {
 const rope = {
   name: 'rope',
   weight: 10,
-  color: 'brown'
+  color: 'brown',
+  image: 'assets/rope.jpg'
 }
 
 const knife = {
   name: 'knife',
   weight: 50,
-  color: 'grey'
+  color: 'grey',
+  image: 'assets/knife.jpg'
 }
 
 const poison = {
   name: 'poison',
   weight: 15,
-  color: 'red'
+  color: 'red',
+  image: 'assets/poison.jpg'
 }
 
 const axe = {
   name: 'axe',
   weight: 70,
-  color: 'grey'
+  color: 'grey',
+  image: 'assets/axe.jpg'
 }
 
 const plasticBag = {
   name: 'plastic bag',
   weight: 4,
-  color: 'white'
+  color: 'white',
+  image: 'assets/plastic_bag.jpg'
 }
 
-const machete = {
-  name: 'machete',
+const rock = {
+  name: 'rock',
   weight: 65,
-  color: 'grey'
+  color: 'grey',
+  image: 'assets/rock.jpg'
 }
 
 
@@ -120,7 +126,7 @@ const weapons = [
   poison,
   axe,
   plasticBag,
-  machete
+  rock
 ]
 
 const rooms = [
@@ -144,9 +150,10 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 const mystery = {
-  killer: 'x',
-  weapon: 'y',
-  room: 'z'
+  killer: '',
+  weapon: '',
+  room: ''
+
 }
 
 // This function will be invoked when you click on the killer card.
@@ -157,8 +164,8 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+    'killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById("killerImage").src = mystery.killer.image;
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
@@ -167,14 +174,15 @@ const pickWeapon = () => {
   document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById(
     'weaponName'
-  ).innerHTML = `${mystery.weapon.name}`
+  ).innerHTML = `${mystery.weapon.name} `
+  document.getElementById("weaponImage").src = mystery.weapon.image;
 }
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
   document.getElementById(
     'roomName'
-  ).innerHTML = `${mystery.room}`
+  ).innerHTML = `${mystery.room} `
 }
 
 document.getElementById('killerCard').addEventListener('click', pickKiller)
