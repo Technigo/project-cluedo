@@ -298,7 +298,6 @@ const pickWeapon = () => {
 
   const theImg = document.getElementById('weaponImage')
   theImg.src = mystery.weapons.image
-
 }
 
 const pickRoom = () => {
@@ -309,7 +308,6 @@ const pickRoom = () => {
 
   const theImg = document.getElementById('roomImage')
   theImg.src = mystery.room.image
-
 }
 
 const revealMystery = () => {
