@@ -130,24 +130,24 @@ function timeList() {
     name: '8:00',
     color: 'wheat'
   }
-  const noon ={
+  const noon = {
     name: '12:00',
     color: 'skyblue'
   }
-  const afternoon ={
+  const afternoon = {
     name: '17:00',
     color: 'pink'
   }
-  const evening ={
+  const evening = {
     name: '21:00',
     color: 'indigo'
   }
-  const night ={
+  const night = {
     name: '1:00',
     color: 'black'
   }
-const times =[morning, noon, afternoon, evening, night]
-return times
+  const times = [morning, noon, afternoon, evening, night]
+  return times
 }
 
 
@@ -221,7 +221,7 @@ pickTime = () => {
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = (mystery) => {
-  const checkEmpty = (mystery.killer === 'blank' || mystery.weapon === 'blank' || mystery.room === 'blank' || mystery.time ==='blank')
+  const checkEmpty = (mystery.killer === 'blank' || mystery.weapon === 'blank' || mystery.room === 'blank' || mystery.time === 'blank')
   let bigReveal = ""
   let hedReveal = ""
   console.log(checkEmpty)
@@ -233,7 +233,7 @@ const revealMystery = (mystery) => {
     bigReveal = `The victim died at ${mystery.time.name} of a ${mystery.weapon.name} in the ${mystery.room} and the perpitrator was ${mystery.killer.firstName} ${mystery.killer.lastName}.`
     hedReveal = "Mystery is solved and the murderer is caught";
     document.getElementById('container').style.backgroundImage = "url('media/solved.jpg')"
-    document.getElementById('container').style.backgroundsize = "100%"
+    document.getElementById('container').style.backgroundSize = "cover"
   }
   document.getElementById('mysterytext').innerHTML = bigReveal;
   document.getElementById('mystery').innerHTML = hedReveal;
