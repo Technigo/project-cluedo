@@ -12,9 +12,10 @@ body {
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: bolder;
   color: rgb(44, 44, 44);
+  font-family: 'IM Fell English', serif;
 }
 
 .cards p {
@@ -48,6 +49,10 @@ h2 {
   /* color: black; */
 }
 
+.killer-deck:hover {
+  opacity: 0.7;
+}
+
 .weapon-deck {
   width: 250px;
   height: 450px;
@@ -57,20 +62,28 @@ h2 {
   border-radius: 16px;
 }
 
+.weapon-deck:hover {
+  opacity: 0.7;
+}
+
 .room-deck {
   width: 250px;
   height: 450px;
   background: rgb(0, 0, 0);
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
+.room-deck:hover {
+  opacity: 0.7;
+}
+
 button {
   padding: 8px 16px;
   background: rgb(121, 1, 25);
-  border: none;
+  border: 0;
+  font-family: 'IM Fell English', serif;
   font-size: 20px;
   font-weight: bolder;
   border-radius: 8px;
@@ -108,3 +121,13 @@ button:hover {
   width: 90%;
   height: auto;
 }
+/* 
+@media (max-width: 668px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+  }
+} */

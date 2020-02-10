@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cutive+Mono&display=swap" rel="stylesheet">
-    <title>Cluedo Game: Who Did It?</title>
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English&display=swap" rel="stylesheet">
+    <title>Cluedo Game: the Crime Scene</title>
   </head>
 
   <body id="revealing">
     <section class="cards">
       <div class="killer-deck" onclick="pickKiller()" id="killerCard">
         <h2>KILLER</h2>
-        <p id="killerName"></p>
+        <p id="killerName">WHO?</p>
         <p id="killerAge"></p>
         <p id="killerWork"></p>
         <img id="killerImage" src="" height="100" />
@@ -24,14 +25,14 @@
 
       <div class="weapon-deck" onclick="pickWeapon()" id="weaponCard">
         <h2>WEAPON</h2>
-        <p id="weaponName"></p>
+        <p id="weaponName">WHAT?</p>
         <p id="weaponWeight"></p>
         <img id="weaponImage" src="" height="100" />
       </div>
 
       <div class="room-deck" onclick="pickRoom()" id="roomCard">
         <h2>ROOM</h2>
-        <p id="roomName"></p>
+        <p id="roomName">WHERE?</p>
         <img id="roomImage" src="" height="100" />
       </div>
     </section>
