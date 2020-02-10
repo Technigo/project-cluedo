@@ -105,6 +105,41 @@ const rock = {
   image: 'assets/rock.jpg'
 }
 
+const kitchen = {
+  name: 'kitchen',
+  color: 'yellow',
+  image: 'assets/kitchen.jpg'
+}
+
+const livingroom = {
+  name: 'livingroom',
+  color: 'blue',
+  image: 'assets/livingroom.jpg'
+}
+
+const hallway = {
+  name: 'hallway',
+  color: 'grey',
+  image: 'assets/hallway.jpg'
+}
+
+const bathroom = {
+  name: 'bathroom',
+  color: 'white',
+  image: 'assets/bathroom.jpg'
+}
+
+const basement = {
+  name: 'basement',
+  color: 'brown',
+  image: 'assets/basement.jpg'
+}
+
+const bedroom = {
+  name: 'bedroom',
+  color: 'pink',
+  image: 'assets/bedroom.jpg'
+}
 
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -130,12 +165,12 @@ const weapons = [
 ]
 
 const rooms = [
-  'kitchen',
-  'livingroom',
-  'hallway',
-  'bathroom',
-  'basement',
-  'bedroom'
+  kitchen,
+  livingroom,
+  hallway,
+  bathroom,
+  basement,
+  bedroom
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
@@ -163,26 +198,23 @@ const pickKiller = () => {
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-  document.getElementById("killerImage").src = mystery.killer.image;
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerImage').src = mystery.killer.image;
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
   document.getElementById('weaponCard').style.background = mystery.weapon.color
-  document.getElementById(
-    'weaponName'
-  ).innerHTML = `${mystery.weapon.name} `
-  document.getElementById("weaponImage").src = mystery.weapon.image;
+  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name} `
+  document.getElementById('weaponImage').src = mystery.weapon.image;
 }
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
-  document.getElementById(
-    'roomName'
-  ).innerHTML = `${mystery.room} `
+  document.getElementById('roomCard').style.background = mystery.room.color
+  document.getElementById('roomName').innerHTML = `${mystery.room.name} `
+  document.getElementById('roomImage').src = mystery.room.image;
 }
 
 document.getElementById('killerCard').addEventListener('click', pickKiller)
