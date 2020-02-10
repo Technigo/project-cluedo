@@ -289,10 +289,10 @@ document.getElementById('roomCard').onclick = pickRoom;
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-  if (mystery.killer || mystery.weapon || mystery.room) {
-    document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}`
-  } else {
+  if (mystery.killer === "" || mystery.weapon === "" || mystery.room === "") {
     document.getElementById('mystery').innerHTML = 'Pick a card from each deck to reveal the crime'
+  } else {
+    document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}`
   }
 }
 
