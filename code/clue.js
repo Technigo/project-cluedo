@@ -11,7 +11,7 @@ const mrGreen = {
 }
 
 const mrsWhite = {
-  firstName: '',
+  firstName: 'Mrs',
   lastName: 'White',
   color: 'white',
   description: 'Usually a frazzled servant',
@@ -63,47 +63,56 @@ const colMustard = {
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  color: 'pink'
 }
 
 const knife = {
   name: 'knife',
-  weight: 8
+  weight: 8,
+  color: 'pink'
 }
 
 const candlestick = {
   name: 'candlestick',
-  weight: 20
+  weight: 20,
+  color: 'pink'
 }
 
 const dumbbell = {
   name: 'dumbbell',
-  weight: 30
+  weight: 30,
+  color: 'pink'
 }
 
 const poison = {
   name: 'poison',
-  weight: 0.2
+  weight: 0.2,
+  color: 'pink'
 }
 
 const axe = {
   name: 'axe',
-  weight: 18
+  weight: 18,
+  color: 'pink'
 }
 
 const bat = {
   name: 'bat',
-  weight: 12
+  weight: 12,
+  color: 'pink'
 }
 
 const trophy = {
   name: 'trophy',
-  weight: 15
+  weight: 15,
+  color: 'pink'
 }
 
 const pistol = {
   name: 'pistol',
-  weight: 9
+  weight: 9,
+  color: 'pink'
 }
 
 
@@ -112,24 +121,24 @@ const pistol = {
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
-  'mrGreen',
-  'mrsWhite',
-  'mrsPeacock',
-  'professorPlum',
-  'missScarlet',
-  'colMustard',
+  mrGreen,
+  mrsWhite,
+  mrsPeacock,
+  professorPlum,
+  missScarlet,
+  colMustard,
 ]
 
 const weapons = [
-  'rope',
-  'knife',
-  'candlestick',
-  'dumbbell',
-  'poison',
-  'axe',
-  'bat',
-  'trophy',
-  'pistol'
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
 ]
 
 const rooms = [
@@ -150,12 +159,12 @@ const rooms = [
   'Patio'
 ]
 
-console.log(mrGreen.description)
-console.log(axe.w)
+console.log(`This is a description of Mr Green: ${mrGreen.description}`)
+console.log(`This is the weight of the axe: ${axe.weight}`)
 console.log(suspects)
 console.log(weapons)
 console.log(rooms)
-console.log(suspects[0])
+console.log(suspects[0].firstName)
 console.log(rooms.slice(-1)[0])
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
@@ -164,23 +173,39 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
+
+
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
 
-// This function will be invoked when you click on the killer card.
-const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
-
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+let mystery = {
+  killer: '',
+  weapon: '',
+  room: ''
 }
+
+const pickKiller = () => {
+  mystery.killer = randomSelector(suspects)
+  document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+}
+
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons)
+  document.getElementById('weaponCard').style.background = mystery.weapon.color
+  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
+}
+
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+  document.getElementById('roomName').innerHTML = `${mystery.room}` 
+}
+
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+
