@@ -65,46 +65,52 @@ const mrsWhite = {
 
 const candlestick = {
   name: 'Candlestick',
+  weight: 1
 }
 
 const dagger = {
   name: 'Dagger',
+  weight: 2
 }
 
 const leadPipe = {
   name: 'Lead Pipe',
+  weight: 3
 }
 
 const revolver = {
   name: 'Revolver',
+  weight: 4
 }
 
 const rope = {
   name: 'Rope',
+  weight: 5
 }
 
 const wrench = {
   name: 'Wrench',
+  weight: 6
 }
 
 
 
 // THE ROOMS
 
-const kitchen
-const ballroom
-const conservatory
-const diningRoom
-const cellar
-const billiardRoom
-const library
-const lounge
-const hall
-const study
+/*const kitchen = 'Kitchen'
+const ballroom = 'Ballroom'
+const conservatory = 'Conservatory'
+const diningRoom = 'Dining Room'
+const cellar = 'Cellar'
+const billiardRoom = 'Billiard Room'
+const library = 'Library'
+const lounge = 'Lounge'
+const hall = 'Hall'
+const study = 'Study'*/
 
 // SUSPECTS, WEAPONS AND ROOMS IN ARRAYS
 
-const theSuspects = [
+const suspects = [
   mrGreen,
   colonelMustard,
   mrsPeacock,
@@ -112,6 +118,11 @@ const theSuspects = [
   missScarlet,
   mrsWhite,
 ]
+
+const theSuspects = suspects.forEach((item) => {
+  console.log(item)
+})
+
 
 const weapons = [
   candlestick,
@@ -122,18 +133,25 @@ const weapons = [
   wrench,
 ]
 
+const theWeapons = weapons.forEach((item) => {
+  console.log(item)
+})
+
+
 const rooms = [
-  kitchen,
-  ballroom,
-  conservatory,
-  diningRoom,
-  cellar,
-  billiardRoom,
-  library,
-  lounge,
-  hall,
-  study,
+  'kitchen',
+  'ballroom',
+  'conservatory',
+  'diningRoom',
+  'cellar',
+  'billiardRoom',
+  'library',
+  'lounge',
+  'hall',
+  'study',
 ]
+
+console.log(rooms)
 
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
