@@ -13,7 +13,7 @@ const mrGreen = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: '#b16889',
+  color: '#837288',
   description: 'He is a mathematical genius',
   age: 33,
   image: 'assets/plum2.png',
@@ -33,7 +33,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: 'Elanor',
   lastName: 'Peacock',
-  color: '#7bccd4',
+  color: '#89b7cc',
   description: 'A manners-freak with a nose for politics',
   age: 42,
   image: 'assets/peacock2.png',

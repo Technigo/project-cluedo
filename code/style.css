@@ -2,9 +2,15 @@ body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
   background: #f9f6e7;
+  background-image: url('assets/93878.jpg');
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   position: relative;
   min-height: 100vh;
-  padding-bottom: 80px;
+  padding-bottom: 140px;
 }
 
 p {
@@ -59,15 +65,17 @@ header {
   text-align: center;
   margin: 20px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 .weapon-deck {
   width: 250px;
   height: 330px;
-  background: #27706b;
+  background: #2e5656;
   text-align: center;
   margin: 20px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 .room-deck {
@@ -77,6 +85,7 @@ header {
   text-align: center;
   margin: 20px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 .secondary-field-top {
@@ -115,10 +124,16 @@ header {
 }
 
 .instruction {
-  color: #f7876b;
-  font-weight: bold;
   font-size: 15px;
   margin: 35px;
+  background-color: #89b7cc9f;
+  backdrop-filter: blur(5px);
+  color: #fff;
+  border-radius: 8px;
+  display: inline;
+  padding: 0.5rem;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 /*** MYSTERY BUTTON ***/
@@ -135,6 +150,7 @@ button {
   font-family: 'Courier New', Courier, monospace;
   color: #f9f6e7;
   font-weight: bold;
+  cursor: pointer;
 }
 
 button:focus {
@@ -146,8 +162,8 @@ button:focus {
 footer {
   padding: 20px 0;
   width: 100%;
-  height: 80px;
-  background: #27706b;
+  height: 140px;
+  background: #2e5656;
   position: absolute;
   bottom: 0;
 }
@@ -162,6 +178,10 @@ footer p {
 
 @media (min-width: 668px) {
 
+  body {
+    padding-bottom: 120px;
+  }
+  
   .cards {
     flex-direction: row;
     justify-content: space-around;
@@ -172,9 +192,17 @@ footer p {
     font-size: 20px;
   }
 
+  footer {
+    height: 120px;
+  }
+
 } 
 
 @media (min-width: 1025px) {
+
+  body {
+    padding-bottom: 80px;
+  }
 
   .cards {
     justify-content: center;
@@ -197,10 +225,16 @@ footer p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
+    
   }
 
   footer p {
     padding: 0 30px;
+  }
+
+  .icon-credit {
+    order:-1
   }
 
 }
