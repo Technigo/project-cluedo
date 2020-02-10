@@ -33,7 +33,7 @@ const mrMustard = {
 const msPeacock = {
   firstName: 'Jane',
   lastName: 'Peacock',
-  color: 'light green',
+  color: 'pink',
   description: 'She talkes a lot',
   age: 48,
   image: 'assets/peacock.png',
@@ -65,32 +65,38 @@ const msScarlet = {
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  color: 'brown'
 }
 
 const knife = {
   name: 'knife',
-  weight: 50
+  weight: 50,
+  color: 'grey'
 }
 
 const poison = {
   name: 'poison',
-  weight: 15
+  weight: 15,
+  color: 'red'
 }
 
 const axe = {
   name: 'axe',
-  weight: 70
+  weight: 70,
+  color: 'grey'
 }
 
 const plasticBag = {
   name: 'plastic bag',
-  weight: 4
+  weight: 4,
+  color: 'white'
 }
 
 const machete = {
   name: 'machete',
-  weight: 65
+  weight: 65,
+  color: 'grey'
 }
 
 
@@ -158,6 +164,7 @@ const pickKiller = () => {
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
+  document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById(
     'weaponName'
   ).innerHTML = `${mystery.weapon.name}`
