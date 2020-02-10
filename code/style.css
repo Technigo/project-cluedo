@@ -1,19 +1,28 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background: url(./assets/mansion.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+}
+
+#killerImage {
+  border-radius: 70%;
 }
 
 p {
-  margin: 1px;
+  margin: 3px;
   font-weight: 300;
-  background-color: #fff;
+  background-color: rgba(247, 241, 241, 0.575);
 }
 
 .cards {
-  margin: 50px auto;
+  margin: 20px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  background: rgba(39, 37, 37, 0.144);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -22,33 +31,33 @@ p {
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: rgba(0, 0, 0, 0.137);
   text-align: center;
-  padding-top: 30px;
+  padding-top: 20px;
   border-radius: 16px;
+  margin-bottom: 10px;
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: rgba(0, 0, 0, 0.137);
   text-align: center;
-  padding-top: 30px;
+  padding-top: 20px;
   border-radius: 16px;
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: rgba(0, 0, 0, 0.137);
   text-align: center;
-  padding-top: 30px;
+  padding-top: 20px;
   border-radius: 16px;
 }
 
 button {
-  padding: 8px 16px;
+  padding: 8px 10px;
   background: crimson;
   border: none;
   font-size: 20px;

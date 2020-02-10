@@ -44,7 +44,7 @@ const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
   color: 'yellow',
-  description: 'He is a tough man to accuse, so you had better be right',
+  description: 'He is a tough man to accuse, so you better be right',
   age:  50,
   image: 'assets/mustard.png',
   occupation: 'Colonel'
@@ -115,17 +115,17 @@ const diningRoom = 'Dining Room';
 const conservatory = 'Conservatory';
 const kitchen = 'Kitchen';
 const study =  'Study';
-const library = 'library';
+const library = 'Library';
 const billiardRoom = 'Billiard Room';
 const lounge = 'Lounge';
 const ballroom = 'Ballroom';
 const hall =  'Hall';
 const spa = 'Spa';
-const livingRoom = 'living Room';
+const livingRoom = 'Living Room';
 const observatory = 'Observatory';
 const theater = 'Theater';
 const guestHouse = 'Guest House';
-const patio = 'patio';
+const patio = 'Patio';
 
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
@@ -197,10 +197,10 @@ mystery.killer = randomSelector(suspects)
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerImage'). src = mystery.killer.image
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-  document.getElementById('killerage').innerHTML = `${mystery.killer.age}`
+  document.getElementById('killerAge').innerHTML = `${mystery.killer.age} years old`
   document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
-  document.getElementById('killerImage').innerHTML 
   document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
 }
 
@@ -212,6 +212,7 @@ const pickWeapons = () => {
 
   mystery.weapons = randomSelector(weapons)
   document.getElementById('weaponName').innerHTML = `${mystery.weapons.name}`
+  document.getElementById('weaponWeight').innerHTML = `${mystery.weapons.weight}`
 }
 
 console.log(mystery)
