@@ -111,23 +111,21 @@ const pistol = {
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-const rooms = {
-  name: 'diningRoom',
-  name: 'conservatory',
-  name:  'kitchen',
-  name:  'study',
-  name:  'library',
-  name:  'billiardRoom',
-  name:  'lounge',
-  name:  'ballroom',
-  name:  'hall',
-  name:  'spa',
-  name:  'livingRoom',
-  name:  'observatory',
-  name:  'theater',
-  name:  'guestHouse',
-  name:  'patio'
-};
+const diningRoom = 'Dining Room';
+const conservatory = 'Conservatory';
+const kitchen = 'Kitchen';
+const study =  'Study';
+const library = 'library';
+const billiardRoom = 'Billiard Room';
+const lounge = 'Lounge';
+const ballroom = 'Ballroom';
+const hall =  'Hall';
+const spa = 'Spa';
+const livingRoom = 'living Room';
+const observatory = 'Observatory';
+const theater = 'Theater';
+const guestHouse = 'Guest House';
+const patio = 'patio';
 
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
@@ -139,8 +137,8 @@ const suspects = [
   mrsPeacock,
   colonelMustard,
   mrsWhite
-  // ...  and the rest
 ];
+console.log(suspects)
 
 const weapons = [
   rope,
@@ -154,8 +152,9 @@ const weapons = [
   trophy,
   pistol
 ];
+console.log(weapons)
 
-const theRoom = [
+const rooms = [
   diningRoom,
   conservatory,
   kitchen,
@@ -172,6 +171,7 @@ const theRoom = [
   guestHouse,
   patio
 ];
+console.log(rooms)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
@@ -183,19 +183,46 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 
+let mystery = {
+  killer: null,
+  weapons: null,
+  rooms: null
+}
+
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
+
+// This will randomly select a killer from the suspects. And add that to the mystery object.
+mystery.killer = randomSelector(suspects)
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerage').innerHTML = `${mystery.killer.age}`
+  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
+  document.getElementById('killerImage').innerHTML 
+  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
 }
 
+console.log(mystery)
+
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+
+const pickWeapons = () => {
+
+  mystery.weapons = randomSelector(weapons)
+  document.getElementById('weaponName').innerHTML = `${mystery.weapons.name}`
+}
+
+console.log(mystery)
+
+const pickRoom = () => {
+
+  mystery.room = randomSelector(rooms)
+  document.getElementById('roomName').innerHTML = `${mystery.room}`
+}
+
+console.log(mystery)
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
