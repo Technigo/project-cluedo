@@ -12,6 +12,7 @@
 body {
   margin: 0;
   font-family: var(--prime-font);
+  color: #000;
   background-color: #0093E9;
   background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 }
@@ -19,10 +20,14 @@ body {
 p {
   margin: 1vh 0vh;
   font-weight: 200;
+  color: #fff;
 }
 
 h2 {
   margin: 1vh 0vh;
+  background-color: #fff;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .cards {
@@ -33,13 +38,14 @@ h2 {
   align-items: center;
 }
 
-.killer-deck {
+.deck {
   width: 250px;
   height: 400px;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
   border: 1px solid black;
+  cursor: pointer;
   background: #2c3e50;  
   background: -webkit-linear-gradient(to bottom, #3498db, #2c3e50);  
   background: linear-gradient(to bottom, #3498db, #2c3e50); 
@@ -50,43 +56,23 @@ h2 {
   25px 25px rgba(0, 98, 90, 0.05);
 }
 
-.weapon-deck {
-  width: 250px;
-  height: 400px;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-  border: 1px solid black;
-  background: #2c3e50;  
-  background: -webkit-linear-gradient(to bottom, #3498db, #2c3e50);  
-  background: linear-gradient(to bottom, #3498db, #2c3e50); 
-  box-shadow: 5px 5px rgba(0, 98, 90, 0.4),
-              10px 10px rgba(0, 98, 90, 0.3),
-              15px 15px rgba(0, 98, 90, 0.2),
-              20px 20px rgba(0, 98, 90, 0.1),
-              25px 25px rgba(0, 98, 90, 0.05);
+.deck-info {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.room-deck {
-  width: 250px;
-  height: 400px;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-  border: 1px solid black;
-  background: #2c3e50;  
-  background: -webkit-linear-gradient(to bottom, #3498db, #2c3e50);  
-  background: linear-gradient(to bottom, #3498db, #2c3e50); 
-  box-shadow: 5px 5px rgba(0, 98, 90, 0.4),
-              10px 10px rgba(0, 98, 90, 0.3),
-              15px 15px rgba(0, 98, 90, 0.2),
-              20px 20px rgba(0, 98, 90, 0.1),
-              25px 25px rgba(0, 98, 90, 0.05);
+.deck:hover {
+  transform: translateY(-10px);
+  transition: 0.3s ease-out;
 }
 
 .reveal-mystery {
   text-align: center;
   padding: 3vw;
+  color: #fff;
 }
 
 img {
@@ -95,10 +81,10 @@ img {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: rgb(255, 255, 255);
   border: none;
-  font-size: 20px;
   border-radius: 8px;
+  border: 1px solid black;
   display: block;
   margin: 2vw auto;
 }

@@ -10,27 +10,33 @@
   </head>
   <body>
     <section class="cards">
-      <article class="killer-deck" id="killerCard" onclick="pickKiller()">
+      <article class="deck" id="killerCard" onclick="pickKiller()">
         <h2>KILLER</h2>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
+        <section class="deck-info">
+          <p id="killerName"></p>
+          <p id="killerAge"></p>
+          <p id="killerOccupation"></p>
+          <img id="killerImage" src="" height="100" />
+          <p id="killerDescription"></p>
+        </section>
       </article>
-      <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
+      <article class="deck" id="weaponCard" onclick="pickWeapon()">
         <h2>WEAPON</h2>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-        <p id="weaponLength"></p>
+        <section class="deck-info">
+          <p id="weaponName"></p>
+          <p id="weaponWeight"></p>
+          <p id="weaponLength"></p>
+        </section>
       </article>
-      <article class="room-deck" id="roomCard" onclick="pickRoom()">
+      <article class="deck" id="roomCard" onclick="pickRoom()">
         <h2>ROOM</h2>
-        <p id="roomName"></p>
+        <section class="deck-info">
+          <p id="roomName"></p>
+        </section>
       </article>
     </section>
 
-    <h1 class="reveal-mystery" id="mystery"></h1>
+    <h3 class="reveal-mystery" id="mystery"></h3>
 
     <button onclick="clickBait()">REVEAL THE CRIME</button>
 
