@@ -258,6 +258,6 @@ const revealMystery = () => {
   } else {
     document.getElementById(
       "reveal-text"
-    ).innerHTML = `The murder was comitted at ${mystery.time}  by ${mystery.killer.firstName} ${mystery.killer.lastName} with ${mystery.weapon.name} in the ${mystery.room}.`;
+    ).innerHTML = `The murder was comitted during ${mystery.time} by ${mystery.killer.firstName} ${mystery.killer.lastName} with ${mystery.weapon.name} in the ${mystery.room}.`;
   }
 }

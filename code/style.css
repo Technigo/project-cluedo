@@ -103,13 +103,13 @@ p {
     transition: top ease 0.5s;
     }
 
-    .time-deck:hover {
-      top: -20px; 
-      }
+  .time-deck:hover {
+    top: -20px; 
+    }
 
-.room-deck:hover {
-top: -20px; 
-}
+  .room-deck:hover {
+    top: -20px; 
+    }
 
 button {
   padding: 8px 16px;

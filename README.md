@@ -1,13 +1,11 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This was a project at the Technigo Bootcamp. The project was to create a classic Cluedo game using Javascript functions, arrays and objects. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+If I had more time on this project, I would definitely improve how the site is responsive to smallers screens as well as making the sentences adapted to each person, room, weapon and room. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://yo-cluedo.netlify.com/
