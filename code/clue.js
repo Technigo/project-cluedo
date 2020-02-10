@@ -63,47 +63,47 @@ const mrsWhite = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: 'rope',
+  name: 'Rope',
   weight: 10
 };
 
 const knife = {
-  name: 'knife',
+  name: 'Knife',
   weight: 5
 };
 
 const candlestick = {
-  name: 'candlestick',
+  name: 'Candlestick',
   weight: 15
 };
 
 const dumbbell = {
-  name: 'dumbbell',
+  name: 'Dumbbell',
   weight: 20
 };
 
 const poison = {
-  name: 'poison',
+  name: 'Poison',
   weight: 3
 };
 
 const axe = {
-  name: 'axe',
+  name: 'Axe',
   weight: 30
 };
 
 const bat = {
-  name: 'bat',
+  name: 'Bat',
   weight: 20
 };
 
 const trophy = {
-  name: 'trophy',
+  name: 'Trophy',
   weight: 20
 };
 
 const pistol = {
-  name: 'pistol',
+  name: 'Pistol',
   weight: 10
 };
 
@@ -162,13 +162,15 @@ const randomSelector = array => {
 // The values will be set later.
 
 const mystery = {
-  killer: "",
-  weapon: "",
-  room: ""
+  killer: " ",
+  weapon: " ",
+  room: " "
   };
+
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
+  document.getElementById('killerImage')
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
@@ -177,6 +179,7 @@ const pickKiller = () => {
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 };
+
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
@@ -199,3 +202,9 @@ const pickRoom = () => {
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+const revealMystery = () => {
+  console.log(`The murder was committed by ${mystery.killer.firstName}, in the ${mystery.room} with a ${mystery.weapon.name}.`)
+document.getElementById("mystery").innerHTML = `The murder was committed by ${mystery.killer.firstName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+}
+
+document.getElementById("button").onclick = revealMystery

@@ -3,6 +3,11 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
+h1 {
+  margin: 50px;
+  font-size: 30px;
+}
+
 p {
   margin: 1px;
   font-weight: 300;
@@ -13,7 +18,7 @@ p {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  background: #fff;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -31,7 +36,7 @@ p {
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background:blue;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -40,8 +45,7 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: green;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -49,8 +53,9 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: red;
   border: none;
+  font-family: "Courier New", Courier, monospace;
   font-size: 20px;
   border-radius: 8px;
   display: block;
