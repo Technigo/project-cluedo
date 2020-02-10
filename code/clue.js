@@ -10,7 +10,7 @@ const mrGreen = {
   occupation: 'Entrepreneur'
 }
 
-const ProfessorPlum = {
+const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
   color: 'purple',
@@ -20,7 +20,7 @@ const ProfessorPlum = {
   occupation: 'Professor'
 }
 
-const MissScarlet  = {
+const missScarlet  = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
   color: 'red',
@@ -30,7 +30,7 @@ const MissScarlet  = {
   occupation: 'Actress'
 }
 
-const MrsPeacock = {
+const mrsPeacock = {
   firstName: 'Elizabeth',
   lastName: 'Peacock',
   color: 'blue',
@@ -40,7 +40,7 @@ const MrsPeacock = {
   occupation: 'Socialite'
 }
 
-const ColonelMustard = {
+const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
   color: 'yellow',
@@ -50,7 +50,7 @@ const ColonelMustard = {
   occupation: 'Colonel'
 }
 
-const MrsWhite = {
+const mrsWhite = {
   firstName: 'Blanche',
   lastName: 'White',
   color: 'white',
@@ -59,7 +59,6 @@ const MrsWhite = {
   image: 'assets/white.png',
   occupation: 'Housekeeper'
 }
-
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
@@ -112,25 +111,24 @@ const pistol = {
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-const rooms = [
+const rooms = {
+  name: 'diningRoom',
+  name: 'conservatory',
+  name:  'kitchen',
+  name:  'study',
+  name:  'library',
+  name:  'billiardRoom',
+  name:  'lounge',
+  name:  'ballroom',
+  name:  'hall',
+  name:  'spa',
+  name:  'livingRoom',
+  name:  'observatory',
+  name:  'theater',
+  name:  'guestHouse',
+  name:  'patio'
+};
 
-'diningRoom', 
-'conservatory',
-'kitchen', 
-'study',
-'library',
-'billiardRoom',
-'lounge',
-'ballroom', 
-'hall',
-'spa',
-'livingRoom',
-'observatory',
-'theater',
-'guestHouse',
-'patio'
-
-];
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
@@ -142,7 +140,7 @@ const suspects = [
   colonelMustard,
   mrsWhite
   // ...  and the rest
-]
+];
 
 const weapons = [
   rope,
@@ -155,9 +153,9 @@ const weapons = [
   trophy,
   trophy,
   pistol
-]
+];
 
-const rooms = [
+const theRoom = [
   diningRoom,
   conservatory,
   kitchen,
@@ -173,7 +171,7 @@ const rooms = [
   theater,
   guestHouse,
   patio
-]
+];
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
