@@ -1,26 +1,135 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
-const mrGreen = {
-  firstName: 'Jacob',
-  lastName: 'Green',
-  color: 'green',
-  description: 'He has a lot of connections',
-  age: 45,
-  image: 'assets/green.png',
-  occupation: 'Entrepreneur'
-}
-console.log(mrGreen.description)
+let suspects = [{
+    title: 'Mr Green',
+    firstName: 'Jacob',
+    lastName: 'Green',
+    color: 'green',
+    description: 'He has a lot of connections',
+    age: 45,
+    image: 'assets/green.png',
+    occupation: 'Entrepreneur'
+  },
+  {
+    title: ' Mrs White',
+    firstName: 'Delia',
+    lastName: 'White',
+    color: 'white',
+    description: 'Usually a frazzled servant',
+    age: '70',
+    image: 'assets/white.png',
+    occupation: 'Housekeeper'
+  },
+  {
+    title: 'Ms Peacock',
+    firstName: 'Elanor',
+    lastName: 'Peacock',
+    color: 'blue',
+    description: 'An elderly, still-attractive, woman',
+    age: '62',
+    image: 'assets/peacock.png',
+    occupation: 'Socialite'
+  },
+  {
+    title: 'Mr Plum',
+    firstName: 'Victor',
+    lastName: 'Plum',
+    color: 'purple',
+    description: 'A quick-witted, professor with a bow tie and glasses',
+    age: '38',
+    image: 'assets/plum.png',
+    occupation: 'professor'
+  },
+  {
+    title: 'Miss Cassandra',
+    firstName: 'Cassandra',
+    lastName: 'Scarlett',
+    color: 'red',
+    description: 'A femme fatal',
+    age: '27',
+    image: 'assets/scarlet.png',
+    occupation: 'actress'
+  },
+  {
+    title: 'Cln Mustard',
+    firstName: 'Jack',
+    lastName: 'Mustard',
+    color: 'yellow',
+    description: 'A dignified dapper and dangerous military man',
+    age: '55',
+    image: 'assets/mustard.png',
+    occupation: 'officer'
+  }
+]
+
+console.log(suspects[0].firstName)
+console.log(suspects[suspects.length - 1])
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
-const rope = {
-  name: 'rope',
-  weight: 10
-}
-console.log(rope.weight)
+const weapon = [{
+    name: 'rope',
+    weight: 10,
+  },
+  {
+    name: 'knife',
+    weight: 8,
+  },
+  {
+    name: 'candlestick',
+    weight: 20,
+  },
+  {
+    name: 'dumbbell',
+    weight: 30,
+  },
+  {
+    name: 'poison',
+    weight: 0.2,
+  },
+  {
+    name: 'axe',
+    weight: 18,
+  },
+  {
+    name: 'bat',
+    weight: 12,
+  },
+  {
+    name: 'trophy',
+    weight: 15,
+  },
+  {
+    name: 'pistol',
+    weight: 9,
+  }
+]
+console.log(weapon[2].weight)
+
+const rooms = [
+  'Dining Room',
+  'Conservatory',
+  'Kitchen',
+  'Study',
+  'Library',
+  'Billiard Room',
+  'Lounge',
+  'Ballroom',
+  'Hall',
+  'Spa',
+  'Living Room',
+  'Observatory',
+  'Theater',
+  'Guest House',
+  'Patio'
+]
+console.log(rooms)
+
+
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
-
+/*
 const suspects = [
   mrGreen,
   mrsWhite
@@ -57,3 +166,4 @@ const pickKiller = () => {
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+*/
