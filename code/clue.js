@@ -192,10 +192,6 @@ const patio = {
   image: 'assets/patio.png'
 }
 
-console.log(mrGreen.description)
-console.log(rope.weight)
-console.log(theater)
-
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
@@ -236,13 +232,6 @@ const rooms = [
   guestHouse,
   patio,
 ]
-
-console.log(suspects)
-console.log(weapons)
-console.log(rooms)
-
-console.log(suspects[0])
-console.log(rooms[rooms.length - 1])
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
