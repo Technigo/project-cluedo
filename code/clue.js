@@ -112,22 +112,6 @@ const pistol = {
   weight: 21
 }
 
-  const diningRoom = "Dining Room"
-  const conservatory = "Conservatory"
-  const kitchen = "Kitchen"
-  const study = "Study"
-  const library = "Library"
-  const billiardRoom = "Billiard Room"
-  const lounge = "Lounge"
-  const ballroom = "Ballroom"
-  const hall = "Hall"
-  const spa = "Spa"
-  const livingRoom = "Living Room"
-  const observatory = "Observatory"
-  const theater = "Theater"
-  const guestHouse = "Guest House"
-  const patio = "Patio"
-
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
@@ -159,21 +143,21 @@ const suspects = [
   //weapons.forEach((weapons) => { console.log(weapons.name) })
 
   const rooms = [
-    diningRoom,
-    conservatory,
-    kitchen,
-    study,
-    library,
-    billiardRoom,
-    lounge,
-    ballroom,
-    hall,
-    spa,
-    livingRoom,
-    observatory,
-    theater,
-    guestHouse,
-    patio
+    "diningRoom",
+    "conservatory",
+    "kitchen",
+    "study",
+    "library",
+    "billiardRoom",
+    "lounge",
+    "ballroom",
+    "hall",
+    "spa",
+    "livingRoom",
+    "observatory",
+    "theater",
+    "guestHouse",
+    "patio"
   ]
 
 
@@ -223,13 +207,7 @@ const pickRoom = () => {
   document.getElementById(
     'roomName'
   ).innerHTML = `${mystery.room}`
-}
-
-document.getElementById("killerCard").onclick = pickKiller;
-document.getElementById("weaponCard").onclick = pickWeapon;
-document.getElementById("roomCard").onclick = pickRoom;
-
-  
+}  
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
@@ -240,7 +218,9 @@ document.getElementById(
   'mystery'
 ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a 
 ${mystery.weapon.name}.`
-
 }
 
+document.getElementById("killerCard").onclick = pickKiller;
+document.getElementById("weaponCard").onclick = pickWeapon;
+document.getElementById("roomCard").onclick = pickRoom;
 document.getElementById("fixMystery").onclick = revealMystery;
