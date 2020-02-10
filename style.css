@@ -8,10 +8,10 @@ body {
 .container {
   box-sizing: border-box;
   margin: 10px auto;
-  width: 1080px;
+  width: 1200px;
   background: #ccc;
   background-image: url(media/unsolved.jpg);
-  background-size: auto;
+  background-size: fill;
   background-repeat: no-repeat;
   box-shadow: 2px 2px 3px white;
 }
@@ -61,6 +61,17 @@ body {
   padding-top: 30px;
   border-radius: 16px;
 }
+.time-deck {
+  width: 250px;
+  height: 400px;
+  background: darkred;
+
+  text-align: center;
+  padding-top: 30px;
+  border-radius: 16px;
+}
+
+
 .reveal{
   height: 150px;
 }

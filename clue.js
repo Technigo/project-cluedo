@@ -125,6 +125,31 @@ function weaponList() {
   console.log(bat.description)
   return weapons
 }
+function timeList() {
+  const morning = {
+    name: '8:00',
+    color: 'wheat'
+  }
+  const noon ={
+    name: '12:00',
+    color: 'skyblue'
+  }
+  const afternoon ={
+    name: '17:00',
+    color: 'pink'
+  }
+  const evening ={
+    name: '21:00',
+    color: 'indigo'
+  }
+  const night ={
+    name: '1:00',
+    color: 'black'
+  }
+const times =[morning, noon, afternoon, evening, night]
+return times
+}
+
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -143,7 +168,8 @@ const randomSelector = array => {
 let mystery = {
   killer: "blank",
   weapon: "blank",
-  room: "blank"
+  room: "blank",
+  time: "blank"
 }
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
@@ -183,10 +209,19 @@ pickRoom = () => {
   document.getElementById('roomName').innerHTML = `${mystery.room}`.toUpperCase()
   console.log(mystery.room)
 }
+pickTime = () => {
+  const method = timeList();
+  mystery.time = randomSelector(method);
+  const selectedCard = document.getElementById('timeCard')
+  selectedCard.style.background = mystery.time.color
+  document.getElementById('timeName').innerHTML = `${mystery.time.name}`.toUpperCase()
+  console.log(mystery.time.name)
+}
+
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = (mystery) => {
-  const checkEmpty = (mystery.killer === 'blank' || mystery.weapon === 'blank' || mystery.room === 'blank')
+  const checkEmpty = (mystery.killer === 'blank' || mystery.weapon === 'blank' || mystery.room === 'blank' || mystery.time ==='blank')
   let bigReveal = ""
   let hedReveal = ""
   console.log(checkEmpty)
@@ -195,9 +230,10 @@ const revealMystery = (mystery) => {
     hedReveal = "Mystery still hasn't been solved";
   }
   else {
-    bigReveal = `The victim died of a ${mystery.weapon.name} in the ${mystery.room} and the perpitrator was ${mystery.killer.firstName} ${mystery.killer.lastName}.`
+    bigReveal = `The victim died at ${mystery.time.name} of a ${mystery.weapon.name} in the ${mystery.room} and the perpitrator was ${mystery.killer.firstName} ${mystery.killer.lastName}.`
     hedReveal = "Mystery is solved and the murderer is caught";
     document.getElementById('container').style.backgroundImage = "url('media/solved.jpg')"
+    document.getElementById('container').style.backgroundsize = "100%"
   }
   document.getElementById('mysterytext').innerHTML = bigReveal;
   document.getElementById('mystery').innerHTML = hedReveal;
@@ -207,6 +243,7 @@ const revealMystery = (mystery) => {
 document.getElementById('killerCard').onclick = pickKiller
 document.getElementById('weaponCard').onclick = pickWeapon
 document.getElementById('roomCard').onclick = pickRoom
+document.getElementById('timeCard').onclick = pickTime
 
 
 document.getElementById("revealButton").addEventListener('click', (e) => {
