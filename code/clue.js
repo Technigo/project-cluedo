@@ -1,4 +1,3 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
 // Murders
 const cluedoMurders = {
@@ -166,15 +165,13 @@ const cluedoRooms = {
 }
 
 suspects = []
-// Store target object in array
+// Store target object entries in array
 suspects = Object.entries(cluedoMurders)
 
 weapons = []
-// Store target object in array
 weapons = Object.entries(cluedoWeapons)
 
 rooms = []
-// Store target object in array
 rooms = Object.entries(cluedoRooms)
 
 
@@ -182,10 +179,11 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
+// Stores random killer, weapon and room
 const mystery = {}
-// This function will be invoked when you click on the killer card.
+
+// pick random killer and show info about character
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
   
   document.getElementById('killerName').innerHTML = `${mystery.killer[1].firstName} ${mystery.killer[1].lastName}`
@@ -194,8 +192,8 @@ const pickKiller = () => {
   document.getElementById('killerDescription').innerHTML = `Info: ${mystery.killer[1].description}`
 }
 
+// pick random weapon and show info about weapon
 const pickWeapon = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
 
   document.getElementById('weaponName').innerHTML = `${mystery.weapon[1].name}`
@@ -203,15 +201,14 @@ const pickWeapon = () => {
   document.getElementById('weaponLength').innerHTML = `Length: ${mystery.weapon[1].length} ${mystery.weapon[1].lengthUnit}`
 }
 
+// pick random room
 const pickRoom = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.room = randomSelector(rooms)
 
   document.getElementById('roomName').innerHTML = `${mystery.room[1].name}`
 }
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// reveal killer, weapon and room
 const clickBait = () => {
   element = document.getElementById("mystery")
   element.innerHTML = `The murder is ${mystery.killer[1].firstName} ${mystery.killer[1].lastName} in ${mystery.room[1].name} with ${mystery.weapon[1].name} `
