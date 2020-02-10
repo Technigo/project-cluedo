@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  color: 'seagreen',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -13,7 +13,7 @@ const mrGreen = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'purple',
+  color: 'rebeccapurple',
   description: 'He is a fellow with a bow tie and glasses',
   age: 36,
   image: 'assets/plum.png',
@@ -23,7 +23,7 @@ const professorPlum = {
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'red',
+  color: 'orangered',
   description: 'She is highly attractive',
   age: 25,
   image: 'assets/scarlet.png',
@@ -33,7 +33,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: 'midnight',
+  color: 'royalblue',
   description: 'She an elderly yet still attractive woman',
   age: 70,
   image: 'assets/peacock.png',
@@ -43,7 +43,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'yellow',
+  color: 'goldenrod',
   description: 'He is a retired military man',
   age: 60,
   image: 'assets/mustard.png',
@@ -53,7 +53,7 @@ const colonelMustard = {
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: 'white',
+  color: 'oldlace',
   description: 'She is a stiff matronly housekeeper',
   age: 68,
   image: 'assets/white.png',
@@ -64,47 +64,47 @@ const mrsWhite = {
 // Weapons
 
 const rope = {
-  name: 'rope',
+  name: 'Rope',
   weight: 10
 }
 
 const knife = {
-  name: 'knife',
+  name: 'Knife',
   weight: 5
 }
 
 const candlestick = {
-  name: 'candlestick',
+  name: 'Candlestick',
   weight: 8
 }
 
 const dumbbell = {
-  name: 'dumbbell',
+  name: 'Dumbbell',
   weight: 15
 }
 
 const poison = {
-  name: 'poison',
+  name: 'Poison',
   weight: 1
 }
 
 const axe = {
-  name: 'axe',
+  name: 'Axe',
   weight: 30
 }
 
 const bat = {
-  name: 'bat',
+  name: 'Bat',
   weight: 20
 }
 
 const trophy = {
-  name: 'trophy',
+  name: 'Trophy',
   weight: 45
 }
 
 const pistol = {
-  name: 'pistol',
+  name: 'Pistol',
   weight: 36
 }
 

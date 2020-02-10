@@ -1,28 +1,49 @@
+:root {
+  --color-red: #ee1c25;
+}
+
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  background: linear-gradient(#103d58, #10182c);
+  font-family: "Raleway", sans-serif;
 }
 
 p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+  color: #fff;
+}
+
+h1,
+h2 {
+  color: var(--color-red);
+}
+
+h1 {
+  font-family: 'Playfair Display';
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
-  background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
+
+
+[class*="-deck"] {
+  background-color: #000;
+}
+
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -31,7 +52,6 @@ p {
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -40,19 +60,24 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
 button {
-  padding: 8px 16px;
-  background: crimson;
+  padding: 1rem;
+  background: transparent;
+  font-family: 'Playfair Display';
+  color: var(--color-red);
   border: none;
-  font-size: 20px;
-  border-radius: 8px;
+  border-bottom: 2px solid var(--color-red);
+  font-size: 1.6rem;
   display: block;
   margin: 0 auto;
+}
+
+h2.reveal-message {
+  text-align: center;
+  font-weight: 500;
 }
