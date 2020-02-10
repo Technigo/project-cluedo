@@ -66,37 +66,44 @@ const missScarlet = {
 const rope = {
   name: 'rope',
   weight: 10,
-  color: 'beige'
+  color: 'beige',
+  image: 'https://images-na.ssl-images-amazon.com/images/I/61vs9sn1fEL._SY355_.jpg'
 }
 
 const revolver = {
   name: 'revolver',
   weight: 3,
-  color: 'black'
+  color: 'black',
+  image: 'https://brabilligt.se/wp-content/uploads/2018/11/782ab23c56e7cab1dc4fa171659a8ed2.jpg'
 }
 
 const candlestick = {
   name: 'candlestick',
   weight: 4, 
-  color: 'silver'
+  color: 'silver',
+  image: 'https://www.trendsandvision.nl/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/A/M/AM11.jpg'
 }
 
 const knife = {
   name: 'knife',
   weight: 2,
-  color: 'brown'
+  color: 'brown',
+  image: 'https://cdn.shopify.com/s/files/1/3098/6414/products/IYnY6oQw6Kp6kysGYsgg_the-witcher-geralt-hunting-knife-foam-larp-replica-full-2-2_800x.jpg?v=1567176637'
+  
 }
 
 const horseshoe = {
   name: 'horseshoe',
   weight: 5,
-  color: 'darkgrey'
+  color: 'darkgrey',
+  image: 'https://cdn10.bigcommerce.com/s-hi7gs6/product_images/uploaded_images/using-horseshoes-luck.jpg?t=1503413030'
 }
 
 const poison = {
   name: 'poison',
   weight: 0,
-color: 'red'
+color: 'red',
+image: 'https://gumlet.assettype.com/freepressjournal/import/2019/03/poison.png?w=1200&h=750'
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -124,17 +131,23 @@ const weapons = [
 const hall='hall'
 const lounge ='lounge'
 const diningRoom= 'dining Room'
+const kitchen = 'kitchen'
+const ballRoom = 'ball room'
+const conservatory = 'convervatory'
+const billardRoom = 'billard room'
+const library =' library'
+const study = 'study'
 
 const rooms = [
   hall, 
   lounge, 
-  diningRoom
-  // 'kitchen', 
-  // 'ballRoom', 
-  // 'conservatory', 
-  // 'billardRoom', 
-  // 'library', 
-  // 'study'
+  diningRoom,
+  kitchen,
+  ballRoom, 
+  conservatory, 
+  billardRoom, 
+  library, 
+  study
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
@@ -184,6 +197,7 @@ const pickWeapon = () => {
   document.getElementById(
     'weaponName'
   ).innerHTML = `${mystery.weapon.name} ${mystery.weapon.weight} kg`
+  document.getElementById('killerWeapon').src = mystery.weapon.image
 }
 //document.getElementById('weaponCard').onclick = pickWeapon();
 
@@ -192,6 +206,7 @@ const pickRoom = () => {
   document.getElementById(
     'roomName'
   ).innerHTML = `${mystery.room}`
+  
 }
 
 //document.getElementById('roomCard').onclick = pickRoom();
@@ -201,6 +216,9 @@ const pickRoom = () => {
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
-console.log(mystery)
-// console.log(suspects.image)
-// document.getElementById('killerImage').innerHTML =suspects.image
+const revealMystery = () => {
+  let finalMessage = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  document.getElementById('mystery').innerHTML = finalMessage
+}
+
+

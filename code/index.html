@@ -7,30 +7,37 @@
     <link rel="stylesheet" href="style.css" />
     <title>Technigo Project Cluedo</title>
   </head>
-  <body>
-    <section class="cards">
+  <body >
+    <header>
+      <h2>CLUEDO GAME</h2>
+    </header>
+    
+    <section class="cards" >
       <article onclick="pickKiller()" class="killer-deck" id="killerCard">
         <p class="bold">KILLER</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        <img id="killerImage"  height="200" src=""  />
+        <img id="killerImage"  height="200" src="https://steamcdn-a.akamaihd.net/steam/apps/794800/header.jpg?t=1560417198"  />
         <p id="killerDescription"></p>
       </article>
       <article onclick="pickWeapon()" class="weapon-deck" id="weaponCard">
         <p class="bold">WEAPON</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
+        <img id="killerWeapon"  height="200" src="https://steamcdn-a.akamaihd.net/steam/apps/794800/header.jpg?t=1560417198"  />
       </article>
       <article onclick="pickRoom()" class="room-deck" id="roomCard">
         <p class="bold">ROOM</p>
         <p id="roomName"></p>
+        <img height="200" src="https://steamcdn-a.akamaihd.net/steam/apps/794800/header.jpg?t=1560417198"  />
       </article>
     </section>
+ 
 
     <h1 id="mystery"></h1>
 
-    <button>REVEAL THE CRIME</button>
+    <button onclick="revealMystery()">REVEAL THE CRIME</button>
 
     <script src="clue.js"></script>
   </body>
