@@ -1,13 +1,13 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Week 5 of Technigo bootcamp and we were assigned to do a mystery randomizer for the game leader of a Cluedo game. The site should consits of three deck of cards which when you clicked them randomly gave you a murderer, a weapon and a room where the murder took place. We should also have a button that summon up the mystery in text when clicked. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+For this projcet we used JavaScript functions and created arrays to store the objects that was connceted to the different suspects and weapons. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Here you can see and try it live:
+https://friendly-nobel-dfdaa4.netlify.com/
+
