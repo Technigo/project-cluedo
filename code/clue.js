@@ -54,7 +54,7 @@ const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
   color: 'red',
-  description: 'The sultry and beautiful actress'
+  description: 'The sultry and beautiful actress',
   age: 32,
   image: 'assets/scarlet.png',
   occupation: 'Actress',
@@ -109,6 +109,22 @@ const pistol = {
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
+const diningRoom = ('Dingin room')
+const conservatory = ('Conservatory')
+const kitchen = ('Kitchen')
+const study = ('Study')
+const library = ('Library')
+const billiardRoom = ('Billiard room')
+const lounge = ('Lounge')
+const ballroom = ('Ballroom')
+const hall = ('Hall')
+const spa = ('Spa')
+const livingRoom = ('Living room')
+const observatory = ('Observatory')
+const theater = ('Theater')
+const guestHouse = ('Guest house')
+const patio = ('Patio')
+
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
@@ -151,6 +167,7 @@ const rooms = [
   patio,
 ]
 
+
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
@@ -163,11 +180,12 @@ const randomSelector = array => {
 const mystery = {
   killer: '',
   weapon: '',
-  room: '',
+  rooms: '',
 }
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
+
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
@@ -199,7 +217,10 @@ const pickRoom = () => {
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-  console.log('Im clicking the reveal button!')
+  console.log('Im clicking the reveal button!');
+  console.log(`The murder was by ${mystery.killer.name}, in the ${mystery.room} with a ${mystery.weapon.name}`)
+  document.getElementById('mystery').innerHTML = `The murder was comitted by ${mystery.killer.name}, in the ${mystery.room}
+  with a ${mystery.weapon.name}`
   // console.log(`The murder was by ${mystery.killer.name}, in the ${mystery.room} with a ${mystery.weapon.name}`)
   // document.getElementById('mystery').innerHTML = `The murder was comitted by ${mystery.killer.name}, in the ${mystery.room} with a ${mystery.weapon.name}`
 }
