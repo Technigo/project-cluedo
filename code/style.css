@@ -7,41 +7,52 @@ p {
   margin: 1px;
   font-weight: 300;
   background-color: #fff;
+  color: #3F4443;
 }
+
+h1 {
+  color: #3F4443;
+  text-align: center;
+  padding: 12;
+   }
 
 .cards {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  background: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .killer-deck {
-  width: 250px;
-  height: 400px;
-  background: #000;
+  width: 195px;
+  height: 295px;
+  margin: 20px;
+  background: #3F4443;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
 .weapon-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
+  width: 195px;
+  height: 295px;
+  margin: 20px;
+  background: #B6CDB1;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
 .room-deck {
-  width: 250px;
-  height: 400px;
-  background: midnightblue;
-
+  width: 195px;
+  height: 295px;
+  margin: 20px;
+  background: #7BCCD4;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -49,10 +60,86 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
-  border: none;
-  font-size: 20px;
+  background: white;
+  border: solid;
+  font-size: 15px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  cursor: pointer;
 }
+
+@media (min-width: 667px) and (max-width: 1024px){
+
+  .cards {
+    margin: 50px auto;
+    width: 90%;
+    height: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .killer-deck {
+    width: 200px;
+    height: 300px;
+    margin: 3px;
+  }
+
+  .weapon-deck {
+    width: 200px;
+    height: 300px;
+    margin: 3px;
+  }
+
+  .room-deck {
+    width: 200px;
+    height: 300px;
+    margin: 3px;
+  }
+
+  button{
+    font-size: 20px;
+  }
+  
+}
+
+@media (min-width: 1025px){
+
+  .cards {
+    margin: 50px auto;
+    width: 90%;
+    height: 600px;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .killer-deck {
+    width: 250px;
+    height: 400px;
+    margin: 3px;
+  }
+
+  .weapon-deck {
+    width: 250px;
+    height: 400px;
+    margin: 3px;
+  }
+
+  .room-deck {
+    width: 250px;
+    height: 400px;
+    margin: 3px;
+  }
+
+  button{
+    font-size: 20px;
+  }
+
+}
+
+
