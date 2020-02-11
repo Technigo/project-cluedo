@@ -9,7 +9,7 @@ const mrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
-const ProfessorPlum = {
+const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
   color: 'plum',
@@ -18,7 +18,7 @@ const ProfessorPlum = {
   image: 'assets/plum.png',
   occupation: 'Academic'
 }
-const MissScarlet = {
+const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
   color: 'scarlet',
@@ -27,7 +27,7 @@ const MissScarlet = {
   image: 'assets/scarlet.png',
   occupation: 'Divorce lawyer'
 }
-const MrsPeacock = {
+const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
   color: 'peacock',
@@ -36,7 +36,7 @@ const MrsPeacock = {
   image: 'assets/peacock.png',
   occupation: 'Philanthropist'
 }
-const ColonelMustard = {
+const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
   color: 'mustard',
@@ -45,7 +45,7 @@ const ColonelMustard = {
   image: 'assets/mustard.png',
   occupation: 'colonel'
 }
-const MrsWhite = {
+const mrsWhite = {
   firstName: 'unknown',
   lastName: 'White',
   color: 'white',
@@ -94,9 +94,9 @@ const pistol = {
   weight: 9
 }
 
-console.log(MrsWhite.firstName)
-console.log(MrsPeacock.occupation)
-console.log(MissScarlet.description)
+console.log(mrsWhite.firstName)
+console.log(mrsPeacock.occupation)
+console.log(missScarlet.description)
 console.log(pistol.weight)
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -105,11 +105,24 @@ console.log(pistol.weight)
 
 const suspects = [
   mrGreen,
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
   mrsWhite
-  // ...  and the rest
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
 const rooms = [
   "Dining Room",
@@ -128,6 +141,9 @@ const rooms = [
   "Guest House",
   "Patio"
 ]
+
+console.log(rooms[0])
+console.log(weapons.name[2])
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
