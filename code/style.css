@@ -1,6 +1,12 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #32ad6f;
+  background-image: linear-gradient(45deg, #32ad6f 0%, #d7ffa5 100%);
+  color: #424242;
 }
 
 p {
@@ -10,10 +16,9 @@ p {
 }
 
 .cards {
-  margin: 50px auto;
+  margin: 50px auto 20px auto;
   width: 90%;
-  height: 600px;
-  background: #ccc;
+  height: 500px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -22,41 +27,94 @@ p {
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: #65a379;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
   cursor: pointer;
+  box-shadow: 10px 10px 20px -13px rgba(110,110,110,1);
+  margin-bottom: 2em;
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: #9eaaad;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
   cursor: pointer;
+  box-shadow: 10px 10px 20px -13px rgba(110,110,110,1);
+  margin-bottom: 2em;
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
+  background: #d6ada1;
 
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
   cursor: pointer;
+  box-shadow: 10px 10px 20px -13px rgba(110,110,110,1);
+  margin-bottom: 2em;
 }
+
+.killer-image {
+  margin-top: 1em;
+}
+
+.mystery {
+  /* visibility: hidden; */
+  text-align: center;
+  max-width: 40%;
+  align-self: center;
+  padding: 40px;
+  color: #424242;
+  
+}
+
+.mystery:focus {
+  background: #fff;
+  box-shadow: 10px 10px 20px -13px rgba(110,110,110,1);
+}
+
+/* .mystery + .active {
+  visibility: visible;
+} */
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: #fff;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 200px auto;
   cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  color: #424242;
+  box-shadow: 10px 10px 20px -13px rgba(110,110,110,1);
+
+}
+
+button:focus {
+  background: #ff4f4f;
+  box-shadow: none;
+  outline: none;
+}
+
+/********* MEDIA QUERIES *********/
+
+@media (max-width: 770px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .mystery {
+    max-width: 80%;
+  }
 }

@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  color: '#3cab6a',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -13,7 +13,7 @@ const mrGreen = {
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: 'white',
+  color: '#ededed',
   description: 'Usually a frazzled servant',
   age: 70,
   image: 'assets/white.png',
@@ -23,7 +23,7 @@ const mrsWhite = {
 const mrsPeacock = {
   firstName: 'Elanor',
   lastName: 'Peacock',
-  color: 'blue',
+  color: '#476dcc',
   description: 'An elderly, still-attractive woman',
   age: 62,
   image: 'assets/peacock.png',
@@ -33,88 +33,165 @@ const mrsPeacock = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'purple',
+  color: '#7d41b5',
   description: 'A quick-witted, professor with a bow tie and glasses',
   age: 38,
   image: 'assets/plum.png',
-  occupation: 'professor'
+  occupation: 'Professor'
 }
 
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'red',
+  color: '#c4162d',
   description: 'A femme fatale',
   age: 27,
   image: 'assets/scarlet.png',
-  occupation: 'actress'
+  occupation: 'Actress'
 }
 
 const colMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'yellow',
+  color: '#d1a00d',
   description: 'A dignified, dapper and dangerous military man',
   age: 55,
-  image: 'assets/mustard.png'
+  image: 'assets/mustard.png',
+  occupation: 'Colonel'
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: 'rope',
-  weight: 10,
-  color: 'pink'
+  name: 'Rope',
+  weight: 1.5,
+  color: '#394042'
 }
 
 const knife = {
-  name: 'knife',
-  weight: 8,
-  color: 'pink'
+  name: 'Knife',
+  weight: 0.2,
+  color: '#394042'
 }
 
 const candlestick = {
-  name: 'candlestick',
-  weight: 20,
-  color: 'pink'
+  name: 'Candlestick',
+  weight: 12,
+  color: '#394042'
 }
 
 const dumbbell = {
-  name: 'dumbbell',
+  name: 'Dumbbell',
   weight: 30,
-  color: 'pink'
+  color: '#394042'
 }
 
 const poison = {
-  name: 'poison',
-  weight: 0.2,
-  color: 'pink'
+  name: 'Poison',
+  weight: 0.02,
+  color: '#394042'
 }
 
 const axe = {
-  name: 'axe',
-  weight: 18,
-  color: 'pink'
+  name: 'Axe',
+  weight: 3,
+  color: '#394042'
 }
 
 const bat = {
-  name: 'bat',
-  weight: 12,
-  color: 'pink'
+  name: 'Bat',
+  weight: 2,
+  color: '#394042'
 }
 
 const trophy = {
-  name: 'trophy',
-  weight: 15,
-  color: 'pink'
+  name: 'Trophy',
+  weight: 8,
+  color: '#394042'
 }
 
 const pistol = {
-  name: 'pistol',
-  weight: 9,
-  color: 'pink'
+  name: 'Pistol',
+  weight: 0.7,
+  color: '#394042'
 }
 
+// *****  THE ROOMS  ****** //
+
+const diningRoom = {
+  name: 'Dining Room',
+  color: '#ad5f47'
+}
+
+const conservatory = {
+  name: 'Conservatory',
+  color: '#ad5f47'
+}
+
+const kitchen = {
+  name: 'Kitchen',
+  color: '#ad5f47'
+}
+
+const study = {
+  name: 'Study',
+  color: '#ad5f47'
+}
+
+const library = {
+  name: 'Library',
+  color: '#ad5f47'
+}
+
+const billiardRoom = {
+  name: 'Billiard Room',
+  color: '#ad5f47'
+}
+
+const lounge = {
+  name: 'Lounge',
+  color: '#ad5f47'
+}
+
+const ballroom = {
+  name: 'Ballroom',
+  color: '#ad5f47'
+}
+
+const hall = {
+  name: 'Hall',
+  color: '#ad5f47'
+}
+
+const spa = {
+  name: 'Spa',
+  color: '#ad5f47'
+}
+
+const livingRoom = {
+  name: 'Living Room',
+  color: '#ad5f47'
+}
+
+const observatory = {
+  name: 'Observatory',
+  color: '#ad5f47'
+}
+
+const theater = {
+  name: 'Theater',
+  color: '#ad5f47'
+}
+
+const guestHouse = {
+  name: 'Guest House',
+  color: '#ad5f47'
+}
+
+const patio = {
+  name: 'Patio',
+  color: '#ad5f47'
+}
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -142,21 +219,21 @@ const weapons = [
 ]
 
 const rooms = [
-  'Dining Room',
-  'Conservatory',
-  'Kitchen',
-  'Study',
-  'Library',
-  'Billiard Room',
-  'Lounge',
-  'Ballroom',
-  'Hall',
-  'Spa',
-  'Living Room',
-  'Observatory',
-  'Theater',
-  'Guest House',
-  'Patio'
+  diningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
 ]
 
 console.log(`This is a description of Mr Green: ${mrGreen.description}`)
@@ -165,7 +242,7 @@ console.log(suspects)
 console.log(weapons)
 console.log(rooms)
 console.log(suspects[0].firstName)
-console.log(rooms.slice(-1)[0])
+console.log(rooms.slice(-1)[0].name)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
@@ -182,24 +259,37 @@ const randomSelector = array => {
 let mystery = {
   killer: '',
   weapon: '',
-  room: ''
+  room: '',
+  background: '#ff4f4f'
 }
+console.log(`This is the mystery killer: ${mystery.killer}`)
+
+// const toggle = () => {
+//   this.classList.toggle('active')
+// }
 
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects)
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerAge').innerHTML = `${mystery.killer.age} years old`
+  document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
+  document.getElementById('killerImage').src = mystery.killer.image
 }
+
+// const theKillerImage = document.getElementById('killerImage')theKillerImage.scr = mystery.killer.image
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
   document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
+  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight} kg.`
 }
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
-  document.getElementById('roomName').innerHTML = `${mystery.room}` 
+  document.getElementById('roomCard').style.background = mystery.room.color
+  document.getElementById('roomName').innerHTML = `${mystery.room.name}` 
 }
 
 
@@ -209,6 +299,16 @@ const pickRoom = () => {
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`
+  // if ( mystery.killer === undefined ||
+  //       mystery.weapon === undefined ||
+  //       mystery.room === undefined
+  //   ) {
+  //     document.getElementById('mystery').innerHTML = `There is no mystery to reveal yet. Click the cards to see the culprit, the murder weapon and the scene of the crime.`
+  //   } else {
+  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with the ${mystery.weapon.name}`
+  // document.getElementsByTagName('body').style.background-color = mystery.background
 }
+  // document.getElementById('mystery').onclick = toggle
+  // document.getElementById('background-color.body').onclick = toggle
+
 
