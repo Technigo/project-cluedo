@@ -1,22 +1,13 @@
+# Cluedo - Mystery Randomizer
 
-# What is this
-My fifth project during the Technigo bootcamp. 
-Assignment: **Build a Cluedo mystery picker**.
+Replace this readme with your own information about your project.
 
-## How I started
-I did as I have done for every project so far, watching all the weekly material and doing the labs. After that I felt pretty comfortable to get going with the project. 
- 
-### What I struggled with and should improve for next weeks project
-I didn't really struggle with anything project related this week. I was a pretty straight forward task and I enjoyed  it. 
+Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
-However, I had a goal for myself that if I was done early this week I should not do any deep dives and just allow myself to have a few days off. That was really hard for me and it's something I need to practice on. I did the JavaScript deep dives but I did manage not do dive into the CSS to much. 
+## The problem
 
-### What I'm proud of
-I'm proud of the fourth card I've done. It randomises time, am/pm and date. It also formats numbers that are less than 10 to have a zero before the number e.g. 7 is written as 07.  However every year is leap year in my cluedo game so that's something I need to look into how to fix in the future.  
-
-## If I had more time
-The site is kind of responsive but I would hav made it better if I had more time, and obviously made it a bit more aesthetically pleasing.
+Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
 ## View it live
-Cluedo game website:
-https://cluedotime.netlify.com/
+
+Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
