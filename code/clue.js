@@ -12,7 +12,7 @@ const mrGreen = {
 const profPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'green',
+  color: 'red',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -21,7 +21,7 @@ const profPlum = {
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'green',
+  color: 'blue',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -30,7 +30,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: 'green',
+  color: 'orange',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -61,40 +61,40 @@ const mrsWhite = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: 'rope',
+  name: 'Rope',
   weight: 10
 }
 const knife = {
-  name: 'knife',
-  weight: 10
+  name: 'Knife',
+  weight: 5
 }
 const candlestick = {
-  name: 'candlestick',
-  weight: 10
+  name: 'Candlestick',
+  weight: 2
 }
 const dumbbell = {
-  name: 'dumbbell',
-  weight: 10
+  name: 'Dumbbell',
+  weight: 15
 }
 const poison = {
-  name: 'poison',
-  weight: 10
+  name: 'Poison',
+  weight: 1
 }
 const axe = {
-  name: 'axe',
-  weight: 10
+  name: 'Axe',
+  weight: 20
 }
 const bat = {
-  name: 'bat',
-  weight: 10
+  name: 'Bat',
+  weight: 12
 }
 const trophy = {
-  name: 'trophy',
+  name: 'Trophy',
   weight: 10
 }
 const pistol = {
-  name: 'pistol',
-  weight: 10
+  name: 'Pistol',
+  weight: 8
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -108,7 +108,6 @@ const suspects = [
   mrsPeacock,
   colMustard,
   mrsWhite
-  // ...  and the rest
 ]
 
 const weapons = [rope,
@@ -147,7 +146,7 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 
-let mystery = {
+const mystery = {
   killer: "",
   weapon: "",
   room: ""
@@ -165,9 +164,38 @@ const pickKiller = () => {
   document.getElementById(
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  console.log(mystery.killer);
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons)
+
+  document.getElementById(
+    'weaponName'
+  ).innerHTML = `${mystery.weapon.name}`
+
+  document.getElementById(
+    'weaponWeight'
+  ).innerHTML = `Weight: ${mystery.weapon.weight}`
+
+  console.log(mystery.weapon);
+}
+
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+  document.getElementById(
+    'roomName'
+  ).innerHTML = `${mystery.room}`
+  console.log(mystery.room);
+}
+
+
+document.getElementById('killerCard').onclick = pickKiller;
+document.getElementById('weaponCard').onclick = pickWeapon;
+document.getElementById('roomCard').onclick = pickRoom;
+
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. 
 // It should show something like:
@@ -175,3 +203,18 @@ const pickKiller = () => {
 
 console.log(mrGreen.description)
 console.log(weapons[weapons.length - 1])
+
+const revealMystery = () => {
+  consol.log('Clicking reveal button')
+  consol.log(`the murder {$mystery.killer.name} with...`)
+  document.getElementById('mystery').innerHTML = `the murder {$mystery.killer.name} with...`
+}
+
+//document.getElementById('button').onclick = revealMystery
+
+
+//
+//const revealButton = document.getElementById('button')
+//const mysteryMessage =
+
+// revealButton.onclick = revealMystery
