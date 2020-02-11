@@ -99,20 +99,20 @@ const pistol = {
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE. 
 
 const rooms = [
-  'diningroom',
+  'dining room',
   'conservatory',
   'kitchen',
   'study',
   'library',
-  'billiard',
+  'billiard room',
   'lounge',
   'ballroom',
   'hall',
   'spa',
-  'living',
+  'living room',
   'observatory',
   'theater',
-  'guestHouse',
+  'guest house',
   'patio'
 ]
 console.log(mrsWhite.firstName)
@@ -197,6 +197,9 @@ document.getElementById(`roomCard`).onclick = pickRoom
 
 
 const revealMystery = () => {
+  // document.getElementById(`killerCard`).onclick = pickKiller
+  // document.getElementById(`weaponCard`).onclick = pickWeapon
+  // document.getElementById(`roomCard`).onclick = pickRoom
   mystery.killer = randomSelector(suspects)
   mystery.room = randomSelector(rooms)
   mystery.weapon = randomSelector(weapons)
