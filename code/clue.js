@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// OBJECTS FOR ALL THE SUSPECTS:
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -60,7 +60,7 @@ const mrsWhite = {
   occupation: 'Lawyer'
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// OBJECTS FOR ALL THE WEAPONS:
 
 const rope = {
   name: 'Rope',
@@ -116,7 +116,7 @@ const pistol = {
   image: 'assets/pistol.png'
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE. (I chose to declare the room variables before adding them to the array)
+//  OBJECTS FOR ALL THE ROOMS:
 
 const diningRoom = {
   name: 'Dining Room',
@@ -192,7 +192,7 @@ const patio = {
   image: 'assets/patio.png'
 }
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// SUSPECTS, WEAPONS AND ROOMS GROUPED IN ARRAYS:
 
 const suspects = [
   mrGreen,
@@ -233,15 +233,13 @@ const rooms = [
   patio,
 ]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+// FUNCTION RANDOMLY SELECTING ONE ITEM FROM THE ABOVE ARRAYS:
+
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+// OBJECT KEEPING MYSTERY:
 
 const mystery = {
   killer: '',
@@ -249,44 +247,81 @@ const mystery = {
   room: '',
 }
 
-// This function will be invoked when you click on the killer card.
-const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
+// FUNCTION INVOKED WHEN YOU CLICK ON THE KILLER CARD, CLICK AGAIN TO RESET:
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-  document.getElementById("killerImage");
-  killerImage.src = mystery.killer.image;
+const pickKiller = () => {
+  if (document.getElementById('killerCard').classList.contains('shown')) {
+    mystery.killer = ''
+
+    document.getElementById('killerCard').style.background = '#f7876b'
+    document.getElementById('killerName').innerHTML = ''
+    document.getElementById('killerImage')
+    killerImage.src = ''
+
+    killerCard.classList.remove('shown')
+  } else {
+    mystery.killer = randomSelector(suspects)
+
+    document.getElementById('killerCard').style.background = mystery.killer.color
+    document.getElementById(
+      'killerName'
+    ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+    document.getElementById('killerImage')
+    killerImage.src = mystery.killer.image
+
+    killerCard.classList.add('shown')
+  }
 }
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+// FUNCTION INVOKED WHEN YOU CLICK ON THE WEAPON CARD, CLICK AGAIN TO RESET:
 
 const pickWeapon = () => {
-  mystery.weapon = randomSelector(weapons)
+  if (document.getElementById('weaponCard').classList.contains('shown')) {
+    mystery.weapon = ''
 
-  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-  document.getElementById("weaponImage");
-  weaponImage.src = mystery.weapon.image;
+    document.getElementById('weaponName').innerHTML = ''
+    document.getElementById('weaponImage')
+    weaponImage.src = ''
+
+    weaponCard.classList.remove('shown')
+  } else {
+    mystery.weapon = randomSelector(weapons)
+
+    document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
+    document.getElementById('weaponImage')
+    weaponImage.src = mystery.weapon.image
+
+    weaponCard.classList.add('shown')
+  }
 }
+
+// FUNCTION INVOKED WHEN YOU CLICK ON THE ROOM CARD, CLICK AGAIN TO RESET:
 
 const pickRoom = () => {
-  mystery.room = randomSelector(rooms)
+  if (document.getElementById('roomCard').classList.contains('shown')) {
+    mystery.room = ''
 
-  document.getElementById('roomName').innerHTML = `${mystery.room.name}`
-  document.getElementById("weaponImage");
-  roomImage.src = mystery.room.image;
+    document.getElementById('roomName').innerHTML = ''
+    document.getElementById('roomImage')
+    roomImage.src = ''
+
+    roomCard.classList.remove('shown')
+  } else {
+    mystery.room = randomSelector(rooms)
+
+    document.getElementById('roomName').innerHTML = `${mystery.room.name}`
+    document.getElementById('roomImage')
+    roomImage.src = mystery.room.image
+
+    roomCard.classList.add('shown')
+  }
 }
 
-document.getElementById('killerCard').onclick = pickKiller;
-document.getElementById('weaponCard').onclick = pickWeapon;
-document.getElementById('roomCard').onclick = pickRoom;
+document.getElementById('killerCard').onclick = pickKiller
+document.getElementById('weaponCard').onclick = pickWeapon
+document.getElementById('roomCard').onclick = pickRoom
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// FUNCTION REVEALING MYSTERY WHEN YOU CLICK ON THE BUTTON:
 
 const revealMystery = () => {
   if (mystery.killer === "" || mystery.weapon === "" || mystery.room === "") {

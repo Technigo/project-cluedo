@@ -159,6 +159,7 @@ footer {
 footer p {
   padding: 10px;
   color: #fdc2ba;
+  font-size: 10px;
   text-align: center;
 }
 
@@ -210,8 +211,9 @@ footer p {
     padding: 0 30px;
   }
 
-  .icon-credit {
-    order:-1
+  .developer-name {
+    position: absolute;
+    left: 50%;
+    margin-left: -77px;
   }
-
 }
