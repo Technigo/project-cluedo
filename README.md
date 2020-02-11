@@ -1,6 +1,6 @@
 # What is this
 
-My fifth project during the Technigo bootcamp.
+My fourth project during the Technigo bootcamp.
 Assignment: **Build a Cluedo mystery picker**.
 
 ## How I started
