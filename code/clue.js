@@ -204,11 +204,19 @@ document.getElementById('roomCard').addEventListener('click', pickRoom)
 
 // Reveals the mystery when reveal button is clicked
 const revealMystery = () => {
-  if (mystery.killer === '' || mystery.weapon === '' || mystery.room === '') {
-    document.getElementById('mystery').innerHTML = "No mystery is yet to be revealed."
-  } else {
-    document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`
-  }
+
+  const message = document.getElementById('mystery');
+  let allCardsClicked = '';
+
+  Object.keys(mystery).forEach(function (item) {
+    if (mystery[item] === '') allCardsClicked = false;
+
+    if (allCardsClicked === false) {
+      message.innerHTML = "No mystery is yet to be revealed."
+    } else {
+      message.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`
+    }
+  });
 }
 
 document.getElementById('revealButton').addEventListener('click', revealMystery)

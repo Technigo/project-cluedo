@@ -2,6 +2,10 @@
   --color-red: #ee1c25;
 }
 
+*:focus {
+  outline: none;
+}
+
 html {
   height: 100%;
 }
@@ -78,6 +82,9 @@ button {
 }
 
 h2.reveal-message {
+  margin: 3rem auto;
+  max-width: 40rem;
   text-align: center;
+  font-size: 1rem;
   font-weight: 500;
 }
