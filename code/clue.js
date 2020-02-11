@@ -107,9 +107,7 @@ const pistol = {
   weight: 90
 }
 
-
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
@@ -160,7 +158,6 @@ const rooms = [
 // ************************ REMOVE this *************************** 
 
 
-
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
@@ -170,7 +167,6 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
-
 const mystery = {
   killer: '',
   weapon: '',
@@ -201,8 +197,8 @@ const pickKiller = () => {
 }
 pickKiller();
 
-// ****************************************************************************
 
+// ****************************************************************************
 // This function will be invoked when you click on the WEAPON CARD.
 const pickWeapon = () => {
 
@@ -216,8 +212,8 @@ const pickWeapon = () => {
 }
 pickWeapon();
 
-// ****************************************************************************
 
+// ****************************************************************************
 // This function will be invoked when you click on the ROOM CARD.
 const pickRoom = () => {
 
@@ -230,19 +226,56 @@ const pickRoom = () => {
   //document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 }
 pickRoom();
+
 // ****************************************************************************
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 // Jepp funkar - mystery innehåller  nu slumpmässiga killer, weapon och room!
+console.log(mystery);
+// ****************************************************************************
 
-// console.log(mystery);
 
-
+// ****************************************************************************
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
-
-
+/*
 const revealMystery = () => {
-  console.log(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`)
+  // console.log(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`)
+  // document.getElementById("mystery").textContent = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  
+}
+revealMystery();
+*/
+const mysteryText = document.getElementById("mystery")
+const btn = document.getElementById("button")
+
+btn.onclick = () => {
+  // alert("hej hej")
+  mysteryText.innerText = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  btn.style.backgroundColor = 'black'
+  btn.style.color = 'white'
 }
 
-revealMystery();
+
+// ****************************************************************************
+
+// const revealMystery = document.getElementById("mystery")
+// revealMystery.textContent = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+// document.getElementById("mystery").textContent = "Hey"
+
+// ****************************************************************************
+
+// To do: 
+// Connect the revealMystery console.log with HTML H1 mystery
+
+// Connect the revealMystery with the button HTML
+// Testar knappen genom en Alert först.
+
+// Connect killerCard with killer - info
+
+// Get killerCard HTML to run JS
+
+// Duplicate to all cards
+
+
+// ****************************************************************************
+// Check code guide lines before PR!
