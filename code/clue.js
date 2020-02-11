@@ -65,42 +65,36 @@ const msScarlet = {
 
 const rope = {
   name: 'rope',
-  weight: 10,
   color: 'brown',
   image: 'assets/rope.jpg'
 }
 
 const knife = {
   name: 'knife',
-  weight: 50,
   color: 'grey',
   image: 'assets/knife.jpg'
 }
 
 const poison = {
   name: 'poison',
-  weight: 15,
   color: 'red',
   image: 'assets/poison.jpg'
 }
 
 const axe = {
   name: 'axe',
-  weight: 70,
   color: 'grey',
   image: 'assets/axe.jpg'
 }
 
 const plasticBag = {
   name: 'plastic bag',
-  weight: 4,
   color: 'white',
   image: 'assets/plastic_bag.jpg'
 }
 
 const rock = {
   name: 'rock',
-  weight: 65,
   color: 'grey',
   image: 'assets/rock.jpg'
 }
@@ -187,8 +181,8 @@ const randomSelector = array => {
 const mystery = {
   killer: '',
   weapon: '',
-  room: ''
-
+  room: '',
+  color: 'grey'
 }
 
 // This function will be invoked when you click on the killer card.
@@ -225,6 +219,7 @@ document.getElementById('roomCard').addEventListener('click', pickRoom)
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = () => {
   document.getElementById('mystery').innerHTML = (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`)
+  document.getElementById('mystery').style.background = mystery.color
 }
 
 document.getElementById('reveal').onclick = revealMystery
