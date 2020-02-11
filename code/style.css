@@ -41,47 +41,28 @@ h1 {
   margin: 50px auto;
   width: 90%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
-
-
-[class*="-deck"] {
+.card-deck {
+  flex: 0 1 25%;
+  height: 300px;
+  text-align: center;
+  margin: .5rem;
+  padding-top: 30px;
+  border-radius: 16px;
   background-color: #000;
 }
 
 /* Remove pointer events from elements inside card deck */
-[class*="-deck"]>* {
+.card-deck>* {
   pointer-events: none;
 }
 
-.killer-deck {
-  width: 250px;
-  height: 400px;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-}
-
-.weapon-deck {
-  width: 250px;
-  height: 400px;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-}
-
-.room-deck {
-  width: 250px;
-  height: 400px;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-}
 
 button {
-  padding: 1rem;
+  padding: .8rem .5rem;
   background: transparent;
   font-family: 'Playfair Display';
   color: var(--color-red);
