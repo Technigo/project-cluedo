@@ -1,5 +1,3 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
@@ -44,7 +42,7 @@ const colonelMustard = {
   firstName: "Jack",
   lastName: "Mustard",
   color: "yellow",
-  description: "Goes to a barber every second week to trim his beard",
+  description: "Goes to a barber every week to trim his beard",
   age: 71,
   image: "assets/mustard.png",
   occupation: "Condiment expert"
@@ -54,13 +52,11 @@ const mrsWhite = {
   firstName: "Skyler",
   lastName: "White",
   color: "white",
-  description: "Has a coffee stain on her white blouse at all times",
+  description: "Has at least one coffee stain on her white blouse at all times",
   age: 45,
   image: "assets/white.png",
   occupation: "Accountant"
 };
-
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE..
 
 const rope = {
   name: "rope",
@@ -107,10 +103,6 @@ const pistol = {
   weight: 6
 };
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
-
 const suspects = [
   mrGreen,
   professorPlum,
@@ -150,28 +142,56 @@ const rooms = [
   "Patio"
 ];
 
+const months = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+const monthsEven = ["04", "06", "09", "11"];
+const monthsOdd = ["01", "03", "05", "07", "08", "10", "12"];
+
+const mystery = {
+  killer: undefined,
+  weapon: undefined,
+  room: undefined,
+  date: undefined,
+  time: undefined
+};
+
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
-
-const mystery = {
-  killer: "",
-  weapon: "",
-  room: ""
+//Almost fully understand how this function works, I found it at developer.mozilla,
+//By using this function I could make both time, am/pm and date randomised without creating arrays for all of them.
+const randomDateSelector = (minValue, maxValue) => {
+  minValue = Math.ceil(minValue);
+  maxValue = Math.floor(maxValue);
+  return Math.floor(Math.random() * (maxValue - minValue + 1)) + minValue;
 };
 
-// This function will be invoked when you click on the killer card.
+//Function that formats values that are lower than 10. Not sure if I love this soulution, it feels a bit hacky to
+//make a number into a string but this souliton was at least 100% made by me, unlike the one above.
+const addZero = value => {
+  if (value < 10) {
+    value = "0" + value;
+    return value;
+  }
+  return value;
+};
+// A function that calls the random function and returns either am or pm.
+const dayOrNigth = () => {
+  const am = "a.m";
+  const pm = "p.m";
+  let number = randomDateSelector(0, 1);
+  if (number === 0) {
+    return am;
+  } else {
+    return pm;
+  }
+};
+
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById("killerCard").style.background = mystery.killer.color;
   document.getElementById(
     "killerName"
@@ -181,7 +201,6 @@ const pickKiller = () => {
   killerImage.src = mystery.killer.image;
 };
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
 
@@ -196,15 +215,51 @@ const pickRoom = () => {
   document.getElementById("roomName").innerHTML = `${mystery.room}`;
 };
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+const pickDate = () => {
+  let year = randomDateSelector(1919, 2019);
+  let month = randomSelector(months);
+  let day = randomDateSelector(1, month);
+  if (month === 29) {
+    month = "02";
+    day = addZero(day);
+  } else if (month % 2 === 0) {
+    month = randomSelector(monthsEven);
+    day = addZero(day);
+  } else {
+    month = randomSelector(monthsOdd);
+    day = addZero(day);
+  }
+  let minutes = addZero(randomDateSelector(0, 59));
+  let hours = addZero(randomDateSelector(1, 12));
+  let amPm = dayOrNigth();
+
+  mystery.date = `${day}/${month}-${year}`;
+  mystery.time = `${hours}:${minutes} ${amPm}`;
+  document.getElementById("theMurderDate").innerHTML = `Date of the murder:`;
+  document.getElementById("date").innerHTML = `${mystery.date}`;
+  document.getElementById("theMurderTime").innerHTML = `Time of the murder:`;
+  document.getElementById("time").innerHTML = `${mystery.time}`;
+};
 
 const revealMystery = mystery => {
-  document.getElementById(
-    "mystery"
-  ).innerHTML = `The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`;
+  if (
+    mystery.killer === undefined ||
+    mystery.weapon === undefined ||
+    mystery.room === undefined ||
+    mystery.date === undefined ||
+    mystery.time === undefined
+  ) {
+    document.getElementById(
+      "mystery"
+    ).innerHTML = `No mystery is yet to be revealed`;
+  } else {
+    document.getElementById(
+      "mystery"
+    ).innerHTML = `The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}. It was comitted ${mystery.date} at ${mystery.time}.`;
+  }
 };
 
 document.getElementById("roomCard").onclick = pickRoom;
 document.getElementById("weaponCard").onclick = pickWeapon;
 document.getElementById("killerCard").onclick = pickKiller;
+document.getElementById("dateCard").onclick = pickDate;

@@ -8,13 +8,16 @@
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
+    <h1>Cluedo!</h1>
     <section class="cards">
       <article class="killer-deck" id="killerCard">
         <p>KILLER</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
+        <div class="img-container">
+          <img id="killerImage" src="" height="100" />
+        </div>
         <p id="killerDescription"></p>
       </article>
       <article class="weapon-deck" id="weaponCard">
@@ -26,9 +29,16 @@
         <p>ROOM</p>
         <p id="roomName"></p>
       </article>
+      <article class="date-deck" id="dateCard">
+        <p>DATE & TIME</p>
+        <p id="theMurderDate"></p>
+        <p id="date"></p>
+        <p id="theMurderTime"></p>
+        <p id="time"></p>
+      </article>
     </section>
 
-    <h1 id="mystery"></h1>
+    <h2 id="mystery"></h1>
 
     <button id="revealButton" onclick="revealMystery(mystery)">
       REVEAL THE CRIME
