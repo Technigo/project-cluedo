@@ -194,6 +194,9 @@ const pickKiller = () => {
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
   document.getElementById('killerImage').src = mystery.killer.image;
+  document.getElementById('killerAge').innerHTML = (`${mystery.killer.age} years old`)
+  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
+
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
@@ -217,9 +220,19 @@ document.getElementById('roomCard').addEventListener('click', pickRoom)
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+//const revealMystery = () => {
+//  document.getElementById('mystery').innerHTML = (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`)
+// document.getElementById('mystery').style.background = mystery.color
+//}
+
 const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`)
-  document.getElementById('mystery').style.background = mystery.color
+  if (mystery.killer.firstName === undefined || mystery.weapon.name === undefined || mystery.room.name === undefined) {
+    document.getElementById('mystery').innerHTML = ('No mystery has been revealed yet.')
+    document.getElementById('mystery').style.background = mystery.color
+  } else {
+    document.getElementById('mystery').innerHTML = (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`)
+    document.getElementById('mystery').style.background = mystery.color
+  }
 }
 
 document.getElementById('reveal').onclick = revealMystery

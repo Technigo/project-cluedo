@@ -9,8 +9,6 @@ body {
   justify-content: space-between;
 }
 
-
-
 .cards {
   margin: 50px auto;
   width: 90%;
@@ -91,6 +89,7 @@ p {
   font-weight: 300;
   background-color: #fff;
 }
+
 @media (min-width: 667px)  {
 
  .cards {
