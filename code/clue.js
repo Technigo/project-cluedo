@@ -57,7 +57,7 @@ const colonelMustard = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: '#353AA9',
+  color: '#9FDDED',
   description: 'He has two wives',
   age: 40,
   image: 'assets/green.png',
@@ -125,9 +125,6 @@ const suspects = [
   professorPlum
   ]
 
-  //suspects.forEach((suspect) => { console.log(suspect.age) })
-
-
   const weapons = [
     rope,
     knife,
@@ -139,8 +136,6 @@ const suspects = [
     trophy,
     pistol
   ]
-
-  //weapons.forEach((weapons) => { console.log(weapons.name) })
 
   const rooms = [
     "diningRoom",
