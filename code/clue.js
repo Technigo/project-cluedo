@@ -9,6 +9,51 @@ const mrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
+const ProfessorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'plum',
+  description: 'He specialises in chemistry',
+  age: 53,
+  image: 'assets/plum.png',
+  occupation: 'Academic'
+}
+const MissScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'scarlet',
+  description: 'She has a way with words',
+  age: 38,
+  image: 'assets/scarlet.png',
+  occupation: 'Divorce lawyer'
+}
+const MrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'peacock',
+  description: 'She is a woman of property',
+  age: 51,
+  image: 'assets/peacock.png',
+  occupation: 'Philanthropist'
+}
+const ColonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'mustard',
+  description: 'He can handle his weapons alright',
+  age: 68,
+  image: 'assets/mustard.png',
+  occupation: 'colonel'
+}
+const MrsWhite = {
+  firstName: 'unknown',
+  lastName: 'White',
+  color: 'white',
+  description: 'She is good at cleaning up',
+  age: 66,
+  image: 'assets/white.png',
+  occupation: 'housekeeper'
+}
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
@@ -16,6 +61,43 @@ const rope = {
   name: 'rope',
   weight: 10
 }
+const knife = {
+  name: 'knife',
+  weight: 5
+}
+const candlestick = {
+  name: 'candlestick',
+  weight: 11
+}
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 20
+}
+const poison = {
+  name: 'poison',
+  weight: 3
+}
+const axe = {
+  name: 'axe',
+  weight: 17
+}
+const bat = {
+  name: 'bat',
+  weight: 13
+}
+const trophy = {
+  name: 'trophy',
+  weight: 12
+}
+const pistol = {
+  name: 'pistol',
+  weight: 9
+}
+
+console.log(MrsWhite.firstName)
+console.log(MrsPeacock.occupation)
+console.log(MissScarlet.description)
+console.log(pistol.weight)
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -29,7 +111,23 @@ const suspects = [
 
 const weapons = []
 
-const rooms = []
+const rooms = [
+  "Dining Room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Billiard Room",
+  "Lounge",
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "Living Room",
+  "Observatory",
+  "Theater",
+  "Guest House",
+  "Patio"
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
