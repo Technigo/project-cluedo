@@ -1,6 +1,8 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
+
 }
 
 p {
@@ -9,14 +11,33 @@ p {
   background-color: #fff;
 }
 
+header {
+  font-family: 'Kaushan Script', cursive;
+  
+  font-size: x-large;
+  text-align: center;
+}
+
+.revealed-text {
+  
+  font-family: 'Kaushan Script', cursive;
+  font-size: 22px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+
+}
+
 .cards {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  border-radius: 15px;
+  background: rgb(43, 43, 43);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  font-family: 'Bitter', serif;
+  font-size: 14px;
 }
 
 .killer-deck {
@@ -41,7 +62,6 @@ p {
   width: 250px;
   height: 400px;
   background: midnightblue;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -49,10 +69,11 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: rgb(26, 25, 26);
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  color: #fff;
 }
