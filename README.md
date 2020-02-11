@@ -19,7 +19,7 @@ I'm proud of the fourth card I've done. It randomises time, am/pm and date. It a
 
 ## If I had more time
 
-The site is kind of responsive but I would hav made it better if I had more time, and obviously made it a bit more aesthetically pleasing.
+The site is kind of responsive but I would have made it better if I had more time, and obviously made it a bit more aesthetically pleasing.
 
 ## View it live
 
