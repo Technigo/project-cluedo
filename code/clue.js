@@ -34,7 +34,7 @@ const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
   color: 'blue',
-  description: 'She owns a zoo',
+  description: 'She claims she can speak with animals.',
   age: 50,
   image: 'assets/peacock.png',
   occupation: 'Zoo-owner'
@@ -174,11 +174,6 @@ const guestHouse = {
 const patio = {
   name: 'Patio'
 }
-
-console.log(mrsWhite.firstName)
-console.log(trophy.weight)
-console.log(missScarlet.occupation)
-console.log(bat.material)
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
@@ -233,32 +228,28 @@ const randomSelector = array => {
 
 // PICK KILLER when killerCard is clicked.
 
-
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-  document.getElementById('killerImage').src = mystery.killer.image;
-  document.getElementById('killerOccupation').innerHTML = mystery.killer.occupation;
-  document.getElementById('killerDescription').innerHTML = mystery.killer.description;
+  document.getElementById('killerImage').src = mystery.killer.image
+  document.getElementById('killerOccupation').innerHTML = mystery.killer.occupation
+  document.getElementById('killerDescription').innerHTML = mystery.killer.description
 }
 document.getElementById('killerCard').addEventListener('click', pickKiller)
 
 // PICK WEAPON when weaponCard is clicked.
 
 const pickWeapon = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
-  document.getElementById('weaponName').innerHTML = mystery.weapon.name;
-  document.getElementById('weaponMaterial').innerHTML = mystery.weapon.material;
+  document.getElementById('weaponName').innerHTML = mystery.weapon.name
+  document.getElementById('weaponMaterial').innerHTML = mystery.weapon.material
 }
 document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 
 // PICK ROOM when roomCard is clicked.
 
 const pickRoom = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.room = randomSelector(rooms)
   document.getElementById('roomName').innerHTML = mystery.room.name
 }
