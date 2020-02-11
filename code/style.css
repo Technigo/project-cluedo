@@ -17,7 +17,14 @@ p {
   width: 80%;
   justify-content: space-around;
 }
+
+
+.small-image {
+  transition: all 1s;
+}
+
 .suspect-image {
+  width: 100%;
   z-index: -1;
   position: absolute;
   top: 0;
@@ -26,9 +33,31 @@ p {
   transition: all 1s;
 }
 
-.suspect-test {
-  transition: all 1s;
+.prison {
+  width: 100px;
+  height: 130px;
+  border: 3px solid black;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  
 }
+
+@media (min-width: 667px) {
+  .prison {
+    width: 190px;
+    height: 250px;
+  }
+}
+
+
+.bars {
+  width: 5px;
+  height: 100%;
+  background-color: black;
+  z-index: 5;
+}
+
 
 
 
@@ -81,26 +110,3 @@ button {
   margin: 0 auto;
 }
 
-.prison {
-  width: 190px;
-  height: 250px;
-  border: 3px solid black;
-  position: relative;
-  
-  
-}
-
-
-.cage {
-  display: flex;
-  justify-content: space-evenly;
-  width: 190px;
-  
- 
-}
-.bars {
-  width: 5px;
-  height: 250px;
-  background-color: black;
-  z-index: 5;
-}
