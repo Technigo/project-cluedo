@@ -190,6 +190,8 @@ const mystery = {
   room: ''
 }
 
+let guess = ''
+
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
@@ -224,14 +226,72 @@ document.getElementById('killerCard').onclick = pickKiller
 document.getElementById('weaponCard').onclick = pickWeapon
 document.getElementById('roomCard').onclick = pickRoom
 
+const guess1 = (name) => {
+  guess = name
+  document.getElementById('suspectImage').src = guess.image
+
+}
+
 
 const reveal = () => {
 
-  document.getElementById('mystery').innerHTML = `It was ${mystery.killer.firstName} ${mystery.killer.lastName} in the
+  if (mystery.killer === '' || mystery.weapon === '' || mystery.room === '') {
+    document.getElementById('mystery').innerHTML = 'Please select the mystery answer!'
+  } else if (guess === '') {
+    document.getElementById('mystery').innerHTML = 'Please make a guess!'
+  } else if (guess === mystery.killer) {
+    document.getElementById('mystery').innerHTML = `Correct! It was ${mystery.killer.firstName} ${mystery.killer.lastName} in the
 ${mystery.room} with the ${mystery.weapon.name}.`
+  } else if (guess !== mystery.killer) {
+    document.getElementById('mystery').innerHTML = `Wrong! It was ${mystery.killer.firstName} ${mystery.killer.lastName} in the
+${mystery.room} with the ${mystery.weapon.name}.`
+  }
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 document.getElementById('reveal').onclick = reveal
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+let pickedSuspect
+
+const picked = (name, name2) => {
+  if (guess === '') {
+    document.getElementById(name).style.opacity = "0";
+    document.getElementById(name).style.position = "absolute";
+
+    pickedSuspect = name;
+    guess = name2
+    document.getElementById('suspectImage').src = guess.image
+    document.getElementById('suspectImage').style.opacity = 1;
+  } else { }
+}
+
+const released = () => {
+  if (guess.firstName !== undefined) {
+    document.getElementById('suspectImage').style.opacity = 0;
+    guess = ''
+
+
+  }
+  if (pickedSuspect === 'mrsWhite') {
+    document.getElementById('mrsWhite').style.opacity = "1"
+    document.getElementById('mrsWhite').style.position = "static"
+  } else if (pickedSuspect === 'mrGreen') {
+    document.getElementById('mrGreen').style.opacity = "1"
+    document.getElementById('mrGreen').style.position = "static"
+  } else if (pickedSuspect === 'profPlum') {
+    document.getElementById('profPlum').style.opacity = "1"
+    document.getElementById('profPlum').style.position = "static"
+  } else if (pickedSuspect === 'colMustard') {
+    document.getElementById('colMustard').style.opacity = "1"
+    document.getElementById('colMustard').style.position = "static"
+  } else if (pickedSuspect === 'missScarlet') {
+    document.getElementById('missScarlet').style.opacity = "1"
+    document.getElementById('missScarlet').style.position = "static"
+  } else if (pickedSuspect === 'mrsPeacock') {
+    document.getElementById('mrsPeacock').style.opacity = "1"
+    document.getElementById('mrsPeacock').style.position = "static"
+  }
+
+}
