@@ -201,16 +201,17 @@ document.getElementById('roomCard').onclick = pickRoom;
 // It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
-console.log(mrGreen.description)
-console.log(weapons[weapons.length - 1])
+//console.log(mrGreen.description)
+//console.log(weapons[weapons.length - 1])
 
 const revealMystery = () => {
-  consol.log('Clicking reveal button')
-  consol.log(`the murder {$mystery.killer.name} with...`)
-  document.getElementById('mystery').innerHTML = `the murder {$mystery.killer.name} with...`
+  console.log('Clicking reveal button')
+  console.log(mystery)
+  console.log(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`)
+  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`
 }
 
-//document.getElementById('button').onclick = revealMystery
+document.getElementById('button').onclick = revealMystery;
 
 
 //
