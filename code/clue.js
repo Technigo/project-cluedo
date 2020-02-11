@@ -54,7 +54,7 @@ const mrsWhite = {
   firstName: 'Blanche',
   lastName: 'White',
   color: 'FloralWhite',
-  description: 'She claims to have seen many wars come and go and gets an eye squint from spying in keyholes.',
+  description: 'She have the keys to all the rooms.',
   age:  70,
   image: 'assets/white.png',
   occupation: 'Housekeeper'
@@ -64,48 +64,65 @@ const mrsWhite = {
 
 const rope = {
   name: 'Rope',
-  weight: 10
+  weight: 10,
+  color: 'black',
+  image: 'assets/rope.jpg',
 }
 
 const knife = {
   name: 'Knife',
-  weight: 30
+  weight: 30,
+  color: 'black',
+  image: 'assets/knife.jpg',
 }
 
 const candlestick = {
   name: 'Candlestick',
-  weight: 40
+  weight: 40,
+  color: 'black',
+  image: 'assets/candlestick.jpg'
 }
 
 const dumbbell = {
   name: 'Dumbbell',
-  weight: 80
+  weight: 80,
+  color: 'black',
+  image: 'assets/dumbbell.jpg'
 }
 
 const poison = {
   name: 'Poison',
-  weight: 5
+  weight: 5,
+  color: 'black',
+  image: 'assets/poison.jpg'
 }
 
 const axe = {
   name: 'Axe',
-  weight: 20
+  weight: 20,
+  color: 'black',
+  image: 'assets/axe.jpg'
 }
 
 const bat = {
   name: 'Bat',
-  weight: 30
+  weight: 30,
+  color: 'black',
+  image: 'assets/bat.jpg'
 }
 
 const trophy = {
   name: 'Trophy',
-  weight: 30
+  weight: 30,
+  color: 'black',
+  image: 'assets/trophy.jpg'
 }
-
 
 const pistol = {
   name: 'Pistol',
-  weight: 30
+  weight: 30,
+  color: 'black',
+  image: 'assets/pistol.jpg'
 }
 
 
@@ -183,7 +200,7 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 
-let mystery = {
+const mystery = {
   killer: null,
   weapons: null,
   rooms: null
@@ -211,6 +228,8 @@ console.log(mystery)
 const pickWeapons = () => {
 
   mystery.weapons = randomSelector(weapons)
+  document.getElementById('weaponCard').style.background = mystery.weapons.color
+  document.getElementById('weaponImage'). src = mystery.weapons.image
   document.getElementById('weaponName').innerHTML = `${mystery.weapons.name}`
   document.getElementById('weaponWeight').innerHTML = `${mystery.weapons.weight}`
 }
@@ -231,7 +250,7 @@ console.log(mystery)
 
 const revealMystery = () => {
 
-  document.getElementById('crimebutton').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room}, with a ${mystery.weapons.name}`
+  document.getElementById('crimebutton').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapons.name}.`
 }
 
 console.log(mystery)
