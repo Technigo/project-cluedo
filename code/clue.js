@@ -264,7 +264,7 @@ const pickKiller = () => {
   theKiller.style.background = mystery.killer.color
 
   const theKillerName = document.getElementById('killerName')
-  theKillerName.innerHTML = mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 
   const theKillerAge = document.getElementById('killerAge')
   theKillerAge.innerHTML = mystery.killer.age
@@ -315,8 +315,5 @@ const revealMystery = () => {
   revealCrimne.innerHTML = `The murder was committed by 
   ${mystery.killer.firstName} ${mystery.killer.lastName}
   in the ${mystery.room.name} 
-  with a ${mystery.weapons.name}`
+  with a ${mystery.weapons.name}.`
 }
-
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
