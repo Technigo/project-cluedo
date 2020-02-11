@@ -17,7 +17,7 @@ body {
 }
 
 p {
-  color: #fff;
+  color: #f3edd9;
 }
 
 h1,
@@ -53,6 +53,11 @@ h1 {
   padding-top: 30px;
   border-radius: 16px;
   background-color: #000;
+  transition: all .15s ease-in-out;
+}
+
+.card-deck:hover {
+  transform: translateY(4px);
 }
 
 /* Remove pointer events from elements inside card deck */
