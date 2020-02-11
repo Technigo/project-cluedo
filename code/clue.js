@@ -4,7 +4,7 @@ const mrGreen = {
   nickName: 'Mr Green',
   firstName: 'Jacob',
   lastName: 'Green',
-  color: '#48878d',
+  color: '#0e393d',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -15,7 +15,7 @@ const professorPlum = {
   nickName: 'Professor Plum',
   firstName: 'Peter',
   lastName: 'Plum',
-  color: '#928eb5',
+  color: '#494383',
   description: 'A man with a degree of suspicion.',
   age: 36,
   image: 'assets/plum.png',
@@ -26,7 +26,7 @@ const missScarlet = {
   nickName: 'Miss Scarlet',
   firstName: 'Vivienne',
   lastName: 'Scarlet',
-  color: '#d0676b',
+  color: '#b1030a',
   description: 'A vivacious and aspiring actress.',
   age: 25,
   image: 'assets/scarlet.png',
@@ -37,7 +37,7 @@ const mrsPeacock = {
   nickName: 'Mrs Peacock',
   firstName: 'Elizabeth',
   lastName: 'Peacock',
-  color: '#9eb4db',
+  color: '#4f46db',
   description: 'Lady of Arlington Grange and a beautiful society hostess.',
   age: 32,
   image: 'assets/peacock.png',
@@ -48,7 +48,7 @@ const colonelMustard = {
   nickName: 'Colonel Mustard',
   firstName: 'Michael',
   lastName: 'Mustard',
-  color: '#ccb064',
+  color: '#aa7c00',
   description: 'A gallant military hero whose glittering career hides a tarnished past.',
   age: 50,
   image: 'assets/mustard.png',
@@ -59,7 +59,7 @@ const mrsWhite = {
   nickName: 'Mrs White',
   firstName: 'Blanche',
   lastName: 'White',
-  color: '#E8DFD6',
+  color: '#000',
   description: 'Loyal housekeeper and a devoted confidant.',
   age: 60,
   image: 'assets/white.png',
@@ -70,54 +70,63 @@ const mrsWhite = {
 
 const rope = {
   name: 'Rope',
+  image: 'assets/rope.png',
   weight: 5,
   description: 'Cotton rope.'
 };
 
 const knife = {
   name: 'Knife',
+  image: 'assets/knife.png',
   weight: 2,
   description: 'Rusty kitchen knife.'
 };
 
 const candlestick = {
   name: 'Candlestick',
+  image: 'assets/candle.png',
   weight: 5,
   description: 'Heavy silver candlestick.'
 };
 
 const dumbbell = {
   name: 'Dumbbell',
+  image: 'assets/gym.png',
   weight: 20,
   description: 'Perfect for exercise.'
 };
 
 const poison = {
   name: 'Poison',
+  image: 'assets/poison.png',
   weight: 1,
   description: 'Cyanide or maybe Arsenic?'
 };
 
 const axe = {
   name: 'Axe',
+  image: 'assets/axe.png',
   weight: 20,
   description: 'Perfect for cutting wood.'
 };
 
 const bat = {
   name: 'Bat',
+  image: 'assets/bat.png',
   weight: 10,
   description: 'Baseball bat.'
 };
 
 const trophy = {
   name: 'Trophy',
+  image: 'assets/trophy.png',
   weight: 20,
   description: 'Trophy that needs polishing.'
 };
 
 const pistol = {
   name: 'Pistol',
+  image: 'assets/pistol.png',
   weight: 2,
   description: 'One missing bullet in this one.'
 };
@@ -202,6 +211,7 @@ const pickKiller = () => {
 const pickWeapon = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
+  document.getElementById('weaponImage').src = `${mystery.weapon.image}`
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
   document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight} kg`
   document.getElementById('weaponDescription').innerHTML = `${mystery.weapon.description}`

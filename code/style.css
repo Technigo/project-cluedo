@@ -1,13 +1,13 @@
 body {
-  background-color: #7e7474;
+  background-color: #c1c1c1;
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
 }
 
 p {
-  margin: 1px;
+  margin: 5px;
   font-weight: 300;
-  background-color: #fff;
+  background-color: #FFF;
 }
 
 h3 {
@@ -18,41 +18,45 @@ h3 {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #7e7474;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .killer-deck img {
+  margin: 20px;
   width: 100px;
-  padding: 10px;
-  border: 0;
-  border-radius: 30%;
+  border-radius: 50%;
 }
 
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #353535;
+  background: #717171;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 50px;
   border-radius: 16px;
+}
+
+.weapon-deck img {
+  margin: 20px;
+  padding: 30px;
+  width: 50px;
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background:#E8DFD6;
+  background: #717171;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 50px;
   border-radius: 16px;
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: #E8DFD6;
+  background: #717171;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
