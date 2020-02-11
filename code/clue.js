@@ -1,5 +1,3 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
@@ -60,9 +58,6 @@ const missScarlet = {
   occupation: 'Actress'
 }
 
-
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
-
 const rope = {
   name: 'rope',
   weight: 10,
@@ -102,13 +97,55 @@ const horseshoe = {
 const poison = {
   name: 'poison',
   weight: 0,
-color: 'red',
-image: 'https://gumlet.assettype.com/freepressjournal/import/2019/03/poison.png?w=1200&h=750'
+  color: 'red',
+  image: 'https://gumlet.assettype.com/freepressjournal/import/2019/03/poison.png?w=1200&h=750'
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+const hall= {
+  name: 'hall', 
+  image: 'https://www.allertoncastle.co.uk/content/1062/Live/image/great_hall.jpg'
+}
+
+const lounge = {
+  name: 'lounge',
+  image: 'https://media-cdn.tripadvisor.com/media/photo-s/0e/df/0c/9f/hummingbird-lounge.jpg'
+}
+
+const diningRoom = {
+  name: 'dining room',
+  image: 'https://cdn.home-designing.com/wp-content/uploads/2013/02/dining-room-old-school.jpeg'
+}
+
+const kitchen = {
+  name: 'kitchen',
+  image: 'https://www.homeizy.com/wp-content/uploads/2012/11/Color-Ideas-for-Old-Kitchen-Cabinets.jpg'
+}
+
+const ballRoom = {
+  name: 'ball room',
+  image: 'https://images.squarespace-cdn.com/content/v1/53aa06cae4b0c3e3776c63f0/1424472865442-EIPXFRLQOM8DW42LW8L1/ke17ZwdGBToddI8pDm48kLkXF2pIyv_F2eUT9F60jBl7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0iyqMbMesKd95J-X4EagrgU9L3Sa3U8cogeb0tjXbfawd0urKshkc5MgdBeJmALQKw/image-asset.jpeg'
+}
+
+const conservatory = {
+  name: 'convervtory',
+  image: 'https://www.gardendesign.com/pictures/images/600x600Max/tanglewood-conservatories-historic-replicas_430/garden-design_5204.jpg'
+}
+
+const billardRoom = {
+  name: 'billard room',
+  image: 'https://cdn.shopify.com/s/files/1/1062/7500/files/linwood-billiards-table_525d602c-d517-4ae5-9211-726d68fc8dce.jpg?10525131255629077244'
+}
+
+const library = {
+  name: 'library',
+  image: 'https://images.photowall.com/products/45534.jpg?h=699&q=85'
+}
+
+const studyRoom = {
+  name: 'study room',
+  image: 'https://i.pinimg.com/originals/90/d8/a5/90d8a5f9b6db6df0a8751b49a073d438.jpg'
+}
 
 const suspects = [
   mrGreen,
@@ -128,16 +165,6 @@ const weapons = [
   poison
 ]
 
-const hall='hall'
-const lounge ='lounge'
-const diningRoom= 'dining Room'
-const kitchen = 'kitchen'
-const ballRoom = 'ball room'
-const conservatory = 'convervatory'
-const billardRoom = 'billard room'
-const library =' library'
-const study = 'study'
-
 const rooms = [
   hall, 
   lounge, 
@@ -147,49 +174,27 @@ const rooms = [
   conservatory, 
   billardRoom, 
   library, 
-  study
+  studyRoom
 ]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
 let mystery = {
   killer: '',
   weapon: '',
   room: ''
 }
 
-
-// This function will be invoked when you click on the killer card.
 const pickKiller = () => {
-  
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
-
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName}
-   ${mystery.killer.lastName}`
-   document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
-   document.getElementById('killerImage').src = mystery.killer.image
-   document.getElementById('killerDescription').innerHTML =`${mystery.killer.description}`
-   
-
-   
-  
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
+  document.getElementById('killerImage').src = mystery.killer.image
+  document.getElementById('killerDescription').innerHTML =`${mystery.killer.description}`
 }
-
-//document.getElementById('killerCard').onclick = pickKiller();
-
-
-
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
 const pickWeapon = () => {
   mystery.weapon =randomSelector(weapons)
@@ -199,25 +204,17 @@ const pickWeapon = () => {
   ).innerHTML = `${mystery.weapon.name} ${mystery.weapon.weight} kg`
   document.getElementById('killerWeapon').src = mystery.weapon.image
 }
-//document.getElementById('weaponCard').onclick = pickWeapon();
 
 const pickRoom = () => {
   mystery.room =randomSelector(rooms)
   document.getElementById(
     'roomName'
-  ).innerHTML = `${mystery.room}`
-  
+  ).innerHTML = `${mystery.room.name}`
+  document.getElementById('killerRoom').src = mystery.room.image
 }
 
-//document.getElementById('roomCard').onclick = pickRoom();
-
-
-
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
-
 const revealMystery = () => {
-  let finalMessage = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  let finalMessage = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`
   document.getElementById('mystery').innerHTML = finalMessage
 }
 

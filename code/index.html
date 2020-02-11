@@ -11,7 +11,6 @@
     <header>
       <h2>CLUEDO GAME</h2>
     </header>
-    
     <section class="cards" >
       <article onclick="pickKiller()" class="killer-deck" id="killerCard">
         <p class="bold">KILLER</p>
@@ -30,15 +29,11 @@
       <article onclick="pickRoom()" class="room-deck" id="roomCard">
         <p class="bold">ROOM</p>
         <p id="roomName"></p>
-        <img height="200" src="https://steamcdn-a.akamaihd.net/steam/apps/794800/header.jpg?t=1560417198"  />
+        <img id="killerRoom" height="200" src="https://steamcdn-a.akamaihd.net/steam/apps/794800/header.jpg?t=1560417198"  />
       </article>
     </section>
- 
-
     <h1 id="mystery"></h1>
-
     <button onclick="revealMystery()">REVEAL THE CRIME</button>
-
     <script src="clue.js"></script>
   </body>
 </html>
