@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="style.css" />
     <title>Technigo Project Cluedo</title>
   </head>
-  <body>
+  <body class="body">
+    <header class="header">
+      <h1>Cluedo</h1>
+    </header>
     <section class="cards">
       <article class="killer-deck" id="killerCard" onclick="pickKiller()">
         <p>KILLER</p>
@@ -20,17 +23,20 @@
       <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
         <p>WEAPON</p>
         <p id="weaponName"></p>
+        <img id="weaponImage" src="" height="100" />
         <p id="weaponWeight"></p>
       </article>
       <article class="room-deck" id="roomCard" onclick="pickRoom()">
         <p>ROOM</p>
         <p id="roomName"></p>
+        <img id="roomImage" src="" height="100" />
       </article>
     </section>
 
     <h1 id="mystery"></h1>
 
-    <button>REVEAL THE CRIME</button>
+
+    <button onclick="revealMystery()">REVEAL THE CRIME</button>
 
     <script src="clue.js"></script>
   </body>

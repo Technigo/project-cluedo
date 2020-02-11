@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background: #ccc;
 }
 
 p {
@@ -9,44 +10,57 @@ p {
   background-color: #fff;
 }
 
-.cards {
-  margin: 50px auto;
-  width: 90%;
-  height: 600px;
-  background: #ccc;
-  display: flex;
-  justify-content: space-around;
+
+.header {
+  text-align: center;
   align-items: center;
 }
 
-.cards img {
-  height: max-content;
+.cards {
+  display: flex;
+  flex-wrap: flex;
 }
+
+.cards img {
+  height: auto;
+  align-items: center;
+  width: 80%;
+
+
+}
+
 .killer-deck {
-  width: 250px;
-  height: 400px;
-  background: #000;
-  text-align: center;
-  padding-top: 30px;
+  background: rgb(248,229,139);
+  width: 100%;
   border-radius: 16px;
+  padding-top: 30px;
+  text-align: center;
+  margin: 16px;
+  min-height: 400px;
 }
 
 .weapon-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
+  background: grey;  
+  width: 100%;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 16px;
+  min-height: 400px;
+}
+
+.weapon-deck img {
+  padding-top: 30px;
 }
 
 .room-deck {
-  width: 250px;
-  height: 400px;
+  width: 100%;
   background: midnightblue;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 16px;
+  min-height: 400px;
 }
 
 button {
