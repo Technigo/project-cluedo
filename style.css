@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
-  background-image: url(https://images.unsplash.com/photo-1524721696987-b9527df9e512?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1490&q=80);
+  background-image: url(https://images.unsplash.com/photo-1519035350952-38d18a3848cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
-  color: #0b1e30;
+  color: black;
 }
 
 header {
@@ -16,85 +16,106 @@ header {
 
 h1 {
   padding: 40px 0px 40px 0px;
+  font-size: 55px;
+  text-shadow: 0 0 3px #FF0000
 }
 
-div {
+.instructions div {
   border: 1px solid #ff002f;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.795);
+  background-color: #ffefcf;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 19px;
 }
 
 .instructions1 {
   border-bottom-left-radius: 8px;
   border-top-right-radius: 8px;
-  margin: 10px 40% 20px 20px;
+  margin: 10px 40% 20px 50px;
 }
 
 .instructions2 {
   border-bottom-right-radius: 8px;
   border-top-left-radius: 8px;
-  margin: 10px 20px 20px 40%;
+  margin: 10px 50px 20px 40%;
+}
+
+.title {
+  margin: 1px;
+  font-weight: 300;
+  font-size: 50px;
+  color: #ff002f;
 }
 
 p {
   margin: 1px;
   font-weight: 300;
-  background-color: #fff;
+  font-size: 20px;
 }
 
 .cards {
   margin: 50px auto;
-  width: 90%;
+  width: 80%;
   height: 600px;
-  background-color: #0b1e30e8;
   border-radius: 100px;
+  border: 4px #ff002f double;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .killer-deck {
-  width: 250px;
+  width: 300px;
   height: 400px;
-  background: #000;
-  text-align: center;
+  background-image: url(https://images.unsplash.com/photo-1569521597715-0e0c4e22e0e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
   padding-top: 30px;
   border-radius: 16px;
+  text-align: center;
+  margin: 0px 20px;
 }
 
 .weapon-deck {
-  width: 250px;
+  width: 300px;
   height: 400px;
-  background: rgb(10, 53, 10);
-  text-align: center;
+  background-image: url(https://images.unsplash.com/photo-1572470682591-d0fde2bd15a4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
   padding-top: 30px;
   border-radius: 16px;
+  text-align: center;
+  margin: 0px 20px;
 }
 
 .room-deck {
-  width: 250px;
+  width: 300px;
   height: 400px;
-  background: midnightblue;
-
-  text-align: center;
+  background-image: url(https://images.unsplash.com/photo-1572470562861-fdec5e26bec2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
   padding-top: 30px;
   border-radius: 16px;
+  text-align: center;
+  margin: 0px 20px;
+}
+
+.img-container img {
+  max-height: 50%;
+  width: auto;
+  border-radius: 50%;
 }
 
 h2 {
   text-align: center;
+  color: #ff002f;
+  font-size: 26px;
+  text-shadow: 0 0 5px black;
 }
 
 button {
   padding: 8px 16px;
-  background: #ff002fd0;
+  background: #ff002f;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.425), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 footer {
@@ -104,4 +125,63 @@ footer {
 footer p {
   padding: 60px 0px 20px 20px;
   background: none;
+  color: #ff002f;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    padding: 10px 0px 0px 0px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 45px;
+  }
+
+  .cards {
+    margin-top: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+  }
+
+  .killer-deck {
+    margin: 40px 0px 0px 0px;
+  }
+
+  .weapon-deck {
+    margin: 40px 0px 0px 0px;
+  }
+
+  .room-deck {
+    margin: 40px 0px 40px 0px;
+  }
+
+  h2 {
+    font-size: 24px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 425px) {
+  body {
+    background-image: none;
+    background-color: #7b001b;
+    background-image: linear-gradient(90deg, #700018 0%, #6b0007 100%);
+  }
+
+  .instructions1 {
+    margin: 60px 50px 20px 20px;
+  }
+
+  .instructions2 {
+    margin: 10px 20px 20px 50px;
+  }
+
+  .cards {
+    border: none;
+  }
+
+  footer p {
+    padding-bottom: 0px;
+  }
 }

@@ -90,8 +90,8 @@ const axe = {
   image: 'assets/axe.jpg'
 }
 
-const bat = {
-  name: 'Bat',
+const golfclub = {
+  name: 'Golf club',
   image: 'assets/bat.jpg'
 }
 
@@ -198,7 +198,7 @@ const weapons = [
   dumbbell,
   poison,
   axe,
-  bat,
+  golfclub,
   trophy,
   pistol
 ]
@@ -235,7 +235,7 @@ const mystery = {
 
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects)
-  document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerCard').style.background = '#ffefcf'
   document.getElementById(
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
@@ -255,7 +255,7 @@ const pickKiller = () => {
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
-  document.getElementById('weaponCard').style.background = 'red'
+  document.getElementById('weaponCard').style.background = '#ffefcf'
   document.getElementById(
     'weaponName'
   ).innerHTML = `${mystery.weapon.name}`
@@ -266,7 +266,7 @@ const pickWeapon = () => {
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
-  document.getElementById('roomCard').style.background = 'red'
+  document.getElementById('roomCard').style.background = '#ffefcf'
   document.getElementById(
     'roomName'
   ).innerHTML = `${mystery.room.name}`
