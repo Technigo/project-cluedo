@@ -1,13 +1,15 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+In this project we were focused on working with arrays and objects in Javascript
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The problem or the solution depends on how you want to see it was to place all characters in different objects and them call them out. 
+
+What I did in this project was to create objects in the array and them added them in functions to make it easier to call them out instead of naming each one of the characters. 
+
+If I had more time, then I would style my project more and also clean up the final code on step for. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://confident-gates-254712.netlify.com/
