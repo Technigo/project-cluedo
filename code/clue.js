@@ -65,47 +65,47 @@ const mrsWhite = {
 
 const rope = {
   name: 'Rope',
-  weight: 10
+  weight: 2
 }
 
 const knife = {
   name: 'Knife',
-  weight: 5
+  weight: 1
 }
 
 const candlestick = {
   name: 'Candlestick',
-  weight: 8
+  weight: 6
 }
 
 const dumbbell = {
   name: 'Dumbbell',
-  weight: 15
+  weight: 10
 }
 
 const poison = {
   name: 'Poison',
-  weight: 1
+  weight: 0
 }
 
 const axe = {
   name: 'Axe',
-  weight: 30
+  weight: 12
 }
 
 const bat = {
   name: 'Bat',
-  weight: 20
+  weight: 8
 }
 
 const trophy = {
   name: 'Trophy',
-  weight: 45
+  weight: 16
 }
 
 const pistol = {
   name: 'Pistol',
-  weight: 36
+  weight: 9
 }
 
 // Arrays of suspects, weapons & rooms
@@ -149,11 +149,15 @@ const rooms = [
   'Patio'
 ]
 
-
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+// Randomly selects one item from passed in array
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
+}
+
+// Removes icon on card when deck is clicked
+const removeDeckIcon = () => {
+  const deckIcon = event.target.querySelector('.icon')
+  if (typeof (deckIcon) !== 'undefined' && deckIcon !== null) deckIcon.remove()
 }
 
 const mystery = {
@@ -163,6 +167,8 @@ const mystery = {
 }
 
 const pickKiller = () => {
+  removeDeckIcon();
+
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
@@ -171,7 +177,7 @@ const pickKiller = () => {
   document.getElementById(
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-  document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`
+  document.getElementById('killerAge').innerHTML = `${mystery.killer.age} years`
   document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
   document.getElementById('killerImage').src = `${mystery.killer.image}`
   document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
@@ -181,18 +187,22 @@ document.getElementById('killerCard').addEventListener('click', pickKiller)
 
 
 const pickWeapon = () => {
+  removeDeckIcon();
+
   // Randomly selects a weapon from the weapons array
   mystery.weapon = randomSelector(weapons)
 
   // Adds the weapon name
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}`
+  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight} kg`
 }
 
 document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 
 
 const pickRoom = () => {
+  removeDeckIcon();
+
   // Randomly selects a room from the rooms array
   mystery.room = randomSelector(rooms)
 
@@ -208,6 +218,7 @@ const revealMystery = () => {
   const message = document.getElementById('mystery');
   let allCardsClicked = '';
 
+  // Loops through mystery object to see if there are any empty values
   Object.keys(mystery).forEach(function (item) {
     if (mystery[item] === '') allCardsClicked = false;
 

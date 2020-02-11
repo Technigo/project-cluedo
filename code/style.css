@@ -31,6 +31,12 @@ h1 {
   text-transform: uppercase;
 }
 
+.icon {
+  display: block;
+  margin-top: 4rem;
+  font-size: 3rem;
+}
+
 .cards {
   margin: 50px auto;
   width: 90%;
@@ -43,6 +49,11 @@ h1 {
 
 [class*="-deck"] {
   background-color: #000;
+}
+
+/* Remove pointer events from elements inside card deck */
+[class*="-deck"]>* {
+  pointer-events: none;
 }
 
 .killer-deck {
@@ -79,6 +90,14 @@ button {
   font-size: 1.6rem;
   display: block;
   margin: 0 auto;
+  cursor: pointer;
+  transition: all .15s ease-in-out;
+}
+
+button:hover {
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  transform: translateY(2px);
 }
 
 h2.reveal-message {
