@@ -1,25 +1,27 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  padding-bottom: 26px;
+  font-family: Helvetica, sans-serif;
+  background: rgb(10, 53, 10);
+  color: #fff;
 }
 
 p {
   margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+  font-size: 18px;
 }
 
 .cards {
   margin: 50px auto;
-  width: 90%;
-  height: 600px;
-  background: #ccc;
+  width: 95%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 
 .killer-deck {
+  margin: 10px;
   width: 250px;
   height: 400px;
   background: #000;
@@ -29,19 +31,30 @@ p {
 }
 
 .weapon-deck {
+  margin: 10px;
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background:orangered;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
 .room-deck {
+  margin: 10px;
   width: 250px;
   height: 400px;
   background: midnightblue;
+  text-align: center;
+  padding-top: 30px;
+  border-radius: 16px;
+}
 
+.time-deck {
+  margin: 20px auto;
+  width: 250px;
+  height: 400px;
+  background: #e06f1f;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -49,10 +62,51 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  color: #fff;
+  background: black;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+#killerImage {
+  margin: 15px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+@media (min-width: 668px) {
+  .killer-deck {
+    width: 300px;
+  }
+  
+  .weapon-deck {
+    width: 300px;
+  }
+  
+  .room-deck {
+    width: 300px;
+  }
+
+  .time-deck {
+    width: 300px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .cards {
+    height: 500px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

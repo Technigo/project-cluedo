@@ -3,8 +3,8 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
-  description: 'He has a lot of connections',
+  color: '#006600',
+  description: 'He has a lot of connections.',
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
@@ -13,9 +13,9 @@ const mrGreen = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'purple',
-  description: 'He owns many weird books',
-  age: 72,
+  color: '#6918b4',
+  description: 'He is eccentric and odd.',
+  age: 55,
   image: 'assets/plum.png',
   occupation: 'Professor'
 }
@@ -23,8 +23,8 @@ const professorPlum = {
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'red',
-  description: 'She is not scared to speak her mind',
+  color: '#b30000',
+  description: 'She is not scared to speak her mind.',
   age: 26,
   image: 'assets/scarlet.png',
   occupation: 'Actress'
@@ -33,19 +33,19 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: 'blue',
-  description: 'She can cook anything and make it tasty',
-  age: 53,
+  color: '#0000b3',
+  description: 'The whole country is afraid of her sharp pen!',
+  age: 42,
   image: 'assets/peacock.png',
-  occupation: 'Cookbook author'
+  occupation: 'Journalist'
 }
 
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'yellow',
-  description: 'He seems to be angry and reserved',
-  age: 58,
+  color: '#ffa500',
+  description: 'He is angry and reserved.',
+  age: 67,
   image: 'assets/mustard.png',
   occupation: 'Colonel'
 }
@@ -53,11 +53,11 @@ const colonelMustard = {
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: 'white',
+  color: '#ffdb99',
   description: 'No one knows what happened to Mr White...',
-  age: 37,
+  age: 60,
   image: 'assets/white.png',
-  occupation: 'CEO'
+  occupation: 'Cookbook author'
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
@@ -149,6 +149,33 @@ const rooms = [
   "Guest House",
   "Patio"]
 
+const time = [
+  "1 AM",
+  "2 AM",
+  "3 AM",
+  "4 AM",
+  "5 AM",
+  "6 AM",
+  "7 AM",
+  "8 AM",
+  "9 AM",
+  "10 AM",
+  "11 AM",
+  "12 AM",
+  "1 PM",
+  "2 PM",
+  "3 PM",
+  "4 PM",
+  "5 PM",
+  "6 PM",
+  "7 PM",
+  "8 PM",
+  "9 PM",
+  "10 PM",
+  "11 PM",
+  "12 PM"
+]
+
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 
@@ -161,9 +188,10 @@ const randomSelector = array => {
 // The values will be set later.
 
 const mystery = {
-  killer: '',
-  room: '',
-  weapon: ''
+  killer: "",
+  room: "",
+  weapon: "",
+  time: ""
 }
 
 // This function will be invoked when you click on the killer card.
@@ -202,11 +230,28 @@ const pickRoom = () => {
 
 document.getElementById('roomCard').onclick = pickRoom
 
+
+const pickTime = () => {
+  mystery.time = randomSelector(time)
+  document.getElementById(
+    'time'
+  ).innerHTML = `${mystery.time}`
+}
+
+document.getElementById('timeCard').onclick = pickTime
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
+/*const revealMystery = () => {
+  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name} at ${mystery.time}.`
+}*/
+
 const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`
+  if (mystery.killer === '' || mystery.weapon === '' || mystery.room === '' || mystery.time === '') {
+    document.getElementById('mystery').innerHTML = 'No mystery has been revealed yet.'
+  } else {
+    document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name} at ${mystery.time}.`
+  }
 }
 
 document.getElementById('button').onclick = revealMystery
