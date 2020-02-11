@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  color: 'ForestGreen',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -13,7 +13,7 @@ const mrGreen = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'purple',
+  color: 'MediumPurple',
   description: 'He is widely seen as the intellectual',
   age: 	36,
   image: 'assets/plum.png',
@@ -23,9 +23,9 @@ const professorPlum = {
 const missScarlet  = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'red',
+  color: 'Crimson',
   description: 'She is typically portrayed as young, cunning, and highly attractive',
-  age: 	25,
+  age: 	32,
   image: 'assets/scarlet.png',
   occupation: 'Actress'
 }
@@ -33,9 +33,9 @@ const missScarlet  = {
 const mrsPeacock = {
   firstName: 'Elizabeth',
   lastName: 'Peacock',
-  color: 'blue',
+  color: 'MidnightBlue',
   description: 'She is known for being outrageous with her flamboyant life-style',
-  age:  32,
+  age:  50,
   image: 'assets/peacock.png',
   occupation: 'Socialite'
 }
@@ -43,7 +43,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'yellow',
+  color: 'GoldenRod',
   description: 'He is a tough man to accuse, so you better be right',
   age:  50,
   image: 'assets/mustard.png',
@@ -53,7 +53,7 @@ const colonelMustard = {
 const mrsWhite = {
   firstName: 'Blanche',
   lastName: 'White',
-  color: 'white',
+  color: 'FloralWhite',
   description: 'She claims to have seen many wars come and go and gets an eye squint from spying in keyholes.',
   age:  70,
   image: 'assets/white.png',
@@ -63,48 +63,48 @@ const mrsWhite = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: 'rope',
+  name: 'Rope',
   weight: 10
 }
 
 const knife = {
-  name: 'knife',
+  name: 'Knife',
   weight: 30
 }
 
 const candlestick = {
-  name: 'candlestick',
+  name: 'Candlestick',
   weight: 40
 }
 
 const dumbbell = {
-  name: 'dumbbell',
+  name: 'Dumbbell',
   weight: 80
 }
 
 const poison = {
-  name: 'poison',
+  name: 'Poison',
   weight: 5
 }
 
 const axe = {
-  name: 'axe',
+  name: 'Axe',
   weight: 20
 }
 
 const bat = {
-  name: 'bat',
+  name: 'Bat',
   weight: 30
 }
 
 const trophy = {
-  name: 'trophy',
+  name: 'Trophy',
   weight: 30
 }
 
 
 const pistol = {
-  name: 'pistol',
+  name: 'Pistol',
   weight: 30
 }
 
@@ -227,3 +227,12 @@ console.log(mystery)
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+
+const revealMystery = () => {
+
+  document.getElementById('crimebutton').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room}, with a ${mystery.weapons.name}`
+}
+
+console.log(mystery)
+

@@ -36,6 +36,8 @@ p {
   padding-top: 20px;
   border-radius: 16px;
   margin-bottom: 10px;
+  background-image: url(./assets/key.jpg);
+  background-size: 100%;
 }
 
 .weapon-deck {
@@ -45,6 +47,8 @@ p {
   text-align: center;
   padding-top: 20px;
   border-radius: 16px;
+  background-image: url(./assets/key.jpg);
+  background-size: 100%;
 }
 
 .room-deck {
@@ -54,11 +58,18 @@ p {
   text-align: center;
   padding-top: 20px;
   border-radius: 16px;
+  background-image: url(./assets/key.jpg);
+  background-size: 100%;
+}
+
+#crimebutton {
+  color: beige;
+  font-size: 30px;
 }
 
 button {
   padding: 8px 10px;
-  background: crimson;
+  background: rgb(43, 7, 3);
   border: none;
   font-size: 20px;
   border-radius: 8px;
