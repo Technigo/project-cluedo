@@ -119,12 +119,28 @@ console.log(mrsWhite.firstName)
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
-// const suspects = [
-//   mrGreen,
-//   mrsWhite
-// ]
+const suspects = [
+  'mrGreen',
+  'proffersorPlum',
+  'missScarlet',
+  'mrsPeacock',
+  'cononelMustard',
+  'mrsWhite'
+]
 
-// const weapons = []
+const weapons = [
+  'rope',
+  'knife',
+  'candlestick',
+  'dumbbell',
+  'poison',
+  'axe',
+  'bat',
+  'trophy',
+  'pistol'
+]
+
+console.log(weapons)
 
 // const rooms = []
 
