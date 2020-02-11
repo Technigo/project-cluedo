@@ -6,34 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
   <title>Technigo Project Cluedo</title>
 </head>
 
 <body>
+  <h5>------------- PLAY CLUEDO -------------</h5>
+  <h1>WHO IS THE KILLER?</h1>
+  <h4>Pick a card from each deck and find out!</h4>
+
   <section class="cards">
     <article class="killer-deck" id="killerCard">
-      <p>KILLER</p>
+      <h2>- KILLER -</h2>
       <p id="killerName"></p>
       <p id="killerAge"></p>
       <p id="killerOccupation"></p>
-      <img id="killerImage" src="" height="100" />
-      <p id="killerDescription"></p>
+      <img id="killerImage" class="killerImage" src="" height="240" />
+      <h3 id="killerDescription"></h3>
     </article>
     <article class="weapon-deck" id="weaponCard">
-      <p>WEAPON</p>
+      <h2>- WEAPON -</h2>
       <p id="weaponName"></p>
       <p id="weaponWeight"></p>
+      <img id="weaponImage" class="killerImage" src="" height="240" />
     </article>
     <article class="room-deck" id="roomCard">
-      <p>ROOM</p>
+      <h2>- ROOM -</h2>
       <p id="roomName"></p>
+      <img id="roomImage" class="killerImage" src="" height="240" />
     </article>
   </section>
 
-  <h1 id="mystery"></h1>
-  <button id="revealButton">REVEAL THE CRIME</button>
+  <button class="buttonstyle" id="revealButton">REVEAL THE CRIME</button>
+  <h5 class="reveal" id="mystery"></h5>
 
-  <script src=" clue.js">
+  <script src="clue.js">
   </script>
 </body>
 
