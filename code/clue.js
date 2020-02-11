@@ -324,7 +324,7 @@ document.getElementById('roomCard').onclick = pickRoom
 // FUNCTION REVEALING MYSTERY WHEN YOU CLICK ON THE BUTTON:
 
 const revealMystery = () => {
-  if (mystery.killer === "" || mystery.weapon === "" || mystery.room === "") {
+  if (mystery.killer === '' || mystery.weapon === '' || mystery.room === '') {
     document.getElementById('mystery').innerHTML = 'Pick a card from each deck to reveal the crime'
   } else {
     document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}`
