@@ -23,7 +23,7 @@ const professorPlum = {
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'darkred',
+  color: 'maroon',
   description: 'Cassandra is very manipulative',
   age: 28,
   image: 'assets/scarlet.png',
@@ -53,7 +53,7 @@ const colonelMustard = {
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: 'black',
+  color: 'white',
   description: 'Mrs White is very determined',
   age: 70,
   image: 'assets/white.png',
@@ -65,97 +65,110 @@ const mrsWhite = {
 const rope = {
   name: 'rope',
   weight: 10,
-  image: 'assets/rope.jpg'
+  image: 'assets/rope.jpg',
+  color: 'maroon',
+
 }
 
 const knife = {
   name: 'knife',
   weight: 8,
-  image: 'assets/knife.jpg'
+  image: 'assets/knife.jpg',
+  color: 'chocolate',
 }
 
 const candlestick = {
   name: 'candlestick',
   weight: 14,
-  image: 'assets/candlestick.jpg'
+  image: 'assets/candlestick.jpg',
+  color: 'darkgreen'
 }
 
 const dumbbell = {
   name: 'dumbbell',
   weight: 20,
-  image: 'assets/dumbbell.jpg'
-
+  image: 'assets/dumbbell.jpg',
+  color: 'darkslategrey'
 }
 
 const poison = {
   name: 'poison',
   weight: 2,
-  image: 'assets/POISON.jpg'
-
+  image: 'assets/POISON.jpg',
+  color: 'DarkSlateBlue'
 }
 
 const axe = {
   name: 'axe',
   weight: 25,
-  image: 'assets/axe.jpg'
-
+  image: 'assets/axe.jpg',
+  color: 'maroon'
 }
 
 const bat = {
   name: 'bat',
   weight: 6,
-  image: 'assets/bat.jpg'
-
+  image: 'assets/bat.jpg',
+  color: 'dimgray'
 }
 
 const trophy = {
   name: 'trophy',
   weight: 9,
-  image: 'assets/trophy.jpg'
-
+  image: 'assets/trophy.jpg',
+  color: 'darkgreen'
 }
 
 const pistol = {
   name: 'pistol',
   weight: 12,
-  image: 'assets/pistol.jpg'
+  image: 'assets/pistol.jpg',
+  color: 'maroon',
+
 }
 
 // CREATE OBJECTS FOR ALL THE ROOMSß.
 
 const theater = {
   name: 'theater',
-  image: 'assets/theatre.jpg'
+  image: 'assets/theatre.jpg',
+  color: 'chocolate'
 }
 
 const library = {
   name: 'library',
-  image: 'assets/library.jpg'
+  image: 'assets/library.jpg',
+  color: 'maroon'
 }
 
 const kitchen = {
   name: 'kitchen',
-  image: 'assets/kitchen.jpg'
+  image: 'assets/kitchen.jpg',
+  color: 'darkslategrey'
 }
 
 const lounge = {
   name: 'lounge',
-  image: 'assets/lounge.jpg'
+  image: 'assets/lounge.jpg',
+  color: 'maroon'
 }
 
 const observatory = {
   name: 'observatory',
-  image: 'assets/observatory.jpg'
+  image: 'assets/observatory.jpg',
+  color: 'BurlyWood'
 }
 
 const patio = {
   name: 'patio',
-  image: 'assets/patio.jpg'
+  image: 'assets/patio.jpg',
+  color: 'maroon'
 }
 
 const spa = {
   name: 'spa',
-  image: 'assets/spa.jpg'
+  image: 'assets/spa.jpg',
+  color: 'darkslategrey'
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -244,6 +257,13 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color;
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  if (mystery.killer.lastName === "White") {
+    document.getElementById("killerName").style.color = "black";
+    document.getElementById("killerDescription").style.color = "black";
+  } else {
+    document.getElementById("killerName").style.color = "white";
+    document.getElementById("killerDescription").style.color = "white";
+  }
   document.getElementById('killerImage').src = mystery.killer.image;
   document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
 }
@@ -258,6 +278,9 @@ const pickWeapon = () => {
 
   document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`
   document.getElementById('weaponImage').src = mystery.weapon.image;
+  document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight} kg`
+  document.getElementById('weaponCard').style.background = mystery.weapon.color;
+
 }
 
 // This function will be invoked when you click on the room card.
@@ -266,8 +289,9 @@ const pickRoom = () => {
   mystery.room = randomSelector(rooms);
   document.getElementById("roomName").innerHTML = `${mystery.room.name}`
   document.getElementById('roomImage').src = mystery.room.image;
-
+  document.getElementById('roomCard').style.background = mystery.room.color;
 }
+
 document.getElementById('killerCard').addEventListener('click', pickKiller)
 document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 document.getElementById('roomCard').addEventListener('click', pickRoom)
@@ -281,7 +305,7 @@ const revealMystery = () => {
   if (mystery.killer === " " || mystery.weapon === " " || mystery.room === " ") {
     document.getElementById('mystery').innerHTML = 'Click cards to reveal the mystery!';
   } else {
-    theMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with the ${mystery.weapon.name}.`;
+    theMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with the ${mystery.weapon.name}!`;
     console.log(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with the ${mystery.weapon.name}.`);
   }
 };
