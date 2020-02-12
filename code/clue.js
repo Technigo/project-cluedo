@@ -162,13 +162,7 @@ const months = [
   'October',
   'November',
   'December'
-];
-
-// Randomly selects one item from passed in array
-const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
-}
-
+]
 
 const mystery = {
   killer: '',
@@ -177,9 +171,16 @@ const mystery = {
   date: ''
 }
 
+
+// Randomly selects one item from passed in array
+const randomSelector = array => {
+  return array[Math.floor(Math.random() * array.length)]
+}
+
+
 // Killer card
 const pickKiller = () => {
-  event.target.classList.add('flipped-card');
+  event.target.classList.add('flipped-card')
 
   // Randomly selects a killer from the suspects & adds it to the mystery object.
   mystery.killer = randomSelector(suspects)
@@ -192,9 +193,10 @@ const pickKiller = () => {
 
 document.querySelector('#killerCard').addEventListener('click', pickKiller)
 
+
 // Weapon card
 const pickWeapon = () => {
-  event.target.classList.add('flipped-card');
+  event.target.classList.add('flipped-card')
 
   // Randomly selects a weapon from the weapons array & adds it to the mystery object.
   mystery.weapon = randomSelector(weapons)
@@ -205,9 +207,10 @@ const pickWeapon = () => {
 
 document.querySelector('#weaponCard').addEventListener('click', pickWeapon)
 
+
 // Room card
 const pickRoom = () => {
-  event.target.classList.add('flipped-card');
+  event.target.classList.add('flipped-card')
 
   // Randomly selects a room from the rooms array & adds it to the mystery object.
   mystery.room = randomSelector(rooms)
@@ -217,12 +220,13 @@ const pickRoom = () => {
 
 document.querySelector('#roomCard').addEventListener('click', pickRoom)
 
+
 // Date card
 const pickDate = () => {
-  event.target.classList.add('flipped-card');
+  event.target.classList.add('flipped-card')
 
   // Generated a andom number between 1 & 30
-  let randomNumber = Math.ceil(Math.random() * 30);
+  let randomNumber = Math.ceil(Math.random() * 30)
 
   // Randomly selects a month from the months array & adds it + date to the mystery object.
   mystery.date = randomSelector(months) + ` ${randomNumber}`
@@ -236,20 +240,20 @@ document.querySelector('#dateCard').addEventListener('click', pickDate)
 // Reveals the mystery when reveal button is clicked
 const revealMystery = () => {
 
-  const message = document.querySelector('#mystery');
-  let allCardsClicked = '';
+  const message = document.querySelector('#mystery')
+  let allCardsClicked = ''
 
   // Loops through mystery object to see if there are any empty values
   Object.keys(mystery).forEach(function (item) {
-    if (mystery[item] === '') allCardsClicked = false;
+    if (mystery[item] === '') allCardsClicked = false
+  })
 
-    if (allCardsClicked === false) {
-      message.innerHTML = "No mystery is yet to be revealed."
-    } else {
-      message.innerHTML = `The murder was committed on ${mystery.date} by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`
-      document.querySelector('#revealButton').remove()
-    }
-  });
+  if (allCardsClicked === false) {
+    message.innerHTML = "No mystery is yet to be revealed."
+  } else {
+    message.innerHTML = `The murder was committed on ${mystery.date} by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`
+    document.querySelector('#revealButton').remove()
+  }
 }
 
 document.querySelector('#revealButton').addEventListener('click', revealMystery)
