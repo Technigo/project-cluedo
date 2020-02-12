@@ -180,10 +180,7 @@ const pickRoom = () => {
   document.getElementById('roomName').innerHTML = `${mystery.room}`
 }
 
-console.log()
+
 let revealMystery = () => {
-  const revealCrime = getElementById('revealing')
-  //console.log("I'm clicking the reveal button")
-  //console.log(`The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`)
   document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`
 }
