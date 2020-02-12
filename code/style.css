@@ -77,6 +77,10 @@ h1 {
   background-color: var(--color-darkBlue);
 }
 
+.flipped-card .icon {
+  display: none;
+}
+
 
 button {
   padding: .8rem .5rem;

@@ -169,11 +169,6 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// Removes icon on card when deck is clicked
-const removeDeckIcon = () => {
-  const deckIcon = event.target.querySelector('.icon')
-  if (typeof (deckIcon) !== 'undefined' && deckIcon !== null) deckIcon.remove()
-}
 
 const mystery = {
   killer: '',
@@ -184,12 +179,10 @@ const mystery = {
 
 // Killer card
 const pickKiller = () => {
-  removeDeckIcon()
+  event.target.classList.add('flipped-card');
 
   // Randomly selects a killer from the suspects & adds it to the mystery object.
   mystery.killer = randomSelector(suspects)
-
-  document.querySelector('#killerCard').classList.add('flipped-card');
 
   document.querySelector('#killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
   document.querySelector('#killerAge').innerHTML = `${mystery.killer.age} years`
@@ -201,12 +194,11 @@ document.querySelector('#killerCard').addEventListener('click', pickKiller)
 
 // Weapon card
 const pickWeapon = () => {
-  removeDeckIcon()
+  event.target.classList.add('flipped-card');
 
   // Randomly selects a weapon from the weapons array & adds it to the mystery object.
   mystery.weapon = randomSelector(weapons)
 
-  document.querySelector('#weaponCard').classList.add('flipped-card');
   document.querySelector('#weaponName').innerHTML = `${mystery.weapon.name}`
   document.querySelector('#weaponWeight').innerHTML = `${mystery.weapon.weight} kg`
 }
@@ -215,12 +207,11 @@ document.querySelector('#weaponCard').addEventListener('click', pickWeapon)
 
 // Room card
 const pickRoom = () => {
-  removeDeckIcon()
+  event.target.classList.add('flipped-card');
 
   // Randomly selects a room from the rooms array & adds it to the mystery object.
   mystery.room = randomSelector(rooms)
 
-  document.querySelector('#roomCard').classList.add('flipped-card');
   document.querySelector('#roomName').innerHTML = `${mystery.room}`
 }
 
@@ -228,7 +219,7 @@ document.querySelector('#roomCard').addEventListener('click', pickRoom)
 
 // Date card
 const pickDate = () => {
-  removeDeckIcon()
+  event.target.classList.add('flipped-card');
 
   // Generated a andom number between 1 & 30
   let randomNumber = Math.ceil(Math.random() * 30);
@@ -236,8 +227,6 @@ const pickDate = () => {
   // Randomly selects a month from the months array & adds it + date to the mystery object.
   mystery.date = randomSelector(months) + ` ${randomNumber}`
 
-
-  document.querySelector('#dateCard').classList.add('flipped-card');
   document.querySelector('#date').innerHTML = `${mystery.date}`
 }
 
