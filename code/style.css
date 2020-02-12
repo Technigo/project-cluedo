@@ -4,7 +4,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('/code/assets/darkpavers.jpeg')
+  background-image: url('assets/darkpavers.jpeg')
 }
 
 .logo {
