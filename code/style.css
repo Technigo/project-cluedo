@@ -1,15 +1,29 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
-  background: #ccc;
+  background-image: url(./assets/backgroundImage.jpg);
+  padding-bottom: 16px;
 }
 
 p {
+  color: cornsilk;
   margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+  font-size: 25px;
 }
 
+h1 {
+font-family: 'Bowlby One SC', cursive;
+font-size: 100px;
+color: cornsilk;
+margin: 0;
+}
+
+h2 {
+  font-family: 'Bowlby One SC', cursive;
+  color: cornsilk;
+  background-color: black;
+  margin: 0;
+}
 
 .header {
   text-align: center;
@@ -18,19 +32,20 @@ p {
 
 .cards {
   display: flex;
-  flex-wrap: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px;
 }
 
 .cards img {
   height: auto;
   align-items: center;
   width: 80%;
-
-
 }
 
 .killer-deck {
-  background: rgb(248,229,139);
+  background-color: black;
   width: 100%;
   border-radius: 16px;
   padding-top: 30px;
@@ -39,8 +54,12 @@ p {
   min-height: 400px;
 }
 
+.killer-deck img {
+  border-radius: 90%;
+}
+
 .weapon-deck {
-  background: grey;  
+  background: black;  
   width: 100%;
   text-align: center;
   padding-top: 30px;
@@ -55,9 +74,10 @@ p {
 
 .room-deck {
   width: 100%;
-  background: midnightblue;
+  background: black;
   text-align: center;
   padding-top: 30px;
+  padding-bottom: 16px;
   border-radius: 16px;
   margin: 16px;
   min-height: 400px;
@@ -65,10 +85,26 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: cornsilk;
+  font-family: 'Bowlby One SC', cursive;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+.mystery-revealed {
+  text-align: center;
+  background-color: black;
+  margin-bottom: 16px;
+}
+
+/*** MEDIA QUERIES TABLET & BIG SCREEN ***/
+@media (min-width: 668px) {
+  .cards {
+    flex-direction: row;
+    margin: 0;
+    align-items: unset;
+  }
 }
