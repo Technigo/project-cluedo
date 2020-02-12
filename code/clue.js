@@ -65,47 +65,57 @@ const mrsWhite = {
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  image: 'assets/rope.png'
 }
 
 const candleStick = {
   name: 'candlestick',
-  weight: 5
+  weight: 5,
+  image: 'assets/candlestick.png'
+
 }
 
 const pistol = {
   name: 'pistol',
-  weight: 5
+  weight: 5,
+  image: 'assets/pistol.png'
 }
 
 const axe = {
   name: 'axe',
-  weight: 20
+  weight: 20,
+  image: 'assets/axe.png'
 }
 
 const poison = {
   name: 'poison',
-  weight: 1
+  weight: 1,
+  image: 'assets/poison.png'
 }
 
 const bat = {
   name: 'bat',
-  weight: 15
+  weight: 15,
+  image: 'assets/bat.png'
 }
 
 const dumbbell = {
   name: 'dumbbell',
-  weight: 30
+  weight: 30,
+  image: 'assets/dumbell.png'
 }
 
 const trophy = {
   name: 'trophy',
-  weight: 10
+  weight: 10,
+  image: 'assets/trophy.png'
 }
 
 const knife = {
   name: 'knife',
-  weight: 5
+  weight: 5,
+  image: 'assets/knife.png'
 }
 
 
@@ -213,6 +223,7 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
   document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}`
+  document.getElementById('weaponImage').src = mystery.weapon.image
 
 
 }
@@ -226,11 +237,11 @@ document.getElementById('killerCard').onclick = pickKiller
 document.getElementById('weaponCard').onclick = pickWeapon
 document.getElementById('roomCard').onclick = pickRoom
 
-const guess1 = (name) => {
-  guess = name
-  document.getElementById('suspectImage').src = guess.image
+// const guess1 = (name) => {
+//   guess = name
+//   document.getElementById('suspectImage').src = guess.image
 
-}
+// }
 
 
 const reveal = () => {
@@ -262,9 +273,22 @@ const picked = (name, name2) => {
 
     pickedSuspect = name;
     guess = name2
+
     document.getElementById('suspectImage').src = guess.image
     document.getElementById('suspectImage').style.opacity = 1;
-  } else { }
+  } else {
+    // document.getElementById(pickedSuspect).style.opacity = "1";
+    // document.getElementById(pickedSuspect).style.position = "static";
+    // document.getElementById(name).style.zIndex = "0"
+
+    // pickedSuspect = name;
+    // guess = name2;
+    // document.getElementById('suspectImage').src = guess.image
+    // document.getElementById(name).style.opacity = "0"
+    // document.getElementById(name).style.position = "absolute";
+    // document.getElementById(name).style.zIndex = "-1"
+
+  }
 }
 
 const released = () => {

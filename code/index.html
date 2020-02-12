@@ -6,31 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
   <title>Technigo Project Cluedo</title>
 </head>
 
 <body>
+  <header>
+    <h1 class="logo">Cluedo</h1>
+  </header>
+  <div class="text-wrap">
+    <h2>Make a guess...</h2>
+  </div>
   <section class="user-guess">
+
     <div class="guess-buttons">
-      <img class="small-image" id="profPlum" src="assets/plum.png" height="100px"
-        onclick="picked('profPlum', professorPlum)" />
-      <img class="small-image" id="mrGreen" src="assets/green.png" height="100px"
-        onclick="picked('mrGreen', mrGreen)" />
-      <img class="small-image" id="colMustard" src="assets/mustard.png" height="100px"
+      <img class="small-image" id="profPlum" src="assets/plum.png" onclick="picked('profPlum', professorPlum)" />
+      <img class="small-image" id="mrGreen" src="assets/green.png" onclick="picked('mrGreen', mrGreen)" />
+      <img class="small-image" id="colMustard" src="assets/mustard.png"
         onclick="picked('colMustard', colonelMustard)" />
-      <img class="small-image" id="missScarlet" src="assets/scarlet.png" height="100px"
-        onclick="picked('missScarlet', missScarlet)" />
-      <img class="small-image" id="mrsPeacock" src="assets/peacock.png" height="100px"
-        onclick="picked('mrsPeacock', mrsPeacock)" />
-      <img class="small-image" id="mrsWhite" src="assets/white.png" height="100px"
-        onclick="picked('mrsWhite', mrsWhite)" />
+      <img class="small-image" id="missScarlet" src="assets/scarlet.png" onclick="picked('missScarlet', missScarlet)" />
+      <img class="small-image" id="mrsPeacock" src="assets/peacock.png" onclick="picked('mrsPeacock', mrsPeacock)" />
+      <img class="small-image" id="mrsWhite" src="assets/white.png" onclick="picked('mrsWhite', mrsWhite)" />
     </div>
 
     <div class="prison" id="prison" onclick="released()">
 
       <div class="bars"></div>
       <div class="bars"></div>
-      <img class="suspect-image" id="suspectImage" src="" height="100%" onclick="okay()" />
+      <img class="suspect-image" id="suspectImage" src="" onclick="okay()" />
       <div class="bars"></div>
       <div class="bars"></div>
 
@@ -51,6 +54,7 @@
       <p>WEAPON</p>
       <p id="weaponName"></p>
       <p id="weaponWeight"></p>
+      <img id="weaponImage" src="" alt="" height="100">
     </article>
     <article class="room-deck" id="roomCard">
       <p>ROOM</p>
@@ -59,7 +63,7 @@
   </section>
 
 
-  <h1 id="mystery"></h1>
+  <h1 class="mystery" id="mystery"></h1>
 
   <button id="reveal">REVEAL THE CRIME</button>
 

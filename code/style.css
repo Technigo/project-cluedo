@@ -4,6 +4,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url('/code/assets/darkpavers.jpeg')
+}
+
+.logo {
+  color: white;
+  font-size: 100px;
+  font-family: 'Rock Salt';
+}
+
+.text-wrap {
+  display: flex;
+  width: 80%;
+  align-items: flex-start;
+}
+
+.text-wrap h2 { 
+  color: white;
+  font-size: 15px;
+  
 }
 
 p {
@@ -14,17 +33,29 @@ p {
 
 .user-guess {
   display: flex;
-  width: 80%;
+  width: 100%;
   justify-content: space-around;
+  align-items: center;
 }
 
 
 .small-image {
   transition: all 1s;
+  width: 30%;
+  
+  border-radius: 50%;
+}
+
+.guess-buttons{ 
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  
 }
 
 .suspect-image {
   width: 100%;
+  height: 100%;
   z-index: -1;
   position: absolute;
   top: 0;
@@ -34,10 +65,9 @@ p {
 }
 
 .prison {
-  
   min-width: 100px;
   height: 130px;
-  border: 3px solid black;
+  border: 3px solid white;
   position: relative;
   display: flex;
   justify-content: space-evenly;
@@ -47,19 +77,11 @@ p {
 .bars {
   width: 1px;
   height: 100%;
-  background-color: black;
+  background-color: white;
   z-index: 5;
 }
 
-@media (min-width: 667px) {
-  .prison {
-    width: 190px;
-    height: 250px;
-  }
-  .bars {
-    width: 3px;
-  }
-}
+
 
 
 
@@ -67,9 +89,10 @@ p {
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
-  background: #ccc;
+  height: 1000px;
+  
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
@@ -81,7 +104,21 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: 2px 2px 5px 8px grey;
 }
+
+.killer-deck:active {
+  box-shadow: none;
+  transform: translateY(3px)
+}
+
+.killer-deck img {
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px 8px grey;
+}
+
+
+
 
 .weapon-deck {
   width: 250px;
@@ -90,18 +127,32 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: 2px 2px 5px 8px grey;
+}
+
+.weapon-deck:active {
+  box-shadow: none;
+  transform: translateY(3px)
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
   background: midnightblue;
-
+  box-shadow: 2px 2px 5px 8px grey;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
+.room-deck:active {
+  box-shadow: none;
+  transform: translateY(3px)
+}
+.mystery {
+  color: white;
+  margin-left: 30px;
+}
 button {
   padding: 8px 16px;
   background: crimson;
@@ -109,6 +160,57 @@ button {
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin-bottom: 20px;
 }
+
+@media (min-width: 667px) and (max-width: 1025px) {
+  .prison {
+    width: 150px;
+    height: 195px;
+  }
+  .bars {
+    width: 3px;
+  }
+
+  .cards {
+    flex-direction: row;
+    height: 600px;
+    
+  }
+  .text-wrap h2 { 
+    
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .prison {
+    min-width: 190px;
+    height: 250px;
+  }
+  .bars {
+    width: 3px;
+  }
+
+  .cards {
+    flex-direction: row;
+    height: 600px;
+    margin: 50px auto;
+  }
+  .text-wrap h2 { 
+    
+    font-size: 30px;
+  }
+
+  .small-image {
+    width: 15%;
+  }
+
+  .guess-buttons {
+    width: 65%;
+  }
+  
+}
+
+
 
