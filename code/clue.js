@@ -4,7 +4,7 @@ let suspects = [{
     title: 'Mr Green',
     firstName: 'Jacob',
     lastName: 'Green',
-    color: 'green',
+    color: '#067352',
     description: 'He has a lot of connections',
     age: 45,
     image: 'assets/green.png',
@@ -14,7 +14,7 @@ let suspects = [{
     title: ' Mrs White',
     firstName: 'Delia',
     lastName: 'White',
-    color: 'white',
+    color: '#FFFFF4',
     description: 'Usually a frazzled servant',
     age: '70',
     image: 'assets/white.png',
@@ -24,7 +24,7 @@ let suspects = [{
     title: 'Ms Peacock',
     firstName: 'Elanor',
     lastName: 'Peacock',
-    color: 'blue',
+    color: '#252949',
     description: 'An elderly, still-attractive, woman',
     age: '62',
     image: 'assets/peacock.png',
@@ -34,7 +34,7 @@ let suspects = [{
     title: 'Mr Plum',
     firstName: 'Victor',
     lastName: 'Plum',
-    color: 'purple',
+    color: '#700360',
     description: 'A quick-witted, professor with a bow tie and glasses',
     age: '38',
     image: 'assets/plum.png',
@@ -44,7 +44,7 @@ let suspects = [{
     title: 'Miss Cassandra',
     firstName: 'Cassandra',
     lastName: 'Scarlett',
-    color: 'red',
+    color: '#EC0E47',
     description: 'A femme fatal',
     age: '27',
     image: 'assets/scarlet.png',
@@ -54,7 +54,7 @@ let suspects = [{
     title: 'Cln Mustard',
     firstName: 'Jack',
     lastName: 'Mustard',
-    color: 'yellow',
+    color: '#FBBF54',
     description: 'A dignified dapper and dangerous military man',
     age: '55',
     image: 'assets/mustard.png',
@@ -163,32 +163,27 @@ const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.description}`
+  document.getElementById('killerImage').src = `${mystery.killer.image}`
+  //document.getElementById('killerName').innerHTML = `${mystery.killer.description}`
 }
-//document.getElementById('killerCard').onclick = pickKiller()
-console.log(randomSelector)
 
 // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-
-
-
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapon)
-  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name} ${mystery.weapon.weight}`
+  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
 }
-//document.getElementById('weaponCard').onclick = pickWeapon()
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
   document.getElementById('roomName').innerHTML = `${mystery.room}`
 }
-//document.getElementById('roomName').onclick = pickRoom()
+
+console.log()
 let revealMystery = () => {
-  document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.weapon.name} ${mystery.weapon.weight}, in the ${mystery.room} with a ${mystery.weapon.name}`
+  const revealCrime = getElementById('revealing')
+  //console.log("I'm clicking the reveal button")
+  //console.log(`The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`)
+  document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`
 }
-
-
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'

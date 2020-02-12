@@ -9,14 +9,14 @@
   <title>Technigo Project Cluedo</title>
 </head>
 
-<body>
+<body id='revealing'>
   <section class="cards">
     <article class="killer-deck" id="killerCard" onclick="pickKiller()">
-      <p>KILLER</p>
+      <p id="killer">KILLER</p>
       <p id="killerName"></p>
+      <img id="killerImage" src="" height="200" />
       <p id="killerAge"></p>
       <p id="killerOccupation"></p>
-      <img id="killerImage" src="" height="100" />
       <p id="killerDescription"></p>
     </article>
     <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
@@ -30,9 +30,9 @@
     </article>
   </section>
 
-  <h1 id="mystery">MYSTERY</h1>
+  <h1 id="mystery"></h1>
 
-  <button onclick='revealMystery()'>REVEAL THE CRIME</button>
+  <button onclick="revealMystery()">REVEAL THE CRIME</button>
 
   <script src="clue.js"></script>
 </body>

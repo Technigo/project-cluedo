@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+
 }
 
 p {
@@ -13,7 +14,7 @@ p {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  background: rgba(255, 0, 0, 0.2);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -22,7 +23,7 @@ p {
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: #0D1110;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -49,10 +50,19 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: rgb(3, 76, 212);
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  color: #fff;
+}
+
+#killer {
+  margin-bottom: 30px;
+}
+
+#killerImage {
+  margin-top: 75px;
 }
