@@ -1,13 +1,10 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Project from the Technigo Bootcamp. The task was to make the cardsrandomly choose a suspect/weapon/room and then reveal the mystery.
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I focused on the JavaScript and not so much on the styling. it was tricky to figure out how to make the cards work.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://elegant-goldstine-05b0aa.netlify.com/
