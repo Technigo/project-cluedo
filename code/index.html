@@ -9,6 +9,7 @@
     <title>🕵🏻‍♀️Technigo Project Cluedo</title>
   </head>
   <body>
+    <h1>Welcome to the Cluedo Cards!</h1>
     <section class="cards" onclick="">
       <article class="killer-deck" id="killerCard" onclick="pickKiller()">
         <p>KILLER</p>
@@ -22,6 +23,7 @@
         <p>WEAPON</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
+        <img id="weaponImage" class="weapon-image" src="" height="200">
       </article>
       <article class="room-deck" id="roomCard" onclick="pickRoom()">
         <p>ROOM</p>
@@ -29,7 +31,10 @@
       </article>
     </section>
 
-    <h2 class="mystery" id="mystery"></h2>
+    <div class="exp" id="exp">
+      <h2 class="mystery" id="mystery"></h2>
+    </div>
+
 
     <button id onclick="revealMystery()">Reveal The Crime!</button>
 
