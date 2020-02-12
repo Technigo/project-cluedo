@@ -1,3 +1,13 @@
+h1 {
+  margin: 20px auto;
+  width: 90%;
+  height: 80px;
+  background: bisque;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
@@ -5,14 +15,15 @@ body {
 
 p {
   margin: 1px;
-  font-weight: 300;
+  font-weight: 400;
+  font-size: larger;
   background-color: #fff;
 }
 
 .cards {
-  margin: 50px auto;
+  margin: 30px auto;
   width: 90%;
-  height: 600px;
+  height: 550px;
   background: #ccc;
   display: flex;
   justify-content: space-around;
@@ -41,7 +52,6 @@ p {
   width: 250px;
   height: 400px;
   background: midnightblue;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -54,5 +64,15 @@ button {
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin: 24px auto;
+}
+
+#theMystery {
+  margin: 8px auto;
+  width: 90%;
+  height: auto;
+  background: rgb(151, 253, 219);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

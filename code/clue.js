@@ -69,7 +69,7 @@ const knife = {
   name: 'Knife',
   weight: 2,
   twoHanded: false,
-  color: 'darkgreen'
+  color: 'aqua'
 }
 
 const candlestick = {
@@ -200,9 +200,13 @@ const pickRoom = () => {
   document.getElementById('roomName').innerHTML = mystery.room
 }
 
-
 document.getElementById('killerCard').onclick = pickKiller
 document.getElementById('weaponCard').onclick = pickWeapon
 document.getElementById('roomCard').onclick = pickRoom
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+const revealMystery = () => {
+  theMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} 
+  ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room}!`;
+};
+
+document.getElementById('revealButton').onclick = revealMystery
