@@ -109,21 +109,80 @@ const pistol = {
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-const diningRoom = ('Dingin room')
-const conservatory = ('Conservatory')
-const kitchen = ('Kitchen')
-const study = ('Study')
-const library = ('Library')
-const billiardRoom = ('Billiard room')
-const lounge = ('Lounge')
-const ballroom = ('Ballroom')
-const hall = ('Hall')
-const spa = ('Spa')
-const livingRoom = ('Living room')
-const observatory = ('Observatory')
-const theater = ('Theater')
-const guestHouse = ('Guest house')
-const patio = ('Patio')
+const diningRoom = {
+  name: 'Dining room',
+  image
+}
+
+const conservatory = {
+  name: 'Conservatory',
+  image:
+}
+
+const kitchen = {
+  name: 'Kitchen',
+  image:
+}
+
+const study = {
+  name: 'Study',
+  image:
+}
+
+const library = {
+  name: 'Library',
+  image:
+}
+
+const billiardRoom = {
+  name: 'Billiard room',
+  image:
+}
+
+const lounge = {
+  name: 'Lounge',
+  image:
+}
+
+const ballroom = {
+  name: 'Ballroom',
+  image:
+}
+
+const hall = {
+  name: 'Hall',
+  image:
+}
+
+const spa = {
+  name: 'Spa',
+  image:
+}
+
+const livingRoom = {
+  name: 'Living room',
+  image:
+}
+
+const observatory = {
+  name: 'Observatory',
+  image:
+}
+
+const theater = {
+  name: 'Theater',
+  image:
+}
+
+const guestHouse = {
+  name: 'Guest house',
+  image:
+}
+
+const patio = {
+  name: 'Patio',
+  image:
+}
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
@@ -167,7 +226,6 @@ const rooms = [
   patio,
 ]
 
-
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
@@ -180,49 +238,51 @@ const randomSelector = array => {
 const mystery = {
   killer: '',
   weapon: '',
-  rooms: '',
+  room: '',
 }
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
+  console.log('I am clicking the card')
+
 
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerImage').src = mystery.killer.image
   document.getElementById(
     'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.description}`
 }
+document.getElementById('killerCard').onclick = pickKiller
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
-  document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById(
     'weaponName'
-  ).innerHTML = `${mystery.weapon.name} ${mystery.weapon.weight}`
+  ).innerHTML = `${mystery.weapon.name}`
 }
+document.getElementById('weaponCard').onclick = pickWeapon
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
-  document.getElementById('roomCard').style.background = mystery.room.color
   document.getElementById(
     'room'
   ).innerHTML = `${mystery.room}`
 }
+document.getElementById('roomCard').onclick = pickRoom
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-  console.log('Im clicking the reveal button!');
-  console.log(`The murder was by ${mystery.killer.name}, in the ${mystery.room} with a ${mystery.weapon.name}`)
   document.getElementById('mystery').innerHTML = `The murder was comitted by ${mystery.killer.name}, in the ${mystery.room}
   with a ${mystery.weapon.name}`
   // console.log(`The murder was by ${mystery.killer.name}, in the ${mystery.room} with a ${mystery.weapon.name}`)
-  // document.getElementById('mystery').innerHTML = `The murder was comitted by ${mystery.killer.name}, in the ${mystery.room} with a ${mystery.weapon.name}`
+
 }
 
 document.getElementById('button').onclick = revealMystery
