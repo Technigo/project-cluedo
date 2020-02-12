@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// The Killers 
 function killers() {
   const mrGreen = {
     firstName: 'Jacob',
@@ -56,14 +56,10 @@ function killers() {
     occupation: 'Housekeeper'
   }
 
-
-
-  console.log(mrGreen.description)
-  // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
   const suspects = [mrGreen, profPlum, msScarlet, mrsPeacock, colMustard, mrsWhite]
   return suspects
 }
-
+// THe weapons
 function weaponList() {
   const rope = {
     name: 'rope',
@@ -121,9 +117,9 @@ function weaponList() {
   }
 
   const weapons = [rope, knife, candlestick, dumbbell, poison, axe, bat, trophy, pistol]
-  console.log(poison.color)
-  console.log(bat.description)
   return weapons
+
+  // The different times
 }
 function timeList() {
   const morning = {
@@ -149,18 +145,14 @@ function timeList() {
   const times = [morning, noon, afternoon, evening, night]
   return times
 }
-
-
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// The different rooms
 
 function roomList() {
   const rooms = ["dining room", "conservatory", "kitchen", "study", "library", "billiard room", "lounge", "ballroom", "hall", "spa", "living room", "observatory", "theater", "guest house", "patio"]
   return rooms
 }
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -172,69 +164,107 @@ let mystery = {
   time: "blank"
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+
 
 // This function will be invoked when you click on the killer card.
 // This will randomly select a killer from the suspects. And add that to the mystery object.
 const pickKiller = () => {
-  suspectList = killers();
-  mystery.killer = randomSelector(suspectList);
+  // The if statement is to toggle between open card and closed card
+  if (mystery.killer === 'blank') {
+    suspectList = killers();
+    mystery.killer = randomSelector(suspectList);
+    document.getElementById('killerCard').style.background = mystery.killer.color
+    document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+    document.getElementById('killerDescription').innerHTML = mystery.killer.description
+    document.getElementById('killerOccupation').innerHTML = mystery.killer.occupation
+    document.getElementById('killerImage').src = mystery.killer.image
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-  document.getElementById('killerDescription').innerHTML = mystery.killer.description
-  document.getElementById('killerOccupation').innerHTML = mystery.killer.occupation
-  document.getElementById('killerImage').src = mystery.killer.image
+  }
+  else {
+    mystery.killer = 'blank'
+    document.getElementById('killerCard').style.background = 'black'
+    document.getElementById('killerName').innerHTML = ''
+    document.getElementById('killerDescription').innerHTML = ''
+    document.getElementById('killerOccupation').innerHTML = ''
+    document.getElementById('killerImage').src = ''
+
+  }
   console.log(mystery.killer.firstName)
+
+
 }
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+//  pickWeapon, pickRoom and pickTime works in a similar way.
 pickWeapon = () => {
-  const method = weaponList();
-  mystery.weapon = randomSelector(method);
-  const selectedCard = document.getElementById('weaponCard')
-  selectedCard.style.background = mystery.weapon.color
-  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`.toUpperCase()
-  document.getElementById('weaponDescription').innerHTML = `${mystery.weapon.description}`
-  document.getElementById('weaponWeight').innerHTML = `The weight is ${mystery.weapon.weight} pounds`
+  if (mystery.weapon === 'blank') {
+    const method = weaponList();
+    mystery.weapon = randomSelector(method);
+    const selectedCard = document.getElementById('weaponCard')
+    selectedCard.style.background = mystery.weapon.color
+    document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`.toUpperCase()
+    document.getElementById('weaponDescription').innerHTML = `${mystery.weapon.description}`
+    document.getElementById('weaponWeight').innerHTML = `The weight is ${mystery.weapon.weight} pounds`
+  }
+  else {
+    mystery.weapon = 'blank'
+    document.getElementById('weaponCard').style.backgroundColor = 'darkgreen'
+    document.getElementById('weaponName').innerHTML = ''
+    document.getElementById('weaponDescription').innerHTML = ''
+    document.getElementById('weaponWeight').innerHTML = ''
+  }
+
   console.log(mystery.weapon.name)
 }
 pickRoom = () => {
-  killRoom = roomList();
-  mystery.room = randomSelector(killRoom);
-  document.getElementById('roomCard').style.background = 'skyblue'
-  document.getElementById('roomName').innerHTML = `${mystery.room}`.toUpperCase()
+  if (mystery.room === 'blank') {
+    killRoom = roomList();
+    mystery.room = randomSelector(killRoom);
+    document.getElementById('roomCard').style.background = 'skyblue'
+    document.getElementById('roomName').innerHTML = `${mystery.room}`.toUpperCase()
+  }
+  else {
+    mystery.room = 'blank'
+    document.getElementById('roomCard').style.background = 'darkblue'
+    document.getElementById('roomName').innerHTML = ''
+  }
+
   console.log(mystery.room)
 }
 pickTime = () => {
-  const method = timeList();
-  mystery.time = randomSelector(method);
-  const selectedCard = document.getElementById('timeCard')
-  selectedCard.style.background = mystery.time.color
-  document.getElementById('timeName').innerHTML = `${mystery.time.name}`.toUpperCase()
+  if (mystery.time === 'blank') {
+    const method = timeList();
+    mystery.time = randomSelector(method);
+    const selectedCard = document.getElementById('timeCard')
+    selectedCard.style.background = mystery.time.color
+    document.getElementById('timeName').innerHTML = `${mystery.time.name}`.toUpperCase()
+  }
+  else {
+    mystery.time = 'blank'
+    document.getElementById('timeCard').style.background = 'darkred'
+    document.getElementById('timeName').innerHTML = ''
+  }
   console.log(mystery.time.name)
 }
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// This function takes the mystery object and creates the big reveal
 const revealMystery = (mystery) => {
   const checkEmpty = (mystery.killer === 'blank' || mystery.weapon === 'blank' || mystery.room === 'blank' || mystery.time === 'blank')
   let bigReveal = ""
   let hedReveal = ""
   console.log(checkEmpty)
+
   if (checkEmpty) {
     bigReveal = "Sorry haven't unlocked this yet click the cards to reveal"
     hedReveal = "Mystery still hasn't been solved";
+    document.getElementById('container').style.backgroundImage = "url('media/unsolved.jpg')"
   }
   else {
     bigReveal = `The victim died at ${mystery.time.name} of a ${mystery.weapon.name} in the ${mystery.room} and the perpitrator was ${mystery.killer.firstName} ${mystery.killer.lastName}.`
     hedReveal = "Mystery is solved and the murderer is caught";
     document.getElementById('container').style.backgroundImage = "url('media/solved.jpg')"
-    document.getElementById('container').style.backgroundSize = "cover"
+
   }
+  document.getElementById('container').style.backgroundSize = "cover"
   document.getElementById('mysterytext').innerHTML = bigReveal;
   document.getElementById('mystery').innerHTML = hedReveal;
 
