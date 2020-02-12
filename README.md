@@ -1,13 +1,12 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A project in week 5 of the Technigo Frontend Developer Bootcamp.
+This is a randomizer that picks a killer, murder weapon and the murder scene at random and displays it first on the cards and then you can push a button to "reaveal the crime".
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This is a project that focuses on javascript. I was a really fun project that seemed so hard at first but now it makes so much sense. I ended up having the click event in the html. I would have liked to spend more time styling it but I decited to spend my energies the javascript side. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Here you can see the webpage live: https://epic-hodgkin-b4c0d1.netlify.com/ 
