@@ -149,14 +149,14 @@ button:hover {
   }
 
   .killer-deck {
-    width: 50%;
+    width: 300px;
   }
   .weapon-deck {
-    width: 50%;
+    width: 300px;
   }
 
   .room-deck {
-    width: 50%;
+    width: 300px;
   }
 
   button {
@@ -188,14 +188,14 @@ button:hover {
 
 @media (max-width: 680px) {
   .killer-deck {
-    width: 80%;
+    width: 250px;
   }
 
   .weapon-deck {
-    width: 80%;
+    width: 250px;
   }
 
   .room-deck {
-    width: 80%;
+    width: 250px;
   }
 }
