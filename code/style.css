@@ -10,13 +10,11 @@ body {
 }
 
 header {
-  
   font-size: xx-large;
   font-display: bold;
   text-align: center;
   background-color: white;
   padding: 30px;
-  
 }
 
 .cards {
