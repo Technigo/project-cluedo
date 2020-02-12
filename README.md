@@ -1,13 +1,11 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The task this week was to create Cluedo game which would randomly store three values into an object called 'mystery' and then create a statement which would display the information stored inside that object. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I found the Javascript part of this week's project very straight-forward as it was just a case of re-using the code which had been supplied to us. I made my own 'user's guess' section where the user could store their own guess of who the killer was by clicking an image and seeing it appear on another part of the screen. I struggled a bit with the styling as I left this to last minute and felt a bit rusty with CSS, especially making things responsive to different browser sizes. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://suspicious-sammet-c027f8.netlify.com
