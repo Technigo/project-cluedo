@@ -1,13 +1,14 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+We practiced more javaScript with focus on objects and arrays.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+My main problem is figuring out exactly what I want to do so I can be better att finding solutions on google. I had some problems with the last step, adding the revealbutton. In that case I thought it would be trickier than it was. 
+We helped each other out in our group and that was great.
+
+The next thing I would have done if I had some more time would be to add a start-over-button instead of just adding the refresh thing to the header. And also make the site responsive.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://practical-khorana-7ea910.netlify.com/
