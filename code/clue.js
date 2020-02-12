@@ -161,8 +161,6 @@ const rooms = [
   "Patio"
 ]
 
-console.log(mrGreen.description)
-console.log(rope.twoHanded)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
