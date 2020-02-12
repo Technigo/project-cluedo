@@ -26,6 +26,7 @@ h1 {
   background-color: #ffefcf;
   font-weight: bold;
   font-size: 19px;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.425), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .instructions1 {
@@ -62,6 +63,7 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.425), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .killer-deck {
@@ -72,6 +74,7 @@ p {
   border-radius: 16px;
   text-align: center;
   margin: 0px 20px;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.425), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .weapon-deck {
@@ -82,6 +85,7 @@ p {
   border-radius: 16px;
   text-align: center;
   margin: 0px 20px;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.425), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .room-deck {
@@ -92,19 +96,21 @@ p {
   border-radius: 16px;
   text-align: center;
   margin: 0px 20px;
+  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.425), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .img-container img {
   max-height: 50%;
   width: auto;
   border-radius: 50%;
+  margin-top: 10px;
 }
 
 h2 {
   text-align: center;
   color: #ff002f;
   font-size: 26px;
-  text-shadow: 0 0 5px black;
+  text-shadow: 0px 0px 3px black;
 }
 
 button {
@@ -165,8 +171,8 @@ footer p {
 @media (max-width: 425px) {
   body {
     background-image: none;
-    background-color: #7b001b;
-    background-image: linear-gradient(90deg, #700018 0%, #6b0007 100%);
+    background-color: #4e0b00;
+    background-image: linear-gradient(90deg, #4e0b00 0%, #bd0019 55%, #4e0c00 100%);
   }
 
   .instructions1 {
@@ -179,6 +185,7 @@ footer p {
 
   .cards {
     border: none;
+    box-shadow: none;
   }
 
   footer p {

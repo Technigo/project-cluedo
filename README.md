@@ -1,13 +1,11 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This aim of the project was to create a piece of the classic board game Cluedo. The objective was to practice creating objects and arrays, and connecting them to the DOM.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The main focus of the project was to continue working with Javascript, so my main approach was to get everything on the page working and responding as desired. Thereafter I focused on expanding the arrays and objects. Lastly I worked on the styling and making the site responsive. If I had more time I would have liked to add some extra functions to for example "close/turn back" the cards and have different styling of the cards when turned vs. not turned. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://sharp-raman-15d97b.netlify.com
