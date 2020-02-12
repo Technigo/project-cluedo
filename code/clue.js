@@ -8,7 +8,6 @@ const mrGreen = {
   age: '45y/o',
   occupation: 'Entrepreneur',
   image: 'assets/green.png'
-  // occupation: 'Entrepreneur'
 }
 
 const mrsWhite = {
@@ -19,7 +18,6 @@ const mrsWhite = {
   age: '72y/o',
   occupation: 'Teacher',
   image: 'assets/white.png'
-  // occupation: 'Teacher'
 }
 
 const profPlum = {
@@ -30,7 +28,6 @@ const profPlum = {
   age: '55y/o',
   occupation: 'Professor',
   image: 'assets/plum.png'
-  // occupation: 'Professor'
 }
 
 const missScarlet = {
@@ -41,7 +38,6 @@ const missScarlet = {
   age: '27y/o',
   occupation: 'Waitress',
   image: 'assets/scarlet.png'
-  // occupation: 'Waitress'
 }
 
 const mrsPeacock = {
@@ -52,7 +48,6 @@ const mrsPeacock = {
   age: '67y/o',
   occupation: 'Pilot',
   image: 'assets/peacock.png'
-  // occupation: 'Former Pilot'
 }
 
 const mrMustard = {
@@ -63,7 +58,6 @@ const mrMustard = {
   age: '68y/o',
   occupation: 'Officer',
   image: 'assets/mustard.png'
-  // occupation: 'Scientist'
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
@@ -121,7 +115,6 @@ const pistol = {
   weight: '4kg',
   image: 'weapon/pistol.png'
 }
-
 
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -243,7 +236,6 @@ const rooms = [
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -277,12 +269,6 @@ const pickKiller = () => {
 
   const theKillerDescription = document.getElementById('killerDescription')
   theKillerDescription. innerHTML = mystery.killer.description
-
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  // document.getElementById('killerCard').style.background = mystery.killer.color
-  // document.getElementById(
-  //   'killerName'
-  // ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 }
 
 
