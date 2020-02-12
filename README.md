@@ -1,13 +1,11 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The task was to make functions to pick a killer, a weapon, and a room for a game of cluedo and then connect this to the DOM so it became visiable in the Html. The killer,weapon and rooms where to be picked from objects and arrays that we made.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Once I understood how to connect the html with the js it was pretty straight forward. I wrote my objects slightly different than the others, but according to Jennie in a correct way. I think though, that if I would go further with the project, adding more images etc, it might have been easier to do it in the way the others had done it.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://relaxed-mcclintock-ea87f4.netlify.com/
