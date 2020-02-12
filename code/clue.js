@@ -189,16 +189,15 @@ const pickKiller = () => {
   // Randomly selects a killer from the suspects & adds it to the mystery object.
   mystery.killer = randomSelector(suspects)
 
-  document.getElementById('killerCard').classList.add('flipped-card');
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-  document.getElementById('killerAge').innerHTML = `${mystery.killer.age} years`
-  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
-  document.getElementById('killerImage').src = `${mystery.killer.image}`
+  document.querySelector('#killerCard').classList.add('flipped-card');
+
+  document.querySelector('#killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.querySelector('#killerAge').innerHTML = `${mystery.killer.age} years`
+  document.querySelector('#killerOccupation').innerHTML = `${mystery.killer.occupation}`
+  document.querySelector('#killerImage').src = `${mystery.killer.image}`
 }
 
-document.getElementById('killerCard').addEventListener('click', pickKiller)
+document.querySelector('#killerCard').addEventListener('click', pickKiller)
 
 // Weapon card
 const pickWeapon = () => {
@@ -207,12 +206,12 @@ const pickWeapon = () => {
   // Randomly selects a weapon from the weapons array & adds it to the mystery object.
   mystery.weapon = randomSelector(weapons)
 
-  document.getElementById('weaponCard').classList.add('flipped-card');
-  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight} kg`
+  document.querySelector('#weaponCard').classList.add('flipped-card');
+  document.querySelector('#weaponName').innerHTML = `${mystery.weapon.name}`
+  document.querySelector('#weaponWeight').innerHTML = `${mystery.weapon.weight} kg`
 }
 
-document.getElementById('weaponCard').addEventListener('click', pickWeapon)
+document.querySelector('#weaponCard').addEventListener('click', pickWeapon)
 
 // Room card
 const pickRoom = () => {
@@ -221,11 +220,11 @@ const pickRoom = () => {
   // Randomly selects a room from the rooms array & adds it to the mystery object.
   mystery.room = randomSelector(rooms)
 
-  document.getElementById('roomCard').classList.add('flipped-card');
-  document.getElementById('roomName').innerHTML = `${mystery.room}`
+  document.querySelector('#roomCard').classList.add('flipped-card');
+  document.querySelector('#roomName').innerHTML = `${mystery.room}`
 }
 
-document.getElementById('roomCard').addEventListener('click', pickRoom)
+document.querySelector('#roomCard').addEventListener('click', pickRoom)
 
 // Date card
 const pickDate = () => {
@@ -238,17 +237,17 @@ const pickDate = () => {
   mystery.date = randomSelector(months) + ` ${randomNumber}`
 
 
-  document.getElementById('dateCard').classList.add('flipped-card');
-  document.getElementById('date').innerHTML = `${mystery.date}`
+  document.querySelector('#dateCard').classList.add('flipped-card');
+  document.querySelector('#date').innerHTML = `${mystery.date}`
 }
 
-document.getElementById('dateCard').addEventListener('click', pickDate)
+document.querySelector('#dateCard').addEventListener('click', pickDate)
 
 
 // Reveals the mystery when reveal button is clicked
 const revealMystery = () => {
 
-  const message = document.getElementById('mystery');
+  const message = document.querySelector('#mystery');
   let allCardsClicked = '';
 
   // Loops through mystery object to see if there are any empty values
@@ -258,9 +257,10 @@ const revealMystery = () => {
     if (allCardsClicked === false) {
       message.innerHTML = "No mystery is yet to be revealed."
     } else {
-      message.innerHTML = `The murder was committed on ${mystery.date} by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`
+      message.innerHTML = `The murder was committed on ${mystery.date} by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`
+      document.querySelector('#revealButton').remove()
     }
   });
 }
 
-document.getElementById('revealButton').addEventListener('click', revealMystery)
+document.querySelector('#revealButton').addEventListener('click', revealMystery)
