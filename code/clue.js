@@ -157,14 +157,6 @@ const rooms = [
   "Guest House",
   "Patio"
 ];
-// ************************ REMOVE this ***************************
-// console.log(suspects, weapons, rooms);
-// console.log(typeof suspects)
-// console.log(rooms[0]);
-// console.log('The suspect is' + ': ' +suspects[3].lastName);
-// console.log('The victim was murdered using' + ' ' + weapons[4].name);
-// console.log(`The victim is ${suspects[0].firstName} ${suspects[4].lastName} ha, ha! `);
-// ************************ REMOVE this ***************************
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
@@ -175,23 +167,18 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+
 const mystery = {
-  killer: "",
-  weapon: "",
-  room: ""
+  killer: " ",
+  weapon: " ",
+  room: " "
 };
 
 // ****************************************************************************
-
 // This function will be invoked when you click on the KILLER CARD.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
-  //mystery.weapon = randomSelector(weapons)
-  //mystery.room = randomSelector(rooms)
-  // console.log(mystery); // yes innehåller nu alla tre
-  // console.log(weapons)
-  // console.log(rooms)
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   // Feel free to add more things to show about the killer.
@@ -221,7 +208,6 @@ const pickWeapon = () => {
     "weaponWeight"
   ).innerHTML = `Weapon weight: ${mystery.weapon.weight}kg`;
 };
-// pickWeapon.onclick();
 
 // ****************************************************************************
 // This function will be invoked when you click on the ROOM CARD.
@@ -236,11 +222,7 @@ const pickRoom = () => {
   // document.getElementById('killerCard').style.background = mystery.killer.color
   //document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 };
-// pickRoom();
-
-// ****************************************************************************
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
-// console.log(mystery);
 // ****************************************************************************
 
 // ****************************************************************************
@@ -248,44 +230,8 @@ const pickRoom = () => {
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-  mysteryText.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
+  mysteryText.innerHTML = `⚠️ The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}. ⚠️`;
 };
-// revealMystery();
 document.getElementById("mysteryButton").onclick = revealMystery;
 const mysteryText = document.getElementById("mystery");
 
-// **********************
-/*
-const mysteryText = document.getElementById("mystery")
-const btn = document.getElementById("button")
-btn.onclick = () => {
-  // alert("hej hej")
-  mysteryText.innerText = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
-  btn.style.backgroundColor = 'black'
-  btn.style.color = 'white'
-  btn.textContent = 'CRIME! ⚠️'
-}
-*/
-
-// ****************************************************************************
-
-// const revealMystery = document.getElementById("mystery")
-// revealMystery.textContent = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
-// document.getElementById("mystery").textContent = "Hey"
-
-// ****************************************************************************
-
-// To do:
-// Connect the revealMystery console.log with HTML H1 mystery
-
-// Connect the revealMystery with the button HTML
-// Testar knappen genom en Alert först.
-
-// Connect killerCard with killer - info
-
-// Get killerCard HTML to run JS
-
-// Duplicate to all cards
-
-// ****************************************************************************
-// Check code guide lines before PR!

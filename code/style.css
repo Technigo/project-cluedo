@@ -1,8 +1,9 @@
-body {
-  margin: 0;
-  font-family: "Courier New", Courier, monospace;
-  background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
 
+
+body {
+  margin: auto;
+  margin-bottom: 300px;
+  background-image: linear-gradient(315deg, #ff4e00 0%, #ec9f05 74%);
 }
 
 p {
@@ -12,31 +13,24 @@ p {
 }
 
 header {
-  font-family: 'Kaushan Script', cursive;
-  
+  font-family: "Kaushan Script", cursive;
   font-size: x-large;
   text-align: center;
 }
 
-.revealed-text {
-  
-  font-family: 'Kaushan Script', cursive;
-  font-size: 22px;
-  color: rgb(0, 0, 0);
-  text-align: center;
-
-}
-
 .cards {
   margin: 50px auto;
+  padding: 20px;
   width: 90%;
   height: 600px;
   border-radius: 15px;
-  background: rgb(43, 43, 43);
+  background: rgb(32,32,32);
+  background: linear-gradient(90deg, rgba(32,32,32,1) 0%, rgb(94, 94, 94) 57%, rgb(52, 52, 52) 90%);
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  font-family: 'Bitter', serif;
+  font-family: "Bitter", serif;
   font-size: 14px;
 }
 
@@ -47,6 +41,8 @@ header {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: 2px 2px 1px rgb(131, 131, 131);
+  
 }
 
 .weapon-deck {
@@ -56,6 +52,7 @@ header {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: 2px 2px 1px rgb(131, 131, 131);
 }
 
 .room-deck {
@@ -65,6 +62,14 @@ header {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: 2px 2px 1px rgb(131, 131, 131);
+}
+
+.revealed-text {
+  font-family: "Kaushan Script", cursive;
+  font-size: 22px;
+  color: rgb(0, 0, 0);
+  text-align: center;
 }
 
 button {
@@ -76,4 +81,41 @@ button {
   display: block;
   margin: 0 auto;
   color: #fff;
+  
+}
+
+/****** MEDIA QUERIES FOR RESPONSIVE DESIGN ******/
+@media (min-width: 668px) {
+  header {
+    height: 50px;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 16px;
+  }
+  h4 {
+    font-size: 16px;
+    max-width: 500px;
+  }
+  .cards {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 900px) {
+  header {
+    height: 50px;
+  }
+  h3 {
+    margin: 15px;
+  }
+  .cards {
+    margin: 20px auto;
+    flex-direction: row;
+  }
+  .revealed-text {
+    padding: 10px;
+  }
 }
