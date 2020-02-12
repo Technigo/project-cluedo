@@ -182,53 +182,52 @@ const mystery = {
   date: ''
 }
 
+// Killer card
 const pickKiller = () => {
   removeDeckIcon()
 
   // Randomly selects a killer from the suspects & adds it to the mystery object.
   mystery.killer = randomSelector(suspects)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  // document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerCard').classList.add('flipped-card');
   document.getElementById(
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
   document.getElementById('killerAge').innerHTML = `${mystery.killer.age} years`
   document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
   document.getElementById('killerImage').src = `${mystery.killer.image}`
-  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
 }
 
 document.getElementById('killerCard').addEventListener('click', pickKiller)
 
-
+// Weapon card
 const pickWeapon = () => {
   removeDeckIcon()
 
   // Randomly selects a weapon from the weapons array & adds it to the mystery object.
   mystery.weapon = randomSelector(weapons)
 
-  // Adds the weapon name
+  document.getElementById('weaponCard').classList.add('flipped-card');
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
   document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight} kg`
 }
 
 document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 
-
+// Room card
 const pickRoom = () => {
   removeDeckIcon()
 
   // Randomly selects a room from the rooms array & adds it to the mystery object.
   mystery.room = randomSelector(rooms)
 
-  // Adds the room name
+  document.getElementById('roomCard').classList.add('flipped-card');
   document.getElementById('roomName').innerHTML = `${mystery.room}`
 }
 
 document.getElementById('roomCard').addEventListener('click', pickRoom)
 
-
+// Date card
 const pickDate = () => {
   removeDeckIcon()
 
@@ -239,7 +238,7 @@ const pickDate = () => {
   mystery.date = randomSelector(months) + ` ${randomNumber}`
 
 
-  // Adds the month name
+  document.getElementById('dateCard').classList.add('flipped-card');
   document.getElementById('date').innerHTML = `${mystery.date}`
 }
 
