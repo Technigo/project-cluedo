@@ -1,13 +1,17 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Mission was to create a piece of the classic board game Cluedo.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started to look through the mission brief, and them worked my way through the project. I got stuck but got help from a teammate. We talked through the code and then I saw the solution and was able to move along.
 
-## View it live
+Just a little bit of styling and responsiveness added in the end.
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+I coded in VS Code, used Live Server to update and the Inspector in Chrome to view code and functions. I used google fonts and an images from Unsplash/Google.
+
+If I hade more time I would like to put in more design elements and other functions like other messages, buttons and so.
+
+## View it live on Netlify:
+
+https://relaxed-hamilton-48740c.netlify.com/
