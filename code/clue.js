@@ -65,144 +65,132 @@ const colMustard = {
 const rope = {
   name: 'Rope',
   weight: 1.5,
-  image: 'assets/Rope_Full.jpg',
-  color: '#394042'
+  image: 'assets/Rope_Full.jpg'
 }
 
 const knife = {
   name: 'Knife',
   weight: 0.2,
-  image: 'assets/Dagger_Full.jpg',
-  color: '#394042'
+  image: 'assets/Dagger_Full.jpg'
 }
 
 const candlestick = {
   name: 'Candlestick',
   weight: 12,
-  image: 'assets/candlestick.jpg',
-  color: '#394042'
+  image: 'assets/candlestick.jpg'
 }
 
 const dumbbell = {
   name: 'Dumbbell',
   weight: 30,
-  image: 'assets/dumbbell.jpg',
-  color: '#394042'
+  image: 'assets/dumbbell.jpg'
 }
 
 const poison = {
   name: 'Poison',
   weight: 0.02,
-  image: 'assets/poison.jpg',
-  color: '#394042'
+  image: 'assets/poison.jpg'
 }
 
 const axe = {
   name: 'Axe',
   weight: 3,
-  image: 'assets/axe.jpg',
-  color: '#394042'
+  image: 'assets/axe.jpg'
 }
 
 const bat = {
   name: 'Bat',
   weight: 2,
-  image: 'assets/bat.jpg',
-  color: '#394042'
+  image: 'assets/bat.jpg'
 }
 
 const trophy = {
   name: 'Trophy',
   weight: 8,
-  image: 'assets/trophy.jpeg',
-  color: '#394042'
+  image: 'assets/trophy.jpeg'
 }
 
 const pistol = {
   name: 'Pistol',
   weight: 0.7,
-  image: 'assets/pistol.jpg',
-  color: '#394042'
+  image: 'assets/pistol.jpg'
 }
 
 // *****  THE ROOMS  ****** //
 
 const diningRoom = {
   name: 'Dining Room',
-  image: 'assets/dining-room.jpg',
-  color: '#ad5f47'
+  image: 'assets/dining-room.jpg'
 }
 
 const conservatory = {
   name: 'Conservatory',
-  image: 'assets/conservatory.jpg',
-  color: '#ad5f47'
+  image: 'assets/conservatory.jpg'
 }
 
 const kitchen = {
   name: 'Kitchen',
-  image: 'assets/kitchen.jpg',
-  color: '#ad5f47'
+  image: 'assets/kitchen.jpg'
 }
 
 const study = {
   name: 'Study',
-  color: '#ad5f47'
+  image: 'assets/study.jpg'
 }
 
 const library = {
   name: 'Library',
-  color: '#ad5f47'
+  image: 'assets/library.jpg'
 }
 
 const billiardRoom = {
   name: 'Billiard Room',
-  color: '#ad5f47'
+  image: 'assets/billiard-room.jpg'
 }
 
 const lounge = {
   name: 'Lounge',
-  color: '#ad5f47'
+  image: 'assets/lounge.jpg'
 }
 
 const ballroom = {
   name: 'Ballroom',
-  color: '#ad5f47'
+  image: 'assets/ballroom.jpg'
 }
 
 const hall = {
   name: 'Hall',
-  color: '#ad5f47'
+  image: 'assets/hall.jpg'
 }
 
 const spa = {
   name: 'Spa',
-  color: '#ad5f47'
+  image: 'assets/spa.jpg'
 }
 
 const livingRoom = {
   name: 'Living Room',
-  color: '#ad5f47'
+  image: 'assets/living-room.jpg'
 }
 
 const observatory = {
   name: 'Observatory',
-  color: '#ad5f47'
+  image: 'assets/observatory.jpeg'
 }
 
 const theater = {
   name: 'Theater',
-  color: '#ad5f47'
+  image: 'assets/theater.jpg'
 }
 
 const guestHouse = {
   name: 'Guest House',
-  color: '#ad5f47'
+  image: 'assets/guest_house.jpg'
 }
 
 const patio = {
   name: 'Patio',
-  color: '#ad5f47'
+  image: 'assets/patio.jpg'
 }
 
 // ***** ARRAYS *****
@@ -245,6 +233,17 @@ const rooms = [
   guestHouse,
   patio
 ]
+
+// *******  ADDING COLOR TO THE OBJECTS  *********
+
+weapons.forEach(weapon =>
+  weapon.color = '#394042')
+
+
+rooms.forEach(room => 
+  room.color = '#ad5f47')
+
+
 
 // *******  THE RANDOM SELECTOR  *********
 
@@ -289,6 +288,7 @@ const pickRoom = () => {
   mystery.room = randomSelector(rooms)
   document.getElementById('roomCard').style.background = mystery.room.color
   document.getElementById('roomName').innerHTML = `${mystery.room.name}` 
+  document.getElementById('roomImage').src = mystery.room.image
 }
 
 // *******  REVEALMYSTERY FUNCTION  *********

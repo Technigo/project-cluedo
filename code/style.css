@@ -76,6 +76,10 @@ p {
   margin-top: 2em;
 }
 
+.room-image {
+  margin-top: 3em;
+}
+
 .exp {
   text-align: center;
   max-width: 40%;
