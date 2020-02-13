@@ -9,12 +9,116 @@ const mrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'He is very wise',
+  age: 55,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'She is very sneeky',
+  age: 23,
+  image: 'assets/scarlet.png',
+  occupation: 'Social butterfly'
+}
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'She has a sharp tounge',
+  age: 36,
+  image: 'assets/peacock.png',
+  occupation: 'Housewife'
+}
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'He is very strategic',
+  age: 75,
+  image: 'assets/mustard.png',
+  occupation: 'Retired military'
+}
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'She is a sweet old lady',
+  age: 86,
+  image: 'assets/white.png',
+  occupation: 'Widow'
+}
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  method: 'strangle',
+  strenghtNeeded: 19,
+  makesMess: 'no mess'
+}
+const knife = {
+  name: 'knife',
+  weight: 20,
+  method: 'stab',
+  strenghtNeeded: 12,
+  makesMess: 'big mess'
+}
+const candlestick = {
+  name: 'candlestick',
+  weight: 15,
+  method: 'strike',
+  strenghtNeeded: 17,
+  makesMess: 'some mess'
+}
+const dumbell = {
+  name: 'dumbell',
+  weight: 30,
+  method: 'strike',
+  strenghtNeeded: 19,
+  makesMess: 'some mess'
+}
+const poison = {
+  name: 'poison',
+  weight: 1,
+  method: 'overdose',
+  strenghtNeeded: 0,
+  makesMess: 'none'
+}
+const axe = {
+  name: 'axe',
+  weight: 25,
+  method: 'swing',
+  strenghtNeeded: 16,
+  makesMess: 'big mess'
+}
+const bat = {
+  name: 'bat',
+  weight: 15,
+  method: 'swing',
+  strenghtNeeded: 15,
+  makesMess: 'some mess'
+}
+const trophy = {
+  name: 'trophy',
+  weight: 14,
+  method: 'strike',
+  strenghtNeeded: 19,
+  makesMess: 'some mess'
+}
+const pistol = {
+  name: 'pistol',
+  weight: 10,
+  method: 'shoot',
+  strenghtNeeded: 2,
+  makesMess: 'big mess'
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
