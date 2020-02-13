@@ -152,11 +152,11 @@ let mystery = {
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
   document.getElementById('killerCard').style.background = mystery.killer.color;
-  document.getElementById('killerImage').src = mystery.killer.image;
+  killerImage.src = mystery.killer.image;
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   document.getElementById('killerAge').innerHTML = `age: ${mystery.killer.age}`;
   document.getElementById('killerOccupation').innerHTML = `occupation: ${mystery.killer.occupation}`;
-  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`;
+  document.getElementById('killerDescription').innerHTML = mystery.killer.description;
 }
 document.getElementById('killerCard').addEventListener('click', pickKiller)
 
