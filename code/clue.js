@@ -1,5 +1,3 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
@@ -60,131 +58,135 @@ const missScarlet = {
   occupation: 'Actress',
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
-
 const rope = {
-  name: 'rope',
-  weight: 10
+  name: 'Rope',
+  weight: 10,
+  image: 'assets/rope.jpg',
 }
 
 const knife = {
-  name: 'knife',
-  weight: 2
+  name: 'Knife',
+  weight: 2,
+  image: 'assets/knife.jpg',
 }
 
 const candlestick = {
-  name: 'candlestick',
-  weight: 5
+  name: 'Candlestick',
+  weight: 5,
+  image: 'assets/candlestick.jpg',
 }
 
 const dumbbell = {
-  name: 'dumbbell',
-  weight: 15
+  name: 'Dumbbell',
+  weight: 15,
+  image: 'assets/dumbbell.jpg',
 }
 
 const poison = {
-  name: 'posion',
-  weight: 1
+  name: 'Posion',
+  weight: 1,
+  image: 'assets/poison.eps',
 }
 
 const axe = {
-  name: 'axe',
-  weight: 25
+  name: 'Axe',
+  weight: 25,
+  image: 'assets/axe.jpg',
 }
 
 const bat = {
-  name: 'bat',
-  weight: 17
+  name: 'Bat',
+  weight: 17,
+  image: 'assets/bat.jpg',
 }
 
 const trophy = {
-  name: 'trophy',
-  weight: 4
+  name: 'Trophy',
+  weight: 4,
+  image: 'assets/trophy.jpg',
 }
 
 const pistol = {
-  name: 'pistol',
-  weight: 3
+  name: 'Pistol',
+  weight: 3,
+  image: 'assets/pistol.jpg',
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 const diningRoom = {
   name: 'Dining room',
-  image
+  image: 'assets/diningroom.eps',
 }
 
 const conservatory = {
   name: 'Conservatory',
-  image:
+  image: 'assets/conservatory.eps',
 }
 
 const kitchen = {
   name: 'Kitchen',
-  image:
+  image: 'assets/kitchen.jpg',
 }
 
 const study = {
   name: 'Study',
-  image:
+  image: 'assets/study.ai',
 }
 
 const library = {
   name: 'Library',
-  image:
+  image: 'assets/library.jpg',
 }
 
 const billiardRoom = {
   name: 'Billiard room',
-  image:
+  image: 'assets/billiard.jpg',
 }
 
 const lounge = {
   name: 'Lounge',
-  image:
+  image: 'assets/livingroom.jpg',
 }
 
 const ballroom = {
   name: 'Ballroom',
-  image:
+  image: 'assets/ballroom.jpg',
 }
 
 const hall = {
   name: 'Hall',
-  image:
+  image: 'assets/hall.ai',
 }
 
 const spa = {
   name: 'Spa',
-  image:
+  image: 'assets/spa.jpg',
 }
 
 const livingRoom = {
   name: 'Living room',
-  image:
+  image: 'assets/livingroom.jpg',
 }
 
 const observatory = {
   name: 'Observatory',
-  image:
+  image: 'assets/observatory.jpg',
 }
 
 const theater = {
   name: 'Theater',
-  image:
+  image: 'assets/theater.jpg',
 }
 
 const guestHouse = {
   name: 'Guest house',
-  image:
+  image: 'assets/guesthouse.jpg',
 }
 
 const patio = {
   name: 'Patio',
-  image:
+  image: 'assets/patio.jpg',
 }
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
   mrGreen,
@@ -193,7 +195,6 @@ const suspects = [
   mrsPeacock,
   profPlum,
   missScarlet,
-  // ...  and the rest
 ]
 
 const weapons = [
@@ -226,41 +227,29 @@ const rooms = [
   patio,
 ]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
 const mystery = {
   killer: '',
   weapon: '',
   room: '',
 }
 
-// This function will be invoked when you click on the killer card.
 const pickKiller = () => {
-  console.log('I am clicking the card')
-
-
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
-
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerImage').src = mystery.killer.image
   document.getElementById(
     'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.description}`
+  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.occupation}`
 }
 document.getElementById('killerCard').onclick = pickKiller
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
+  document.getElementById('weaponImage').src = mystery.weapon.image
   document.getElementById(
     'weaponName'
   ).innerHTML = `${mystery.weapon.name}`
@@ -269,23 +258,16 @@ document.getElementById('weaponCard').onclick = pickWeapon
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
+  document.getElementById('roomImage').src = mystery.room.image
   document.getElementById(
-    'room'
-  ).innerHTML = `${mystery.room}`
+    'roomName'
+  ).innerHTML = `${mystery.room.name}`
 }
 document.getElementById('roomCard').onclick = pickRoom
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
-
 const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = `The murder was comitted by ${mystery.killer.name}, in the ${mystery.room}
+  document.getElementById('mystery').innerHTML = `The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name}
   with a ${mystery.weapon.name}`
-  // console.log(`The murder was by ${mystery.killer.name}, in the ${mystery.room} with a ${mystery.weapon.name}`)
 
 }
-
 document.getElementById('button').onclick = revealMystery
-
-// const revealButton = document.getElementById('button')
-// const mysteryReveal = document.getElementById('button')

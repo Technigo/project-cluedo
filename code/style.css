@@ -41,10 +41,20 @@ p {
   width: 250px;
   height: 400px;
   background: midnightblue;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+}
+
+.image-cover {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 25px;
+
+
+  object-fit: cover;
+  object-position: center;
 }
 
 button {
