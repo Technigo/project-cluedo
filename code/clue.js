@@ -66,15 +66,14 @@ const rope = {
   name: 'rope',
   weight: 10,
   image: 'assets/rope.jpg',
-  color: 'maroon',
-
+  color: 'maroon'
 }
 
 const knife = {
   name: 'knife',
   weight: 8,
   image: 'assets/knife.jpg',
-  color: 'chocolate',
+  color: 'chocolate'
 }
 
 const candlestick = {
@@ -123,8 +122,7 @@ const pistol = {
   name: 'pistol',
   weight: 12,
   image: 'assets/pistol.jpg',
-  color: 'maroon',
-
+  color: 'maroon'
 }
 
 // CREATE OBJECTS FOR ALL THE ROOMSß.
@@ -213,26 +211,6 @@ const rooms = [
   spa
 ]
 
-
-let suspectsName = name => {
-  console.log(name);
-};
-suspects.forEach(suspectsName);
-
-let weponsWeight = weight => {
-  console.log(weight);
-};
-weapons.forEach(weponsWeight);
-
-console.log(suspects)
-console.log(weapons)
-console.log(rooms)
-
-console.log(suspects[0]);
-console.log(rooms[rooms.length - 1]);
-
-
-
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 
@@ -270,7 +248,6 @@ const pickKiller = () => {
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
-
 // This function will be invoked when you click on the weapon card.
 const pickWeapon = () => {
   // This will randomly select a weapon from the weapons. And add that to the mystery object.
@@ -280,7 +257,6 @@ const pickWeapon = () => {
   document.getElementById('weaponImage').src = mystery.weapon.image;
   document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight} kg`
   document.getElementById('weaponCard').style.background = mystery.weapon.color;
-
 }
 
 // This function will be invoked when you click on the room card.
