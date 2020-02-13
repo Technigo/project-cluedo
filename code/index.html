@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
     <title>Cluedo, can you solve the mystery?</title>
@@ -12,14 +12,12 @@
   
   <body>
 
-    <header class="navbar">
-      <ul class="navbar-content">
-        <li id="wasIt">Can you solve the mystery at the Tudor Mansion?</li>
-      </ul>
+  <header class="header">
+  <h1 class="heder-text">Can you solve the mystery at the Tudor Mansion?</h1>
 
     <section class="cards">
-      <article class="killer-deck" id="killerCard" onclick="pickKiller()">
-        <p>Chose a suspect</p>
+      <article class="killer-deck" id="killerCard">
+        <p>Choose a suspect</p>
         <img id="killerImage" src="" height="220" />
         <p id="killerName"></p>
         <p id="killerAge"></p>
@@ -27,22 +25,25 @@
         <p id="killerDescription"></p>
       </article>
       
-      <article class="weapon-deck" id="weaponCard" onclick="pickWeapons()">
-        <p>Chose the killer weapon</p>
+      <article class="weapon-deck" id="weaponCard">
+        <p>Choose the murder weapon</p>
         <img id="weaponImage" src="" height="220" />
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
       </article>
       
-      <article class="room-deck" id="roomCard" onclick="pickRoom()">
-        <p>Chose the crime scen</p>
+      <article class="room-deck" id="roomCard">
+        <p>Choose the crime scene</p>
         <p id="roomName"></p>
       </article>
     </section>
 
-    <h1 id="mystery"></h1>
+    <h1 id="mystery">The mystery is not solved yet</h1>
 
-    <button id=crimebutton onclick="revealMystery()">Reveal the mystery</button>
+    <button id=crimebutton>Reveal the mystery</button>
+
+
+
 
     <script src="clue.js"></script>
   </body>
