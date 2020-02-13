@@ -123,7 +123,6 @@ const suspects = [
 	mrsPeacock,
 	colonelMustard
 ];
-console.log(suspects);
 
 const weapons = [
 	rope,
@@ -136,7 +135,6 @@ const weapons = [
 	trophy,
 	pistol,
 ];
-console.log(weapons);
 
 const rooms = [
 	"Dinning Room",
@@ -155,14 +153,13 @@ const rooms = [
 	"Guest House",
 	"Patio"
 ];
-console.log(rooms);
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT PASSES IN TO THE FUNCTION.
 const randomSelector = array => {
 	return array[Math.floor(Math.random() * array.length)]
 };
 
-// AN OBJECT THAT KEEPS THE MYSTERY.
+//OBJECT THAT KEEPS THE MYSTERY.
 const mystery = {
 	killer: "null",
 	weapon: "null",

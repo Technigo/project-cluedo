@@ -5,10 +5,10 @@
 }
 
 body {
-  margin: 0;
   font-family: 'Amatic SC', cursive;
 }
 
+/****************** PAGE BACKGROUND *******************/
 #video-background {
   margin: auto;
   position: fixed;
@@ -16,18 +16,17 @@ body {
   bottom: 0;
   min-width: 100%; 
   min-height: 100%;
-  opacity: 0.97;
+  opacity: 0.98;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
 }
 
+/****************** HEADER & PAGE STYLING *******************/
 .content {
   position: fixed;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: black;
   width: 100%;
   padding: 20px;
 }
@@ -42,7 +41,6 @@ h1 {
 h2 {
   color: #EBEBF2;
   font-size: 30px;
-  padding: 50px;
   text-align: center;
 }
 
@@ -67,7 +65,6 @@ h2 {
 }
 
 /****************** CARDS STYLING *******************/
-
 .card-title {
   margin: 1px;
   font-weight: 300;
@@ -143,7 +140,8 @@ p {
 
 .button-effect {
   padding: 8px 16px;
-  border: none;
+  border: 1px solid white;
+  margin-top: 10px;
   font-size: 30px;
   font-weight: 700;
   font-family: 'Amatic SC', cursive;
@@ -167,7 +165,7 @@ button:focus {
 
 .startover-button {
   padding: 8px 16px;
-  border: 2px solid white;
+  border: none;
   font-size: 25px;
   font-family: 'Amatic SC', cursive;
   display: inline-block;
@@ -177,11 +175,16 @@ button:focus {
   background: black;
   color: white;
   text-transform: uppercase;
+  text-decoration: underline white;
 }
 
 .startover-button:hover {
   transform: scale(1.2); 
   color: #EBEBF2;
+}
+
+.revealed-mystery {
+  margin-bottom: 20px;
 }
 
 /************ MEDIA QUERIES **************/
@@ -207,5 +210,17 @@ body {
 
 h1 {
   display: none;
+}
+
+.revealed-mystery {
+  font-size: 18px;
+}
+
+.button-effect {
+  font-size: 20px;
+  padding: 4px 8px;
+}
+.startover-button {
+  font-size: 18px;
 }
 } 
