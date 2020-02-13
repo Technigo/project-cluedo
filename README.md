@@ -1,13 +1,12 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is the fifth assignment in Technigo's bootcamp. It is a Cluedo game randomizer to reveal a the killer, the weapon and the place for the murder mystery.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+There are three deck of cards that are arrays with objects that contain the information about the objects. The objects are randomized by clicking on the cards. When all cards are clicked you can press the reveal button to show the mystery. To change the HTML to present the objects DOM is used. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Take a look! 
+project-cluedo-emma.netlify.com
