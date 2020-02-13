@@ -8,33 +8,39 @@
   <link rel="stylesheet" href="style.css" />
   <title>Technigo Project Cluedo</title>
 </head>
+<header>
+  <h1>Cluedo Mystery</h1>
+</header>
 
 <body>
   <section class="cards">
-    <article class="killer-deck" id="killerCard">
+    <article class="killer-deck deck" id="killerCard">
       <p>KILLER</p>
       <p id="killerName"></p>
       <p id="killerAge"></p>
       <p id="killerOccupation"></p>
-      <img id="killerImage" src="" height="100" />
+      <img id="killerImage" src="" height="100">
       <p id="killerDescription"></p>
     </article>
-    <article class="weapon-deck" id="weaponCard">
+    <article class="weapon-deck deck" id="weaponCard">
       <p>WEAPON</p>
       <p id="weaponName"></p>
       <p id="weaponWeight"></p>
     </article>
-    <article class="room-deck" id="roomCard">
+    <article class="room-deck deck" id="roomCard">
       <p>ROOM</p>
       <p id="roomName"></p>
     </article>
   </section>
-
-  <h1 id="mystery"></h1>
-
-  <button id="button">REVEAL THE CRIME</button>
-
-  <script src="clue.js"></script>
+  <div class="mystery-div">
+    <h2 id="mystery">
+      </h1>
+      <button id="button">REVEAL THE CRIME</button>
+      <script src="clue.js"></script>
+    </h2>
+    <footer>
+      <h4>Emma Prené 2020</h4>
+    </footer>
 </body>
 
 </html>
