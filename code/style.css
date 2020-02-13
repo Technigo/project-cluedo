@@ -24,7 +24,6 @@ header {
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
   background: #ccc;
   display: flex;
   flex-direction: column;
@@ -38,9 +37,8 @@ header {
 }
 
 .killer-deck {
-
   width: 250px;
-  height: 800px;
+  height: 200px;
   background: #424247;
   text-align: center;
   padding-top: 30px;
@@ -49,7 +47,7 @@ header {
 
 .weapon-deck {
   width: 250px;
-  height: 800px;
+  height: 200px;
   background: #224028;
   text-align: center;
   padding-top: 30px;
@@ -58,7 +56,7 @@ header {
 
 .room-deck {
   width: 250px;
-  height: 800px;
+  height: 200px;
   background: #303182;
   text-align: center;
   padding-top: 30px;
@@ -73,7 +71,7 @@ header {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: #c96f6f;
   border: none;
   font-size: 20px;
   border-radius: 8px;
@@ -94,7 +92,7 @@ footer {
   .cards {
     margin: 50px auto;
     width: 90%;
-    height: 600px;
+    height: 400px;
     background: #ccc;
     display: flex;
     flex-direction: row;
@@ -104,7 +102,7 @@ footer {
 
   .deck {
     width: 250px;
-    height: 400px;
+    height: 300px;
     text-align: center;
     padding-top: 30px;
     border-radius: 16px;
