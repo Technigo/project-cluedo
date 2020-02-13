@@ -6,41 +6,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
   <title>Cluedo game</title>
 </head>
 
-<header>
-  <h1>cluedo game</h1>
-</header>
+<video autoplay loop muted playsinline id="video-background">
+  <source src="video/Dust - 3226.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 <body>
-  <!-- CARDS -->
-  <section class="cards">
-    <!-- killer card -->
-    <article class="killer-deck" id="killerCard">
-      <p>killer<p>
-          <p id="killerName"></p>
-          <p id="killerAge"></p>
-          <p id="killerOccupation"></p>
-          <img id="killerImage" src="" height="200" />
-          <p id="killerDescription"></p>
-    </article>
-    <!-- weapon card -->
-    <article class="weapon-deck" id="weaponCard">
-      <p>weapon</p>
-      <p id="weaponName"></p>
-      <p id="weaponWeight"></p>
-    </article>
-    <!-- room card -->
-    <article class="room-deck" id="roomCard">
-      <p>room</p>
-      <p id="roomName"></p>
-    </article>
-  </section>
+  <div class="content">
+    <!-- CARDS -->
+    <section class="cards">
+      <h1 class="title">cluedo</h1>
+      <!-- killer card -->
+      <article class="killer-deck" class="deck" id="killerCard">
+        <p class="card-title">killer<p>
+            <p id="killerName"></p>
+            <p id="killerAge"></p>
+            <p id="killerOccupation"></p>
+            <img id="killerImage" src="" height="200" />
+            <p id="killerDescription"></p>
+      </article>
+      <!-- weapon card -->
+      <article class="weapon-deck" class="deck" id="weaponCard">
+        <p class="card-title">weapon</p>
+        <p class="revealed-content" id="weaponName"></p>
+        <p class="revealed-content" id="weaponWeight"></p>
+      </article>
+      <!-- room card -->
+      <article class="room-deck" class="deck" id="roomCard">
+        <p class="card-title">room</p>
+        <p></p>
+        <p class="revealed-content" id="roomName"></p>
+      </article>
+    </section>
 
-  <h2 id="mystery"></h2>
-  <button id="revealButton">REVEAL THE CRIME</button>
-
+    <h2 id="mystery"></h2>
+    <button class="button-effect" id="revealButton">reveal the crime</button>
+    <button class="startover-button" id="startOver" onclick="reloadPage()">start over</button>
+  </div>
   <script src="clue.js"></script>
 </body>
 

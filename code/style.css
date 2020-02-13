@@ -6,41 +6,85 @@
 
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
-  padding-bottom: 200px;
+  font-family: 'Amatic SC', cursive;
 }
 
-header {
-  color: white;
-  font-size: 50px;
-  padding: 150px;
+#video-background {
+  margin: auto;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  opacity: 0.97;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: black;
+  width: 100%;
+  padding: 20px;
 }
 
 h1 {
-  color: white;
+  color: #EBEBF2;
   font-size: 50px;
-  padding: 150px;
+  text-align: center;
+  top: 10px;
 }
 
 h2 {
-  color: black;
-  font-size: 40px;
+  color: #EBEBF2;
+  font-size: 30px;
   padding: 50px;
+  text-align: center;
+}
+
+.title:after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 3px;
+  width: 0;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+
+.title:hover {
+  color:#EBEBF2;
+  cursor: help;
+}
+
+.title:hover:after {
+  width: 100%;
+  background: #EBEBF2F2;
+}
+
+/****************** CARDS STYLING *******************/
+
+.card-title {
+  margin: 1px;
+  font-weight: 300;
+  font-size: 25px;
+  background-color:#D1D0D9;
+  text-transform: uppercase;
 }
 
 p {
   margin: 1px;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 25px;
-  background-color: #fff;
+  text-transform: capitalize;
 }
 
 .cards {
-  margin: 50px auto;
   padding: 30px;
-  width: 90%;
-  height: 600px;
-  background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -50,41 +94,118 @@ p {
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background:#EBEBF2;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: transform 2s;
+}
+
+.killer-deck:hover {
+  transform: scale(1.1); 
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: #EBEBF2;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: transform 2s;
+}
+
+.weapon-deck:hover {
+  transform: scale(1.1); 
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: #EBEBF2;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: transform 2s;
 }
 
-button {
+.room-deck:hover {
+  transform: scale(1.1); 
+}
+
+.revealed-content {
+  text-align: center;
+  font-size: 25px;
+}
+
+.button-effect {
   padding: 8px 16px;
-  background: crimson;
   border: none;
-  font-size: 20px;
-  border-radius: 8px;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Amatic SC', cursive;
   display: block;
   margin: 0 auto;
+  transition: transform 2s;
   cursor: pointer;
+  background: black;
+  color: #EBEBF2;
+  text-transform: uppercase;
 }
+
+button:focus {
+  outline: 0;
+}
+
+.button-effect:hover {
+  transform: scale(1.2); 
+  color: lightgrey;
+}
+
+.startover-button {
+  padding: 8px 16px;
+  border: 2px solid white;
+  font-size: 25px;
+  font-family: 'Amatic SC', cursive;
+  display: inline-block;
+  margin: 0 auto;
+  transition: transform 2s;
+  cursor: pointer;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+}
+
+.startover-button:hover {
+  transform: scale(1.2); 
+  color: #EBEBF2;
+}
+
+/************ MEDIA QUERIES **************/
+
+@media (max-width: 860px) {
+body {
+  background: black;
+}
+#video-background {
+  display: none;
+}
+.content {
+  position: inherit;
+}
+
+.killer-deck {
+  margin-bottom: 20px;
+}
+
+.weapon-deck {
+  margin-bottom: 20px;
+}
+
+h1 {
+  display: none;
+}
+} 
