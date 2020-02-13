@@ -1,13 +1,15 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week’s project was to create a piece of the classic board game Cluedo. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First of all I grouped the elements into arrays and made objects with of them, adding keys and values. I console.logged information about the object to see that it worked. 
+
+Next step was to understand the code in javascript and connect this to the DOM. This was the difficult part and I struggled a lot. After some work I managed to understand how it worked and I'm particularly proud of the text that turns into black when Mrs WHites card is picked.
+
+Next step was to add some styling and finally to make it responsive. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://lucid-neumann-499ec2.netlify.com/
