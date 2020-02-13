@@ -9,4 +9,4 @@ There are three deck of cards that are arrays with objects that contain the info
 ## View it live
 
 Take a look! 
-www.project-cluedo-emma.netlify.com
+https://project-cluedo-emma.netlify.com/
