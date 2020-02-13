@@ -162,16 +162,16 @@ document.getElementById('killerCard').addEventListener('click', pickKiller)
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
-  document.getElementById('weaponCard').style.background = mystery.killer.color
-  document.getElementById('weaponName').innerHTML = mystery.weapon.name
-  document.getElementById('weaponWeight').innerHTML = `weight: ${mystery.weapon.weight}`
+  document.getElementById('weaponCard').style.background = mystery.killer.color;
+  document.getElementById('weaponName').innerHTML = mystery.weapon.name;
+  document.getElementById('weaponWeight').innerHTML = `weight: ${mystery.weapon.weight}`;
 }
 document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
-  document.getElementById('roomCard').style.background = mystery.killer.color
-  document.getElementById('roomName').innerHTML = mystery.room
+  document.getElementById('roomCard').style.background = mystery.killer.color;
+  document.getElementById('roomName').innerHTML = mystery.room;
 }
 document.getElementById('roomCard').addEventListener('click', pickRoom)
 
