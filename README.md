@@ -1,6 +1,6 @@
 # Cluedo - Mystery Randomizer
 This is my second week into learning js, this project was supposed to teach me more about loors and arrays. 
-I tried to fucus on learning more than the design, will make tome to come back for that. Boot-camp life is stressful! 
+I tried to fucus on learning more than the design, will make tome to come back for that. Boot-camp life is busy! 
 
 
 ## The problem
