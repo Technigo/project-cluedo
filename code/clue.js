@@ -1,4 +1,15 @@
+//OBJECTS FOR ALL THE SUSPECTS
 const mrGreen = {
+  firstName: "Jacob",
+  lastName: "Green",
+  color: "olivedrab",
+  description: "He has a lot of connections",
+  age: 45,
+  image: "C:\Users\siri_\Desktop\A_Lizzard\assets\green.png",
+  occupation: "Entrepreneur",
+}
+
+const profPlum = {
   firstName: 'Jacob',
   lastName: 'Green',
   color: 'green',
@@ -7,43 +18,8 @@ const mrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
-const mrsWhite = {
-  firstName: 'Stella',
-  lastName: 'White',
-  color:'purple',
-  description:'hse is a meticulous and careful person',
-  age:68,
-  image:'assets/white.png',
-  occupation:'maid',
-}
-const colonelMustard = {
-  firstName: 'George',
-  lastName: 'Mustard',
-  color:'yellow',
-  description: 'A retired colonel fulfilling his dreams of being a master gardener',
-  age:72,
-  image:'assets/mustard.png',
-  occupation: 'retired colonel',
-}
-const drPlum = {
-  firstName: 'Julien',
-  lastName: 'Plum',
-  color:'pink',
-  description:'New in his proffession, he dreams of becoming the yongest proffessor at Oxford',
-  age: 31,
-  image:'assets/plum.png',
-  occupation:'doctor',
-}
-const damePeacock = {
-  firstName: 'Andromeda',
-  lastName: 'Peacock',
-  color:'blue',
-  description:'Widow after baron Sneezalot, owner of a large wineyard in France',
-  age:45,
-  image:'assets/peacock',
-  occupation:'Businessowner',
-}
-const msScarlet = {
+
+const missScarlet = {
   firstName: 'Angela',
   lastName: 'Scarlet',
   color:'red',
@@ -52,89 +28,226 @@ const msScarlet = {
   image:'assets/scarlet.png',
   occupation:'Fashiondesigner',
 }
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
+const damePeacock = {
+  firstName: 'Andromeda',
+  lastName: 'Peacock',
+  color:'blue',
+  description:'Widow after baron Sneezalot, owner of a large wineyard in France',
+  age:45,
+  image:'assets/peacock.png',
+  occupation:'Businessowner',
+}
+
+const mrMustard = {
+  firstName: 'George',
+  lastName: 'Mustard',
+  color:'yellow',
+  description: 'A retired colonel fulfilling his dreams of being a master gardener',
+  age:72,
+  image:'assets/mustard.png',
+  occupation: 'retired colonel',
+}
+
+const mrsWhite = {
+firstName: 'Stella',
+lastName: 'White',
+color:'purple',
+description:'hse is a meticulous and careful person',
+age:68,
+image:'assets/white.png',
+occupation:'maid',
+}
+
+//OBJECTS FOR ALL THE WEAPONS
 const rope = {
-  name: 'rope',
+  name: "a rope",
+  weight: 30,
   difficulty:'hard',
-  weight: 10,
+  image:'assets/swords-4058193_960_720.png'
 }
+
 const dagger = {
-  name:'dagger',
+  name: "a dagger",
+  weight: 80,
   difficulty:'easy',
+  image: "assets/swords-4058193_960_720.png"
 }
+
 const candelabra = {
-  name: 'candelabra',
+  name: "a candelabra",
+  weight: 70,
   difficulty: 'intermediete',
+  image: "assets/swords-4058193_960_720.png"
 }
-const ledpipe = {
-  name: 'ledpipe',
-  difficulty:'advanced',
-}
-const wrench = {
-  name:'wrench',
-  difficulty:'hard',
-}
+ 
 const poison = {
-  name:'poison',
+  name: "poison",
+  weight: 10,
   difficulty:'advanced',
+  image: "assets/swords-4058193_960_720.png"
 }
+  
+const trophy = {
+  name: "a trophy",
+  weight: 50,
+  difficulty:'hard',
+  image: "assets/swords-4058193_960_720.png"
+}
+
 const pistol = {
-  name: 'pistol',
+  name: "a pistol",
+  weight: 20,
   difficulty:'easy',
+  image: "assets/swords-4058193_960_720.png"
 }
+
+//OBJECT FOR ALL THE ROOMS
+const diningRoom = {
+  name: "Dining room",
+  image: "assets/10031295804_c50b586b2e_b.jpg"
+}
+
+const conservatory = {
+  name: "Conservatory",
+  image: "assets/10031295804_c50b586b2e_b.jpg"
+}
+
+const kitchen = {
+  name: "Kitchen",
+  image: "assets/10031295804_c50b586b2e_b.jpg"
+}
+
+const study = {
+  name: "Study",
+  image: "assets/10031295804_c50b586b2e_b.jpg"
+}
+
+const library = {
+  name: "Library",
+  image: "assets/10031295804_c50b586b2e_b.jpg"
+}
+
+const billiardRoom = {
+  name: "Billiard room",
+  image: "assets/10031295804_c50b586b2e_b.jpg"
+}
+
+const lounge = {
+  name: "Lounge",
+  image: "assets/10031295804_c50b586b2e_b.jpg"
+}
+
+const ballroom = {
+  name: "Ballroom",
+  image: "assets/10031295804_c50b586b2e_b.jpg"
+}
+
+const hall = {
+  name: "Hall",
+  image: "assets/10031295804_c50b586b2e_b.jpg"
+}
+
+
+//ARRAYS FOR SUSPECTS, WEAPONS, ROOMS AND TIMES
+
 const suspects = [
   mrGreen,
   mrsWhite,
-  colonelMustard,
-  drPlum,
+  profPlum,
+  missScarlet,
   damePeacock,
-  msScarlet
-]
-const weapons = [
-  'rope',
-  'dagger',
-  'candelabra',
-  'ledpipe',
-  'wrench',
-  'poison',
-  'pistol'
-]
-const rooms = [
-'hall',
-'lounge',
-'dining room',
-'kitchen',
-'garden',
-'conservatory',
-'billiard room',
-'study',
-'library'
+  mrMustard
 ]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+const weapons = [
+  rope,
+  dagger,
+  candelabra,
+  poison,
+  trophy,
+  pistol
+]
+
+const rooms = [
+  diningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+]
+
+// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
-
-// This function will be invoked when you click on the killer card.
-const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
-
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+//OBJECT THAT KEEPS THE MYSTERY
+const mystery = {
+  killer: "",
+  weapon: "",
+  room: "",
 }
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+// FUNCTION TO RANDOMLY SELECT KILLER AND ADD IT TO THE MYSTERY OBJECT
+const pickKiller = () => {
+  mystery.killer = randomSelector(suspects)
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+  const theKiller = document.getElementById("killer")
+  const theKillerName = document.getElementById("killerName")
+  const theKillerAge = document.getElementById("killerAge")
+  const theKillerOccupation = document.getElementById("killerOccupation")
+  const theKillerImage = document.getElementById("killerImage")
+  const theKillerDescription = document.getElementById("killerDescription")
+
+  theKiller.style.background = mystery.killer.color
+  theKillerName.innerHTML =
+    mystery.killer.firstName + " " + mystery.killer.lastName
+  theKillerAge.innerHTML = `Age: ${mystery.killer.age} years`
+  theKillerOccupation.innerHTML = `Occupation: ${mystery.killer.occupation}`
+  theKillerImage.src = mystery.killer.image
+  theKillerDescription.innerHTML = mystery.killer.description
+}
+
+// FUNCTION TO RANDOMLY SELECT WEAPON AND ADD IT TO THE MYSTERY OBJECT
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons)
+
+  const theWeaponName = document.getElementById("weaponName")
+  const theWeaponWeight = document.getElementById("weaponWeight")
+  const theWeaponColor = document.getElementById("weaponDifficulty")
+  const theWeaponImage = document.getElementById("weaponImage")
+  theWeaponName.innerHTML = mystery.weapon.name
+  theWeaponWeight.innerHTML = `Weight: ${mystery.weapon.weight} UNITS`
+  theWeaponColor.innerHTML = `Difficulty: ${mystery.weapon.difficulty}`
+  theWeaponImage.src = mystery.weapon.image
+}
+
+// FUNCTION TO RANDOMLY SELECT ROOM AND ADD IT TO THE MYSTERY OBJECT
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+
+  const theRoomName = document.getElementById("roomName")
+  const theRoomImage = document.getElementById("roomImage")
+  theRoomName.innerHTML = mystery.room.name
+  theRoomImage.src = mystery.room.image
+}
+
+
+//FUNCTION TO REVEAL MYSTERY OR ASK THE USER TO FLIP MORE CARDS
+
+const revealMystery = () => {
+  const mysteryAnswer = document.getElementById("mystery")
+  if (!mystery.killer || !mystery.room || !mystery.weapon) {
+    mysteryAnswer.innerHTML = "No mystery is yet to be revealed. <br> Please pick a card from every deck."
+  }
+  else {
+    mysteryAnswer.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with ${mystery.weapon.name}.`
+    document.getElementById("reload").style.display = "block"
+  }
+
+}
