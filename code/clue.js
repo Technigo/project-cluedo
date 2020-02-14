@@ -8,7 +8,7 @@ const mrGreen = {
   color: 'green',
   description: 'He has a lot of connections',
   age: 45,
-  image: 'assets/green.png',
+  image: "url('assets/green.png')",
   occupation: 'Entrepreneur'
 }
 
@@ -18,7 +18,7 @@ const professorPlum = {
   color: 'purple',
   description: 'He is widely seen as quick-witted',
   age: 36,
-  image: 'assets/green.png',
+  image: "url('assets/plum.png')",
   occupation: 'Professor'
 }
 
@@ -28,7 +28,7 @@ const colonelMustard = {
   color: 'yellow',
   description: 'He is usually a dignified, dapper and dangerous military man',
   age: 55,
-  image: 'assets/green.png',
+  image: "url('assets/mustard.jpg')",
   occupation: 'Colonel'
 }
 
@@ -38,7 +38,7 @@ const mrsPeacock = {
   color: 'blue',
   description: 'She is an elderly, still-attractive woman who nearly always maintains her dignity',
   age: 32,
-  image: 'assets/green.png',
+  image: "url('assets/peacock.png')",
   occupation: 'Socialite'
 }
 
@@ -48,7 +48,7 @@ const mrsWhite = {
   color: 'white',
   description: 'She is usually a frazzled servant',
   age: 65,
-  image: 'assets/green.png',
+  image: "url('assets/white.png')",
   occupation: 'Housekeeper'
 }
 
@@ -58,54 +58,54 @@ const missScarlett = {
   color: 'red',
   description: 'She is a femme fatale',
   age: 25,
-  image: 'assets/green.png',
+  image: "url('assets/scarlet.png')",
   occupation: 'Actress'
 }
 
 // OBJECTS FOR ALL THE WEAPONS
 
 const rope = {
-  name: 'rope',
+  name: 'Rope',
   material: 'textile'
 }
 
 const knife = {
-  name: 'knife',
+  name: 'Knife',
   material: 'metal'
 }
 
 const candlestick = {
-  name: 'candlestick',
+  name: 'Candlestick',
   material: 'silver'
 }
 
 const dumbbell = {
-  name: 'dumbbell',
+  name: 'Dumbbell',
   material: 'iron'
 }
 
 const poison = {
-  name: 'poison',
+  name: 'Poison',
   material: 'liquid'
 }
 
 const axe = {
-  name: 'axe',
+  name: 'Axe',
   material: 'metal'
 }
 
 const bat = {
-  name: 'bat',
+  name: 'Bat',
   material: 'wood'
 }
 
 const trophy = {
-  name: 'trophy',
+  name: 'Trophy',
   material: 'silver'
 }
 
 const pistol = {
-  name: 'pistol',
+  name: 'Pistol',
   material: 'metal'
 }
 
@@ -179,6 +179,7 @@ const pickKiller = () => {
   document.getElementById(
     'killerText'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerImage').style.background = mystery.killer.image
 }
 
 // This function will be invoked when you click on the weapon card.

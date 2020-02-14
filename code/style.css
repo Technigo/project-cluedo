@@ -13,19 +13,19 @@ body{
   background: radial-gradient(circle, rgba(64,64,64,1) 0%, rgba(34,34,34,1) 39%, rgba(13,13,13,1) 85%);
 }
 
-
-
-@keyframes background-animation {
-  0% {background-position: left;}
-  100% {background-position: right;}
-}
-
 main{
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+/* ---- HEADER ---- */
+
+@keyframes background-animation {
+  0% {background-position: left;}
+  100% {background-position: right;}
 }
 
 header{
@@ -55,6 +55,8 @@ header p{
   padding-bottom: 1rem;
   color: #2F2F2F;
 }
+
+/* ---- CARD DECKS ---- */
 
 .card-container{
   display: flex;
@@ -90,7 +92,7 @@ header p{
 
 #killerImage{
   background: url("assets/killer.jpeg");
-  background-size: cover;
+  background-size: contain;
 }
 
 #roomImage{
@@ -100,6 +102,7 @@ header p{
 
 .card-text{
   grid-area: text;
+  padding-top: 8px;
   background: white;
   border-radius: 0 0 10px 10px;
 }
@@ -107,6 +110,8 @@ header p{
 .card-stats{
   grid-area: stats;
 }
+
+/* ---- REVEAL BUTTON ---- */
 
 #reveal{
   color: white;
