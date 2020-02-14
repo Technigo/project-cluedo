@@ -210,10 +210,51 @@ document.getElementById('room').addEventListener('click', pickRoom)
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
+
+// Get modal element
+const modal = document.getElementById("simpleModal");
+
+// Get open modal button
+const modalBtn = document.getElementById("reveal");
+
+// Get close button
+const closeBtn = document.getElementById("closeBtn");
+
+// Function to open modal
 const reveal = () => {
+  modal.style.display = "flex";
+  modal.style.justifyContent = "center";
+  modal.style.alignItems = "center";
   document.getElementById(
-    'mystery'
-  ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+    'revealText'
+  ).innerHTML = `Omg, the murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+
 }
 
-document.getElementById('reveal').addEventListener('click', reveal)
+// Function to close modal
+const closeModal = () => {
+  modal.style.display = "none";
+}
+
+// Function to close modal if outside click/touch
+const outsideClick = (e) => {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Listen for open click and open touch (on mobile devices)
+modalBtn.addEventListener("click", reveal);
+modalBtn.addEventListener("touchstart", reveal);
+
+// Listen for close click and close touch (on mobile devices)
+closeBtn.addEventListener("click", closeModal);
+closeBtn.addEventListener("touchstart", closeModal);
+
+// Listen for outside click and outside touch (on mobile devices)
+window.addEventListener("click", outsideClick);
+window.addEventListener("touchstart", outsideClick);
+
+
+
+
