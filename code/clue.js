@@ -1,4 +1,5 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+//
 
 const MrGreen = {
   firstName : 'Jacob',
@@ -32,7 +33,7 @@ const MissScarlet ={
 
 const MrsPeacock = {
   firstName : 'Jane',
-  lastName: 'Doh',
+  lastName: 'Aka - Mrs Peacock',
   color: 'blue',
   description: 'Socialite',
   age: 35,
@@ -42,7 +43,7 @@ const MrsPeacock = {
 const ColonelMustard = {
   firstName : 'Jack',
   lastName: 'Mustard',
-  color: 'Mustard',
+  color: 'Yellow',
   description: 'Wise old man',
   age: 75,
   image: 'assets/mustard.png',
@@ -178,10 +179,10 @@ const pickKiller = () => {
   mystery.killer = randomSelector(suspects)
   
   //This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerCard').style.background = mystery.killer.color;
+  document.getElementById('killerImage').src = mystery.killer.image;
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 }
-
 
 const pickWeapon = () => {
   // This will randomly select a weapon. And add that to the mystery object.
@@ -199,20 +200,28 @@ const pickRoom = () => {
   document.getElementById('roomCard').style.background = mystery.room.color
   document.getElementById('roomName').innerHTML = `${mystery.room}`
 }
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
-
-document.getElementById('killerCard').onclick = pickKiller;
-document.getElementById('weaponCard').onclick = pickWeapon;
-document.getElementById('roomCard').onclick = pickRoom;
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 const theMystery = document.getElementById('mystery');
 const revealButton = document.getElementById (`revealButton`);
+const mysteryAnswer = document.getElementById(`mystery`)
 
 const revealMystery = () => {
+  if (mystery.killer.firstName === undefined
+    || mystery.weapons.name === undefined
+    || mystery.room === undefined) 
+    {
+    mysteryAnswer.innerHTML = `No peeking! Guess and click each card first!`
+    } 
+  else {
 theMystery.innerHTML =` The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, 
 in the ${mystery.room} with a ${mystery.weapons.name}`
+  }
 };
+
 document.getElementById(`revealButton`).onclick = revealMystery;
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+document.getElementById('killerCard').onclick = pickKiller;
+document.getElementById('weaponCard').onclick = pickWeapon;
+document.getElementById('roomCard').onclick = pickRoom;
+
