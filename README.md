@@ -8,3 +8,4 @@ I get stuck in the details. I need to be stricter with my time allocation and as
 
 ## View it live
 
+https://clever-carson-d0f8a3.netlify.com
