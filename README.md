@@ -1,13 +1,20 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
+This is a project within the Technigo Bootcamp. 
+In theis projekt I learned to: 
+- Create and manipulate objects
+- Create arrays
+- More about manipulating the DOM using Javascript
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The focus on this project is to practice objects and arrays and also to manipulate the DOM with JavaScript.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The user (who is the game leader and the one that will know all about the murder) should be able to click on three decks of cards, to randomly get a character, a weapon and a room. Then there should also be a button to "reveal" the mystery.
+
+I struggled with the "Reveal Button" for a long time... but now it works! :)
+
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+This is the link to the page:
+https://gallant-lichterman-efea67.netlify.com/
