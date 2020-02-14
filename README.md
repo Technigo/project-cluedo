@@ -1,7 +1,7 @@
 # Cluedo - Mystery Randomizer
 
 This is a project within the Technigo Bootcamp. 
-In theis projekt I learned to: 
+In this projekt I learned to: 
 - Create and manipulate objects
 - Create arrays
 - More about manipulating the DOM using Javascript
