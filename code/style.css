@@ -1,12 +1,28 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background-color: black;
+}
+
+h1{ 
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-size: 70px;
+  color: white;
+}
+
+span {
+  color: crimson;
+}
+
+h1:hover {
+  cursor: pointer;
+  color: crimson;
 }
 
 p {
   margin: 1px;
   font-weight: 300;
-  background-color: #fff;
 }
 
 .cards {
@@ -17,6 +33,13 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-image: url(assets/hauntedhouse.jpg);
+}
+
+.card-heading {
+  font-weight: bold;
+  margin-bottom: 20px;
+  background-color: #fff;
 }
 
 .killer-deck {
@@ -28,6 +51,15 @@ p {
   border-radius: 16px;
 }
 
+.killer-deck:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.killer-deck img {
+  margin-top: 10px;
+}
+
 .weapon-deck {
   width: 250px;
   height: 400px;
@@ -37,14 +69,29 @@ p {
   border-radius: 16px;
 }
 
+.weapon-deck:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
 .room-deck {
   width: 250px;
   height: 400px;
   background: midnightblue;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+}
+
+.room-deck:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+h2 {
+  text-align: center;
+  color: crimson;
+  text-shadow: 2px 2px white;
 }
 
 button {
@@ -55,4 +102,18 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+button:focus {
+  background: none;
+  color: crimson;
+  border: 2px solid crimson;
+  border-radius: 8px;
+  outline: 0px;
 }

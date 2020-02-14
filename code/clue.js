@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// OBJECTS FOR ALL THE SUSPECTS
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -16,7 +16,7 @@ const mrsWhite = {
   color: 'white',
   description: '',
   age: 65,
-  image: '',
+  image: 'assets/white.png',
   occupation: 'Housekeeper'
 }
 
@@ -26,7 +26,7 @@ const professorPlum = {
   color: 'purple',
   description: '',
   age: 36,
-  image: '',
+  image: 'assets/plum.png',
   occupation: 'Professor'
 }
 
@@ -36,7 +36,7 @@ const missScarlet = {
   color: 'red',
   description: '',
   age: 25,
-  image: '',
+  image: 'assets/scarlet.png',
   occupation: 'Actress'
 }
 
@@ -46,7 +46,7 @@ const mrsPeacock = {
   color: 'blue',
   description: '',
   age: 32,
-  image: '',
+  image: 'assets/peacock.png',
   occupation: 'Socialite'
 }
 
@@ -56,12 +56,12 @@ const colonelMustard = {
   color: 'yellow',
   description: '',
   age: 55,
-  image: '',
+  image: 'assets/mustard.png',
   occupation: 'Colonel'
 }
 
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// OBJECTS FOR ALL THE WEAPONS
 
 const rope = {
   name: 'rope',
@@ -108,9 +108,8 @@ const pistol = {
   weight: 6
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// ALL SUSPECTS, WEAPONS AND ROOMS GROUPED IN ARRAYS
 
 const suspects = [
   mrGreen,
@@ -133,34 +132,49 @@ const weapons = [
   pistol
 ]
 
+// Rooms does not need an object because the rooms have only one property
+
 const rooms = [
-  'diningRoom',
+  'dining room',
   'conservatory',
   'kitchen',
   'study',
   'library',
-  'billiardRoom',
+  'billiard room',
   'lounge',
-  'ballRoom',
+  'ball room',
   'hall',
   'spa',
-  'livingRoom',
+  'living room',
   'observatory',
   'theater',
-  'guestHouse',
+  'guest house',
   'patio'
 ]
 
+// Function for reload of page, to play again
+const reload = () => {
+  location.reload();
+}
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+document.getElementById('playAgain').onclick = reload
+
+
+// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT IS PASSED IN THE FUNCTION
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
+
+// OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+const mystery = {
+  killer: 'unknown',
+  weapon: '',
+  room: ''
+}
+
 
 
 // This function will be invoked when you click on the killer card.
@@ -168,14 +182,51 @@ const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  // This will change the DOM of the killer card
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerAge').innerHTML = `${mystery.killer.age} years old`
+  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
+  document.getElementById('killerImage').src = mystery.killer.image
 }
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+// This should call the function when clicking on the killer card
+document.getElementById('killerCard').onclick = pickKiller
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+// This function will be invoked when you click on the weapon card.
+const pickWeapon = () => {
+  // This will randomly select a weapon from the weapons. And add that to the mystery object.
+  mystery.weapon = randomSelector(weapons)
+
+  // This will change the DOM of the weapon card
+  document.getElementById('weaponDescription').innerHTML = `A ${mystery.weapon.name} with weight ${mystery.weapon.weight}`
+  document.getElementById('weaponCard').style.background = mystery.killer.color
+}
+
+// This should call the function when clicking on the weapon card (but it does not work, I had to set it in HTML)
+document.getElementById('weaponCard').onclick = pickWeapon
+
+
+
+// This function will be invoked when you click on the room card.
+const pickRoom = () => {
+  // This will randomly select a room from the rooms. And add that to the mystery object.
+  mystery.room = randomSelector(rooms)
+
+  // This will change the DOM of the room card
+  document.getElementById('roomName').innerHTML = `${mystery.room}`
+  document.getElementById('roomCard').style.background = mystery.killer.color
+}
+
+// This should call the function when clicking on the weapon card (but it does not work, I had to set it in HTML)
+document.getElementById('roomCard').onclick = pickRoom
+
+
+// This function will be invoked when button is clicked
+const revealMystery = () => {
+  // This will change the DOM of the reveal button to display the mystery
+  document.getElementById('revealButton').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`
+}
+
+document.getElementById('revealButton').onclick = revealMystery
