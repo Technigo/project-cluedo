@@ -1,13 +1,15 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Random cluedo generator with gradient animations and modal boxes. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Before using any new techniques I deep-dived into the syntax so I'm understanding completely what I'm coding. 
+
+To be honest, I didn't have so many problems during this project, since the requirements were fairly easy to complete. 
+
+I'd make the site responsive if I had more time. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://rautellin-cluedo.netlify.com
