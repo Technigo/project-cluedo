@@ -1,13 +1,11 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+I built a Randomizer page for the game Cluedo as a Javascript practice for the Technigo bootcamp.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I struggled a lot because none of the onclick function worked and I didn't understand what was causing the problem. To solve the problem I asked my teammates, and posted my problem at Stack Overflow. The suggestion didn't work either so I finally took it to 1:1 consultation with one of our teachers at Technigo, where we found out that a error due to a line of code (where I simply wanted to console.log the one of the elements in a array but instead treated the element as an object) prior to the onclick functions prevented all the code after the error from working. So it wasn't exactly a problem related to function, but me not knowing that the lines of code that comes after an error could be affected by the error and therefore not work. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+
