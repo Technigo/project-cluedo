@@ -1,7 +1,5 @@
 # Cluedo - Mystery Randomizer
 
-# Cluedo - Mystery Randomizer
-
 To create a cluedo game, mystery randomizer. With "click-action".
 
 ## The problem
