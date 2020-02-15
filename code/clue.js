@@ -1,4 +1,3 @@
-//OBJECTS FOR ALL THE SUSPECTS
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
@@ -59,7 +58,6 @@ image:'assets/white.png',
 occupation:'maid',
 }
 
-//OBJECTS FOR ALL THE WEAPONS
 const rope = {
   name: "a rope",
   weight: 30,
@@ -102,7 +100,6 @@ const pistol = {
   image: "assets/swords-4058193_960_720.png"
 }
 
-//OBJECT FOR ALL THE ROOMS
 const diningRoom = {
   name: "Dining room",
   image: "assets/10031295804_c50b586b2e_b.jpg"
@@ -148,9 +145,6 @@ const hall = {
   image: "assets/10031295804_c50b586b2e_b.jpg"
 }
 
-
-//ARRAYS FOR SUSPECTS, WEAPONS, ROOMS AND TIMES
-
 const suspects = [
   mrGreen,
   mrsWhite,
@@ -181,19 +175,16 @@ const rooms = [
   hall,
 ]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FOR THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-//OBJECT THAT KEEPS THE MYSTERY
 const mystery = {
   killer: "",
   weapon: "",
   room: "",
 }
 
-// FUNCTION TO RANDOMLY SELECT KILLER AND ADD IT TO THE MYSTERY OBJECT
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects)
 
@@ -213,7 +204,6 @@ const pickKiller = () => {
   theKillerDescription.innerHTML = mystery.killer.description
 }
 
-// FUNCTION TO RANDOMLY SELECT WEAPON AND ADD IT TO THE MYSTERY OBJECT
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
 
@@ -227,7 +217,6 @@ const pickWeapon = () => {
   theWeaponImage.src = mystery.weapon.image
 }
 
-// FUNCTION TO RANDOMLY SELECT ROOM AND ADD IT TO THE MYSTERY OBJECT
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
@@ -236,9 +225,6 @@ const pickRoom = () => {
   theRoomName.innerHTML = mystery.room.name
   theRoomImage.src = mystery.room.image
 }
-
-
-//FUNCTION TO REVEAL MYSTERY OR ASK THE USER TO FLIP MORE CARDS
 
 const revealMystery = () => {
   const mysteryAnswer = document.getElementById("mystery")
