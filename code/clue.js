@@ -64,55 +64,46 @@ const mrsWhite = {
 
 const rope = {
   name: 'Rope',
-  weight: 10,
   image: 'assets/rope.png'
 }
 
 const knife = {
   name: 'Knife',
-  weight: 6,
   image: 'assets/knife.png'
 }
 
 const candlestick = {
   name: 'Candlestick',
-  weight: 12,
   image: 'assets/candlestick.png'
 }
 
 const dumbbell = {
   name: 'Dumbbell',
-  weight: 20,
   image: 'assets/dumbbell.png'
 }
 
 const poison = {
   name: 'Poison',
-  weight: 5,
   image: 'assets/poison.png'
 }
 
 const axe = {
   name: 'Axe',
-  weight: 15,
   image: 'assets/axe.png'
 }
 
 const bat = {
   name: 'Bat',
-  weight: 9,
   image: 'assets/bat.png'
 }
 
 const trophy = {
   name: 'Trophy',
-  weight: 18,
   image: 'assets/trophy.png'
 }
 
 const pistol = {
   name: 'Pistol',
-  weight: 9,
   image: 'assets/pistol.png'
 }
 
@@ -250,7 +241,7 @@ const mystery = {
 // FUNCTION INVOKED WHEN YOU CLICK ON THE KILLER CARD, CLICK AGAIN TO RESET:
 
 const pickKiller = () => {
-  if (document.getElementById('killerCard').classList.contains('shown')) {
+  if (document.getElementById('killerCard').classList.contains('show')) {
     mystery.killer = ''
 
     document.getElementById('killerCard').style.background = '#f7876b'
@@ -258,7 +249,7 @@ const pickKiller = () => {
     document.getElementById('killerImage')
     killerImage.src = ''
 
-    killerCard.classList.remove('shown')
+    killerCard.classList.remove('show')
   } else {
     mystery.killer = randomSelector(suspects)
 
@@ -269,21 +260,21 @@ const pickKiller = () => {
     document.getElementById('killerImage')
     killerImage.src = mystery.killer.image
 
-    killerCard.classList.add('shown')
+    killerCard.classList.add('show')
   }
 }
 
 // FUNCTION INVOKED WHEN YOU CLICK ON THE WEAPON CARD, CLICK AGAIN TO RESET:
 
 const pickWeapon = () => {
-  if (document.getElementById('weaponCard').classList.contains('shown')) {
+  if (document.getElementById('weaponCard').classList.contains('show')) {
     mystery.weapon = ''
 
     document.getElementById('weaponName').innerHTML = ''
     document.getElementById('weaponImage')
     weaponImage.src = ''
 
-    weaponCard.classList.remove('shown')
+    weaponCard.classList.remove('show')
   } else {
     mystery.weapon = randomSelector(weapons)
 
@@ -291,21 +282,21 @@ const pickWeapon = () => {
     document.getElementById('weaponImage')
     weaponImage.src = mystery.weapon.image
 
-    weaponCard.classList.add('shown')
+    weaponCard.classList.add('show')
   }
 }
 
 // FUNCTION INVOKED WHEN YOU CLICK ON THE ROOM CARD, CLICK AGAIN TO RESET:
 
 const pickRoom = () => {
-  if (document.getElementById('roomCard').classList.contains('shown')) {
+  if (document.getElementById('roomCard').classList.contains('show')) {
     mystery.room = ''
 
     document.getElementById('roomName').innerHTML = ''
     document.getElementById('roomImage')
     roomImage.src = ''
 
-    roomCard.classList.remove('shown')
+    roomCard.classList.remove('show')
   } else {
     mystery.room = randomSelector(rooms)
 
@@ -313,7 +304,7 @@ const pickRoom = () => {
     document.getElementById('roomImage')
     roomImage.src = mystery.room.image
 
-    roomCard.classList.add('shown')
+    roomCard.classList.add('show')
   }
 }
 
