@@ -7,32 +7,35 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
   <title>Technigo Project Cluedo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
   <section class="cards">
-    <article class="killer-deck" id="killerCard">
+    <article class="deck killer-deck" id="killerCard">
       <p>KILLER</p>
       <p id="killerName"></p>
       <p id="killerAge"></p>
       <p id="killerOccupation"></p>
-      <img id="killerImage" src="" height="100" />
+      <img id="killerImage" src="" />
       <p id="killerDescription"></p>
     </article>
-    <article class="weapon-deck" id="weaponCard">
+    <article class="deck weapon-deck" id="weaponCard">
       <p>WEAPON</p>
       <p id="weaponName"></p>
       <p id="weaponWeight"></p>
     </article>
-    <article class="room-deck" id="roomCard">
+    <article class="deck room-deck" id="roomCard">
       <p>ROOM</p>
       <p id="roomName"></p>
     </article>
   </section>
 
-  <h1 id="mystery"></h1>
+  <section class="reveal">
+    <h1 id="mystery"></h1>
+  </section>
 
-  <button id="button">REVEAL THE CRIME</button>
+  <button id="button">Reveal the crime</button>
 
   <script src="clue.js"></script>
 </body>

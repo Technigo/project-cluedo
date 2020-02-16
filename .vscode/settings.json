@@ -8,5 +8,6 @@
     "plaintext",
     "javascript",
     "html"
-  ]
+  ],
+  "liveServer.settings.port": 5501
 }
