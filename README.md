@@ -6,13 +6,13 @@ The user (who is the game leader and the one that will know all about the murder
 
 Learning objectives
 
-Create and manipulate objects
-Create arrays
-More about manipulating the DOM using Javascript
-Technologies used
+- Create and manipulate objects
+- Create arrays
+- More about manipulating the DOM using Javascript
 
-HTML5 
-CSS3 
-JavaScript
+Technologies used
+- HTML5 
+- CSS3 
+- JavaScript
 
 Live project: https://clarascluedo.netlify.com 
