@@ -209,7 +209,7 @@ const pickKiller = () => {
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  // This will randomly select a weapon from the suspects. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
   document.getElementById('weaponImage').src = `${mystery.weapon.image}`
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
