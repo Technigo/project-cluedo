@@ -1,7 +1,7 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 //
 
-const MrGreen = {
+const mrGreen = {
   firstName : 'Jacob',
   lastName: 'Green',
   color: 'green',
@@ -10,9 +10,9 @@ const MrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }  
-console.log(MrGreen.firstName);
+console.log(mrGreen.firstName);
 
-const ProfessorPlum = {
+const professorPlum = {
   firstName : 'Victor',
   lastName: 'Plum',
   color: 'purple',
@@ -21,7 +21,7 @@ const ProfessorPlum = {
   image: 'assets/plum.png',
   occupation: 'Teacher'
 }
-const MissScarlet ={
+const missScarlet ={
   firstName : 'Cassandra',
   lastName: 'Scarlet',
   color: 'red',
@@ -31,7 +31,7 @@ const MissScarlet ={
   occupation: 'Broker'
 }
 
-const MrsPeacock = {
+const mrsPeacock = {
   firstName : 'Jane',
   lastName: 'Aka - Mrs Peacock',
   color: 'blue',
@@ -40,7 +40,7 @@ const MrsPeacock = {
   image: 'assets/peacock.png',
   occupation: 'Manager'
 } 
-const ColonelMustard = {
+const colonelMustard = {
   firstName : 'Jack',
   lastName: 'Mustard',
   color: 'Yellow',
@@ -49,7 +49,7 @@ const ColonelMustard = {
   image: 'assets/mustard.png',
   occupation: 'Retired Colonel'
 } 
-const MrsWhite = {
+const mrsWhite = {
   firstName : 'Mrs',
   lastName: 'White',
   color: 'White',
@@ -75,7 +75,7 @@ const candlestick = {
   weight: 5
 }
 const dumbbell = {
-  name: `bumbbell`,
+  name: `dumbbell`,
   weight: 80
 }
 const poison = {
@@ -83,7 +83,7 @@ const poison = {
   weight: 30
 }
 const axe = {
-  name: `kaxe`,
+  name: `axe`,
   weight: 15
 }
 
@@ -126,12 +126,12 @@ const rooms = [
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 let suspects = [
-  MrGreen,
-  ProfessorPlum,
-  MissScarlet,
-  MrsPeacock,
-  ColonelMustard,
-  MrsWhite
+  mrGreen,
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
+  mrsWhite
 ]
 
 let weapons = [
@@ -164,9 +164,9 @@ return array[Math.floor(Math.random() * array.length)]
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 const mystery = {
-  killer : "",
-  weapons : "",
-  room : ""
+  killer: "",
+  weapons:"",
+  room: ""
 };
 
 // With a killer, a weapon and a room.
@@ -203,14 +203,14 @@ const pickRoom = () => {
 
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-const theMystery = document.getElementById('mystery');
+const theMystery = document.getElementById('mysteryHeader');
 const revealButton = document.getElementById (`revealButton`);
-const mysteryAnswer = document.getElementById(`mystery`)
+const mysteryAnswer = document.getElementById(`mysteryHeader`);
 
 const revealMystery = () => {
-  if (mystery.killer.firstName === undefined
-    || mystery.weapons.name === undefined
-    || mystery.room === undefined) 
+  if (mystery.killer.firstName === "" ||
+    mystery.weapons.name === "" ||
+    mystery.room === "") 
     {
     mysteryAnswer.innerHTML = `No peeking! Guess and click each card first!`
     } 
