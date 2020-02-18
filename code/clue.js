@@ -218,7 +218,7 @@ const pickWeapon = () => {
 };
 
 const pickRoom = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  // This will randomly select a room from the suspects. And add that to the mystery object.
   mystery.room = randomSelector(rooms)
   document.getElementById('roomName').innerHTML = `${mystery.room}`
 };
