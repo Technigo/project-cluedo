@@ -180,8 +180,8 @@ const pickKiller = () => {
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
 
+  document.getElementById('weaponCard').style.borderColor = mystery.killer.color
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-
   document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight} lb`
 
   console.log(mystery.weapon);
@@ -189,7 +189,10 @@ const pickWeapon = () => {
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
+
+  document.getElementById('roomCard').style.borderColor = mystery.killer.color
   document.getElementById('roomName').innerHTML = `${mystery.room}`
+
   console.log(mystery.room);
 }
 
