@@ -189,7 +189,7 @@ const mystery = {
   killer: " ",
   weapon: " ",
   room: " "
-  };
+};
 
 
 // This function will be invoked when you click on the killer card.
