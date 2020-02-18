@@ -75,9 +75,6 @@ button {
 }
 
 @media (max-width: 850px) {
-  body {
-    background-color: lightblue;
-  }
 
   .cards {
     width: 75%;
