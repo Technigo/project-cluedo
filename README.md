@@ -8,4 +8,4 @@ I started with creating the objects and then the arrays. The next step was to wr
 
 ## View it live
 
-Link to the mystery website: https://gracious-swartz-03b55c.netlify.com/ 
+Link to the mystery website: https://annas-cluedo.netlify.com/
