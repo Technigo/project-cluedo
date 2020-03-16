@@ -1,8 +1,7 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a game of sorts where each card reveals something about the murder and the las button will reveal the whole story. 
+The site uses mainly HTML and Javascript but also some CSS for styling. 
 
 ## The problem
 
@@ -10,4 +9,4 @@ Describe how you approached to problem, and what tools and techniques you used t
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://happy-curran-db110a.netlify.com/
