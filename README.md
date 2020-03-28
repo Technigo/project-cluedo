@@ -8,4 +8,4 @@ I created a function for each card. This function calls a randomizer function to
 
 ## View it live
 
-https://romantic-williams-ad7394.netlify.com/
+https://project-cluedo.netlify.com/
