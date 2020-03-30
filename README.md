@@ -1,11 +1,14 @@
 # Cluedo - Mystery Randomizer
 
-This was a project at the Technigo Bootcamp. The project was to create a classic Cluedo game using Javascript functions, arrays and objects. 
+This was a project at the Technigo Bootcamp. The project was to create a classic Cluedo game using Javascript functions, math random, arrays and objects. 
 
-## The problem
+# Tech used 🧠
+- Javascript ES6
+- Functions, arrays and objects
+- math.random()
+- If statements to make sure you select your cards before revealing the mystery
+- onClick()
 
-If I had more time on this project, I would definitely improve how the site is responsive to smallers screens as well as making the sentences adapted to each person, room, weapon and room. 
-
-## View it live
+# View it live
 
 https://yo-cluedo.netlify.com/
