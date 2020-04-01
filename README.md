@@ -1,13 +1,23 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Technigo Project 5, creating a Cluedo mystery picker. The game leader is able to click on three decks of cards, to randomly get a character, a weapon and a room.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The suspects, weapons and rooms are stored in objects grouped together in three separate arrays. JavaScript is used to randomly pick the killer, weapon and room by clicking the different cards and in turn store them in a mystery object. The mystery object is in turn used to reveal the mystery in a message.
+
+## Learning objectives
+
+- Creating and manipulating objects
+- Creating arrays
+- More about manipulating the DOM using Javascript
+
+## Tech
+
+- HTML5
+- CSS3
+- JavaScript JS6
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://kajsabootin-cluedogame.netlify.com/
