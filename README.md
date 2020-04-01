@@ -21,6 +21,6 @@ https://rautellin-cluedo.netlify.com
 ## Stretch-goals I reached 🧘
 
 * Added design to it
-* Added images of your suspects and the cards
+* Added images of the suspects and the cards
 * Added the functionality to display an error if you click the reveal button but haven't selected suspect, weapon and room yet.
 
