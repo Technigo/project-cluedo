@@ -30,6 +30,10 @@ p {
   border-radius: 16px;
 }
 
+img {
+  height: 150px;
+}
+
 .weapon-deck {
   margin: 10px;
   width: 250px;
