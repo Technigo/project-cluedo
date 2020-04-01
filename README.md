@@ -22,5 +22,5 @@ https://rautellin-cluedo.netlify.com
 
 * Added design to it
 * Added images of the suspects and the cards
-* Added the functionality to display an error if you click the reveal button but haven't selected suspect, weapon and room yet.
+* Added the functionality to display an error if the user click the reveal button but haven't selected suspect, weapon and room yet.
 
