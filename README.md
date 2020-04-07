@@ -1,6 +1,13 @@
 # Cluedo - Mystery Randomizer
 
-Creating a Cluedo game using JavaScript, HTML5 and CSS3, that will reveal a crime with a random suspect, weapon and room.
+Creating a Cluedo game using JavaScript, HTML5 and CSS3, that will reveal a crime with a random suspect, weapon and room 🕵️‍♀️🃑🧠🔪
+
+## Code
+I've used:
+  * **JavaScript**
+  * **CSS**
+  * **HTML**
+  * **Flexbox**
 
 ## The problem
 
