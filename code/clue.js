@@ -248,6 +248,7 @@ const pickKiller = () => {
     document.getElementById('killerName').innerHTML = ''
     document.getElementById('killerImage')
     killerImage.src = ''
+    killerImage.alt = ''
 
     killerCard.classList.remove('show')
   } else {
@@ -259,6 +260,7 @@ const pickKiller = () => {
     ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
     document.getElementById('killerImage')
     killerImage.src = mystery.killer.image
+    killerImage.alt = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 
     killerCard.classList.add('show')
   }
@@ -273,14 +275,16 @@ const pickWeapon = () => {
     document.getElementById('weaponName').innerHTML = ''
     document.getElementById('weaponImage')
     weaponImage.src = ''
+    weaponImage.alt = ''
 
     weaponCard.classList.remove('show')
   } else {
     mystery.weapon = randomSelector(weapons)
 
-    document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
+    document.getElementById('weaponName').innerHTML = mystery.weapon.name
     document.getElementById('weaponImage')
     weaponImage.src = mystery.weapon.image
+    weaponImage.alt = mystery.weapon.name
 
     weaponCard.classList.add('show')
   }
@@ -295,14 +299,16 @@ const pickRoom = () => {
     document.getElementById('roomName').innerHTML = ''
     document.getElementById('roomImage')
     roomImage.src = ''
+    roomImage.alt = ''
 
     roomCard.classList.remove('show')
   } else {
     mystery.room = randomSelector(rooms)
 
-    document.getElementById('roomName').innerHTML = `${mystery.room.name}`
+    document.getElementById('roomName').innerHTML = mystery.room.name
     document.getElementById('roomImage')
     roomImage.src = mystery.room.image
+    roomImage.alt = mystery.room.name
 
     roomCard.classList.add('show')
   }
