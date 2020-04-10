@@ -12,4 +12,4 @@ If I had more time, then I would style my project more and also clean up the fin
 
 ## View it live
 
-https://confident-gates-254712.netlify.com/
+https://cluedo-project-bytuliany.netlify.com
