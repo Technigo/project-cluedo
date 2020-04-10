@@ -1,6 +1,6 @@
 # Cluedo - Mystery Randomizer
 
-In this project we were focused on working with arrays and objects in Javascript
+In this project we were focused on working with arrays, each-loops and objects in Javascript.
 
 ## The problem
 
