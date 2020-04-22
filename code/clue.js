@@ -176,7 +176,11 @@ const pickRoom = () => {
 document.getElementById('roomCard').addEventListener('click', pickRoom)
 
 const revealMystery = () => {
-  document.getElementById('revealAnswer').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  if (Object.values(mystery).includes('')) {
+    document.getElementById('revealAnswer').innerHTML = 'Choose all your cards first!'
+  } else {
+    document.getElementById('revealAnswer').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  }
 }
 document.getElementById('revealAnswer').addEventListener('click', revealMystery)
 
