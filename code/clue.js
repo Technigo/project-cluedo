@@ -146,13 +146,13 @@ const months = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 const monthsEven = ["04", "06", "09", "11"];
 const monthsOdd = ["01", "03", "05", "07", "08", "10", "12"];
 
-const mystery = {
+/*const mystery = {
   killer: undefined,
   weapon: undefined,
   room: undefined,
   date: undefined,
   time: undefined
-};
+};*/
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
