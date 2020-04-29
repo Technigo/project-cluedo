@@ -8,4 +8,4 @@ The main focus of the project was to practice JavaScript, therefore my main appr
 
 ## View it live
 
-https://sharp-raman-15d97b.netlify.com
+https://er-project-cluedo.netlify.app/
