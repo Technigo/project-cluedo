@@ -2,7 +2,9 @@
 Randomize cards for the gameleader of a Cluedo game.
 
 # Tech
-HTML, CSS, Javascript
+-HTML
+-CSS
+-Javascript
 
 ## View it live
 
