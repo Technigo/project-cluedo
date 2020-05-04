@@ -122,7 +122,7 @@ const suspects = [
   mrsPeacock,
   colonelMustard,
   professorPlum
-  ]
+]
 
   const weapons = [
     rope,
