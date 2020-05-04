@@ -62,7 +62,6 @@ const professorPlum = {
   age: 40,
   image: 'assets/green.png',
   occupation: 'Police'
-
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
