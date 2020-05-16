@@ -12,7 +12,7 @@ The different steps were easy to follow, leading to little need for own planning
 
 * Creating and manipulating objects
 * Creating arrays
-* More about manipulating the DOM using Javascript
+* Manipulating the DOM using JavaScript
 
 ## Tech
 
