@@ -18,7 +18,7 @@ The different steps were easy to follow, leading to little need for own planning
 
 * HTML5
 * CSS3
-* JavaScript JS6
+* JavaScript ES6
 
 ## View it live
 
