@@ -22,4 +22,4 @@ The different steps were easy to follow, leading to little need for own planning
 
 ## View it live
 
-Link to deployed project: https://cluedo-mystery.netlify.com/
+https://cluedo-mystery.netlify.app/
