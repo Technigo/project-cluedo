@@ -9,5 +9,5 @@ Started with creating the ojects and arrays, and connecting them to the DOM with
 ## View it live
 
 Project Cluedo for Technigo:
-https://upbeat-almeida-a0e975.netlify.com/
+https://cluedo-project-technigo.netlify.app/
 
