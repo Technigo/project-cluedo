@@ -29,6 +29,7 @@ const mrsPeacock = {
   image: 'assets/peacock.png',
   occupation: 'artist'
 }
+
 const mrPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
@@ -59,7 +60,6 @@ const mrsWhite = {
   occupation: 'housekeeper'
 }
 
-
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
@@ -77,32 +77,32 @@ const candlestick = {
   weight: 25
 }
 
-const Dumbbell = {
+const dumbbell = {
   name: 'dumbbell',
   weight: 30
 }
 
-const Poison = {
+const poison = {
   name: 'poison',
   weight: 5
 }
 
-const Axe = {
+const axe = {
   name: 'axe',
   weight: 25
 }
 
-const Bat = {
+const bat = {
   name: 'bat',
   weight: 20
 }
 
-const Trophy = {
+const trophy = {
   name: 'trophy',
   weight: 30
 }
 
-const Pistol = {
+const pistol = {
   name: 'pistol',
   weight: 25
 }
@@ -113,13 +113,45 @@ const Pistol = {
 
 const suspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
+  mrsWhite,
+  mrPlum,
+  msScarlet,
+  mrsPeacock,
+  colonelMustard
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+const rooms = [
+  'diningRoom', 
+  'conservatory', 
+  'kitchen', 
+  'study', 
+  'library', 
+  'billiardRoom', 
+  'lounge', 
+  'ballroom', 
+  'hall', 
+  'spa', 
+  'livingRoom', 
+  'observatory', 
+  'theater', 
+  'guestHouse', 
+  'patio'
+];
+
+
+console.log(weapons.shift());
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
