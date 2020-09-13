@@ -11,7 +11,7 @@
   <body>
     <section class="cards"> <!-- Section with all 3 cards-->
 
-      <article class="killer-deck" id="killerCard"> <!-- Killers deck-->
+      <article class="killer-deck" id="killerCard" onclick="pickKiller()"> <!-- Killers deck-->
         <p>KILLER</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
@@ -20,20 +20,22 @@
         <p id="killerDescription"></p>
       </article>
 
-      <article class="weapon-deck" id="weaponCard"> <!-- Weapons deck-->
+      <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()"> <!-- Weapons deck-->
         <p>WEAPON</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
+        <p id="weaponDamage"></p>
+        <img id="weaponImage" src="" height="100" />
       </article>
 
-      <article class="room-deck" id="roomCard"> <!-- Rooms deck-->
+      <article class="room-deck" id="roomCard" onclick="pickRoom()"> <!-- Rooms deck-->
         <p>ROOM</p>
         <p id="roomName"></p>
       </article>
 
-    </section> <!-- END of Section with all 3 cards-->
+    </section>
 
-    <button>REVEAL THE CRIME</button>
+    <button onclick="revealMystery()" id="revealButton">REVEAL THE CRIME</button>
 
     <h1 id="mystery"></h1> <!-- Sentence revealing the mystery-->
 
