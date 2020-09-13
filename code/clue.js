@@ -66,7 +66,7 @@ const Wadsworth = {
   favouriteWeapon: 'gun',
 }
 
-const MrsWhite = {
+const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
   color: 'white',
@@ -144,6 +144,80 @@ const Trophy = {
 
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+const Dining = {
+  name: 'Dining Room',
+  image: 'image/room/dining.png',
+}
+
+const Conservatory = {
+  name: 'The Conservatory',
+  image: 'image/room/conservatory.png',
+}
+const Kitchen = {
+  name: 'Kitchen',
+  image: 'image/room/kitchen.png',
+}
+
+const Study = {
+  name: 'Study Room',
+  image: 'image/room/study.png',
+}
+
+const Library = {
+  name: 'The Library',
+  image: 'image/room/library.jpg',
+}
+
+const Billiard Room = {
+  name: 'Billiard Room',
+  image: 'image/room/biliard.png',
+}
+
+const Lounge = {
+  name: 'Lounge',
+  image: 'image/room/lounge.jpg',
+}
+
+const Ballroom = {
+  name: 'Ballroom',
+  image: 'image/room/ballroom.png',
+}
+
+const Hall = {
+  name: 'Hall',
+  image: 'image/room/hall.png',
+}
+
+const Spa = {
+  name: 'The Spa',
+  image: 'image/room/spa.png',
+}
+
+const Living Room = {
+  name: 'Living Room',
+  image: 'image/room/livingroom.png',
+}
+
+const Observatory = {
+  name: 'Observatory',
+  image: 'image/room/observatory.jpg',
+}
+
+const Theatre = {
+  name: 'Theatre',
+  image: 'image/room/theatre.png',
+}
+
+const Guest House = {
+  name: 'Guest House',
+  image: 'image/room/guesthouse.png',
+}
+
+const Patio = {
+  name: 'Patio',
+  image: 'image/room/patio.jpg',
+}
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
