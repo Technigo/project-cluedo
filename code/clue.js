@@ -135,7 +135,7 @@ const spa = 'Spa'
 
 const livingRoom = 'Living Room'
 
-const Observatory = 'Observatory'
+const observatory = 'Observatory'
 
 const theater = 'Theater'
 
@@ -147,13 +147,53 @@ const patio = 'Patio'
 
 const suspects = [
   mrGreen,
+  profPlum,
+  msScarlet,
+  mrsPeacock,
+  colMustard,
   mrsWhite
   // ...  and the rest
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+const rooms = [
+  diningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
+]
+
+console.log(suspects);
+console.log(weapons);
+console.log(rooms);
+
+// first suspect in the suspects array
+console.log(suspects[0]);
+
+// last room in the room array
+console.log(rooms[rooms.length - 1]);
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
