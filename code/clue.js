@@ -108,7 +108,7 @@ const suspects = [
   colonelMustard,
   mrsWhite
 ]
-suspects.forEach((element) => console.log(element));
+console.log(suspects.toString())
 
 const weapons = [
   rope,
@@ -121,8 +121,6 @@ const weapons = [
   trophy,
   pistol
 ]
-
-weapons.forEach((element) => console.log(element));
 
 const rooms = [
   'dining rooms',
@@ -144,7 +142,7 @@ const rooms = [
 console.log(mrGreen.description) 
 console.log(rope.name)
 console.log(rooms.toString())
-
+weapons.forEach((element) => console.log(element));
 
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
