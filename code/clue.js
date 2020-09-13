@@ -65,55 +65,64 @@ const mrsWhite = {
 const rope = {
   name: 'Rope',
   weight: 5,
-  damage: 2
+  damage: 2,
+  image: 'assets/rope.png'
 };
 
 const knife = {
   name: 'Knife',
   weight: 3,
-  damage: 9
+  damage: 9,
+  image: 'assets/knife.png'
 };
 
 const candlestick = {
   name: 'Candlestick',
   weight: 8,
-  damage: 5
+  damage: 5,
+  image: 'assets/candlestick.png'
 };
 
 const dumbbell = {
   name: 'Dumbbell',
   weight: 10,
-  damage: 8
+  damage: 8,
+  image: 'assets/dumbbell.png'
 };
 
 const poison = {
   name: 'Poison',
   weight: 1,
-  damage: 10
+  damage: 10,
+  image: 'assets/poison.png'
 };
 
 const axe = {
   name: 'Axe',
   weight: 7,
-  damage: 9
+  damage: 9,
+  image: 'assets/axe.png'
 };
 
 const bat = {
   name: 'Bat',
   weight: 5,
-  damage: 8
+  damage: 8,
+  image: 'assets/bat.png'
 };
 
 const trophy = {
   name: 'Trophy',
   weight: 7,
-  damage: 5
+  damage: 5,
+  image: 'assets/trophy.png'
 };
 
 const pistol = {
   name: 'Pistol',
   weight: 2,
-  damage: 9
+  damage: 9,
+  image: 'assets/pistol.png'
 };
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
