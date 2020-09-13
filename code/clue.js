@@ -213,8 +213,6 @@ const pickWeapon = () => {
 
     mystery.weapon = randomSelector(modifiedWeaponsArray); //Killer's weapon must be chosen from the new array with the 3 added favorite weapons
 
-    console.log(modifiedWeaponsArray);
-
     document.getElementById('weaponName').innerHTML = `Weapon name: ${mystery.weapon.name}`;
     document.getElementById('weaponWeight').innerHTML = `Weapon weight: ${mystery.weapon.weight}`;
     document.getElementById('weaponDamage').innerHTML = `Weapon damage: ${mystery.weapon.damage}`;
