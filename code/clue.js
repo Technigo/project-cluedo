@@ -8,7 +8,7 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
-  favouriteWeapon: 'pistol'
+  favouriteWeapon: ''
 };
 
 const profPlum = {
@@ -19,7 +19,7 @@ const profPlum = {
   age: 36,
   image: 'assets/plum.png',
   occupation: 'University Professor',
-  favouriteWeapon: 'poison'
+  favouriteWeapon: ''
 };
 
 const msScarlet = {
@@ -30,7 +30,7 @@ const msScarlet = {
   age: 25,
   image: 'assets/scarlet.png',
   occupation: 'Actress',
-  favouriteWeapon: 'rope'
+  favouriteWeapon: ''
 };
 
 const mrsPeacock = {
@@ -41,7 +41,7 @@ const mrsPeacock = {
   age: 32,
   image: 'assets/peacock.png',
   occupation: 'Socialite',
-  favouriteWeapon: 'candlestick'
+  favouriteWeapon: ''
 };
 
 const colMustard = {
@@ -52,7 +52,7 @@ const colMustard = {
   age: 55,
   image: 'assets/mustard.png',
   occupation: 'Colonel',
-  favouriteWeapon: 'dumbbell'
+  favouriteWeapon: ''
 };
 
 const mrsWhite = {
@@ -63,7 +63,7 @@ const mrsWhite = {
   age: 60,
   image: 'assets/white.png',
   occupation: 'Housekeeper',
-  favouriteWeapon: 'knife'
+  favouriteWeapon: ''
 };
 
 // CREATE OBJECTS FOR ALL THE WEAPONS:
@@ -72,72 +72,63 @@ const rope = {
   name: 'Rope',
   weight: 5,
   damage: 2,
-  image: 'assets/rope.png',
-  id: 'rope'
+  image: 'assets/rope.png'
 };
 
 const knife = {
   name: 'Knife',
   weight: 3,
   damage: 9,
-  image: 'assets/knife.png',
-  id: 'knife'
+  image: 'assets/knife.png'
 };
 
 const candlestick = {
   name: 'Candlestick',
   weight: 8,
   damage: 5,
-  image: 'assets/candlestick.png',
-  id: 'candlestick'
+  image: 'assets/candlestick.png'
 };
 
 const dumbbell = {
   name: 'Dumbbell',
   weight: 10,
   damage: 8,
-  image: 'assets/dumbbell.png',
-  id: 'dumbbell'
+  image: 'assets/dumbbell.png'
 };
 
 const poison = {
   name: 'Poison',
   weight: 1,
   damage: 10,
-  image: 'assets/poison.png',
-  id: 'poison'
+  image: 'assets/poison.png'
 };
 
 const axe = {
   name: 'Axe',
   weight: 7,
   damage: 9,
-  image: 'assets/axe.png',
-  id: 'axe'
+  image: 'assets/axe.png'
 };
 
 const bat = {
   name: 'Bat',
   weight: 5,
   damage: 8,
-  image: 'assets/bat.png',
-  id: 'bat'
+  image: 'assets/bat.png'
 };
 
 const trophy = {
   name: 'Trophy',
   weight: 7,
   damage: 5,
-  image: 'assets/trophy.png',
-  id: 'trophy'
+  image: 'assets/trophy.png'
 };
 
 const pistol = {
   name: 'Pistol',
   weight: 2,
   damage: 9,
-  image: 'assets/pistol.png',
-  id: 'pistol'
+  image: 'assets/pistol.png'
 };
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
@@ -214,12 +205,20 @@ const pickKiller = () => {
 const pickWeapon = () => {
 
   if(mystery.weapon === undefined) { //To check if card has been clicked already or not
-  mystery.weapon = randomSelector(weapons);
+    let modifiedWeaponsArray = weapons; // Creates new Array to add killer's favorite weapon several more times so chances are higher it is picked
 
-  document.getElementById('weaponName').innerHTML = `Weapon name: ${mystery.weapon.name}`;
-  document.getElementById('weaponWeight').innerHTML = `Weapon weight: ${mystery.weapon.weight}`;
-  document.getElementById('weaponDamage').innerHTML = `Weapon damage: ${mystery.weapon.damage}`;
-  document.getElementById('weaponImage').src = `${mystery.weapon.image}`;
+    modifiedWeaponsArray.push(mystery.killer.favouriteWeapon); // Pushes killer's favorite weapon 3 more times to the array so chances are higher it is picked
+    modifiedWeaponsArray.push(mystery.killer.favouriteWeapon);
+    modifiedWeaponsArray.push(mystery.killer.favouriteWeapon);
+
+    mystery.weapon = randomSelector(modifiedWeaponsArray); //Killer's weapon must be chosen from the new array with the 3 added favorite weapons
+
+    console.log(modifiedWeaponsArray);
+
+    document.getElementById('weaponName').innerHTML = `Weapon name: ${mystery.weapon.name}`;
+    document.getElementById('weaponWeight').innerHTML = `Weapon weight: ${mystery.weapon.weight}`;
+    document.getElementById('weaponDamage').innerHTML = `Weapon damage: ${mystery.weapon.damage}`;
+    document.getElementById('weaponImage').src = `${mystery.weapon.image}`;
   }
 };
 
