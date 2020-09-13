@@ -113,6 +113,36 @@ console.log(dumbbell.weight);
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
+const diningRoom = 'Dining Room'
+
+const conservatory = 'Conservatory'
+
+const kitchen = 'Kitchen'
+
+const study = 'Study'
+
+const library = 'Library'
+
+const billiardRoom = 'Billiard Room'
+
+const lounge = 'Lounge'
+
+const ballroom = 'Ballroom'
+
+const hall = 'Hall'
+
+const spa = 'Spa'
+
+const livingRoom = 'Living Room'
+
+const Observatory = 'Observatory'
+
+const theater = 'Theater'
+
+const guestHouse = 'Guest House'
+
+const patio = 'Patio'
+
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
