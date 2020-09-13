@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// STEP 1 - KILLERS
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -6,8 +6,85 @@ const mrGreen = {
   color: 'green',
   description: 'He has a lot of connections',
   age: 45,
-  image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  image: 'image/killer/green.jpg',
+  occupation: 'Entrepreneur',
+  favouriteWeapon: 'Pistol',
+}
+
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: ' Mustard',
+  color: 'yellow',
+  description: 'He is the most dangerous in the house ',
+  age: 55,
+  image: 'image/killer/mustard.jpg',
+  occupation: 'Military man',
+  favouriteWeapon: 'dumbell',
+}
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'Her husband is a famous politician',
+  age: 76,
+  image: 'image/killer/peacock.jpg',
+  occupation: 'Art collector',
+  favouriteWeapon: 'knife',
+}
+
+const plum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'He is the smartest in the house',
+  age: 56,
+  image: 'image/killer/plum.jpg',
+  occupation: 'Professor',
+  favouriteWeapon: 'candlestick',
+}
+
+const Scarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'She has a rich husband',
+  age: 43,
+  image: 'image/killer/scarlet.jpg',
+  occupation: 'Trophy-wife',
+  favouriteWeapon: 'bat',
+}
+
+const Wadsworth = {
+  firstName: 'Mr',
+  lastName: 'Boddy',
+  color: 'grey',
+  description: 'Trusts noone',
+  age: 49,
+  image: 'image/killer/wadsworth.jpg',
+  occupation: 'Stockbroker',
+  favouriteWeapon: 'gun',
+}
+
+const MrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'She knows the house like the back of her hand',
+  age: 52,
+  image: 'image/killer/white.jpg',
+  occupation: 'Chef',
+  favouriteWeapon: 'rope',
+}
+
+const Yvette = {
+  firstName: 'Yvette',
+  color: 'brown',
+  description: 'Probably the most evil villain in the house',
+  age: 36,
+  image: 'image/killer/yvette.jpg',
+  occupation: 'Maid',
+  favouriteWeapon: 'posion',
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
