@@ -43,8 +43,7 @@ const plum = {
   occupation: 'Professor',
   favouriteWeapon: 'candlestick',
 }
-
-const Scarlet = {
+const scarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
   color: 'red',
@@ -55,7 +54,7 @@ const Scarlet = {
   favouriteWeapon: 'bat',
 }
 
-const Wadsworth = {
+const wadsworth = {
   firstName: 'Mr',
   lastName: 'Boddy',
   color: 'grey',
@@ -77,7 +76,7 @@ const mrsWhite = {
   favouriteWeapon: 'rope',
 }
 
-const Yvette = {
+const yvette = {
   firstName: 'Yvette',
   color: 'brown',
   description: 'Probably the most evil villain in the house',
@@ -87,7 +86,7 @@ const Yvette = {
   favouriteWeapon: 'posion',
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// STEP 2 - WEAPONS
 
 const axe = {
   name: 'axe',
@@ -136,100 +135,130 @@ const rope = {
   image: 'image/weapon/rope.png',
 }
 
-const Trophy = {
+const trophy = {
   name: 'trophy',
   weight: '4 kg',
   image: 'image/weapon/trophy.png',
 }
 
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+// STEP 3 - ROOMS
 
-const Dining = {
+const diningRoom = {
   name: 'Dining Room',
   image: 'image/room/dining.png',
 }
 
-const Conservatory = {
+const conservatory = {
   name: 'The Conservatory',
   image: 'image/room/conservatory.png',
 }
-const Kitchen = {
+const kitchen = {
   name: 'Kitchen',
   image: 'image/room/kitchen.png',
 }
 
-const Study = {
+const study = {
   name: 'Study Room',
   image: 'image/room/study.png',
 }
 
-const Library = {
+const library = {
   name: 'The Library',
   image: 'image/room/library.jpg',
 }
 
-const Billiard Room = {
+const billiardRoom = {
   name: 'Billiard Room',
   image: 'image/room/biliard.png',
 }
 
-const Lounge = {
+const lounge = {
   name: 'Lounge',
   image: 'image/room/lounge.jpg',
 }
 
-const Ballroom = {
+const ballroom = {
   name: 'Ballroom',
   image: 'image/room/ballroom.png',
 }
 
-const Hall = {
+const hall = {
   name: 'Hall',
   image: 'image/room/hall.png',
 }
 
-const Spa = {
+const spa = {
   name: 'The Spa',
   image: 'image/room/spa.png',
 }
 
-const Living Room = {
+const livingRoom = {
   name: 'Living Room',
   image: 'image/room/livingroom.png',
 }
 
-const Observatory = {
+const observatory = {
   name: 'Observatory',
   image: 'image/room/observatory.jpg',
 }
 
-const Theatre = {
+const theatre = {
   name: 'Theatre',
   image: 'image/room/theatre.png',
 }
 
-const Guest House = {
+const guestHouse = {
   name: 'Guest House',
   image: 'image/room/guesthouse.png',
 }
 
-const Patio = {
+const patio = {
   name: 'Patio',
   image: 'image/room/patio.jpg',
 }
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
-
+// ARRAY GROUPS
 const suspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
+  mrsWhite,
+  plum,
+  mrsPeacock,
+  wadsworth,
+  colonelMustard,
+  scarlet,
+  yvette,
 ]
 
-const weapons = []
+const weapons = [
+  axe,
+  bat,
+  candlestick,
+  dumbell,
+  gun,
+  knife,
+  posion,
+  rope,
+  trophy,
+]
 
-const rooms = []
+const rooms = [
+  diningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theatre,
+  guestHouse,
+  patio,
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
