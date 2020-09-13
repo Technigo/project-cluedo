@@ -8,7 +8,57 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
-}
+};
+
+const profPlum = {
+  firstName: 'Professor Victor',
+  lastName: 'Plum',
+  color: 'plum',
+  description: 'He is an intellectual and quick wittted scholar',
+  age: 36,
+  image: 'assets/plum.png',
+  occupation: 'University Professor'
+};
+
+const msScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'A vivacious woman who knows what she wants',
+  age: 25,
+  image: 'assets/scarlet.png',
+  occupation: 'Actress'
+};
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'purple',
+  description: 'A grand dame who maintains her dignity',
+  age: 32,
+  image: 'assets/peacock.png',
+  occupation: 'Socialite'
+};
+
+const colMustard = {
+  firstName: 'Colonel Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'A dapper colonial imperalist and dangerous military man',
+  age: 55,
+  image: 'assets/mustard.png',
+  occupation: 'Colonel'
+};
+
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'A two-faced servant who smiles politely but sneers behind the back',
+  age: 60,
+  image: 'assets/white.png',
+  occupation: 'Housekeeper'
+};
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
@@ -35,7 +85,7 @@ const rooms = []
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
-}
+};
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
@@ -48,10 +98,8 @@ const pickKiller = () => {
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-}
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+};
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
