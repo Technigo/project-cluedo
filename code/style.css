@@ -1,6 +1,8 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Montserrat', sans-serif;
+  background: rgb(31, 38, 74);
+  background: radial-gradient(circle, rgba(31, 38, 74, 1) 0%, rgba(32, 25, 27, 1) 100%);
 }
 
 p {
@@ -9,11 +11,24 @@ p {
   background-color: #fff;
 }
 
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.top-container {
+  display: flex;
+  justify-content: center;
+}
+
+.top-container img {
+  width: 40%;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
 .cards {
-  margin: 50px auto;
+  margin: 20px auto;
   width: 90%;
-  height: 600px;
-  background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -21,8 +36,8 @@ p {
 
 .killer-deck {
   width: 250px;
-  height: 400px;
-  background: #000;
+  height: 300px;
+  background: #99f3bd;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -30,8 +45,8 @@ p {
 
 .weapon-deck {
   width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
+  height: 300px;
+  background: #ffb0b0;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -39,20 +54,65 @@ p {
 
 .room-deck {
   width: 250px;
-  height: 400px;
-  background: midnightblue;
-
+  height: 300px;
+  background: #e0ece4;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
+.killer-deck:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: .5s ease-in-out;
+}
+
+.weapon-deck:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: .5s ease-in-out;
+}
+
+.room-deck:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: .5s ease-in-out;
+}
+
+#mystery {
+  display: flex;
+  justify-content: center;
+}
+
 button {
   padding: 8px 16px;
-  background: crimson;
+  font-family: 'Montserrat', sans-serif;
+  background: #f36267;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin-bottom: 10px;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+
+}
+
+button:hover {
+  cursor: pointer;
+  background: linear-gradient(45deg, #845ec2, #d65db1, #ff6f91, #ff9671, #ffc75f, #d0f971);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.2);
+}
+
+footer {
+  background-color: white;
+  height: 40px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
 }
