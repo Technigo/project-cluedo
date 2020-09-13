@@ -89,10 +89,59 @@ const Yvette = {
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
+const axe = {
+  name: 'axe',
+  weight: '8 kg',
+  image: 'image/weapon/axe.png',
+}
+
+const bat = {
+  name: 'bat',
+  weight: '2 kg',
+  image: 'image/weapon/bat.png',
+}
+const candlestick = {
+  name: 'candlestick',
+  weight: '1 kg',
+  image: 'image/weapon/candlestick.png',
+}
+
+const dumbell = {
+  name: 'dumbell',
+  weight: '10 kg',
+  image: 'image/weapon/dumbell.png',
+}
+
+const gun = {
+  name: 'gun',
+  weight: '0,5 kg',
+  image: 'image/weapon/gun.png',
+}
+
+const knife = {
+  name: 'knife',
+  weight: '300 g',
+  image: 'image/weapon/knife.png',
+}
+
+const posion = {
+  name: 'poison',
+  weight: '100 g kg',
+  image: 'image/weapon/poison.png',
+}
+
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: '1 kg',
+  image: 'image/weapon/rope.png',
 }
+
+const Trophy = {
+  name: 'trophy',
+  weight: '4 kg',
+  image: 'image/weapon/trophy.png',
+}
+
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
