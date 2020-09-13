@@ -116,7 +116,28 @@ const pistol = {
   damage: 9
 };
 
-// ROOMS ARRAY
+// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+
+const suspects = [
+  mrGreen,
+  profPlum,
+  msScarlet,
+  mrsPeacock,
+  colMustard,
+  mrsWhite
+];
+
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+];
 
 const rooms = [
   'Dining Room',
@@ -134,19 +155,7 @@ const rooms = [
   'Theater',
   'Guest House',
   'Patio'
-]
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
-
-const suspects = [
-  mrGreen,
-  mrsWhite
-  // ...  and the rest
-]
-
-const weapons = []
-
-const rooms = []
+];
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
