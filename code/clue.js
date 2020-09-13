@@ -183,13 +183,21 @@ const mystery = {
 };
 
 // PICK KILLER FUNCTION - This function will be invoked when you click on the killer card.
-const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
+document.getElementById("killerCard").addEventListener("click", pickKiller);
 
-  if(mystery.killer === undefined) { //To check if card has been clicked already or not
+function pickKiller() {  // Shows loading animation
+  document.getElementById('loader1').style.display = 'block';
+  setTimeout(delayedPickKiller, 1500); //Delays pickKiller function, calls it after 1.5sec
+};
+
+ const delayedPickKiller = () => {  // This will randomly select a killer from the suspects. And add that to the mystery object.
+    document.getElementById('loader1').style.display = 'none';
+    document.getElementById("killerCard").removeEventListener("click", pickKiller);
+
+    if(mystery.killer === undefined) {   //To check if card has been clicked already or not
     mystery.killer = randomSelector(suspects);
-    mystery.killer.favouriteWeapon = randomSelector(weapons); //Randomly chooses killer's favorite weapon
-
+    mystery.killer.favouriteWeapon = randomSelector(weapons);  //Randomly chooses killer's favorite weapon
+    
     // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
     document.getElementById('killerCard').style.background = mystery.killer.color;
     document.getElementById('killerName').innerHTML = `Full name: ${mystery.killer.firstName} ${mystery.killer.lastName}`;
@@ -199,10 +207,20 @@ const pickKiller = () => {
     document.getElementById('killerDescription').innerHTML = `Description: ${mystery.killer.description}`;
     document.getElementById('killerFavWeapon').innerHTML = `Favourite Weapon: ${mystery.killer.favouriteWeapon.name}`; //Display killer's fav weapon on HTML
   }
-};
+ };
 
 // PICK WEAPON FUNCTION - This function will be invoked when you click on the weapon card.
-const pickWeapon = () => {
+document.getElementById("weaponCard").addEventListener("click", pickWeapon);
+
+function pickWeapon() { 
+  document.getElementById('loader2').style.display = 'block';
+  setTimeout(delayedPickWeapon, 1500);
+};
+
+const delayedPickWeapon = () => {
+
+  document.getElementById('loader2').style.display = 'none';
+  document.getElementById("weaponCard").removeEventListener("click", pickWeapon);
 
   if(mystery.weapon === undefined) { //To check if card has been clicked already or not
     let modifiedWeaponsArray = weapons; // Creates new Array to add killer's favorite weapon several more times so chances are higher it is picked
@@ -221,7 +239,17 @@ const pickWeapon = () => {
 };
 
 // PICK ROOM FUNCTION - This function will be invoked when you click on the room card.
-const pickRoom = () => {
+document.getElementById("roomCard").addEventListener("click", pickRoom);
+
+function pickRoom() { 
+  document.getElementById('loader3').style.display = 'block';
+  setTimeout(delayedPickRoom, 1500);
+};
+
+const delayedPickRoom = () => {
+
+  document.getElementById('loader3').style.display = 'none';
+  document.getElementById("roomCard").removeEventListener("click", pickRoom);
 
   if(mystery.room === undefined) { //To check if card has been clicked already or not
   mystery.room = randomSelector(rooms);

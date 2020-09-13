@@ -11,26 +11,38 @@
   <body>
     <section class="cards"> <!-- Section with all 3 cards-->
       
-      <article class="killer-deck" id="killerCard" onclick="setTimeout(pickKiller, 2000);"> <!-- Killers deck-->
+      <article class="killer-deck" id="killerCard"> <!-- Killers deck-->
         <p>KILLER</p>
+
+        <div id="loader1"></div>
+
+        <div class="killer-info">
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
         <img id="killerImage" src="" height="100" />
         <p id="killerDescription"></p>
         <p id="killerFavWeapon"></p>
+      </div>
+
       </article>
 
-      <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()"> <!-- Weapons deck-->
+      <article class="weapon-deck" id="weaponCard"> <!-- Weapons deck-->
         <p>WEAPON</p>
+
+        <div id="loader2"></div>
+
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
         <p id="weaponDamage"></p>
         <img id="weaponImage" src="" height="100" />
       </article>
 
-      <article class="room-deck" id="roomCard" onclick="pickRoom()"> <!-- Rooms deck-->
+      <article class="room-deck" id="roomCard"> <!-- Rooms deck-->
         <p>ROOM</p>
+
+        <div id="loader3"></div>
+
         <p id="roomName"></p>
       </article>
 
