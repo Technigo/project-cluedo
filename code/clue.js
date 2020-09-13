@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS:
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -60,14 +60,81 @@ const mrsWhite = {
   occupation: 'Housekeeper'
 };
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// CREATE OBJECTS FOR ALL THE WEAPONS:
 
 const rope = {
-  name: 'rope',
-  weight: 10
-}
+  name: 'Rope',
+  weight: 5,
+  damage: 2
+};
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const knife = {
+  name: 'Knife',
+  weight: 3,
+  damage: 9
+};
+
+const candlestick = {
+  name: 'Candlestick',
+  weight: 8,
+  damage: 5
+};
+
+const dumbbell = {
+  name: 'Dumbbell',
+  weight: 10,
+  damage: 8
+};
+
+const poison = {
+  name: 'Poison',
+  weight: 1,
+  damage: 10
+};
+
+const axe = {
+  name: 'Axe',
+  weight: 7,
+  damage: 9
+};
+
+const bat = {
+  name: 'Bat',
+  weight: 5,
+  damage: 8
+};
+
+const trophy = {
+  name: 'Trophy',
+  weight: 7,
+  damage: 5
+};
+
+const pistol = {
+  name: 'Pistol',
+  weight: 2,
+  damage: 9
+};
+
+// ROOMS ARRAY
+
+const rooms = [
+  'Dining Room',
+  'Conservatory',
+  'Kitchen',
+  'Study',
+  'Library',
+  'Billiard Room',
+  'Lounge',
+  'Ballroom',
+  'Hall',
+  'Spa',
+  'Living Room',
+  'Observatory',
+  'Theater',
+  'Guest House',
+  'Patio'
+]
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
