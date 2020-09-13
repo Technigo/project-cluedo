@@ -245,10 +245,19 @@ const pickRoom = () => {
   document.getElementById("roomName").innerHTML = `${mystery.room}`;
 };
 
-document.getElementById("killerCard").onclick = pickKiller;
-document.getElementById("weaponCard").onclick = pickWeapon;
-document.getElementById("roomCard").onclick = pickRoom;
-console.log(mystery);
+const revealMystery = (mystery) => {
+  document.getElementById(
+    "mystery"
+  ).innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`;
+  //The murder was committed by Jacob Green, in the living room with a rope.
+};
+
+// document.getElementById("killerCard").onclick = pickKiller();
+// document.getElementById("weaponCard").onclick = pickWeapon();
+// document.getElementById("roomCard").onclick = pickRoom();
+// document.getElementById("revealButton").onclick = revealMystery(mystery);
+
+//console.log(mystery);
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
