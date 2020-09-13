@@ -194,7 +194,7 @@ function pickKiller() {  // Shows loading animation
     document.getElementById('loader1').style.display = 'none';
     document.getElementById("killerCard").removeEventListener("click", pickKiller);
 
-    if(mystery.killer === undefined) {   //To check if card has been clicked already or not
+    if(mystery.killer === undefined) {   //To check if card has been clicked already or not - undefined= not clicked
     mystery.killer = randomSelector(suspects);
     mystery.killer.favouriteWeapon = randomSelector(weapons);  //Randomly chooses killer's favorite weapon
     
@@ -222,12 +222,15 @@ const delayedPickWeapon = () => {
   document.getElementById('loader2').style.display = 'none';
   document.getElementById("weaponCard").removeEventListener("click", pickWeapon);
 
-  if(mystery.weapon === undefined) { //To check if card has been clicked already or not
+  // Red and Black level functions for generating a favotire weapon
+  if(mystery.weapon === undefined) { //To check if card has been clicked already or not - undefined= not clicked
     let modifiedWeaponsArray = weapons; // Creates new Array to add killer's favorite weapon several more times so chances are higher it is picked
 
+    if(mystery.killer !== undefined) { //In case weapon card is clicked before a killer is defined, so code doesn't break. If killer has not been defined, it will generate a weapon without taking into account the killer's fav weapon. If a killer is defined, we know their fav weapon and cann add it to the array
     modifiedWeaponsArray.push(mystery.killer.favouriteWeapon); // Pushes killer's favorite weapon 3 more times to the array so chances are higher it is picked
     modifiedWeaponsArray.push(mystery.killer.favouriteWeapon);
     modifiedWeaponsArray.push(mystery.killer.favouriteWeapon);
+    }
 
     mystery.weapon = randomSelector(modifiedWeaponsArray); //Killer's weapon must be chosen from the new array with the 3 added favorite weapons
 
@@ -251,7 +254,7 @@ const delayedPickRoom = () => {
   document.getElementById('loader3').style.display = 'none';
   document.getElementById("roomCard").removeEventListener("click", pickRoom);
 
-  if(mystery.room === undefined) { //To check if card has been clicked already or not
+  if(mystery.room === undefined) { //To check if card has been clicked already or not - undefined= not clicked
   mystery.room = randomSelector(rooms);
 
   document.getElementById('roomName').innerHTML = `Room name: ${mystery.room}`;
