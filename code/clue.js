@@ -10,12 +10,106 @@ const mrGreen = {
   occupation: 'Entrepreneur'
 }
 
+const profPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'He fancies beautiful women',
+  age: 37,
+  image: 'assets/plum.png',
+  occupation: 'Psychiatrist'
+}
+
+const msScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'She is a femme fatale',
+  age: 25,
+  image: 'assets/scarlet.png',
+  occupation: 'Escort girl'
+}
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'She is a former miss USA',
+  age: 65,
+  image: 'assets/peacock.png',
+  occupation: 'Retired teacher'
+}
+
+const colMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'He is a colonial imperialist',
+  age: 54,
+  image: 'assets/mustard.png',
+  occupation: 'Soldier'
+}
+
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'She works at a prestigious restaurant',
+  age: 35,
+  image: 'assets/white.png',
+  occupation: 'Chef'
+}
+
+console.log(msScarlet.occupation);
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
   weight: 10
 }
+
+const knife = {
+  name: 'knife',
+  weight: 5
+}
+
+const candlestick = {
+  name: 'candlestick',
+  weight: 20
+}
+
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 50
+}
+
+const poison = {
+  name: 'poison',
+  weight: 4
+}
+
+const axe = {
+  name: 'axe',
+  weight: 30
+}
+
+const bat = {
+  name: 'bat',
+  weight: 25
+}
+
+const trophy = {
+  name: 'trophy',
+  weight: 15
+}
+
+const pistol = {
+  name: 'pistol',
+  weight: 16
+}
+
+console.log(dumbbell.weight);
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
