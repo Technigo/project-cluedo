@@ -70,8 +70,59 @@ console.log(mrsWhite.description);
 
 const rope = {
   name: 'rope',
-  weight: 10
+  material: 'textile'
 }
+console.log(rope);
+
+const knife = {
+  name: 'knife',
+  material: 'metal'
+}
+console.log(knife);
+
+const candlestick = {
+  name: 'candlestick',
+  weight: 'silver'
+}
+console.log(candlestick);
+
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 'iron'
+}
+console.log(dumbbell);
+
+const poison = {
+  name: 'poison',
+  weight: 'liquid'
+}
+console.log(poison);
+
+const axe = {
+  name: 'axe',
+  material: 'metal'
+}
+console.log(axe);
+
+const bat = {
+  name: 'bat',
+  material: 'wood'
+}
+console.log(bat);
+
+const trophy = {
+  name: 'trophy',
+  material: 'silver'
+}
+console.log(trophy);
+
+const pistol = {
+  name: 'pistol',
+  material: 'metal'
+}
+console.log(pistol);
+
+
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
