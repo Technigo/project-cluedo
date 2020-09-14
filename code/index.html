@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="style.css" />
     <title>Technigo Project Cluedo</title>
     <link rel="icon" type="image/png" href="./assets/question.png" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Roboto+Mono&display=swap"
+      rel="stylesheet">
   </head>
-  <header class="header">MURDER MYSTERY</header>
+  <header class="header">M<span class="special-color-header">U</span>RDER MYSTERY</header>
   <button type="button" id="start-button" class="start-button active" onclick="startGame()">Start a new game</button>
   <section class="gameboard inactive" id="gameBoard">
     <div class="flex-container">
@@ -24,8 +25,8 @@
         <p id="killerDescription"></p>
       </article>
       <div class="loader" id="killerLoader"></div>
-      <span class="info-message info-message-killer" id="killerInfoMessage">Start off over here by choosing a killer
-        card</span>
+      <span class="info-message info-message-killer" id="killerInfoMessage"> &uarr; Start off over here by choosing a
+        killer card</span>
     </div>
     <div class="flex-container">
       <article class="weapon-deck" id="weaponCard" onclick="pickWeapon(this.nextElementSibling)">
@@ -34,7 +35,8 @@
         <p id="weaponWeight"></p>
       </article>
       <div class="loader" id="weaponLoader"></div>
-      <span class="info-message info-message-weapon" id="weaponInfoMessage">Continue here, pick a weapon card</span>
+      <span class="info-message info-message-weapon" id="weaponInfoMessage">&uarr; Continue here, pick a weapon
+        card</span>
     </div>
     <div class="flex-container">
       <article class="room-deck" id="roomCard" onclick="pickRoom(this.nextElementSibling)">
@@ -45,6 +47,8 @@
       <span class="info-message info-message-room" id="roomInfoMessage">And finally, now pick a room card</span>
     </div>
     <div class="flex-container">
+      <span class="info-message info-message-mystery" id="mysteryInfoMessage">Draw the cards to generate a
+        mystery!</span>
       <article id="mystery-reveal" class="mystery-reveal"></article>
     </div>
     <div class="flex-container-bottom">

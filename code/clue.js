@@ -4,8 +4,7 @@ let killerPicked = false;
 let weaponPicked = false;
 let roomPicked = false;
 
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
+// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS
 const mrGreen = {
   firstName: 'Reverend',
   lastName: 'Green',
@@ -72,7 +71,7 @@ const mrsWhite = {
   favoriteWeapon: 'candlestick'
 };
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// CREATE OBJECTS FOR ALL THE WEAPONS
 
 const rope = {
   name: 'Rope',
@@ -144,10 +143,7 @@ const candleStick = {
   likelyFoundIn: 'Hall'
 }
 
-
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+//GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS
 const suspects = [
   mrGreen,
   clMustard,
@@ -169,17 +165,13 @@ const weapons = [
 
 const rooms = ['Kitchen', 'Dining Room', 'Lounge', 'Study', 'Cellar', 'Billiard Room', 'Conservatory', 'Library', 'Hall'];
 
-
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
-
+//Object that keeps the mystery
 const mystery = {
   killer: null,
   weapon: null,
@@ -189,18 +181,11 @@ const mystery = {
 // This function will be invoked when you click on the killer card.
 const pickKiller = (loadID) => {
   if (gameStarted && !killerPicked) {
-    //This should be displayed for a few seconds.
     document.getElementById(loadID.id).style.opacity = 1;
-    //After 2.5 seconds, run the function
     setTimeout(function () {
       document.getElementById(loadID.id).style.opacity = 0;
-      // This will randomly select a killer from the suspects. And add that to the mystery object.
       mystery.killer = randomSelector(suspects);
-      // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. 
-
-      //Feel free to add more things to show about the killer.
       document.getElementById('killerName').style.background = mystery.killer.color;
-
       document.getElementById('killerImage').src = mystery.killer.image;
       document.getElementById(
         'killerName'
@@ -211,21 +196,14 @@ const pickKiller = (loadID) => {
       document.getElementById('killerAge').innerHTML = (`Age: ${mystery.killer.age}`);
       document.getElementById('killerOccupation').innerHTML = (`Occupation: ${mystery.killer.occupation}`);
       killerPicked = true;
-
-
-    }, 200);
-
+    }, 2000);
   }
-
 }
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = (loadID) => {
-
   if (killerPicked && !weaponPicked && !roomPicked) {
     //Look at the killers favorite weapon and change the prob. of it being picked
     increaseChanceForFavWeapon(mystery.killer);
-    //This should be displayed for a few seconds.
     document.getElementById(loadID.id).style.opacity = 1;
     setTimeout(function () {
       document.getElementById(loadID.id).style.opacity = 0;
@@ -234,14 +212,12 @@ const pickWeapon = (loadID) => {
       document.getElementById('weaponName').innerHTML = `Type: ${mystery.weapon.name}`;
       document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`;
       weaponPicked = true;
-    }, 200);
+    }, 2000);
   } else(showInfoMessage("pickWeapon"));
 }
 
 const pickRoom = (loadID) => {
-
   if (weaponPicked && !roomPicked) {
-    //This should be displayed for a few seconds.
     document.getElementById(loadID.id).style.opacity = 1;
     setTimeout(function () {
       document.getElementById(loadID.id).style.opacity = 0;
@@ -250,7 +226,7 @@ const pickRoom = (loadID) => {
       console.log(mystery.room);
       document.getElementById('roomName').innerHTML = mystery.room;
       roomPicked = true;
-    }, 200);
+    }, 2000);
   } else(showInfoMessage("pickRoom"));
 }
 
@@ -261,12 +237,17 @@ const showInfoMessage = (callerFunctionName) => {
     setTimeout(function () {
       document.getElementById("killerInfoMessage").style.opacity = 0;
     }, 2000);
-
   } else if (callerFunctionName === "pickRoom" && killerPicked) {
     //Is pickRoom calls this function  and the killer has been picked, the user hasn't picked a weapon. 
     document.getElementById("weaponInfoMessage").style.opacity = 1;
     setTimeout(function () {
       document.getElementById("weaponInfoMessage").style.opacity = 0;
+    }, 2000);
+  } else if (callerFunctionName === "revealMystery") {
+    //This means that the user has clicked the reveal button before drawing all the cards.
+    document.getElementById("mysteryInfoMessage").style.opacity = 1;
+    setTimeout(function () {
+      document.getElementById("mysteryInfoMessage").style.opacity = 0;
     }, 2000);
   }
 }
@@ -283,7 +264,6 @@ const increaseChanceForFavWeapon = (killerObject) => {
   let preferredWeapon = killerObject.favoriteWeapon;
   let weaponObject = weapons.find(weapon => weapon.id === preferredWeapon);
   let increaseChance = weaponObject.increasedChanceOfDraw;
-
   for (i = 0; i < increaseChance; i++) {
     weapons.push(weaponObject);
   }
@@ -296,7 +276,6 @@ const increaseChanceForRoom = (weaponObject) => {
   for (i = 0; i < increaseChance; i++) {
     rooms.push(preferredRoom);
   }
-
 }
 
 const startGame = () => {
@@ -305,8 +284,7 @@ const startGame = () => {
   shuffleFavoriteWeapon();
 }
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button
 const revealMystery = () => {
   if (killerPicked && weaponPicked && roomPicked) {
     let killer = mystery.killer.firstName + " " + mystery.killer.lastName;
@@ -322,17 +300,14 @@ const revealMystery = () => {
                   room
                 }!`);
     document.getElementById('mystery-reveal').innerHTML = mysteryString;
-  }
+  } else(showInfoMessage("revealMystery"));
 }
 
 const endGame = () => {
   var check = confirm("Are you sure? Window will close");
   if (check == true) {
     window.close();
-  } else {
-
   }
-
 }
 
 const toggleGameBoard = () => {
