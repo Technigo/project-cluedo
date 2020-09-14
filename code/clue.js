@@ -79,8 +79,9 @@ const rope = {
   id: 'rope',
   weight: 10,
   color: 'red',
-  article: "a"
-
+  article: 'a',
+  increasedChanceOfDraw: 3,
+  likelyFoundIn: 'Cellar'
 };
 
 const knife = {
@@ -88,7 +89,9 @@ const knife = {
   id: 'knife',
   weight: 7,
   color: 'blue',
-  article: "a"
+  article: 'a',
+  increasedChanceOfDraw: 5,
+  likelyFoundIn: 'Kitchen'
 };
 
 const axe = {
@@ -96,7 +99,9 @@ const axe = {
   id: 'axe',
   weight: 12,
   color: 'green',
-  article: "an"
+  article: 'an',
+  increasedChanceOfDraw: 2,
+  likelyFoundIn: 'Study'
 };
 
 const revolver = {
@@ -104,7 +109,9 @@ const revolver = {
   id: 'revolver',
   weight: 6,
   color: 'pink',
-  article: "a"
+  article: 'a',
+  increasedChanceOfDraw: 10,
+  likelyFoundIn: 'Lounge'
 };
 
 const poison = {
@@ -112,7 +119,9 @@ const poison = {
   id: 'poison',
   weight: 3,
   color: 'yellow',
-  article: ""
+  article: '',
+  increasedChanceOfDraw: 4,
+  likelyFoundIn: 'Dining Room'
 }
 
 const scissors = {
@@ -120,7 +129,9 @@ const scissors = {
   id: 'scissors',
   weight: 2,
   color: 'purple',
-  article: ""
+  article: '',
+  increasedChanceOfDraw: 3,
+  likelyFoundIn: 'Library'
 }
 
 const candleStick = {
@@ -128,7 +139,9 @@ const candleStick = {
   id: 'candlestick',
   weight: 4,
   color: 'white',
-  article: "a"
+  article: 'a',
+  increasedChanceOfDraw: 10,
+  likelyFoundIn: 'Hall'
 }
 
 
@@ -176,10 +189,8 @@ const mystery = {
 // This function will be invoked when you click on the killer card.
 const pickKiller = (loadID) => {
   if (gameStarted) {
-
     //This should be displayed for a few seconds.
     document.getElementById(loadID.id).style.opacity = 1;
-
     //After 2.5 seconds, run the function
     setTimeout(function () {
       document.getElementById(loadID.id).style.opacity = 0;
@@ -200,7 +211,7 @@ const pickKiller = (loadID) => {
       killerPicked = true;
 
 
-    }, 2000);
+    }, 200);
 
   }
 
@@ -210,6 +221,8 @@ const pickKiller = (loadID) => {
 const pickWeapon = (loadID) => {
 
   if (killerPicked) {
+    //Look at the killers favorite weapon and change the prob. of it being picked
+    increaseChanceForFavWeapon(mystery.killer);
     //This should be displayed for a few seconds.
     document.getElementById(loadID.id).style.opacity = 1;
     setTimeout(function () {
@@ -219,21 +232,23 @@ const pickWeapon = (loadID) => {
       document.getElementById('weaponName').innerHTML = mystery.weapon.name;
       document.getElementById('weaponWeight').innerHTML = mystery.weapon.weight;
       weaponPicked = true;
-    }, 2000);
+    }, 200);
   }
 }
 
 const pickRoom = (loadID) => {
+  console.log("In pick room function, inparam:" + loadID.id);
   if (weaponPicked) {
     //This should be displayed for a few seconds.
     document.getElementById(loadID.id).style.opacity = 1;
     setTimeout(function () {
       document.getElementById(loadID.id).style.opacity = 0;
+      increaseChanceForRoom(mystery.weapon);
       mystery.room = randomSelector(rooms);
       console.log(mystery.room);
       document.getElementById('roomName').innerHTML = mystery.room;
       roomPicked = true;
-    }, 2000);
+    }, 200);
   }
 }
 
@@ -243,6 +258,26 @@ const shuffleFavoriteWeapon = () => {
     let selectedRandomWeapon = randomSelector(weapons).id;
     suspect.favoriteWeapon = selectedRandomWeapon;
   });
+}
+
+const increaseChanceForFavWeapon = (killerObject) => {
+  let preferredWeapon = killerObject.favoriteWeapon;
+  let weaponObject = weapons.find(weapon => weapon.id === preferredWeapon);
+  let increaseChance = weaponObject.increasedChanceOfDraw;
+
+  for (i = 0; i < increaseChance; i++) {
+    weapons.push(weaponObject);
+  }
+}
+
+const increaseChanceForRoom = (weaponObject) => {
+  let preferredRoom = weaponObject.likelyFoundIn;
+  //Increase chance for weapon in room is random(Some number between 1 and 10) every time.
+  let increaseChance = Math.floor(Math.random() * 10) + 1;
+  for (i = 0; i < increaseChance; i++) {
+    rooms.push(preferredRoom);
+  }
+
 }
 
 const startGame = () => {
