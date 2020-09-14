@@ -9,6 +9,62 @@ const mrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
+console.log(mrGreen.description);
+
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'He is quick-witted, who lost his medical license for having an affair with one of his patients.',
+  age: 35,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
+console.log(professorPlum.description);
+
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'A stock femme fatale, she is typically portrayed as young, cunning and attractive.',
+  age: 30,
+  image: 'assets/scarlet.png',
+  occupation: 'Runs an underground brothel'
+}
+console.log(missScarlet.description);
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'A grand madame, the wife of a U.S. Senator who is accused of taking bribes',
+  age: 55,
+  image: 'assets/peacock.png',
+  occupation: 'Housewife'
+}
+console.log(mrsPeacock.description); 
+
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'A dignified, dapper and dangerous military man.',
+  age: 60,
+  image: 'assets/mustard.png',
+  occupation: 'War profiteer'
+}
+console.log(colonelMustard.description); 
+
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'A frazzled servant. Depicted as the widow of a nuclear physicist whose death she is suspected of being behind',
+  age: 63,
+  image: 'assets/white.png',
+  occupation: 'Nurse'
+}
+console.log(mrsWhite.description); 
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
