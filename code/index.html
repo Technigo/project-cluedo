@@ -9,28 +9,30 @@
   </head>
   <body>
     <section class="cards">
-      <article class="killer-deck" id="killerCard">
-        <p>KILLER</p>
+      <article class="killer-deck" id="killerCard" onclick="pickMainFruit()">
+        <p>MAIN FRUIT</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
         <img id="killerImage" src="" height="100" />
         <p id="killerDescription"></p>
       </article>
-      <article class="weapon-deck" id="weaponCard">
-        <p>WEAPON</p>
+      <article class="weapon-deck" id="weaponCard" onclick="pickMixer()">
+        <p>MIXER</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
       </article>
-      <article class="room-deck" id="roomCard">
-        <p>ROOM</p>
+      <article class="room-deck" id="roomCard" onclick="pickSuperBooster()">
+        <p>SUPERBOOSTER</p>
         <p id="roomName"></p>
       </article>
     </section>
 
     <h1 id="mystery"></h1>
 
-    <button>REVEAL THE CRIME</button>
+    <button onclick="mixSmoothie()">MIX SMOOTHIE!</button>
+
+    <p id="finishedSmoothie"></p>
 
     <script src="clue.js"></script>
   </body>

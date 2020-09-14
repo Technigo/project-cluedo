@@ -1,12 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Roboto', monospace;
 }
 
 p {
   margin: 1px;
   font-weight: 300;
   background-color: #fff;
+  font-size: 18px;
 }
 
 .cards {
@@ -48,11 +59,20 @@ p {
 }
 
 button {
-  padding: 8px 16px;
-  background: crimson;
+  padding: 8px 80px;
+  background: #8900C9;
+  color: #fff;
   border: none;
   font-size: 20px;
-  border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+button:hover {
+  background: #4D106A;
+}
+
+button:visited {
+  background: #4D106A;
+  border-radius: 0;
 }
