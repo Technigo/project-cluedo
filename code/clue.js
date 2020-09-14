@@ -1,23 +1,113 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
 const mrGreen = {
-  firstName: 'Jacob',
+  firstName: 'Mr',
   lastName: 'Green',
   color: 'green',
-  description: 'He has a lot of connections',
+  description: "He's made alot of dodgy connections",
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
-}
+};
+
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'plum',
+  description: 'A proffessor of murder??',
+  age: 60,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+};
+
+const missScarlett = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'scarlet',
+  description: 'A oil heiress with alot of enemies',
+  age: 25,
+  image: 'assets/scarlet.png',
+  occupation: 'Heiress'
+};
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'peacock',
+  description: "A successful business woman who's made some dirty deals",
+  age: 47,
+  image: 'assets/peacock.png',
+  occupation: 'Buisness woman'
+};
+
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'mustard',
+  description: "A colonel with a bloody past",
+  age: 72,
+  image: 'assets/mustard.png',
+  occupation: 'Retired colonel'
+};
+
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: "A housekeeper who has alot of secrets to keep",
+  age: 67,
+  image: 'assets/white.png',
+  occupation: 'Eternal housekeeper'
+};
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
   weight: 10
-}
+};
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const knife = {
+  name: 'knife',
+  weight: 22
+};
+
+const candlestick = {
+  name: 'candlestick',
+  weight: 40
+};
+
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 55
+};
+
+const poison = {
+  name: 'poison',
+  weight: 15
+};
+
+const axe = {
+  name: 'axe',
+  weight: 75
+};
+
+const bat = {
+  name: 'bat',
+  weight: 66
+};
+
+const trophy = {
+  name: 'trophy',
+  weight: 79
+};
+
+const pistol = {
+  name: 'pistol',
+  weight: 83
+};
+
+// THE ROOMS ONLY HAVE A NAME SO NO NEED FOR OBJECTS THERE.
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 

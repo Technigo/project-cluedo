@@ -3,6 +3,9 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
+header {
+  text-align: center;
+}
 p {
   margin: 1px;
   font-weight: 300;
