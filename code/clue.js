@@ -42,7 +42,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'mustard',
+  color: 'yellow',
   description: 'Senile and tired',
   age: 70,
   image: 'assets/mustard.png',
@@ -184,14 +184,15 @@ const pickRoom = () => {
   document.getElementById('roomName').innerHTML = `${mystery.room}`;
 };
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
-const revealMystery = (suspect, weapon, room) => {
-  document.getElementById(
-    'mystery'
-  ).innerHTML = `The murder was commited by ${mystery.killer} in the ${mystery.room} with a ${mystery.weapon}.`;
-};
-
 document.getElementById('killerCard').onclick = pickKiller;
 document.getElementById('weaponCard').onclick = pickWeapon;
 document.getElementById('roomCard').onclick = pickRoom;
+
+// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
+// 'The murder was committed by Jacob Green, in the living room with a rope.'
+const revealMystery = () => {
+  document.getElementById(
+    'mystery'
+  ).innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`;
+};
+document.getElementById('revealButton').onclick = revealMystery;
