@@ -1,4 +1,10 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+/*Mr Green - Jacob Green
+Professor Plum - Victor Plum
+Miss Scarlet - Cassandra Scarlet
+Mrs Peacock - Eleanor Peacock
+Colonel Mustard - Jack Mustard
+Mrs White - Mrs White*/
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -10,12 +16,104 @@ const mrGreen = {
   occupation: 'Entrepreneur'
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'He is a excentric man',
+  age: 35,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'darkred',
+  description: 'Fortuneseeker',
+  age: 27,
+  image: 'assets/scarlet.png',
+  occupation: 'Dancer'
+}
 
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'Jealous and mean',
+  age: 45,
+  image: 'assets/peacock.png',
+  occupation: 'Housewife'
+}
+
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'mustard',
+  description: 'Senile and tired',
+  age: 70,
+  image: 'assets/mustard.png',
+  occupation: 'Colonel'
+}
+
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'The grumpy old matriark',
+  age: 85,
+  image: 'assets/white.png',
+  occupation: 'Retired'
+}
+console.log(mrsWhite.description)
+
+// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+/*- **The weapons**
+    Rope
+    Knife
+    Candlestick
+    Dumbbell
+    Poison
+    Axe
+    Bat
+    Trophy
+    Pistol*/
 const rope = {
   name: 'rope',
+  weight: 2
+}
+const knife = {
+  name: 'knife',
+  weight: 1
+}
+const candlestick = {
+  name: 'candlestick',
+  weight: 5
+}
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 20
+}
+const poison = {
+  name: 'poison',
+  weight: 1
+}
+const axe = {
+  name: 'axe',
   weight: 10
 }
+const bat = {
+  name: 'bat',
+  weight: 7
+}
+const trophy = {
+  name: 'trophy',
+  weight: 15
+}
+const pistol = {
+  name: 'pistol',
+  weight: 5
+}
+console.log(pistol.weight)
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -23,13 +121,42 @@ const rope = {
 
 const suspects = [
   mrGreen,
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
   mrsWhite
-  // ...  and the rest
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+const rooms = [
+  'Dining Room',
+  'Conservatory',
+  'Kitchen',
+  'Study',
+  'Library',
+  'Billiard Room',
+  'Lounge',
+  'Ballroom',
+  'Hall',
+  'Spa',
+  'Living Room',
+  'Observatory',
+  'Theater',
+  'Guest House',
+  'Patio'
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
