@@ -20,7 +20,7 @@ const professorPlum = {
   occupation: 'Professor'
 };
 
-const missScarlett = {
+const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
   color: 'scarlet',
@@ -64,62 +64,93 @@ const mrsWhite = {
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  lastseen: 'Hall'
 };
 
 const knife = {
   name: 'knife',
-  weight: 22
+  weight: 22,
+  lastseen: 'Kitchen'
 };
 
 const candlestick = {
   name: 'candlestick',
-  weight: 40
+  weight: 40,
+  lastseen: 'Living Room'
 };
 
 const dumbbell = {
   name: 'dumbbell',
-  weight: 55
+  weight: 55,
+  lastseen: 'Patio'
 };
 
 const poison = {
   name: 'poison',
-  weight: 15
+  weight: 15,
+  lastseen: 'Library'
 };
 
 const axe = {
   name: 'axe',
-  weight: 75
+  weight: 75,
+  lastseen: 'Billiard room'
 };
 
 const bat = {
   name: 'bat',
-  weight: 66
+  weight: 66,
+  lastseen: 'Study'
 };
 
 const trophy = {
   name: 'trophy',
-  weight: 79
+  weight: 79,
+  lastseen: 'Conservatory'
 };
 
 const pistol = {
   name: 'pistol',
-  weight: 83
+  weight: 83,
+  lastseen: 'Dining room'
 };
 
 // THE ROOMS ONLY HAVE A NAME SO NO NEED FOR OBJECTS THERE.
-
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
-]
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
+  mrsWhite, 
+];
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+];
 
-const rooms = []
+const rooms = [
+  "Dining Room", 
+  "Conservatory", 
+  "Kitchen", 
+  "Study",
+  "Library", 
+  "Billiard Room", 
+  "Hall",
+  "Living Room",
+  "Patio"
+];
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
