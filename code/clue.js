@@ -60,6 +60,12 @@ const mrsWhite = {
   occupation: "Maid"
 }
 
+/* testing objects in console.
+
+console.log(mrGreen.firstName);
+console.log(mrsWhite.description);
+console.log(colonelMustard.age); */
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
@@ -114,8 +120,10 @@ const pistol = {
 const suspects = [
   mrGreen,
   mrsWhite,
-  professorPlum
-  // ...  and the rest
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard
 ]
 
 const weapons = [
@@ -131,22 +139,31 @@ const weapons = [
 ]
 
 const rooms = [
- /* Dining Room 
-  Conservatory 
-  Kitchen 
-  Study 
-  Library 
-  Billiard Room 
-  Lounge 
-  Ballroom 
-  Hall 
-  Spa 
-  Living Room 
-  Observatory 
-  Theater 
-  Guest House 
-  Patio"*/
+  "Dining Room", 
+  "Conservatory",
+  "Kitchen",
+  "Study", 
+  "Library", 
+  "Billiard Room", 
+  "Lounge", 
+  "Ballroom",
+  "Hall", 
+  "Spa",
+  "Living Room", 
+  "Observatory", 
+  "Theater", 
+  "Guest House", 
+  "Patio"
 ]
+
+/* testing objects in console.
+console.log(suspects);
+console.log(rooms);
+console.log(weapons);
+console.log(rooms[8]);
+console.log(weapons[2])
+console.log(suspects[4])
+*/
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
