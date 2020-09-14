@@ -9,6 +9,10 @@ p {
   background-color: #fff;
 }
 
+.image {
+  width: 100%;
+}
+
 .cards {
   margin: 50px auto;
   width: 90%;

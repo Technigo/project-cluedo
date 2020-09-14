@@ -6,7 +6,7 @@ const mrGreen = {
   color: 'green',
   description: 'He has a lot of connections.',
   age: 45,
-  image: 'assets/green.png',
+  image: './assets/green.png',
   occupation: 'Entrepreneur'
 }
 
@@ -16,7 +16,7 @@ const professorPlum = {
   color: 'purple',
   description: 'He is widely seen as the intellectual.',
   age: 36,
-  image: 'assets/plum.png',
+  image: './assets/plum.png',
   occupation: 'Professor'
 }
 
@@ -26,7 +26,7 @@ const missScarlet = {
   color: 'red',
   description: 'She is a real femme fatale.',
   age: 25,
-  image: 'assets/scarlet.png',
+  image: './assets/scarlet.png',
   occupation: 'Actress'
 }
 
@@ -36,7 +36,7 @@ const mrsPeacock = {
   color: 'blue',
   description: 'An attractive woman who maintaing her dignity in almost all cases.',
   age: 32,
-  image: 'assets/peacock.png',
+  image: './assets/peacock.png',
   occupation: 'Socialite'
 }
 
@@ -46,7 +46,7 @@ const colonelMustard = {
   color: 'yellow',
   description: 'A military man both dignified and dangerous.',
   age: 56,
-  image: 'assets/mustard.png',
+  image: './assets/mustard.png',
   occupation: 'Colonel'
 }
 
@@ -56,7 +56,7 @@ const mrsWhite = {
   color: 'white',
   description: 'She has a grandmotherly appearance.',
   age: 67,
-  image: 'assets/white.png',
+  image: './assets/white.png',
   occupation: 'Housekeeper'
 }
 // CREATE OBJECTS FOR ALL THE WEAPONS, 
@@ -172,11 +172,11 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
-/*const theMystery = {
-  killer: 
-  weapon: 
-  room: 
-}*/
+const theMystery = {
+
+}
+
+const killerImage = document.getElementById('killerImage');
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -188,9 +188,41 @@ const pickKiller = () => {
   document.getElementById(
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  killerImage.src = mystery.killer.image
 }
+document.getElementById('killerCard').onclick = pickKiller
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+// Function to be invoked when you click on Weapon card - in the similar way as pickKiller.
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons)
+ // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+ document.getElementById('weaponCard').style.background = mystery.weapon.color // Need to change styling
+ document.getElementById(
+   'weaponName'
+ ).innerHTML = `${mystery.weapon.name}`
+}
+document.getElementById('weaponCard').onclick = pickWeapon
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
+// Function to be invoked when you click on Room card - in the similar way as pickKiller.
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+ // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+ document.getElementById('roomCard').style.background = mystery.room.color // Need to change styling
+ document.getElementById(
+   'roomName'
+ ).innerHTML = `${mystery.room}`
+}
+document.getElementById('roomCard').onclick = pickRoom
+
+// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. 
+// It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+revealMystery = () => {
+  mystery.killer = randomSelector(suspects)
+  mystery.weapon = randomSelector(weapons)
+  mystery.room = randomSelector(rooms)
+  document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  // console.log(`The murder was commited by ${mystery.killer.firstName}, in the ${mystery.room} with a ${mystery.weapon.name}.`)
+  document.getElementById("killerCard").innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} <br>Description: ${mystery.killer.description} <br>Age: ${mystery.killer.age} <br>Occupation: ${mystery.killer.occupation} <br>${mystery.killer.image}`
+  document.getElementById("killerCard").style.background = mystery.killer.color
+}
