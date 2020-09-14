@@ -9,27 +9,110 @@ const mrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
+const mrMustard = {
+  firstName: 'Colonel',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'He is good at weapons',
+  age: 55,
+  image: 'assets/mustard.png',
+  occupation: 'Hunter'
+}
+const mrsPeacock = {
+  firstName: 'Lena',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'She has a lot of money',
+  age: 50,
+  image: 'assets/peacock.png',
+  occupation: 'Rich Mama'
+}
+const professorPlum = {
+  firstName: 'Lennart',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'He is a genius',
+  age: 35,
+  image: 'assets/plum.png',
+  occupation: 'Genius'
+}
+const missScarlet = {
+  firstName: 'Scarlet',
+  lastName: 'Johansson',
+  color: 'red',
+  description: 'She is beautiful',
+  age: 30,
+  image: 'assets/scarlet.png',
+  occupation: 'Beauty'
+}
+const mrsWhite = {
+  firstName: 'Edna',
+  lastName: 'White',
+  color: 'white',
+  description: 'She knows everything',
+  age: 60,
+  image: 'assets/white.png',
+  occupation: 'Know it all'
+}
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
+  weight: 5
+}
+const gun = {
+  name: 'gun',
+  weight: 40
+}
+const knife = {
+  name: 'knife',
+  weight: 20
+}
+const wrench = {
+  name: 'wrench',
+  weight: 50
+}
+const candlestick = {
+  name: 'candlestick',
+  weight: 30
+}
+const pipe = {
+  name: 'pipe',
   weight: 10
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
+
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
   mrGreen,
+  mrMustard,
+  mrsPeacock,
+  professorPlum,
+  missScarlet,
   mrsWhite
-  // ...  and the rest
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  gun,
+  knife,
+  wrench,
+  candlestick,
+  pipe
+]
 
-const rooms = []
+const rooms = [
+  hall,
+  lounge,
+  study,
+  library,
+  kitchen,
+  ballroom
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
@@ -40,6 +123,9 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+const crime = {
+  
+}
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
