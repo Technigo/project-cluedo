@@ -9,6 +9,13 @@ p {
   background-color: #fff;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .cards {
   margin: 50px auto;
   width: 90%;
@@ -47,6 +54,10 @@ p {
   border-radius: 16px;
 }
 
+.loader {
+  opacity: 0;
+}
+
 button {
   padding: 8px 16px;
   background: crimson;
@@ -55,4 +66,25 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #ff0040;
+  /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

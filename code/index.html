@@ -13,23 +13,33 @@
     <header>Murder Mystery</header>
     <button type="button" onclick="startGame()">Start a new game</button>
     <section class="cards">
-      <article class="killer-deck" id="killerCard" onclick="pickKiller()">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
-      </article>
-      <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-      </article>
-      <article class="room-deck" id="roomCard" onclick="pickRoom()">
-        <p>ROOM</p>
-        <p id="roomName"></p>
-      </article>
+      <div class="flex-container">
+        <article class="killer-deck" id="killerCard" onclick="pickKiller(this.nextElementSibling)">
+          <p>KILLER</p>
+          <p id="killerName"></p>
+          <p id="killerAge"></p>
+          <p id="killerOccupation"></p>
+          <p id="killerFavoriteWeapon"></p>
+          <img id="killerImage" src="" height="100" />
+          <p id="killerDescription"></p>
+        </article>
+        <div class="loader" id="killerLoader"></div>
+      </div>
+      <div class="flex-container">
+        <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
+          <p>WEAPON</p>
+          <p id="weaponName"></p>
+          <p id="weaponWeight"></p>
+        </article>
+        <div class="loader" id="weaponLoader"></div>
+      </div>
+      <div class="flex-container">
+        <article class="room-deck" id="roomCard" onclick="pickRoom()">
+          <p>ROOM</p>
+          <p id="roomName"></p>
+        </article>
+        <div class="loader" id="roomLoader"></div>
+      </div>
     </section>
     <h1 id="mystery"></h1>
     <button type="button" onclick="revealMystery()">REVEAL THE CRIME</button>

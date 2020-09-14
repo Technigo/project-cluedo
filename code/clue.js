@@ -13,7 +13,8 @@ const mrGreen = {
   description: 'He is a very serious man.',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Priest'
+  occupation: 'Priest',
+  favoriteWeapon: 'rope'
 };
 
 const clMustard = {
@@ -23,7 +24,8 @@ const clMustard = {
   description: 'Has fought many wars and knows how to handle a gun.',
   age: 65,
   image: 'assets/mustard.png',
-  occupation: 'Military man'
+  occupation: 'Military man',
+  favoriteWeapon: 'knife'
 };
 
 const mrsPeacock = {
@@ -33,7 +35,8 @@ const mrsPeacock = {
   description: 'World famous',
   age: 34,
   image: 'assets/peacock.png',
-  occupation: 'Senators wife'
+  occupation: 'Senators wife',
+  favoriteWeapon: 'axe'
 };
 
 const prPlum = {
@@ -43,7 +46,8 @@ const prPlum = {
   description: 'Smooth-talker',
   age: 41,
   image: 'assets/plum.png',
-  occupation: 'Psychiatry Professor'
+  occupation: 'Psychiatry Professor',
+  favoriteWeapon: 'revolver'
 };
 
 const msScarlet = {
@@ -53,7 +57,8 @@ const msScarlet = {
   description: 'You never know if she is telling you the truth.',
   age: 23,
   image: 'assets/scarlet.png',
-  occupation: 'Runs a underground brothel'
+  occupation: 'Runs a underground brothel',
+  favoriteWeapon: 'poison'
 };
 
 const mrsWhite = {
@@ -63,53 +68,69 @@ const mrsWhite = {
   description: 'A sweet old lady',
   age: 73,
   image: 'assets/white.png',
-  occupation: 'Servant'
+  occupation: 'Servant',
+  favoriteWeapon: 'candlestick'
 };
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
+  id: 'rope',
   weight: 10,
-  color: "red",
+  color: 'red',
   article: "a"
 
 };
 
 const knife = {
   name: 'knife',
+  id: 'knife',
   weight: 7,
-  color: "blue",
+  color: 'blue',
   article: "a"
 };
 
 const axe = {
   name: 'axe',
+  id: 'axe',
   weight: 12,
-  color: "green",
+  color: 'green',
   article: "an"
 };
 
 const revolver = {
   name: 'revolver',
+  id: 'revolver',
   weight: 6,
-  color: "pink",
+  color: 'pink',
   article: "a"
 };
 
 const poison = {
   name: 'poison',
+  id: 'poison',
   weight: 3,
-  color: "yellow",
+  color: 'yellow',
   article: ""
 }
 
 const scissors = {
   name: 'scissors',
+  id: 'scissors',
   weight: 2,
-  color: "purple",
+  color: 'purple',
   article: ""
 }
+
+const candleStick = {
+  name: 'candle stick',
+  id: 'candlestick',
+  weight: 4,
+  color: 'white',
+  article: "a"
+}
+
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -129,7 +150,8 @@ const weapons = [
   axe,
   revolver,
   poison,
-  scissors
+  scissors,
+  candleStick
 ]
 
 const rooms = ['Kitchen', 'Dining Room', 'Lounge', 'Study', 'Cellar', 'Billiard Room', 'Conservatory', 'Library', 'Hall'];
@@ -152,19 +174,34 @@ const mystery = {
 };
 
 // This function will be invoked when you click on the killer card.
-const pickKiller = () => {
+const pickKiller = (loadID) => {
   if (gameStarted) {
-    // This will randomly select a killer from the suspects. And add that to the mystery object.
-    mystery.killer = randomSelector(suspects)
 
-    // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. 
-    //Feel free to add more things to show about the killer.
-    document.getElementById('killerCard').style.background = mystery.killer.color
-    document.getElementById(
-      'killerName'
-    ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-    document.getElementById('killerImage').src = mystery.killer.image;
-    killerPicked = true;
+    //This should be displayed for a few seconds.
+    document.getElementById(loadID.id).style.opacity = 1;
+
+    //After 2.5 seconds, run the function
+    setTimeout(function () {
+      document.getElementById(loadID.id).style.opacity = 0;
+      // This will randomly select a killer from the suspects. And add that to the mystery object.
+      mystery.killer = randomSelector(suspects);
+      // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. 
+      //Feel free to add more things to show about the killer.
+      document.getElementById('killerCard').style.background = mystery.killer.color;
+      document.getElementById('killerImage').src = mystery.killer.image;
+      document.getElementById(
+        'killerName'
+      ).innerHTML = (`${mystery.killer.firstName} ${mystery.killer.lastName}`);
+      document.getElementById(
+        'killerFavoriteWeapon'
+      ).innerHTML = (`Preferred weapon: ${mystery.killer.favoriteWeapon}`);
+      document.getElementById('killerAge').innerHTML = (`Age: ${mystery.killer.age}`);
+      document.getElementById('killerOccupation').innerHTML = (`Occupation: ${mystery.killer.occupation}`);
+      killerPicked = true;
+
+
+    }, 2500);
+
   }
 
 }
@@ -189,8 +226,17 @@ const pickRoom = () => {
   }
 }
 
+//Select a random weapon from the weapons array and assign in to the suspects fav-weapon property
+const shuffleFavoriteWeapon = () => {
+  suspects.forEach(suspect => {
+    let selectedRandomWeapon = randomSelector(weapons).id;
+    suspect.favoriteWeapon = selectedRandomWeapon;
+  });
+}
+
 const startGame = () => {
   gameStarted = true;
+  shuffleFavoriteWeapon();
 }
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
