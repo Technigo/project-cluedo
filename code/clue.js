@@ -103,7 +103,7 @@ const weapons = [
   {
     name: "pistol",
     weight: 8,
-    description: "old Astra model 903, heavy thing",
+    description: "old Astra model 903, heavy thing with a muffle",
   },
 ];
 
@@ -118,11 +118,51 @@ const rooms = [
   },
   {
     name: "Theater",
-    description: "The red velvet curtains drapering the stage was a perfect disguise for a body",
+    description: "To be or not to be. Well, in this case the victim is no more.. The red velvet curtains drapering the stage was a perfect disguise for a body",
   },
   {
     name: 'Kitchen',
-    description: 'Filled with sharp knifes and boiling '
+    description: 'Filled with sharp knifes and boiling pots. The body was found in the pantry, flour spilled everywhere. Such a mess..'
+  },
+  {
+    name: 'Study',
+    description: 'Bookcases from the floor reaching the ceiling, but all of the books are on the floor. There sure was a scuffle going on here. The result: Body under the desk.'
+  },
+  {
+    name: 'Library',
+    description: 'Large bookcases covers the wall. A ladder is resting against one bookcase, and in the space between the bookcase and ceiling the body was found. How did the killer get it up there?'
+  },
+  {
+    name: 'Billiard room',
+    description: 'A dark, woodpaneled room with a huge billiardtable in the middle. Of course, the body was found lying straight on the table. What a mess..'
+  },
+  {
+    name: 'Lounge',
+    description: "Velvet couches and a broken glasstable. Sherry is spilled on a dark, blue carpet. Wait a minute.. that's not sherry! A body is sticking out under one of the couches.."
+  },
+  {
+    name: 'Ballroom',
+    description: "Once there was a ball filled with joy and music. Now there's only tragic, blood and death. The body was found in a corner of the room, the once so shint marble floor, now covered in blood."
+  },
+  {
+    name: 'Hall',
+    description: 'Creeky floorboards and portraits glaring. The killer must have been very quiet and have known exactly which boards to avoid to not be discovered. The body was hidden behind a big plant, the former lady of the house sneering from her portrait.'
+  },
+  {
+    name: 'Spa',
+    description: "Soft music playing, the smell of chlorine and moist air. If it wasn't for the body floating in the pool, it would be quite inviting."
+  },
+  {
+    name: 'Living Room',
+    description: "With the cracked tv's distorted sound in the background and whiskeybottle on the floor, there are plenty of evidence of a scuffle. The body was carefully placed in a chair in front of the tv."
+  },
+  {
+    name: 'Guest House',
+    description: 'Spartan decor with two small beds. This is far from inviting, black mold covering the corners of the ceiling. The body was found in the closet, maybe the murderer was in a rush?'
+  },
+  {
+    name: 'Patio',
+    description: 'This patio could really use a renovation. Loose floorboards everywhere. A perfect place to hide a body.'
   },
 ];
 
@@ -148,7 +188,23 @@ const pickKiller = () => {
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
 };
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons);
+  document.getElementById("weaponCard").style.background = mystery.weapon.color;
+  document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
+  document.getElementById(
+    "weaponWeight"
+  ).innerHTML = `${mystery.weapon.weight} lbs`;
+  document.getElementById(
+    "weaponDescription"
+  ).innerHTML = `${mystery.weapon.description}`;
+};
+
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms);
+  document.getElementById("roomName").innerHTML = `${mystery.room.name}`;
+  document.getElementById("roomDescription").innerHTML = `${mystery.room.description}`;
+};
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
