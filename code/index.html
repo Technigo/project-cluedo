@@ -11,7 +11,7 @@
 
 <body>
   <section class="cards">
-    <article class="killer-deck" id="killerCard">
+    <article class="killer-deck" id="killerCard" onclick="pickKiller()">
       <p>KILLER</p>
       <p id="killerName"></p>
       <p id="killerAge"></p>
@@ -19,13 +19,13 @@
       <img id="killerImage" src="" height="100" />
       <p id="killerDescription"></p>
     </article>
-    <article class="weapon-deck" id="weaponCard">
+    <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
       <p>WEAPON</p>
       <p id="weaponName"></p>
       <p id="weaponWeight"></p>
       <p id="weaponDescription"></p>
     </article>
-    <article class="room-deck" id="roomCard">
+    <article class="room-deck" id="roomCard" onclick="pickRoom()">
       <p>ROOM</p>
       <p id="roomName"></p>
     </article>
@@ -33,10 +33,9 @@
   <section class="conclusion-container">
     <h1 id="mystery"></h1>
 
-    <button onclick="pickKiller(), pickWeapon(), pickRoom(), revealMystery()">REVEAL THE CRIME</button>
+    <button onclick="revealMystery()">REVEAL THE CRIME</button>
 
     <div id="messageBox" class="hidden final-card">
-      <p id="revealMessage"></p>
       <p id="roomDescription"></p>
     </div>
   </section>
