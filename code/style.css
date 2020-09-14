@@ -5,22 +5,46 @@ body {
   background-size: cover;
 }
 
-p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+h1 {
+  font-size: 100px;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-family: 'Carter One', cursive;
+  color: #f5d900;
+  text-align: center;
+  text-shadow: 5px 5px black;
+}
+
+h2 {
+  margin-top: 0;
+  font-family: 'Carter One', cursive;
+  color: #f5d900;
+  text-align: center;
+  font-size: 30px;
+  text-shadow: 3px 3px black;
 }
 
 .cards {
-  margin: 100px auto 50px auto;
+  margin: 30px auto 50px auto;
   width: 90%;
-  height: 600px;
+  height: 500px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
+}
+
+.deck-name {
+  font-family: 'Carter One', cursive;
+  font-size: 25px;
+}
+
+p {
+  margin: 1px;
+  font-weight: 300;
+  background-color: #fff;
 }
 
 .killer-deck {
@@ -74,17 +98,15 @@ article, #revealButton, #restartButton {
 /* LOADER STYLING */
 #loader1, #loader2, #loader3 {
   position: absolute;
-  left: 50%;
+  left: 150px;
   top: 50%;
   z-index: 1;
-  width: 150px;
-  height: 150px;
+  width: 75px;
+  height: 75px;
   margin: -75px 0 0 -75px;
-  border: 16px solid #f3f3f3;
+  border: 10px solid white;
   border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
+  border-top: 10px solid black;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   display: none;

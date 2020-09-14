@@ -6,13 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./style.css" />
     <title>Project Cluedo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Josefin+Sans&display=swap" rel="stylesheet">
   </head>
 
   <body>
+    <h1>CLUEDO</h1>
+    <h2>Find out who's the murderer!</h2>
+
     <section class="cards"> <!-- Section with all 3 cards-->
       
       <article class="killer-deck" id="killerCard"> <!-- Killers deck-->
-        <p>KILLER</p>
+        <p class="deck-name">KILLER</p>
 
         <div id="loader1"></div>
 
@@ -28,7 +32,7 @@
       </article>
 
       <article class="weapon-deck" id="weaponCard"> <!-- Weapons deck-->
-        <p>WEAPON</p>
+        <p class="deck-name">WEAPON</p>
 
         <div id="loader2"></div>
 
@@ -39,7 +43,7 @@
       </article>
 
       <article class="room-deck" id="roomCard"> <!-- Rooms deck-->
-        <p>ROOM</p>
+        <p class="deck-name">ROOM</p>
 
         <div id="loader3"></div>
 
@@ -50,7 +54,7 @@
 
     <button onclick="revealMystery()" id="revealButton">REVEAL THE CRIME</button>
 
-    <h1 id="mystery"></h1> <!-- Sentence revealing the mystery-->
+    <p id="mystery"></p> <!-- Sentence revealing the mystery-->
 
     <button onclick="restart()" id="restartButton">Start Again</button>
 
