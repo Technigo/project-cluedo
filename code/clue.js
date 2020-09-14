@@ -143,13 +143,42 @@ const roomPatio = 'Patio';
 
 const suspects = [
   mrGreen,
+  prPlum,
+  msScarlet,
+  mrsPeacock,
+  colMustard,
   mrsWhite
-  // ...  and the rest
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+const rooms = [
+  roomDining,
+  roomConservatory,
+  roomKitchen,
+  roomStudy,
+  roomLibrary,
+  roomBilliard,
+  roomLounge,
+  roomBallroom,
+  roomHall,
+  roomSpa,
+  roomLiving,
+  roomObservatory,
+  roomTheather,
+  roomGuest,
+  roomPatio
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
