@@ -158,7 +158,7 @@ const suspects = [
   mrsPeacock,
   colonelMustard,
   mrsWhite
-]
+];
 
 const weapons = [
   rope,
@@ -170,7 +170,7 @@ const weapons = [
   bat,
   trophy,
   pistol
-]
+];
 
 const rooms = [
   diningRoom,
@@ -188,7 +188,19 @@ const rooms = [
   theater,
   guestHouse,
   patio
-]
+];
+
+console.log(suspects);
+console.log(rooms);
+console.log(weapons);
+//console log the first suspect in the suspects array:
+console.log(suspects[0]);
+//console log the last room in the rooms array:
+console.log(rooms[14]); //How to do it if I dont know how many elements I have in my string?
+console.log(rooms.length); //writes 15 in console
+//FIND OUT HOW TO PRINT THE LAST ITEM IN THE ROOMS-ARRAY!
+
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
