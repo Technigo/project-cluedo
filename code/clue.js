@@ -176,6 +176,11 @@ const randomSelector = (array) => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+const mystery = {
+  killer: "",
+  weapon: "",
+  room: "",
+};
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -187,9 +192,41 @@ const pickKiller = () => {
   document.getElementById(
     "killerName"
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById("killerAge").innerHTML = `${mystery.killer.age}`;
+  document.getElementById(
+    "killerOccupation"
+  ).innerHTML = `${mystery.killer.occupation}`;
+  document.getElementById("killerImage").src = `${mystery.killer.image}`;
 };
 
+document.getElementById("killerCard").addEventListener("click", pickKiller);
+
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+
+// This function will be invoked when you click on the weapon card.
+const pickWeapon = () => {
+  // This will randomly select a weapon from the weapons. And add that to the mystery object.
+  mystery.weapon = randomSelector(weapons);
+
+  // This will change the card to the one connected to the chosen weapon and show the name and weight of the weapon.
+  document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
+  document.getElementById(
+    "weaponWeight"
+  ).innerHTML = `${mystery.weapon.weight}`;
+};
+
+document.getElementById("weaponCard").addEventListener("click", pickWeapon);
+
+// This function will be invoked when you click on the room card.
+const pickRoom = () => {
+  // This will randomly select a room from the rooms. And add that to the mystery object.
+  mystery.room = randomSelector(rooms);
+
+  // This will change the card to the one connected to the chosen room and show which room it is.
+  document.getElementById("roomName").innerHTML = `${mystery.room}`;
+};
+
+document.getElementById("roomCard").addEventListener("click", pickRoom);
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
