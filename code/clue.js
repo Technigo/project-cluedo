@@ -16,7 +16,7 @@ const prPlum = {
   color: "violet",
   description: "A quick-witted professor",
   age: 35,
-  image: "assets/plump.png",
+  image: "assets/plum.png",
   occupation: "Professor",
 };
 
@@ -172,7 +172,10 @@ const pickKiller = () => {
   document.getElementById(
     "killerName"
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById("killerImage").src = mystery.killer.image;
 };
+
+document.getElementById('killerCard').onclick = pickKiller;
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
