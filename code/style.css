@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 p {
@@ -13,46 +13,79 @@ p {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  background-image: url('./assets/rodolfo-puchulu-O8yTWl006BY-unsplash.jpg');
 }
 
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: #290001;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.killer-deck:hover {
+  transform: scale(1.1);
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: #290001;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.weapon-deck:hover {
+  transform: scale(1.1);
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: #290001;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.room-deck:hover {
+  transform: scale(1.1);
 }
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: #c87941;
   border: none;
   font-size: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  transition-duration: 0.3s;
+}
+
+button:hover {
+  background: #87431d;
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.4), 0 8px 25px 0 rgba(0, 0, 0, 0.4);
+  transform: scale(1.1);
+}
+
+.mystery-text {
+  text-align: center;
+  margin: 30px;
 }

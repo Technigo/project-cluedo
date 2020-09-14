@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  color: '#557571',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -13,7 +13,7 @@ const mrGreen = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'purple',
+  color: '#31112c',
   description: 'He is a excentric man',
   age: 35,
   image: 'assets/plum.png',
@@ -22,7 +22,7 @@ const professorPlum = {
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'darkred',
+  color: '#7d0633',
   description: 'Fortuneseeker',
   age: 27,
   image: 'assets/scarlet.png',
@@ -32,7 +32,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: 'blue',
+  color: '#00416d',
   description: 'Jealous and mean',
   age: 45,
   image: 'assets/peacock.png',
@@ -42,7 +42,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'yellow',
+  color: '#c87941',
   description: 'Senile and tired',
   age: 70,
   image: 'assets/mustard.png',
@@ -52,7 +52,7 @@ const colonelMustard = {
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: 'white',
+  color: '#dbcbbd',
   description: 'The grumpy old matriark',
   age: 85,
   image: 'assets/white.png',
@@ -168,15 +168,26 @@ const pickKiller = () => {
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   const killerImage = document.getElementById('killerImage');
   killerImage.src = mystery.killer.image;
+  document.getElementById(
+    'killerAge'
+  ).innerHTML = `${mystery.killer.age} years old`;
+  document.getElementById(
+    'killerOccupation'
+  ).innerHTML = `${mystery.killer.occupation}`;
+  document.getElementById(
+    'killerDescription'
+  ).innerHTML = `${mystery.killer.description}`;
 };
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
-  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
+  document.getElementById(
+    'weaponName'
+  ).innerHTML = `Weapon: ${mystery.weapon.name}`;
   document.getElementById(
     'weaponWeight'
-  ).innerHTML = `${mystery.weapon.weight}`;
+  ).innerHTML = `Weapon weight: ${mystery.weapon.weight}`;
 };
 
 const pickRoom = () => {
