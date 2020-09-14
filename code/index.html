@@ -20,15 +20,12 @@
 
         <div id="loader1"></div>
 
-        <div class="killer-info">
-          <p id="killerName"></p>
-          <p id="killerAge"></p>
-          <p id="killerOccupation"></p>
-          <img id="killerImage" src="" height="100" />
-          <p id="killerDescription"></p>
-          <p id="killerFavWeapon"></p>
-        </div>
-
+        <img id="killerImage" src="" height="100" />
+        <p id="killerName"></p>
+        <p id="killerAge"></p>
+        <p id="killerOccupation"></p>
+        <p id="killerDescription"></p>
+        <p id="killerFavWeapon"></p>
       </article>
 
       <article class="weapon-deck" id="weaponCard"> <!-- Weapons deck-->
@@ -36,10 +33,10 @@
 
         <div id="loader2"></div>
 
+        <img id="weaponImage" src="" height="100" />
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
         <p id="weaponDamage"></p>
-        <img id="weaponImage" src="" height="100" />
       </article>
 
       <article class="room-deck" id="roomCard"> <!-- Rooms deck-->
@@ -52,12 +49,16 @@
 
     </section>
 
-    <button onclick="revealMystery()" id="revealButton">REVEAL THE CRIME</button>
+    <button onclick="revealMystery()" id="revealButton">REVEAL THE CRIME...</button>
 
     <p id="mystery"></p> <!-- Sentence revealing the mystery-->
 
     <button onclick="restart()" id="restartButton">Start Again</button>
 
     <script src="./clue.js"></script>
+
+    <footer>
+      <p>Project by Vanessa Sue Smith 😎</p>
+    </footer>
   </body>
 </html>

@@ -42,9 +42,15 @@ h2 {
 }
 
 p {
-  margin: 1px;
+  margin: 2px;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
+  font-size: 19px;
   background-color: #fff;
+}
+
+#killerImage, #weaponImage, #roomName {
+  margin-top: 40px;
 }
 
 .killer-deck {
@@ -78,21 +84,30 @@ p {
 }
 
 button {
-  padding: 8px 16px;
-  background: crimson;
+  padding: 10px 18px;
+  background: black;
+  color: #f5d900;
   border: none;
-  font-size: 20px;
+  font-size: 25px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  font-family: 'Carter One', cursive;
+}
+
+#restartButton {
+  display: none;
 }
 
 article, #revealButton, #restartButton {
   cursor: pointer;
 }
 
-#restartButton {
-  display: none;
+#mystery {
+  width: 800px;
+  text-align: center;
+  margin: 10px auto;
+  font-size: 30px;
 }
 
 /* LOADER STYLING */
