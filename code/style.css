@@ -9,6 +9,9 @@ p {
   background-color: #fff;
 }
 
+h1 {
+  text-align: center;
+}
 .cards {
   margin: 50px auto;
   width: 90%;
@@ -45,6 +48,10 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+}
+
+img {
+  border: solid #fff 2px;
 }
 
 .conclusion-container {
