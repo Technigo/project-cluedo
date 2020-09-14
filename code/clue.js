@@ -193,20 +193,31 @@ const pickKiller = () => {
   document.getElementById('killerCard').style.background = mystery.killer.color;
   document.getElementById(
     'killerName'
-    ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.description}`;
+    ).innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}, Description: ${mystery.killer.description}`;
 let killerImage = document.getElementById('killerImage');
 killerImage.src = mystery.killer.image;
 };
-console.log(randomSelector);
+console.log(pickKiller);
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+const pickWeapon = () => {
+  // This will randomly select a weapon from the weapons. And add that to the mystery object.
+  mystery.weapons = randomSelector(weapons);
+
+  document.getElementById('weaponCard');
+  document.getElementById(
+    'weaponName'
+    ).innerHTML = `Weapon: ${mystery.weapons.name} Material: ${mystery.weapons.material}`;
+    let weaponName = document.getElementById('weaponName');
+  };
+console.log(pickWeapon);
+
+// CREATE FUNCTIONS pickRoom
 
 
 // To show all of this cool stuff in the browser
 document.getElementById('killerCard').onclick = pickKiller;
+document.getElementById('weaponCard').onclick = pickWeapon;
 
-document.getElementById(
-  'mystery'
-).innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`;
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
