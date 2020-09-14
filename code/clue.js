@@ -8,28 +8,160 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
+};
+
+const mrsWhite = {
+  firstName: 'Elvira',
+  lastName: 'White',
+  color: 'white',
+  description: 'She knows every corner of the house.',
+  age: 65,
+  image: 'assets/white.png',
+  occupation: 'Chef'
+};
+
+const missScarlet = {
+  firstName: 'Gloria',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'The spotlight is always on her.',
+  age: 32,
+  image: 'assets/scarlet.png',
+  occupation: 'Actress'
+};
+
+const colonelMustard = {
+  firstName: 'Michael',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'He is trained with weapons.',
+  age: 52,
+  image: 'assets/mustard.png',
+  occupation: 'Soldier'
+};
+
+const mrsPeacock = {
+  firstName: 'Elizabeth',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'She impresses people with her elegance.',
+  age: 47,
+  image: 'assets/peacock.png',
+  occupation: 'Socialite'
+};
+
+const profPlum = {
+  firstName: 'Peter',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'His intelligence is stunning.',
+  age: 39,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
 }
+
+// console.log(mrGreen.firstName);
+// console.log(mrsWhite.lastName);
+// console.log(missScarlet.color);
+// console.log(colonelMustard.description);
+// console.log(mrsPeacock.age);
+// console.log(profPlum.occupation);
+
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
-  weight: 10
-}
+  weight: 10,
+  material: 'hampen'
+};
+
+const candlestick = {
+  name: 'candlestick',
+  weight: 22,
+  material: 'silver'
+};
+
+const revolver = {
+  name: 'revolver',
+  weight: 30,
+  material: 'iron'
+};
+
+const leadPipe = {
+  name: 'lead pipe',
+  weight: 52,
+  material: 'lead'
+};
+
+const dagger = {
+  name: 'dagger',
+  weight: 28,
+  material: 'steel'
+};
+
+const wrench = {
+  name: 'wrench',
+  weight: 18,
+  material: 'stainless steel'
+};
+
+// console.log(rope.name);
+// console.log(candlestick.weight);
+// console.log(revolver.material);
+// console.log(leadPipe.name);
+// console.log(dagger.weight);
+// console.log(wrench.material);
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+const kitchen = 'kitchen';
+const ballroom = 'ballroom';
+const conservatory = 'conservatory';
+const billiardRoom = 'billiard room';
+const library = 'library';
+const study = 'study';
+const hall = 'hall';
+const lounge = 'lounge';
+const diningRoom = 'dining room';
+
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
+  mrsWhite,
+  missScarlet, 
+  colonelMustard,
+  mrsPeacock,
+  profPlum
 ]
 
-const weapons = []
+const weapons = [
+  rope, 
+  candlestick,
+  revolver,
+  leadPipe,
+  dagger,
+  wrench
+]
 
-const rooms = []
+const rooms = [
+  kitchen,
+  ballroom,
+  conservatory,
+  billiardRoom,
+  library,
+  study,
+  hall,
+  lounge,
+  diningRoom
+]
+
+// console.log(rooms);
+// console.log(weapons);
+// console.log(suspects);
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
