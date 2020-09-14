@@ -196,7 +196,7 @@ const pickKiller = (loadID) => {
       document.getElementById('killerAge').innerHTML = (`Age: ${mystery.killer.age}`);
       document.getElementById('killerOccupation').innerHTML = (`Occupation: ${mystery.killer.occupation}`);
       killerPicked = true;
-    }, 2000);
+    }, 3000);
   }
 }
 
@@ -212,7 +212,7 @@ const pickWeapon = (loadID) => {
       document.getElementById('weaponName').innerHTML = `Type: ${mystery.weapon.name}`;
       document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`;
       weaponPicked = true;
-    }, 2000);
+    }, 3000);
   } else(showInfoMessage("pickWeapon"));
 }
 
@@ -226,7 +226,7 @@ const pickRoom = (loadID) => {
       console.log(mystery.room);
       document.getElementById('roomName').innerHTML = mystery.room;
       roomPicked = true;
-    }, 2000);
+    }, 3000);
   } else(showInfoMessage("pickRoom"));
 }
 
