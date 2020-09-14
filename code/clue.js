@@ -9,62 +9,57 @@ const mrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
-//console.log(mrGreen.age, mrGreen.lastName, mrGreen.description);
 
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'purple', //green is this suppose to be changed?
+  color: 'purple', 
   description: 'He is a nuclear specialist',
   age: 84,
   image: 'assets/plum.png',
   occupation: 'Retired'
 }
-//console.log(professorPlum.description)
 
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'red', //green is this suppose to be changed?
+  color: 'red', 
   description: 'She is a specialist in freelance espionage',
   age: 28,
   image: 'assets/scarlet.png',
   occupation: 'Actress'
 }
-//console.log(missScarlet.description, missScarlet.firstName)
 
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: 'blue', //green is this suppose to be changed?
+  color: 'blue', 
   description: 'She always maintains her dignity',
   age: 57,
   image: 'assets/peacock.png',
   occupation: 'Socialite'
 }
-//console.log(mrsPeacock.description)
 
 const colonelMustard = {
   firstName: 'Colonel',
   lastName: 'Mustard',
-  color: 'yellow', //green is this suppose to be changed?
+  color: 'yellow', 
   description: 'He is a great hunter',
   age: 65,
   image: 'assets/mustard.png',
   occupation: 'Colonel'
 }
-//console.log(colonelMustard.lastName, colonelMustard.description)
+
 
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: 'white', //green is this suppose to be changed?
+  color: 'white', 
   description: 'Loyal and confidant',
   age: 72,
   image: 'assets/white.png',
   occupation: 'Housekeeper'
 }
-//console.log(mrsWhite.age, mrsWhite.occupation)
 
 
 
@@ -74,7 +69,6 @@ const rope = {
   name: 'rope',
   weight: 10
 }
-//console.log(rope.weight)
 
 const knife = {
   name: 'knife',
@@ -128,12 +122,6 @@ const suspects = [
   colonelMustard,
   mrsWhite
 ]
-/*
-suspects.forEach((name) => {
-  console.log(name)
-});*/
-//console.log(suspects[0].firstName)
-
 
 const weapons = [
   rope,
@@ -146,13 +134,6 @@ const weapons = [
   trophy,
   pistol
 ]
-/*
-weapons.map((killerWeapons) => {
-  console.log(killerWeapons)
-})*/
-//console.log(weapons.length)
-//console.log(weapons.slice(-1)[0].name)
-
 
 const rooms = [
   "Dining Room", 
@@ -171,13 +152,7 @@ const rooms = [
   "Guest House", 
   "Patio"
 ]
-/*
-rooms.forEach((place) => {
-  console.log(place)
-});*/
-//rooms.sort();
-//console.log(rooms)
-//console.log(rooms.length)
+
 
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
