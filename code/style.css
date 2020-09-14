@@ -16,16 +16,20 @@ h1 {
   font-family: 'Montserrat', sans-serif;
 }
 
+/* LOGO CONTAINER */
+
 .top-container {
   display: flex;
   justify-content: center;
 }
 
 .top-container img {
-  width: 40%;
+  width: 500px;
   margin-top: 10px;
   border-radius: 5px;
 }
+
+/* MYSTERY CARDS */
 
 .cards {
   margin: 20px auto;
@@ -89,6 +93,8 @@ h1 {
   justify-content: center;
 }
 
+/* BUTTON */
+
 button {
   padding: 8px 16px;
   font-family: 'Montserrat', sans-serif;
@@ -107,11 +113,12 @@ button {
 
 button:hover {
   cursor: pointer;
-  background: linear-gradient(45deg, #845ec2, #d65db1, #ff6f91, #ff9671, #ffc75f, #d0f971);
+  background: linear-gradient(45deg, #d1f875, #fcc662, #fc9874, #ff6f91, #d661b3, #8762c4);
   -webkit-transform: scale(1.1);
   transform: scale(1.2);
 }
 
+/* FOOTER */
 footer {
   height: 40px;
   color: black;
@@ -131,4 +138,25 @@ footer img:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.5);
   cursor: pointer;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 800px) {
+
+  .top-container img {
+    width: 300px;
+  }
+
+  .cards {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .killer-deck,
+  .weapon-deck,
+  .room-deck {
+    margin-top: 40px;
+  }
+
 }
