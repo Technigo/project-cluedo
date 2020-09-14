@@ -101,11 +101,6 @@ const axe = {
   weight: 17
 }
 
-const axe = {
-  name: 'axe',
-  weight: 19
-}
-
 const bat = {
   name: 'bat',
   weight: 4
@@ -127,13 +122,63 @@ const pistol = {
 
 const suspects = [
   mrGreen,
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
   mrsWhite
-  // ...  and the rest
 ]
+/*
+suspects.forEach((name) => {
+  console.log(name)
+});*/
+//console.log(suspects[0].firstName)
 
-const weapons = []
 
-const rooms = []
+const weapons = [
+  rope,
+  knife,
+  candelstick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
+/*
+weapons.map((killerWeapons) => {
+  console.log(killerWeapons)
+})*/
+//console.log(weapons.length)
+//console.log(weapons.slice(-1)[0].name)
+
+
+const rooms = [
+  "Dining Room", 
+  "Conservatory", 
+  "Kitchen", 
+  "Study", 
+  "Library", 
+  "Billiard Room", 
+  "Lounge", 
+  "Ballroom", 
+  "Hall", 
+  "Spa", 
+  "Living Room", 
+  "Observatory", 
+  "Theater", 
+  "Guest House", 
+  "Patio"
+]
+/*
+rooms.forEach((place) => {
+  console.log(place)
+});*/
+//rooms.sort();
+//console.log(rooms)
+//console.log(rooms.length)
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
