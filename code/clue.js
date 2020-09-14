@@ -107,7 +107,7 @@ const pistol = {
   weight: 7,
 };
 
-//Console log information from some of the object
+//Console log information from some of the suspects and weapons objects
 console.log(mrGreen.firstName);
 console.log(professorPlum.lastName);
 console.log(missScarlet.color);
@@ -120,13 +120,52 @@ console.log(knife.weight);
 
 const suspects = [
   mrGreen,
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
   mrsWhite,
-  // ...  and the rest
 ];
 
-const weapons = [];
+const weapons = [
+  rope,
+  knife,
+  candleStick,
+  dumbBell,
+  poison,
+  bat,
+  throphy,
+  pistol,
+];
 
-const rooms = [];
+const rooms = [
+  "Dinning Room",
+  "Conservatory",
+  "Conservatory",
+  "Study",
+  "Study",
+  "Billiard Room",
+  "Lounge",
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "Living Room",
+  "Observatory",
+  "Theater",
+  "Guest House",
+  "Patio",
+];
+
+//Console log the arrays
+console.log(suspects);
+console.log(weapons);
+console.log(rooms);
+
+//Console log and play around with console logging the first suspect in the suspects array or the last room in the rooms array
+console.log(suspects[0]);
+console.log(suspects[1].firstName);
+console.log(weapons[5].name);
+console.log(rooms[rooms.length - 1]);
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
