@@ -174,6 +174,9 @@ const randomSelector = array => {
 }
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
+
+
+
 // With a killer, a weapon and a room.
 // The values will be set later.
 
