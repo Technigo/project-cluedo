@@ -9,12 +9,116 @@ const mrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
+//console.log(mrGreen.age, mrGreen.lastName, mrGreen.description);
+
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple', //green is this suppose to be changed?
+  description: 'He is a nuclear specialist',
+  age: 84,
+  image: 'assets/plum.png',
+  occupation: 'Retired'
+}
+//console.log(professorPlum.description)
+
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red', //green is this suppose to be changed?
+  description: 'She is a specialist in freelance espionage',
+  age: 28,
+  image: 'assets/scarlet.png',
+  occupation: 'Actress'
+}
+//console.log(missScarlet.description, missScarlet.firstName)
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue', //green is this suppose to be changed?
+  description: 'She always maintains her dignity',
+  age: 57,
+  image: 'assets/peacock.png',
+  occupation: 'Socialite'
+}
+//console.log(mrsPeacock.description)
+
+const colonelMustard = {
+  firstName: 'Colonel',
+  lastName: 'Mustard',
+  color: 'yellow', //green is this suppose to be changed?
+  description: 'He is a great hunter',
+  age: 65,
+  image: 'assets/mustard.png',
+  occupation: 'Colonel'
+}
+//console.log(colonelMustard.lastName, colonelMustard.description)
+
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white', //green is this suppose to be changed?
+  description: 'Loyal and confidant',
+  age: 72,
+  image: 'assets/white.png',
+  occupation: 'Housekeeper'
+}
+//console.log(mrsWhite.age, mrsWhite.occupation)
+
+
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
   weight: 10
+}
+//console.log(rope.weight)
+
+const knife = {
+  name: 'knife',
+  weight: 7
+}
+
+const candelstick = {
+  name: 'candelstick',
+  weight: 12
+}
+
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 24
+}
+
+const poison = {
+  name: 'poison',
+  weight: 1
+}
+
+const axe = {
+  name: 'axe',
+  weight: 17
+}
+
+const axe = {
+  name: 'axe',
+  weight: 19
+}
+
+const bat = {
+  name: 'bat',
+  weight: 4
+}
+
+const trophy = {
+  name: 'trophy',
+  weight: 29
+}
+
+const pistol = {
+  name: 'pistol',
+  weight: 11
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
