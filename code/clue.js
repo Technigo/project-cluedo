@@ -208,7 +208,6 @@ const pickWeapon = (loadID) => {
     setTimeout(function () {
       document.getElementById(loadID.id).style.opacity = 0;
       mystery.weapon = randomSelector(weapons);
-      console.log(mystery.weapon);
       document.getElementById('weaponName').innerHTML = `Type: ${mystery.weapon.name}`;
       document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`;
       weaponPicked = true;
@@ -223,7 +222,6 @@ const pickRoom = (loadID) => {
       document.getElementById(loadID.id).style.opacity = 0;
       increaseChanceForRoom(mystery.weapon);
       mystery.room = randomSelector(rooms);
-      console.log(mystery.room);
       document.getElementById('roomName').innerHTML = mystery.room;
       roomPicked = true;
     }, 3000);
