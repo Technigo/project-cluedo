@@ -1,6 +1,6 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
-const mrGreen = {
+  const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
   color: 'green',
@@ -9,6 +9,52 @@ const mrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
+  const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'violet',
+  description: 'He has a lot of connections',
+  age: 45,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
+  const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'He has a lot of connections',
+  age: 45,
+  image: 'assets/scarlet.png',
+  occupation: 'Doktor'
+}
+  const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'He has a lot of connections',
+  age: 45,
+  image: 'assets/peacock.png',
+  occupation: 'Frontend developer'
+}
+const ColonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'He has a lot of connections',
+  age: 45,
+  image: 'assets/mustard.png',
+  occupation: 'Chef'
+}
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'He has a lot of connections',
+  age: 45,
+  image: 'assets/white.png',
+  occupation: 'Headmaster'
+}
+
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
@@ -16,8 +62,56 @@ const rope = {
   name: 'rope',
   weight: 10
 }
+const Knife = {
+  name: 'Knife',
+  weight: 1
+}
+const Candlestick = {
+  name: 'Candlestick',
+  weight: 15
+}
+const Dumbbell = {
+  name: 'Dumbbell',
+  weight: 30
+}
+const Poison = {
+  name: 'Poison',
+  weight: 3
+}
+const Axe = {
+  name: 'Axe',
+  weight: 16
+}
+const Bat = {
+  name: 'Bat',
+  weight: 9
+}
+const Trophy = {
+  name: 'Trophy',
+  weight: 50
+}
+const Pistol = {
+  name: 'Pistol',
+  weight: 8
+}
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+// dessa har jag klistrat in själv
+//Dining Room 
+// Conservatory 
+// Kitchen 
+// Study 
+// Library 
+// Billiard Room 
+// Lounge 
+// Ballroom 
+// Hall 
+// Spa 
+// Living Room 
+// Observatory 
+// Theater 
+// Guest House 
+// Patio 
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
