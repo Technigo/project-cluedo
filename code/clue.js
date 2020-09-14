@@ -59,7 +59,6 @@ const mrsWhite = {
   image: 'assets/white.png',
   occupation: 'Maid'
 }
-console.log(professorPlum.description)
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
@@ -111,17 +110,54 @@ const pistol = {
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
+
+
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
-  mrGreen,
-  mrsWhite
-  // ...  and the rest
-]
+  "mrGreen",
+  "professorPlum",
+  "missScarlet",
+  "mrsPeacock",
+  "colonelMustard",
+  "mrsWhite"
+];
 
-const weapons = []
+console.log(suspects);
 
-const rooms = []
+const weapons = [
+  "rope",
+  "knife",
+  "candlestick",
+  "dumbbell",
+  "poison",
+  "axe",
+  "bat",
+  "trophy",
+  "pistol"
+];
+
+console.log(weapons);
+
+const rooms = [
+  "diningRoom", 
+  "conservatory", 
+  "kitchen", 
+  "study", 
+  "library", 
+  "billiardRoom", 
+  "lounge", 
+  "ballroom", 
+  "hall", 
+  "spa", 
+  "livingRoom", 
+  "observatory", 
+  "theater", 
+  "guestHouse", 
+  "patio"
+];
+console.log(rooms);
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
