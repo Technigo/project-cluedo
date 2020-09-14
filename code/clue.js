@@ -136,7 +136,18 @@ const suspects = [
 ]
 console.log(suspects);
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol 
+]
+console.log(weapons);
 
 const rooms = []
 
