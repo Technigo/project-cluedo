@@ -174,7 +174,6 @@ let mystery = {
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
-  console.log("mystery.killer: " + mystery.killer.firstName);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById("killerCard").style.background = mystery.killer.color;
@@ -184,11 +183,12 @@ const pickKiller = () => {
 };
 pickKiller();
 
+// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+
 // This function will be invoked when you click on the weapon card.
 const pickWeapon = () => {
   // This will randomly select a weapon from the array. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons);
-  console.log("mystery.weapon: " + mystery.weapon.name);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   // document.getElementById("killerCard").style.background = mystery.killer.color;
@@ -202,7 +202,6 @@ pickWeapon();
 const pickRoom = () => {
   // This will randomly select a room from the array. And add that to the mystery object.
   mystery.room = randomSelector(rooms);
-  console.log("mystery.room: " + mystery.room);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   //document.getElementById("killerCard").style.background = mystery.killer.color;
@@ -210,7 +209,10 @@ const pickRoom = () => {
 };
 pickRoom();
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
-
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+const revealMystery = () => {
+  document.getElementById(
+    "mystery"
+  ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
+};
