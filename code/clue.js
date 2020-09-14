@@ -200,29 +200,40 @@ const pickKiller = (loadID) => {
       killerPicked = true;
 
 
-    }, 2500);
+    }, 2000);
 
   }
 
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
-const pickWeapon = () => {
+const pickWeapon = (loadID) => {
+
   if (killerPicked) {
-    mystery.weapon = randomSelector(weapons);
-    console.log(mystery.weapon);
-    document.getElementById('weaponName').innerHTML = mystery.weapon.name;
-    document.getElementById('weaponWeight').innerHTML = mystery.weapon.weight;
-    weaponPicked = true;
+    //This should be displayed for a few seconds.
+    document.getElementById(loadID.id).style.opacity = 1;
+    setTimeout(function () {
+      document.getElementById(loadID.id).style.opacity = 0;
+      mystery.weapon = randomSelector(weapons);
+      console.log(mystery.weapon);
+      document.getElementById('weaponName').innerHTML = mystery.weapon.name;
+      document.getElementById('weaponWeight').innerHTML = mystery.weapon.weight;
+      weaponPicked = true;
+    }, 2000);
   }
 }
 
-const pickRoom = () => {
+const pickRoom = (loadID) => {
   if (weaponPicked) {
-    mystery.room = randomSelector(rooms);
-    console.log(mystery.room);
-    document.getElementById('roomName').innerHTML = mystery.room;
-    roomPicked = true;
+    //This should be displayed for a few seconds.
+    document.getElementById(loadID.id).style.opacity = 1;
+    setTimeout(function () {
+      document.getElementById(loadID.id).style.opacity = 0;
+      mystery.room = randomSelector(rooms);
+      console.log(mystery.room);
+      document.getElementById('roomName').innerHTML = mystery.room;
+      roomPicked = true;
+    }, 2000);
   }
 }
 
