@@ -1,6 +1,11 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background: url(assets/clue-bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 p {
@@ -13,38 +18,34 @@ p {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  /* background: #ccc; */
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border: 1px dashed hotpink;
+}
+
+.deck {
+  border: 16px solid #FFFFFF;
+  box-sizing: border-box;
+  box-shadow: 0px 11px 13px rgba(0, 0, 0, 0.1), 0px 20px 0px #D5D5D5, 0px 24px 12px rgba(0, 0, 0, 0.35);
+  border-radius: 32px;
+  width: 250px;
+  height: 400px;
+  text-align: center;
+  padding-top: 30px;
 }
 
 .killer-deck {
-  width: 250px;
-  height: 400px;
-  background: #000;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+  background: #1E3FB1;
 }
 
 .weapon-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+  background: #B11E39;
 }
 
 .room-deck {
-  width: 250px;
-  height: 400px;
-  background: midnightblue;
-
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+  background: #21B11E;
 }
 
 button {
@@ -55,4 +56,9 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+.deck img {
+  border-radius: 100%;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
 }
