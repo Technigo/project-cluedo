@@ -64,7 +64,7 @@ const mrsWhite = {
   image: 'assets/white.png',
   occupation: 'Retired'
 }
-console.log(mrsWhite.description)
+
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 /*- **The weapons**
@@ -113,7 +113,7 @@ const pistol = {
   name: 'pistol',
   weight: 5
 }
-console.log(pistol.weight)
+
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -127,7 +127,7 @@ const suspects = [
   colonelMustard,
   mrsWhite
 ]
-
+console.log(suspects)
 const weapons = [
   rope,
   knife,
