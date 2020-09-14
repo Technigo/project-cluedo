@@ -136,3 +136,26 @@ article, #revealButton, #restartButton {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+footer {
+  margin-top: 200px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+footer p {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #f5d900;
+}
+
+a:hover {
+  color: white;
+}
