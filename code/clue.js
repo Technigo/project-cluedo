@@ -10,26 +10,162 @@ const mrGreen = {
   occupation: 'Entrepreneur'
 }
 
+const professorPlum  = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'bla bla bla ',
+  age: 40,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
+
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'People always underestimate her, they dont know her occupation',
+  age: 35,
+  image: 'assets/scarlet.png',
+  occupation: 'Undercover spy'
+}
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'She is very rich',
+  age: 43,
+  image: 'assets/peacock.png',
+  occupation: 'Interior Designer'
+}
+
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'loves the military',
+  age: 65,
+  image: 'assets/mustard.png',
+  occupation: 'Retired'
+}
+
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'She became a widower and got her freedom back',
+  age: 63,
+  image: 'assets/white.png',
+  occupation: 'travles the world'
+}
+
+//console log test 
+console.log(mrsWhite.description) 
+
+
+
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 6,
+  color:'brown'
+}
+
+const knife = {
+  name: 'knife',
+  weight: 5,
+  color:'dark grey'
+}
+
+const candleStick = {
+  name: 'candlestick',
+  weight: 6,
+  color:'rosegold'
+}
+
+const dumbBell = {
+  name: 'dumbbell',
+  weight: 10,
+  color:'grey'
+}
+
+const poision = {
+  name: 'poision',
+  weight: 3,
+  color:'green'
+}
+
+const axe = {
+  name: 'axe',
+  weight: 10,
+  color:'silver'
+}
+
+const bat = {
+  name: 'bat',
+  weight: 7,
+  color:'wood'
+}
+
+const trophy = {
+  name: 'trophy',
+  weight: 9,
+  color:'gold'
+}
+
+const pistol = {
+  name: 'pistol',
+  weight: 8, 
+  color: 'black'
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
+  mrsWhite,
 ]
 
-const weapons = []
+const weapons = [
+rope, 
+knife, 
+candleStick,
+dumbBell,
+poision,
+axe,
+bat,
+trophy, 
+pistol,
+]
 
-const rooms = []
+const rooms = [
+  'Dining room',
+  'Conservatory', 
+  'Kitchen',
+  'Study', 
+  'Library',
+  'Billiard Room', 
+  'Lounge', 
+  'Ballroom', 
+  'Hall', 
+  'Spa', 
+  'Living Room', 
+  'Observatory', 
+  'Theater', 
+  'Guest House', 
+  'Patio',  
+]
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
