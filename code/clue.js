@@ -175,13 +175,21 @@ const randomSelector = array => {
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 
+const mystery = {
+  suspects,
+  weapons,
+  rooms,
+}
 
 
 // With a killer, a weapon and a room.
 // The values will be set later.
 
+
 // This function will be invoked when you click on the killer card.
+
 const pickKiller = () => {
+  
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
@@ -191,8 +199,43 @@ const pickKiller = () => {
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 }
+document.getElementById('killerCard').onclick = pickKiller
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+
+
+
+
+
+
+// CREATE FUNCTION pickWeapon 
+
+const pickWeapon = () => {
+  // This will randomly select a weapon. And add that to the mystery object.
+  mystery.weapons = randomSelector(weapons)
+
+  document.getElementById('weaponCard').style.background = mystery.weapons.color
+  document.getElementById(
+    'weaponName'
+  ).innerHTML = `${mystery.weapons.name}`
+}
+document.getElementById('weaponCard').onclick = pickWeapon
+
+
+// CREATE FUNCTION pickRoom 
+
+
+const pickRoom = () => {
+  // This will randomly select a weapon. And add that to the mystery object.
+  mystery.rooms = randomSelector(rooms)
+
+  document.getElementById(
+    'roomName'
+  ).innerHTML = `${mystery.rooms}`
+}
+document.getElementById('roomCard').onclick = pickRoom
+
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+
