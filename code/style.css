@@ -47,6 +47,13 @@ p {
   border-radius: 16px;
 }
 
+.conclusion-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
 button {
   padding: 8px 16px;
   background: crimson;
@@ -63,7 +70,7 @@ button {
 
 .final-card {
   background: #BBD3CC;
-  height: 200px;
+  height: 450px;
   width: 350px;
 
   text-align: center;

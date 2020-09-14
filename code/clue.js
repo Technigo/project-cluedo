@@ -209,12 +209,12 @@ const pickWeapon = () => {
 const pickRoom = () => {
   mystery.room = randomSelector(rooms);
   document.getElementById("roomName").innerHTML = `${mystery.room.name}`;
-  document.getElementById("roomDescription").innerHTML = `${mystery.room.description}`;
-};
+  };
 
 const revealMystery = () => {
   document.getElementById('messageBox').classList.remove('hidden');
   document.getElementById('revealMessage').innerHTML = `The murder was commited by ${mystery.killer.name} in the ${mystery.room.name} with the ${mystery.weapon.name}. Scandalous!`;
+  document.getElementById("roomDescription").innerHTML = `In the darkest hour, while everyone else were busy doing other stuff ${mystery.killer.name} acted quickly. ${mystery.room.description}`;
 };
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
