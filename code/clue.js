@@ -172,32 +172,41 @@ console.log(rooms);
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
-}
+};
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
 let mystery = {
-  killer: null, 
-  weapons: null,
-  rooms: null,
+  killer: suspects, 
+  weapons: weapons,
+  rooms: rooms,
 };
 console.log(mystery);
-
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
+  mystery.killer = randomSelector(suspects);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerCard').style.background = mystery.killer.color;
   document.getElementById(
     'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-}
+    ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.description}`;
+let killerImage = document.getElementById('killerImage');
+killerImage.src = mystery.killer.image;
+};
+console.log(randomSelector);
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
+
+// To show all of this cool stuff in the browser
+document.getElementById('killerCard').onclick = pickKiller;
+
+document.getElementById(
+  'mystery'
+).innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`;
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
