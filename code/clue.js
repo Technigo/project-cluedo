@@ -88,8 +88,7 @@ const chiaSeeds = {
 // }
 
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
-
+// Arrays made with all ingredients separated into 3 groups
 const mainFruits = [
   apple, 
   banana,
@@ -113,65 +112,61 @@ const superBoosters = [
   chiaSeeds
 ]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+// Function that selects a random object from chosen array
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-console.log(randomSelector(mainFruits).name, randomSelector(mixers).name, randomSelector(superBoosters).name)
+// Object that will define all ingredients currently selected in the smoothie
+let smoothie = {
+  mainFruit: ''.name,
+  mixer: ''.name,
+  superBooster: ''.name
+}
 
-
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
-
-// This function will be invoked when you click on the killer card.
+// These functions will be invoked when you click one of the cards.
 const pickMainFruit = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mainFruit = randomSelector(mainFruits)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = '#fff'
   document.getElementById(
     'killerName'
   ).innerHTML = `${mainFruit.name}`
+
+  smoothie.mainFruit = mainFruit.name
+  console.log(smoothie)
 }
 
+
 const pickMixer = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mixer = randomSelector(mixers)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('weaponCard').style.background = '#fff'
   document.getElementById(
     'weaponName'
   ).innerHTML = `${mixer.name}`
+  
+  smoothie.mixer = mixer.name
+  console.log(smoothie)
 }
 
+
 const pickSuperBooster = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   superBooster = randomSelector(superBoosters)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('roomCard').style.background = '#fff'
   document.getElementById(
     'roomName'
   ).innerHTML = `${superBooster.name}`
+
+  smoothie.superBooster = superBooster.name
+  console.log(smoothie)
 }
 
 
-
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
-
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// TODO Add an if-statement to make button sense if smoothie-variable is completely filled in- then change color of button
 
 const mixSmoothie = () => {
-  pickMainFruit()
-  pickMixer()
-  pickSuperBooster()
-
   document.getElementById('finishedSmoothie').innerHTML = `A ${mainFruit.category} ${mainFruit.name} smoothie mixed with ${mixer.name}, spiced up with ${superBooster.name}.`
 }
 
