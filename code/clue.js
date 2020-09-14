@@ -1,7 +1,6 @@
 // SUSPECT OBJECTS
 const mrGreen = {
-  firstName: "Mr",
-  lastName: "Green",
+  name: "Mr Green",
   color: "#009900",
   description: "He's made alot of dodgy connections",
   age: 45,
@@ -10,8 +9,7 @@ const mrGreen = {
 };
 
 const professorPlum = {
-  firstName: "Victor",
-  lastName: "plum",
+  name: "Professor Plum",
   color: "#993366",
   description: "A proffessor of murder??",
   age: 60,
@@ -20,8 +18,7 @@ const professorPlum = {
 };
 
 const missScarlet = {
-  firstName: "Cassandra",
-  lastName: "Scarlet",
+  name: "Miss Scarlet",
   color: "#e60000",
   description: "A oil heiress with alot of enemies",
   age: 25,
@@ -30,8 +27,7 @@ const missScarlet = {
 };
 
 const mrsPeacock = {
-  firstName: "Eleanor",
-  lastName: "Peacock",
+  name: "Mrs Peacock",
   color: "#006666",
   description: "A successful business woman who's made some dirty deals",
   age: 47,
@@ -40,8 +36,7 @@ const mrsPeacock = {
 };
 
 const colonelMustard = {
-  firstName: "Jack",
-  lastName: "Mustard",
+  name: "Colonel Mustard",
   color: "#e6b800",
   description: "A colonel with a bloody past",
   age: 72,
@@ -50,8 +45,7 @@ const colonelMustard = {
 };
 
 const mrsWhite = {
-  firstName: "Mrs",
-  lastName: "White",
+  name: "Mrs White",
   color: "#ffffff",
   description: "A housekeeper who has alot of secrets to keep",
   age: 67,
@@ -178,11 +172,7 @@ const patio = {
   image: "assets/white.png"
 };
 
-
-
-
-// THE ROOMS ONLY HAVE A NAME SO NO NEED FOR OBJECTS THERE.
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// GROUPED SUSPECTS, WEAPONS AND ROOM OBJECTS IN ARRAYS
 
 const suspects = [
   mrGreen,
@@ -221,17 +211,18 @@ const rooms = [
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
-}
+};
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
 
 const mystery = {
-  killer: colonelMustard,
-  weapon: knife,
-  room: "living room",
+  killer: {},
+  weapon: {},
+  room: {}
 };
+
 
 //----- Killer card -----//
 // Function invoked when you click on the killer card.
@@ -241,9 +232,11 @@ const pickKiller = () => {
 
   // Will change the background color of the card, the first/last name, the image and descrption for the selected killer. 
   document.getElementById("killerCard").style.background = mystery.killer.color;
-  document.getElementById("killerName").innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById("killerName").innerHTML = `${mystery.killer.name}`;
   document.getElementById("killerImage").src = mystery.killer.image;
   document.getElementById("killerDescription").innerHTML = `${mystery.killer.description}`;
+  // pickWeapon();
+  // pickRoom();
 };
 
 document.getElementById("killerCard").onclick = pickKiller;
@@ -272,7 +265,14 @@ const pickRoom = () => {
 
 document.getElementById("roomCard").onclick = pickRoom;
 
-
-
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+//----- Reveal mystery -----//
+// Function invoked when you click on the Reveal crime button.
+function revealMystery() {
+  document.getElementById("mystery").innerHTML = `The murder was commited by ${mystery.killer.name} with the ${mystery.weapon.name} in the ${mystery.room.name}`;
+};
+
+document.getElementById("mystery").onclick = revealMystery;
+
