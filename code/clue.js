@@ -70,11 +70,13 @@ console.log(colonelMustard.age); */
 
 const rope = {
   name: "rope",
+  color: "beige",
   weight: 10
 }
 
 const knife = {
   name: "knife",
+  color: "grey",
   weight: 11
 }
 
@@ -175,7 +177,15 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 
+const mystery = {
+  killer: " ",
+  weapon: " ",
+  room: " "
+}
+
+
 // This function will be invoked when you click on the killer card.
+
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
@@ -186,6 +196,28 @@ const pickKiller = () => {
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 }
+document.getElementById('killerCard').onclick = pickKiller;
+//pickKiller();
+//from brief. how to implement this?
+//document.getElementById('suspect').onclick = pickKiller;
+
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons)
+
+  document.getElementById('weaponCard').style.background = mystery.weapon.color
+  document.getElementById("weaponCard").innerHTML = `${mystery.weapon.name}`
+}
+
+document.getElementById('weaponCard').onclick = pickWeapon;
+
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+  
+  document.getElementById("roomCard").style.background = mystery.room.color
+  document.getElementById("roomCard").innerHTML = `${mystery.room}`
+}
+
+document.getElementById('roomCard').onclick = pickRoom;
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
