@@ -174,7 +174,7 @@ const rooms = [
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION:
 const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
+  return array[Math.floor(Math.random() * array.length)];
 };
 
 // OBJECT THAT KEEPS THE MYSTERY:
@@ -190,14 +190,14 @@ function pickKiller() {  // Shows loading animation
   setTimeout(delayedPickKiller, 1500); //Delays pickKiller function, calls it after 1.5sec
 };
 
- const delayedPickKiller = () => {  // This will randomly select a killer from the suspects. And add that to the mystery object.
-    document.getElementById('loader1').style.display = 'none';
-    document.getElementById("killerCard").removeEventListener("click", pickKiller);
+const delayedPickKiller = () => {  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  document.getElementById('loader1').style.display = 'none';
+  document.getElementById("killerCard").removeEventListener("click", pickKiller);
 
-    if(mystery.killer === undefined) {   //To check if card has been clicked already or not - undefined= not clicked
+  if(mystery.killer === undefined) {   //To check if card has been clicked already or not - undefined= not clicked
     mystery.killer = randomSelector(suspects);
     mystery.killer.favouriteWeapon = randomSelector(weapons);  //Randomly chooses killer's favorite weapon
-    
+      
     // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
     document.getElementById('killerCard').style.background = mystery.killer.color;
     document.getElementById('killerName').innerHTML = `Full name: ${mystery.killer.firstName} ${mystery.killer.lastName}`;
@@ -218,18 +218,17 @@ function pickWeapon() {
 };
 
 const delayedPickWeapon = () => {
-
   document.getElementById('loader2').style.display = 'none';
   document.getElementById("weaponCard").removeEventListener("click", pickWeapon);
 
   // Red and Black level functions for generating a favotire weapon
   if(mystery.weapon === undefined) { //To check if card has been clicked already or not - undefined= not clicked
-    let modifiedWeaponsArray = weapons; // Creates new Array to add killer's favorite weapon several more times so chances are higher it is picked
+    const modifiedWeaponsArray = weapons; // Creates new Array to add killer's favorite weapon several more times so chances are higher it is picked
 
     if(mystery.killer !== undefined) { //In case weapon card is clicked before a killer is defined, so code doesn't break. If killer has not been defined, it will generate a weapon without taking into account the killer's fav weapon. If a killer is defined, we know their fav weapon and cann add it to the array
-    modifiedWeaponsArray.push(mystery.killer.favouriteWeapon); // Pushes killer's favorite weapon 3 more times to the array so chances are higher it is picked
-    modifiedWeaponsArray.push(mystery.killer.favouriteWeapon);
-    modifiedWeaponsArray.push(mystery.killer.favouriteWeapon);
+      modifiedWeaponsArray.push(mystery.killer.favouriteWeapon); // Pushes killer's favorite weapon 3 more times to the array so chances are higher it is picked
+      modifiedWeaponsArray.push(mystery.killer.favouriteWeapon);
+      modifiedWeaponsArray.push(mystery.killer.favouriteWeapon);
     }
 
     mystery.weapon = randomSelector(modifiedWeaponsArray); //Killer's weapon must be chosen from the new array with the 3 added favorite weapons
@@ -250,14 +249,13 @@ function pickRoom() {
 };
 
 const delayedPickRoom = () => {
-
   document.getElementById('loader3').style.display = 'none';
   document.getElementById("roomCard").removeEventListener("click", pickRoom);
 
   if(mystery.room === undefined) { //To check if card has been clicked already or not - undefined= not clicked
-  mystery.room = randomSelector(rooms);
+    mystery.room = randomSelector(rooms);
 
-  document.getElementById('roomName').innerHTML = `Room name: ${mystery.room}`;
+    document.getElementById('roomName').innerHTML = `Room name: ${mystery.room}`;
   }
 };
 
@@ -270,4 +268,4 @@ const revealMystery = () => {
 // Function to Restart the game
 const restart = () => {
   document.location.href = "";
-}
+};
