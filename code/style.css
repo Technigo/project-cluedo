@@ -12,6 +12,11 @@ p {
 h1 {
   text-align: center;
 }
+
+h2 {
+  padding: 5px;
+}
+
 .cards {
   margin: 50px auto;
   width: 90%;
@@ -79,8 +84,13 @@ button {
   background: #BBD3CC;
   height: 450px;
   width: 350px;
+  margin: 10px;
 
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

@@ -219,6 +219,8 @@ const pickKiller = () => {
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
+  console.log(mystery);
+
   document.getElementById("weaponCard").style.background = mystery.weapon.color;
   document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
   document.getElementById(
@@ -228,7 +230,6 @@ const pickWeapon = () => {
     "weaponDescription"
   ).innerHTML = `${mystery.weapon.description}`;
 };
-
 const pickRoom = () => {
   mystery.room = randomSelector(rooms);
   document.getElementById("roomName").innerHTML = `${mystery.room.name}`;
@@ -238,7 +239,10 @@ const pickRoom = () => {
 
 const revealMystery = () => {
   document.getElementById('messageBox').classList.remove('hidden');
+  document.getElementById('instructions').classList.add('hidden');
+
   document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.name} in the ${mystery.room.name} with the ${mystery.weapon.name}. Scandalous!`;
-  document.getElementById("roomDescription").innerHTML = `In the darkest hour, while everyone else were busy doing other stuff ${mystery.killer.name} acted quickly. ${mystery.room.description}`;
+  document.getElementById("revealMessage").innerHTML = `In the darkest hour, while everyone else were busy doing other stuff ${mystery.killer.name} acted quickly.`
+  document.getElementById('roomDescription').innerHTML = `${mystery.room.description}`;
 };
 
