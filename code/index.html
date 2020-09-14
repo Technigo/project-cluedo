@@ -12,8 +12,9 @@
       <h1>Cluedo Muder Mystery Picker</h1>
     </header>
 
+    <!-- KILLER CARD -->
     <section class="cards">
-      <article class="killer-deck" id="killerCard">
+      <article onclick="pickKiller()" class="killer-deck" id="killerCard">
         <p>KILLER</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
@@ -21,12 +22,17 @@
         <img id="killerImage" src="" height="100" />
         <p id="killerDescription"></p>
       </article>
-      <article class="weapon-deck" id="weaponCard">
+
+      <!-- WEAPON CARD -->
+      <article onclick="pickWeapon()" class="weapon-deck" id="weaponCard">
         <p>WEAPON</p>
         <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
+        <img id="weaponImage" src="" height="100" />
+        <p id="weaponLastSeen"></p>
       </article>
-      <article class="room-deck" id="roomCard">
+
+      <!-- ROOM CARD -->
+      <article onclick="pickRoom()" class="room-deck" id="roomCard">
         <p>ROOM</p>
         <p id="roomName"></p>
       </article>
