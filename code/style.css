@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background: linear-gradient( #16222A, #2C5364, #16222A);
 }
 
 p {
@@ -9,11 +10,50 @@ p {
   background-color: #fff;
 }
 
+header{
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-family: 'CoreCircus', sans-serif;
+  font-size: 94px;
+  text-align: center;
+}
+
+#flickering-u {
+  color: #ff0000;
+  opacity: 1;
+  animation: flicker 2s linear infinite;
+}
+
+@keyframes flicker {
+  0% {opacity: 0.4;}
+  10% {opacity: 0.6;}
+  15% {opacity: 0.85;} 
+  25% {opacity: 0.5;}
+  30% {opacity: 1;}
+  35% {opacity: 0.1;}
+  45% {opacity: 0.5;}
+  60% {opacity: 1;}
+  70% {opacity: 0.85;}
+  80% {opacity: 0.4;}
+  90% { opacity: 0.5;}
+  100% { opacity: 1;}
+}
+
+#flickering-u::after {
+  content: "";  
+  box-shadow: -39px 0px 75px 8px rgba(255,255,255,1);
+  -webkit-box-shadow: -39px 0px 75px 8px rgba(255,255,255,1);
+  -moz-box-shadow: -39x 0px 75px 8px rgba(255,255,255,1);
+}
+
+
 .cards {
-  margin: 50px auto;
+  margin: 50px auto 30px;
   width: 90%;
   height: 600px;
-  background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -22,37 +62,39 @@ p {
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: #fff;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 10px;
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: #fff;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 10px;
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
+  background: #fff;
 
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 10px;
 }
 
 button {
+  height: 100px;
   padding: 8px 16px;
-  background: crimson;
+  background: #ff1717;
   border: none;
   font-size: 20px;
-  border-radius: 8px;
+  border-radius: 50%;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 50px;
+  
 }
