@@ -108,19 +108,55 @@ const pistol = {
 
 console.log(axe.weight)
 console.log(professorPlum.image)
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
+  mrsWhite,
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+
+const rooms = [
+  'Dining Room',
+  'Conservatory',
+  'Kitchen',
+  'Study',
+  'Library',
+  'Billiard Room',
+  'Lounge',
+  'Ballroom',
+  'Hall',
+  'Spa',
+  'Living Room',
+  'Observatory',
+  'Theater',
+  'Guest House',
+  'Patio'
+]
+
+console.log(rooms);
+console.log(weapons);
+console.log(suspects);
+console.log(mrGreen.firstName, weapons[3].name, rooms[5]);
+console.log(weapons[weapons.length-1].name)
+console.log(suspects[suspects.length-1].color)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
