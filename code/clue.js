@@ -9,7 +9,7 @@ let roomPicked = false;
 const mrGreen = {
   firstName: 'Reverend',
   lastName: 'Green',
-  color: 'green',
+  color: '#539853',
   description: 'He is a very serious man.',
   age: 45,
   image: 'assets/green.png',
@@ -20,7 +20,7 @@ const mrGreen = {
 const clMustard = {
   firstName: 'Colonel',
   lastName: 'Mustard',
-  color: 'yellow',
+  color: '#fbd460',
   description: 'Has fought many wars and knows how to handle a gun.',
   age: 65,
   image: 'assets/mustard.png',
@@ -31,7 +31,7 @@ const clMustard = {
 const mrsPeacock = {
   firstName: 'Petunia',
   lastName: 'Peacock',
-  color: 'blue',
+  color: '#5656b3',
   description: 'World famous',
   age: 34,
   image: 'assets/peacock.png',
@@ -42,7 +42,7 @@ const mrsPeacock = {
 const prPlum = {
   firstName: 'Professor',
   lastName: 'Plum',
-  color: 'purple',
+  color: '#8b5195',
   description: 'Smooth-talker',
   age: 41,
   image: 'assets/plum.png',
@@ -53,7 +53,7 @@ const prPlum = {
 const msScarlet = {
   firstName: 'Serena',
   lastName: 'Scarlet',
-  color: 'orange',
+  color: '#f84b3e',
   description: 'You never know if she is telling you the truth.',
   age: 23,
   image: 'assets/scarlet.png',
@@ -64,7 +64,7 @@ const msScarlet = {
 const mrsWhite = {
   firstName: 'Wendy',
   lastName: 'White',
-  color: 'white',
+  color: '#ebebe9',
   description: 'A sweet old lady',
   age: 73,
   image: 'assets/white.png',
@@ -75,7 +75,7 @@ const mrsWhite = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: 'rope',
+  name: 'Rope',
   id: 'rope',
   weight: 10,
   color: 'red',
@@ -85,7 +85,7 @@ const rope = {
 };
 
 const knife = {
-  name: 'knife',
+  name: 'Knife',
   id: 'knife',
   weight: 7,
   color: 'blue',
@@ -95,7 +95,7 @@ const knife = {
 };
 
 const axe = {
-  name: 'axe',
+  name: 'Axe',
   id: 'axe',
   weight: 12,
   color: 'green',
@@ -105,7 +105,7 @@ const axe = {
 };
 
 const revolver = {
-  name: 'revolver',
+  name: 'Revolver',
   id: 'revolver',
   weight: 6,
   color: 'pink',
@@ -115,7 +115,7 @@ const revolver = {
 };
 
 const poison = {
-  name: 'poison',
+  name: 'Poison',
   id: 'poison',
   weight: 3,
   color: 'yellow',
@@ -125,7 +125,7 @@ const poison = {
 }
 
 const scissors = {
-  name: 'scissors',
+  name: 'Scissors',
   id: 'scissors',
   weight: 2,
   color: 'purple',
@@ -135,7 +135,7 @@ const scissors = {
 }
 
 const candleStick = {
-  name: 'candle stick',
+  name: 'Candle stick',
   id: 'candlestick',
   weight: 4,
   color: 'white',
@@ -188,7 +188,7 @@ const mystery = {
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = (loadID) => {
-  if (gameStarted) {
+  if (gameStarted && !killerPicked) {
     //This should be displayed for a few seconds.
     document.getElementById(loadID.id).style.opacity = 1;
     //After 2.5 seconds, run the function
@@ -197,8 +197,10 @@ const pickKiller = (loadID) => {
       // This will randomly select a killer from the suspects. And add that to the mystery object.
       mystery.killer = randomSelector(suspects);
       // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. 
+
       //Feel free to add more things to show about the killer.
-      document.getElementById('killerCard').style.background = mystery.killer.color;
+      document.getElementById('killerName').style.background = mystery.killer.color;
+
       document.getElementById('killerImage').src = mystery.killer.image;
       document.getElementById(
         'killerName'
@@ -220,7 +222,7 @@ const pickKiller = (loadID) => {
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = (loadID) => {
 
-  if (killerPicked) {
+  if (killerPicked && !weaponPicked && !roomPicked) {
     //Look at the killers favorite weapon and change the prob. of it being picked
     increaseChanceForFavWeapon(mystery.killer);
     //This should be displayed for a few seconds.
@@ -229,16 +231,16 @@ const pickWeapon = (loadID) => {
       document.getElementById(loadID.id).style.opacity = 0;
       mystery.weapon = randomSelector(weapons);
       console.log(mystery.weapon);
-      document.getElementById('weaponName').innerHTML = mystery.weapon.name;
-      document.getElementById('weaponWeight').innerHTML = mystery.weapon.weight;
+      document.getElementById('weaponName').innerHTML = `Type: ${mystery.weapon.name}`;
+      document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`;
       weaponPicked = true;
     }, 200);
-  }
+  } else(showInfoMessage("pickWeapon"));
 }
 
 const pickRoom = (loadID) => {
-  console.log("In pick room function, inparam:" + loadID.id);
-  if (weaponPicked) {
+
+  if (weaponPicked && !roomPicked) {
     //This should be displayed for a few seconds.
     document.getElementById(loadID.id).style.opacity = 1;
     setTimeout(function () {
@@ -249,6 +251,23 @@ const pickRoom = (loadID) => {
       document.getElementById('roomName').innerHTML = mystery.room;
       roomPicked = true;
     }, 200);
+  } else(showInfoMessage("pickRoom"));
+}
+
+const showInfoMessage = (callerFunctionName) => {
+  if (callerFunctionName === "pickWeapon" || (callerFunctionName === "pickRoom" && !killerPicked)) {
+    //If pickWeapon calls this function, it means the user hasn't picked a killer yet.
+    document.getElementById("killerInfoMessage").style.opacity = 1;
+    setTimeout(function () {
+      document.getElementById("killerInfoMessage").style.opacity = 0;
+    }, 2000);
+
+  } else if (callerFunctionName === "pickRoom" && killerPicked) {
+    //Is pickRoom calls this function  and the killer has been picked, the user hasn't picked a weapon. 
+    document.getElementById("weaponInfoMessage").style.opacity = 1;
+    setTimeout(function () {
+      document.getElementById("weaponInfoMessage").style.opacity = 0;
+    }, 2000);
   }
 }
 
@@ -282,6 +301,7 @@ const increaseChanceForRoom = (weaponObject) => {
 
 const startGame = () => {
   gameStarted = true;
+  toggleGameBoard();
   shuffleFavoriteWeapon();
 }
 
@@ -292,7 +312,32 @@ const revealMystery = () => {
     let killer = mystery.killer.firstName + " " + mystery.killer.lastName;
     let weapon = mystery.weapon.article + " " + mystery.weapon.name;
     let room = mystery.room;
-    let mysteryString = (`It was ${killer} using ${weapon} in the ${room}!`);
+    let mysteryString = (`
+                It was ${
+                  killer
+                }
+                using ${
+                  weapon
+                } in the ${
+                  room
+                }!`);
     document.getElementById('mystery-reveal').innerHTML = mysteryString;
   }
+}
+
+const endGame = () => {
+  var check = confirm("Are you sure? Window will close");
+  if (check == true) {
+    window.close();
+  } else {
+
+  }
+
+}
+
+const toggleGameBoard = () => {
+  document.getElementById("gameBoard").classList.remove("inactive");
+  document.getElementById("gameBoard").classList.add("active");
+  document.getElementById("start-button").classList.remove("active");
+  document.getElementById("start-button").classList.add("inactive");
 }

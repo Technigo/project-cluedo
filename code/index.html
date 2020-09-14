@@ -7,44 +7,52 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
     <title>Technigo Project Cluedo</title>
+    <link rel="icon" type="image/png" href="./assets/question.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
   </head>
-
-  <body>
-    <header>Murder Mystery</header>
-    <button type="button" onclick="startGame()">Start a new game</button>
-    <section class="cards">
-      <div class="flex-container">
-        <article class="killer-deck" id="killerCard" onclick="pickKiller(this.nextElementSibling)">
-          <p>KILLER</p>
-          <p id="killerName"></p>
-          <p id="killerAge"></p>
-          <p id="killerOccupation"></p>
-          <p id="killerFavoriteWeapon"></p>
-          <img id="killerImage" src="" height="100" />
-          <p id="killerDescription"></p>
-        </article>
-        <div class="loader" id="killerLoader"></div>
-      </div>
-      <div class="flex-container">
-        <article class="weapon-deck" id="weaponCard" onclick="pickWeapon(this.nextElementSibling)">
-          <p>WEAPON</p>
-          <p id="weaponName"></p>
-          <p id="weaponWeight"></p>
-        </article>
-        <div class="loader" id="weaponLoader"></div>
-      </div>
-      <div class="flex-container">
-        <article class="room-deck" id="roomCard" onclick="pickRoom(this.nextElementSibling)">
-          <p>ROOM</p>
-          <p id="roomName"></p>
-        </article>
-        <div class="loader" id="roomLoader"></div>
-      </div>
-    </section>
-    <h1 id="mystery"></h1>
-    <button type="button" onclick="revealMystery()">REVEAL THE CRIME</button>
-    <article id="mystery-reveal" class="mystery-reveal">Here goes the mystery</article>
-    <script src="clue.js"></script>
+  <header class="header">MURDER MYSTERY</header>
+  <button type="button" id="start-button" class="start-button active" onclick="startGame()">Start a new game</button>
+  <section class="gameboard inactive" id="gameBoard">
+    <div class="flex-container">
+      <article class="killer-deck" id="killerCard" onclick="pickKiller(this.nextElementSibling)">
+        <p>KILLER</p>
+        <p id="killerName"></p>
+        <p id="killerAge"></p>
+        <p id="killerOccupation"></p>
+        <p id="killerFavoriteWeapon"></p>
+        <img id="killerImage" class="card-image" src="" />
+        <p id="killerDescription"></p>
+      </article>
+      <div class="loader" id="killerLoader"></div>
+      <span class="info-message info-message-killer" id="killerInfoMessage">Start off over here by choosing a killer
+        card</span>
+    </div>
+    <div class="flex-container">
+      <article class="weapon-deck" id="weaponCard" onclick="pickWeapon(this.nextElementSibling)">
+        <p>WEAPON</p>
+        <p id="weaponName"></p>
+        <p id="weaponWeight"></p>
+      </article>
+      <div class="loader" id="weaponLoader"></div>
+      <span class="info-message info-message-weapon" id="weaponInfoMessage">Continue here, pick a weapon card</span>
+    </div>
+    <div class="flex-container">
+      <article class="room-deck" id="roomCard" onclick="pickRoom(this.nextElementSibling)">
+        <p>ROOM</p>
+        <p id="roomName"></p>
+      </article>
+      <div class="loader" id="roomLoader"></div>
+      <span class="info-message info-message-room" id="roomInfoMessage">And finally, now pick a room card</span>
+    </div>
+    <div class="flex-container">
+      <article id="mystery-reveal" class="mystery-reveal"></article>
+    </div>
+    <div class="flex-container-bottom">
+      <button type="button" class="regular-button" onclick="revealMystery()">REVEAL THE CRIME</button>
+      <button type="button" class="regular-button" onclick="endGame()">QUIT</button>
+    </div>
+  </section>
+  <script src="clue.js"></script>
   </body>
 
 </html>
