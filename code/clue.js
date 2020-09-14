@@ -2,6 +2,7 @@
 
 const suspects = [
   {
+    name: 'Mr Green',
     firstName: "Jacob",
     lastName: "Green",
     color: "green",
@@ -11,6 +12,7 @@ const suspects = [
     occupation: "Entrepreneur",
   },
   {
+    name: 'Miss Scarlet',
     firstName: "Cassandra",
     lastName: "Scarlet",
     color: "red",
@@ -20,6 +22,7 @@ const suspects = [
     occupation: "Writer",
   },
   {
+    name: 'Professor Plum',
     firstName: "Victor",
     lastName: "Plum",
     color: "purple",
@@ -29,6 +32,7 @@ const suspects = [
     occupation: "Professor in detergents",
   },
   {
+    name: 'Mrs Peacock',
     firstName: "Eleanor",
     lastName: "Peacock",
     color: "blue",
@@ -38,6 +42,7 @@ const suspects = [
     occupation: "Entrepreneur",
   },
   {
+    name: 'Colonel Mustard',
     firstName: "Jack",
     lastName: "Mustard",
     color: "yellow",
@@ -47,6 +52,7 @@ const suspects = [
     occupation: "Colonel",
   },
   {
+    name: 'Mrs White',
     firstName: "Mrs",
     lastName: "White",
     color: "white",
@@ -206,5 +212,9 @@ const pickRoom = () => {
   document.getElementById("roomDescription").innerHTML = `${mystery.room.description}`;
 };
 
+const revealMystery = () => {
+  document.getElementById('messageBox').classList.remove('hidden')
+  document.getElementById('reavealMystery').innerHTML = `The murder was commited by ${mystery.killer.name} in the ${mystery.room.name} with the ${mystery.weapon.name}`
+};
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'

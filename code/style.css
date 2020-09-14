@@ -56,3 +56,17 @@ button {
   display: block;
   margin: 0 auto;
 }
+
+.hidden {
+  /* display: none; */
+}
+
+.final-card {
+  background: #BBD3CC;
+  height: 200px;
+  width: 350px;
+
+  text-align: center;
+  padding-top: 30px;
+  border-radius: 16px;
+}
