@@ -7,7 +7,8 @@ const mrGreen = {
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur',
+  favouriteWeapon: 'pistol'
 }
 
 const professorPlum = {
@@ -17,7 +18,8 @@ const professorPlum = {
   description: 'He loves books',
   age: 55,
   image: 'assets/plum.png',
-  occupation: 'Professor in Latin'
+  occupation: 'Professor in Latin',
+  favouriteWeapon: 'candlestick'
 }
 
 const missScarlet = {
@@ -27,7 +29,8 @@ const missScarlet = {
   description: 'She loves food and wine',
   age: 37,
   image: 'assets/scarlet.png',
-  occupation: 'Business woman'
+  occupation: 'Business woman',
+  favouriteWeapon: 'bat'
 }
 
 const mrsPeacock = {
@@ -37,7 +40,8 @@ const mrsPeacock = {
   description: 'She loves spending money',
   age: 49,
   image: 'assets/peacock.png',
-  occupation: 'Extremely rich heiress'
+  occupation: 'Extremely rich heiress',
+  favouriteWeapon: 'poison'
 }
 
 const colonelMustard = {
@@ -47,7 +51,8 @@ const colonelMustard = {
   description: 'He is always angry',
   age: 64,
   image: 'assets/mustard.png',
-  occupation: 'War veteran'
+  occupation: 'War veteran',
+  favouriteWeapon: 'axe'
 }
 
 const mrsWhite = {
@@ -57,7 +62,8 @@ const mrsWhite = {
   description: 'She can convince anybody',
   age: 69,
   image: 'assets/white.png',
-  occupation: 'Maid'
+  occupation: 'Maid',
+  favouriteWeapon: 'trophy'
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
@@ -72,49 +78,63 @@ const rope = {
 const knife = {
   name: 'Knife',
   color: "white",
-  weight: 2
+  weight: 2,
+  image: 'assets/knife.jpg',
 }
   
 const candlestick = {
   name: 'Candlestick',
   color: "white",
-  weight: 12
+  weight: 12,
+  image: 'assets/candlestick.jpg',
+  id: 'candlestick'
 }
 
 const dumbbell = {
   name: 'Dumbbell',
   color: "white",
-  weight: 6
+  weight: 6,
+  image: 'assets/dumbbell.jpg',
 }
 
 const poison = {
   name: 'Poison',
   color: "white",
-  weight: 0.5
+  weight: 0.5,
+  image: 'assets/poison.PNG',
+  id: 'poison'
 }
 
 const axe = {
   name: 'Axe',
   color: "white",
-  weight: 4
+  weight: 4,
+  image: 'assets/axe.jpg',
+  id: 'axe'
 }
 
 const bat = {
-  name: 'Bar',
+  name: 'Bat',
   color: "white",
-  weight: 1
+  weight: 1,
+  image: 'assets/bat.jpg',
+  id: 'bat'
 }
 
 const trophy = {
   name: 'Trophy',
   color: "white",
-  weight: 5
+  weight: 5,
+  image: 'assets/trophy.jpg',
+  id: 'trophy'
 }
 
 const pistol = {
   name: 'Pistol',
   color: "white",
-  weight: 3
+  weight: 3,
+  image: 'assets/pistol.jpg',
+  id: 'pistol'
 }
 
   
@@ -251,3 +271,11 @@ document.getElementById("mystery").innerHTML= `The murder was committed by ${mys
 document.getElementById("clickMe").onclick = revealMystery;
 }
 console.log(revealMystery)
+
+
+
+//Red Level - - Create `shuffleFavouriteWeapon` function to change favourite weapons of each person
+
+const shuffleFavouriteWeapon = () => {
+
+}
