@@ -228,7 +228,7 @@ p {
 }
 
 /* Small Tablets */
-@media only screen and (max-width: 769px) {
+@media only screen and (min-width : 601px) and (max-width: 769px) {
   .header {
     font-size: 3em;
     align-items: center;
