@@ -31,14 +31,11 @@ header img {
 }
 
 .cards p {
-  color: red;
-  background: black;
-  opacity: 70%;
-  font-size: 30px;
-  margin-top: 310px;
-  margin-left: 50px;
+  font-size: 20px;
+  margin-left: 10px;
   font-weight: bold;
   border-radius: 5px;
+  margin-top:0px;
   width: 150px;
 }
 
@@ -57,15 +54,34 @@ header img {
   color: black;
 }
 
-.killer-deck {
-  width: 250px;
-  height: 360px;
+.kdeck {
+  width: 280px;
+  height: 440px;
   text-align: center;
-  padding-top: 30px;
-  margin: 10px;
+  padding-top: 40px;
   background: url("frame.png");
   background-size: 100% 100%;
 }
+
+#killer.killer-deck {
+  padding-top:5px;
+}
+
+.killer-deck {
+  width: 180px;
+  height: 350px;
+  background: #000;
+  text-align: center;
+  padding-top: 30px;
+  border-radius: 16px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.kdeck p{
+  font-size: 16px;
+  margin-bottom:0px;
+  }
 
 .killer-deck img {
   width: 150px;
@@ -73,9 +89,9 @@ header img {
  
 }
 
-.weapon-deck {
-  width: 250px;
-  height: 360px;
+.wdeck {
+  width: 280px;
+  height: 250px;
   text-align: center;
   padding-top: 30px;
   margin: 10px;
@@ -83,15 +99,51 @@ header img {
   background-size: 100% 100%;
 }
 
-.room-deck {
-  width: 250px;
-  height: 370px;
+.wdeck p{
+font-size: 20px;
+margin-bottom:0px;
+}
+
+.weapon-deck {
+  width: 180px;
+  height: 170px;
+  background: black;
+  text-align: center;
+  color: white;
+  padding-top: 30px;
+  border-radius: 16px;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+.rdeck {
+  width: 450px;
+  height: 200px;
   text-align: center;
   padding-top: 30px;
   margin: 10px;
   background: url("frame-4.png");
   background-size: 100% 100%;
 }
+
+.room-deck {
+  width: 310px;
+  height: 130px;
+  background: black;
+  text-align: center;
+  padding-top: 30px;
+  color: white;
+  border-radius: 16px;
+  margin-left: 70px;
+  margin-top: 10px;
+}
+
+.rdeck p{
+  font-size: 20px;
+  text-align: center;
+  margin-left:80px;
+  margin-bottom:10px;
+  }
 
 h1 {
   text-align: center;
@@ -100,10 +152,10 @@ h1 {
 }
 
 button {
-  font-weight: bold;
   padding: 8px 16px;
   font-size: 26px;
   color: black;
+  
   font-family: "Courier New", Courier, monospace;
   background-image: linear-gradient(red, black);
   border: inset black 2px;
@@ -137,13 +189,5 @@ footer div a {
     height: 600px; 
     justify-content: center;
   }
-  .killer-deck {
-    margin: 20px;
-  }
-  .weapon-deck {
-    margin: 20px;
-  }
-  .room-deck {
-    margin: 20px;
-  }
+ 
 }
