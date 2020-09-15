@@ -2,14 +2,14 @@
 const mrGreen = {
   name: "Mr Green",
   color: "#009900",
-  description: "He's made alot of dodgy connections",
+  description: "A entrepreneur who's made alot of dodgy connections",
   image: "assets/green.png",
 };
 
 const professorPlum = {
   name: "Professor Plum",
   color: "#993366",
-  description: "A proffessor of murderer??",
+  description: "A proffessor of murder?",
   image: "assets/plum.png",
 };
 
@@ -34,130 +34,97 @@ const colonelMustard = {
   image: "assets/mustard.png",
 };
 
-const mrsWhite = {
-  name: "Mrs White",
-  color: "#ffffff",
+const mrsGrey = {
+  name: "Mrs Grey",
+  color: "#999999",
   description: "A housekeeper who has alot of secrets to keep",
-  image: "assets/white.png",
+  image: "assets/grey.png",
 };
 
 // WEAPON OBJECTS
 const rope = {
   name: "Rope",
-  weight: 10,
-  lastseen: "Hall",
-  color: "#ffdd99"
+  lastseen: "Study",
+  color: "#ffdd99",
+  image: "assets/rope.jpg"
 };
 
 const knife = {
   name: "Knife",
-  weight: 22,
   lastseen: "Kitchen",
-  color: "#b3b3b3"
-};
-
-const candlestick = {
-  name: "Candlestick",
-  weight: 40,
-  lastseen: "Living Room",
-  color:"#ffcc66"
-};
-
-const dumbbell = {
-  name: "Dumbbell",
-  weight: 55,
-  lastseen: "Patio",
-  color:"#00ace6"
+  color: "#b3b3b3",
+  image: "assets/knife.jpg",
 };
 
 const poison = {
   name: "Poison",
-  weight: 15,
   lastseen: "Library",
-  color:"#669999"
+  color:"#669999",
+  image: "assets/poison.jpg"
 };
 
 const axe = {
   name: "Axe",
-  weight: 75,
   lastseen: "Billiard room",
-  color:"#993333"
+  color:"#993333",
+  image: "assets/axe.jpg"
 };
 
-const bat = {
-  name: "Bat",
-  weight: 66,
-  lastseen: "Study",
-  color:"#ff5050"
-};
-
-const trophy = {
-  name: "Trophy",
-  weight: 79,
-  lastseen: "Conservatory",
-  color:"#666699"
+const pokerstick = {
+  name: "Poker stick",
+  lastseen: "Living Room",
+  color:"#666699",
+  image: "assets/pokerstick.jpg",
 };
 
 const pistol = {
   name: "Pistol",
-  weight: 83,
   lastseen: "Dining room",
-  color:"#4d4dff"
+  color:"#4d4dff",
+  image: "assets/pistol.jpg"
 };
 
 // ROOM OBJECTS
 const diningRoom = {
   name: "Dining Room",
   color:"#4d4dff",
-  image: "assets/white.png"
-};
-
-const conservatory = {
-  name: "Conservatory",
-  color:"#4d4dff",
-  image: "assets/white.png"
+  image: "assets/diningroom.png",
+  lastseen: "Proffesor Plum"
 };
 
 const kitchen = {
   name: "Kitchen",
   color:"#4d4dff",
-  image: "assets/white.png"
+  image: "assets/kitchen.png",
+  lastseen: "Mrs Grey"
 };
 
 const study = {
   name: "Study",
   color:"#4d4dff",
-  image: "assets/white.png"
+  image: "assets/study.png",
+  lastseen: "Mr Green"
 };
 
 const library = {
   name: "Library",
   color:"#4d4dff",
-  image: "assets/white.png"
+  image: "assets/library.png",
+  lastseen: "Miss Scarlet"
 };
 
 const billiardRoom = {
   name: "Billiard Room",
   color:"#4d4dff",
-  image: "assets/white.png"
-};
-
-const hallway = {
-  name: "Hallway",
-  color:"#4d4dff",
-  image: "assets/white.png"
+  image: "assets/billiardroom.png",
+  lastseen: "Colonel Mustard"
 };
 
 const livingRoom = {
   name: "Living room",
   color:"#4d4dff",
-  image: "assets/white.png"
-};
-
-const patio = {
-  name: "Patio",
-  color:"#4d4dff",
-  image: "assets/white.png"
+  image: "assets/livingroom.png", 
+  lastseen: "Mrs Peacock"
 };
 
 // GROUPED SUSPECTS, WEAPONS AND ROOM OBJECTS IN ARRAYS
@@ -168,31 +135,25 @@ const suspects = [
   missScarlet,
   mrsPeacock,
   colonelMustard,
-  mrsWhite, 
+  mrsGrey, 
 ];
 
 const weapons = [
   rope,
   knife,
-  candlestick,
-  dumbbell,
   poison,
   axe,
-  bat,
-  trophy,
+  pokerstick,
   pistol
 ];
 
 const rooms = [
   diningRoom,
-  conservatory,
   kitchen,
   study,
   library,
   billiardRoom,
-  hallway,
   livingRoom,
-  patio
 ];
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
@@ -235,9 +196,9 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
 
   document.getElementById("weaponCard").style.background = mystery.weapon.color;
-  document.getElementById("weaponName").innerHTML = `${mystery.weapon.name} ,   weight: ${mystery.weapon.weight}`;
-  // document.getElementById("weaponimage").src = mystery.weapon.image;
-  document.getElementById("weaponLastSeen").innerHTML = `Last seen: ${mystery.weapon.lastseen}`;
+  document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
+  document.getElementById("weaponImage").src = mystery.weapon.image;
+  document.getElementById("weaponLastSeen").innerHTML = `Last seen in the ${mystery.weapon.lastseen}`;
   document.getElementById("cardDetails2").style.display = "flex";
 };
 
@@ -249,7 +210,9 @@ const pickRoom = () => {
   mystery.room = randomSelector(rooms);
   document.getElementById("roomCard").style.background = mystery.room.color;
   document.getElementById("roomName").innerHTML = `${mystery.room.name}`;
-  // document.getElementById("weaponimage").src = mystery.weapon.image;
+  document.getElementById("roomImage").src = mystery.room.image;
+  document.getElementById("roomLastSeen").innerHTML = `Last seen in the ${mystery.room.name} was ${mystery.room.lastseen}`;
+
   document.getElementById("cardDetails3").style.display = "flex";
 };
 
