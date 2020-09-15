@@ -162,8 +162,12 @@ document.getElementById('killerCard').onclick = pickKiller
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
-
+  document.getElementById('weaponCard').style.background = mystery.weapon.color
+  document.getElementById('weaponName').innerHTML = mystery.weapon.name
+  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight} lbs`
 }
+document.getElementById('weaponCard').onclick = pickWeapon
+
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
