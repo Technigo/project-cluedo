@@ -21,7 +21,7 @@ header{
   text-align: center;
 }
 
-#flickering-u {
+#flickering-letter {
   color: #ff0000;
   opacity: 1;
   animation: flicker 2s linear infinite;
@@ -42,7 +42,7 @@ header{
   100% { opacity: 1;}
 }
 
-#flickering-u::after {
+#flickering-letter::after {
   content: "";  
   box-shadow: -39px 0px 75px 8px rgba(255,255,255,1);
   -webkit-box-shadow: -39px 0px 75px 8px rgba(255,255,255,1);
