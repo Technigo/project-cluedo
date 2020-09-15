@@ -8,7 +8,7 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
-  favouriteWeapon: ''
+  favouriteWeapon: '' //Favorite weapon is assigned when we call the pickWeapon function
 };
 
 const profPlum = {
@@ -192,7 +192,7 @@ function pickKiller() {  // Shows loading animation
 
 const delayedPickKiller = () => {  // This will randomly select a killer from the suspects. And add that to the mystery object.
   document.getElementById('loader1').style.display = 'none';
-  document.getElementById("killerCard").removeEventListener("click", pickKiller);
+  document.getElementById("killerCard").removeEventListener("click", pickKiller); //so that the card can't be clicked again and trigger the loader
 
   if(mystery.killer === undefined) {   //To check if card has been clicked already or not - undefined= not clicked
     mystery.killer = randomSelector(suspects);
