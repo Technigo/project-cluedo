@@ -65,47 +65,58 @@ const mrsWhite = {
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  article: 'a'
 }
 
 const knife = {
   name: 'knife',
-  weight: 7
+  weight: 7,
+  article: 'a'
 }
 
 const candelstick = {
   name: 'candelstick',
-  weight: 12
+  weight: 12,
+  article: 'a'
 }
 
 const dumbbell = {
   name: 'dumbbell',
-  weight: 24
+  weight: 24,
+  article: 'a'
 }
 
 const poison = {
   name: 'poison',
-  weight: 1
+  weight: 1,
+  article: ''
 }
 
 const axe = {
   name: 'axe',
-  weight: 17
+  weight: 17,
+  article: 'an'
 }
 
-const bat = {
+//do I have to keep this? 
+/*const bat = {
   name: 'bat',
   weight: 4
-}
+}*/
+
+
 
 const trophy = {
   name: 'trophy',
-  weight: 29
+  weight: 29,
+  article: 'a'
 }
 
 const pistol = {
   name: 'pistol',
-  weight: 11
+  weight: 11,
+  article: 'a'
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -128,7 +139,7 @@ const weapons = [
   dumbbell,
   poison,
   axe,
-  bat,
+  //bat,
   trophy,
   pistol
 ]
@@ -174,10 +185,7 @@ const pickKiller = () => {
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
   document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
-
-  const killerImage = document.getElementById('killerImage');
-  killerImage.src = mystery.killer.image;
-
+  document.getElementById('killerImage').src = mystery.killer.image;
   document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
 };
 
@@ -195,22 +203,44 @@ const pickRoom = () => {
   mystery.room = randomSelector(rooms)
   document.getElementById('roomName').innerHTML = `${mystery.room}`
 };
-console.log(mystery.room)
+
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 
+const revealMystery = (mystery) => {
+  if (
+    mystery.killer === undefined ||
+    mystery.weapon === undefined ||
+    mystery.room === undefined 
+    ) {
+    document.getElementById('mystery').innerHTML = `No mystery has been solved`;
+    } else {
+      let killer = mystery.killer.firstName + " " + mystery.killer.lastName;
+      let weapon = mystery.weapon.article + " " + mystery.weapon.name;
+      let room = mystery.room;
+    document.getElementById('mystery').innerHTML = `The murder was comitted by ${killer} using ${weapon} in the ${room}!`; 
+    }
+}
+//console.log(revealMystery);
 
-
-
-
-
-
-
-
+/*
+const revealMystery = () => {
+  if (pickKiller && pickWeapon && pickRoom) {
+    let killer = mystery.killer.firstName + " " + mystery.killer.lastName;
+    let weapon = mystery.weapon.name; //add some more here after updated weapon object
+    let room = mystery.room;
+    let mysteryRevealText = (`The murder was comitted by ${killer} using ${weapon} in the ${room}!`);
+  } else {
+    document.getElementById('mystery').innerHTML = `No mystery has been solved`;
+  }
+}
+//console.log(revealMystery);
+*/
 
 
 document.getElementById('killerCard').onclick = pickKiller;
 document.getElementById('weaponCard').onclick = pickWeapon;
 document.getElementById('roomCard').onclick = pickRoom;
+document.getElementById('mystery').onclick = revealMystery;
