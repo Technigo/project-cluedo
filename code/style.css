@@ -1,58 +1,149 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background:black;
+  color: white;
+  background: url("castle.jpg");
+  
+  background-size: 100% 100%;
 }
 
-p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+header {
+
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-bottom: 1px solid;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  margin-left: 16px;
+  
+}
+
+header img {
+  height: 80px;
+  margin: 0 24px;
+}
+
+.cards p {
+  color: red;
+  background: black;
+  opacity: 70%;
+  font-size: 30px;
+  margin-top: 310px;
+  margin-left: 50px;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 150px;
 }
 
 .cards {
-  margin: 50px auto;
+  margin: 30px auto;
   width: 90%;
-  height: 600px;
-  background: #ccc;
+  height: auto; 
+  background: transparent;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+  background-image: url(assets/cluedo_cover.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
 }
 
 .killer-deck {
   width: 250px;
-  height: 400px;
-  background: #000;
+  height: 360px;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  margin: 10px;
+  background: url("frame.png");
+  background-size: 100% 100%;
+}
+
+.killer-deck img {
+  width: 150px;
+  height: auto;
+ 
 }
 
 .weapon-deck {
   width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
+  height: 360px;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  margin: 10px;
+  background: url("frame-2.png");
+  background-size: 100% 100%;
 }
 
 .room-deck {
   width: 250px;
-  height: 400px;
-  background: midnightblue;
-
+  height: 370px;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  margin: 10px;
+  background: url("frame-4.png");
+  background-size: 100% 100%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin: 16px;
 }
 
 button {
+  font-weight: bold;
   padding: 8px 16px;
-  background: crimson;
-  border: none;
-  font-size: 20px;
+  font-size: 26px;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  background-image: linear-gradient(red, black);
+  border: inset black 2px;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin: 16px auto;
+}
+
+footer {
+  background: black;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color:  white;
+  padding: 0 16px;
+  border-top: 1px solid;
+}
+
+footer div a {
+  text-decoration: none;
+  color: white;
+  margin-left: 16px;
+}
+
+
+/* Desktop */
+@media (min-width: 900px) {
+  .cards {
+    margin: 50px auto;
+    height: 600px; 
+    justify-content: center;
+  }
+  .killer-deck {
+    margin: 20px;
+  }
+  .weapon-deck {
+    margin: 20px;
+  }
+  .room-deck {
+    margin: 20px;
+  }
 }
