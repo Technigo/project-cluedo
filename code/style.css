@@ -1,3 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrap {
+  margin: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.slogan {
+  text-align: center;
+  font-size: 45px;
+  color: #8d0801;
+  font-family: 'Ranchers', cursive;
+}
+
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
@@ -10,10 +33,9 @@ p {
 }
 
 .cards {
-  margin: 50px auto;
+  margin: 20px auto;
   width: 90%;
-  height: 600px;
-  background: #ccc;
+  height: 500px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -22,7 +44,7 @@ p {
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: #99582a;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -40,7 +62,7 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
+  background: #708d81;
 
   text-align: center;
   padding-top: 30px;
@@ -49,10 +71,46 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: #6f1d1b;
   border: none;
   font-size: 20px;
+  color: white;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+.revealMessage {
+  font-size: 20px;
+  color: #432818;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  position: relative;
+	background: #bb9457;
+	border-radius: .4em;
+}
+
+.revealMessage:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-left-color: #bb9457;
+	border-right: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-right: -20px;
+}
+.reveal {
+  justify-content: flex-end;
+  margin-left: 70px;
+  display: none;
+}
+
+.reveal.active {
+  display: flex;
 }

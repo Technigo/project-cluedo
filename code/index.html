@@ -4,34 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
-    <section class="cards">
-      <article class="killer-deck" id="killerCard">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
-      </article>
-      <article class="weapon-deck" id="weaponCard">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-      </article>
-      <article class="room-deck" id="roomCard">
-        <p>ROOM</p>
-        <p id="roomName"></p>
-      </article>
-    </section>
+    <div class="wrap">
+      <header class="header">
+        <img class=logo src="./assets/cluedoLogo.png" height="100">
+        <p class="slogan">Become top-notch detectives!!!
+        </p>
+      </header>
+      <section class="cards">
+        <article class="killer-deck" id="killerCard" onclick ="pickKiller(suspects)">
+          <p>KILLER</p>
+          <p id="killerName"></p>
+          <p id="killerAge"></p>
+          <p id="killerOccupation"></p>
+          <img id="killerImage" src="" height="200" />
+          <p id="killerDescription"></p>
+        </article>
+        <article class="weapon-deck" id="weaponCard" onclick="pickWeapon(weapons)">
+          <p>WEAPON</p>
+          <p id="weaponName"></p>
+          <p id="weaponWeight"></p>
+        </article>
+        <article class="room-deck" id="roomCard" onclick="pickRoom(rooms)">
+          <p>ROOM</p>
+          <p id="roomName"></p>
+        </article>
+      </section>
+      <div class="reveal">
+        <h1 id="mystery" class="revealMessage"></h1>
+        <img id="detectiveImg" class="detectiveImage" src="./assets/detective.jpg" height="150">
+      </div>
+      <button id="button" onclick="revealMystery()">REVEAL THE CRIME</button>
 
-    <h1 id="mystery"></h1>
+    </div>
+      
 
-    <button>REVEAL THE CRIME</button>
-
+    
     <script src="clue.js"></script>
   </body>
 </html>
