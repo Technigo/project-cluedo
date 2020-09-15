@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// OBJECTS FOR ALL THE SUSPECTS:
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -31,7 +31,7 @@ const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
   color: 'purple',
-  description: 'A quick-witted, professor with a bow tie and glasse',
+  description: 'A quick-witted, professor with a bow tie and glasses',
   age: 46,
   image: 'assets/plum.png',
   occupation: 'Professor'
@@ -46,7 +46,7 @@ const missScarlet = {
   occupation: 'Actor'
 }
 const mrsWhite = {
-  irstName: 'Mrs',
+  firstName: 'Mrs',
   lastName: 'White',
   color: 'white',
   description: 'A frazzled domestic sever, appears as a guest',
@@ -54,43 +54,52 @@ const mrsWhite = {
   image: 'assets/white.png',
   occupation: 'Maid'
 }
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// OBJECTS FOR ALL THE WEAPONS
 
 const rope = {
-  name: 'rope',
-  weight: 10,
+  name: 'Rope',
+  fact: 'Not for the clumsy ones!',
+  weight: 50,
 }
 const knife = {
-  name: 'knife',
-  weight: 3,
+  name: 'Knife',
+  fact: 'Handle with care',
+  weight: 7,
 }
 const candlestick = {
-  name: 'candlestick',
-  weight: 5,
+  name: 'Candlestick',
+  fact: 'Deadlier without a candle',
+  weight: 16,
 }
 const dumbbell = {
-  name: 'dumbbell',
-  weight: 28,
+  name: 'Dumbbell',
+  fact: 'For the gym nut',
+  weight: 22,
 }
 const poison = {
-  name: 'poison',
-  weight: 1,
+  name: 'Poison',
+  fact: 'Deadliest of all',
+  weight: .8,
 }
 const axe = {
-  name: 'axe',
-  weight: 15,
+  name: 'Axe',
+  fact: 'Miss at first swing',
+  weight: 36,
 }
 const bat = {
-  name: 'bat',
-  weight: 13,
+  name: 'Bat',
+  fact: 'A fool-proof weapon',
+  weight: 43,
 }
 const trophy = {
-  name: 'trophy',
-  weight: 17,
+  name: 'Trophy',
+  fact: 'To celebrate the wins',
+  weight: 86,
 }
 const pistol = {
-  name: 'pistol',
-  weight: 9,
+  name: 'Pistol',
+  fact: 'Loaded or not',
+  weight: 17,
 }
 
 // SUSPECTS, WEAPONS AND ROOMS IN ARRAYS:
@@ -151,7 +160,7 @@ const mystery = {
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects)
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} " " ${mystery.killer.lastName}`
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
   document.getElementById('killerAge').innerHTML = `${mystery.killer.age} years young`
   document.getElementById('killerOccupation').innerHTML = mystery.killer.occupation
   document.getElementById('killerDescription').innerHTML = mystery.killer.description
@@ -162,16 +171,17 @@ document.getElementById('killerCard').onclick = pickKiller
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
-  document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById('weaponName').innerHTML = mystery.weapon.name
+  document.getElementById('weaponFact').innerHTML = `${mystery.weapon.fact}`
   document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight} lbs`
+
 }
 document.getElementById('weaponCard').onclick = pickWeapon
 
 
 const pickRoom = () => {
-  mystery.room = randomSelector(rooms)
-  document.getElementById('roomCard').innerHTML = `Crime location: ${mystery.room}`
+  mystery.rooms = randomSelector(rooms)
+  document.getElementById('roomName').innerHTML = `${mystery.rooms}`
 }
 document.getElementById('roomCard').onclick = pickRoom
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
