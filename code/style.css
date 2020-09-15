@@ -1,58 +1,74 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "didot";
+  font-size: 20px;
+  background-image: url(./assets/mystery.jpg);
+  background-size: contain;
 }
 
 p {
   margin: 1px;
   font-weight: 300;
-  background-color: #fff;
+  background-color: rgb(238, 238, 238);
 }
 
 .cards {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  border: solid 5px rgba(107, 190, 238, 0.63);
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .killer-deck {
-  width: 250px;
+  width: 268px;
   height: 400px;
-  background: #000;
+  background: url(./assets/playcard.jpg);
+  opacity: 0.8;
+  background-size: 100%;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
 .weapon-deck {
-  width: 250px;
+  width: 268px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: url(./assets/playcard.jpg);
+  opacity: 0.8;
+  background-size: 100%;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
 .room-deck {
-  width: 250px;
+  width: 268px;
   height: 400px;
-  background: midnightblue;
-
+  background: url(./assets/playcard.jpg);
+  opacity: 0.8;
+  background-size: 100%;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
+
+
 button {
   padding: 8px 16px;
-  background: crimson;
+  font-family: 'didot';
+  background: rgb(30, 189, 210);
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+button:hover {
+  background:crimson;
+  color: #fff;
 }
