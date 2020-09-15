@@ -30,7 +30,6 @@ p {
 
 .killer-deck:hover, .weapon-deck:hover, .room-deck:hover {
   cursor: pointer;
-  background: yellow;
 }
 
 .killer-deck {

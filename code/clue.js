@@ -23,7 +23,7 @@ const professorPlum = {
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'scarlet',
+  color: 'oldlace',
   description: 'She is smart',
   age: 32,
   image: 'assets/scarlet.png',
@@ -67,15 +67,19 @@ const rooms = [
   'library'
 ]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+// Randomly selects array item
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+// Mystery object
+let mystery =  {
+  killer: null,
+  weapon: null,
+  room: null
+}
+
+//*** FUNCTIONS FOR KILLER CARD ***//
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -89,7 +93,45 @@ const pickKiller = () => {
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 }
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+// invokes pickKiller function when user clicks the killer-deck
+document.getElementById("killerCard").addEventListener("click", pickKiller);
+
+
+
+//*** FUNCTIONS FOR WEAPON CARD ***//
+
+// This function will be invoked when you click on the killer card.
+const pickWeapon = () => {
+  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  mystery.weapon = randomSelector(weapons)
+  console.log(mystery.weapon.name)
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  document.getElementById(
+    'weaponName'
+  ).innerHTML = `${mystery.weapon.name}`
+}
+
+// invokes pickKiller function when user clicks the killer-deck
+document.getElementById("weaponCard").addEventListener("click", pickWeapon);
+
+
+
+//*** FUNCTIONS FOR ROOM CARD ***//
+
+// This function will be invoked when you click on the killer card.
+const pickRoom = () => {
+  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  mystery.room = randomSelector(rooms)
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  document.getElementById(
+    'roomName'
+  ).innerHTML = `${mystery.room}`
+}
+
+// invokes pickKiller function when user clicks the killer-deck
+document.getElementById("roomCard").addEventListener("click", pickRoom);
+
+
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
