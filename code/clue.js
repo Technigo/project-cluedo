@@ -167,6 +167,8 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+let mystery = {};
+
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -179,6 +181,36 @@ const pickKiller = () => {
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 }
+document.getElementById('killerCard').onclick = pickKiller;
+
+
+const pickWeapon = () => {
+  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  mystery.weapon = randomSelector(weapons)
+
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  document.getElementById('weaponCard').style.background = mystery.killer.color
+  document.getElementById(
+    'weaponName'
+  ).innerHTML = `${mystery.weapon.name}`
+  document.getElementById(
+    'weaponWeight'
+  ).innerHTML = `${mystery.weapon.weight}`
+}
+document.getElementById('weaponCard').onclick = pickWeapon;
+
+
+const pickRoom = () => {
+  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  mystery.room = randomSelector(rooms)
+
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  document.getElementById('roomCard').style.background = mystery.killer.color
+  document.getElementById(
+    'roomName'
+  ).innerHTML = `${mystery.room}`
+}
+document.getElementById('roomCard').onclick = pickRoom;
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
