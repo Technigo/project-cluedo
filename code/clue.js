@@ -79,7 +79,7 @@ const knife = {
 const candlestick = {
   name: 'candlestick',
   weight: 100,
-  feature: 'light',
+  feature: 'hard',
   image: 'assets/candelstick.png',
 }
 
@@ -209,11 +209,11 @@ const theWeaponImage = document.getElementById("weaponImage")
 
 
 theWeapon.style.background = mystery.weapon.color
-theWeaponName.innerHTML = mystery.weapon.name + " " + mystery.weapon.name
+theWeaponName.innerHTML = mystery.weapon.name 
 theWeaponWeight.innerHTML = mystery.weapon.weight
 theWeaponFeature.innerHTML = mystery.weapon.feature
 theWeaponImage.setAttribute("src", mystery.weapon.image)
-
+theKillerDescription.innerHTML = mystery.killer.description
 }
 
 

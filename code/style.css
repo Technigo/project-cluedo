@@ -9,7 +9,8 @@ body {
 }
 
 header {
-
+  background: white;
+  opacity: 50%;
   height: 100px;
   display: flex;
   align-items: center;
@@ -19,15 +20,16 @@ header {
 }
 
 header a {
-  color: white;
+  color: black;
+  font-size: 20px;
   text-decoration: none;
   margin-left: 16px;
   
 }
 
 header img {
-  height: 80px;
-  margin: 0 24px;
+  height: 100px;
+  margin:  0 24px 0 350px;
 }
 
 .cards p {
@@ -116,8 +118,9 @@ margin-bottom:0px;
 .weapon-deck {
   width: 180px;
   height: 170px;
-  background-image: linear-gradient(#4F100B, red);
-  color: black;
+  background: white;
+  color: red;
+  opacity: 70%;
   padding-top: 30px;
   border-radius: 16px;
   margin-left: 50px;
@@ -137,10 +140,11 @@ margin-bottom:0px;
 .room-deck {
   width: 310px;
   height: 130px;
- background-image: linear-gradient(#4F100B, red);
+ background: white;
+ opacity: 70%;
   text-align: center;
   padding-top: 30px;
-  color: black;
+  color: red;
   border-radius: 16px;
   margin-left: 70px;
   margin-top: 10px;
@@ -172,21 +176,29 @@ button {
   margin: 16px auto;
 }
 
+#mystery {
+  width: auto;
+  height: 100px;
+  text-align: center;
+  padding-top: 30px;
+  background: white;
+  opacity: 50%;
+  color: red;
+  border-radius: 16px;
+}
+
+
+
 footer {
-  background: black;
+  background: white;
+  opacity: 50%;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color:  white;
+  color:  black;
   padding: 0 16px;
   border-top: 1px solid;
-}
-
-footer div a {
-  text-decoration: none;
-  color: white;
-  margin-left: 16px;
 }
 
 
