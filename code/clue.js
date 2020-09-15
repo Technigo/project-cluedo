@@ -65,40 +65,76 @@ const profPlum = {
 const rope = {
   name: 'rope',
   weight: 10,
-  image: './assets/rope.jpg'
+  image: 'assets/rope.jpg'
 }
 
 const candlestick = {
   name: 'candlestick',
   weight: 25,
-  image: './assets/candlestick.jpg'
+  image: 'assets/candlestick.jpg'
 }
 
 const pistol = {
   name: 'pistol',
   weight: 15,
-  image: './assets/revolver.jpg'
+  image: 'assets/revolver.jpg'
 }
 
 const knife = {
   name: 'knife',
   weight: 12,
-  image: './assets/knife.jpg'
+  image: 'assets/knife.jpg'
 }
 
 const piping = {
   name: 'piping',
   weight: 19,
-  image: './assets/piping.jpg'
+  image: 'assets/piping.jpg'
 }
 
 const wrench = {
   name: 'wrench',
   weight: 21,
-  image: './assets/wrench.jpg'
+  image: 'assets/wrench.jpg'
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+const ballroom = {
+  image: 'assets/ballroom.jpg'
+}
+
+const billiardRoom = {
+  image: 'assets/billiard_room.jpg'
+}
+
+const conservatory = {
+  image: 'assets/conservatory.jpg'
+}
+
+const kitchen = {
+  image: 'assets/kitchen.jpg'
+}
+
+const diningRoom = {
+  image: 'assets/dining_room.jpg'
+}
+
+const library = {
+  image: 'assets/kitchen.jpg'
+}
+
+const study = {
+  image: 'assets/study.jpg'
+}
+
+const hall = {
+  image: 'assets/hall.jpg'
+}
+
+const lounge = {
+  image: 'assets/lounge.jpg'
+}
 
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
@@ -120,7 +156,7 @@ const weapons = [
   piping,
   wrench,
 ]
-/*
+
 const rooms = [
   kitchen,
   ballroom,
@@ -132,7 +168,7 @@ const rooms = [
   lounge,
   diningRoom,
 ];
-*/
+
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
@@ -167,6 +203,9 @@ const pickKiller = () => {
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
+  document.getElementById(
+    'weaponImage'
+  ).src = mystery.weapon.image;
 }
 
 const pickRoom = () => {
