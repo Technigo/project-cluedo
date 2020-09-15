@@ -3,31 +3,40 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
-  description: 'He is social',
-  age: 45,
-  image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  },
+  // color: 'green',
+  // description: 'He is social',
+  // age: 45,
+  // image: 'assets/green.png',
+  // occupation: 'Entrepreneur'
 }
 
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'plum',
-  description: 'He is shy',
-  age: 67,
-  image: 'assets/plum.png',
-  occupation: 'Professor'
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  },
+  // color: 'plum',
+  // description: 'He is shy',
+  // age: 67,
+  // image: 'assets/plum.png',
+  // occupation: 'Professor'
 }
 
 const missScarlet = {
-  firstName: 'Cassandra',
+  firstName: 'Cassy',
   lastName: 'Scarlet',
-  color: 'oldlace',
-  description: 'She is smart',
-  age: 32,
-  image: 'assets/scarlet.png',
-  occupation: 'Developer'
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  },
+  // color: 'oldlace',
+  // description: 'She is smart',
+  // age: 32,
+  // image: 'assets/scarlet.png',
+  // occupation: 'Developer'
 }
 
 const suspects = [
@@ -87,10 +96,13 @@ const pickKiller = () => {
   mystery.killer = randomSelector(suspects)
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerCard').style.background = "#ff7ee3"
+  document.getElementById('killerName').style.background = "#ff7ee3"
+  document.getElementById('killerName').style.fontFamily = "Ranchers"
+  document.getElementById('killerName').style.fontSize = "30px"
   document.getElementById(
     'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  ).innerHTML = `${mystery.killer.fullName()}`
 }
 
 // invokes pickKiller function when user clicks the killer-deck
@@ -106,6 +118,10 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
   console.log(mystery.weapon.name)
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  document.getElementById('weaponCard').style.background = "#ff7ee3"
+  document.getElementById('weaponName').style.background = "#ff7ee3"
+  document.getElementById('weaponName').style.fontFamily = "Ranchers"
+  document.getElementById('weaponName').style.fontSize = "30px"
   document.getElementById(
     'weaponName'
   ).innerHTML = `${mystery.weapon.name}`
@@ -123,6 +139,10 @@ const pickRoom = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.room = randomSelector(rooms)
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  document.getElementById('roomCard').style.background = "#ff7ee3"
+  document.getElementById('roomName').style.background = "#ff7ee3"
+  document.getElementById('roomName').style.fontFamily = "Ranchers"
+  document.getElementById('roomName').style.fontSize = "30px"
   document.getElementById(
     'roomName'
   ).innerHTML = `${mystery.room}`
@@ -137,14 +157,7 @@ document.getElementById("roomCard").addEventListener("click", pickRoom);
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-  document.getElementById("mystery").innerHTML = (`It was ${mystery.killer.firstName} ${mystery.killer.lastName} with a ${mystery.weapon.name} in the ${mystery.room}.`)
+  document.getElementById("mystery").innerHTML = (`It was ${mystery.killer.fullName()} with a ${mystery.weapon.name} in the ${mystery.room}.`)
+  document.getElementById("mystery").style.fontFamily = "Margarine"
 }
 
-document.getElementById('button').onclick = revealMystery;
-
-
-
-
-/// if mystery. null... 
-//styling
-//reload
