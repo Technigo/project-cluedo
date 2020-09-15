@@ -30,6 +30,12 @@ const missScarlet = {
   occupation: 'Developer'
 }
 
+const suspects = [
+  mrGreen,
+  professorPlum,
+  missScarlet
+]
+
 //*** WEAPONS ***//
 
 const rope = {
@@ -47,17 +53,19 @@ const candlestick = {
   weight: 4
 }
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
-
-const suspects = [
-  mrGreen,
-  mrsWhite
-  // ...  and the rest
+const weapons = [
+  rope, 
+  knife,
+  candlestick
 ]
 
-const weapons = []
+//*** ROOMS ***//
 
-const rooms = []
+const rooms = [
+  'kitchen', 
+  'study',
+  'library'
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
