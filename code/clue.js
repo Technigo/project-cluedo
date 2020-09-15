@@ -157,7 +157,6 @@ const adjectives = [
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -168,8 +167,6 @@ const mystery = {
   weapon: 'null',
   room: 'null',
 }
-// With a killer, a weapon and a room.
-// The values will be set later.
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -183,7 +180,7 @@ const pickKiller = () => {
 }
 document.getElementById('killerCard').onclick = pickKiller
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+// FUNCTIONS pickWeapon and pickRoom 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
   document.getElementById('weaponName').innerHTML = mystery.weapon.name
@@ -199,8 +196,7 @@ const pickRoom = () => {
   document.getElementById('roomName').innerHTML = `${mystery.rooms}`
 }
 document.getElementById('roomCard').onclick = pickRoom
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// FUNCTION revealMystery that will be invoked when you click that button
 const thisMystery = document.getElementById('mystery')
 
 const revealMystery = () => {
