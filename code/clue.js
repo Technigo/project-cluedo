@@ -149,5 +149,9 @@ document.getElementById('killerCard').onclick = pickKiller;
 document.getElementById('weaponCard').onclick = pickWeapon;
 document.getElementById('roomCard').onclick = pickRoom;
 
-/// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.`
+// Function that will be invoked when you click the reveal-button. It prints out a message
+//with facts about the murderer.
+const revealMystery = () => {
+    document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}, 
+    in the ${mystery.room} with a ${mystery.weapon.name}.`;
+}
