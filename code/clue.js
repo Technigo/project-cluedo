@@ -204,8 +204,9 @@ const pickKiller = () => {
 
   // This will change the background color of the card to the one connected to the chosen 
   // killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerCard').style.background = mystery.killer.color;
+  document.getElementById('killerImage').src = mystery.killer.image;
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
 }
 
 document.getElementById("killerCard").onclick = pickKiller;
@@ -237,8 +238,13 @@ document.getElementById("roomCard").onclick = pickRoom;
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`;
-  
+
+  if (mystery.room && mystery.weapon && mystery.killer) {
+    document.getElementById('mystery').innerHTML = 
+    `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`;
+  } else {
+    document.getElementById('mystery').innerHTML = `Please pick a killer, weapon and room!`;
+  }
 }
 
 document.getElementById('revealButton').onclick = revealMystery;

@@ -1,22 +1,53 @@
+/*** GENERAL STYLING ***/
+
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background: #000;
 }
 
-p {
+/*p {
   margin: 1px;
   font-weight: 300;
   background-color: #fff;
+}*/
+
+/*** HEADER ***/
+
+.hero-image {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  position: absolute;
 }
 
+.hero-text {
+  position: relative;
+  z-index: 10;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/*** CARD SECTION ***/
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
+  height: 500px;
   background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 5px;
 }
 
 .killer-deck {
@@ -32,7 +63,7 @@ p {
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: #000;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -42,12 +73,27 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: #000;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
   cursor: pointer;
+}
+
+/*** REVELATION SECTION ***/
+
+.revelation {
+  height: 300px;
+  background: #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#mystery {
+  color: white;
+  font-size: 20px;
 }
 
 button {
@@ -58,4 +104,20 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+button:hover {
+
+}
+
+/*** FOOTER ***/
+
+footer {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: white;
+  background: black;
 }
