@@ -24,7 +24,6 @@ body {
   color: white;
   font-size: 7em;
   display: flex;
-  /* align-items: center; */
   justify-content: center;
 }
 
@@ -134,7 +133,7 @@ p {
 .mystery-reveal {
   margin: 0 auto 20px auto;
   color: white;
-  font-family: "Roboto Mono", Courier, monospace;
+  font-family: 'Roboto Mono', Courier, monospace;
   font-size: 1em;
 }
 

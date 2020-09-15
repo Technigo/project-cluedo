@@ -360,14 +360,12 @@ const toggleGameBoard = () => {
 const checkScroll = () => {
   let x = window.matchMedia("(max-width: 600px)");
   let y = window.matchMedia("(max-width: 769px)");
-  if (x.matches) { // If media query matches
+  if (x.matches) {
     setTimeout(function () {
-      console.log("scroll match! now scrolling")
       window.scrollBy(0, window.innerHeight / 1.3);
     }, 1500);
-  } else if (y.matches) { // If media query matches
+  } else if (y.matches) {
     setTimeout(function () {
-      console.log("scroll match! now scrolling")
       window.scrollBy(0, window.innerHeight / 1.5);
     }, 1500);
   }
