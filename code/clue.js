@@ -6,25 +6,25 @@ let roomPicked = false;
 
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS
 const mrGreen = {
-  firstName: 'Reverend',
+  firstName: 'Jacob',
   lastName: 'Green',
   color: '#539853',
   description: 'He is a very serious man.',
   age: 45,
   image: 'assets/green.png',
   occupation: 'Priest',
-  favoriteWeapon: 'rope'
+  favoriteWeapon: ''
 };
 
 const clMustard = {
-  firstName: 'Colonel',
+  firstName: 'Jack',
   lastName: 'Mustard',
   color: '#fbd460',
   description: 'Has fought many wars and knows how to handle a gun.',
   age: 65,
   image: 'assets/mustard.png',
   occupation: 'Military man',
-  favoriteWeapon: 'knife'
+  favoriteWeapon: ''
 };
 
 const mrsPeacock = {
@@ -35,29 +35,29 @@ const mrsPeacock = {
   age: 34,
   image: 'assets/peacock.png',
   occupation: 'Senators wife',
-  favoriteWeapon: 'axe'
+  favoriteWeapon: ''
 };
 
 const prPlum = {
-  firstName: 'Professor',
+  firstName: 'Victor',
   lastName: 'Plum',
   color: '#8b5195',
   description: 'Smooth-talker',
   age: 41,
   image: 'assets/plum.png',
   occupation: 'Psychiatry Professor',
-  favoriteWeapon: 'revolver'
+  favoriteWeapon: ''
 };
 
 const msScarlet = {
-  firstName: 'Serena',
+  firstName: 'Cassandra',
   lastName: 'Scarlet',
   color: '#f84b3e',
   description: 'You never know if she is telling you the truth.',
   age: 23,
   image: 'assets/scarlet.png',
   occupation: 'Runs a underground brothel',
-  favoriteWeapon: 'poison'
+  favoriteWeapon: ''
 };
 
 const mrsWhite = {
@@ -68,7 +68,7 @@ const mrsWhite = {
   age: 73,
   image: 'assets/white.png',
   occupation: 'Servant',
-  favoriteWeapon: 'candlestick'
+  favoriteWeapon: ''
 };
 
 // CREATE OBJECTS FOR ALL THE WEAPONS
@@ -77,71 +77,91 @@ const rope = {
   name: 'Rope',
   id: 'rope',
   weight: 10,
-  color: 'red',
+  color: '#f84b3e',
   article: 'a',
-  increasedChanceOfDraw: 3,
-  likelyFoundIn: 'Cellar'
+  increasedChanceOfDraw: 6,
+  likelyFoundIn: 'Guest House'
 };
 
 const knife = {
   name: 'Knife',
   id: 'knife',
   weight: 7,
-  color: 'blue',
+  color: '#fff',
   article: 'a',
   increasedChanceOfDraw: 5,
   likelyFoundIn: 'Kitchen'
 };
 
-const axe = {
-  name: 'Axe',
-  id: 'axe',
-  weight: 12,
-  color: 'green',
-  article: 'an',
-  increasedChanceOfDraw: 2,
-  likelyFoundIn: 'Study'
-};
-
-const revolver = {
-  name: 'Revolver',
-  id: 'revolver',
-  weight: 6,
-  color: 'pink',
+const candleStick = {
+  name: 'Candle stick',
+  id: 'candleStick',
+  weight: 4,
+  color: '#8b5195',
   article: 'a',
   increasedChanceOfDraw: 10,
-  likelyFoundIn: 'Lounge'
+  likelyFoundIn: 'Hall'
+};
+
+const dumbBell = {
+  name: 'Dumbbell',
+  id: 'dumbBell',
+  weight: 12,
+  color: '#ebebe9',
+  article: 'a',
+  increasedChanceOfDraw: 9,
+  likelyFoundIn: 'Spa'
 };
 
 const poison = {
   name: 'Poison',
   id: 'poison',
   weight: 3,
-  color: 'yellow',
+  color: '#5656b3',
   article: '',
-  increasedChanceOfDraw: 4,
-  likelyFoundIn: 'Dining Room'
-}
+  increasedChanceOfDraw: 7,
+  likelyFoundIn: 'Study'
+};
 
-const scissors = {
-  name: 'Scissors',
-  id: 'scissors',
-  weight: 2,
-  color: 'purple',
-  article: '',
-  increasedChanceOfDraw: 3,
-  likelyFoundIn: 'Library'
-}
-
-const candleStick = {
-  name: 'Candle stick',
-  id: 'candlestick',
-  weight: 4,
-  color: 'white',
-  article: 'a',
+const axe = {
+  name: 'Axe',
+  id: 'axe',
+  weight: 6,
+  color: '#fff',
+  article: 'an',
   increasedChanceOfDraw: 10,
-  likelyFoundIn: 'Hall'
-}
+  likelyFoundIn: 'Billiard Room'
+};
+
+const bat = {
+  name: 'Bat',
+  id: 'bat',
+  weight: 2,
+  color: '#fff',
+  article: 'a',
+  increasedChanceOfDraw: 20,
+  likelyFoundIn: 'Lounge'
+};
+
+const trophy = {
+  name: 'Trophy',
+  id: 'trophy',
+  weight: 2,
+  color: '#539853',
+  article: 'a',
+  increasedChanceOfDraw: 8,
+  likelyFoundIn: 'Theater'
+};
+
+const pistol = {
+  name: 'Pistol',
+  id: 'pistol',
+  weight: 2,
+  color: '#fbd460',
+  article: 'a',
+  increasedChanceOfDraw: 25,
+  likelyFoundIn: 'Living Room'
+};
 
 //GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS
 const suspects = [
@@ -156,14 +176,32 @@ const suspects = [
 const weapons = [
   rope,
   knife,
-  axe,
-  revolver,
+  candleStick,
+  dumbBell,
   poison,
-  scissors,
-  candleStick
+  axe,
+  bat,
+  trophy,
+  pistol
 ]
 
-const rooms = ['Kitchen', 'Dining Room', 'Lounge', 'Study', 'Cellar', 'Billiard Room', 'Conservatory', 'Library', 'Hall'];
+const rooms = [
+  'Dining Room',
+  'Conservatory',
+  'Kitchen',
+  'Study',
+  'Library',
+  'Billiard Room',
+  'Lounge',
+  'Ballroom',
+  'Hall',
+  'Spa',
+  'Living Room',
+  'Observatory',
+  'Theater',
+  'Guest House',
+  'Patio'
+];
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
@@ -187,16 +225,17 @@ const pickKiller = (loadID) => {
       mystery.killer = randomSelector(suspects);
       document.getElementById('killerName').style.background = mystery.killer.color;
       document.getElementById('killerImage').src = mystery.killer.image;
-      document.getElementById(
-        'killerName'
-      ).innerHTML = (`${mystery.killer.firstName} ${mystery.killer.lastName}`);
-      document.getElementById(
-        'killerFavoriteWeapon'
-      ).innerHTML = (`Preferred weapon: ${mystery.killer.favoriteWeapon}`);
+      document.getElementById('killerName').innerHTML = (`${mystery.killer.firstName} ${mystery.killer.lastName}`);
+      //Get the name from the preferred weapon ID
+      let weaponID = mystery.killer.favoriteWeapon;
+      let weaponName = weapons.find(weapon => weapon.id === weaponID).name;
+      document.getElementById('killerFavoriteWeapon').innerHTML = (`Preferred weapon: ${weaponName}`);
       document.getElementById('killerAge').innerHTML = (`Age: ${mystery.killer.age}`);
       document.getElementById('killerOccupation').innerHTML = (`Occupation: ${mystery.killer.occupation}`);
+      document.getElementById('killerDescription').innerHTML = (`Description: ${mystery.killer.description}`);
       killerPicked = true;
-    }, 3000);
+      checkScroll();
+    }, 2000);
   }
 }
 
@@ -208,10 +247,12 @@ const pickWeapon = (loadID) => {
     setTimeout(function () {
       document.getElementById(loadID.id).style.opacity = 0;
       mystery.weapon = randomSelector(weapons);
+      document.getElementById('weaponName').style.background = mystery.weapon.color;
       document.getElementById('weaponName').innerHTML = `Type: ${mystery.weapon.name}`;
       document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`;
       weaponPicked = true;
-    }, 3000);
+      checkScroll();
+    }, 2000);
   } else(showInfoMessage("pickWeapon"));
 }
 
@@ -224,7 +265,8 @@ const pickRoom = (loadID) => {
       mystery.room = randomSelector(rooms);
       document.getElementById('roomName').innerHTML = mystery.room;
       roomPicked = true;
-    }, 3000);
+      checkScroll();
+    }, 2000);
   } else(showInfoMessage("pickRoom"));
 }
 
@@ -301,10 +343,10 @@ const revealMystery = () => {
   } else(showInfoMessage("revealMystery"));
 }
 
-const endGame = () => {
-  var check = confirm("Are you sure? Window will close");
+const restartGame = () => {
+  var check = confirm("Are you sure? Window will reload");
   if (check == true) {
-    window.close();
+    window.location.reload();
   }
 }
 
@@ -313,4 +355,20 @@ const toggleGameBoard = () => {
   document.getElementById("gameBoard").classList.add("active");
   document.getElementById("start-button").classList.remove("active");
   document.getElementById("start-button").classList.add("inactive");
+}
+
+const checkScroll = () => {
+  let x = window.matchMedia("(max-width: 600px)");
+  let y = window.matchMedia("(max-width: 769px)");
+  if (x.matches) { // If media query matches
+    setTimeout(function () {
+      console.log("scroll match! now scrolling")
+      window.scrollBy(0, window.innerHeight / 1.3);
+    }, 1500);
+  } else if (y.matches) { // If media query matches
+    setTimeout(function () {
+      console.log("scroll match! now scrolling")
+      window.scrollBy(0, window.innerHeight / 1.5);
+    }, 1500);
+  }
 }
