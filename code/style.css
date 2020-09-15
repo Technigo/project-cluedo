@@ -1,16 +1,58 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Prata', serif;
 }
 
-header {
-  text-align: center;
+h4 {
+  color: black;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
 }
 
 p {
-  margin: 1px;
+  margin: 10px;
   font-weight: 300;
-  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 18px;
+  color:#000000;
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #000000;
+  padding: 0px 30px;
+}
+
+header h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+header h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 30px;
+  padding-top: 10px;
+  margin: 0px;
+}
+
+header img {
+  border-radius: 50%;
+  padding: 5px;  
 }
 
 .cards {
@@ -21,41 +63,68 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  text-align: center;
+}
+
+.card-title {
+  background: #f2f2f2;
+  display: inline;
+  border-radius: 5px;
+  padding: 5px 30px;
+  color: #000000;
+  font-family: 'Prata', serif;
+}
+
+.card-details {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .killer-deck {
-  width: 250px;
+  width: 300px;
   height: 400px;
-  background: #000;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 5px;
+  background-image: url("./assets/magnify-glass.jpg");
+  background-size: 100px 100px;
 }
 
 .weapon-deck {
-  width: 250px;
+  width: 300px;
   height: 400px;
-  background: rgb(10, 53, 10);
-  text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 5px;
+  background-image: url("./assets/magnify-glass.jpg");
+  background-size: 100px 100px;
 }
 
 .room-deck {
-  width: 250px;
+  width: 300px;
   height: 400px;
-  background: midnightblue;
   text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 5px;
+  background-image: url("./assets/magnify-glass.jpg");
+  background-size: 100px 100px;
 }
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: #000000;
+  color: #ffffff;
   border: none;
   font-size: 20px;
-  border-radius: 8px;
+  border-radius: 3px;
   display: block;
   margin: 0 auto;
+}
+
+.mystery {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
 }

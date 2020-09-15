@@ -3,54 +3,42 @@ const mrGreen = {
   name: "Mr Green",
   color: "#009900",
   description: "He's made alot of dodgy connections",
-  age: 45,
   image: "assets/green.png",
-  occupation: "Entrepreneur"
 };
 
 const professorPlum = {
   name: "Professor Plum",
   color: "#993366",
-  description: "A proffessor of murder??",
-  age: 60,
+  description: "A proffessor of murderer??",
   image: "assets/plum.png",
-  occupation: "Professor"
 };
 
 const missScarlet = {
   name: "Miss Scarlet",
   color: "#e60000",
   description: "A oil heiress with alot of enemies",
-  age: 25,
   image: "assets/scarlet.png",
-  occupation: "Heiress"
 };
 
 const mrsPeacock = {
   name: "Mrs Peacock",
   color: "#006666",
   description: "A successful business woman who's made some dirty deals",
-  age: 47,
   image: "assets/peacock.png",
-  occupation: "Buisness woman"
 };
 
 const colonelMustard = {
   name: "Colonel Mustard",
   color: "#e6b800",
   description: "A colonel with a bloody past",
-  age: 72,
   image: "assets/mustard.png",
-  occupation: "Retired colonel"
 };
 
 const mrsWhite = {
   name: "Mrs White",
   color: "#ffffff",
   description: "A housekeeper who has alot of secrets to keep",
-  age: 67,
   image: "assets/white.png",
-  occupation: "Eternal housekeeper"
 };
 
 // WEAPON OBJECTS
@@ -235,8 +223,8 @@ const pickKiller = () => {
   document.getElementById("killerName").innerHTML = `${mystery.killer.name}`;
   document.getElementById("killerImage").src = mystery.killer.image;
   document.getElementById("killerDescription").innerHTML = `${mystery.killer.description}`;
-  // pickWeapon();
-  // pickRoom();
+  
+  document.getElementById("cardDetails1").style.display = "flex";  
 };
 
 document.getElementById("killerCard").onclick = pickKiller;
@@ -250,6 +238,7 @@ const pickWeapon = () => {
   document.getElementById("weaponName").innerHTML = `${mystery.weapon.name} ,   weight: ${mystery.weapon.weight}`;
   // document.getElementById("weaponimage").src = mystery.weapon.image;
   document.getElementById("weaponLastSeen").innerHTML = `Last seen: ${mystery.weapon.lastseen}`;
+  document.getElementById("cardDetails2").style.display = "flex";
 };
 
 document.getElementById("weaponCard").onclick = pickWeapon;
@@ -261,6 +250,7 @@ const pickRoom = () => {
   document.getElementById("roomCard").style.background = mystery.room.color;
   document.getElementById("roomName").innerHTML = `${mystery.room.name}`;
   // document.getElementById("weaponimage").src = mystery.weapon.image;
+  document.getElementById("cardDetails3").style.display = "flex";
 };
 
 document.getElementById("roomCard").onclick = pickRoom;
@@ -271,7 +261,7 @@ document.getElementById("roomCard").onclick = pickRoom;
 //----- Reveal mystery -----//
 // Function invoked when you click on the Reveal crime button.
 function revealMystery() {
-  document.getElementById("mystery").innerHTML = `The murder was commited by ${mystery.killer.name} with the ${mystery.weapon.name} in the ${mystery.room.name}`;
+  document.getElementById("mystery").innerHTML = `The murder was commited by ${mystery.killer.name} with the ${mystery.weapon.name.toLowerCase()} in the ${mystery.room.name.toLowerCase()}`;
 };
 
 document.getElementById("mystery").onclick = revealMystery;
