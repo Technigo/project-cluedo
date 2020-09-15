@@ -1,9 +1,33 @@
+/* Between line 2-14 and also main-container class, serve purpose of keeping the footer at the bottom of the page, didn't want a sticky one */
+* { 
+  box-sizing: border-box;
+ }
+ *:before,
+ *:after {
+  box-sizing: border-box;
+ }
+
+html,
+body {
+ height: 100%;
+ position: relative;
+}
+
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
   background-image: url(./assets/background-img.jpg);
   background-size: cover;
 }
+
+.main-container {
+  min-height: 100vh; /* will cover the 100% of viewport */
+  overflow: hidden;
+  display: block;
+  position: relative;
+  padding-bottom: 50px; /* height of the footer */
+}
+
 
 h1 {
   font-size: 100px;
@@ -91,7 +115,7 @@ button {
   font-size: 25px;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 30px auto;
   font-family: 'Carter One', cursive;
 }
 
@@ -139,16 +163,18 @@ article, #revealButton, #restartButton {
 
 footer {
   margin-top: 200px;
-  position: relative;
+  position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
+  height: 50px;
+  background-color: black;
 }
 
 footer p {
-  background-color: black;
   color: white;
+  background-color: black; /* overrides p styling set above */
   text-align: center;
+  margin: 20px 0 0 0; /* overrides p styling set above */
 }
 
 a {

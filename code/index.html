@@ -10,55 +10,57 @@
   </head>
 
   <body>
-    <h1>CLUEDO</h1>
-    <h2>Find out who's the murderer!</h2>
+    <div class="main-container">
+      <h1>CLUEDO</h1>
+      <h2>Find out who's the murderer!</h2>
 
-    <section class="cards"> <!-- Section with all 3 cards-->
-      
-      <article class="killer-deck" id="killerCard"> <!-- Killers deck-->
-        <p class="deck-name">KILLER</p>
+      <section class="cards"> <!-- Section with all 3 cards-->
+        
+        <article class="killer-deck" id="killerCard"> <!-- Killers deck-->
+          <p class="deck-name">KILLER</p>
 
-        <div id="loader1"></div>
+          <div id="loader1"></div>
 
-        <img id="killerImage" src="" height="100" />
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <p id="killerDescription"></p>
-        <p id="killerFavWeapon"></p>
-      </article>
+          <img id="killerImage" src="" height="100" />
+          <p id="killerName"></p>
+          <p id="killerAge"></p>
+          <p id="killerOccupation"></p>
+          <p id="killerDescription"></p>
+          <p id="killerFavWeapon"></p>
+        </article>
 
-      <article class="weapon-deck" id="weaponCard"> <!-- Weapons deck-->
-        <p class="deck-name">WEAPON</p>
+        <article class="weapon-deck" id="weaponCard"> <!-- Weapons deck-->
+          <p class="deck-name">WEAPON</p>
 
-        <div id="loader2"></div>
+          <div id="loader2"></div>
 
-        <img id="weaponImage" src="" height="100" />
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-        <p id="weaponDamage"></p>
-      </article>
+          <img id="weaponImage" src="" height="100" />
+          <p id="weaponName"></p>
+          <p id="weaponWeight"></p>
+          <p id="weaponDamage"></p>
+        </article>
 
-      <article class="room-deck" id="roomCard"> <!-- Rooms deck-->
-        <p class="deck-name">ROOM</p>
+        <article class="room-deck" id="roomCard"> <!-- Rooms deck-->
+          <p class="deck-name">ROOM</p>
 
-        <div id="loader3"></div>
+          <div id="loader3"></div>
 
-        <p id="roomName"></p>
-      </article>
+          <p id="roomName"></p>
+        </article>
 
-    </section>
+      </section>
 
-    <button onclick="revealMystery()" id="revealButton">REVEAL THE CRIME...</button>
+      <button onclick="revealMystery()" id="revealButton">REVEAL THE CRIME...</button>
 
-    <p id="mystery"></p> <!-- Sentence revealing the mystery-->
+      <p id="mystery"></p> <!-- Sentence revealing the mystery-->
 
-    <button onclick="restart()" id="restartButton">Start Again</button>
+      <button onclick="restart()" id="restartButton">Start Again</button>
 
-    <script src="./clue.js"></script>
+      <script src="./clue.js"></script>
 
-    <footer>
-      <p>Project by <a href="https://vanessasue27.github.io/" target="_blank">Vanessa Sue Smith</a> for Technigo's bootcamp - Background image by: brookeolson3d@gmail.com</p>
-    </footer>
+      <footer>
+        <p>Project by <a href="https://vanessasue27.github.io/" target="_blank">Vanessa Sue Smith</a> for Technigo's bootcamp - Background image by: brookeolson3d@gmail.com</p>
+      </footer>
+    </div>
   </body>
 </html>

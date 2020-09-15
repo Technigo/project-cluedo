@@ -8,7 +8,7 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
-  favouriteWeapon: '' //Favorite weapon is assigned when we call the pickWeapon function
+  favouriteWeapon: 'bat'
 };
 
 const profPlum = {
@@ -19,7 +19,7 @@ const profPlum = {
   age: 36,
   image: 'assets/plum.png',
   occupation: 'University Professor',
-  favouriteWeapon: ''
+  favouriteWeapon: 'poison'
 };
 
 const msScarlet = {
@@ -30,7 +30,7 @@ const msScarlet = {
   age: 25,
   image: 'assets/scarlet.png',
   occupation: 'Actress',
-  favouriteWeapon: ''
+  favouriteWeapon: 'rope'
 };
 
 const mrsPeacock = {
@@ -41,7 +41,7 @@ const mrsPeacock = {
   age: 32,
   image: 'assets/peacock.png',
   occupation: 'Socialite',
-  favouriteWeapon: ''
+  favouriteWeapon: 'candlestick'
 };
 
 const colMustard = {
@@ -52,7 +52,7 @@ const colMustard = {
   age: 55,
   image: 'assets/mustard.png',
   occupation: 'Colonel',
-  favouriteWeapon: ''
+  favouriteWeapon: 'dumbbell'
 };
 
 const mrsWhite = {
@@ -63,7 +63,7 @@ const mrsWhite = {
   age: 60,
   image: 'assets/white.png',
   occupation: 'Housekeeper',
-  favouriteWeapon: ''
+  favouriteWeapon: 'knife'
 };
 
 // CREATE OBJECTS FOR ALL THE WEAPONS:
@@ -196,7 +196,7 @@ const delayedPickKiller = () => {  // This will randomly select a killer from th
 
   if(mystery.killer === undefined) {   //To check if card has been clicked already or not - undefined= not clicked
     mystery.killer = randomSelector(suspects);
-    mystery.killer.favouriteWeapon = randomSelector(weapons);  //Randomly chooses killer's favorite weapon
+    mystery.killer.favouriteWeapon = randomSelector(weapons);  //Randomly reassigns killer's favorite weapon
       
     // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
     document.getElementById('killerCard').style.background = mystery.killer.color;
