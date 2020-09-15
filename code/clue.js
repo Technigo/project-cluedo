@@ -1,3 +1,12 @@
+const mrGreen = {
+  firstName: "Jacob",
+  lastName: "Green",
+  color: "green",
+  description: "He has a lot of connections",
+  age: 45,
+  image: "assets/green.png",
+  occupation: "Entrepreneur",
+};
 const professorPlum = {
   firstName: "Victor",
   lastName: "Plum",
@@ -82,7 +91,7 @@ const pistol = {
   name: "pistol",
   weight: 0.6,
 };
-console.log(peacock.age);
+//console.log(peacock.age);
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -90,13 +99,42 @@ console.log(peacock.age);
 
 const suspects = [
   mrGreen,
+  professorPlum,
+  missScarlet,
+  peacock,
+  mrMustard,
   mrsWhite,
-  // ...  and the rest
 ];
 
-const weapons = [];
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol,
+];
 
-const rooms = [];
+const rooms = [
+  diningroom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardroom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingroom,
+  observatory,
+  theater,
+  guesthouse,
+  patio,
+];
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
