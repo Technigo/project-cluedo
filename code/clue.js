@@ -1,3 +1,9 @@
+//below variables to be used in last function when validate if cards have been clicked or not
+
+let pickedKiller;
+let pickedRoom;
+let pickedWeapon;
+
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
 const mrGreen = {
@@ -71,51 +77,135 @@ console.log(colonelMustard.age); */
 const rope = {
   name: "rope",
   color: "beige",
-  weight: 10
+  weight: 10,
+  image: "assets/white.png"
 }
 
 const knife = {
   name: "knife",
   color: "grey",
-  weight: 11
+  weight: 11,
+  image: "assets/white.png"
 }
 
 const candlestick = {
   name: "candlestick",
-  weight: 12
+  weight: 12,
+  image: "assets/white.png"
 }
 
 const dumbbell = {
   name: "dumbbell",
-  weight: 13
+  weight: 13,
+  image: "assets/white.png"
 }
 
 const poison = {
   name: "poison",
-  weight: 14
+  weight: 14,
+  image: "assets/white.png"
 }
 
 const axe = {
   name: "axe",
-  weight: 15
+  weight: 15,
+  image: "assets/white.png"
 }
 
 const bat = {
   name: "bat",
-  weight: 16
+  weight: 16,
+  image: "assets/white.png"
 }
 
 const trophy = {
   name: "trophy",
-  weight: 17
+  weight: 17,
+  image: "assets/white.png"
 }
 
 const pistol = {
   name: "pistol",
-  weight: 18
+  weight: 18,
+  image: "assets/white.png"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+const diningRoom = {
+  name: "Dining Room",
+  image: "assets/white.png"
+}
+
+const conservatory = {
+  name: "Conservatory",
+  image: "assets/white.png"
+}
+
+const kitchen = {
+  name: "Kitchen",
+  image: "assets/white.png"
+}
+
+const study = {
+  name: "Study",
+  image: "assets/white.png"
+}
+
+const library = {
+  name: "Library",
+  image: "assets/white.png"
+}
+
+const billiardRoom = {
+  name: "Billiard Room",
+  image: "assets/white.png"
+}
+
+const lounge = {
+  name: "Lounge",
+  image: "assets/white.png"
+}
+
+const ballroom = {
+  name: "Ballroom",
+  image: "assets/white.png"
+}
+
+const hall = {
+  name: "Hall",
+  image: "assets/white.png"
+}
+
+const spa = {
+  name: "Spa",
+  image: "assets/white.png"
+}
+
+const livingRoom = {
+  name: "Living Room",
+  image: "assets/white.png"
+}
+
+const observatory = {
+  name: "Observatory",
+  image: "assets/white.png"
+} 
+
+const theater = {
+  name: "Theater",
+  image: "assets/white.png"
+}
+
+const guestHouse = {
+  name: "Guest House",
+  image: "assets/white.png"
+}
+
+const patio = {
+  name: "Patio",
+  image: "assets/white.png"
+}
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
@@ -141,31 +231,23 @@ const weapons = [
 ]
 
 const rooms = [
-  "Dining Room", 
-  "Conservatory",
-  "Kitchen",
-  "Study", 
-  "Library", 
-  "Billiard Room", 
-  "Lounge", 
-  "Ballroom",
-  "Hall", 
-  "Spa",
-  "Living Room", 
-  "Observatory", 
-  "Theater", 
-  "Guest House", 
-  "Patio"
+  diningRoom, 
+  conservatory,
+  kitchen,
+  study, 
+  library, 
+  billiardRoom, 
+  lounge, 
+  ballroom,
+  hall, 
+  spa,
+  livingRoom, 
+  observatory, 
+  theater, 
+  guestHouse, 
+  patio
 ]
 
-/* testing objects in console.
-console.log(suspects);
-console.log(rooms);
-console.log(weapons);
-console.log(rooms[8]);
-console.log(weapons[2])
-console.log(suspects[4])
-*/
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
@@ -178,13 +260,17 @@ const randomSelector = array => {
 // The values will be set later.
 
 const mystery = {
-
+  killer: "",
+  weapon: "",
+  room: ""  
 }
 
 
 // This function will be invoked when you click on the killer card.
+// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
 const pickKiller = () => {
+  pickedKiller= true;
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
 
@@ -198,31 +284,43 @@ const pickKiller = () => {
   document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`;
 }
 
-document.getElementById('killerCard').onclick = pickKiller;
-
+//This function will be invoked when you click on the weapon card.
 
 const pickWeapon = () => {
+  pickedWeapon = true;
   mystery.weapon = randomSelector(weapons);
 
-  document.getElementById('weaponCard').style.background = mystery.weapon.color;
-  document.getElementById("weaponCard").innerHTML = `${mystery.weapon.name}`;
+  document.getElementById("weaponCard").style.background = mystery.weapon.color;
+  document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
+  document.getElementById("weaponWeight").innerHTML = `${mystery.weapon.weight}`;
+  document.getElementById("weaponImage").src = `${mystery.weapon.image}`;
 }
 
-document.getElementById('weaponCard').onclick = pickWeapon;
+//This function will be invoked when you click on the room card.
 
 const pickRoom = () => {
+  pickedRoom = true;
   mystery.room = randomSelector(rooms)
   
   document.getElementById("roomCard").style.background = mystery.room.color
-  document.getElementById("roomCard").innerHTML = `${mystery.room}`
+  document.getElementById("roomName").innerHTML = `${mystery.room.name}`
+  document.getElementById('roomImage').src = `${mystery.room.image}`;
 }
 
+document.getElementById('killerCard').onclick = pickKiller;
+document.getElementById('weaponCard').onclick = pickWeapon;
 document.getElementById('roomCard').onclick = pickRoom;
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
- const revealMystery = () => {
-   document.getElementById("mysteryAnswer").innerHTML= (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`);
- }
+const revealMystery = () => {
+  const answerMystery = document.getElementById("mysteryAnswer")
+ if (pickedKiller === true || pickedRoom === true || pickedWeapon === true) {
+    answerMystery.innerHTML = (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`);
+    document.getElementById("revealButton").style.display = "none";
+    document.getElementById("newGameButton").style.display = "block";
+  } else { 
+    answerMystery.innerHTML = ("Please choose a killer, a weapon and a room");
+  }
+}

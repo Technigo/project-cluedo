@@ -25,12 +25,14 @@
 
       <article class="weapon-deck" id="weaponCard">
         <p>WEAPON</p>
+        <img id="weaponImage" src="" height="200" />
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
       </article>
 
       <article class="room-deck" id="roomCard">
         <p>ROOM</p>
+        <img id="roomImage" src="" height="200" />
         <p id="roomName"></p>
       </article>
     </section>
@@ -40,7 +42,8 @@
         <p id="mysteryAnswer"></p>
       </div>
 
-      <button class="reveal-button" onclick="revealMystery()">REVEAL THE CRIME</button>
+      <button class="reveal-button" id="revealButton" onclick="revealMystery()">REVEAL THE CRIME</button>
+      <button class="new-game-button" id="newGameButton" onclick="location.reload()">NEW GAME</button>
 
     </section>
     <script src="clue.js"></script>

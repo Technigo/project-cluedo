@@ -6,7 +6,13 @@ body {
 p {
   margin: 1px;
   font-weight: 300;
-  background-color: #fff;
+  background-color: whitesmoke;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cards {
@@ -65,4 +71,8 @@ button {
 
 .reveal-section {
   margin-bottom: 50px;
+}
+
+.new-game-button {
+  display: none;
 }
