@@ -185,10 +185,8 @@ document.getElementById('killerCard').onclick = pickKiller;
 
 
 const pickWeapon = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('weaponCard').style.background = mystery.killer.color
   document.getElementById(
     'weaponName'
@@ -201,10 +199,8 @@ document.getElementById('weaponCard').onclick = pickWeapon;
 
 
 const pickRoom = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.room = randomSelector(rooms)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('roomCard').style.background = mystery.killer.color
   document.getElementById(
     'roomName'
@@ -212,7 +208,11 @@ const pickRoom = () => {
 }
 document.getElementById('roomCard').onclick = pickRoom;
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+const revealMystery = () => {
+  
+  console.log(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`);
+}
+document.getElementById('reveal').onclick = revealMystery;
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
