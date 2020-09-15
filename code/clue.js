@@ -36,7 +36,7 @@
   image: 'assets/peacock.png',
   occupation: 'Frontend developer'
 }
-const ColonelMustard = {
+const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
   color: 'yellow',
@@ -97,11 +97,11 @@ const Pistol = {
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 // dessa har jag klistrat in själv
-// Dining Room, Conservatory, Kitchen, Study, Library, Billiard Room, Lounge, Ballroom, Hall, Spa, Living Room, Observatory, Theater, Guest House, Patio 
+// Dining Room, Conservatory, Kitchen, Study, Library, Billiard Room, Lounge, Ballroom, Hall, Spa, Living Room, Observatory, Theater, Guest House, Patio '
 
 // ARRAY SUSPECTS
 const suspects = [
-  mrGreen, mrsWhite, professorPlum, missScarlet, mrsPeacock, ColonelMustard, 
+  mrGreen, mrsWhite, professorPlum, missScarlet, mrsPeacock, colonelMustard, 
 ]
 
 // ARRAY WEAPONS 
@@ -109,10 +109,10 @@ const weapons = [
    Rope, Knife, Candlestick, Dumbbell, Poison, Axe, Bat, Trophy, Pistol
 ]
 
-// // ARRAY ROOMS  ------fortsätt med rooms =)
-// const rooms = [ 
-//   Dining Room, Conservatory, Kitchen, Study, Library, Billiard Room, Lounge, Ballroom, Hall, Spa, Living Room, Observatory, Theater, Guest House, Patio 
-// ]
+// // ARRAY ROOMS
+const rooms = [
+  'Dining room', 'Conservatory', 'Kitchen', 'Study', 'Library', 'Billiard room', 'Lounge', 'Ballroom', 'Hall', 'Spa', 'Living room', 'Observatory', 'Theater','Guest house', 'Patio'
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
