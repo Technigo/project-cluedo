@@ -34,7 +34,7 @@ const mrsPeacock = {
   firstName: "Eleanor",
   lastName: 'Peacock',
   color: 'blue',
-  description: 'She loves spending her money',
+  description: 'She loves spending money',
   age: 49,
   image: 'assets/peacock.png',
   occupation: 'Extremely rich heiress'
@@ -65,7 +65,8 @@ const mrsWhite = {
 const rope = {
   name: 'Rope',
   color: "white",
-  weight: 10
+  weight: 10,
+  image: 'assets/rope.jpg',
 }
 
 const knife = {
@@ -210,6 +211,10 @@ function pickKiller() {
   mystery.killer = randomSelector(suspects)
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
+  document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`
+  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
+  document.getElementById('killerImage'); killerImage.src = mystery.killer.image;
 }  
 
 
@@ -222,6 +227,7 @@ mystery.weapon = randomSelector(weapons)
 document.getElementById('weaponCard').style.background = mystery.weapon.color
 document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
 document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}`
+document.getElementById('weaponImage'); weaponImage.src = mystery.weapon.image;
 }  
 
 
