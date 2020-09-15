@@ -2,7 +2,7 @@
 
 // SUSPECTS:
 
-// *** Mr Green
+// *** 1. Mr Green
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
@@ -12,7 +12,7 @@ const mrGreen = {
   image: "assets/green.png",
   occupation: "Entrepreneur",
 };
-// *** Professor Plum
+// *** 2. Professor Plum
 const profPlum = {
   firstName: "Victor",
   lastName: "Plum",
@@ -22,7 +22,7 @@ const profPlum = {
   image: "assets/plum.png",
   occupation: "Professor",
 };
-// *** Miss Scarlet
+// *** 3. Miss Scarlet
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
@@ -32,7 +32,7 @@ const missScarlet = {
   image: "assets/scarlet.png",
   occupation: "Actress",
 };
-// *** Mrs Peacock
+// *** 4. Mrs Peacock
 const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
@@ -42,7 +42,7 @@ const mrsPeacock = {
   image: "assets/peacock.png",
   occupation: "Socialite",
 };
-// *** Colonel Mustard
+// *** 5. Colonel Mustard
 const colMustard = {
   firstName: "Jack",
   lastName: "Mustard",
@@ -52,7 +52,7 @@ const colMustard = {
   image: "assets/mustard.png",
   occupation: "Colonel",
 };
-// *** Mrs White
+// *** 6. Mrs White
 const mrsWhite = {
   firstName: "Mrs",
   lastName: "White",
@@ -64,47 +64,47 @@ const mrsWhite = {
 
 // WEAPONS
 
-// *** rope
+// *** 1. rope
 const rope = {
   name: "rope",
   weight: 10,
 };
-// *** knife
+// *** 2. knife
 const knife = {
   name: "knife",
   weight: 2,
 };
-// *** candlestick
+// *** 3. candlestick
 const candlestick = {
   name: "candlestick",
   weight: 4,
 };
-// *** dumbbel
+// *** 4. dumbbel
 const dumbbel = {
   name: "dumbbel",
   weight: 7,
 };
-// *** poison
+// *** 5. poison
 const poison = {
   name: "paison",
   weight: 1,
 };
-// *** axe
+// *** 6. axe
 const axe = {
   name: "axe",
   weight: 5,
 };
-// *** bat
+// *** 7. bat
 const bat = {
   name: "bat",
   weight: 6,
 };
-// *** trophy
+// *** 8. trophy
 const trophy = {
   name: "trophy",
   weight: 8,
 };
-// *** pistol
+// *** 9. pistol
 const pistol = {
   name: "pistol",
   weight: 3,
@@ -119,13 +119,50 @@ console.log(axe.weight);
 
 const suspects = [
   mrGreen,
+  profPlum,
+  missScarlet,
+  mrsPeacock,
+  colMustard,
   mrsWhite,
-  // ...  and the rest
 ];
 
-const weapons = [];
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbel,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol,
+];
 
-const rooms = [];
+const rooms = [
+  "Dining Room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Billiard Room",
+  "Lounge",
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "Living Room",
+  "Observatory",
+  "Theater",
+  "Guest House",
+  "Patio",
+];
+
+console.log(suspects);
+console.log(weapons);
+console.log(rooms);
+
+console.log(suspects[3]);
+console.log(weapons[0]);
+console.log(rooms[rooms.length - 1]);
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
