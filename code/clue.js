@@ -10,26 +10,229 @@ const mrGreen = {
   occupation: 'Entrepreneur'
 }
 
+const prPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'plum',
+  description: 'Collage professor with a black belt',
+  Age: 31,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
+
+const mrsScarlet = {
+  firstName: 'Sarah',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'The widowmaker',
+  Age: 65,
+  image: 'assets/scarlet.png',
+  occupation: 'Retired doctor'
+}
+
+const colMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'Mastermind in the art of war',
+  Age: 56,
+  image: 'assets/mustard.png',
+  occupation: 'Senior military officer'
+}
+
+const mrsPeacock = {
+  firstName: 'Angie',
+  lastName: 'Peacock',
+  color: 'skyblue',
+  description: 'Young and well connected politician',
+  Age: 27,
+  image: 'assets/peacock.png',
+  occupation: 'Politician'
+}
+
+const mrsWhite = {
+  firstName: 'Margaret',
+  lastName: 'White',
+  color: 'white',
+  description: 'The hardest one to trick',
+  Age: 50,
+  image: 'assets/white.png',
+  occupation: 'chef'
+}
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  image: 'assets/rope.png',
+}
+
+const knife = {
+  name: 'knife'
+  weight: 4,
+  image: 'assets/knife.png',
+}
+
+const candlestick {
+  name: 'Candlestick',
+  weight: 5,
+  image: 'assets/candlestick.png',
+}
+
+const dumbbell {
+  name: 'Dumbbell',
+  weight: 20,
+  image: 'assets/dumbbell.png',
+}
+
+const poison {
+  name: 'Poison',
+  weight: 1,
+  image: 'assets/poison.png',
+}
+
+const axe {
+  name: 'Axe',
+  weight: 30,
+  image: 'assets/axe.png',
+}
+
+const bat {
+  name: 'bat',
+  weight: 25,
+  image: 'assets/bat.png',
+}
+
+const trophy {
+  name: 'Trophy',
+  weight: 12,
+  image: 'assets/trophy.png',
+}
+
+const pistol {
+  name: 'Pistol',
+  weight: 7,
+  image: 'assets/pistol.png',
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+const diningRoom {
+  name: 'Dining room',
+  image: 'assets/diningroom.jpg',
+}
+
+const conservatory {
+  name: 'Conservatory',
+  image: 'assets/conservatory.png',
+}
+
+const kitchen {
+  name: 'Kitchen',
+  image: 'assets/kitchen.png',
+}
+
+const study {
+  name: 'Study',
+  image: 'assets/study.png',
+}
+
+const library {
+  name: 'Library',
+  image: 'assets/library.png',
+}
+
+const billiardRoom {
+  name: 'Billiard room',
+  image: 'assets/billiardroom.png',
+}
+
+const lounge {
+  name: 'Lounge',
+  image: 'assets/lounge.jpg',
+}
+
+const ballroom {
+  name: 'Ballroom',
+  image: 'assets/ballroom.png',
+}
+
+const hall {
+  name: 'Hall',
+  image: 'assets/hall.jpg',
+}
+
+const spa {
+  name: 'Spa',
+  image: 'assets/spa.jpg',
+}
+
+const livingRoom {
+  name: 'Living room',
+  image: 'assets/livingroom.jpg',
+}
+
+const observatory {
+  name: 'Observatory',
+  image: 'assets/observatory.png',
+}
+
+const theater {
+  name: 'Theater',
+  image: 'assets/theater.jpg',
+}
+
+const guestHouse {
+  name: 'Guest house',
+  image: 'assets/guesthouse.png',
+}
+
+const patio {
+  name: 'Patio',
+  image: 'assets/patio.jpg',
+}
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
   mrGreen,
+  prPlum,
+  mrsScarlet,
+  colMustard,
+  mrsPeacock,
   mrsWhite
-  // ...  and the rest
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+const rooms = [
+  diningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
@@ -40,6 +243,11 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+const mystery = {
+  killer: '',
+  weapon: '',
+  room: '',
+}
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
