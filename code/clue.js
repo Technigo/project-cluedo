@@ -1,121 +1,123 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
-const mrGreen = {
-    firstName: 'Jacob',
-    lastName: 'Green',
-    color: 'green',
-    description: 'He has a lot of connections',
-    age: 45,
-    image: 'assets/green.png',
-    occupation: 'Priest'
-}
-
-const professorPlum = {
-    firstName: 'Victor',
-    lastName: 'Plum',
-    color: 'purple',
-    description: 'He is very smart.',
-    age: 55,
-    image: 'assets/plum.png',
-    occupation: 'Professor'
-}
-const missScarlet = {
-    firstName: 'Cassandra',
-    lastName: 'Scarlet',
-    color: 'red',
-    description: 'She is very charming',
-    age: 29,
-    image: 'assets/scarlet.png',
-    occupation: 'Actress'
-}
-const mrsPeacock = {
-    firstName: 'Eleonore',
-    lastName: 'Peacock',
-    color: 'blue',
-    description: 'She is very likable',
-    age: 62,
-    image: 'assets/peacock.png',
-    occupation: 'Housewife'
-}
-const colonelMustard = {
-    firstName: 'Jack',
-    lastName: 'Mustard',
-    color: 'yellow',
-    description: 'He is vry cunning',
-    age: 52,
-    image: 'assets/mustard.png',
-    occupation: 'Military'
-}
-const mrsWhite = {
-    firstName: 'Mary',
-    lastName: 'White',
-    color: 'white',
-    description: 'She has a very good memory',
-    age: 39,
-    image: 'assets/white.png',
-    occupation: 'Nurse'
-}
-
+const suspects = [{
+        nickname: 'mrGreen',
+        firstName: 'Jacob',
+        lastName: 'Green',
+        color: 'green',
+        description: 'He has a lot of connections',
+        age: 45,
+        image: 'assets/green.png',
+        occupation: 'Priest'
+    },
+    {
+        nickname: 'professorPlum',
+        firstName: 'Victor',
+        lastName: 'Plum',
+        color: 'purple',
+        description: 'He is very smart.',
+        age: 55,
+        image: 'assets/plum.png',
+        occupation: 'Professor'
+    },
+    {
+        nickname: 'missScarlet',
+        firstName: 'Cassandra',
+        lastName: 'Scarlet',
+        color: 'red',
+        description: 'She is very charming',
+        age: 29,
+        image: 'assets/scarlet.png',
+        occupation: 'Actress'
+    },
+    {
+        nickname: 'mrsPeacock',
+        firstName: 'Eleonore',
+        lastName: 'Peacock',
+        color: 'blue',
+        description: 'She is very likable',
+        age: 62,
+        image: 'assets/peacock.png',
+        occupation: 'Housewife'
+    },
+    {
+        nickname: 'colonelMustard',
+        firstName: 'Jack',
+        lastName: 'Mustard',
+        color: 'yellow',
+        description: 'He is vry cunning',
+        age: 52,
+        image: 'assets/mustard.png',
+        occupation: 'Military'
+    },
+    {
+        nickname: 'mrsWhite',
+        firstName: 'Mary',
+        lastName: 'White',
+        color: 'white',
+        description: 'She has a very good memory',
+        age: 39,
+        image: 'assets/white.png',
+        occupation: 'Nurse'
+    }
+];
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
-
-const rope = {
-    name: 'rope',
-    weight: 7
-}
-const knife = {
-    name: 'knife',
-    weight: 11
-}
-const candlestick = {
-    name: 'candlestick',
-    weight: 3
-}
-const dumbbell = {
-    name: 'dumbbell',
-    weight: 12
-}
-const poison = {
-    name: 'poison',
-    weight: 2
-}
-const axe = {
-    name: 'axe',
-    weight: 11
-}
-const bat = {
-    name: 'bat',
-    weight: 9
-}
-const trophy = {
-    name: 'trophy',
-    weight: 6
-}
-const pistol = {
-    name: 'pistol',
-    weight: 12
-}
-
+const weapons = [{
+        name: 'rope',
+        weight: 7
+    },
+    {
+        name: 'knife',
+        weight: 11
+    },
+    {
+        name: 'candlestick',
+        weight: 3
+    },
+    {
+        name: 'dumbbell',
+        weight: 12
+    },
+    {
+        name: 'poison',
+        weight: 2
+    },
+    {
+        name: 'axe',
+        weight: 11
+    },
+    {
+        name: 'bat',
+        weight: 9
+    },
+    {
+        name: 'trophy',
+        weight: 6
+    },
+    {
+        name: 'pistol',
+        weight: 12
+    }
+];
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 const rooms = ["Dining Room", "Conservatory", "Kitchen", "Study", "Library", "Billiard Room", "Lounge", "Ballroom",
     "Hall", "Spa", "Living Room", "Observatory", "Theater", "Guest House", "Patio"
 ];
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
-const suspects = [
-    mrGreen,
-    mrsWhite,
-    professorPlum,
-    missScarlet,
-    colonelMustard,
-    mrsPeacock
-]
-console.log(mrsPeacock.color);
-console.log(suspects);
-console.log(pistol.weight);
-console.log(rooms[2]);
+// const suspects = [
+//     mrGreen,
+//     mrsWhite,
+//     professorPlum,
+//     missScarlet,
+//     colonelMustard,
+//     mrsPeacock
+// ]
 
 
-const weapons = []
+console.log(weapons[0].name);
+console.log(suspects[2].age);
+console.log(suspects[5].description);
+console.log(rooms[7]);
 
 
 
