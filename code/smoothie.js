@@ -2,83 +2,90 @@
 const apple = {
   name: 'Apple',
   color: 'green',
-  category: 'fresh'
+  category: 'fresh',
+  image: './images/apple.jpg'
 }
 
 const banana = {
   name: 'Banana',
   color: 'yellow',
-  category: 'sweet'
+  category: 'sweet',
+  image: './images/banana.jpg'
 }
 
 const mango = {
   name: 'Mango',
   color: 'yellow',
-  category: 'sweet'
+  category: 'sweet',
+  image: './images/mango.jpg'
 }
 
 const orange = {
   name: 'Orange',
   color: 'orange',
-  category: 'tangy'
+  category: 'tangy',
+  image: './images/orange.jpg'
 }
 
 const raspberry = {
   name: 'Raspberry',
   color: 'red',
-  category: 'fresh'
+  category: 'fresh',
+  image: './images/raspberry.jpg'
 }
 
 const lemon = {
   name: 'Lemon',
   color: 'yellow',
-  category: 'sour'
+  category: 'sour',
+  image: './images/lemon.jpg'
 }
 
 // ------------------ Mixer ------------------
 const almondMilk = {
-  name: 'almond milk'
+  name: 'almond milk',
+  image: './images/almondmilk.jpg'
 }
 
 const yoghurt = {
-  name: 'Yoghurt'
+  name: 'Yoghurt',
+  image: './images/yoghurt.jpg'
 }
 
 const coconutWater = {
-  name: 'coconut water'
+  name: 'coconut water',
+  image: './images/coconutwater.jpg'
 }
 
 const milkOats = {
-  name: 'milk and oats'
+  name: 'milk and oats',
+  image: './images/oat.jpg'
 }
 
 // ------------------ Superboosters ------------------
 const spirulina = {
   name: 'Spirulina',
   amount: '1 tsp',
+  image: './images/spirulina.jpg'
 }
 
 const ginger = {
   name: 'ginger',
   amount: '2 cm',
+  image: './images/ginger.jpg'
 }
 
 const kale = {
   name: 'kale',
-  amount: 'a fist'
+  amount: 'a fist',
+  image: './images/kale.jpg'
 }
 
 const chiaSeeds = {
   name: 'Chia seeds',
-  amount: '2 tablespoons'
+  amount: '2 tablespoons',
+  image: './images/chia.jpg'
 }
-
-// TODO: Add images to each fruit/ingredient
-// Saving this to be able to see 'image'
-// const mrGreen = {
-//   image: 'assets/green.png',
-// }
-
 
 // Arrays made with all ingredients separated into 3 groups
 const mainFruits = [
@@ -126,15 +133,21 @@ const colorCheck = () => {
 }
 
 
-// 3 x Display random value from each category 
+//TODO: Add name of each value to header when generated
+
+// 3 x Display random value + image from each category 
 // + add value to smoothie-object
 // + check if smoothie-button color should be changed
 const pickMainFruit = () => {
   mainFruit = randomSelector(mainFruits)
 
+  // document.getElementById(
+  //   'main-fruit-box'
+  // ).innerHTML = `${mainFruit.name}`
+
   document.getElementById(
     'main-fruit-box'
-  ).innerHTML = `${mainFruit.name}`
+  ).style.background = `url('${mainFruit.image}')`
 
   smoothie.mainFruit = mainFruit.name
   console.log(smoothie)
@@ -144,9 +157,13 @@ const pickMainFruit = () => {
 const pickMixer = () => {
   mixer = randomSelector(mixers)
 
+  // document.getElementById(
+  //   'mixer-box'
+  // ).innerHTML = `${mixer.name}`
+  
   document.getElementById(
     'mixer-box'
-  ).innerHTML = `${mixer.name}`
+  ).style.background = `url('${mixer.image}')`
   
   smoothie.mixer = mixer.name
   console.log(smoothie)
@@ -156,9 +173,13 @@ const pickMixer = () => {
 const pickSuperBooster = () => {
   superBooster = randomSelector(superBoosters)
 
+  // document.getElementById(
+  //   'superbooster-box'
+  // ).innerHTML = `${superBooster.name}`
+
   document.getElementById(
     'superbooster-box'
-  ).innerHTML = `${superBooster.name}`
+  ).style.background = `url('${superBooster.image}')`
 
   smoothie.superBooster = superBooster.name
   console.log(smoothie)

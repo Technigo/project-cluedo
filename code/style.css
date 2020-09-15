@@ -45,12 +45,15 @@ button {
 }
 
 button:hover {
-  background: #4D106A;
+  /* background: #4D106A; */
+  box-shadow: 4px 10px 25px 6px rgba(137, 0, 201, 0.25);
+  cursor: pointer;
 }
 
 button:visited {
   background: #4D106A;
   border-radius: 0;
+  cursor: pointer;
 }
 
 /* ------------------- HEADER ------------------- */
@@ -116,6 +119,14 @@ header {
 .mixer, .mixer-header {
   margin: 0 20px;
 }
+
+.main-fruit-box, .mixer-box, .superbooster-box {
+  background-position: center;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size:auto ;
+}
+
 
 /* ------------------- RECIPE ------------------- */
 
