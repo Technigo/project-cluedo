@@ -200,6 +200,11 @@ document.getElementById('roomCard').onclick = pickRoom
 const thisMystery = document.getElementById('mystery')
 
 const revealMystery = () => {
-  thisMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} , room: ${mystery.rooms}, executed with a ${mystery.weapon.weight} lbs ${mystery.weapon.name}. ${mystery.weapon.fact}!`
+  if (mystery.killer == "" || mystery.weapon == "" || mystery.room == "") {
+    document.getElementById('mystery').innerHTML = `No mystery to be revealed yet!`
+  } else {
+    thisMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} , room: ${mystery.rooms}, executed with a ${mystery.weapon.weight} lbs ${mystery.weapon.name}. ${mystery.weapon.fact}!`
+
+  }
 }
 document.getElementById('crimeButton').onclick = revealMystery

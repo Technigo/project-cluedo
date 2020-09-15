@@ -32,7 +32,8 @@ p {
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: #1a1110;
+  opacity: 0.9;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -41,7 +42,8 @@ p {
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: #545151;
+  opacity: 0.9;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -50,7 +52,8 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
+  background: #62434c;
+  opacity: 0.9;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -59,7 +62,7 @@ p {
 button {
   padding: 10px 20px;
   background: rgb(141, 115, 118);
-  border: 5px solid white;
+  border: 5px solid rgb(141, 115, 118);
   font-size: 20px;
   border-radius: 8px;
   display: flex;
@@ -72,7 +75,7 @@ button {
   position: relative;
   margin: 0 auto;
   text-align: center;
-  padding: 2px;
+  padding: 10px;
   margin: 10px;
 }
 
