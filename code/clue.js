@@ -8,16 +8,110 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
-}
+};
+
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'He is a quick witted person',
+  age: 43,
+  image: 'assets/plum.png',
+  occupation: 'College professor',
+};
+
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'She is a sassy femme fatale',
+  age: 28,
+  image: 'assets/scarlet.png',
+  occupation: 'Actress'
+};
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'She is an intellectual and well dressed woman',
+  age: 55,
+  image: 'assets/peacock.png',
+  occupation: 'Socialite'
+};
+
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'He is a dapper ex military man',
+  age: 60,
+  image: 'assets/mustard.png',
+  occupation: 'Colonel'
+};
+
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'He is a quick witted person',
+  age: 67,
+  image: 'assets/plum.png',
+  occupation: 'Housekeeper'
+};
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
   weight: 10
-}
+};
+
+const knife = {
+  name: 'knife',
+  weight: 15
+};
+
+const candlestick = {
+  name: 'candlestick',
+  weight: 20
+};
+
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 40
+};
+
+const poison = {
+  name: 'poison',
+  weight: 5
+};
+
+const axe = {
+  name: 'axe',
+  weight: 35
+};
+
+const bat = {
+  name: 'bat',
+  weight: 30
+};
+
+const trophy = {  
+  name: 'trophy',
+  weight: 10
+};
+
+const pistol = {
+  name: 'pistol',
+  weight: 25
+};
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+//const rooms = ['Dining Room', 'Conservatory', 'Kitchen', 'Study', 'Library', 'Billiard Room', 'Lounge', 'Ballroom', 'Hall', 'Spa', 'Living Room', 'Observatory', 'Theater', 'Guest House', 'Patio'] 
+
+console.log(`${professorPlum.firstName} ${professorPlum.lastName} is a ${professorPlum.age} year old ${professorPlum.occupation}`)
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
