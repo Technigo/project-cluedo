@@ -1,6 +1,14 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+
+}
+
+header {
+  height: 400px;
+  background-image: url("assets/cluedo-header.jpg");
+  background-position: center; 
+  background-repeat: no-repeat;
 }
 
 p {
@@ -22,8 +30,10 @@ p {
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
-  text-align: center;
+  background: #42275a;  /* fallback for old browsers https://cssgradient.io/gradient-backgrounds/*/
+background: -webkit-linear-gradient(to right, #734b6d, #42275a);  /* Chrome 10-25, Safari 5.1-6 https://cssgradient.io/gradient-backgrounds/*/
+background: linear-gradient(to right, #734b6d, #42275a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ https://cssgradient.io/gradient-backgrounds/*/
+text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
@@ -31,7 +41,9 @@ p {
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: #cb2d3e;  /* fallback for old browsers https://cssgradient.io/gradient-backgrounds/ */
+  background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 https://cssgradient.io/gradient-backgrounds/*/
+  background: linear-gradient(to right, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ https://cssgradient.io/gradient-backgrounds/*/
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -40,8 +52,9 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: #000428;  /* fallback for old browsers https://cssgradient.io/gradient-backgrounds/*/
+  background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 https://cssgradient.io/gradient-backgrounds/*/
+  background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ https://cssgradient.io/gradient-backgrounds/*/
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
