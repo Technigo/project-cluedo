@@ -9,34 +9,46 @@
   </head>
   <body>
 
+    <header>
+      <h1>CLUEDO - who did it?</h1>
+    </header>
+
     <section class="cards">
 
       <article class="killer-deck" id="killerCard" onclick="pickKiller()">
-        <p>KILLER</p>
+        <img id="killerImage" src="" height="100" />
+        <h3>KILLER<h3>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
         <p id="killerDescription"></p>
         <p id="favouriteWeapon"></p>
       </article>
 
       <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
-        <p>WEAPON</p>
+        <img id="questionmark" src="./assets/questionmark (kopia 2).jpg" height="100" />
+        <h3>WEAPON</h3>
         <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
+        <!--<p id="weaponWeight"></p>-->
       </article>
 
       <article class="room-deck" id="roomCard" onclick="pickRoom()">
-        <p>ROOM</p>
+        <img id="questionmark" src="./assets/questionmark (kopia 2).jpg" height="100" />
+        <h3>ROOM</h3>
         <p id="roomName"></p>
       </article>
 
     </section>
 
-    <h1 id="mystery"></h1>
+    <div class="wrapper">
+      <div id="loader" class="bouncing_ball">
+        <div class="ball"></div>
+    </div>
 
-    <button id="revealButton" onclick="revealMystery()">REVEAL THE CRIME</button>
+    <h1 id="mystery" class="mystery"></h1>
+
+    <button class="reveal" id="revealButton" onclick="revealMystery()">Reveal Mystery!</button> 
+    <button class="restart" id="playAgain" onclick="location.reload()">Play Again?</button>
 
     <script src="clue.js"></script>
   </body>

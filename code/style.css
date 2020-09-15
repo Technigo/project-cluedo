@@ -1,59 +1,154 @@
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: "Courier New", Courier, monospace;
   background-color: #2e263a;
-  background-image: 
+  /*line-height: 1.618em;*/
+  color:whitesmoke;
+}
+
+header {
+  background-color: pink;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 p {
-  margin: 1px;
   font-weight: 300;
-  background-color: #fff;
+  background-color: grey;
+  font-size: 16px;
+  border-radius: 4px;
+  margin: 20px;  
+  padding: 5px;
 }
 
 .cards {
-  margin: 50px auto;
+  margin: auto;
   width: 90%;
-  height: 600px;
+  /*height: 600px;*/
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 .killer-deck {
-  width: 250px;
-  height: 400px;
+  width: 30%;
+  height: 520px;
   background: #000;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 25px;
   border-radius: 16px;
 }
 
 .weapon-deck {
-  width: 250px;
-  height: 400px;
+  width: 30%;
+  height: 520px;
   background: rgb(10, 53, 10);
   text-align: center;
-  padding-top: 30px;
+  padding-top: 25px;
   border-radius: 16px;
 }
 
 .room-deck {
-  width: 250px;
-  height: 400px;
+  width: 30%;
+  height: 520px;
   background: midnightblue;
-
   text-align: center;
-  padding-top: 30px;
+  padding-top: 25px;
   border-radius: 16px;
 }
 
+/*BOUNCY LOADER*/
+.wrapper {
+  /*max-width: 50rem;*/
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.bouncing_ball {
+  position: relative;
+  width: 4rem;
+  margin: 0 auto;
+  height: 12rem;
+}
+.ball {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background:turquoise;
+  position: absolute;
+  top: 0;
+  animation: bounce 1s infinite;
+}
+@keyframes bounce {
+  0% {
+    top: 0;
+    animation-timing-function: ease-in;
+  }
+  34% {
+    height: 4rem;
+    width: 4rem;
+  }
+  35% {
+    top: 8rem;
+    height: 3rem;
+    width: 4.3rem;
+    animation-timing-function: ease-out;
+  }
+  45% {
+    height: 4rem;
+    width: 4rem;
+  }
+  90% {
+    top: 0;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+/*ALL IS REVEALED BUTTON*/
 button {
-  padding: 8px 16px;
+  padding: 16px 16px;
   background: crimson;
   border: none;
   font-size: 20px;
   border-radius: 8px;
-  display: block;
-  margin: 0 auto;
+  margin: 0 50px;
+  margin-bottom: 50px;
+  font-family: 'Courier New', Courier, monospace;
+  min-width: 30%;
+}
+
+@media (max-width: 666px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  p {
+    font-size: 22px;
+  }
+
+  .wrapper {
+    /*max-width: 50rem;*/
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .killer-deck {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .weapon-deck {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .room-deck {
+    width: 90%;
+  }
+
 }
