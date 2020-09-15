@@ -10,11 +10,119 @@ const mrGreen = {
   occupation: 'Entrepreneur'
 }
 
+const profPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'He knows the answer to your questions',
+  age: 42,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
+
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'She is very persuasive',
+  age: 29,
+  image: 'assets/scarlet.png',
+  occupation: 'Lawyer'
+}
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'She cannot be trusted',
+  age: 47,
+  image: 'assets/peacock.png',
+  occupation: 'Singer'
+}
+
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'He makes sure the rules are followed',
+  age: 47,
+  image: 'assets/mustard.png',
+  occupation: 'Army Officer'
+}
+
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'She knows the gossip',
+  age: 52,
+  image: 'assets/white.png',
+  occupation: 'Maid'
+}
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  easilyOperated: false,
+  danger: 'medium',
+}
+
+const knife = {
+  name: 'knife',
+  weight: 0.5,
+  easilyOperated: true,
+  danger: 'high',
+}
+
+const candlestick = {
+  name: 'candlestick',
+  weight: 0.2,
+  easilyOperated: false,
+  danger: 'low',
+}
+
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 8,
+  easilyOperated: false,
+  danger: 'medium',
+}
+
+const poison = {
+  name: 'poison',
+  weight: 0.3,
+  easilyOperated: true,
+  danger: 'high',
+}
+
+const axe = {
+  name: 'axe',
+  weight: 5,
+  easilyOperated: false,
+  danger: 'high',
+}
+
+const bat = {
+  name: 'bat',
+  weight: 2,
+  easilyOperated: true,
+  danger: 'medium',
+}
+
+const trophy = {
+  name: 'trophy',
+  weight: 3,
+  easilyOperated: true,
+  danger: 'medium',
+}
+
+const pistol = {
+  name: 'pistol',
+  weight: 1,
+  easilyOperated: false,
+  danger: 'high',
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
