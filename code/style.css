@@ -85,7 +85,7 @@ header {
   margin: 50px 0;
 }
 
-.mainButton {
+.main-button {
   background: #8900C9;
 }
 
@@ -113,7 +113,7 @@ header {
   height: 400px;
 }
 
-.mixer {
+.mixer, .mixer-header {
   margin: 0 20px;
 }
 

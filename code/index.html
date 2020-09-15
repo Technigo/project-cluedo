@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>SmoothDay - Smoothies for all days</title>
   </head>
 
@@ -22,7 +22,7 @@
       <p>Start off your day with a smoothie of <span class="italic">our</span> choice.</p>
 
       <div class="buttons">
-        <button class="mainButton" onclick="randomizeSmoothie()">Randomize today's mix &#8594;</button>
+        <button class="main-button" onclick="randomizeSmoothie()">Randomize today's mix &#8594;</button>
         <button>Current inventory &#8594;</button>
       </div>
     </section>
@@ -30,26 +30,26 @@
     <!------------------ INGREDIENTS/MAIN ------------------>
     
     <section class="ingredients-headers">
-      <div class="main-fruit">Main Fruit</div>
-      <div class="mixer">Mixer</div>
-      <div class="super-booster">Super Booster</div>
+      <div class="main-fruit-header">Main Fruit</div>
+      <div class="mixer-header">Mixer</div>
+      <div class="super-booster-header">Super Booster</div>
     </section>
     <section class="ingredients">
-      <div id="mainFruitBox" class="main-fruit" onclick="pickMainFruit()"></div>
-      <div id="mixerBox" class="mixer" onclick="pickMixer()"></div>
-      <div id="superBoosterBox" class="super-booster" onclick="pickSuperBooster()"></div>
+      <div id="main-fruit-box" onclick="pickMainFruit()"></div>
+      <div id="mixer-box" class="mixer" onclick="pickMixer()"></div>
+      <div id="superbooster-box" onclick="pickSuperBooster()"></div>
     </section>
 
     <!------------------ RESULT/SMOOTHIE ------------------>
     
     <section class="recipe">
       <div>
-        <p id="dayDateMonthYear" class="date"></p>
-        <p id="finishedSmoothie"></p>
+        <p id="date" class="date"></p>
+        <p id="finished-smoothie"></p>
       </div>
 
       <div class="mixer-button">
-        <button id="mixerButton2" onclick="mixSmoothie()">Show/update mix &#8594;  </button>
+        <button id="mixer-button" onclick="mixSmoothie()">Show/update mix &#8594;  </button>
       </div>
     </section>
     

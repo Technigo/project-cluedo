@@ -121,8 +121,7 @@ let smoothie = {
 const colorCheck = () => {
   if (smoothie.mainFruit == 'NotSelected') {
   } else {
-  document.getElementById('mixerButton2').classList.add('active')
-  console.log("Lila knapp")
+  document.getElementById('mixer-button').classList.add('active')
   }
 }
 
@@ -134,7 +133,7 @@ const pickMainFruit = () => {
   mainFruit = randomSelector(mainFruits)
 
   document.getElementById(
-    'mainFruitBox'
+    'main-fruit-box'
   ).innerHTML = `${mainFruit.name}`
 
   smoothie.mainFruit = mainFruit.name
@@ -146,7 +145,7 @@ const pickMixer = () => {
   mixer = randomSelector(mixers)
 
   document.getElementById(
-    'mixerBox'
+    'mixer-box'
   ).innerHTML = `${mixer.name}`
   
   smoothie.mixer = mixer.name
@@ -158,7 +157,7 @@ const pickSuperBooster = () => {
   superBooster = randomSelector(superBoosters)
 
   document.getElementById(
-    'superBoosterBox'
+    'superbooster-box'
   ).innerHTML = `${superBooster.name}`
 
   smoothie.superBooster = superBooster.name
@@ -171,19 +170,19 @@ const pickSuperBooster = () => {
 // + details makes depending on ingredients
 const mixSmoothie = () => {  
   if (smoothie.mainFruit == 'NotSelected') {
-    document.getElementById('finishedSmoothie').innerHTML = "Please select a main fruit"
+    document.getElementById('finished-smoothie').innerHTML = "Please select a main fruit"
   } else if (smoothie.mixer == 'NotSelected') {
-    document.getElementById('finishedSmoothie').innerHTML = "Please select a mixer"
+    document.getElementById('finished-smoothie').innerHTML = "Please select a mixer"
   } else if (smoothie.superBooster == 'NotSelected') {
-    document.getElementById('finishedSmoothie').innerHTML = "Please select a superbooster"
+    document.getElementById('finished-smoothie').innerHTML = "Please select a superbooster"
   } else {
-    document.getElementById('finishedSmoothie').innerHTML = `A ${mainFruit.category} ${mainFruit.name} smoothie mixed with ${mixer.name} and spiced up with ${superBooster.name}.`
+    document.getElementById('finished-smoothie').innerHTML = `A ${mainFruit.category} ${mainFruit.name} smoothie mixed with ${mixer.name} and spiced up with ${superBooster.name}.`
   }
 }
 
 // Not finished. TODO: Fix function that will 
 // display what day, date, month and year it is
-document.getElementById('dayDateMonthYear').innerText = `<Day>, <date> of <month> <year>`
+document.getElementById('date').innerText = `<Day>, <date> of <month> <year>`
 
 
 // Randomize-button in the header 
