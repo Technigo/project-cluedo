@@ -134,7 +134,7 @@ const kitchen {
 }
 
 const study {
-  name: 'Study',
+  name: 'study',
   image: 'assets/study.png',
 }
 
@@ -262,6 +262,7 @@ const pickKiller = () => {
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
