@@ -1,12 +1,27 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Raleway', sans-serif;
+  background-image: url(./assets/cederic-vandenberghe-21DP3hytVHw-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
 }
+
 
 p {
   margin: 1px;
   font-weight: 300;
-  background-color: #fff;
+  width: 100%;
+  color: white;
+
+}
+
+.card-title {
+  background-color: #000;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0px;
+  display: none;
 
 }
 
@@ -14,46 +29,98 @@ p {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  background: rgba(240,240,240,0.1);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 10px;
 }
 
 .killer-deck {
   width: 250px;
-  height: 400px;
+  height: 420px;
   background: #000;
   text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+  padding-top: 0px;
+  border-radius: 25px;
+  border: 10px solid #000;
+
 }
+
+.card-decoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 96%;
+  border: 8px solid rgb(129, 164, 175);
+  border-radius: 20px;
+}
+
+h2 {
+  color: rgb(129, 164, 175);
+  font-weight: bold;
+  padding-bottom: 30px;
+
+}
+
+h3 {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+
+}
+
+.killer-content {
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+
 
 .weapon-deck {
   width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
+  height: 420px;
+  background: black;
   text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 25px;
+  border: 10px solid #000;
+
 }
 
 .room-deck {
   width: 250px;
-  height: 400px;
-  background: midnightblue;
-
+  height: 420px;
+  background:black;
   text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+  border-radius: 25px;
+  border: 10px solid #000;
+
 }
 
 button {
+  height: 100px;
+  width: 300px;
   padding: 8px 16px;
-  background: crimson;
+  background: black;
+  color: white;
   border: none;
   font-size: 20px;
+  font-weight: bold;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  
+}
+
+.mystery {
+  width: 90%;
+  display: none;
+  padding: 30px 0;
+  margin: 30px auto;
+  background-color: #000;
+  color: rgb(129, 164, 175);
+  border-radius: 10px;
 }
