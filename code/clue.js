@@ -9,7 +9,51 @@ const mrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
-
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'He is a dignified, dapper and dangerous military man',
+  age: 54,
+  image: 'assets/mustard.png',
+  occupation: 'Colonel'
+}
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'A grande dame, an elderly, attractive woman who nearly always maintains her dignity',
+  age: 63,
+  image: 'assets/peacock.png',
+  occupation: 'Socialite'
+}
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'A quick-witted, professor with a bow tie and glasse',
+  age: 46,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'A stock femme fatale, as young, cunning and attractive',
+  age: 28,
+  image: 'assets/scarlet.png',
+  occupation: 'Actor'
+}
+const mrsWhite = {
+  irstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'A frazzled domestic sever, appears as a guest',
+  age: 37,
+  image: 'assets/white.png',
+  occupation: 'Maid'
+}
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
