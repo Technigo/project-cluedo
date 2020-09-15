@@ -11,7 +11,7 @@ const mrGreen = {
 }
 
 const colMustard = {
-  firstName: 'Algernon',
+  firstName: 'Jack',
   lastName: 'Mustard',
   color: 'yellow',
   description: 'He is a dignified and dangerous military man',
@@ -21,7 +21,7 @@ const colMustard = {
 }
 
 const msScarlett = {
-  firstName: 'Josephine',
+  firstName: 'Cassandra',
   lastName: 'Scarlett',
   color: 'red',
   description: 'She is a femme fatale.',
@@ -41,7 +41,7 @@ const mrsWhite = {
 }
 
 const mrsPeacock = {
-  firstName: 'Henrietta',
+  firstName: 'Eleanor',
   lastName: 'Peacock',
   color: 'blue',
   description: 'She is an elegant and classy aristocrat.',
@@ -51,7 +51,7 @@ const mrsPeacock = {
 }
 
 const profPlum = {
-  firstName: 'Peter',
+  firstName: 'Victor',
   lastName: 'Plum',
   color: 'purple',
   description: 'He is a quick witted professor with a dubious past',
@@ -100,6 +100,7 @@ const wrench = {
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
+
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
@@ -115,11 +116,11 @@ const weapons = [
   rope,
   candlestick,
   pistol,
-  dagger,
+  knife,
   piping,
   wrench,
 ]
-
+/*
 const rooms = [
   kitchen,
   ballroom,
@@ -131,7 +132,7 @@ const rooms = [
   lounge,
   diningRoom,
 ];
-
+*/
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
@@ -147,6 +148,8 @@ const mystery = {
   weapon: '',
   room: '',
 };
+
+
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -164,10 +167,14 @@ const pickKiller = () => {
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
-};s
+}
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 }
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+document.getElementById('killerCard').addEventListener("click", pickKiller);
+document.getElementById('weaponCard').addEventListener("click", pickWeapon);
+document.getElementById('roomCard').addEventListener("click", pickRoom);
