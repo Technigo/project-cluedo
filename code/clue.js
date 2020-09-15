@@ -168,26 +168,49 @@ let mystery = {
 
 // This function will be invoked when you click on the killer card.
 
-// document.getElementById('killerTitle').style.display = 'none';
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
+  //Changes the text and image depending on the mystery values
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
   document.getElementById('killerImage').src = mystery.killer.image
   document.getElementById('killerAge').innerHTML = 'Age: ' + mystery.killer.age
   document.getElementById('killerOccupation').innerHTML = 'Occupation: ' + mystery.killer.occupation
+
+  //This will style the killer card
+  document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerHeadline').style.display = 'none'
   document.getElementById('killerTitle').style.display = 'block'
   document.getElementById('killerDecoration').style.display = 'block'
   document.getElementById('killerDecoration').style.border = '0px'
+  const classKillerContent = document.getElementsByClassName('killer-content')[0];
+
+  if (mystery.killer.color === 'white') {
+    classKillerContent.getElementsByTagName('h3')[0].style.color = 'black';
+
+    const killerTagP = classKillerContent.getElementsByTagName('p');
+    let i = 0
+    for (i=0; i < killerTagP.length; i++) {
+      killerTagP[i].style.color = 'black';
+    }
+
+  } else {
+    classKillerContent.getElementsByTagName('h3')[0].style.color = 'white';
+
+    const killerTagP = classKillerContent.getElementsByTagName('p');
+    let i = 0
+    for (i=0; i < killerTagP.length; i++) {
+      killerTagP[i].style.color = 'white';
+    }
+
+  }
 }
+
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
-  document.getElementById('weaponCard').style.background = 'rgb(129, 164, 175)'
+  document.getElementById('weaponCard').style.background = '#575A53'
   document.getElementById('weaponName').innerHTML = mystery.weapon.name
   document.getElementById('weaponWeight').innerHTML = 'Weight: ' + mystery.weapon.weight
   document.getElementById('weaponHeadline').style.display = 'none'
@@ -199,7 +222,7 @@ const pickWeapon = () => {
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
-  document.getElementById('roomCard').style.background = 'rgb(129, 164, 175)'
+  document.getElementById('roomCard').style.background = '#a8979f'
   document.getElementById('roomName').innerHTML = mystery.room
   document.getElementById('roomHeadline').style.display = 'none'
   document.getElementById('roomTitle').style.display = 'block'

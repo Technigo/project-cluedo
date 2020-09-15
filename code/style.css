@@ -47,7 +47,7 @@ p {
 
 }
 
-.card-decoration {
+.killer-decoration {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,9 +56,35 @@ p {
   border-radius: 20px;
 }
 
+.weapon-decoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 96%;
+  border: 8px solid #575A53;
+  border-radius: 20px;
+}
+
+.room-decoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 96%;
+  border: 8px solid #a8979f;
+  border-radius: 20px;
+}
+
+.room-decoration h2 {
+  color: #a8979f;
+}
+
+.weapon-decoration h2 {
+  color: #575A53;
+}
+
 h2 {
   color: rgb(129, 164, 175);
-  font-weight: bold;
+  font-weight: 00;
   padding-bottom: 30px;
 
 }
