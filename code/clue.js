@@ -77,60 +77,60 @@ console.log(mrsWhite.description);
 const rope = {
   name: 'rope',
   material: 'textile',
-  id: "rope"
+  id: "rope",
 }
 console.log(rope);
 
 const knife = {
   name: 'knife',
   material: 'metal',
-  id: "knife"
+  id: "knife",
 }
 console.log(knife);
 
 const candlestick = {
   name: 'candlestick',
-  weight: 'silver',
-  id: "candlestick"
+  material: 'silver',
+  id: "candlestick",
 }
 console.log(candlestick);
 
 const dumbbell = {
   name: 'dumbbell',
-  weight: 'iron',
-  id: "dumbbell"
+  material: 'iron',
+  id: "dumbbell",
 }
 console.log(dumbbell);
 
 const poison = {
   name: 'poison',
-  weight: 'liquid',
-  id: "poison"
+  material: 'liquid',
+  id: "poison",
 }
 console.log(poison);
 
 const axe = {
   name: 'axe',
   material: 'metal',
-  id: "axe"
+  id: "axe",
 }
 console.log(axe);
 
 const bat = {
   name: 'bat',
-  material: 'wood'
+  material: 'wood',
 }
 console.log(bat);
 
 const trophy = {
   name: 'trophy',
-  material: 'silver'
+  material: 'silver',
 }
 console.log(trophy);
 
 const pistol = {
   name: 'pistol',
-  material: 'metal'
+  material: 'metal',
 }
 console.log(pistol);
 
@@ -196,6 +196,18 @@ let mystery = {
 };
 console.log(mystery);
 
+// Try to add shuffleFavouriteWeapon
+
+const shuffleFavouriteWeapon = (suspect) => {
+  suspect.favouriteWeapon = randomSelector(suspects).favouriteWeapon;
+}
+console.log(shuffleFavouriteWeapon);
+
+const testShuffle = () => {
+  suspects.forEach(shuffleFavouriteWeapon);
+}
+console.log(testShuffle);
+
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
@@ -225,7 +237,10 @@ const pickWeapon = () => {
   document.getElementById('weaponCard');
   document.getElementById(
     'weaponName'
-  ).innerHTML = `Weapon: ${mystery.weapons.name} Material: ${mystery.weapons.material}`;
+  ).innerHTML = `Weapon: ${mystery.weapons.name}`;
+  document.getElementById(
+   'weaponMaterial' 
+  ).innerHTML = `Material: ${mystery.weapons.material}`
   let weaponName = document.getElementById('weaponName');
 };
 console.log(pickWeapon);
@@ -256,8 +271,14 @@ const mysteryImage = document.getElementById('mystery.Image');
 const revealMystery = () => {
   document.getElementById(
     'mystery'
-  ).innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.rooms} with a ${mystery.weapons.name}.`
+  ).innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.rooms} with a ${mystery.weapons.name}.`;
+    document.getElementById('restartButton').style.display = 'block';
 }
 
 console.log(revealMystery);
 document.getElementById('reveal').onclick = revealMystery;
+
+// Function to Restart the game
+const restart = () => {
+  document.location.href = "";
+};
