@@ -42,7 +42,7 @@ const mrsPeacock = {
   image: 'assets/peacock.png',
   occupation: 'Housewife'
 }
-console.log(mrsPeacock.description); 
+console.log(mrsPeacock.description);
 
 const colonelMustard = {
   firstName: 'Jack',
@@ -53,7 +53,7 @@ const colonelMustard = {
   image: 'assets/mustard.png',
   occupation: 'War profiteer'
 }
-console.log(colonelMustard.description); 
+console.log(colonelMustard.description);
 
 const mrsWhite = {
   firstName: 'Mrs',
@@ -64,7 +64,7 @@ const mrsWhite = {
   image: 'assets/white.png',
   occupation: 'Nurse'
 }
-console.log(mrsWhite.description); 
+console.log(mrsWhite.description);
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
@@ -145,7 +145,7 @@ const weapons = [
   axe,
   bat,
   trophy,
-  pistol 
+  pistol
 ]
 console.log(weapons);
 
@@ -178,9 +178,9 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 let mystery = {
-  killer: suspects, 
-  weapons: weapons,
-  rooms: rooms,
+  killer: '',
+  weapons: '',
+  rooms: '',
 };
 console.log(mystery);
 
@@ -193,9 +193,9 @@ const pickKiller = () => {
   document.getElementById('killerCard').style.background = mystery.killer.color;
   document.getElementById(
     'killerName'
-    ).innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}, Description: ${mystery.killer.description}`;
-let killerImage = document.getElementById('killerImage');
-killerImage.src = mystery.killer.image;
+  ).innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}, Description: ${mystery.killer.description}`;
+  let killerImage = document.getElementById('killerImage');
+  killerImage.src = mystery.killer.image;
 };
 console.log(pickKiller);
 
@@ -207,17 +207,38 @@ const pickWeapon = () => {
   document.getElementById('weaponCard');
   document.getElementById(
     'weaponName'
-    ).innerHTML = `Weapon: ${mystery.weapons.name} Material: ${mystery.weapons.material}`;
-    let weaponName = document.getElementById('weaponName');
-  };
+  ).innerHTML = `Weapon: ${mystery.weapons.name} Material: ${mystery.weapons.material}`;
+  let weaponName = document.getElementById('weaponName');
+};
 console.log(pickWeapon);
 
 // CREATE FUNCTIONS pickRoom
+const pickRoom = () => {
+  mystery.rooms = randomSelector(rooms);
 
+  document.getElementById('roomCard');
+  document.getElementById(
+    'roomName'
+  ).innerHTML = `In the ${mystery.rooms}`;
+  let roomName = document.getElementById('roomName');
+};
+console.log(pickRoom);
 
 // To show all of this cool stuff in the browser
 document.getElementById('killerCard').onclick = pickKiller;
 document.getElementById('weaponCard').onclick = pickWeapon;
+document.getElementById('roomCard').onclick = pickRoom;
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+// Get open modal button
+
+const revealMystery = () => {
+  document.getElementById(
+    'mystery'
+  ).innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.rooms} with a ${mystery.weapons.name}.`
+}
+
+console.log(revealMystery);
+document.getElementById('reveal').onclick = revealMystery;
+
