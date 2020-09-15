@@ -4,12 +4,54 @@ const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
   color: 'green',
-  description: 'He has a lot of connections',
-  age: 45,
+  age: 55,
+  occupation: 'Entrepreneur',
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
 }
 
+  const professorPlum = {
+    firstName: 'Victor',
+    lastName: 'Plum',
+    color: 'purple',
+    age: 46,
+    occupation: 'Scientist',
+    image: 'assets/plum.png'
+  }
+
+  const missScarlet ={
+    firstName: 'Cassandra',
+    lastName: 'Scarlett',
+    color: 'red',
+    age: 40,
+    occupation: 'Actress',
+    image: 'assets/scarlet.png'
+  }
+
+  const mrsPeacock = {
+    firstname: 'Eleanor',
+    lastName: 'Peacock',
+    color: 'blue',
+    age: 49,
+    occupation: 'Ornithologist',
+    image: 'assets/peacock.png'
+  }
+
+  const colonelMustard = {
+    firstName: 'Jack',
+    lastName: 'Mustard',
+    color: 'yellow',
+    age: 72,
+    occupation: 'Hunter',
+    image: 'assets/mustard.png'
+  }
+
+  const mrsWhite = {
+    firstName: 'Mrs',
+    lastname: 'White',
+    color: 'white',
+    age: 70,
+    occupation: 'Housekeeper'
+  }
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
