@@ -6,11 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
     <title>Cluedo game - Gabriella</title>
+    <link rel="icon" type="image/png" href="./assets/fairytale.ico.ico"> 
   </head>
   <body>
+    <header></header>
+    <h1>A MURDER HAS BEEN COMMITED!<br>Who is the killer? Which is the weapon?<br>And in which room was it commited?</h1>
+
     <section class="cards">
       <article class="killer-deck" id="killerCard" onclick="pickKiller()">
-        <p>KILLER</p>
+        <p><b>KILLER</b></p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
@@ -18,19 +22,25 @@
         <p id="killerDescription"></p>
       </article>
       <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
-        <p>WEAPON</p>
+        <p><b>WEAPON</b></p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
       </article>
       <article class="room-deck" id="roomCard" onclick="pickRoom()">
-        <p>ROOM</p>
+        <p><b>ROOM</b></p>
         <p id="roomName"></p>
       </article>
     </section>
 
-    <h1 id="mystery"></h1>
+    <h2 id="mystery"></h2>
+    <img class="mysteryImage" id="mysteryImage" src="" />
 
-    <button onclick="revealMystery()">REVEAL THE CRIME</button>
+    <button onclick="revealMystery()">REVEAL THE CRIME!</button>
+
+  <footer>
+    This website is made my Gabriella Bolin as Project 5 @Technigo Bootcamp 2020.<br>
+    Thanks to Eric Marty for sharing their work on Unsplash. 🙌
+  </footer>
 
     <script src="clue.js"></script>
   </body>

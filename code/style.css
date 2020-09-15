@@ -1,62 +1,129 @@
+/*** GENERAL STYLING ***/
+* {
+  -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 body {
-  margin: 0;
+  margin: 20px;
   font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./assets/castlegermany.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  margin: 30px;
+  padding: 20px;
+  align-self: center;
+  font-size: 30px;
+  text-align: center;
+  background-color: rgba(237, 228, 228, 0.3);
+  text-shadow: 1px 1px #fff;
+}
+
+h2 {
+  align-self: center;
+  color: #fff;
 }
 
 p {
-  margin: 1px;
+  margin: 0px;
   font-weight: 300;
   background-color: #fff;
 }
 
-.image {
-  width: 100%;
+/*** Styling of the header ***/
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
 }
 
+/*** Styling of the cards***/
 .cards {
-  margin: 50px auto;
+  margin: 10px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  background-color: rgba(237, 228, 228, 0.3);
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.killer-deck {
+/* Killer-card */
+.killer-deck { 
   width: 250px;
   height: 400px;
-  background: #000;
+  background: #010f14;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
+img {
+  margin: 15px 0px;
+  width: 150px;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* Weapon-card */
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: #78786c;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
+/* Room-card */
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: #434254;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
+/** Styling of button **/
 button {
+  margin: 20px;
   padding: 8px 16px;
-  background: crimson;
+  background: #bd5e06;
   border: none;
+  box-shadow: 1px 1px 5px 2px grey;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  cursor: pointer;
+}
+
+button:hover { /* When hovering the button */
+  box-shadow: none;
+}
+
+/*** Styling of the footer ***/
+footer {
+  margin-top: 50px;
+  align-self: center;
+  bottom: 0;
+  padding: 15px;
+  color: #fff;
+  text-align: center;
 }
