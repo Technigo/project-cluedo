@@ -7,7 +7,8 @@ const mrGreen = {
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur',
+  favouriteWeapon: "knife"
 }
 
 const mrMustard = {
@@ -17,7 +18,8 @@ const mrMustard = {
   description: 'x',
   age: 1,
   image: 'assets/mustard.png',
-  occupation: 'x'
+  occupation: 'x',
+  favouriteWeapon: "rope"
 }
 
 const mrPlum = {
@@ -27,7 +29,8 @@ const mrPlum = {
   description: 'x',
   age: 2,
   image: 'assets/plum.png',
-  occupation: 'x'
+  occupation: 'x',
+  favouriteWeapon: "candlestick"
 }
 
 const missScarlet = {
@@ -37,7 +40,8 @@ const missScarlet = {
   description: 'x',
   age: 1,
   image: 'assets/scarlet.png',
-  occupation: 'x'
+  occupation: 'x',
+  favouriteWeapon: "bat"
 }
 
 const mrsWhite = {
@@ -47,7 +51,8 @@ const mrsWhite = {
   description: 'x',
   age: 1,
   image: 'assets/white.png',
-  occupation: 'x'
+  occupation: 'x',
+  favouriteWeapon: "poison"
 }
 
 const mrsPeacock = {
@@ -57,7 +62,8 @@ const mrsPeacock = {
   description: 'x',
   age: 1,
   image: 'assets/peacock.png',
-  occupation: 'x'
+  occupation: 'x',
+  favouriteWeapon: "axe"
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
