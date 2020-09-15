@@ -17,41 +17,45 @@
       <h2>Murder Mystery Picker</h2>
     </header>
 
-    <!-- KILLER CARD -->
     <section class="cards">
-      <article onclick="pickKiller()" class="killer-deck" id="killerCard">
-         <h4 class="card-title">KILLER</h4>
-        <div class="card-details" id="cardDetails1">
-          <h4 id="killerName"></h4>
-          <p id="killerAge"></p>
-          <p id="killerOccupation"></p>
-          <img id="killerImage" src="" height="100" />
-          <p id="killerDescription"></p>
-        </div>
-      </article>
-
-      <!-- WEAPON CARD -->
-      <article onclick="pickWeapon()" class="weapon-deck" id="weaponCard">
-        <h4 class="card-title">WEAPON</h4>
-        <div class="card-details" id="cardDetails2">
-          <h4 id="weaponName"></h4>
-          <img id="weaponImage" src="" height="100" />
-          <p id="weaponLastSeen"></p>
-        </div>
-      </article>
-
-      <!-- ROOM CARD -->
-      <article onclick="pickRoom()" class="room-deck" id="roomCard">
-        <h4 class="card-title">ROOM</h4>
-      <div class="card-details" id="cardDetails3">
-        <h4 id="roomName"></h4>
+      <div class="card-header-container">
+        <h2>Click on a card to reveal a murderer, weapon and room then reveal the crime</h2>
       </div>
-      </article>
+        <!-- KILLER CARD -->
+       <div class="card-container">
+        <article onclick="pickKiller()" class="killer-deck" id="killerCard">
+          <h4 class="card-title">KILLER</h4>
+          <div class="card-details" id="cardDetails1">
+            <h4 id="killerName"></h4>
+            <img id="killerImage" src="" height="190px" />
+            <p id="killerDescription"></p>
+          </div>
+        </article>
+
+        <!-- WEAPON CARD -->
+        <article onclick="pickWeapon()" class="weapon-deck" id="weaponCard">
+          <h4 class="card-title">WEAPON</h4>
+          <div class="card-details" id="cardDetails2">
+            <h4 id="weaponName"></h4>
+            <img id="weaponImage" src="" height="190px" />
+            <p id="weaponLastSeen"></p>
+          </div>
+        </article>
+
+        <!-- ROOM CARD -->
+        <article onclick="pickRoom()" class="room-deck" id="roomCard">
+          <h4 class="card-title">ROOM</h4>
+        <div class="card-details" id="cardDetails3">
+          <h4 id="roomName"></h4>
+          <img id="roomImage" src="" height="190px" />
+          <p id="roomLastSeen"></p>
+        </div>
+        </article>
+      </div>
     </section>
 
     <button onclick="revealMystery()">REVEAL THE CRIME</button>
-    <h2 class="mystery" id="mystery"></h2>
-
+    <h2 class="mystery-sentance" id="mystery"></h2>
 
     <script src="clue.js"></script>
   </body>
