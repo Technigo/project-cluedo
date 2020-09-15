@@ -23,7 +23,7 @@ const professorPlum = {
 const msScarlett = {
   firstName: 'Cassandra',
   lastName: 'Scarlett',
-  color: 'scarlett',
+  color: 'red',
   description: 'Hollywood glamorous, dry, sarcastic, cynical',
   age: 40,
   image: 'assets/scarlet.png',
@@ -33,7 +33,7 @@ const msScarlett = {
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: 'peacock',
+  color: 'blue',
   description: 'churchgoing wife of a Senator',
   age: 40,
   image: 'assets/peacock.png',
@@ -43,7 +43,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'mustard',
+  color: 'yellow',
   description: 'pompous, dense military man, often misinterprets words',
   age: 55,
   image: 'assets/mustard.png',
@@ -154,9 +154,17 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
+
+
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+
+const mystery = {
+  killer: null,
+  weapon: null,
+  room: null
+}
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -168,9 +176,27 @@ const pickKiller = () => {
   document.getElementById(
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+    document.getElementById('killerImage')= mystery.killer.image;
 }
 
+document.getElementById('killerCard').onclick = pickKiller;
+
+
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons);
+  document.getElementById('weaponCard').style.background = mystery.weapon.color
+  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
+}
+document.getElementById('weaponCard').onclick = pickWeapon;
+
+const pickRoom = () => {
+  mystery.room =randomSelector(rooms);
+  document.getElementById('roomCard').innerHTML = `${mystery.room}`
+}
+
+document.getElementById('roomCard').onclick = pickRoom;
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
