@@ -157,11 +157,18 @@ const pickKiller = () => {
   document.getElementById('killerDescription').innerHTML = mystery.killer.description
   document.getElementById('killerImage').src = mystery.killer.image
 }
+document.getElementById('killerCard').onclick = pickKiller
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
-  document.getElementById('weaponCard').innerHTML = mystery.killer.weapon
+
 }
+
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+  document.getElementById('roomCard').innerHTML = `Crime location: ${mystery.room}`
+}
+document.getElementById('roomCard').onclick = pickRoom
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
