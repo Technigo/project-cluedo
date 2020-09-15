@@ -70,11 +70,11 @@ const candlestick = {
     name: 'candlestick',
     weight: 3
 }
-const candlestick = {
-    name: 'candlestick',
+const dumbbell = {
+    name: 'dumbbell',
     weight: 12
 }
-const poiso = {
+const poison = {
     name: 'poison',
     weight: 2
 }
@@ -109,10 +109,15 @@ const suspects = [
     colonelMustard,
     mrsPeacock
 ]
+console.log(mrsPeacock.color);
+console.log(suspects);
+console.log(pistol.weight);
+console.log(rooms[2]);
+
 
 const weapons = []
 
-const rooms = []
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
