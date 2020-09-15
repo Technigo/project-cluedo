@@ -4,9 +4,15 @@ Replace this readme with your own information about your project.
 
 Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
+This week’s project was to create a piece of the classic board game Cluedo or Clue. 
+The purpose was to practice creating objects and arrays and also connect this to the DOM.
+
+
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I followed the instructions to make the blue level work, and moved on to red and black levels creating one feature at the time. 
+I've used HTML, CSS and JavaScript. The main focus has been working with arrays, objects, and the random-function.
+I put in styling at the end when I had all the logic in place. 
 
 ## View it live
 
