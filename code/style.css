@@ -1,6 +1,8 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  background-color: beige;
 }
 
 p {
@@ -13,10 +15,11 @@ p {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  background: whitesmoke;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  cursor: pointer;
 }
 
 .killer-deck {
