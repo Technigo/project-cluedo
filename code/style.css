@@ -10,10 +10,22 @@ p {
   background-color: #fff;
 }
 
+h1 {color: red;}
+
 .header {
   background-image: url(./img/background.jpg);
   height: 800px;
   background-size: cover;
+  
+}
+
+.header h1 {
+  position: relative;
+  text-align: center;
+  font-size: 100px;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  margin:0;
 
 }
 
@@ -64,3 +76,25 @@ button {
   display: block;
   margin: 0 auto;
 }
+
+button:hover {
+  transform: scale(0.9, 0.9);
+}
+
+
+
+  /*Footer*/ 
+  
+  footer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    height: 100px;
+    margin-top: 40px;
+    background-color: black; 
+  }
+    
+  
+

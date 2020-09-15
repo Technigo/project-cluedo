@@ -124,7 +124,6 @@ const pistol = {
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
@@ -134,7 +133,7 @@ const suspects = [
   mrsPeacock,
   colonelMustard,
   mrsWhite,
-]
+];
 
 const weapons = [
 rope, 
@@ -146,25 +145,30 @@ axe,
 bat,
 trophy, 
 pistol,
-]
+];
 
 const rooms = [
-  'Dining room',
-  'Conservatory', 
-  'Kitchen',
-  'Study', 
-  'Library',
-  'Billiard Room', 
-  'Lounge', 
-  'Ballroom', 
-  'Hall', 
-  'Spa', 
-  'Living Room', 
-  'Observatory', 
-  'Theater', 
-  'Guest House', 
-  'Patio',  
-]
+  "Dining Room", 
+  "Conservatory", 
+  "Kitchen", 
+  "Study", 
+  "Library", 
+  "Billiard Room", 
+  "Lounge", 
+  "Ball room", 
+  "Hall", 
+  "Spa", 
+  "Living Room", 
+  "Observatory", 
+  "Theater", 
+  "Guest House", 
+  "Patio"
+];
+
+
+console.log(suspects);
+console.log(weapons);
+console.log(rooms);
 
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
@@ -175,11 +179,11 @@ const randomSelector = array => {
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 
-const mystery = {
-  suspects,
-  weapons,
-  rooms,
-}
+let mystery = {
+  killer: suspects,
+  weapon: weapons,
+  room: rooms,
+};
 
 
 // With a killer, a weapon and a room.
@@ -197,14 +201,11 @@ const pickKiller = () => {
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById(
     'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-}
-document.getElementById('killerCard').onclick = pickKiller
-
-
-
-
-
+  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  
+  const killerImage = document.getElementById('killerImage');
+  killerImage.src = mystery.killer.image;
+};
 
 
 // CREATE FUNCTION pickWeapon 
@@ -216,13 +217,14 @@ const pickWeapon = () => {
   document.getElementById('weaponCard').style.background = mystery.weapons.color
   document.getElementById(
     'weaponName'
-  ).innerHTML = `${mystery.weapons.name}`
+    ).innerHTML = `${mystery.weapons.name}`
+  document.getElementById(
+    'weaponWeight'
+  ).innerHTML = `${mystery.weapons.weight}`
 }
-document.getElementById('weaponCard').onclick = pickWeapon
 
 
 // CREATE FUNCTION pickRoom 
-
 
 const pickRoom = () => {
   // This will randomly select a weapon. And add that to the mystery object.
@@ -232,10 +234,31 @@ const pickRoom = () => {
     'roomName'
   ).innerHTML = `${mystery.rooms}`
 }
-document.getElementById('roomCard').onclick = pickRoom
+
+//invoke function onclick
+document.getElementById('killerCard').onclick = pickKiller;
+document.getElementById('weaponCard').onclick = pickWeapon;
+document.getElementById('roomCard').onclick = pickRoom;
+
 
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+const revealMystery = () => {
+  document.getElementById(
+    'mystery'
+  ).innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.rooms} with a ${mystery.weapons.name}.`;
+};
+
+document.getElementById('revealButton').onclick = revealMystery;
+
+
+
+
+
+
+
+
 
 
