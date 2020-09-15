@@ -1,41 +1,137 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// STEP 1
 
+// SUSPECTS:
+
+// *** Mr Green
 const mrGreen = {
-  firstName: 'Jacob',
-  lastName: 'Green',
-  color: 'green',
-  description: 'He has a lot of connections',
+  firstName: "Jacob",
+  lastName: "Green",
+  color: "green",
+  description: "He has a lot of connections",
   age: 45,
-  image: 'assets/green.png',
-  occupation: 'Entrepreneur'
-}
+  image: "assets/green.png",
+  occupation: "Entrepreneur",
+};
+// *** Professor Plum
+const profPlum = {
+  firstName: "Victor",
+  lastName: "Plum",
+  color: "purple",
+  description: "He is widely seen as the intellectual",
+  age: 36,
+  image: "assets/plum.png",
+  occupation: "Professor",
+};
+// *** Miss Scarlet
+const missScarlet = {
+  firstName: "Cassandra",
+  lastName: "Scarlet",
+  color: "red",
+  description: "Young, cunning, and highly attractive",
+  age: 25,
+  image: "assets/scarlet.png",
+  occupation: "Actress",
+};
+// *** Mrs Peacock
+const mrsPeacock = {
+  firstName: "Eleanor",
+  lastName: "Peacock",
+  color: "blue",
+  description: "Maintains her dignity in almost all cases",
+  age: 32,
+  image: "assets/peacock.png",
+  occupation: "Socialite",
+};
+// *** Colonel Mustard
+const colMustard = {
+  firstName: "Jack",
+  lastName: "Mustard",
+  color: "yellow",
+  description: "Both dignified and dangerous",
+  age: 55,
+  image: "assets/mustard.png",
+  occupation: "Colonel",
+};
+// *** Mrs White
+const mrsWhite = {
+  firstName: "Mrs",
+  lastName: "White",
+  color: "white",
+  description: "A frazzled servant",
+  age: 67,
+  occupation: "Housekeeper",
+};
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// WEAPONS
 
+// *** rope
 const rope = {
-  name: 'rope',
-  weight: 10
-}
+  name: "rope",
+  weight: 10,
+};
+// *** knife
+const knife = {
+  name: "knife",
+  weight: 2,
+};
+// *** candlestick
+const candlestick = {
+  name: "candlestick",
+  weight: 4,
+};
+// *** dumbbel
+const dumbbel = {
+  name: "dumbbel",
+  weight: 7,
+};
+// *** poison
+const poison = {
+  name: "paison",
+  weight: 1,
+};
+// *** axe
+const axe = {
+  name: "axe",
+  weight: 5,
+};
+// *** bat
+const bat = {
+  name: "bat",
+  weight: 6,
+};
+// *** trophy
+const trophy = {
+  name: "trophy",
+  weight: 8,
+};
+// *** pistol
+const pistol = {
+  name: "pistol",
+  weight: 3,
+};
+
+console.log(profPlum.occupation);
+console.log(axe.weight);
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// STEP 2 – NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
   mrGreen,
-  mrsWhite
+  mrsWhite,
   // ...  and the rest
-]
+];
 
-const weapons = []
+const weapons = [];
 
-const rooms = []
+const rooms = [];
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
-const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
-}
+const randomSelector = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
+};
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
@@ -44,14 +140,14 @@ const randomSelector = array => {
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
+  mystery.killer = randomSelector(suspects);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById("killerCard").style.background = mystery.killer.color;
   document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-}
+    "killerName"
+  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+};
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
