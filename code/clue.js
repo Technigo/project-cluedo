@@ -58,39 +58,39 @@ const mrsWhite = {
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
 }
 const knife = {
   name: 'knife',
-  weight: 3
+  weight: 3,
 }
 const candlestick = {
   name: 'candlestick',
-  weight: 5
+  weight: 5,
 }
 const dumbbell = {
   name: 'dumbbell',
-  weight: 28
+  weight: 28,
 }
 const poison = {
   name: 'poison',
-  weight: 1
+  weight: 1,
 }
 const axe = {
   name: 'axe',
-  weight: 15
+  weight: 15,
 }
 const bat = {
   name: 'bat',
-  weight: 13
+  weight: 13,
 }
 const trophy = {
   name: 'trophy',
-  weight: 17
+  weight: 17,
 }
 const pistol = {
   name: 'pistol',
-  weight: 9
+  weight: 9,
 }
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
