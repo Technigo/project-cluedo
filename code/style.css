@@ -11,61 +11,37 @@
 body {
   margin: 0;
   font-family: 'Roboto', monospace;
+  width: 90vw;
+  margin: 50px auto;
+}
+
+h1 {
+  margin: 30px 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 56px;
 }
 
 p {
   margin: 1px;
   font-weight: 300;
   background-color: #fff;
-  font-size: 18px;
+  font-size: 28px;
 }
 
-.cards {
-  margin: 50px auto;
-  width: 90%;
-  height: 600px;
-  background: #ccc;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.killer-deck {
-  width: 250px;
-  height: 400px;
-  background: #000;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-}
-
-.weapon-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-}
-
-.room-deck {
-  width: 250px;
-  height: 400px;
-  background: midnightblue;
-
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+.italic {
+  font-style: italic;
 }
 
 button {
-  padding: 8px 80px;
-  background: #8900C9;
+  padding: 8px 0px;
+  width: 32.5%;
+  background: #000;
   color: #fff;
   border: none;
   font-size: 20px;
   display: block;
-  margin: 0 auto;
+  text-decoration: none;
 }
 
 button:hover {
@@ -75,4 +51,100 @@ button:hover {
 button:visited {
   background: #4D106A;
   border-radius: 0;
+}
+
+/* ------------------- HEADER ------------------- */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hamburger div {
+  width: 60px;
+  height: 5px;
+  background: #8900C9;
+  margin: 10px 0;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+/* ------------------- INTRO ------------------- */
+.intro p {
+  font-size: 44px;
+  width: 40vw;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+.mainButton {
+  background: #8900C9;
+}
+
+/* ------------------- INGREDIENTS ------------------- */
+
+.ingredients {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 50px 0;
+}
+
+.ingredients-headers {
+  display: flex;
+  align-items: center;
+}
+
+.ingredients-headers div {
+  width: 33.3%;
+  font-size: 28px;
+}
+
+.ingredients div {
+  width: 33.3%;
+  background: #ccc;
+  height: 400px;
+}
+
+.mixer {
+  margin: 0 20px;
+}
+
+/* ------------------- RECIPE ------------------- */
+
+.recipe {
+  display: flex;
+  align-items: flex-start;
+  justify-items: flex-end;
+}
+
+.date {
+  font-size: 18px;
+  font-weight: 700;
+  color: #8900C9;
+}
+
+.mixer-button {
+  text-align: -webkit-right;
+}
+
+.recipe div {
+  width: 50%;
+}
+
+.recipe button {
+  width: 65%;
+  background: #999;
+}
+
+/* Had to use !important to make it overrule */
+.active {
+  background: #8900C9 !important;
 }

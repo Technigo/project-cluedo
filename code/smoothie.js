@@ -1,6 +1,3 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
-
 // ------------------ Main Fruits ------------------
 const apple = {
   name: 'Apple',
@@ -76,15 +73,10 @@ const chiaSeeds = {
   amount: '2 tablespoons'
 }
 
-
+// TODO: Add images to each fruit/ingredient
+// Saving this to be able to see 'image'
 // const mrGreen = {
-//   firstName: 'Jacob',
-//   lastName: 'Green',
-//   color: 'green',
-//   description: 'He has a lot of connections',
-//   age: 45,
 //   image: 'assets/green.png',
-//   occupation: 'Entrepreneur'
 // }
 
 
@@ -119,56 +111,85 @@ const randomSelector = array => {
 
 // Object that will define all ingredients currently selected in the smoothie
 let smoothie = {
-  mainFruit: ''.name,
-  mixer: ''.name,
-  superBooster: ''.name
+  mainFruit: 'NotSelected',
+  mixer: 'NotSelected',
+  superBooster: 'NotSelected'
 }
 
-// These functions will be invoked when you click one of the cards.
+//Check if the smoothie-button should change color
+// based on if all object properties of smoothie is set
+const colorCheck = () => {
+  if (smoothie.mainFruit == 'NotSelected') {
+  } else {
+  document.getElementById('mixerButton2').classList.add('active')
+  console.log("Lila knapp")
+  }
+}
+
+
+// 3 x Display random value from each category 
+// + add value to smoothie-object
+// + check if smoothie-button color should be changed
 const pickMainFruit = () => {
   mainFruit = randomSelector(mainFruits)
 
-  document.getElementById('killerCard').style.background = '#fff'
   document.getElementById(
-    'killerName'
+    'mainFruitBox'
   ).innerHTML = `${mainFruit.name}`
 
   smoothie.mainFruit = mainFruit.name
   console.log(smoothie)
+  colorCheck()
 }
-
 
 const pickMixer = () => {
   mixer = randomSelector(mixers)
 
-  document.getElementById('weaponCard').style.background = '#fff'
   document.getElementById(
-    'weaponName'
+    'mixerBox'
   ).innerHTML = `${mixer.name}`
   
   smoothie.mixer = mixer.name
   console.log(smoothie)
+  colorCheck()
 }
-
 
 const pickSuperBooster = () => {
   superBooster = randomSelector(superBoosters)
 
-  document.getElementById('roomCard').style.background = '#fff'
   document.getElementById(
-    'roomName'
+    'superBoosterBox'
   ).innerHTML = `${superBooster.name}`
 
   smoothie.superBooster = superBooster.name
   console.log(smoothie)
+  colorCheck()
 }
 
 
-// TODO Add an if-statement to make button sense if smoothie-variable is completely filled in- then change color of button
-
-const mixSmoothie = () => {
-  document.getElementById('finishedSmoothie').innerHTML = `A ${mainFruit.category} ${mainFruit.name} smoothie mixed with ${mixer.name}, spiced up with ${superBooster.name}.`
+// Display the summary of what smoothie 
+// + details makes depending on ingredients
+const mixSmoothie = () => {  
+  if (smoothie.mainFruit == 'NotSelected') {
+    document.getElementById('finishedSmoothie').innerHTML = "Please select a main fruit"
+  } else if (smoothie.mixer == 'NotSelected') {
+    document.getElementById('finishedSmoothie').innerHTML = "Please select a mixer"
+  } else if (smoothie.superBooster == 'NotSelected') {
+    document.getElementById('finishedSmoothie').innerHTML = "Please select a superbooster"
+  } else {
+    document.getElementById('finishedSmoothie').innerHTML = `A ${mainFruit.category} ${mainFruit.name} smoothie mixed with ${mixer.name} and spiced up with ${superBooster.name}.`
+  }
 }
 
+// Not finished. TODO: Fix function that will 
+// display what day, date, month and year it is
+document.getElementById('dayDateMonthYear').innerText = `<Day>, <date> of <month> <year>`
 
 
+// Randomize-button in the header 
+// - to quickly randomize a smoothie
+const randomizeSmoothie = () => {
+  pickMainFruit()
+  pickMixer()
+  pickSuperBooster()
+}
