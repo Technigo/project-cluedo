@@ -8,6 +8,10 @@
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
+    <header>
+      <h1>CLUEDO</h1>
+      <P>click on the decks to select a suspect, a weapon and a room.</P>
+    </header>
 
     <section class="cards">
       <article class="killer-deck" id="killerCard">
@@ -15,7 +19,7 @@
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
+        <img id="killerImage" src="" height="200" />
         <p id="killerDescription"></p>
       </article>
 
@@ -29,13 +33,16 @@
         <p>ROOM</p>
         <p id="roomName"></p>
       </article>
-
     </section>
 
-    <h1 id="mystery"></h1>
+    <section class="reveal-section">
+      <div class="reveal-mystery-text">
+        <p id="mysteryAnswer"></p>
+      </div>
 
-    <button>REVEAL THE CRIME</button>
+      <button class="reveal-button" onclick="revealMystery()">REVEAL THE CRIME</button>
 
+    </section>
     <script src="clue.js"></script>
   </body>
 </html>

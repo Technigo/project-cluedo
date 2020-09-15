@@ -41,7 +41,6 @@ p {
   width: 250px;
   height: 400px;
   background: midnightblue;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -55,4 +54,15 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+.reveal-mystery-text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.reveal-section {
+  margin-bottom: 50px;
 }
