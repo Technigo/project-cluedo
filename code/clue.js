@@ -7,7 +7,8 @@ const mrGreen = {
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur',
+  favouriteWeapon: "knife"
 }
 console.log(mrGreen.description);
 
@@ -18,7 +19,8 @@ const professorPlum = {
   description: 'He is quick-witted, who lost his medical license for having an affair with one of his patients.',
   age: 35,
   image: 'assets/plum.png',
-  occupation: 'Professor'
+  occupation: 'Professor',
+  favouriteWeapon: "rope"
 }
 console.log(professorPlum.description);
 
@@ -29,7 +31,8 @@ const missScarlet = {
   description: 'A stock femme fatale, she is typically portrayed as young, cunning and attractive.',
   age: 30,
   image: 'assets/scarlet.png',
-  occupation: 'Runs an underground brothel'
+  occupation: 'Runs an underground brothel',
+  favouriteWeapon: "candlestick"
 }
 console.log(missScarlet.description);
 
@@ -40,7 +43,8 @@ const mrsPeacock = {
   description: 'A grand madame, the wife of a U.S. Senator who is accused of taking bribes',
   age: 55,
   image: 'assets/peacock.png',
-  occupation: 'Housewife'
+  occupation: 'Housewife',
+  favouriteWeapon: "dumbbell"
 }
 console.log(mrsPeacock.description);
 
@@ -51,7 +55,8 @@ const colonelMustard = {
   description: 'A dignified, dapper and dangerous military man.',
   age: 60,
   image: 'assets/mustard.png',
-  occupation: 'War profiteer'
+  occupation: 'War profiteer',
+  favouriteWeapon: "poison"
 }
 console.log(colonelMustard.description);
 
@@ -62,7 +67,8 @@ const mrsWhite = {
   description: 'A frazzled servant. Depicted as the widow of a nuclear physicist whose death she is suspected of being behind',
   age: 63,
   image: 'assets/white.png',
-  occupation: 'Nurse'
+  occupation: 'Nurse',
+  favouriteWeapon: "axe"
 }
 console.log(mrsWhite.description);
 
@@ -70,37 +76,43 @@ console.log(mrsWhite.description);
 
 const rope = {
   name: 'rope',
-  material: 'textile'
+  material: 'textile',
+  id: "rope"
 }
 console.log(rope);
 
 const knife = {
   name: 'knife',
-  material: 'metal'
+  material: 'metal',
+  id: "knife"
 }
 console.log(knife);
 
 const candlestick = {
   name: 'candlestick',
-  weight: 'silver'
+  weight: 'silver',
+  id: "candlestick"
 }
 console.log(candlestick);
 
 const dumbbell = {
   name: 'dumbbell',
-  weight: 'iron'
+  weight: 'iron',
+  id: "dumbbell"
 }
 console.log(dumbbell);
 
 const poison = {
   name: 'poison',
-  weight: 'liquid'
+  weight: 'liquid',
+  id: "poison"
 }
 console.log(poison);
 
 const axe = {
   name: 'axe',
-  material: 'metal'
+  material: 'metal',
+  id: "axe"
 }
 console.log(axe);
 
@@ -193,7 +205,13 @@ const pickKiller = () => {
   document.getElementById('killerCard').style.background = mystery.killer.color;
   document.getElementById(
     'killerName'
-  ).innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}, Description: ${mystery.killer.description}`;
+    ).innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById(
+    'killerDescription'
+  ).innerHTML = `${mystery.killer.description}`;
+  document.getElementById(
+    'killerFavouriteWeapon'
+    ).innerHTML = `This persons favourite weapon is ${mystery.killer.favouriteWeapon}`;
   let killerImage = document.getElementById('killerImage');
   killerImage.src = mystery.killer.image;
 };
@@ -233,6 +251,8 @@ document.getElementById('roomCard').onclick = pickRoom;
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 // Get open modal button
 
+const mysteryImage = document.getElementById('mystery.Image');
+
 const revealMystery = () => {
   document.getElementById(
     'mystery'
@@ -241,4 +261,3 @@ const revealMystery = () => {
 
 console.log(revealMystery);
 document.getElementById('reveal').onclick = revealMystery;
-
