@@ -8,6 +8,7 @@ const mrGreen = {
   age: 45,
   image: "assets/green.png",
   occupation: "Entrepreneur",
+  favouriteWeapon: "knife"
 };
 
 const prPlum = {
@@ -18,6 +19,7 @@ const prPlum = {
   age: 35,
   image: "assets/plum.png",
   occupation: "Professor",
+  favouriteWeapon: "rope"
 };
 
 const missScarlett = {
@@ -28,6 +30,7 @@ const missScarlett = {
   age: 30,
   image: "assets/scarlet.png",
   occupation: "International spy",
+  favouriteWeapon: "candlestick"
 };
 
 const mrsPeacock = {
@@ -38,6 +41,7 @@ const mrsPeacock = {
   age: 55,
   image: "assets/peacock.png",
   occupation: "Ornithologist",
+  favouriteWeapon: "dumbell"
 };
 
 const colMustard = {
@@ -48,6 +52,7 @@ const colMustard = {
   age: 60,
   image: "assets/mustard.png",
   occupation: "Colonel",
+  favouriteWeapon: "poison"
 };
 
 const mrsWhite = {
@@ -58,6 +63,7 @@ const mrsWhite = {
   age: 62,
   image: "assets/white.png",
   occupation: "Servant",
+  favouriteWeapon: "axe"
 };
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
@@ -65,46 +71,55 @@ const mrsWhite = {
 const rope = {
   name: "rope",
   weight: 10,
+  id : "rope"
 };
 
 const knife = {
   name: "knife",
   weight: 1,
+  id: "knife"
 };
 
 const candlestick = {
   name: "candlestick",
   weight: 1,
+  id: "candlestick"
 };
 
 const dumbell = {
   name: "dumbell",
   weight: 5,
+  id: "dumbell"
 };
 
 const poison = {
   name: "poison",
   weight: 1,
+  id: "poison"
 };
 
 const axe = {
   name: "axe",
   weight: 7,
+  id: "axe"
 };
 
 const bat = {
   name: "bat",
   weight: 4,
+  id: "bat"
 };
 
 const trophy = {
   name: "trophy",
   weight: 8,
+  id: "trophy"
 };
 
 const pistol = {
   name: "pistol",
   weight: 3,
+  id: "pistol"
 };
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -168,6 +183,41 @@ const mystery = {
   room: null
 };
 
+// Progress bar for loading cards
+
+var i = 0;
+function move() {
+  document.getElementById('myProgress').style.display = "block";
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById("myBar");
+    var width = 1;
+    var id = setInterval(frame, 25);
+    function frame() {
+      if (width > 100) {
+        clearInterval(id);
+        i = 0;
+        document.getElementById('myProgress').style.display = "none";
+      } else if (width == 100){
+        pickKiller();
+        width++;
+      } 
+      else {
+        width++;
+        elem.style.width = width + "%";
+      }
+    }
+  }
+}
+
+const shuffleFavouriteWeapon = (suspect) => {
+  suspect.favouriteWeapon = randomSelector(suspects).favouriteWeapon;
+}
+
+const testShuffle = () => {
+  suspects.forEach(shuffleFavouriteWeapon);
+}
+
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
@@ -179,9 +229,15 @@ const pickKiller = () => {
     "killerName"
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   document.getElementById("killerImage").src = mystery.killer.image;
+  document.getElementById(
+    "killerDescription"
+  ).innerHTML = `${mystery.killer.description}`;
+  document.getElementById(
+    "killerFavWeapon"
+  ).innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
 };
 
-document.getElementById('killerCard').onclick = pickKiller;
+document.getElementById('killerCard').onclick = move;
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 

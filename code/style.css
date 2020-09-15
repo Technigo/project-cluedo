@@ -9,6 +9,11 @@ p {
   background-color: #fff;
 }
 
+span {
+  font-weight: 300;
+  z-index: -1;
+}
+
 .cards {
   margin: 50px auto;
   width: 90%;
@@ -55,4 +60,17 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+#myProgress {
+  display: none;
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center;
 }
