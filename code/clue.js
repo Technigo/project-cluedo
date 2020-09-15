@@ -15,7 +15,7 @@ const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
   color: '#31112c',
-  description: 'He is a excentric man',
+  description: 'He is an excentric man',
   age: 35,
   image: 'assets/plum.png',
   occupation: 'Professor',
@@ -25,7 +25,7 @@ const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
   color: '#7d0633',
-  description: 'Fortuneseeker',
+  description: 'She is a fortuneseeker',
   age: 27,
   image: 'assets/scarlet.png',
   occupation: 'Dancer',
@@ -36,7 +36,7 @@ const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
   color: '#00416d',
-  description: 'Jealous and mean',
+  description: 'She is jealous and mean',
   age: 45,
   image: 'assets/peacock.png',
   occupation: 'Housewife',
@@ -47,7 +47,7 @@ const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
   color: '#c87941',
-  description: 'Senile and tired',
+  description: 'He is senile and tired',
   age: 70,
   image: 'assets/mustard.png',
   occupation: 'Colonel',
@@ -58,7 +58,7 @@ const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
   color: '#dbcbbd',
-  description: 'The grumpy old matriark',
+  description: 'She is the grumpy old matriark',
   age: 85,
   image: 'assets/white.png',
   occupation: 'Retired',
@@ -170,11 +170,8 @@ let mystery = {
   weapon: weapons,
   room: rooms,
 };
-
-//const shuffleFavouriteWeapon = () => {
-//  mystery.killer.favouriteWeapon = randomSelector(weapons);
-//};
-//console.log(shuffleFavouriteWeapon);
+//function to shuffle the suspects favourite weapon
+const randomFavouriteWeapon = () => randomSelector(weapons);
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -197,9 +194,9 @@ const pickKiller = () => {
   document.getElementById(
     'killerDescription'
   ).innerHTML = `${mystery.killer.description}`;
-  //document.getElementById(
-  //  'killerFavouriteWeapon'
-  //).innerHTML = `Favourite weapon: ${shuffleFavouriteWeapon}`;
+  document.getElementById(
+    'killerFavouriteWeapon'
+  ).innerHTML = `Favourite weapon: ${randomFavouriteWeapon().name}`;
 };
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
