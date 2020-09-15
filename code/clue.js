@@ -203,7 +203,6 @@ const pickKiller = () => {
   ).innerHTML = `${mystery.killer.description}`;
 };
 
-console.log(pickKiller());
 document.getElementById("killerCard").addEventListener("click", pickKiller);
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
@@ -217,7 +216,6 @@ const pickWeapon = () => {
   ).innerHTML = `${mystery.weapon.weight}`;
 };
 
-console.log(pickWeapon());
 document.getElementById("weaponCard").addEventListener("click", pickWeapon);
 
 const pickRoom = () => {
@@ -226,11 +224,20 @@ const pickRoom = () => {
   document.getElementById("roomName").innerHTML = `${mystery.room}`;
 };
 
-console.log(pickRoom());
 document.getElementById("roomCard").addEventListener("click", pickRoom);
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
+// 'The murder was committed by Jacob Green, in the living room with a rope.'
 
-const revealMystery = () => {};
+const revealMystery = () => {
+  console.log(mystery.killer.firstName);
+  console.log(mystery.killer.lastName);
+  console.log(mystery.room);
+  console.log(mystery.weapon.name);
+
+  document.getElementById(
+    "mystery"
+  ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
+};
 
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
