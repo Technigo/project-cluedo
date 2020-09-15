@@ -4,49 +4,57 @@ body {
 }
 
 p {
+  width: 100%;
   margin: 1px;
   font-weight: 300;
   background-color: #fff;
 }
 
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
+  height: 70vh;
   background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.killer-deck {
+.decks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 250px;
   height: 400px;
-  background: #000;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
   cursor: pointer;
+}
+
+.killer-deck {
+  background: #000;
+  position: relative;
+}
+
+.killer-image {
+  margin: 20px 0;
+  border-radius: 50%;
 }
 
 .weapon-deck {
-  width: 250px;
-  height: 400px;
   background: rgb(10, 53, 10);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-  cursor: pointer;
 }
 
 .room-deck {
-  width: 250px;
-  height: 400px;
   background: midnightblue;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-  cursor: pointer;
 }
 
 button {
@@ -57,4 +65,51 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+.loader-container {
+  position: absolute;
+  margin-top: 100px;
+  width: 70px;
+  height: 70px;
+}
+
+.loader-container-animation {
+  -webkit-animation: scale-spin 3s linear infinite; /* Safari */
+  animation: scale-spin 3s linear infinite;
+}
+
+.loader-image {
+  width: 100%;
+}
+
+.mystery-reveal {
+  text-align: justify;
+  margin: 50px auto;
+  width: 90%;
+}
+
+/* Safari */
+@-webkit-keyframes scale-spin {
+  0% {
+    -webkit-transform: scale(1) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: scale(0.75) rotate(180deg);
+  }
+  100% {
+    -webkit-transform: scale(0.5) rotate(360deg);
+  }
+}
+
+@keyframes scale-spin {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    -webkit-transform: scale(0.5) rotate(180deg);
+  }
+  100% {
+    transform: scale(0.5) rotate(360deg);
+  }
 }

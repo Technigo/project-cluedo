@@ -8,32 +8,67 @@
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
-    <section class="cards">
-      <article class="killer-deck" onclick="pickKiller()" id="killerCard">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
-      </article>
-      <article class="weapon-deck" onclick="pickWeapon()" id="weaponCard">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-      </article>
-      <article class="room-deck" onclick="pickRoom()" id="roomCard">
-        <p>ROOM</p>
-        <p id="roomName"></p>
-      </article>
-    </section>
+    <div class="flex-wrapper">
+      <section class="cards">
+        <article
+          class="decks killer-deck"
+          onclick="pickKiller(this.lastElementChild.id)"
+          id="killerCard"
+        >
+          <p>KILLER</p>
+          <p id="killerNameAge"></p>
+          <img id="killerImage" class="killer-image" src="" />
+          <p id="killerAge"></p>
+          <p id="killerOccupation"></p>
+          <p id="killerDescription"></p>
+          <p id="killerFavouriteWeapon"></p>
+          <div class="loader-container" id="loaderKiller">
+            <img
+              src="./assets/question-mark-48.png"
+              class="loader-image"
+              alt=""
+            />
+          </div>
+        </article>
+        <article
+          class="decks weapon-deck"
+          onclick="pickWeapon(this.lastElementChild.id)"
+          id="weaponCard"
+        >
+          <p>WEAPON</p>
+          <p id="weaponName"></p>
+          <p id="weaponWeight"></p>
+          <div class="loader-container" id="loaderWeapon">
+            <img
+              src="./assets/question-mark-48.png"
+              class="loader-image"
+              alt=""
+            />
+          </div>
+        </article>
+        <article
+          class="decks room-deck"
+          onclick="pickRoom(this.lastElementChild.id)"
+          id="roomCard"
+        >
+          <p>ROOM</p>
+          <p id="roomName"></p>
+          <div class="loader-container" id="loaderRoom">
+            <img
+              src="./assets/question-mark-48.png"
+              class="loader-image"
+              alt=""
+            />
+          </div>
+        </article>
+      </section>
 
-    <h1 id="mystery"></h1>
+      <h1 class="mystery-reveal" id="mystery"></h1>
 
-    <button onclick="revealMystery(mystery)" id="revealButton">
-      REVEAL THE CRIME
-    </button>
-
+      <button onclick="revealMystery(mystery)" id="revealButton">
+        REVEAL THE CRIME
+      </button>
+    </div>
     <script src="clue.js"></script>
   </body>
 </html>
