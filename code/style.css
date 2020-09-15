@@ -24,12 +24,17 @@ header a {
   font-size: 20px;
   text-decoration: none;
   margin-left: 16px;
-  
+}
+
+header h1 {
+  color: black;
+  font-size: 50px;
+
 }
 
 header img {
   height: 100px;
-  margin:  0 24px 0 350px;
+  margin:  0 24px 0 10px;
 }
 
 .cards p {
@@ -119,7 +124,7 @@ margin-bottom:0px;
   width: 180px;
   height: 170px;
   background: white;
-  color: red;
+  color: black;
   opacity: 70%;
   padding-top: 30px;
   border-radius: 16px;
@@ -144,7 +149,7 @@ margin-bottom:0px;
  opacity: 70%;
   text-align: center;
   padding-top: 30px;
-  color: red;
+  color: black;
   border-radius: 16px;
   margin-left: 70px;
   margin-top: 10px;
@@ -165,7 +170,7 @@ h1 {
 
 button {
   font-weight: bold;
-  padding: 8px 16px;
+  padding: 18px 16px;
   font-size: 26px;
   color: black;
   font-family: "Courier New", Courier, monospace;
@@ -178,28 +183,18 @@ button {
 
 #mystery {
   width: auto;
+
   height: 100px;
   text-align: center;
   padding-top: 30px;
   background: white;
   opacity: 50%;
-  color: red;
+  color: black;
   border-radius: 16px;
 }
 
 
 
-footer {
-  background: white;
-  opacity: 50%;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color:  black;
-  padding: 0 16px;
-  border-top: 1px solid;
-}
 
 
 /* Desktop */
@@ -210,4 +205,5 @@ footer {
     justify-content: center;
   }
  
+
 }
