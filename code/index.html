@@ -4,34 +4,56 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu+Mono:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
+    
+    <header>
+      <h1>Reveal the <span>murder</span> mystery</h1>
+    </header>
     <section class="cards">
-      <article class="killer-deck" id="killerCard">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
-      </article>
-      <article class="weapon-deck" id="weaponCard">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-      </article>
-      <article class="room-deck" id="roomCard">
-        <p>ROOM</p>
-        <p id="roomName"></p>
-      </article>
+      <div class="container">
+        <article class="killer-deck" id="killerCard" onclick="pickKiller(this.nextElementSibling)">
+          <p>KILLER</p>
+          <p id="killerName"></p>
+          <p id="killerAge"></p>
+          <p id="killerOccupation"></p>
+          <p id="killerFavouriteWeapon"></p>
+          <img id="killerImage" src='' class="suspect-image"/>
+          <p id="killerDescription"></p>
+        </article>
+      <div class="loader" id="loaderKiller"></div>
+      </div>  
+     <!--- <p id= "messageText"></p> want this to be under card if KILLERCARD not flipped -->
+      <div class="container">
+        <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
+          <p>WEAPON</p>
+          <p id="weaponName"></p>
+          <p id="weaponWeight"></p>
+        </article>
+        <div class="loader" id="loaderWeapon"></div>
+      </div>  
+      <!--- <p id= "messageText"></p> want this to be under card if WEAPONCARD not flipped -->
+
+      <div class="container">
+        <article class="room-deck" id="roomCard" onclick="pickRoom()">
+          <p>ROOM</p>
+          <p id="roomName"></p>
+        </article>
+        <div class="loader" id="loaderRoom"></div>
+      </div>
+
+      <div class="container-button">
+        <h2 id="mystery" class="reveal-mystery"></h1>
+
+        <button type="button" onclick="revealMystery()">REVEAL THE CRIME</button>
+      </div>
     </section>
 
-    <h1 id="mystery"></h1>
-
-    <button type="button" onclick="revealMystery(mystery)">REVEAL THE CRIME</button>
-
+  
     <script src="clue.js"></script>
   </body>
 </html>
