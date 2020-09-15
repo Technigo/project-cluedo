@@ -117,13 +117,46 @@ console.log(rope.weight);
 
 const suspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
+  mrsWhite 
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knif,
+  candlestick,
+  dumbbel,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+const rooms = [
+  "Dining Room", 
+  "Conservatory", 
+  "Kitchen", 
+  "Study", 
+  "Library", 
+  "Billiard Room", 
+  "Lounge", 
+  "Ballroom", 
+  "Hall", 
+  "Spa", 
+  "Living Room", 
+  "Observatory", 
+  "Theater", 
+  "Guest House", 
+  "Patio"
+]
+
+console.log(suspects);
+console.log(weapons);
+console.log(rooms);
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
