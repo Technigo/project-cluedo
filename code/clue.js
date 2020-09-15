@@ -10,14 +10,122 @@ const mrGreen = {
   occupation: 'Entrepreneur'
 }
 
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'plum',
+  description: 'an academic Romeo, arrogant',
+  age: 35,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
+
+const msScarlett = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlett',
+  color: 'scarlett',
+  description: 'Hollywood glamorous, dry, sarcastic, cynical',
+  age: 40,
+  image: 'assets/scarlet.png',
+  occupation: 'Actress'
+}
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'peacock',
+  description: 'churchgoing wife of a Senator',
+  age: 40,
+  image: 'assets/peacock.png',
+  occupation: 'Housewife'
+}
+
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'mustard',
+  description: 'pompous, dense military man, often misinterprets words',
+  age: 55,
+  image: 'assets/mustard.png',
+  occupation: 'Colonel'
+}
+
+const mrsWhite = {
+  firstName: 'Rose',
+  lastName: 'White',
+  color: 'white',
+  description: 'pale, morbid, stoic',
+  age: 75,
+  image: 'assets/white.png',
+  occupation: 'Retired'
+}
+
+
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  color: 'brown'
 }
 
+const knife = {
+  name: 'knife',
+  weight: 8,
+  color: 'silver'
+}
+
+const candleStick = {
+  name: 'candlestick',
+  weight: 3,
+  color: 'white'
+}
+
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 10,
+  color: 'red'
+}
+
+const poison = {
+  name: 'poison',
+  weight: 2,
+  color: 'blue'
+
+}
+
+const axe = {
+  name: 'axe',
+  weight: 7,
+  color: 'orange'
+}
+
+const bat = {
+  name: 'bat',
+  weight: 5,
+  color: 'black'
+}
+
+const trophy = {
+  name: 'trophy',
+  weight: 4,
+  color: 'gold'
+}
+
+const pistol = {
+  name: 'pistol',
+  weight: 4,
+  color: 'silver'
+}
+
+
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+
+console.log(colonelMustard.description);
+console.log(rope.color);
+console.log(msScarlett.firstName);
+
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
