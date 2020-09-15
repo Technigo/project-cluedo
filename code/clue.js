@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  color: '#7ae69e',
   description: 'He has a lot of connections.',
   age: 45,
   image: 'assets/green.png',
@@ -13,7 +13,7 @@ const mrGreen = {
 const professorPlum = {
 firstName: 'Victor',
 lastName: 'Plum',
-color: 'purple',
+color: '#c27ae6',
 description: 'Has a talent for solving crimes.',
 age: 35,
 image: 'assets/plum.png',
@@ -23,7 +23,7 @@ occupation: 'Professor'
 const missScarlet = {
 firstName: 'Cassandra',
 lastName: 'Scarlet',
-color: 'red',
+color: '#ed7461',
 description: 'Young, cunning and attractive.',
 age: 31,
 image: 'assets/scarlet.png',
@@ -33,7 +33,7 @@ occupation: 'brothel mami'
 const mrsPeacock = {
 firstName: 'Eleanor',
 lastName: 'Peacock',
-color: 'blue',
+color: '#6b95e8',
 description: 'Royal-like appearance.',
 age: 55,
 image: 'assets/peacock.png',
@@ -43,7 +43,7 @@ occupation: 'rich lady'
 const colonelMustard = {
 firstName: 'Jack',
 lastName: 'Mustard',
-color: 'yellow',
+color: '#e1eba9',
 description: 'Very dangerous and cunning relying on his military training.',
 age: 65,
 image: 'assets/mustard.png',
@@ -53,7 +53,7 @@ occupation: 'Colonel'
 const mrsWhite = {
 firstName: 'Mrs',
 lastName: 'White',
-color: 'white',
+color: '#f7fae8',
 description: 'Domestic worker and cook.',
 age: 40,
 image: 'assets/white.png',
@@ -65,58 +65,136 @@ occupation: 'Cook'
 
 const rope = {
   name: 'Rope',
-  weight: 10
+  weight: 10,
+  color: '#a19c85',
+  mortality: 2
 }
-const knife ={
+const knife = {
   name:'Knife',
-  weight: 2
+  weight: 2,
+  color: '#a19c85',
+  mortality: 6
 }
 const candlestick = { 
   name: 'Candlestick',
-  weight: 30
+  weight: 30,
+  color: '#737275',
+  mortality: 4
 }
 const dumbbell = {
 name: 'Dumbbell',
-weight: 90
+weight: 90,
+color: '#aaa7b0',
+mortality: 5
 }
 const poison = {
   name: 'Poison',
-  weight: 3
+  weight: 3,
+  color: '#c1f5ec',
+  mortality: 8
 }
 const axe = {
   name: 'Axe',
-  weight: 45
+  weight: 45,
+  color: '#7d9e98',
+  mortality: 7
 }
 const bat = {
   name: 'Bat',
-  weight: 30
+  weight: 30,
+  color: '#e3de94',
+  mortality: 5
 }
 const trophy = {
   name: 'Trophy',
-  weight: 50
+  weight: 50,
+  color: '#fae484',
+  mortality: 3
 }
 const pistol = {
   name: 'Pistol',
-  weight: 70
+  weight: 70,
+  color: '#949081',
+  mortality: 10
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-let diningRoom = 'Dining Room'
-let conservatory = 'Conservatory'
-let kitchen = 'Kitchen'
-let study = 'Study' 
-let library = 'Library' 
-let billiardRoom = 'Billiard Room'
-let lounge = 'Lounge'
-let ballroom = 'Ballroom'
-let hall = 'Hall' 
-let spa = 'Spa' 
-let livingRoom = 'Living Room'
-let observatory = 'Observatory' 
-let theater = 'Theater'
-let guestHouse = 'Guest House'
-let patio = 'Patio'
+const diningRoom = {
+name: 'Dining Room',
+color: '#e0c4af'
+
+}
+const conservatory = {
+name: 'Conservatory',
+color: '#80b2ba'
+} 
+
+const kitchen = {
+name: 'Kitchen',
+color: '#b08fcf'
+}
+
+const study= {
+name: 'Study',
+color: '#d1bda9'
+}
+
+const library= {
+name: 'Library',
+color: '#e3edcc'
+}
+
+const billiardRoom= {
+name: 'Billiard Room',
+color: '#e0999d'
+}
+
+const lounge= {
+name: 'Lounge',
+color: '#f7efdc'
+}
+
+const ballRoom= {
+name: 'Ballroom',
+color: '#c5e5f0'
+}
+
+const hall= {
+name: 'Hall',
+color: '#e7c5f0'
+}
+
+const spa= {
+name: 'Spa',
+color: '#ebc8be'
+}
+
+const livingRoom= {
+name: 'Living Room',
+color: '#c7ccb4'
+}
+
+const observatory= {
+name: 'Observatory',
+color: '#e3d4bc'
+}
+
+const theater= {
+name: 'Theater',
+color: '#bce3cd'
+}
+
+const guestHouse= {
+name: 'Guest House',
+color: '#9da0cc'
+}
+
+const patio= {
+name: 'Patio',
+color: '#bda4a6'
+}
+
 
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
@@ -130,7 +208,6 @@ const suspects = [
   colonelMustard
 
 ]
-  console.log(suspects)
 
 const weapons = [
   rope,
@@ -143,7 +220,6 @@ const weapons = [
   trophy,
   pistol
 ]
-console.log(weapons)
 
 const rooms = [
   diningRoom, 
@@ -153,7 +229,7 @@ const rooms = [
   library, 
   billiardRoom,
   lounge,
-  ballroom, 
+  ballRoom, 
   hall, 
   spa, 
   livingRoom, 
@@ -162,10 +238,10 @@ const rooms = [
   guestHouse, 
   patio
 ]
-console.log(rooms)
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -187,20 +263,43 @@ const pickKiller = () => {
   
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerImage').src = mystery.killer.image
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerAge').innerHTML = ` Age:${mystery.killer.age}`
+  document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
+
 }
 document.getElementById('killerCard').onclick = pickKiller
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
 
+  
+  document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
+  document.getElementById('weaponMortality').innerHTML = `Mortality: ${mystery.weapon.mortality}`
+ 
 }
 
 document.getElementById('weaponCard').onclick = pickWeapon
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+
+  document.getElementById('roomName').innerHTML = `${mystery.room.name}`
+  document.getElementById('roomCard').style.background = mystery.room.color
+  
+ 
+}
+
+document.getElementById('roomCard').onclick = pickRoom 
+
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+const revealMystery = () => {
+document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`
+}
+
+document.getElementById('revealMystery').onclick = revealMystery
