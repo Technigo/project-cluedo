@@ -141,6 +141,21 @@ const rooms = ['Dining Room',
   'Guest House',
   'Patio',]
 
+const adjectives = [
+  'bitter',
+  'clumsy',
+  'witty',
+  'dramatic',
+  'one of a kind',
+  'unformidable',
+  'clueless',
+  'sour',
+  'over-the-top',
+  'hopeless',
+  'laughable',
+  'mastermind'
+]
+
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
@@ -186,3 +201,9 @@ const pickRoom = () => {
 document.getElementById('roomCard').onclick = pickRoom
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+const thisMystery = document.getElementById('mystery')
+
+const revealMystery = () => {
+  thisMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} , room: ${mystery.rooms}, executed with a ${mystery.weapon.weight} lbs ${mystery.weapon.name}. ${mystery.weapon.fact}!`
+}
+document.getElementById('crimeButton').onclick = revealMystery
