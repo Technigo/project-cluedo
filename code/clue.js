@@ -1,23 +1,51 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+//*** SUSPECTS ***//
 
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
   color: 'green',
-  description: 'He has a lot of connections',
+  description: 'He is social',
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'plum',
+  description: 'He is shy',
+  age: 67,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
+
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'scarlet',
+  description: 'She is smart',
+  age: 32,
+  image: 'assets/scarlet.png',
+  occupation: 'Developer'
+}
+
+//*** WEAPONS ***//
 
 const rope = {
   name: 'rope',
   weight: 10
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const knife = {
+  name: 'knife',
+  weight: 2
+}
+
+const candlestick = {
+  name: 'candlestick',
+  weight: 4
+}
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
