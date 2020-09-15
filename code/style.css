@@ -1,18 +1,21 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
-  background-color:#a1d8f2;
+  background-color:#fff;
+  margin-bottom: 30px;
   
 }
 
 p {
   margin: 1px;
   font-weight: 300;
+  font-size:25px;
+  margin-bottom: 15px;;
   background-color: #fff;
 }
 
 h1 {
-  color: red;
+  margin-left: 20px;
 }
 
 
@@ -37,7 +40,6 @@ h1 {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background:#a1d8f2;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -49,33 +51,52 @@ h1 {
 .killer-deck {
   width: 250px;
   height: 400px;
-  
-  background-position: center;
+  background-color: #1a1b1c;
+  background-image: linear-gradient(160deg, #1a1b1c 0%, #0e4c9a 100%);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
   cursor: pointer;
+  -webkit-box-shadow: 0px 10px 19px 0px rgba(189,189,189,1);
+  -moz-box-shadow: 0px 10px 19px 0px rgba(189,189,189,1);
+  box-shadow: 0px 10px 19px 0px rgba(189,189,189,1);
+  transition-duration: 0.25s;
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background-color: #1a1b1c;
+  background-image: linear-gradient(160deg, #1a1b1c 0%, #0b4e25 100%);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
   cursor: pointer;
+  -webkit-box-shadow: 0px 10px 19px 0px rgba(189,189,189,1);
+  -moz-box-shadow: 0px 10px 19px 0px rgba(189,189,189,1);
+  box-shadow: 0px 10px 19px 0px rgba(189,189,189,1);
+  transition-duration: 0.25s;
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
+  background-color: #1a1b1c;
+  background-image: linear-gradient(160deg, #1a1b1c 0%, #ad1641 100%);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
   cursor: pointer;
+  -webkit-box-shadow: 0px 10px 19px 0px rgba(189,189,189,1);
+  -moz-box-shadow: 0px 10px 19px 0px rgba(189,189,189,1);
+  box-shadow: 0px 10px 19px 0px rgba(189,189,189,1);
+  transition-duration: 0.25s;
 }
+
+/* card hover */
+.killer-deck:hover, .weapon-deck:hover, .room-deck:hover{
+  transform: scale(1.1, 1.1);
+} 
 
 button {
   padding: 8px 16px;
@@ -86,26 +107,16 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  transition-duration: 0.75s;
 }
 
 button:hover {
-  transform: scale(0.9, 0.9);
+  transform: scale(1.2, 1.2);
+  
 }
 
 
 
-  /*Footer*/ 
-  
-  footer{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-    height: 100px;
-    margin-top: 40px;
-    background-color:#2a98c0;
-  }
-    
+
   
 

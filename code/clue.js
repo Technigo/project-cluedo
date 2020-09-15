@@ -7,7 +7,8 @@ const mrGreen = {
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur',
+  favouriteWeapon:'bat'
 }
 
 const professorPlum  = {
@@ -17,7 +18,9 @@ const professorPlum  = {
   description: 'bla bla bla ',
   age: 40,
   image: 'assets/plum.png',
-  occupation: 'Professor'
+  occupation: 'Professor',
+  favouriteWeapon:'rope'
+  
 }
 
 const missScarlet = {
@@ -27,7 +30,8 @@ const missScarlet = {
   description: 'People always underestimate her, they dont know her occupation',
   age: 35,
   image: 'assets/scarlet.png',
-  occupation: 'Undercover spy'
+  occupation: 'Undercover spy',
+  favouriteWeapon:'candlestick'
 }
 
 const mrsPeacock = {
@@ -37,7 +41,8 @@ const mrsPeacock = {
   description: 'She is very rich',
   age: 43,
   image: 'assets/peacock.png',
-  occupation: 'Interior Designer'
+  occupation: 'Interior Designer',
+  favouriteWeapon:'pistol'
 }
 
 const colonelMustard = {
@@ -47,7 +52,8 @@ const colonelMustard = {
   description: 'loves the military',
   age: 65,
   image: 'assets/mustard.png',
-  occupation: 'Retired'
+  occupation: 'Retired',
+  favouriteWeapon:'axe'
 }
 
 const mrsWhite = {
@@ -57,7 +63,8 @@ const mrsWhite = {
   description: 'She became a widower and got her freedom back',
   age: 63,
   image: 'assets/white.png',
-  occupation: 'travles the world'
+  occupation: 'travles the world',
+  favouriteWeapon:'poision'
 }
 
 //console log test 
@@ -120,6 +127,7 @@ const pistol = {
   name: 'pistol',
   weight: 8, 
   color: 'black'
+  
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -138,7 +146,7 @@ const suspects = [
 const weapons = [
 rope, 
 knife, 
-candleStick,
+candleStick ,
 dumbBell,
 poision,
 axe,
@@ -180,9 +188,9 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 
 let mystery = {
-  killer: suspects,
-  weapon: weapons,
-  room: rooms,
+  killer: null,
+  weapon: null,
+  room: null
 };
 
 
@@ -235,10 +243,32 @@ const pickRoom = () => {
   ).innerHTML = `${mystery.rooms}`
 }
 
+
+//Red level Shuffel favorite weapon 
+
+const shuffleFavouriteWeapon = () => {
+  favouriteWeapon = randomSelector(weapons)
+  document.getElementById(
+    'favouriteWeapon'
+  ).innerHTML = `${favoriteWeapon}`
+}
+
+
+
+
 //invoke function onclick
 document.getElementById('killerCard').onclick = pickKiller;
 document.getElementById('weaponCard').onclick = pickWeapon;
 document.getElementById('roomCard').onclick = pickRoom;
+
+
+
+
+
+
+
+
+
 
 
 
