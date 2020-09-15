@@ -2,14 +2,18 @@ body {
   margin: 0 auto;
   font-family: "Courier New", Courier, monospace;
   background-color: #2e263a;
-  /*line-height: 1.618em;*/
-  color:whitesmoke;
+  color:black;
 }
 
 header {
-  background-color: pink;
+  background-color: rgb(238, 228, 186);
   text-align: center;
   margin-bottom: 50px;
+}
+
+header h1 {
+  padding: 20px;
+  font-size: 36px;
 }
 
 p {
@@ -24,16 +28,33 @@ p {
 .cards {
   margin: auto;
   width: 90%;
-  /*height: 600px;*/
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
+.allCards {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 4px 6px grey;
+  margin-bottom: 10px;
+}
+
+.allCards:hover {
+  background-color: #3e8e41;
+}
+
+.allCards:active {
+  background-color: #3e8e41;
+  box-shadow: 3px 4px 5px #666;
+  transform: translateY(4px);
+}
+
 .killer-deck {
   width: 30%;
   height: 520px;
-  background: #000;
+  background: rgb(212, 9, 9);
   text-align: center;
   padding-top: 25px;
   border-radius: 16px;
@@ -42,7 +63,7 @@ p {
 .weapon-deck {
   width: 30%;
   height: 520px;
-  background: rgb(10, 53, 10);
+  background: rgb(56, 175, 211);
   text-align: center;
   padding-top: 25px;
   border-radius: 16px;
@@ -51,72 +72,96 @@ p {
 .room-deck {
   width: 30%;
   height: 520px;
-  background: midnightblue;
+  background: rgb(68, 68, 216);
   text-align: center;
   padding-top: 25px;
   border-radius: 16px;
 }
 
+img.questionmark  {
+  filter:sepia(100%);
+}
+
 /*BOUNCY LOADER*/
 .wrapper {
-  /*max-width: 50rem;*/
   width: 100%;
   text-align: center;
   margin-top: 30px;
 }
+
 .bouncing_ball {
   position: relative;
   width: 4rem;
   margin: 0 auto;
   height: 12rem;
 }
+
 .ball {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background:turquoise;
+  background: black;
   position: absolute;
   top: 0;
   animation: bounce 1s infinite;
 }
+
 @keyframes bounce {
   0% {
     top: 0;
     animation-timing-function: ease-in;
   }
+
   34% {
     height: 4rem;
     width: 4rem;
   }
+
   35% {
     top: 8rem;
     height: 3rem;
     width: 4.3rem;
     animation-timing-function: ease-out;
   }
+
   45% {
     height: 4rem;
     width: 4rem;
   }
+
   90% {
     top: 0;
   }
+
   100% {
     top: 0;
   }
 }
 
-/*ALL IS REVEALED BUTTON*/
+/*REVEAL MYSTERY BUTTON*/
 button {
   padding: 16px 16px;
-  background: crimson;
+  background: rgb(238, 228, 186);
   border: none;
   font-size: 20px;
+  font-weight: bolder;
   border-radius: 8px;
   margin: 0 50px;
   margin-bottom: 50px;
   font-family: 'Courier New', Courier, monospace;
   min-width: 30%;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 4px 6px grey;
+}
+
+button:hover {background-color: #3e8e41}
+
+button:active {
+  background-color: #3e8e41;
+  box-shadow: 3px 5px 5px #666;
+  transform: translateY(4px);
 }
 
 @media (max-width: 666px) {
@@ -131,7 +176,6 @@ button {
   }
 
   .wrapper {
-    /*max-width: 50rem;*/
     width: 100%;
     text-align: center;
     margin-top: 50px;
@@ -150,5 +194,4 @@ button {
   .room-deck {
     width: 90%;
   }
-
 }

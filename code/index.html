@@ -8,15 +8,12 @@
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
-
     <header>
       <h1>CLUEDO - who did it?</h1>
     </header>
-
     <section class="cards">
-
-      <article class="killer-deck" id="killerCard" onclick="pickKiller()">
-        <img id="killerImage" src="" height="100" />
+      <article class="killer-deck allCards" id="killerCard">
+        <img id="killerImage" src="./assets/questionmark (kopia 2).jpg" height="100" />
         <h3>KILLER<h3>
         <p id="killerName"></p>
         <p id="killerAge"></p>
@@ -24,32 +21,24 @@
         <p id="killerDescription"></p>
         <p id="favouriteWeapon"></p>
       </article>
-
-      <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
-        <img id="questionmark" src="./assets/questionmark (kopia 2).jpg" height="100" />
+      <article class="weapon-deck allCards" id="weaponCard">
+        <img id="questionmarkWeapon" class="questionmark" src="./assets/questionmark (kopia 2).jpg" height="100" />
         <h3>WEAPON</h3>
         <p id="weaponName"></p>
-        <!--<p id="weaponWeight"></p>-->
       </article>
-
-      <article class="room-deck" id="roomCard" onclick="pickRoom()">
-        <img id="questionmark" src="./assets/questionmark (kopia 2).jpg" height="100" />
+      <article class="room-deck allCards" id="roomCard">
+        <img id="questionmarkRoom" class="questionmark" src="./assets/questionmark (kopia 2).jpg" height="100" />
         <h3>ROOM</h3>
         <p id="roomName"></p>
       </article>
-
     </section>
-
     <div class="wrapper">
       <div id="loader" class="bouncing_ball">
         <div class="ball"></div>
     </div>
-
     <h1 id="mystery" class="mystery"></h1>
-
-    <button class="reveal" id="revealButton" onclick="revealMystery()">Reveal Mystery!</button> 
-    <button class="restart" id="playAgain" onclick="location.reload()">Play Again?</button>
-
+    <button class="reveal" id="revealButton" onclick="revealMystery()">REVEAL MYSTERY!</button> 
+    <button class="restart" id="playAgain" onclick="location.reload()">PLAY AGAIN?</button>
     <script src="clue.js"></script>
   </body>
 </html>
