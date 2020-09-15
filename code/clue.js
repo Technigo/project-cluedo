@@ -53,7 +53,7 @@ const colonelMustard = {
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: 'white',
+  color: 'whitesmoke',
   description: 'She knows the gossip',
   age: 52,
   image: 'assets/white.png',
@@ -63,66 +63,66 @@ const mrsWhite = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: 'rope',
+  name: 'Rope',
   weight: 10,
-  easilyOperated: false,
-  danger: 'medium',
+  danger: 'Medium',
+  color: '#ffff90'
 }
 
 const knife = {
-  name: 'knife',
+  name: 'Knife',
   weight: 0.5,
-  easilyOperated: true,
-  danger: 'high',
+  danger: 'High',
+  color: '#ff9090'
 }
 
 const candlestick = {
-  name: 'candlestick',
+  name: 'Candlestick',
   weight: 0.2,
-  easilyOperated: false,
-  danger: 'low',
+  danger: 'Low',
+  color: '#cef1b2'
 }
 
 const dumbbell = {
-  name: 'dumbbell',
+  name: 'Dumbbell',
   weight: 8,
-  easilyOperated: false,
-  danger: 'medium',
+  danger: 'Medium',
+  color: '#ffff90'
 }
 
 const poison = {
-  name: 'poison',
+  name: 'Poison',
   weight: 0.3,
-  easilyOperated: true,
-  danger: 'high',
+  danger: 'High',
+  color: '#ff9090'
 }
 
 const axe = {
-  name: 'axe',
+  name: 'Axe',
   weight: 5,
-  easilyOperated: false,
-  danger: 'high',
+  danger: 'High',
+  color: '#ff9090'
 }
 
 const bat = {
-  name: 'bat',
+  name: 'Bat',
   weight: 2,
-  easilyOperated: true,
-  danger: 'medium',
+  danger: 'Medium',
+  color: '#ffff90'
 }
 
 const trophy = {
-  name: 'trophy',
+  name: 'Trophy',
   weight: 3,
-  easilyOperated: true,
-  danger: 'medium',
+  danger: 'Medium',
+  color: '#ffff90'
 }
 
 const pistol = {
-  name: 'pistol',
+  name: 'Pistol',
   weight: 1,
-  easilyOperated: false,
-  danger: 'high',
+  danger: 'High',
+  color: '#ff9090'
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -151,21 +151,21 @@ const weapons = [
 ]
 
 const rooms = [
-  'dining room',
-  'conservatory',
-  'kitchen',
-  'study',
-  'library', 
-  'billiard room',
-  'lounge',
-  'ballroom',
-  'hall',
-  'spa',
-  'living room',
-  'observatory',
-  'theater',
-  'guest house',
-  'patio'
+  'Dining Room',
+  'Conservatory',
+  'Kitchen',
+  'Study',
+  'Library', 
+  'Billiard Room',
+  'Lounge',
+  'Ballroom',
+  'Hall',
+  'Spa',
+  'Living Room',
+  'Observatory',
+  'Theater',
+  'Guest House',
+  'Patio'
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
@@ -187,10 +187,46 @@ const pickKiller = () => {
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById(
     'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  ).innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById(
+    'killerAge'
+  ).innerHTML = `Age: ${mystery.killer.age}`
+  document.getElementById(
+    'killerOccupation'
+  ).innerHTML = `Occupation: ${mystery.killer.occupation}`
+  document.getElementById(
+    'killerImage'
+  ).src = mystery.killer.image
+  document.getElementById(
+    'killerDescription'
+  ).innerHTML = mystery.killer.description
 }
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+
+const pickWeapon = () => {  
+  mystery.weapon = randomSelector(weapons)
+
+  document.getElementById('weaponCard').style.background = mystery.weapon.color
+
+  document.getElementById(
+    'weaponName'
+  ).innerHTML = `Type: ${mystery.weapon.name}`
+  document.getElementById(
+    'weaponWeight'
+  ).innerHTML = `Weight: ${mystery.weapon.weight}kg`
+  document.getElementById(
+    'weaponDanger'
+  ).innerHTML = `Danger: ${mystery.weapon.danger}`
+}
+
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
+  document.getElementById(
+    'roomName'
+  ).innerHTML = mystery.room
+}
+
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
