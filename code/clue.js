@@ -129,15 +129,24 @@ console.log(msScarlett.firstName);
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
-const suspects = [
-  mrGreen,
-  mrsWhite
+const suspects = [mrGreen, professorPlum, msScarlett, mrsPeacock, colonelMustard, mrsWhite
+
+
   // ...  and the rest
 ]
 
-const weapons = []
+const weapons = [rope, knife, candleStick, dumbbell, poison, axe, bat, trophy, pistol];
 
-const rooms = []
+const rooms = ['Dining Room','Conservatory', 'Kitchen', 'Study','Library','Billiard Room','Lounge', 'Ballroom','Hall', 'Spa','Living Room', 
+'Observatory','Theater','Guest House','Patio'];
+
+console.log(suspects);
+console.log(weapons);
+console.log(rooms);
+console.log(suspects[0]);
+console.log(weapons[weapons.length-1]);
+console.log(rooms[rooms.length-1]);
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
