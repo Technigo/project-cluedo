@@ -8,6 +8,7 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
+  favouriteWeapon: 'bat',
 };
 
 const professorPlum = {
@@ -18,6 +19,7 @@ const professorPlum = {
   age: 35,
   image: 'assets/plum.png',
   occupation: 'Professor',
+  favouriteWeapon: 'knife',
 };
 const missScarlet = {
   firstName: 'Cassandra',
@@ -27,6 +29,7 @@ const missScarlet = {
   age: 27,
   image: 'assets/scarlet.png',
   occupation: 'Dancer',
+  favouriteWeapon: 'trophy',
 };
 
 const mrsPeacock = {
@@ -37,6 +40,7 @@ const mrsPeacock = {
   age: 45,
   image: 'assets/peacock.png',
   occupation: 'Housewife',
+  favouriteWeapon: 'rope',
 };
 
 const colonelMustard = {
@@ -47,6 +51,7 @@ const colonelMustard = {
   age: 70,
   image: 'assets/mustard.png',
   occupation: 'Colonel',
+  favouriteWeapon: 'pistol',
 };
 
 const mrsWhite = {
@@ -57,6 +62,7 @@ const mrsWhite = {
   age: 85,
   image: 'assets/white.png',
   occupation: 'Retired',
+  favouriteWeapon: 'candlestick',
 };
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
@@ -64,38 +70,47 @@ const mrsWhite = {
 const rope = {
   name: 'rope',
   weight: 2,
+  id: 'rope',
 };
 const knife = {
   name: 'knife',
   weight: 1,
+  id: 'knife',
 };
 const candlestick = {
   name: 'candlestick',
   weight: 5,
+  id: 'candlestick',
 };
 const dumbbell = {
   name: 'dumbbell',
   weight: 20,
+  id: 'dumbbell',
 };
 const poison = {
   name: 'poison',
   weight: 1,
+  id: 'poison',
 };
 const axe = {
   name: 'axe',
   weight: 10,
+  id: 'axe',
 };
 const bat = {
   name: 'bat',
   weight: 7,
+  id: 'bat',
 };
 const trophy = {
   name: 'trophy',
   weight: 15,
+  id: 'trophy',
 };
 const pistol = {
   name: 'pistol',
   weight: 5,
+  id: 'pistol',
 };
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -156,6 +171,11 @@ let mystery = {
   room: rooms,
 };
 
+//const shuffleFavouriteWeapon = () => {
+//  mystery.killer.favouriteWeapon = randomSelector(weapons);
+//};
+//console.log(shuffleFavouriteWeapon);
+
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
@@ -177,6 +197,9 @@ const pickKiller = () => {
   document.getElementById(
     'killerDescription'
   ).innerHTML = `${mystery.killer.description}`;
+  //document.getElementById(
+  //  'killerFavouriteWeapon'
+  //).innerHTML = `Favourite weapon: ${shuffleFavouriteWeapon}`;
 };
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
