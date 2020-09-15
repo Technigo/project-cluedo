@@ -57,6 +57,11 @@ p {
   background-image: url(./questionMark.PNG)
 }
 
+#mystery {
+  font-size: 30px;
+
+}
+
 button {
   padding: 8px 16px;
   background: crimson;
