@@ -10,6 +10,46 @@ const mrGreen = {
   occupation: 'Entrepreneur'
 }
 
+const mrMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'green',
+  description: 'He has a lot of connections',
+  age: 45,
+  image: 'assets/green.png',
+  occupation: 'Entrepreneur'
+}
+
+const mrPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'green',
+  description: 'He has a lot of connections',
+  age: 45,
+  image: 'assets/green.png',
+  occupation: 'Entrepreneur'
+}
+
+const mrsScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'green',
+  description: 'He has a lot of connections',
+  age: 45,
+  image: 'assets/green.png',
+  occupation: 'Entrepreneur'
+}
+
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'green',
+  description: 'He has a lot of connections',
+  age: 45,
+  image: 'assets/green.png',
+  occupation: 'Entrepreneur'
+}
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
