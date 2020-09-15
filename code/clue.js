@@ -5,9 +5,10 @@ const mrGreen = {
   lastName: 'Green',
   color: 'green',
   description: 'He has a lot of connections.',
-  age: 45,
+  age: 'Age: ' + 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Occupation: entrepreneur',
+  favouriteWeapon: 'Favourite weapon: knife'
 }
 
 const colonelMustard = {
@@ -15,9 +16,11 @@ const colonelMustard = {
   lastName: 'Mustard',
   color: 'yellow',
   description: 'He is an old-school military man.',
-  age: 62,
+  age: 'Age: ' + 62,
   image: 'assets/mustard.png',
-  occupation: 'Officer'
+  occupation: 'Occupation: officer',
+  favouriteWeapon: 'Favourite weapon: dumbbell'
+
 }
 
 const mrsPeacock = {
@@ -25,9 +28,11 @@ const mrsPeacock = {
   lastName: 'Peacock',
   color: 'blue',
   description: 'She has many secrets.',
-  age: 43,
+  age: 'Age: ' + 43,
   image: 'assets/peacock.png',
-  occupation: 'Artist'
+  occupation: 'Occupation: artist',
+  favouriteWeapon: 'Favourite weapon: candlestick'
+
 }
 
 const mrPlum = {
@@ -35,9 +40,11 @@ const mrPlum = {
   lastName: 'Plum',
   color: 'purple',
   description: 'He loves his bees.',
-  age: 29,
+  age: 'Age: ' + 29,
   image: 'assets/plum.png',
-  occupation: 'Biologist'
+  occupation: 'Occupation: biologist',
+  favouriteWeapon: 'Favourite weapon: poison'
+
 }
 
 const msScarlet = {
@@ -45,9 +52,11 @@ const msScarlet = {
   lastName: 'Scarlet',
   color: 'pink',
   description: 'She is super-smart.',
-  age: 26,
+  age: 'Age: ' + 26,
   image: 'assets/scarlet.png',
-  occupation: 'Journalist'
+  occupation: 'Occupation: journalist',
+  favouriteWeapon: 'Favourite weapon: bat'
+
 }
 
 const mrsWhite = {
@@ -55,9 +64,11 @@ const mrsWhite = {
   lastName: 'White',
   color: 'white',
   description: 'She is no old biddy.',
-  age: 62,
+  age: 'Age: ' + 62,
   image: 'assets/white.png',
-  occupation: 'Housekeeper'
+  occupation: 'Occupation: housekeeper',
+  favouriteWeapon: 'Favourite weapon: axe'
+
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
@@ -69,6 +80,7 @@ const rope = {
 
 const knife = {
   name: 'knife',
+  id: 'knife',
   weight: 5
 }
 
@@ -79,21 +91,25 @@ const candlestick = {
 
 const dumbbell = {
   name: 'dumbbell',
+  id: 'dumbbell',
   weight: 30
 }
 
 const poison = {
   name: 'poison',
+  id: 'poison',
   weight: 5
 }
 
 const axe = {
   name: 'axe',
+  id: 'axe',
   weight: 25
 }
 
 const bat = {
   name: 'bat',
+  id: 'bat',
   weight: 20
 }
 
@@ -134,20 +150,20 @@ const weapons = [
 
 
 const rooms = [
-  'diningRoom', 
+  'diningroom', 
   'conservatory', 
   'kitchen', 
   'study', 
   'library', 
-  'billiardRoom', 
+  'billiardroom', 
   'lounge', 
   'ballroom', 
   'hall', 
   'spa', 
-  'livingRoom', 
+  'livingroom', 
   'observatory', 
   'theatre', 
-  'guestHouse', 
+  'guesthouse', 
   'patio'
 ]
 
@@ -162,12 +178,24 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 
+// This will randomly select a killer from the suspects. And add that to the mystery object.
+
+/*let mystery = {
+  killer: suspects,
+  weapon: weapons,
+  room: rooms,
+};
+*/
+//console.log(mysteryObject)
+
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   document.getElementById("killerCard").innerHTML
   // This will randomly select a killer from the suspects. And add that to the mystery object.
+  //mystery.killer = randomSelector(suspects)
+  console.log(randomSelector(suspects));
   mystery.killer = randomSelector(suspects)
-  
+
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
@@ -175,7 +203,7 @@ const pickKiller = () => {
   document.getElementById('killerImage').src = mystery.killer.image
   document.getElementById('killerAge').innerHTML = `${mystery.killer.age}` 
   document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}` 
-  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}` 
+  document.getElementById('favouriteWeapon').innerHTML = `${mystery.killer.favouriteWeapon}` 
 
 }
 
@@ -188,14 +216,14 @@ const pickWeapon = () => {
   document.getElementById("weaponCard").innerHTML
   // This will randomly select a weapon from the weapon array. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
-  
+
 
   // This will change the background color of the card to the one connected to the chosen weapon and show the full name of the weapon. Feel free to add more things to show about the weapon.
   //document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
 }
 
-pickWeapon
+pickWeapon();
 
 // This function will be invoked when you click on the room card.
 const pickRoom = () => {
@@ -203,7 +231,7 @@ const pickRoom = () => {
 
   // This will randomly select a room from the room array. And add that to the mystery object.
   mystery.room = randomSelector(rooms)
-  
+
   
   // This will change the background color of the card to the one connected to the chosen weapon and show the full name of the weapon. Feel free to add more things to show about the weapon.
   //document.getElementById('roomCard').style.background = mystery.room.color
@@ -216,6 +244,8 @@ pickRoom();
 //STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 //'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = () => {
-  document.getElementById('revealButton').innerHTML = `"The murderar was committed by ${mystery.killer}, in the XX with a XX"`
+  document.getElementById('revealButton').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with the ${mystery.weapon.name}.`
 }
+
+console.log(mystery)
 
