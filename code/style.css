@@ -86,7 +86,7 @@ header img {
 .killer-deck img {
   width: 150px;
   height: auto;
- 
+
 }
 
 .wdeck {
@@ -100,16 +100,24 @@ header img {
 }
 
 .wdeck p{
-font-size: 20px;
+font-size: 13px;
 margin-bottom:0px;
+
+
+}
+
+.weapon-deck img {
+  width: auto;
+  height: 80px;
+  margin-top:20px;
+
 }
 
 .weapon-deck {
   width: 180px;
   height: 170px;
-  background: black;
-  text-align: center;
-  color: white;
+  background-image: linear-gradient(#4F100B, red);
+  color: black;
   padding-top: 30px;
   border-radius: 16px;
   margin-left: 50px;
@@ -129,10 +137,10 @@ margin-bottom:0px;
 .room-deck {
   width: 310px;
   height: 130px;
-  background: black;
+ background-image: linear-gradient(#4F100B, red);
   text-align: center;
   padding-top: 30px;
-  color: white;
+  color: black;
   border-radius: 16px;
   margin-left: 70px;
   margin-top: 10px;
@@ -152,10 +160,10 @@ h1 {
 }
 
 button {
+  font-weight: bold;
   padding: 8px 16px;
   font-size: 26px;
   color: black;
-  
   font-family: "Courier New", Courier, monospace;
   background-image: linear-gradient(red, black);
   border: inset black 2px;

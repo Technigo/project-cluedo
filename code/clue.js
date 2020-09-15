@@ -200,17 +200,22 @@ const pickWeapon = () => {
   // This will randomly select a weapon. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
 
-  const theWeapon = document.getElementById("weapon")
-  const theWeaponName = document.getElementById("weaponName")
-  const theWeaponWeight = document.getElementById("weaponWeight")
-  const theWeaponFeature = document.getElementById("weaponFeature")
   
+const theWeapon = document.getElementById("weapon")
+const theWeaponName = document.getElementById("weaponName")
+const theWeaponWeight = document.getElementById("weaponWeight")
+const theWeaponFeature = document.getElementById("weaponFeature")
+const theWeaponImage = document.getElementById("weaponImage")
 
-  theWeapon.style.background = mystery.weapon
-  theWeaponName.innerHTML = mystery.weapon.name
-  theWeaponWeight.innerHTML = mystery.weapon.weight
-  theWeaponFeature.innerHTML = mystery.weapon.feature
+
+theWeapon.style.background = mystery.weapon.color
+theWeaponName.innerHTML = mystery.weapon.name + " " + mystery.weapon.name
+theWeaponWeight.innerHTML = mystery.weapon.weight
+theWeaponFeature.innerHTML = mystery.weapon.feature
+theWeaponImage.setAttribute("src", mystery.weapon.image)
+
 }
+
 
 const pickRoom = () => {
   // This will randomly select a room. And add that to the mystery object.
