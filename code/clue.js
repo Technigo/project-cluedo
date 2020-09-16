@@ -103,59 +103,6 @@ const trophy = {
   weight: 300
 }
 
-const pistol = {
-  name: 'pistol',
-  weight: 400
-}
-
-
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
-const diningRoom = {
-}
-
-const conservatory = {
-}
-
-const kitchen = {
-}
-
-const study = {
-}
-
-const library = {
-}
-
-const billiardRoom = {
-}
-
-const lounge = {
-}
-
-const ballroom = {
-}
-
-const hall = {
-}
-
-const spa = {
-}
-
-const livingRoom = {
-}
-
-const observatory = {
-}
-
-const theater = {
-}
-
-const guestHouse = {
-}
-
-const patio = {
-}
-
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
@@ -180,21 +127,21 @@ const weapons = [
 ]
 
 const rooms = [
-  diningRoom,
-  conservatory,
-  kitchen,
-  study,
-  library,
-  billiardRoom,
-  lounge,
-  ballroom,
-  hall,
-  spa,
-  livingRoom,
-  observatory,
-  theater,
-  guestHouse,
-  patio
+  "diningRoom",
+  "conservatory",
+  "kitchen",
+  "study",
+  "library",
+  "billiardRoom",
+  "lounge",
+  "ballroom",
+  "hall",
+  "spa",
+  "livingRoom",
+  "observatory",
+  "theater",
+  "guestHouse",
+  "patio"
 ]
 
 console.log(mrGreen.description)
@@ -203,12 +150,6 @@ console.log(rope.weight)
 
 
 // STEP 2 - ARRAYS
-
-let suspects = ["mrGreen", "professorPlum", "missScarlet", "mrsPeacock", "coloneMustard", "mrsWhite"]
-
-let weapons = ["rope", "knife", "candlestick", "dumbbell", "poison", "axe", "bat", "trophy", "pistol"]
-
-let rooms = ["diningRoom", "conservatory", "kitchen", "study", "library", "billiardRoom", "lounge", "ballroom", "hall", "spa", "livingRoom", "observatory", "theater", "guestHouse", "patio"]
 
 console.log()
 
