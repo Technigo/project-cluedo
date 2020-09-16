@@ -3,7 +3,8 @@
 }
 
 .wrap {
-  margin: 20px;
+  padding: 20px;
+  background-color: #c44536;
 }
 
 .header {
@@ -11,16 +12,16 @@
   justify-content: center;
   justify-content: space-around;
   align-items: center;
+  padding-bottom: 30px;
 }
-
-
 
 .slogan {
   text-align: center;
   font-size: 45px;
   padding: 10px;
-  color: #8d0801;
+  color: white;
   font-family: 'Ranchers', cursive;
+  background-color: #c44536;
 }
 
 body {
@@ -34,15 +35,10 @@ p {
   background-color: #fff;
 }
 
-@media screen and (max-width:700px){
-  .cardContent {
-    font-size: 14px;
-  }
-}
-
 .killerIcon {
   margin-top: 60px;
   width: 50%;
+  fill: rgba(255,255,255,0.3);
 }
 
 .killerIcon.hide {
@@ -52,11 +48,13 @@ p {
 .weaponIcon {
   margin-top: 60px;
   width: 60%;
+  fill: rgba(255,255,255,0.3);
 }
 
 .roomIcon {
   margin-top: 70px;
   width: 70%;
+  fill: rgba(255,255,255,0.3);
 }
 
 .decktitle {
@@ -69,56 +67,98 @@ p {
 }
 
 .cards {
-  margin: 20px auto;
-  width: 90%;
-  height: 500px;
-  display: flex;
-  justify-content: space-around;
+  margin: 30px;
+  /* height: 500px; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
+  justify-items: center;
 }
 
-
-
-
 .killer-deck {
-  width: 250px;
+  max-width: 250px;
   height: 400px;
-  background: #99582a;
+  background: #ffd046;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
   border: solid 2px black;
-}
-
-@media screen and (max-width: 400px) {
-  .header {
-    flex-direction: column;
-  }
-  .cards {
-    flex-direction: column;
-    height: 1000px;
-  }
-  .cardContent {
-    font-size: 12px;
-  }
-  .reveal {
-    flex-direction: column;
-  }
-}
-
-@media screen and (min-width: 401px) and (max-width: 877px) {
-  .cards {
-    height: 400px;
-  }
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3) 
 }
 
 
-@media screen and (max-width: 878px) {
-  .killer-deck,
-  .weapon-deck,
-  .room-deck {
-    margin: 5px;
-  }
+.weapon-deck {
+  max-width: 250px;
+  height: 400px;
+  background-color: #008148;
+  text-align: center;
+  padding-top: 30px;
+  border-radius: 16px;
+  border: solid 2px black;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3) 
+}
+
+.room-deck {
+  max-width: 250px;
+  height: 400px;
+  background-color: #918ef4;
+  text-align: center;
+  padding-top: 30px;
+  border-radius: 16px;
+  border: solid 2px black;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3) 
+}
+
+button {
+  padding: 8px 16px;
+  background: #6f1d1b;
+  border: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 8px;
+  display: block;
+  margin: 20px auto;
+}
+
+.revealMessage {
+  font-size: 22px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* .revealMessage:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 20px solid transparent;
+	border-left-color: #bb9457;
+	border-right: 0;
+	border-top: 0;
+	margin-top: -10px;
+	margin-right: -20px;
+} */
+
+.reveal {
+  display: none;
+}
+
+.reveal.active {
+  display: grid;
+  margin: 30px auto;
+  max-width: 600px;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.detectiveImage {
+  width: auto;
+  margin-left: 30px;
 }
 
 .shakeX {
@@ -183,74 +223,39 @@ p {
   }
 }
 
-
-
-
-.weapon-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-  border: solid 2px black;
-
+@media screen and (max-width: 415px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .killer-deck,
+  .weapon-deck,
+  .room-deck {
+    margin-bottom: 8px;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .reveal {
+    margin-left: 20px;
+  }
+  .revealMessage {
+    font-size: 16px;
+    text-align: left;
+  }
+  .detectiveImage {
+    width: 100px;
+    height: auto;
+    margin-left: 0;
+  }
 }
 
-.room-deck {
-  width: 250px;
-  height: 400px;
-  background: #708d81;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-  border: solid 2px black;
-
+@media screen and (max-width: 768px) {
+  .cards {
+    margin: 25px 8px;
+  }
+  .killer-deck,
+  .weapon-deck,
+  .room-deck {
+    margin: inherit;
+  }
 }
-
-button {
-  padding: 8px 16px;
-  background: #6f1d1b;
-  border: none;
-  font-size: 20px;
-  color: white;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto;
-}
-
-.revealMessage {
-  font-size: 20px;
-  color: #432818;
-  text-align: center;
-  margin-bottom: 20px;
-  padding: 10px;
-  position: relative;
-	background: #bb9457;
-	border-radius: .4em;
-}
-
-.revealMessage:after {
-	content: '';
-	position: absolute;
-	right: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-left-color: #bb9457;
-	border-right: 0;
-	border-top: 0;
-	margin-top: -10px;
-	margin-right: -20px;
-}
-.reveal {
-  justify-content: flex-end;
-  margin-left: 70px;
-  display: none;
-}
-
-.reveal.active {
-  display: flex;
-}
-
