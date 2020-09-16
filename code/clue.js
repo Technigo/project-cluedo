@@ -194,7 +194,7 @@ let mystery = {
   room: '',
   weapon: ''
 }
-
+console.log(mystery)
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
@@ -225,9 +225,3 @@ document.getElementById('roomCard').onclick = pickRoom
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
-
-const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`)
-}
-
-document.querySelector('button').onclick = revealMystery
