@@ -7,7 +7,8 @@ const mrGreen = {
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur',
+  favoriteWeapon: 'knife'
 }
 
 const prPlum = {
@@ -17,7 +18,8 @@ const prPlum = {
   description: 'He is highly intelligent',
   age: 36,
   image: 'assets/plum.png',
-  occupation: 'Professor'
+  occupation: 'Professor',
+  favoriteWeapon: 'bat'
 }
 
 const msScarlet = {
@@ -27,7 +29,8 @@ const msScarlet = {
   description: 'She is always wearing red',
   age: 25,
   image: 'assets/scarlet.png',
-  occupation: 'Actress'
+  occupation: 'Actress',
+  favoriteWeapon: 'poison'
 }
 
 const mrsPeacock = {
@@ -37,7 +40,8 @@ const mrsPeacock = {
   description: 'She enjoys ballroom dancing',
   age: 32,
   image: 'assets/peacock.png',
-  occupation: 'Socialite'
+  occupation: 'Socialite',
+  favoriteWeapon: 'candlestick'
 }
 
 const colMustard = {
@@ -47,7 +51,8 @@ const colMustard = {
   description: 'He has a stiff right leg and walks with a limp',
   age: 60,
   image: 'assets/mustard.png',
-  occupation: 'Colonel'
+  occupation: 'Colonel',
+  favoriteWeapon: 'trophy'
 }
 
 const mrsWhite = {
@@ -57,54 +62,64 @@ const mrsWhite = {
   description: 'She likes her surroundings spotless',
   age: 70,
   image: 'assets/white.png',
-  occupation: 'Housekeeper'
+  occupation: 'Housekeeper',
+  favoriteWeapon: 'pistol'
 }
 
 // WEAPON OBJECTS
 
 const rope = {
   name: 'rope',
-  weight: 0.3
+  weight: 0.3,
+  id: 'rope'
 }
 
 const knife = {
   name: 'knife',
-  weight: 1
+  weight: 1,
+  id: 'knife'
 }
 
 const candlestick = {
   name: 'candlestick',
-  weight: 2
+  weight: 2,
+  id: 'candlestick'
 }
 
 const dumbbell = {
   name: 'dumbbell',
-  weight: 16
+  weight: 16,
+  id: 'dumbbell'
 }
 
 const poison = {
   name: 'poison',
-  weight: 0.2
+  weight: 0.2,
+  id: 'poison'
 }
 
 const axe = {
   name: 'axe',
-  weight: 7
+  weight: 7,
+  id: 'axe'
 }
 
 const bat = {
   name: 'bat',
-  weight: 3
+  weight: 3,
+  id: 'bat'
 }
 
 const trophy = {
   name: 'trophy',
-  weight: 15
+  weight: 15,
+  id: 'trophy'
 }
 
 const pistol = {
   name: 'pistol',
-  weight: 2
+  weight: 2,
+  id: 'pistol'
 }
 
 // ROOM VARIABLES
@@ -138,6 +153,14 @@ const roomTheather = 'Theater';
 const roomGuest = 'Guest House';
 
 const roomPatio = 'Patio';
+
+// OBJECT THAT KEEPS THE MYSTERY.
+
+let mystery = {
+  killer: '',
+  weapon: '',
+  room: ''
+}
 
 // ARRAYS OF ALL SUSPECTS, WEAPONS AND ROOMS
 
@@ -180,19 +203,11 @@ const rooms = [
   roomPatio
 ]
 
+
 // FUNCTION THAT RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT PASSES IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
-
-// OBJECT THAT KEEPS THE MYSTERY.
-
-let mystery = {
-  killer: '',
-  weapon: '',
-  room: ''
-}
-  
 
 // This function will be invoked when clicking on the killer card.
 const pickKiller = () => {
@@ -207,6 +222,8 @@ const pickKiller = () => {
   document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`;
   // Hides the first "side"/ p-tag of the card
   document.getElementById("start-view-card-killer").style.display = "none";
+
+  shuffleFavoriteWeapon();//calls the function to shuffle the favorite weapon for choosen killer
 }
 
 // Calling the pickKiller function
@@ -238,6 +255,13 @@ const pickRoom = () => {
 // Calling the pickRoom function
 document.getElementById("roomCard").onclick = pickRoom;
 
+// Function to shuffle the suspects favorite weapon
+
+const shuffleFavoriteWeapon = () => {
+  favoriteWeapon = weapons[Math.floor(Math.random() * weapons.length)]; //Picks a random weapon from the array and creates a favoriteWeapon object
+  mystery.killer.favoriteWeapon = favoriteWeapon.name;// Assigns the name of favoriteWeapon to choosen killers object
+  document.getElementById('favoriteWeapon').innerHTML = `Prefered weapon: ${mystery.killer.favoriteWeapon}`; //Prints favoriteweapon to card
+}
 
 // Function to reveal mystery when clicking the button
 const revealMystery = () => {
