@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href='https://fonts.googleapis.com/css?family=Candal' rel='stylesheet'>
     <link rel="stylesheet" href="style.css" />
     <title>Technigo Project Cluedo</title>
   </head>
+
+  <header>
+    <div>CLUE <span style="color:red">&</span> DO</div>
+  </header>
   <body>
     <section class="cards">
       <article class="killer-deck" id="killerCard">
@@ -14,23 +19,38 @@
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
+        <img id="killerImage" src="" height="250" />
         <p id="killerDescription"></p>
       </article>
       <article class="weapon-deck" id="weaponCard">
         <p>WEAPON</p>
         <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
+        <img id="weaponImage" src="" height="250" />
       </article>
       <article class="room-deck" id="roomCard">
         <p>ROOM</p>
         <p id="roomName"></p>
+        <img id="roomImage" src="" height="250" />
       </article>
     </section>
 
     <h1 id="mystery"></h1>
+    <button onclick="revealMystery()">REVEAL THE CRIME</button>
 
-    <button>REVEAL THE CRIME</button>
+    <footer>
+        <p>© 2020 Sofia Vaz Sousa 🦊</p>
+        <p>
+          <a href="https://www.linkedin.com/in/sofiavazsousa/">Linkedin</a>
+        |
+          <a href="https://github.com/sofiavazs" target="_blank">GitHub</a>
+        </p>
+          <img src="./logo.svg" alt="technigo logo" />
+        <p>Project developed during the Technigo frontend development bootcamp</p>
+        <p>
+          All vectors by
+          <a href="https://www.vecteezy.com/">Vecteezy</a> 
+        </p>
+    </footer>
 
     <script src="clue.js"></script>
   </body>

@@ -1,7 +1,16 @@
+header {
+  font-family: "Candal";
+  font-size: 75px;
+  color: #ffffff;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+}
+
 body {
   margin: 0;
   font-family: "didot";
-  font-size: 20px;
+  font-size: 15px;
   background-image: url(./assets/mystery.jpg);
   background-size: contain;
 }
@@ -10,7 +19,9 @@ p {
   margin: 1px;
   font-weight: 300;
   background-color: rgb(238, 238, 238);
+  margin-bottom: 20px;
 }
+
 
 .cards {
   margin: 50px auto;
@@ -55,6 +66,13 @@ p {
   border-radius: 16px;
 }
 
+h1 { 
+  font-weight: bold;
+  font-size: 30px;
+  font-family: "didot";
+  color: #ffffff;
+  text-align: center;
+}
 
 
 button {
@@ -71,4 +89,38 @@ button {
 button:hover {
   background:crimson;
   color: #fff;
+}
+
+ /* FOOTER */
+
+ footer {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0px;
+  margin-top: 50px;
+  background-color:#eef8fd;
+  width: 100%;
+}
+
+
+footer p {
+  width:100%;
+  text-align: center;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  background-color:#eef8fd ;
+  margin:6px;
+}
+
+a:link{
+  color: orange;
+}
+a:visited { 
+  color: #050505; 
+}
+
+footer img {
+  width: 50px;
 }
