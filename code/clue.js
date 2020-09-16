@@ -52,12 +52,56 @@ const mrGreen = {
     age: 70,
     occupation: 'Housekeeper'
   }
+
+ 
+
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
+  weight: 8
+}
+
+const knife = {
+  name: 'knife',
+  weight: 2
+}
+
+const candlestick = {
+  name: 'candlestick',
+  weight: 4
+}
+
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 8
+}
+
+const poision = {
+name: 'poison',
+weight: 1
+}
+
+const axe = {
+  name: 'axe',
+  weight: 12
+}
+
+const bat = {
+  name: 'bat',
   weight: 10
 }
+
+const trophy = {
+  name: 'trophy',
+  weight: 8
+}
+
+const pistol = {
+  name: 'pistol',
+  weight: 8
+}
+
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -65,13 +109,42 @@ const rope = {
 
 const suspects = [
   mrGreen,
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
   mrsWhite
-  // ...  and the rest
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+]
 
-const rooms = []
+const rooms = [
+  diningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballroom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  guestHouse,
+  patio
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
