@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  color: '#0b6623',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -13,7 +13,7 @@ const mrGreen = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'purple',
+  color: '#4e1245',
   description: 'He is a quick witted person',
   age: 43,
   image: 'assets/plum.png',
@@ -23,7 +23,7 @@ const professorPlum = {
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'red',
+  color: '#bc0000',
   description: 'She is a sassy femme fatale',
   age: 28,
   image: 'assets/scarlet.png',
@@ -33,7 +33,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: 'blue',
+  color: '#111e6c',
   description: 'She is an intellectual and well dressed woman',
   age: 55,
   image: 'assets/peacock.png',
@@ -43,7 +43,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'yellow',
+  color: '#e1ad01',
   description: 'He is a dapper ex military man',
   age: 60,
   image: 'assets/mustard.png',
@@ -53,7 +53,7 @@ const colonelMustard = {
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: 'white',
+  color: '#e8e8e8',
   description: 'She is a widow and a long serving cleaner',
   age: 67,
   image: 'assets/white.png',
@@ -65,13 +65,13 @@ const mrsWhite = {
 const rope = {
   name: 'rope',
   weight: 10,
-  image: 'assets/rope.png'
+  image: 'assets/rope2.png'
 };
 
 const knife = {
   name: 'knife',
   weight: 15,
-  image: 'assets/knife.png'
+  image: 'assets/knife2.png'
 };
 
 const candlestick = {
@@ -83,37 +83,37 @@ const candlestick = {
 const dumbbell = {
   name: 'dumbbell',
   weight: 40,
-  image: 'assets/dumbbell.png'
+  image: 'assets/dumbbell2.png'
 };
 
 const poison = {
   name: 'poison',
   weight: 5,
-  image: 'assets/poison.png'
+  image: 'assets/poison2.png'
 };
 
 const axe = {
   name: 'axe',
   weight: 35,
-  image: 'assets/axe.png'
+  image: 'assets/axe2.png'
 };
 
 const bat = {
   name: 'bat',
   weight: 30,
-  image: 'assets/bat.png'
+  image: 'assets/bat2.png'
 };
 
 const trophy = {  
   name: 'trophy',
   weight: 10,
-  image: 'assets/trophy.png'
+  image: 'assets/trophy2.png'
 };
 
 const pistol = {
   name: 'pistol',
   weight: 25,
-  image: 'assets/pistol.png'
+  image: 'assets/pistol2.png'
 };
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -190,5 +190,7 @@ const pickRoom = () => {
 }
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
-
+const revealMystery = () => {
+  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with the ${mystery.weapon.name}`
+}
 

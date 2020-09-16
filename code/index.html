@@ -4,22 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
+    <header class="header">
+      <h1>Cl<span class="red-text">u</span>edo</h1>
+      <h2>The classic who dunnit?</h2>
+    </header>
     <section class="cards">
       <article class="killer-deck" id="killerCard" onclick=pickKiller()>
         <p>KILLER</p>
+        <img id="killerImage" class="killer-image" src="" height="100" />
         <p id="killerName"></p>
+        
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
+        
         <p id="killerDescription"></p>
       </article>
       <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
         <p>WEAPON</p>
-        <div class="image-div"><img id="weaponImage" src="" height="100" /></div>
+        <div class="weapon-img-div">
+          <img id="weaponImage" src="" height="80" />
+        </div>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
       </article>
@@ -28,13 +37,9 @@
         <p id="roomName"></p>
       </article>
     </section>
-
-    <h1 id="mystery"></h1>
-
-    <button onclick="revealMystery()">REVEAL THE CRIME</button>
-
-    <section class="reveal">
-      <p id=revealText></p>
+    <section class="reveal-section">
+      <h2 id="mystery" class="reveal-text"></h2>
+      <button onclick="revealMystery()">REVEAL THE CRIME</button>
     </section>
 
     <script src="clue.js"></script>
