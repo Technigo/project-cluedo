@@ -261,8 +261,10 @@ const delayedPickRoom = () => {
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
-  document.getElementById('restartButton').style.display = 'block';
+  if (mystery.killer !== undefined && mystery.weapon !== undefined && mystery.room !== undefined) { //Check that all cards have been clicked before revealing the mystery
+    document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
+    document.getElementById('restartButton').style.display = 'block';
+  }
 };
 
 // Function to Restart the game
