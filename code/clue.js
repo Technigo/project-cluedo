@@ -6,7 +6,7 @@ const mrGreen = {
   color: 'green',
   description: 'He has a lot of connections',
   age: 45,
-  image: 'assets/green.png',
+  image: 'assets/mr_green.jpg',
   occupation: 'Entrepreneur'
 }
 
@@ -16,7 +16,7 @@ const colMustard = {
   color: 'yellow',
   description: 'He is a dignified and dangerous military man',
   age: 60,
-  image: 'assets/mustard.png',
+  image: 'assets/col_mustard.jpg',
   occupation: 'Colonel'
 }
 
@@ -26,18 +26,18 @@ const msScarlett = {
   color: 'red',
   description: 'She is a femme fatale.',
   age: 25,
-  image: 'assets/scarlet.png',
+  image: 'assets/ms_scarlett.jpg',
   occupation: 'Actress'
 }
 
 const mrsWhite = {
-  firstName: 'Diane',
+  firstName: 'Jim',
   lastName: 'White',
   color: 'white',
-  description: 'She is a dominant housekeeper.',
+  description: 'He is a dominant butler.',
   age: 65,
-  image: 'assets/white.png',
-  occupation: 'Housekeeper'
+  image: 'assets/mr_white.jpg',
+  occupation: 'Butler'
 }
 
 const mrsPeacock = {
@@ -46,17 +46,17 @@ const mrsPeacock = {
   color: 'blue',
   description: 'She is an elegant and classy aristocrat.',
   age: 42,
-  image: 'assets/peacock.png',
+  image: 'assets/mrs_peacock.jpg',
   occupation: 'Socialite'
 }
 
 const profPlum = {
-  firstName: 'Victor',
+  firstName: 'Henrietta',
   lastName: 'Plum',
   color: 'purple',
-  description: 'He is a quick witted professor with a dubious past',
+  description: 'She is a quick witted professor with a dubious past',
   age: 46,
-  image: './assets/plum.png',
+  image: './assets/prof_plum.jpg',
   occupation: 'Professor'
 }
 
@@ -101,34 +101,42 @@ const wrench = {
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 const ballroom = {
+  name: "bßallroom",
   image: 'assets/ballroom.jpg'
 }
 
 const billiardRoom = {
+  name: "billiard room",
   image: 'assets/billiard_room.jpg'
 }
 
 const conservatory = {
+  name: "conservatory",
   image: 'assets/conservatory.jpg'
 }
 
 const kitchen = {
+  name: "kitchen",
   image: 'assets/kitchen.jpg'
 }
 
 const diningRoom = {
+  name: "dining room",
   image: 'assets/dining_room.jpg'
 }
 
 const library = {
+  name: "library",
   image: 'assets/kitchen.jpg'
 }
 
 const study = {
+  name: "study",
   image: 'assets/study.jpg'
 }
 
 const hall = {
+  name: "hall",
   image: 'assets/hall.jpg'
 }
 
@@ -194,22 +202,23 @@ const pickKiller = () => {
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerImage').src = mystery.killer.image;
+  
 };
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
-  document.getElementById(
-    'weaponImage'
-  ).src = mystery.weapon.image;
+  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
+  document.getElementById('weaponImage').src = mystery.weapon.image;
 }
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
+  document.getElementById('roomName').innerHTML = `${mystery.room.name}`
+  document.getElementById('roomImage').src = mystery.room.image;
 }
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'

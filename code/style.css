@@ -12,7 +12,9 @@ p {
 
 header{
   display: flex;
+  color: #fff;
   justify-content: center;
+  text-align: center;
 }
 
 .title {
@@ -62,7 +64,7 @@ header{
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: white;
+  background: lightgray;
   text-align: center;
   padding-top: 30px;
   border-radius: 10px;
