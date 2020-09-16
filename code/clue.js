@@ -1,3 +1,18 @@
+//LAYOUT MODIFICATIONS ON PAGE LOAD//
+
+//Makes the frontside of the card decks visible when loading the page.
+document.getElementById('killerCard').classList.add("active");
+document.getElementById('weaponCard').classList.add("active");
+document.getElementById('roomCard').classList.add("active");
+
+document.getElementById('weaponInner').classList.add("front");
+document.getElementById('killerInner').classList.add("front");
+document.getElementById('roomInner').classList.add("front");
+
+//Hides the mystery-revealing div when loading the page.
+document.getElementById('revealedMystery').classList.add('invisible');
+
+
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
 const mrGreen = {
@@ -60,13 +75,6 @@ const profPlum = {
   occupation: 'Professor'
 }
 
-// console.log(mrGreen.firstName);
-// console.log(mrsWhite.lastName);
-// console.log(missScarlet.color);
-// console.log(colonelMustard.description);
-// console.log(mrsPeacock.age);
-// console.log(profPlum.occupation);
-
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
@@ -106,12 +114,7 @@ const wrench = {
   material: 'stainless steel'
 };
 
-// console.log(rope.name);
-// console.log(candlestick.weight);
-// console.log(revolver.material);
-// console.log(leadPipe.name);
-// console.log(dagger.weight);
-// console.log(wrench.material);
+
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -158,13 +161,8 @@ const rooms = [
   diningRoom
 ]
 
-// console.log(rooms);
-// console.log(weapons);
-// console.log(suspects);
 
-// console.log(rooms[0]);
-// console.log(weapons[4]);
-// console.log(suspects[suspects.length-1])
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
@@ -180,16 +178,24 @@ const mystery = {
   weapon: null,
   room: null
 };
-// console.log(mystery.killer)
-// console.log(mystery.weapon)
 
-// This function will be invoked when you click on the killer card.
+
+//FUNCTIONS THAT WILL BE INVOKED WHEN YOU CLICK ON THE CARD DECKS
+
+// 1. for the killer card deck.
+
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color;
+  document.getElementById('killerInner').style.background = mystery.killer.color;
+
+  //This will remove the card fronzside styling.
+  document.getElementById('killerCard').classList.remove('active');
+  document.getElementById('killerInner').classList.remove('front');
+  document.getElementById('killerInner').classList.add('back');
+
   document.getElementById(
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
@@ -200,29 +206,51 @@ const pickKiller = () => {
     'killerDescription').innerHTML = `${mystery.killer.description}`;
 };
 
-document.getElementById('killerCard').onclick = pickKiller;
-// console.log(mystery.killer)
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+// 2. for the weapon card deck.
+
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
 
+  //This will remove the card frontside styling.
+  document.getElementById('weaponCard').classList.remove('active');
+  document.getElementById('weaponInner').classList.remove('front');
+  document.getElementById('weaponInner').classList.add('back');
+
+
+  //Show information about the picked weapon.
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
   document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}`;
   document.getElementById('weaponMaterial').innerHTML = `${mystery.weapon.material}`;
 };
 
-document.getElementById('weaponCard').onclick = pickWeapon;
-// console.log(mystery.weapon)
+
+//3. for the room card deck.
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms);
 
+  //This will remove the card frontside styling.
+  document.getElementById('roomCard').classList.remove('active');
+  document.getElementById('roomInner').classList.remove('front');
+  document.getElementById('roomInner').classList.add('back');
+
+  //Show the name opf the picked room
   document.getElementById('roomName').innerHTML = `${mystery.room}`;
 };
 
+
+//CALLING THE THREE CARD DECK FUNCTIONS
+
+document.getElementById('weaponCard').onclick = pickWeapon;
+// console.log(mystery.weapon)
+
+document.getElementById('killerCard').onclick = pickKiller;
+// console.log(mystery.killer)
+
 document.getElementById('roomCard').onclick = pickRoom;
 // console.log(mystery.room)
+
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
@@ -230,9 +258,14 @@ document.getElementById('roomCard').onclick = pickRoom;
 const revealMystery = () => {
   // console.log(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} 
   // in the ${mystery.room} with a ${mystery.weapon.name}.`)
+  if (mystery.killer !== null && mystery.weapon !== null && mystery.room !== null) {
+  document.getElementById('revealedMystery').classList.remove('invisible');
+  }
   document.getElementById('revealedMystery').innerHTML = 
   `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} 
   in the ${mystery.room} with a ${mystery.weapon.name}.`;
 }
 
 document.getElementById('revealButton').onclick = revealMystery;
+
+

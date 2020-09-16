@@ -1,49 +1,90 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: Girassol;
+}
+
+.main {
+  background-image: url(./castleroom.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0px 200px 0px;
 }
 
 p {
   margin: 1px;
   font-weight: 300;
-  background-color: #fff;
 }
 
 .cards {
-  margin: 50px auto;
+  margin: 0px auto;
+  padding: 50px 0px;
   width: 90%;
-  height: 600px;
-  background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
+
 .killer-deck {
   width: 250px;
-  height: 400px;
-  background: #000;
-  text-align: center;
-  padding-top: 30px;
+  height: 430px;
   border-radius: 16px;
+  background-color: rgb(249,241,233);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .weapon-deck {
   width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
-  text-align: center;
-  padding-top: 30px;
+  height: 430px;
+  background-color: rgb(249,241,233);
   border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-inner {
+  width: 230px;
+  height: 410px;
+  text-align: center;
+  border-radius: 16px;
+  border: 2px solid brown;
 }
 
 .room-deck {
   width: 250px;
-  height: 400px;
-  background: midnightblue;
+  height: 430px;
+  background-color: rgb(249,241,233);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+/*THE MYTERY REVEALING SECTION*/
+
+.revealing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .revealing div {
+  margin-top: 30px;
+  background-color: rgba(255,255,255,0.7);
   text-align: center;
-  padding-top: 30px;
+  border: 1px solid white;
+  border-radius: 16px;
+} */
+
+.revealing p {
+  padding: 20px;
+  margin-top: 30px;
+  background-color: rgba(255,255,255,0.7);
+  border: 1px solid white;
   border-radius: 16px;
 }
 
@@ -51,8 +92,83 @@ button {
   padding: 8px 16px;
   background: crimson;
   border: none;
+  font-family: Girassol;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+/*Classes that get removed from the card decks when clicking on them*/
+
+.active {
+  background: url(./pattern.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 38px;
+}
+
+.front h1 {
+  font-weight: 300;
+}
+
+.back h1 {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.back img {
+  margin: 30px;
+}
+
+/*Classes that get activated when clicking on the reveal-button*/
+
+.invisible {
+display: none;
+}
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 1025px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  .main {
+    background-size: cover;
+    padding: 0 0 100px 0;
+  }
+
+  .weapon-deck {
+    margin: 30px 0;
+  }
+}
+
+@media (min-width: 668px) and (max-width: 1024px) {
+  .main {
+    display: flex;
+  }
+
+  .cards {
+    margin: 0 20px 0 20px;
+  }
+
+  .revealing {
+    padding-right: 170px;
+    padding-bottom: 100px;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 667px) {
+  .revealing p {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
