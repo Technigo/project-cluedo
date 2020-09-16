@@ -4,13 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica+SC&family=Josefin+Sans&family=Nosifer&family=Scope+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
+   <section class="main-wrapper">
+    <header class="header">
+      <section class="header-content">
+        <h1 class="title-heading">
+          Cluedo
+        </h1>
+        <blockquote class="title-quote">
+          Can you solve the murder-mystery?
+        </blockquote>
+      </section>
+    </header>
     <section class="cards">
-      <article class="killer-deck" onclick="pickKiller()" id="killerCard">
-        <p>KILLER</p>
+      <article class="killer-deck" id="killerCard"> 
+        <!-- I removed onclick="pickKiller()" from article above and instead added in JS below pickKiller-function:  document.getElementById('killerCard').addEventListener('click', pickKiller); -->
+        <p class="card-title">KILLER</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
@@ -18,26 +31,31 @@
         <p id="killerDescription"></p>
       </article>
 
-      <article class="weapon-deck" onclick="pickWeapon()" id="weaponCard">
-        <p>WEAPON</p>
+      <article class="weapon-deck" " id="weaponCard">
+        <!-- Removed: onclick="pickWeapon() & put eventlistener in JS -->
+        <p class="card-title">WEAPON</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
         <p id="weaponFlexibility"></p>
         <img id="weaponImage" src="" height="100" />
       </article>
 
-      <article class="room-deck" onclick="pickRoom()" id="roomCard">
-        <p>ROOM</p>
+      <article class="room-deck" id="roomCard">
+        <!-- Removed: onclick="pickRoom()" & put eventlistener in JS instead -->
+        <p class="card-title">ROOM</p>
         <p id="roomName"></p>
         <img id="roomImage" src="" height="100" />
       </article>
     </section>
 
-    <h1 id="mystery"></h1>
+    <h1 class="mystery-heading" id="mystery"></h1>
 
     <button onclick="revealMystery(mystery)">
       REVEAL THE CRIME
     </button>
+  </section> 
+
+    <!-- Maybe put another button here that says "Play again?" that only shows after the reveal-button has been clicked? Should I make a pseudo-class in CSS also (or instead?) that shows/hides this new button which I control with JS? Hmmm...-->
 
     <script src="clue.js"></script>
   </body>

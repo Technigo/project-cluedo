@@ -3,35 +3,73 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
+.main-wrapper {
+  background-image: url("assets/main-wrapper-background.jpg");
+  background-position: center; /* Center the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  padding: 40px;
+  height: 100vh;
+}
+
+.header-content {
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.title-heading {
+  margin: 0;
+  font-family: 'IM Fell DW Pica SC', serif;
+  /* font-family: 'Nosifer', cursive; */
+  font-size: 72px;
+  color: #fff;
+}
+
+.title-quote {
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #fff;
+}
+
 p {
+  font-family: 'Josefin Sans', sans-serif;
   margin: 1px;
   font-weight: 300;
   background-color: #fff;
 }
 
+.card-title {
+  font-family: 'IM Fell DW Pica SC', serif;
+  color: #fff;
+}
+
 .cards {
-  margin: 50px auto;
+  margin: 15px auto;
   width: 90%;
-  height: 600px;
-  background: #ccc;
+  height: 500px;
+  background: rgba(204,204,204,0.4);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 16px;
 }
 
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: #7a5948;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: ;
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: #59a578;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -40,11 +78,31 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
+  background: #6b91ba;
 
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+}
+
+.cards article,
+button {
+-webkit-box-shadow: 6px 6px 20px 0px rgba(36,36,36,1);
+-moz-box-shadow: 6px 6px 20px 0px rgba(36,36,36,1);
+box-shadow: 6px 6px 20px 0px rgba(36,36,36,1);
+}
+
+article p {
+  background: none;
+}
+
+.mystery-heading {
+  font-family: 'IM Fell DW Pica SC', serif;
+  font-size: 48px;
+  height: 60px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 3px 2px 3px rgb(36, 36, 36);
 }
 
 button {

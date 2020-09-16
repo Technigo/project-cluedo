@@ -2,117 +2,132 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  color: '#2f6a49',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur',
+  favouriteWeapon: 'knife'
 };
 
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'plum',
+  color: '#7b497f',
   description: 'He is a bit whimsical and odd.',
   age: 53,
   image: 'assets/plum.png',
-  occupation: 'Professor'
+  occupation: 'Professor',
+  favouriteWeapon: 'axe' 
 };
 
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'red',
+  color: '#9b2c15',
   description: 'She is strong and mysterious',
   age: 41,
   image: 'assets/scarlet.png',
-  occupation: 'Superhero'
+  occupation: 'Superhero',
+  favouriteWeapon: 'dumbBell'
 };
 
 const mrsPeacock = {
   firstName: 'Elanor',
   lastName: 'Peacock',
-  color: 'blue',
+  color: '#04b7d3',
   description: 'A real socialite.',
   age: 52,
   image: 'assets/peacock.png',
-  occupation: 'Headhunter'
+  occupation: 'Headhunter',
+  favouriteWeapon: 'poison'
 };
 
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'mustard',
+  color: '#d1a93c',
   description: 'He is fascinated by weapons.',
   age: 66,
   image: 'assets/mustard.png',
-  occupation: 'Colonel'
+  occupation: 'Colonel',
+  favouriteWeapon: 'pistol'
 };
 
 const mrsWhite = {
   firstName: 'Lily',
   lastName: 'White',
-  color: 'white',
+  color: '#ddafd9',
   description: 'She is quite strict and knows how to get things done.',
   age: 68,
   image: 'assets/white.png',
-  occupation: 'Retired project manager'
+  occupation: 'Retired project manager',
+  favouriteWeapon: 'candleStick'
 };
 
 //CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: 'rope',
+  name: 'a rope',
   weight: 10,
-  flexibility: 3
+  flexibility: 3,
+  color: '#7f4d33'
 };
 
 const knife = {
-  name: 'knife',
+  name: 'a knife',
   weight: 1,
-  flexibility: 9
+  flexibility: 9,
+  color: '#2f6a49'
 };
 
 const candleStick = {
-  name: 'candle stick',
+  name: 'a candle stick',
   weight: 2,
-  flexibility: 7
+  flexibility: 7,
+  color: '#ddafd9'
 };
 
 const dumbBell = {
-  name: 'dumbbell',
+  name: 'a dumbbell',
   weight: 20,
-  flexibility: 6
+  flexibility: 6,
+  color: '#9b2c15'
 };
 
 const poison = {
   name: 'poison',
   weight: 0,
-  flexibility: 10
+  flexibility: 10,
+  color: '#04b7d3'
 };
 
 const axe = {
-  name: 'axe',
+  name: 'an axe',
   weight: 12,
-  flexibility: 3
+  flexibility: 3,
+  color: '#7b497f'
 };
 
 const bat = {
-  name: 'bat',
+  name: 'a bat',
   weight: 3,
-  flexibility: 7
+  flexibility: 7,
+  color: '#abb782'
 };
 
 const trophy = {
-  name: 'trophy',
+  name: 'a trophy',
   weight: 5,
-  flexibility: 3
+  flexibility: 3,
+  color: '#fce853'
 };
 
 const pistol = {
-  name: 'pistol',
+  name: ' a pistol',
   weight: 1,
-  flexibility: 9
+  flexibility: 9,
+  color: '#d1a93c'
 };
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -205,7 +220,7 @@ console.log(rooms.length); //writes 15 in console
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => { //I don't understand the syntax of this function. I could not have written it myself.
-  return array[Math.floor(Math.random() * array.length)] //What does array.length do here?
+  return array[Math.floor(Math.random() * array.length)] //What does array.length do here? I know length is the length of the array but not why it is in the function.
 }
 console.log(randomSelector(rooms)); //prints random room/suspect/weapon
 
@@ -231,31 +246,41 @@ const pickKiller = () => {
   document.getElementById('killerDescription').innerHTML = `Description: ${mystery.killer.description}`
   document.getElementById('killerImage').src = `${mystery.killer.image}`
 }
+//Added eventlistener below instead of "onclick" in HTML. Don't know which way is the best way to do it. This only works if the eventlistener is outside of the function. First param: type of event. Second param: the function to call on event.
+document.getElementById('killerCard').addEventListener('click', pickKiller);
 //pickKiller();
 //console.log(mystery.killer); //Why does this return undefined in the console, but still it changes the first card in the browser and shows all the info about random killer above!?
 //console.log(`pickKiller.mystery.killer : ${pickKiller.mystery.killer}`); //Trying what Van did at the lecture, @about 18 min in, but doeasn't work?!?
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+//If pickKiller function is excecuted/card is clicked then do this function pickWeapon:
 const pickWeapon = () => {
   //Randomly select a weapon from weapons and add it to the mystery object
   mystery.weapon = randomSelector(weapons);
+  document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
   document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`
   document.getElementById('weaponFlexibility').innerHTML = `Flexibility: ${mystery.weapon.flexibility}`
   //Add image here for weapon-card later
+  //Add colour to each weapon also?
 }
+document.getElementById('weaponCard').addEventListener('click', pickWeapon);
 
+//Add something that makes this: If pickKiller AND pickWeapon function is excecuted/cards are clicked then do this function on the pickroom:
 const pickRoom = () => {
   //Randomly select a room from rooms and add it to the mystery object
   mystery.room = randomSelector(rooms);
   document.getElementById('roomName').innerHTML = `${mystery.room}`
   //Add image here for room-card later
 }
+document.getElementById('roomCard').addEventListener('click', pickRoom);
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
+//If 
 const revealMystery = (mystery) => {
   //Invoke when button in html is clicked and show elements from mystery object in text.
-document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} in the ${mystery.room} with a ${mystery.weapon.name}` 
+  //Put also some kind of if-statement(?) here that conditions this to reveal ONLY if the three cards above has been clicked.
+document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} in the ${mystery.room} with ${mystery.weapon.name}` 
 }
