@@ -100,13 +100,13 @@ const dumbbell = {
 const poison = {
   name: 'poison',
   id: 'poison',
-  weight: 1
+  weight: 1.5
 }
 
 const axe = {
   name: 'axe',
   id: 'axe',
-  weight: 20
+  weight: 8
 }
 
 const bat = {
