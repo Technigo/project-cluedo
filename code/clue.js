@@ -297,4 +297,4 @@ document.getElementById('reveal').onclick = revealMystery;
 // Function to Restart the game
 const restart = () => {
   document.location.href = "";
-};
+};}
