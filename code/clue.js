@@ -85,7 +85,7 @@ const rooms = [
 'guestHouse', 
 'patio'];
 
-// Group OBJECTS (just suspects because i choosed to no give the weapons a discirption (not at least in this point)
+// Group OBJECTS (just 'suspects' because i choosed to no give the weapons a discirption (not at least in this point)
 
 const suspects = [
   mrGreen,
@@ -151,6 +151,9 @@ document.getElementById(
   ).addEventListener('click', pickRoom);
 
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
+// STEP 4 - CREATE A FUNCTION revealMystery 
 
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+const revealMystery = () => {
+  const killerAnnoncement = document.getElementById("revealButton").innerText;
+  document.getElementById("killerMessage").innerHTML = `The murder was committed by ${mrsPeacock.firstName} ${mrsPeacock.lastName}, in the ${rooms[2]} with a ${weapons[3]}.`;
+}
