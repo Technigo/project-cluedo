@@ -183,13 +183,23 @@ const shuffleFavouriteWeapon = () => {
   });
   
 }
-shuffleFavouriteWeapon();
-console.log(suspects[3].favouriteWeapon.name)
-// This function will be invoked when you click on the killer card.
 
-const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  
+  const showLoader = () => {
+  document.getElementById('killerLoader').style.display = 'block';
+  document.getElementById('killerHeadline').style.display = 'none';
+  document.getElementById('killerTitle').style.display = 'none';
+  document.getElementById('killerContent').style.display = 'none';
+  document.getElementById('killerDecoration').style.display = 'flex'
+  }
+  
+  const generateKiller = () => {
+    // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
+
+  document.getElementById('killerLoader').style.display = 'none';
+  document.getElementById('killerTitle').style.display = 'block';
+  document.getElementById('killerContent').style.display = 'block';
 
   //Changes the text and image depending on the mystery values
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
@@ -199,7 +209,6 @@ const pickKiller = () => {
 
   //This will style the killer card
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById('killerHeadline').style.display = 'none'
   document.getElementById('killerTitle').style.display = 'block'
   document.getElementById('killerDecoration').style.display = 'block'
   document.getElementById('killerDecoration').style.border = '0px'
@@ -225,6 +234,12 @@ const pickKiller = () => {
     }
 
   }
+}
+const pickKiller = () => {
+  // This function will be invoked when you click on the killer card.
+
+  showLoader();
+  setTimeout(generateKiller, 2000);
 }
 
 const pickWeapon = () => {
@@ -256,6 +271,7 @@ const revealMystery = () => {
   document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}, but the killers favourite weapon is actually ${mystery.killer.favouriteWeapon.name}`
 }
 
+shuffleFavouriteWeapon();
 document.getElementById('killerCard').onclick = pickKiller;
 document.getElementById('weaponCard').onclick = pickWeapon;
 document.getElementById('roomCard').onclick = pickRoom;
