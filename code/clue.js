@@ -9,7 +9,6 @@ const mrGreen = {
   image: './assets/green.png',
   occupation: 'Entrepreneur',
   favouriteWeapon: 'dumbbell'
-
 }
 
 const mrPlum = {
@@ -21,8 +20,8 @@ const mrPlum = {
   image: './assets/plum.png',
   occupation: 'Professor',
   favouriteWeapon: 'bat'
-
 }
+
 const msCassandra = {
   firstName: 'Scarlet',
   lastName: 'Cassandra',
@@ -32,8 +31,8 @@ const msCassandra = {
   image: './assets/scarlet.png',
   occupation: 'Coder',
   favouriteWeapon: 'trophy'
-
 }
+
 const mrMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
@@ -236,7 +235,21 @@ const pickWeapon = () => {
     document.querySelector('.weapon-deck').classList.remove('bounce');
     document.querySelector('.weapon-deck').classList.remove('shakeX');
     
-    mystery.weapon = randomSelector(weapons)
+    const favoriteWeapon = weapons.find((w) => {
+      return w.id === mystery.suspect.favouriteWeapon;
+    });
+
+    const weaponsCopy = [
+      ...weapons,
+      favoriteWeapon,
+      favoriteWeapon,
+      favoriteWeapon,
+      favoriteWeapon
+    ];
+
+    console.log(weaponsCopy);
+
+    mystery.weapon = randomSelector(weaponsCopy)
     // document.getElementById('weaponCard').style.background = mystery.killer.color
     document.getElementById('weaponName').innerHTML = `${mystery.weapon.name} of ${mystery.weapon.weight} pounds`
   }, 1500);
