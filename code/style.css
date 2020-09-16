@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
 }
-
 .wrap {
   padding: 20px;
   background-color: #c44536;
@@ -29,7 +28,7 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
-p {
+.cardContent {
   margin: 1px;
   font-weight: 300;
   background-color: #fff;
@@ -38,7 +37,7 @@ p {
 .killerIcon {
   margin-top: 60px;
   width: 50%;
-  fill: rgba(255,255,255,0.3);
+  fill: rgba(255,255,255,0.5);
 }
 
 .killerIcon.hide {
@@ -57,7 +56,7 @@ p {
   fill: rgba(255,255,255,0.3);
 }
 
-.decktitle {
+.deckTitle {
   background-color: #8d0801;
   color: white;
   font-weight: bold;
@@ -68,7 +67,6 @@ p {
 
 .cards {
   margin: 30px;
-  /* height: 500px; */
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
@@ -85,7 +83,6 @@ p {
   border: solid 2px black;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3) 
 }
-
 
 .weapon-deck {
   max-width: 250px;
@@ -127,7 +124,6 @@ button {
   margin-bottom: 20px;
   padding: 10px;
 }
-
 
 .reveal {
   display: none;
