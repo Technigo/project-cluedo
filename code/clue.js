@@ -212,7 +212,7 @@ const pickKiller = (loadID) => {
       document.getElementById('killerFavouriteWeapon').innerHTML = `Preferred weapon: ${mystery.killer.favouriteWeapon}` //red level to check that the fav-weap changes by using function "shuffleFavouriteWeapon"
       document.getElementById('killerImage').src = mystery.killer.image;
       killerIsPicked = true;
-    }, 1500)
+    }, 2500)
   }
   
 };
@@ -221,7 +221,7 @@ const pickKiller = (loadID) => {
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 //LOADER IS NOT WORKING HERE YET
 const pickWeapon = (loadID) => {
-  if (killerIsPicked === true && weaponIsPicked === false) {
+  if (killerIsPicked && !weaponIsPicked) {
     document.getElementById(loadID.id).style.opacity = 1
     setTimeout(function() {
       document.getElementById(loadID.id).style.opacity = 0
@@ -229,7 +229,7 @@ const pickWeapon = (loadID) => {
       document.getElementById('weaponName').innerHTML = `Type: ${mystery.weapon.name}`
       document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`
       weaponIsPicked = true
-    },1500)
+    }, 2500)
   } else {
     alert('pick killer card')
   }
@@ -237,12 +237,14 @@ const pickWeapon = (loadID) => {
 };
 
 
-const pickRoom = () => {
-  if (weaponIsPicked === true) {
+const pickRoom = (loadID) => {
+  if (weaponIsPicked && !roomIsPicked) {
+    document.getElementById(loadID.id).style.opacity = 1
     setTimeout(function() { 
+      document.getElementById(loadID.id).style.opacity = 0
       mystery.room = randomSelector(rooms)
       document.getElementById('roomName').innerHTML = `Where murder was commited: ${mystery.room}`
-    },1500)   
+    },2500)   
   } else {
     alert('pick room')
   }

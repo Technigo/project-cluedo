@@ -29,7 +29,7 @@
       </div>  
      <!--- <p id= "messageText"></p> want this to be under card if KILLERCARD not flipped -->
       <div class="container">
-        <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
+        <article class="weapon-deck" id="weaponCard" onclick="pickWeapon(this.nextElementSibling)">
           <p>WEAPON</p>
           <p id="weaponName"></p>
           <p id="weaponWeight"></p>
@@ -39,17 +39,19 @@
       <!--- <p id= "messageText"></p> want this to be under card if WEAPONCARD not flipped -->
 
       <div class="container">
-        <article class="room-deck" id="roomCard" onclick="pickRoom()">
+        <article class="room-deck" id="roomCard" onclick="pickRoom(this.nextElementSibling)">
           <p>ROOM</p>
           <p id="roomName"></p>
         </article>
         <div class="loader" id="loaderRoom"></div>
       </div>
 
-      <div class="container-button">
+      <div class="container-bottom">
         <h2 id="mystery" class="reveal-mystery"></h1>
-
-        <button type="button" onclick="revealMystery()">REVEAL THE CRIME</button>
+        <div class="container-button"> 
+          <button type="button" onclick="revealMystery()">REVEAL THE CRIME</button>
+          <button type:"button" onclick="()">RESUME GAME</button>
+        </div>
       </div>
     </section>
 
