@@ -7,15 +7,130 @@ const mrGreen = {
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
-}
+  occupation: 'Entrepreneur',
+  favouriteWeapon: 'Rope',
+
+};
+
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'Red',
+  description: 'He has a lot knowledge',
+  age: 55,
+  image: 'assets/plum.png',
+  occupation: 'Teacher',
+  favouriteWeapon: 'Knife',
+};
+
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'Black',
+  description: 'She is a great actress.',
+  age: 30,
+  image: 'assets/scarlet.png',
+  occupation: 'Actress',
+  favouriteWeapon: 'Poison',
+};
+
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'Blue',
+  description: 'She is a Rich Socialite',
+  age: 40,
+  image: 'assets/peacock.png',
+  occupation: 'Socialite',
+  favouriteWeapon: 'Pistol',
+};
+
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'Yellow',
+  description: 'He is a well decorated Army Officer',
+  age: 55,
+  image: 'assets/mustard.png',
+  occupation: 'Army Officer',
+  favouriteWeapon: 'Pistol',
+};
+
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'White',
+  description: 'She is a well educated woman',
+  age: 35,
+  image: 'assets/white.png',
+  occupation: 'Teacher',
+  favouriteWeapon: 'Axe',
+};
+
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
-  weight: 10
-}
+  weight: 10,
+};
+
+const knife = {
+  name: 'Knife',
+  weight: 5,
+};
+
+const candleStick = {
+  name: 'Candle-Stick',
+  weight: 2
+};
+
+const dumbBell = {
+  name: 'Dumb-Bell',
+  weight: 20
+};
+
+const poison = {
+  name: 'Poison',
+  weight: 1
+};
+
+const axe = {
+  name: 'Axe',
+  weight: 12
+};
+
+const bat = {
+  name: 'bat',
+  weight: 12
+};
+
+const trophy = {
+  name: 'Trophy',
+  weight: 8
+};
+
+const pistol = {
+  name: 'Pistol',
+  weight: 12
+};
+
+// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const diningRoom = 'Dining Room'
+const conservatory = 'Conservatory'
+const kitchen = 'Kitchen'
+const study = 'Study'
+const library = 'Library'
+const billiardRoom = 'Billiard Room'
+const lounge = 'Lounge'
+const ballroom = 'Ballroom'
+const hall = 'Hall'
+const spa = 'Spa'
+const livingRoom = 'Living Room'
+const observatory = 'Observatory'
+const theater = 'Theater'
+const guestHouse = 'Guest House'
+const patio = 'Patio'
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
