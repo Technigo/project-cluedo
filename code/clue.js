@@ -74,56 +74,66 @@ const mrsWhite = {
 const rope = {
   name: 'rope',
   id: 'rope',
-  weight: 10
+  weight: 10,
+  location: 'Patio'
 
 }
 
 const knife = {
   name: 'knife',
   id: 'knife',
-  weight: 8
+  weight: 8,
+  location: 'Kitchen'
 }
 
 const candlestick = {
   name: 'candlestick',
   id: 'candleStick',
-  weight: 15
+  weight: 15,
+  location: 'Living Room'
+
 }
 
 const dumbbell = {
   name: 'dumbbell',
   id: 'dumbBell',
   weight: 12,
+  location: 'Billiard Room'
 }
 
 const poison = {
   name: 'poison',
   id: 'poison',
-  weight: 1.5
+  weight: 1.5,
+  location: 'Conservatory'
 }
 
 const axe = {
   name: 'axe',
   id: 'axe',
-  weight: 8
+  weight: 8,
+  location: 'Patio'
 }
 
 const bat = {
   name: 'bat',
   id: 'bat',
-  weight: 18
+  weight: 18,
+  location: 'Hall'
 }
 
 const trophy = {
   name: 'trophy',
   id: 'trophy',
-  weight: 17
+  weight: 17,
+  location: 'Lounge'
 }
 
 const pistol = {
   name: 'pistol',
   id: 'pistol',
-  weight: 1
+  weight: 1,
+  location: 'Study'
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -137,7 +147,6 @@ const suspects = [
   mrPlum,
   msCassandra,
   mrsWhite
-  // ...  and the rest
 ]
 
 const weapons = [
@@ -175,11 +184,6 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
-
 const mystery = {
   killer: '',
   weapon: '',
@@ -193,7 +197,6 @@ const shuffleFavouriteWeapon = () => {
   })
 }
 
-// This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   document.querySelector('.killer-deck').classList.add('shakeX');
   
@@ -207,9 +210,7 @@ const pickKiller = () => {
     document.querySelector('.killerIcon').classList.add('hide');
 
     shuffleFavouriteWeapon();
-    // This will randomly select a killer from the suspects. And add that to the mystery object.
     mystery.killer = randomSelector(suspects)
-    // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
     document.getElementById('killerCard').style.background = mystery.killer.color
     document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
     document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`
@@ -223,7 +224,6 @@ const pickKiller = () => {
   }, 1500);
 }
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   document.querySelector('.weapon-deck').classList.add('shakeX');
   
@@ -234,22 +234,21 @@ const pickWeapon = () => {
   setTimeout(function() {
     document.querySelector('.weapon-deck').classList.remove('bounce');
     document.querySelector('.weapon-deck').classList.remove('shakeX');
-    
-    // const favoriteWeapon = weapons.find((w) => {
-    //   return w.id === mystery.suspect.favouriteWeapon;
-    // });
 
-    // const weaponsCopy = [
-    //   ...weapons,
-    //   favoriteWeapon,
-    //   favoriteWeapon,
-    //   favoriteWeapon,
-    //   favoriteWeapon
-    // ];
-
-    // console.log(weaponsCopy);
-
-    mystery.weapon = randomSelector(weapons)
+    const favouriteWeapon = weapons.find((item) => {
+        return item.id === mystery.killer.favouriteWeapon;
+      }
+    )
+    const weaponsClone = [
+      ...weapons,
+      favouriteWeapon,
+      favouriteWeapon,
+      favouriteWeapon,
+      favouriteWeapon,
+      favouriteWeapon,
+    ]
+    mystery.weapon = randomSelector(weaponsClone);
+  
     document.getElementById('weaponName').innerHTML = `${mystery.weapon.name} of ${mystery.weapon.weight} pounds`
   }, 1500);
 }
@@ -262,17 +261,26 @@ const pickRoom = () => {
   }, 1000)
   
   setTimeout(function() {
-    mystery.room = randomSelector(rooms)
     document.querySelector('.room-deck').classList.remove('bounce');
     document.querySelector('.room-deck').classList.remove('shakeX');
 
-    // document.getElementById('roomCard').style.background = mystery.killer.color
+    const suspectRooms = rooms.find((item) => {
+      return item === mystery.weapon.location;
+    });
+    const roomsClone = [
+      ...rooms,
+      suspectRooms,
+      suspectRooms,
+      suspectRooms,
+      suspectRooms,
+      suspectRooms,
+    ]
+    mystery.room = randomSelector(roomsClone);
+
     document.getElementById('roomName').innerHTML = `${mystery.room}`
   }, 1500);
 }
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = () => {
   document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, a ${mystery.killer.age}-year-old ${mystery.killer.occupation}, in the ${mystery.room} with a ${mystery.weapon.name} of ${mystery.weapon.weight} pounds.`;
   document.querySelector('.reveal').classList.add('active');
