@@ -1,5 +1,7 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// GENERAL VARIABLES
+const loader = document.querySelector('.loader-item');
 
+// OBJECTS OF SUSPECTS
 const mrGreen = {
   title: 'Mr',
   firstName: 'Jacob',
@@ -66,7 +68,7 @@ const profPlum = {
   occupation: 'Professor'
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// OBJECTS FOR WEAPONS
 
 const rope = {
   name: 'rope',
@@ -124,7 +126,7 @@ const trophy = {
   weight: 9,
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+// OBJECTS FOR ROOMS
 
 const ballroom = {
   name: "ballroom",
@@ -172,7 +174,7 @@ const lounge = {
 }
 
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// ARRAYS FOR GROUPS OF OBJECTS
 
 const suspects = [
   mrGreen,
@@ -208,11 +210,13 @@ const rooms = [
   diningRoom,
 ];
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+// FUNCTIONS
+
+// RANDOM SELECTOR
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 };
+
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
@@ -224,6 +228,14 @@ const mystery = {
   room: '',
 };
 
+// LOADING EFFECT
+const showKiller = () => {
+  loader.classList.toggle('is-active');
+  setTimeout(() => {
+    loader.classList.toggle('is-active');
+    pickKiller();
+  }, 750);
+}
 
 
 // This function will be invoked when you click on the killer card.
@@ -262,6 +274,6 @@ const showMystery = () => {
   document.querySelector('#mysteryInfo').innerHTML = `<p>Hush! Remember to keep it a secret!</p>`
 }
 
-document.getElementById('killerCard').addEventListener("click", pickKiller);
+document.getElementById('killerCard').addEventListener("click", showKiller);
 document.getElementById('weaponCard').addEventListener("click", pickWeapon);
 document.getElementById('roomCard').addEventListener("click", pickRoom);
