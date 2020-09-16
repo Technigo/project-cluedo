@@ -226,7 +226,7 @@ const pickRoom = () => {
 
 document.getElementById("roomCard").addEventListener("click", pickRoom);
 
-// STEP 4
+// STEP 4 + validation
 
 const revealMystery = () => {
   if (mystery.killer === null) {
@@ -241,5 +241,3 @@ const revealMystery = () => {
     ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
   }
 };
-
-// VALIDATE STEP 4
