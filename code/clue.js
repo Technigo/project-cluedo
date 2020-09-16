@@ -7,7 +7,8 @@ const suspects = [{
         description: 'He has a lot of connections.',
         age: 45,
         image: 'assets/green.png',
-        occupation: 'Priest'
+        occupation: 'Priest',
+        favouriteWeapon: 'knife'
     },
     {
         nickname: 'professorPlum',
@@ -17,7 +18,8 @@ const suspects = [{
         description: 'He is very smart.',
         age: 55,
         image: 'assets/plum.png',
-        occupation: 'Professor'
+        occupation: 'Professor',
+        favouriteWeapon: 'dumbbell'
     },
     {
         nickname: 'missScarlet',
@@ -27,7 +29,8 @@ const suspects = [{
         description: 'She is very charming.',
         age: 29,
         image: 'assets/scarlet.png',
-        occupation: 'Actress'
+        occupation: 'Actress',
+        favouriteWeapon: 'candlestick'
     },
     {
         nickname: 'mrsPeacock',
@@ -37,7 +40,8 @@ const suspects = [{
         description: 'She is very likable.',
         age: 62,
         image: 'assets/peacock.png',
-        occupation: 'Housewife'
+        occupation: 'Housewife',
+        favouriteWeapon: 'poison'
     },
     {
         nickname: 'colonelMustard',
@@ -47,7 +51,8 @@ const suspects = [{
         description: 'He is very cunning.',
         age: 52,
         image: 'assets/mustard.png',
-        occupation: 'Military'
+        occupation: 'Military',
+        favouriteWeapon: 'dumbbell'
     },
     {
         nickname: 'mrsWhite',
@@ -57,45 +62,55 @@ const suspects = [{
         description: 'She has a very good memory.',
         age: 39,
         image: 'assets/white.png',
-        occupation: 'Nurse'
+        occupation: 'Nurse',
+        favouriteWeapon: 'trophy'
     }
 ];
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 const weapons = [{
         name: 'rope',
-        weight: 7
+        weight: 7,
+        color: 'brown'
     },
     {
         name: 'knife',
-        weight: 11
+        weight: 11,
+        color: 'black'
     },
     {
         name: 'candlestick',
-        weight: 3
+        weight: 3,
+        color: 'orange'
     },
     {
         name: 'dumbbell',
-        weight: 12
+        weight: 12,
+        color: 'gold'
     },
     {
         name: 'poison',
-        weight: 2
+        weight: 2,
+        color: 'pink'
     },
     {
         name: 'axe',
-        weight: 11
+        weight: 11,
+        color: 'yellow'
     },
     {
         name: 'bat',
-        weight: 9
+        weight: 9,
+        color: 'purple'
     },
     {
         name: 'trophy',
-        weight: 6
+        weight: 6,
+        color: 'green'
     },
     {
         name: 'pistol',
-        weight: 12
+        weight: 12,
+        color: 'aqua'
     }
 ];
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -105,14 +120,12 @@ const rooms = ["Dining Room", "Conservatory", "Kitchen", "Study", "Library", "Bi
 
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
     return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+
+// An object with a killer, a weapon and a room. The values will be set later.
 let mystery = {
     killer: '',
     weapon: '',
@@ -136,6 +149,7 @@ const pickKiller = () => {
 const pickWeapon = () => {
     // Randomly selects a weapon from the weapons-array and adds that to the mystery object.
     mystery.weapon = randomSelector(weapons);
+    document.getElementById('weaponCard').style.background = mystery.weapon.color
     document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
     document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight} kg`;
 }
@@ -152,6 +166,12 @@ document.getElementById('roomCard').onclick = pickRoom;
 // Function that will be invoked when you click the reveal-button. It prints out a message
 //with facts about the murderer.
 const revealMystery = () => {
-    document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}, 
-    in the ${mystery.room} with a ${mystery.weapon.name}.`;
+
+    if (mystery.killer == "" || mystery.weapon == "" || mystery.room == "") {
+        document.getElementById('mysteryDisplay').innerHTML = `The murder can't be resolved yet`;
+    } else {
+        document.getElementById('mysteryDisplay').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName},
+         in the ${mystery.room } with a ${mystery.weapon.name}. `;
+        document.getElementById('image').src = mystery.killer.image;
+    }
 }

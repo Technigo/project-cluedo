@@ -1,58 +1,95 @@
 body {
-  margin: 0;
-  font-family: "Courier New", Courier, monospace;
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+    background: #c0c0c0;
+}
+
+header {
+    height: 100px;
+    background: #cedee7;
+    /* background: #f4b091; */
+    display: flex;
+    justify-content: center;
+}
+
+header h1 {
+    align-self: center;
+}
+
+header img {
+    width: 100px;
 }
 
 p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+    margin: 1px;
+    font-weight: 400;
+    background-color: #fff;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .cards {
-  margin: 50px auto;
-  width: 90%;
-  height: 600px;
-  background: #ccc;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+    margin: 50px auto;
+    width: 90%;
+    height: 600px;
+    background: #e8edef;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .killer-deck {
-  width: 250px;
-  height: 400px;
-  background: #000;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+    width: 250px;
+    height: 400px;
+    background: #000;
+    text-align: center;
+    padding-top: 30px;
+    border-radius: 16px;
 }
 
 .weapon-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+    width: 250px;
+    height: 400px;
+    background: rgb(10, 53, 10);
+    text-align: center;
+    padding-top: 30px;
+    border-radius: 16px;
 }
 
 .room-deck {
-  width: 250px;
-  height: 400px;
-  background: midnightblue;
-
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+    width: 250px;
+    height: 400px;
+    background: midnightblue;
+    text-align: center;
+    padding-top: 30px;
+    border-radius: 16px;
 }
 
 button {
-  padding: 8px 16px;
-  background: crimson;
-  border: none;
-  font-size: 20px;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto;
+    padding: 8px 16px;
+    background: #585a5b;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+.message {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.message-display {
+    width: 40%;
+}
+
+.message img {
+    width: 200px;
+    /* height: 200px; */
 }
