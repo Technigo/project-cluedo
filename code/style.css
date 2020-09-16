@@ -14,9 +14,11 @@
 }
 
 
+
 .slogan {
   text-align: center;
   font-size: 45px;
+  padding: 10px;
   color: #8d0801;
   font-family: 'Ranchers', cursive;
 }
@@ -32,6 +34,40 @@ p {
   background-color: #fff;
 }
 
+@media screen and (max-width:700px){
+  .cardContent {
+    font-size: 14px;
+  }
+}
+
+.killerIcon {
+  margin-top: 60px;
+  width: 50%;
+}
+
+.killerIcon.hide {
+  display: none;
+}
+
+.weaponIcon {
+  margin-top: 60px;
+  width: 60%;
+}
+
+.roomIcon {
+  margin-top: 70px;
+  width: 70%;
+}
+
+.decktitle {
+  background-color: #8d0801;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
 .cards {
   margin: 20px auto;
   width: 90%;
@@ -41,6 +77,9 @@ p {
   align-items: center;
 }
 
+
+
+
 .killer-deck {
   width: 250px;
   height: 400px;
@@ -48,7 +87,104 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  border: solid 2px black;
 }
+
+@media screen and (max-width: 400px) {
+  .header {
+    flex-direction: column;
+  }
+  .cards {
+    flex-direction: column;
+    height: 1000px;
+  }
+  .cardContent {
+    font-size: 12px;
+  }
+  .reveal {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 877px) {
+  .cards {
+    height: 400px;
+  }
+}
+
+
+@media screen and (max-width: 878px) {
+  .killer-deck,
+  .weapon-deck,
+  .room-deck {
+    margin: 5px;
+  }
+}
+
+.shakeX {
+  animation-name: shakeX;
+  animation-duration: 1s;
+}
+
+@keyframes shakeX {
+  from,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.bounce {
+  animation-name: bounce;
+  transform-origin: center bottom;
+  transition-duration: 2s;
+}
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0);
+  }
+
+  40%,
+  43% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -30px, 0) scaleY(1.1);
+  }
+
+  70% {
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transform: translate3d(0, -15px, 0) scaleY(1.05);
+  }
+
+  80% {
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: translate3d(0, 0, 0) scaleY(0.95);
+  }
+
+  90% {
+    transform: translate3d(0, -4px, 0) scaleY(1.02);
+  }
+}
+
+
+
 
 .weapon-deck {
   width: 250px;
@@ -57,16 +193,19 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  border: solid 2px black;
+
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
   background: #708d81;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  border: solid 2px black;
+
 }
 
 button {
@@ -114,3 +253,4 @@ button {
 .reveal.active {
   display: flex;
 }
+
