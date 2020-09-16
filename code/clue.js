@@ -1,5 +1,6 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
+//OBJECTS 
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
@@ -7,29 +8,89 @@ const mrGreen = {
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur' 
+}
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'pink',
+  description: 'He wears sunglasses',
+  age: 37,
+  image: 'assets/pink.png',
+  occupation: 'Project Manager' 
+}
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'She always watches instagram',
+  age: 25,
+  image: 'assets/red.png',
+  occupation: 'Influencer' 
+}
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'black',
+  description: 'he is always late',
+  age: 48,
+  image: 'assets/black.png',
+  occupation: 'lawyer' 
+}
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'lila',
+  description: 'She always picks up packages',
+  age: 55,
+  image: 'assets/lila.png',
+  occupation: 'Doctor' 
+}
+const mrsWhite = {
+  firstName: 'Ana',
+  lastName: 'White',
+  color: 'White',
+  description: 'she is always one step behind you',
+  age: 35,
+  image: 'assets/white.png',
+  occupation: 'garderner' 
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+console.log(mrGreen.description)
 
-const rope = {
-  name: 'rope',
-  weight: 10
-}
-
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
-
-const suspects = [
-  mrGreen,
-  mrsWhite
-  // ...  and the rest
+const weapons = [
+'rope',
+'knife',
+'candlestick', 
+'dumbbell', 
+'poison', 
+'axe', 
+'bat',
+'throphy', 
+'pistol' 
 ]
 
-const weapons = []
+console.log(weapons[3])
 
-const rooms = []
+const rooms = [
+'Dining Room', 
+'Conservatory', 
+'Kitchen', 
+'Study', 
+'Library', 
+'Billiard Room', 
+'Lounge', 
+'Ballroom', 
+'Hall', 
+'Spa', 
+'Living Room', 
+'Observatory', 
+'Theater', 
+'Guest House', 
+'Patio'];
+
+console.log(rooms[5])
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
