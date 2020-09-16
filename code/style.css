@@ -22,7 +22,6 @@ p {
   font-size: 16px;
   border-radius: 4px;
   margin: 20px;  
-  padding: 5px;
 }
 
 .cards {
@@ -89,7 +88,7 @@ img.questionmark  {
   margin-top: 30px;
 }
 
-.bouncing_ball {
+.bouncing-ball {
   position: relative;
   width: 4rem;
   margin: 0 auto;
