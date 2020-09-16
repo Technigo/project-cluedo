@@ -162,10 +162,10 @@ const randomSelector = array => {
 }
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-const mystery = {
-  killer: 'null',
-  weapon: 'null',
-  room: 'null',
+let mystery = {
+  killer: null,
+  weapon: null,
+  room: null,
 }
 
 // This function will be invoked when you click on the killer card.
