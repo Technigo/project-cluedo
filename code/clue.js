@@ -104,10 +104,30 @@ const wrench = {
   image: 'assets/wrench.jpg'
 }
 
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 35,
+}
+
+const axe = {
+  name: 'axe',
+  weight: 7,
+}
+
+const bat = {
+  name: 'bat',
+  weight: 4,
+}
+
+const trophy = {
+  name: 'trophy',
+  weight: 9,
+}
+
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 const ballroom = {
-  name: "bßallroom",
+  name: "ballroom",
   image: 'assets/ballroom.jpg'
 }
 
@@ -147,6 +167,7 @@ const hall = {
 }
 
 const lounge = {
+  name: "lounge",
   image: 'assets/lounge.jpg'
 }
 
@@ -169,6 +190,10 @@ const weapons = [
   knife,
   piping,
   wrench,
+  dumbbell,
+  axe,
+  bat, 
+  trophy,
 ]
 
 const rooms = [
@@ -219,7 +244,7 @@ const pickKiller = () => {
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight} kg.`
+  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight} kg`
   document.getElementById('weaponImage').src = mystery.weapon.image;
 }
 
@@ -234,7 +259,7 @@ const pickRoom = () => {
 const showMystery = () => {
   document.querySelector('#mysteryTitle').innerHTML = `<h1>Mystery</h1>`;
   document.querySelector('#mysterySecret').innerHTML = `<p>Mr Black will be killed by ${mystery.killer.title} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.</p>`
-  document.querySelector('#mysteryInfo').innerHTML = `<p>Hush! Remember to keep it a secret.</p>`
+  document.querySelector('#mysteryInfo').innerHTML = `<p>Hush! Remember to keep it a secret!</p>`
 }
 
 document.getElementById('killerCard').addEventListener("click", pickKiller);
