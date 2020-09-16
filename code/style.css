@@ -2,89 +2,92 @@
 
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
-  background: #000;
+  font-family: 'Roboto', sans-serif;
+  background: url(./assets/kamil-feczko-GhxWry42_zQ-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
 }
 
-/*p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
-}*/
+h1 {
+  color: white;
+  font-family: creepster;
+  font-size: 52px;
+}
 
 /*** HEADER ***/
-
-.hero-image {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero-image img {
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  position: absolute;
+header {
+  text-align: center;
 }
 
-.hero-text {
-  position: relative;
-  z-index: 10;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.magnifying-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0px 20px;
 }
-
 
 /*** CARD SECTION ***/
 .cards {
-  margin: 50px auto;
-  width: 90%;
-  height: 500px;
-  background: #ccc;
+  margin: 50px 100px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   border-radius: 5px;
 }
-
+.start-view-cards {
+  font-size: 20px;
+  padding-top: 100px;
+  color: white;
+}
 .killer-deck {
-  width: 250px;
-  height: 400px;
+  width: 170px;
+  height: 300px;
   background: #000;
   text-align: center;
-  padding-top: 30px;
   border-radius: 16px;
   cursor: pointer;
+  box-shadow: 5px 5px 5px red;
+  border: 1px solid white;
+  color: black;
 }
 
+
 .weapon-deck {
-  width: 250px;
-  height: 400px;
+  width: 170px;
+  height: 300px;
   background: #000;
   text-align: center;
-  padding-top: 30px;
   border-radius: 16px;
   cursor: pointer;
+  box-shadow: 5px 5px 5px red;
+  border: 1px solid white;
+  font-size: 24px;
+}
+
+.weapon-info-wrapper {
+  padding-top: 75px;
 }
 
 .room-deck {
-  width: 250px;
-  height: 400px;
+  width: 170px;
+  height: 300px;
   background: #000;
   text-align: center;
-  padding-top: 30px;
   border-radius: 16px;
   cursor: pointer;
+  box-shadow: 5px 5px 5px red;
+  border: 1px solid white;
+  font-size: 24px;
+}
+
+.room-info-wrapper {
+  padding-top: 100px;
 }
 
 /*** REVELATION SECTION ***/
 
 .revelation {
-  height: 300px;
-  background: #ccc;
+  height: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,27 +96,36 @@ body {
 
 #mystery {
   color: white;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 20px;
+  background-color: rgb(128, 128, 128, 0.5);
 }
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: #5e7391;
+  color: white;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  box-shadow: 2px 2px 2px white;
+  cursor: url(./assets/icons8-magnifying-glass-tilted-left-48.png),auto;
+  outline: none;
 }
 
-button:hover {
+
+button:active {
+  transform: translateY(5px);
+  box-shadow: none;
 
 }
 
 /*** FOOTER ***/
 
 footer {
-  height: 100px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;

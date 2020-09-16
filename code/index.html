@@ -4,28 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Murder Mystery</title>
   </head>
   <body>
     <header>
-      <div class="hero-image">
-        <img src="assets/kamil-feczko-GhxWry42_zQ-unsplash.jpg">
-        <div class="hero-text">
-          <h1>Can you reveal the mystery?</h1>
-          <p></p>
-        </div>
-      </div>
-      <nav>
-        <a href="index.html">Create new mystery</a>
-        <a href="#">Link</a>
-      </nav>
+      <h1>Create your own cluedo mystery!<img class="magnifying-icon" src="assets/icons8-magnifying-glass-tilted-left-48.png"></h1>
+      <p>Click the cards and pick a killer, weapon and room</p>
     </header>
 
 
     <section class="cards">
       <article class="killer-deck" id="killerCard">
-        <p>PICK A KILLER</p>
+        <p class="start-view-cards" id="start-view-card-killer">PICK KILLER</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
@@ -33,23 +25,28 @@
         <p id="killerDescription"></p>
       </article>
       <article class="weapon-deck" id="weaponCard">
-        <p>PICK A WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
+        <p class="start-view-cards" id="start-view-card-weapon">PICK WEAPON</p>
+        <div class="weapon-info-wrapper">
+          <p id="weaponName"></p>
+          <p id="weaponWeight"></p>
+        </div>
       </article>
       <article class="room-deck" id="roomCard">
-        <p>PICK A ROOM</p>
-        <p id="roomName"></p>
+        <p class="start-view-cards" id="start-view-card-room">PICK ROOM</p>
+        <div class="room-info-wrapper">
+          <p id="roomName"></p>
+        </div> 
       </article>
     </section>
 
     <section class="revelation">
-      <h1 id="mystery"></h1>
+      <h2 id="mystery"></h2>
       <button id="revealButton">REVEAL THE CRIME</button>
     </section>
 
     <footer>
       <p>Project 4, Cluedo Mystery Picker, by Anna Hellqvist @ Technigo Bootcamp 2020</p>
+      <p><a target="_blank" href="https://icons8.com/icons/set/magnifying-glass-tilted-left-emoji">Magnifying Glass Tilted Left icon</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></p>
     </footer>
 
   
