@@ -9,51 +9,50 @@ const mrGreen = {
   image: 'assets/green.png',
 }
 
-  const professorPlum = {
-    firstName: 'Victor',
-    lastName: 'Plum',
-    color: 'purple',
-    age: 46,
-    occupation: 'Scientist',
-    image: 'assets/plum.png'
-  }
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  age: 46,
+  occupation: 'Scientist',
+  image: 'assets/plum.png'
+}
 
-  const missScarlet ={
-    firstName: 'Cassandra',
-    lastName: 'Scarlett',
-    color: 'red',
-    age: 40,
-    occupation: 'Actress',
-    image: 'assets/scarlet.png'
-  }
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlett',
+  color: 'red',
+  age: 40,
+  occupation: 'Actress',
+  image: 'assets/scarlet.png'
+}
 
-  const mrsPeacock = {
-    firstname: 'Eleanor',
-    lastName: 'Peacock',
-    color: 'blue',
-    age: 49,
-    occupation: 'Ornithologist',
-    image: 'assets/peacock.png'
-  }
+const mrsPeacock = {
+  firstname: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue',
+  age: 49,
+  occupation: 'Ornithologist',
+  image: 'assets/peacock.png'
+}
 
-  const colonelMustard = {
-    firstName: 'Jack',
-    lastName: 'Mustard',
-    color: 'yellow',
-    age: 72,
-    occupation: 'Hunter',
-    image: 'assets/mustard.png'
-  }
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  age: 72,
+  occupation: 'Hunter',
+  image: 'assets/mustard.png'
+}
 
-  const mrsWhite = {
-    firstName: 'Mrs',
-    lastname: 'White',
-    color: 'white',
-    age: 70,
-    occupation: 'Housekeeper'
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastname: 'White',
+  color: 'white',
+  age: 70,
+  occupation: 'Housekeeper',
+  image: 'assets/white.png'
   }
-
- 
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
