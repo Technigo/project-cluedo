@@ -1,6 +1,6 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
-const mrGreen = {
+let mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
   color: 'green',
@@ -8,10 +8,11 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
-  favouriteWeapon:'bat'
+  favouriteWeapon: 'bat'
 }
 
-const professorPlum  = {
+
+let professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
   color: 'purple',
@@ -19,11 +20,11 @@ const professorPlum  = {
   age: 40,
   image: 'assets/plum.png',
   occupation: 'Professor',
-  favouriteWeapon:'rope'
-  
+  favouriteWeapon: 'rope'
+
 }
 
-const missScarlet = {
+let missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
   color: 'red',
@@ -31,10 +32,10 @@ const missScarlet = {
   age: 35,
   image: 'assets/scarlet.png',
   occupation: 'Undercover spy',
-  favouriteWeapon:'candlestick'
+  favouriteWeapon: 'candlestick'
 }
 
-const mrsPeacock = {
+let mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
   color: 'blue',
@@ -42,10 +43,10 @@ const mrsPeacock = {
   age: 43,
   image: 'assets/peacock.png',
   occupation: 'Interior Designer',
-  favouriteWeapon:'pistol'
+  favouriteWeapon: 'pistol'
 }
 
-const colonelMustard = {
+let colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
   color: 'yellow',
@@ -53,10 +54,10 @@ const colonelMustard = {
   age: 65,
   image: 'assets/mustard.png',
   occupation: 'Retired',
-  favouriteWeapon:'axe'
+  favouriteWeapon: 'axe'
 }
 
-const mrsWhite = {
+let mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
   color: 'white',
@@ -64,11 +65,11 @@ const mrsWhite = {
   age: 63,
   image: 'assets/white.png',
   occupation: 'Globetrotter',
-  favouriteWeapon:'poision'
+  favouriteWeapon: 'poision'
 }
 
 //console log test 
-console.log(mrsWhite.description) 
+console.log(mrsWhite.description)
 
 
 
@@ -79,65 +80,65 @@ const rope = {
   id: 'rope',
   name: 'rope',
   weight: 6,
-  color:'brown'
+  color: 'brown'
 }
 
 const knife = {
   id: 'knife',
   name: 'knife',
   weight: 5,
-  color:'dark grey'
-  
+  color: 'dark grey'
+
 }
 
 const candleStick = {
   id: 'candlestick',
   name: 'candlestick',
   weight: 6,
-  color:'rosegold'
+  color: 'rosegold'
 }
 
 const dumbBell = {
   id: 'dumbbell',
   name: 'dumbbell',
   weight: 10,
-  color:'grey'
+  color: 'grey'
 }
 
 const poision = {
   id: 'poision',
   name: 'poision',
   weight: 3,
-  color:'green'
+  color: 'green'
 }
 
 const axe = {
   id: 'axe',
   name: 'axe',
   weight: 10,
-  color:'silver'
+  color: 'silver'
 }
 
 const bat = {
   id: 'bat',
   name: 'bat',
   weight: 7,
-  color:'brown'
+  color: 'brown'
 }
 
 const trophy = {
   id: 'trophy',
   name: 'trophy',
   weight: 9,
-  color:'gold'
+  color: 'gold'
 }
 
 const pistol = {
   id: 'pistol',
   name: 'pistol',
-  weight: 8, 
+  weight: 8,
   color: 'black'
-  
+
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -154,32 +155,32 @@ const suspects = [
 ];
 
 const weapons = [
-rope, 
-knife, 
-candleStick ,
-dumbBell,
-poision,
-axe,
-bat,
-trophy, 
-pistol,
+  rope,
+  knife,
+  candleStick,
+  dumbBell,
+  poision,
+  axe,
+  bat,
+  trophy,
+  pistol,
 ];
 
 const rooms = [
-  "Dining Room", 
-  "Conservatory", 
-  "Kitchen", 
-  "Study", 
-  "Library", 
-  "Billiard Room", 
-  "Lounge", 
-  "Ball room", 
-  "Hall", 
-  "Spa", 
-  "Living Room", 
-  "Observatory", 
-  "Theater", 
-  "Guest House", 
+  "Dining Room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Billiard Room",
+  "Lounge",
+  "Ball room",
+  "Hall",
+  "Spa",
+  "Living Room",
+  "Observatory",
+  "Theater",
+  "Guest House",
   "Patio"
 ];
 
@@ -199,19 +200,15 @@ const randomSelector = array => {
 
 let mystery = {
   killer: null,
-  weapon: null,
+  weapons: null,
   room: null
 };
-
-
-// With a killer, a weapon and a room.
-// The values will be set later.
 
 
 // This function will be invoked when you click on the killer card.
 
 const pickKiller = () => {
-  
+
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
@@ -222,9 +219,12 @@ const pickKiller = () => {
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   document.getElementById(
     'killerOccupation'
-  ).innerHTML = `${mystery.killer.occupation}`; 
- 
-  
+  ).innerHTML = `${mystery.killer.occupation}`;
+  document.getElementById(
+    'favouriteWeapon'
+  ).innerHTML = `${mystery.killer.favouriteWeapon}`;
+
+
   const killerImage = document.getElementById('killerImage');
   killerImage.src = mystery.killer.image;
 };
@@ -239,10 +239,7 @@ const pickWeapon = () => {
   document.getElementById('weaponCard').style.background = mystery.weapons.color
   document.getElementById(
     'weaponName'
-    ).innerHTML = `${mystery.weapons.name}`
-  document.getElementById(
-    'weaponWeight'
-  ).innerHTML = `${mystery.weapons.weight}`
+  ).innerHTML = `${mystery.weapons.name}`
 }
 
 
@@ -258,31 +255,19 @@ const pickRoom = () => {
 }
 
 
-//Red level Shuffel favorite weapon 
+// shuffel favorite weapon function.
+shuffleFavouriteWeapon = () => {
+  mystery.favouriteWeapon = randomSelector(weapons); 
+};
+shuffleFavouriteWeapon();
 
-const shuffleFavouriteWeapon = () => {
-  favouriteWeapon = randomSelector(weapons)
-  document.getElementById(
-    'favouriteWeapon'
-  ).innerHTML = `${favoriteWeapon}`
-}
-
-
+document.getElementById('favouriteWeapon').innerHTML = `favouriteWeapon: ${mystery.favouriteWeapon.name}`;
 
 
 //invoke function onclick
 document.getElementById('killerCard').onclick = pickKiller;
 document.getElementById('weaponCard').onclick = pickWeapon;
 document.getElementById('roomCard').onclick = pickRoom;
-
-
-
-
-
-
-
-
-
 
 
 
