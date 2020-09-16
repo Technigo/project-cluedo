@@ -61,6 +61,11 @@ header{
   align-items: center;
 }
 
+.deck {
+  border: black 1px solid;
+  box-shadow: #c8d5db 1px 1px 10px;
+}
+
 .killer-deck {
   width: 250px;
   height: 400px;
@@ -82,21 +87,20 @@ header{
 .room-deck {
   width: 250px;
   height: 400px;
-  background: #fff;
-
+  background: rgb(240, 224, 207);
   text-align: center;
   padding-top: 30px;
   border-radius: 10px;
 }
 
 button {
-  height: 100px;
+  height: 135px;
+  width: 135px;
   padding: 8px 16px;
-  background: #ff1717;
+  background: #ff0000;
   border: none;
   font-size: 20px;
   border-radius: 50%;
   display: block;
   margin: 0 auto 50px;
-  
 }

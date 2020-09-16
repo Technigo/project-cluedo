@@ -1,6 +1,7 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
 const mrGreen = {
+  title: 'Mr',
   firstName: 'Jacob',
   lastName: 'Green',
   color: 'green',
@@ -11,6 +12,7 @@ const mrGreen = {
 }
 
 const colMustard = {
+  title: 'Colonel',
   firstName: 'Jack',
   lastName: 'Mustard',
   color: 'yellow',
@@ -21,6 +23,7 @@ const colMustard = {
 }
 
 const msScarlett = {
+  title: 'Miss',
   firstName: 'Cassandra',
   lastName: 'Scarlett',
   color: 'red',
@@ -30,7 +33,8 @@ const msScarlett = {
   occupation: 'Actress'
 }
 
-const mrsWhite = {
+const mrWhite = {
+  title: 'Mr',
   firstName: 'Jim',
   lastName: 'White',
   color: 'white',
@@ -41,6 +45,7 @@ const mrsWhite = {
 }
 
 const mrsPeacock = {
+  title: 'Mrs',
   firstName: 'Eleanor',
   lastName: 'Peacock',
   color: 'blue',
@@ -51,6 +56,7 @@ const mrsPeacock = {
 }
 
 const profPlum = {
+  title: 'Professor',
   firstName: 'Henrietta',
   lastName: 'Plum',
   color: 'purple',
@@ -149,7 +155,7 @@ const lounge = {
 
 const suspects = [
   mrGreen,
-  mrsWhite,
+  mrWhite,
   colMustard,
   msScarlett,
   mrsPeacock,
@@ -204,7 +210,8 @@ const pickKiller = () => {
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
   document.getElementById('killerImage').src = mystery.killer.image;
-  
+  document.querySelector('#killerAge').innerHTML = `${mystery.killer.age} years old.`
+  document.querySelector('#killerDescription').innerHTML = `${mystery.killer.description}`
 };
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
@@ -212,6 +219,7 @@ const pickKiller = () => {
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
+  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight} kg.`
   document.getElementById('weaponImage').src = mystery.weapon.image;
 }
 
@@ -222,6 +230,12 @@ const pickRoom = () => {
 }
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+const showMystery = () => {
+  document.querySelector('#mysteryTitle').innerHTML = `<h1>Mystery</h1>`;
+  document.querySelector('#mysterySecret').innerHTML = `<p>Mr Black will be killed by ${mystery.killer.title} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.</p>`
+  document.querySelector('#mysteryInfo').innerHTML = `<p>Hush! Remember to keep it a secret.</p>`
+}
 
 document.getElementById('killerCard').addEventListener("click", pickKiller);
 document.getElementById('weaponCard').addEventListener("click", pickWeapon);
