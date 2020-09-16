@@ -140,21 +140,21 @@ const weapons = [
 ];
 
 const rooms = [
-  "diningRoom", 
-  "conservatory", 
-  "kitchen", 
-  "study",
-  "library", 
-  "billiardRoom", 
-  "lounge", 
-  "ballroom", 
-  "hall", 
-  "spa", 
-  "livingRoom", 
-  "observatory", 
-  "theater", 
-  "guestHouse", 
-  "patio",
+  "Dining Room", 
+  "Conservatory", 
+  "Kitchen", 
+  "Study",
+  "Library", 
+  "Billiard Room", 
+  "Lounge", 
+  "Ballroom", 
+  "Hall", 
+  "Spa", 
+  "Living Room", 
+  "Observatory", 
+  "Theater", 
+  "Guest House", 
+  "Patio",
 ];
 
 
