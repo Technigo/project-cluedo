@@ -165,7 +165,7 @@ const revealMystery = () => {
 
   document.getElementById("mystery").style.background = "transparent"
 
-  properties = ["killerName", "weaponName", "roomName","killerAge", "killerOccupation", "weaponWeight", "roomColor"]
+  properties = ["killerName", "weaponName", "roomName","killerAge", "killerOccupation", "weaponWeight", "roomColor"] //there must be a better way using common class instead but I could'nt get it to work
   for (let i = 0; i < properties.length; i++) {
     document.getElementById(properties[i]).innerHTML = ""
   }
