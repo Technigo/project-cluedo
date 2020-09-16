@@ -49,7 +49,7 @@ const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
   color: 'blue',
-  description: 'Her family used to very rich',
+  description: 'Her family used to be very rich',
   age: 50,
   image: './assets/peacock.png',
   occupation: 'housewife',
@@ -68,15 +68,11 @@ const mrsWhite = {
   favouriteWeapon: 'rope'
 }
 
-
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
-
 const rope = {
   name: 'rope',
   id: 'rope',
   weight: 10,
   location: 'Patio'
-
 }
 
 const knife = {
@@ -91,7 +87,6 @@ const candlestick = {
   id: 'candleStick',
   weight: 15,
   location: 'Living Room'
-
 }
 
 const dumbbell = {
@@ -135,10 +130,6 @@ const pistol = {
   weight: 1,
   location: 'Study'
 }
-
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
   mrGreen,
