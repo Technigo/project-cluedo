@@ -226,3 +226,13 @@ document.getElementById('roomCard').onclick = pickRoom;
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+const revealMystery = () => {
+  // console.log(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} 
+  // in the ${mystery.room} with a ${mystery.weapon.name}.`)
+  document.getElementById('revealedMystery').innerHTML = 
+  `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} 
+  in the ${mystery.room} with a ${mystery.weapon.name}.`;
+}
+
+document.getElementById('revealButton').onclick = revealMystery;
