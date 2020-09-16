@@ -7,8 +7,7 @@ body {
 
 p {
   margin: 1px;
-  font-size: 20px;
-  margin-top: 250px;
+  font-size: 18px;
   color: white;
 }
 
@@ -21,11 +20,11 @@ h1 {
 .top-container {
   display: flex;
   justify-content: center;
+  margin: 5px 0 20px;
 }
 
 .top-container img {
   width: 500px;
-  margin-top: 10px;
   border-radius: 5px;
 }
 
@@ -40,52 +39,40 @@ h1 {
   z-index: 1;
 }
 
-.killer-deck {
-  width: 250px;
-  height: 300px;
-  background: #99f3bd;
-  text-align: center;
-  border-radius: 16px;
-  background-image: url("image/killer/killer3.jpg");
-  background-size: cover;
-}
-
-.weapon-deck {
-  width: 250px;
-  height: 300px;
-  background: #ffb0b0;
-  text-align: center;
-  border-radius: 16px;
-  background-image: url("image/weapon/weapon 1.jpg");
-  background-size: cover;
-}
-
+.killer-deck,
+.weapon-deck,
 .room-deck {
   width: 250px;
   height: 300px;
-  background: #e0ece4;
   text-align: center;
   border-radius: 16px;
-  background-image: url("image/room/room1.jpg");
+  position: relative;
+  overflow: hidden;
+  transition: .3s ease-in-out;
+}
+
+.killer-deck p,
+.weapon-deck p,
+.room-deck p {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  background-color: black;
+}
+
+.killer-deck img,
+.weapon-deck img,
+.room-deck img {
+  width: 100%;
+  height: 100%;
   background-size: cover;
 }
 
-.killer-deck:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-  transition: .3s ease-in-out;
-}
-
-.weapon-deck:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-  transition: .3s ease-in-out;
-}
-
+.killer-deck:hover,
+.weapon-deck:hover,
 .room-deck:hover {
   cursor: pointer;
   transform: scale(1.1);
-  transition: .3s ease-in-out;
 }
 
 #mystery {
@@ -103,7 +90,7 @@ button {
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin-bottom: 10px;
+  margin: 10px;
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: .3s ease-in-out;
