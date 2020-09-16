@@ -171,6 +171,11 @@ let mystery = {
   room: 'where'
 }
 
+let killerWeapons = Array(8).fill('');
+let moreWeapons = []; 
+
+// FUNCTIONS
+
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
@@ -183,20 +188,28 @@ const shuffleFavouriteWeapon = () => {
   });
   
 }
-
   
-  const showLoader = () => {
+const showLoader = () => {
   document.getElementById('killerLoader').style.display = 'block';
   document.getElementById('killerHeadline').style.display = 'none';
   document.getElementById('killerTitle').style.display = 'none';
   document.getElementById('killerContent').style.display = 'none';
   document.getElementById('killerDecoration').style.display = 'flex'
-  }
+  document.getElementById('killerCard').style.background = 'black'
+  document.getElementById('killerDecoration').style.border = '8px solid rgb(129, 164, 175)'
+}
   
-  const generateKiller = () => {
-    // This will randomly select a killer from the suspects. And add that to the mystery object.
+const generateKiller = () => {
+  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
+  
+  killerWeapons.fill(mystery.killer.favouriteWeapon);
+  moreWeapons = weapons.concat(killerWeapons)
+  console.log(killerWeapons)
+  console.log(moreWeapons)
+  console.log(weapons)
 
+  // Hides the loader and shows killer title and content 
   document.getElementById('killerLoader').style.display = 'none';
   document.getElementById('killerTitle').style.display = 'block';
   document.getElementById('killerContent').style.display = 'block';
@@ -207,7 +220,7 @@ const shuffleFavouriteWeapon = () => {
   document.getElementById('killerAge').innerHTML = 'Age: ' + mystery.killer.age
   document.getElementById('killerOccupation').innerHTML = 'Occupation: ' + mystery.killer.occupation
 
-  //This will style the killer card
+  //Styles the killer card
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerTitle').style.display = 'block'
   document.getElementById('killerDecoration').style.display = 'block'
@@ -235,15 +248,16 @@ const shuffleFavouriteWeapon = () => {
 
   }
 }
+
 const pickKiller = () => {
   // This function will be invoked when you click on the killer card.
 
   showLoader();
-  setTimeout(generateKiller, 2000);
+  setTimeout(generateKiller, 1500);
 }
 
 const pickWeapon = () => {
-  mystery.weapon = randomSelector(weapons)
+  mystery.weapon = randomSelector(moreWeapons)
   document.getElementById('weaponName').innerHTML = mystery.weapon.name
   document.getElementById('weaponWeight').innerHTML = 'Weight: ' + mystery.weapon.weight
   document.getElementById('weaponCard').style.background = '#575A53'
@@ -271,8 +285,12 @@ const revealMystery = () => {
   document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}, but the killers favourite weapon is actually ${mystery.killer.favouriteWeapon.name}`
 }
 
+// Executing functions
+
 shuffleFavouriteWeapon();
 document.getElementById('killerCard').onclick = pickKiller;
 document.getElementById('weaponCard').onclick = pickWeapon;
 document.getElementById('roomCard').onclick = pickRoom;
 document.getElementsByTagName("button")[0].onclick = revealMystery;
+
+
