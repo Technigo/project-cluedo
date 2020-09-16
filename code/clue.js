@@ -78,6 +78,7 @@ const rope = {
   name: 'rope',
   material: 'textile',
   id: "rope",
+  image: 'assets/green.png',
 }
 console.log(rope);
 
@@ -85,6 +86,7 @@ const knife = {
   name: 'knife',
   material: 'metal',
   id: "knife",
+  image: 'assets/green.png',
 }
 console.log(knife);
 
@@ -92,6 +94,7 @@ const candlestick = {
   name: 'candlestick',
   material: 'silver',
   id: "candlestick",
+  image: 'assets/green.png',
 }
 console.log(candlestick);
 
@@ -99,6 +102,7 @@ const dumbbell = {
   name: 'dumbbell',
   material: 'iron',
   id: "dumbbell",
+  image: 'assets/green.png',
 }
 console.log(dumbbell);
 
@@ -106,6 +110,7 @@ const poison = {
   name: 'poison',
   material: 'liquid',
   id: "poison",
+  image: 'assets/green.png',
 }
 console.log(poison);
 
@@ -113,24 +118,28 @@ const axe = {
   name: 'axe',
   material: 'metal',
   id: "axe",
+  image: 'assets/green.png',
 }
 console.log(axe);
 
 const bat = {
   name: 'bat',
   material: 'wood',
+  image: 'assets/green.png',
 }
 console.log(bat);
 
 const trophy = {
   name: 'trophy',
   material: 'silver',
+  image: 'assets/green.png',
 }
 console.log(trophy);
 
 const pistol = {
   name: 'pistol',
   material: 'metal',
+  image: 'assets/green.png',
 }
 console.log(pistol);
 
@@ -180,6 +189,15 @@ const rooms = [
 ]
 console.log(rooms);
 
+const favouriteWeaponArray = [
+  "rope",
+  "knife",
+  "candlestick",
+  "dumbbell",
+  "poison",
+  "axe"
+]
+
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
@@ -198,17 +216,14 @@ console.log(mystery);
 
 // Try to add shuffleFavouriteWeapon
 
-const shuffleFavouriteWeapon = (suspect) => {
-  suspect.favouriteWeapon = randomSelector(suspects).favouriteWeapon;
-}
+const shuffleFavouriteWeapon = (suspects) => {
+favouriteWeaponArray.favouriteWeapon = randomSelector(suspects).favouriteWeapon;
+//}
+
 console.log(shuffleFavouriteWeapon);
 
-const testShuffle = () => {
-  suspects.forEach(shuffleFavouriteWeapon);
-}
-console.log(testShuffle);
-
 // This function will be invoked when you click on the killer card.
+
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
@@ -241,7 +256,8 @@ const pickWeapon = () => {
   document.getElementById(
    'weaponMaterial' 
   ).innerHTML = `Material: ${mystery.weapons.material}`
-  let weaponName = document.getElementById('weaponName');
+  let weaponsImage = document.getElementById('weaponsImage');
+  weaponsImage.src = mystery.weapons.Image;
 };
 console.log(pickWeapon);
 

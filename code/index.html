@@ -10,27 +10,36 @@
 </head>
 
 <body>
+<header class="game-header">
+  <img class="game-image" src="cluedo.png" alt="Cluedo logo" width="20%">
+</header>
 
   <!--Cards -->
   <section class="cards">
-    <article class="killer-deck" id="killerCard">
-      <p>KILLER</p>
+    <article class="killer-deck" id="killerCard" oncklick="pickKiller()">
+      <p class="card-type">KILLER</p>
       <p id="killerName"></p>
       <p id="killerAge"></p>
       <p id="killerOccupation"></p>
       <img id="killerImage" src="" height="100" />
       <p id="killerDescription"></p>
       <p id="killerFavouriteWeapon"></p>
+  
     </article>
+
+  
     <article class="weapon-deck" id="weaponCard">
-      <p>WEAPON</p>
+      <p class="card-type">WEAPON</p>
       <p id="weaponName"></p>
       <p id="weaponMaterial"></p>
+      <img id="weaponsImage" src="" height="100" />
     </article>
     <article class="room-deck" id="roomCard">
-      <p>ROOM</p>
+      <p class="card-type">ROOM</p>
       <p id="roomName"></p>
+
     </article>
+    
   </section>
 
   <h1 id="mystery"></h1>
