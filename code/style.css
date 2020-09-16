@@ -15,7 +15,12 @@ p {
 }
 
 h1 {
+  font-family:'Nosifer', cursive;
   margin-left: 20px;
+}
+
+h2{
+  text-align:center;
 }
 
 
@@ -51,7 +56,6 @@ h1 {
 .killer-deck {
   width: 250px;
   height: 400px;
-  background-color: #1a1b1c;
   background-image: linear-gradient(160deg, #1a1b1c 0%, #0e4c9a 100%);
   text-align: center;
   padding-top: 30px;
@@ -66,7 +70,6 @@ h1 {
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background-color: #1a1b1c;
   background-image: linear-gradient(160deg, #1a1b1c 0%, #0b4e25 100%);
   text-align: center;
   padding-top: 30px;
@@ -81,7 +84,6 @@ h1 {
 .room-deck {
   width: 250px;
   height: 400px;
-  background-color: #1a1b1c;
   background-image: linear-gradient(160deg, #1a1b1c 0%, #ad1641 100%);
   text-align: center;
   padding-top: 30px;
@@ -92,6 +94,8 @@ h1 {
   box-shadow: 0px 10px 19px 0px rgba(189,189,189,1);
   transition-duration: 0.25s;
 }
+
+
 
 /* card hover */
 .killer-deck:hover, .weapon-deck:hover, .room-deck:hover{

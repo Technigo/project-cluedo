@@ -15,7 +15,7 @@ const professorPlum  = {
   firstName: 'Victor',
   lastName: 'Plum',
   color: 'purple',
-  description: 'bla bla bla ',
+  description: ' bla bla bla ',
   age: 40,
   image: 'assets/plum.png',
   occupation: 'Professor',
@@ -63,7 +63,7 @@ const mrsWhite = {
   description: 'She became a widower and got her freedom back',
   age: 63,
   image: 'assets/white.png',
-  occupation: 'travles the world',
+  occupation: 'Globetrotter',
   favouriteWeapon:'poision'
 }
 
@@ -76,54 +76,64 @@ console.log(mrsWhite.description)
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
+  id: 'rope',
   name: 'rope',
   weight: 6,
   color:'brown'
 }
 
 const knife = {
+  id: 'knife',
   name: 'knife',
   weight: 5,
   color:'dark grey'
+  
 }
 
 const candleStick = {
+  id: 'candlestick',
   name: 'candlestick',
   weight: 6,
   color:'rosegold'
 }
 
 const dumbBell = {
+  id: 'dumbbell',
   name: 'dumbbell',
   weight: 10,
   color:'grey'
 }
 
 const poision = {
+  id: 'poision',
   name: 'poision',
   weight: 3,
   color:'green'
 }
 
 const axe = {
+  id: 'axe',
   name: 'axe',
   weight: 10,
   color:'silver'
 }
 
 const bat = {
+  id: 'bat',
   name: 'bat',
   weight: 7,
-  color:'wood'
+  color:'brown'
 }
 
 const trophy = {
+  id: 'trophy',
   name: 'trophy',
   weight: 9,
   color:'gold'
 }
 
 const pistol = {
+  id: 'pistol',
   name: 'pistol',
   weight: 8, 
   color: 'black'
@@ -210,6 +220,10 @@ const pickKiller = () => {
   document.getElementById(
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById(
+    'killerOccupation'
+  ).innerHTML = `${mystery.killer.occupation}`; 
+ 
   
   const killerImage = document.getElementById('killerImage');
   killerImage.src = mystery.killer.image;
