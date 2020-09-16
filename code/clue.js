@@ -69,21 +69,23 @@ const mrsWhite = {
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
-  name: 'Rope',
+  name: 'rope',
   color: "white",
   weight: 10,
   image: 'assets/rope.jpg',
+  id: 'rope'
 }
 
 const knife = {
-  name: 'Knife',
+  name: 'knife',
   color: "white",
   weight: 2,
   image: 'assets/knife.jpg',
+  id: 'knife'
 }
   
 const candlestick = {
-  name: 'Candlestick',
+  name: 'candlestick',
   color: "white",
   weight: 12,
   image: 'assets/candlestick.jpg',
@@ -91,14 +93,15 @@ const candlestick = {
 }
 
 const dumbbell = {
-  name: 'Dumbbell',
+  name: 'dumbbell',
   color: "white",
   weight: 6,
   image: 'assets/dumbbell.jpg',
+  id: 'dumbbell'
 }
 
 const poison = {
-  name: 'Poison',
+  name: 'poison',
   color: "white",
   weight: 0.5,
   image: 'assets/poison.PNG',
@@ -106,7 +109,7 @@ const poison = {
 }
 
 const axe = {
-  name: 'Axe',
+  name: 'axe',
   color: "white",
   weight: 4,
   image: 'assets/axe.jpg',
@@ -114,7 +117,7 @@ const axe = {
 }
 
 const bat = {
-  name: 'Bat',
+  name: 'bat',
   color: "white",
   weight: 1,
   image: 'assets/bat.jpg',
@@ -122,7 +125,7 @@ const bat = {
 }
 
 const trophy = {
-  name: 'Trophy',
+  name: 'trophy',
   color: "white",
   weight: 5,
   image: 'assets/trophy.jpg',
@@ -130,7 +133,7 @@ const trophy = {
 }
 
 const pistol = {
-  name: 'Pistol',
+  name: 'pistol',
   color: "white",
   weight: 3,
   image: 'assets/pistol.jpg',
@@ -139,8 +142,82 @@ const pistol = {
 
   
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+// CREATED OBJECTS FOR THE ROOM TO GET A COLOR ON THE CARDS
 
+const diningRoom = {
+  name: "dining room",
+  color: "slateblue"
+}
+
+const conservatory = {
+  name: "conservatory",
+  color: "steelblue"
+}
+
+const kitchen = {
+  name: "kitchen",
+  color: "springgreen"
+}
+
+const study = {
+  name: "study",
+  color: "orchid"
+}
+  
+const library = {
+  name: "library",
+  color: "lightcoral"
+}
+
+const billiardRoom = {
+  name: "billiard room",
+  color: "tomato"
+}
+
+const lounge = {
+  name: "lounge",
+  color: "khaki"
+}
+
+const ballRoom = {
+  name: "ballroom",
+  color: "lightblue"
+}
+
+const hall = {
+  name: "hall",
+  color: "black"
+}
+
+const spa = {
+  name: "spa",
+  color: "white"
+}
+  
+const livingRoom = {
+  name: "living room",
+  color: "skyblue"
+}
+
+const observatory = {
+  name: "observatory",
+  color: "lightgrey"
+}
+
+const theater = {
+  name: "theater",
+  color: "lightyellow"
+}
+ 
+const guestHouse = {
+  name: "guest house",
+  color: "lightpink"
+}
+
+const patio = {
+  name: "patio",
+  color: "lightgreen"
+}
 
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
@@ -171,22 +248,23 @@ const weapons = [
 console.log(weapons);
 
 const rooms = [
-  "Dining Room", 
-  "Conservatory", 
-  "Kitchen", 
-  "Study", 
-  "Library", 
-  "Billiard Room", 
-  "Lounge", 
-  "Ball room", 
-  "Hall", 
-  "Spa", 
-  "Living Room", 
-  "Observatory", 
-  "Theater", 
-  "Guest House", 
-  "Patio"
+  diningRoom,
+  conservatory, 
+  kitchen, 
+  study,
+  library,
+  billiardRoom ,
+  lounge,
+  ballRoom,
+  hall, 
+  spa, 
+  livingRoom, 
+  observatory, 
+  theater, 
+  guestHouse, 
+  patio,
 ];
+  
 console.log(rooms);
 
 
@@ -235,6 +313,7 @@ function pickKiller() {
   document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`
   document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
   document.getElementById('killerImage'); killerImage.src = mystery.killer.image;
+/*   document.getElementById('killerfavouriteWeapon').innerHTML = `${mystery.killer.favouriteWeapon}` */
 }  
 
 
@@ -258,7 +337,8 @@ document.getElementById('roomCard').onclick = pickRoom;
 
 function pickRoom() {
   mystery.room = randomSelector(rooms)
-  document.getElementById('roomName').innerHTML = `${mystery.room}`
+  document.getElementById('roomName').innerHTML = `${mystery.room.name}`
+  document.getElementById('roomCard').style.background = mystery.room.color
   }  
   
   
@@ -267,7 +347,7 @@ function pickRoom() {
 
 
 const revealMystery = () => {
-document.getElementById("mystery").innerHTML= `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+document.getElementById("mystery").innerHTML= `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`
 document.getElementById("clickMe").onclick = revealMystery;
 }
 console.log(revealMystery)
@@ -276,6 +356,9 @@ console.log(revealMystery)
 
 //Red Level - - Create `shuffleFavouriteWeapon` function to change favourite weapons of each person
 
-const shuffleFavouriteWeapon = () => {
-
+/* const shuffleFavouriteWeapon = () => {
+  suspects.forEach((suspect) =>
+  (suspect.favouriteWeapon = randomSelector(suspects).favouriteWeapon));
 }
+
+document.getElementById('killerCard').onclick = shuffleFavouriteWeapon(); */
