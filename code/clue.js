@@ -1,9 +1,3 @@
-//below variables to be used in last function when validate if cards have been clicked or not
-
-let pickedKiller;
-let pickedRoom;
-let pickedWeapon;
-
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
 const mrGreen = {
@@ -13,7 +7,8 @@ const mrGreen = {
   description: "He has a lot of connections",
   age: 45,
   image: "assets/green.png",
-  occupation: "Entrepreneur"
+  occupation: "Entrepreneur",
+  favouriteWeapon: "axe"
 }
 
 const professorPlum = {
@@ -23,7 +18,8 @@ const professorPlum = {
   description: "He would be the smartest man on the planet if he wasn't so scatterbrained.",
   age: 50,
   image: "assets/plum.png",
-  occupation: "Professor"
+  occupation: "Professor",
+  favouriteWeapon: "rope"
 }
 
 const missScarlet = {
@@ -33,7 +29,8 @@ const missScarlet = {
   description: "Shea always has to be the center of attention.",
   age: 24,
   image: "assets/scarlet.png",
-  occupation: "Actress"
+  occupation: "Actress",
+  favouriteWeapon: "candlestick"
 }
 
 const mrsPeacock = {
@@ -43,7 +40,8 @@ const mrsPeacock = {
   description: "She's proper and has excellent manners",
   age: 60,
   image: "assets/peacock.png",
-  occupation: "None"
+  occupation: "None",
+  favouriteWeapon: "dumbbell"
 }
 
 const colonelMustard = {
@@ -53,7 +51,8 @@ const colonelMustard = {
   description: "He loves to challenge people to a duel if they cross him, and he isn't afraid to speak his mind.",
   age: 57,
   image: "assets/mustard.png",
-  occupation: "Colonel"
+  occupation: "Colonel",
+  favouriteWeapon: "knife"
 }
 
 const mrsWhite = {
@@ -63,14 +62,10 @@ const mrsWhite = {
   description: "She owns nothing to her name and takes her domestic duties very seriously.",
   age: 55,
   image: "assets/white.png",
-  occupation: "Maid"
+  occupation: "Maid",
+  favouriteWeapon: "poison"
 }
 
-/* testing objects in console.
-
-console.log(mrGreen.firstName);
-console.log(mrsWhite.description);
-console.log(colonelMustard.age); */
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
@@ -78,133 +73,139 @@ const rope = {
   name: "rope",
   color: "beige",
   weight: 10,
-  image: "assets/white.png"
+  image: "assets/rope.svg",
+  id: "rope"
 }
 
 const knife = {
   name: "knife",
   color: "grey",
   weight: 11,
-  image: "assets/white.png"
+  image: "assets/knife.svg",
+  id: "knife"
 }
 
 const candlestick = {
   name: "candlestick",
   weight: 12,
-  image: "assets/white.png"
+  image: "assets/candlestick.svg",
+  id: "candlestick"
 }
 
 const dumbbell = {
   name: "dumbbell",
   weight: 13,
-  image: "assets/white.png"
+  image: "assets/gym.svg",
+  id: "dumbbell"
 }
 
 const poison = {
   name: "poison",
   weight: 14,
-  image: "assets/white.png"
+  image: "assets/potion.svg",
+  id: "poison"
 }
 
 const axe = {
   name: "axe",
   weight: 15,
-  image: "assets/white.png"
+  image: "assets/axe.svg",
+  id: "axe"
 }
 
 const bat = {
   name: "bat",
   weight: 16,
-  image: "assets/white.png"
+  image: "assets/baseballBat.svg"
 }
 
 const trophy = {
   name: "trophy",
   weight: 17,
-  image: "assets/white.png"
+  image: "assets/award.svg"
 }
 
 const pistol = {
   name: "pistol",
   weight: 18,
-  image: "assets/white.png"
+  image: "assets/gun.svg"
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 const diningRoom = {
   name: "Dining Room",
-  image: "assets/white.png"
+  image: "assets/diningRoom.svg"
 }
 
 const conservatory = {
   name: "Conservatory",
-  image: "assets/white.png"
+  image: "assets/door.svg"
 }
 
 const kitchen = {
   name: "Kitchen",
-  image: "assets/white.png"
+  image: "assets/kitchen.svg"
 }
 
 const study = {
   name: "Study",
-  image: "assets/white.png"
+  image: "assets/work.svg"
 }
 
 const library = {
   name: "Library",
-  image: "assets/white.png"
+  image: "assets/library.svg"
 }
 
 const billiardRoom = {
   name: "Billiard Room",
-  image: "assets/white.png"
+  image: "assets/snooker.svg"
 }
 
 const lounge = {
   name: "Lounge",
-  image: "assets/white.png"
+  image: "assets/lounge.svg"
 }
 
 const ballroom = {
   name: "Ballroom",
-  image: "assets/white.png"
+  image: "assets/chandelier.svg"
 }
 
 const hall = {
   name: "Hall",
-  image: "assets/white.png"
+  image: "assets/hanger.svg"
 }
 
 const spa = {
   name: "Spa",
-  image: "assets/white.png"
+  image: "assets/beauty.svg"
 }
 
 const livingRoom = {
   name: "Living Room",
-  image: "assets/white.png"
+  image: "assets/lamp.svg"
 }
 
 const observatory = {
   name: "Observatory",
-  image: "assets/white.png"
+  image: "assets/telescope.svg"
 } 
 
 const theater = {
   name: "Theater",
-  image: "assets/white.png"
+  image: "assets/doorStar.svg"
 }
 
 const guestHouse = {
   name: "Guest House",
-  image: "assets/white.png"
+  image: "assets/realEstate.svg"
 }
 
 const patio = {
   name: "Patio",
-  image: "assets/white.png"
+  image: "assets/outdoor.svg"
 }
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
@@ -260,34 +261,34 @@ const randomSelector = array => {
 // The values will be set later.
 
 const mystery = {
-  killer: "",
-  weapon: "",
-  room: ""  
+  killer: undefined,
+  weapon: undefined,
+  room: undefined 
 }
-
 
 // This function will be invoked when you click on the killer card.
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
+
 const pickKiller = () => {
-  pickedKiller= true;
+  //removes loading animation 
+  document.getElementById("loadingAnimation1").style.display = "none";
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color;
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   document.getElementById('killerImage').src = `${mystery.killer.image}`;
   document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`;
-  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`;
+  document.getElementById('favouriteWeapon').innerHTML = `Favourite Weapon: ${mystery.killer.favouriteWeapon}`;
 }
 
 //This function will be invoked when you click on the weapon card.
 
 const pickWeapon = () => {
-  pickedWeapon = true;
+  document.getElementById("loadingAnimation2").style.display = "none";
+
   mystery.weapon = randomSelector(weapons);
 
   document.getElementById("weaponCard").style.background = mystery.weapon.color;
@@ -299,13 +300,27 @@ const pickWeapon = () => {
 //This function will be invoked when you click on the room card.
 
 const pickRoom = () => {
-  pickedRoom = true;
+  document.getElementById("loadingAnimation3").style.display = "none";
+
   mystery.room = randomSelector(rooms)
-  
-  document.getElementById("roomCard").style.background = mystery.room.color
-  document.getElementById("roomName").innerHTML = `${mystery.room.name}`
+
+  document.getElementById("roomCard").style.background = mystery.room.color;
+  document.getElementById("roomName").innerHTML = `${mystery.room.name}`;
   document.getElementById('roomImage').src = `${mystery.room.image}`;
 }
+
+//animation i en separat funktion.
+/*document.getElementById("loadingAnimation1").addEventListener("click", function() {
+  document.getElementById("loadingAnimation1").style.display = "none";
+  pickKiller()
+}) */
+
+//test för shufflefavoutiteWeapon
+/*const shuffleFavouriteWeapon = () => {
+  suspects.forEach((favouriteWeapon) => {
+    suspects.favouriteWeapon = randomSelector(suspects)
+  })
+}*/
 
 document.getElementById('killerCard').onclick = pickKiller;
 document.getElementById('weaponCard').onclick = pickWeapon;
@@ -316,11 +331,13 @@ document.getElementById('roomCard').onclick = pickRoom;
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = () => {
   const answerMystery = document.getElementById("mysteryAnswer")
- if (pickedKiller === true || pickedRoom === true || pickedWeapon === true) {
-    answerMystery.innerHTML = (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`);
-    document.getElementById("revealButton").style.display = "none";
-    document.getElementById("newGameButton").style.display = "block";
-  } else { 
-    answerMystery.innerHTML = ("Please choose a killer, a weapon and a room");
+  if (mystery.killer === undefined || mystery.weapon === undefined || mystery.room === undefined) {
+      answerMystery.innerHTML = ("Please choose a killer, a weapon and a room");
+    } else {
+      answerMystery.innerHTML = (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`);
+      document.getElementById("revealButton").style.display = "none";
+      document.getElementById("newGameButton").style.display = "block";
+    }
   }
-}
+ 
+

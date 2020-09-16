@@ -8,33 +8,44 @@
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
+  
     <header>
-      <h1>CLUEDO</h1>
-      <P>click on the decks to select a suspect, a weapon and a room.</P>
+      <div class="heading-container">
+        <h1>CLUEDO</h1>
+        <img class="icon" src="./assets/detective.svg" alt="icon">
+      </div>
+      <div class="intro-text-container">
+      <P>Click on the cards to select a killer, a weapon and a room.</P>
+      </div>
     </header>
 
     <section class="cards">
       <article class="killer-deck" id="killerCard">
         <p>KILLER</p>
+        <img class="card-image" id="killerImage" src="" height="200" />
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="200" />
         <p id="killerDescription"></p>
+        <p id="favouriteWeapon"></p>
+          <div id="loadingAnimation1" class="loading-animation"></div> 
       </article>
 
       <article class="weapon-deck" id="weaponCard">
         <p>WEAPON</p>
-        <img id="weaponImage" src="" height="200" />
+        <img class="card-image" id="weaponImage" src="" height="200" />
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
+          <div id="loadingAnimation2" class="loading-animation"></div>
       </article>
-
+      
       <article class="room-deck" id="roomCard">
         <p>ROOM</p>
-        <img id="roomImage" src="" height="200" />
+        <img class="card-image" id="roomImage" src="" height="200" />
         <p id="roomName"></p>
+          <div id="loadingAnimation3" class="loading-animation"></div>
       </article>
+
     </section>
 
     <section class="reveal-section">
@@ -46,6 +57,13 @@
       <button class="new-game-button" id="newGameButton" onclick="location.reload()">NEW GAME</button>
 
     </section>
+
+    <footer>
+      <div class="footer-text"> 
+        Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> and <a href="https://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> 
+      </div>
+    </footer>
+
     <script src="clue.js"></script>
   </body>
 </html>
