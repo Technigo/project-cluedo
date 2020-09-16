@@ -1,8 +1,10 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+//variables to prevent clicking cards in wrong direction. 
 let killerIsPicked = false;
 let weaponIsPicked = false;
 let roomIsPicked = false; 
 
+
+//objects for suspects
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
@@ -11,7 +13,7 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
-  favouriteWeapon: 'rope'
+  favouriteWeapon: 'rope' //rope
 }
 
 const professorPlum = {
@@ -22,7 +24,7 @@ const professorPlum = {
   age: 84,
   image: 'assets/plum.png',
   occupation: 'Retired',
-  favouriteWeapon: 'pistol'
+  favouriteWeapon: 'pistol' //pistol
 }
 
 const missScarlet = {
@@ -33,7 +35,7 @@ const missScarlet = {
   age: 28,
   image: 'assets/scarlet.png',
   occupation: 'Actress',
-  favouriteWeapon: 'knife'
+  favouriteWeapon: 'knife'//knife
 }
 
 const mrsPeacock = {
@@ -44,7 +46,7 @@ const mrsPeacock = {
   age: 57,
   image: 'assets/peacock.png',
   occupation: 'Socialite',
-  favouriteWeapon: 'candlestick'
+  favouriteWeapon: 'candlestick' //candlestick
 }
 
 const colonelMustard = {
@@ -55,7 +57,7 @@ const colonelMustard = {
   age: 65,
   image: 'assets/mustard.png',
   occupation: 'Colonel',
-  favouriteWeapon: 'axe'
+  favouriteWeapon: 'axe' //axe
 }
 
 
@@ -67,79 +69,86 @@ const mrsWhite = {
   age: 72,
   image: 'assets/white.png',
   occupation: 'Housekeeper',
-  favouriteWeapon: 'poison'
+  favouriteWeapon: 'posion' //poison
 }
 
-//CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
+//objects for weapons
 const rope = {
   name: 'rope',
   weight: 10,
   article: 'a',
-  id: 'rope'
+  id: 'rope',
+  chanceOfKillerWeapon: 5
 }
 
 const knife = {
   name: 'knife',
   weight: 7,
   article: 'a',
-  id: 'knife'
+  id: 'knife',
+  chanceOfKillerWeapon: 25
 }
 
 const candelstick = {
   name: 'candelstick',
   weight: 12,
   article: 'a',
-  id: 'candelstick'
+  id: 'candelstick',
+  chanceOfKillerWeapon: 8
 }
 
 const dumbbell = {
   name: 'dumbbell',
   weight: 24,
   article: 'a',
-  id: 'dumbbell'
+  id: 'dumbbell',
+  chanceOfKillerWeapon: 12
 }
 
 const poison = {
   name: 'poison',
   weight: 1,
   article: '',
-  id: 'poison'
+  id: 'poison',
+  chanceOfKillerWeapon: 20
 }
 
 const axe = {
   name: 'axe',
   weight: 17,
   article: 'an',
-  id: 'axe'
+  id: 'axe',
+  chanceOfKillerWeapon: 12
 }
 
-//do I have to keep this? 
-/*const bat = {
+const bat = {
   name: 'bat',
-  weight: 4
-}*/
-
+  weight: 4,
+  article: 'a',
+  id: 'bat',
+  chanceOfKillerWeapon: 4
+}
 
 
 const trophy = {
   name: 'trophy',
   weight: 29,
   article: 'a',
-  id: 'trophy'
+  id: 'trophy',
+  chanceOfKillerWeapon: 2
 }
 
 const pistol = {
   name: 'pistol',
   weight: 11,
   article: 'a',
-  id: 'pistol'
+  id: 'pistol',
+  chanceOfKillerWeapon: 12
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
-
+//suspects array
 const suspects = [
   mrGreen,
   professorPlum,
@@ -149,6 +158,8 @@ const suspects = [
   mrsWhite
 ]
 
+
+//weapons array
 const weapons = [
   rope,
   knife,
@@ -156,11 +167,13 @@ const weapons = [
   dumbbell,
   poison,
   axe,
-  //bat,
+  bat,
   trophy,
   pistol
 ]
 
+
+//room array
 const rooms = [
   "Dining Room", 
   "Conservatory", 
@@ -187,22 +200,25 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
 
-// This function will be invoked when you click on the killer card.
-const pickKiller = (loadID) => {
+
+//object that keeps mystery 
+const mystery = {
+  killer: null,
+  weapon: null,
+  room: null
+};
+
+
+// This function will be invoked when you click the killer card.
+const pickKiller = () => {
   if (!killerIsPicked) {
-    document.getElementById(loadID.id).style.opacity = 1
+    document.getElementById('loaderKiller').style.opacity = 1
     setTimeout(function () {
-      document.getElementById(loadID.id).style.opacity = 0
-
+      document.getElementById('loaderKiller').style.opacity = 0
+      let randomWeapon = shuffleFavoriteWeapon();
       // This will randomly select a killer from the suspects. And add that to the mystery object.
-      shuffleFavoriteWeapon();
       mystery.killer = randomSelector(suspects)
-  
-      // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
       document.getElementById('killerCard').style.background = mystery.killer.color
       document.getElementById(
         'killerName'
@@ -211,20 +227,19 @@ const pickKiller = (loadID) => {
       document.getElementById('killerDescription').innerHTML = `Descripton: ${mystery.killer.description}`
       document.getElementById('killerFavouriteWeapon').innerHTML = `Preferred weapon: ${mystery.killer.favouriteWeapon}` //red level to check that the fav-weap changes by using function "shuffleFavouriteWeapon"
       document.getElementById('killerImage').src = mystery.killer.image;
+      document.getElementById('killerImage').style.opacity = 1;
       killerIsPicked = true;
     }, 2500)
   }
-  
 };
 
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
-//LOADER IS NOT WORKING HERE YET
-const pickWeapon = (loadID) => {
+// This function will be invoked when you click the weapon card.
+const pickWeapon = () => {
   if (killerIsPicked && !weaponIsPicked) {
-    document.getElementById(loadID.id).style.opacity = 1
+    document.getElementById('loaderWeapon').style.opacity = 1
     setTimeout(function() {
-      document.getElementById(loadID.id).style.opacity = 0
+      document.getElementById('loaderWeapon').style.opacity = 0
       mystery.weapon = randomSelector(weapons)
       document.getElementById('weaponName').innerHTML = `Type: ${mystery.weapon.name}`
       document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`
@@ -233,22 +248,22 @@ const pickWeapon = (loadID) => {
   } else {
     alert('pick killer card')
   }
-  
 };
 
 
-const pickRoom = (loadID) => {
+//This function will be invoked when you click  the room card.
+const pickRoom = () => {
   if (weaponIsPicked && !roomIsPicked) {
-    document.getElementById(loadID.id).style.opacity = 1
+    document.getElementById('loaderRoom').style.opacity = 1
     setTimeout(function() { 
-      document.getElementById(loadID.id).style.opacity = 0
+      document.getElementById('loaderRoom').style.opacity = 0
       mystery.room = randomSelector(rooms)
       document.getElementById('roomName').innerHTML = `Where murder was commited: ${mystery.room}`
+      weaponIsPicked = true
     },2500)   
   } else {
     alert('pick room')
   }
-    
 };
 
 
@@ -256,25 +271,20 @@ const pickRoom = (loadID) => {
 const shuffleFavoriteWeapon = () => {
   suspects.forEach(suspect => {
     let randomWeapon = randomSelector(weapons).id;
-   // console.log(suspect.favouriteWeapon, suspect.firstName)
     suspect.favouriteWeapon = randomWeapon
-   // console.log(randomWeapon);
-   // console.log(suspect.favouriteWeapon, suspect.firstName)
+    //console.log(randomWeapon);
   });
-}
-//shuffleFavoriteWeapon();
+};
 
 
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
-
+// STEP 4 - revealMystery that will be invoked when you click that button.
 
 const revealMystery = () => {
   if (
-    mystery.killer === undefined ||
-    mystery.weapon === undefined ||
-    mystery.room === undefined 
+    mystery.killer === null ||
+    mystery.weapon === null ||
+    mystery.room === null 
     ) {
     document.getElementById('mystery').innerHTML = `No mystery has been solved`;
     } else {
@@ -284,13 +294,11 @@ const revealMystery = () => {
     document.getElementById('mystery').innerHTML = `The murder was comitted by ${killer} using ${weapon} in the ${room}!`; 
     }
 }
-//console.log(revealMystery);
 
 
-
-//document.getElementById('killerCard').onclick = pickKiller;
-//document.getElementById('weaponCard').onclick = pickWeapon;
-//document.getElementById('roomCard').onclick = pickRoom;
-//document.getElementById('mystery').onclick = revealMystery;
-
-
+const restartGame = () => {
+  let confirmation = confirm(`Click OK if you want to restart the game?`);
+  if (confirmation === true) {
+    location.reload();
+  }
+};
