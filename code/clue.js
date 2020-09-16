@@ -199,7 +199,9 @@ const pickKiller = () => {
   document.getElementById(
     "killerName"
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  document.getElementById("killerAge").innerHTML = `${mystery.killer.age}`;
+  document.getElementById(
+    "killerAge"
+  ).innerHTML = `${mystery.killer.age} yaers`;
   document.getElementById(
     "killerOccupation"
   ).innerHTML = `${mystery.killer.occupation}`;
@@ -207,12 +209,16 @@ const pickKiller = () => {
   document.getElementById(
     "killerDescription"
   ).innerHTML = `${mystery.killer.description}`;
+  document.getElementById(
+    "favouriteWeapon"
+  ).innerHTML = `Favourite weapon:<br>${mystery.killer.favouriteWeapon}`;
 };
 
 document.getElementById("killerCard").addEventListener("click", pickKiller);
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
+// Random weapon picker
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
   document.getElementById("weaponCard");
@@ -224,6 +230,7 @@ const pickWeapon = () => {
 
 document.getElementById("weaponCard").addEventListener("click", pickWeapon);
 
+// Random room picker
 const pickRoom = () => {
   mystery.room = randomSelector(rooms);
   document.getElementById("roomCard");
@@ -231,6 +238,13 @@ const pickRoom = () => {
 };
 
 document.getElementById("roomCard").addEventListener("click", pickRoom);
+
+// Favourite weapon
+const shuffleFavouriteWeapon = () => {
+  suspects.forEach((suspect) => {
+    suspect.favouriteWeapon = randomSelector(weapons).name;
+  });
+};
 
 // STEP 4 + validation
 
@@ -246,11 +260,5 @@ const revealMystery = () => {
       "mystery"
     ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
   }
-  shuffleFavouriteWeapon();
-};
-
-const shuffleFavouriteWeapon = () => {
-  suspects.forEach((suspect) => {
-    suspect.favouriteWeapon = randomSelector(weapons).name;
-  });
+  //shuffleFavouriteWeapon(); in reaveal button instead!
 };
