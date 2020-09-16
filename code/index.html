@@ -4,34 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Technigo Project Cluedo</title>
   </head>
+
   <body>
+    <h1>CLUEDO</h1>
     <section class="cards">
-      <article class="killer-deck" id="killerCard" onclick="pickKiller()">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
+      <article class="deck killer-deck" id="killerCard" onclick="pickKiller()">
+        <h2>SUSPECT</h2>
+        <img id="killerImage" class="killer-image" src="" height="150" />
+        <div class="information-container">
+          <label class="killer-label">NAME</label>
+          <p id="killerName" class="killer-name"></p>
+          <label class="killer-label">AGE</label>
+          <p id="killerAge" class="killer-age"></p>
+          <label class="killer-label">OCCUPATION </label>
+          <p id="killerOccupation" class="killer-occupation"></p>
+          <label class="killer-label">DESCRIPTION</label>
+          <p id="killerDescription" class="killer-description"></p>
+        </div>
       </article>
-      <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
+
+      <article class="deck weapon-deck" id="weaponCard" onclick="pickWeapon()">
+        <h2>WEAPON</h2>
+        <img id="weaponImage" src="" height="150" />
+        <div class="information-container">
+          <label class="weapon-label">WEAPON</label>
+          <p id="weaponName"></p>
+          <label class="weapon-label">WEIGHT (KG)</label>
+          <p id="weaponWeight"></p>
+        </div>
       </article>
-      <article class="room-deck" id="roomCard" onclick="pickRoom()">
-        <p>ROOM</p>
-        <p id="roomName"></p>
+
+      <article class="deck room-deck" id="roomCard" onclick="pickRoom()">
+        <h2>ROOM</h2>
+        <!-- <img id="roomImage" src="img/moonlight-3468090_640.jpg" /> -->
+        <div class="information-container">
+          <label class="room-label">ROOM</label>
+          <p id="roomName" class="room-name"></p>
+        </div>
       </article>
     </section>
 
-    <h1 id="mystery"></h1>
+    <section class="reveal">
+      <p id="mystery" class="mystery"></p>
+      <button onclick="revealMystery()">REVEAL THE CRIME</button>
+      <p id="mysteryReveald"></p>
+    </section>
 
-    <button onclick="revealMystery()">REVEAL THE CRIME</button>
-    <p id="mysteryReveald"></p>
     <script src="clue.js"></script>
   </body>
 </html>

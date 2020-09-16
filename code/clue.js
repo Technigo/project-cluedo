@@ -4,7 +4,7 @@ const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
   color: "darkseagreen",
-  description: "He has a lot of connections",
+  description: "He has a lot of connections.",
   age: 45,
   image: "assets/green.png",
   occupation: "Entrepreneur",
@@ -16,7 +16,7 @@ const professorPlum = {
   color: "thistle",
   description:
     // "An archaeologist seeking funding for his next expedition to Egypt.",
-    "A disgraced former psychiatrist who lost his medical license for having an affair with one of his patients.",
+    "A former psychiatrist who lost his medical license for having an affair with a patient.",
   age: 36,
   image: "assets/plum.png",
   occupation: "Professor",
@@ -26,7 +26,7 @@ const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
   color: "indianred",
-  description: "A movie star who will do anything to stay in the spotlight",
+  description: "A movie star who will do anything to stay in the spotlight.",
   age: 25,
   image: "assets/scarlet.png",
   occupation: "Actress",
@@ -46,8 +46,8 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: "Jack",
   lastName: "Mustard",
-  color: "gold",
-  description: "An expert in weapons and conspiracy",
+  color: "goldenRod",
+  description: "An expert in weapons and conspiracy.",
   age: 57,
   image: "assets/mustard.png",
   occupation: "Colonel",
@@ -58,7 +58,7 @@ const mrsWhite = {
   lastName: "White",
   color: "linen",
   description:
-    "The widow of a nuclear physicist whose death she is suspected of being behind",
+    "The widow of a nuclear physicist whose death she is suspected of being behind.",
   age: 65,
   image: "assets/white.png",
   occupation: "Housekeeper",
@@ -69,46 +69,55 @@ const mrsWhite = {
 const rope = {
   name: "Rope",
   weight: 10,
+  image: "img/rope-1295003_640.png",
 };
 
 const knife = {
   name: "Knife",
   weight: 1,
+  image: "img/knife-2930492_640.png",
 };
 
 const candlestick = {
   name: "Candlestick",
   weight: 6,
+  image: "img/candles-3913775_640.png",
 };
 
 const dumbbell = {
   name: "Dumbbell",
   weight: 20,
+  image: "img/black-1295124_640.png",
 };
 
 const poison = {
   name: "Poison",
   weight: 2,
+  image: "img/poison-576608_640.png",
 };
 
 const axe = {
   name: "Axe",
   weight: 50,
+  image: "img/axe-159659_640.png",
 };
 
 const bat = {
   name: "Bat",
   weight: 1.5,
+  image: "img/base-25755_640.png",
 };
 
 const trophy = {
   name: "Trophy",
   weight: 10,
+  image: "img/cup-1757500_640.png",
 };
 
 const pistol = {
   name: "Pistol",
   weight: 2,
+  image: "img/gun-5517424_640.png",
 };
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -180,6 +189,14 @@ const pickKiller = () => {
   document.getElementById(
     "killerName"
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById("killerAge").innerHTML = mystery.killer.age;
+
+  document.getElementById("killerImage").src = mystery.killer.image;
+  document.getElementById("killerDescription").innerHTML =
+    mystery.killer.description;
+  document.getElementById("killerOccupation").innerHTML =
+    mystery.killer.occupation;
+  console.log(mystery.killer.occupation);
 };
 pickKiller();
 
@@ -192,9 +209,9 @@ const pickWeapon = () => {
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   // document.getElementById("killerCard").style.background = mystery.killer.color;
-  document.getElementById(
-    "weaponName"
-  ).innerHTML = `${mystery.weapon.name} ${mystery.weapon.weight}`;
+  document.getElementById("weaponName").innerHTML = mystery.weapon.name;
+  document.getElementById("weaponWeight").innerHTML = mystery.weapon.weight;
+  document.getElementById("weaponImage").src = mystery.weapon.image;
 };
 pickWeapon();
 
