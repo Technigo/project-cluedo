@@ -76,7 +76,7 @@ const dumbbell = {
   weight: 8
 }
 
-const poision = {
+const poison = {
 name: 'poison',
 weight: 1
 }
@@ -101,10 +101,9 @@ const pistol = {
   weight: 8
 }
 
-
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// STEP 2 - GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS:
 
 const suspects = [
   mrGreen,
@@ -145,7 +144,9 @@ const rooms = [
   patio
 ]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
+
+
+// STEP 3 - THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
