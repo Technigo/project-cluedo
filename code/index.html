@@ -75,12 +75,22 @@
         </div>
         </article>
 
-        <button onclick="revealMystery(this.parentNode.id)" class="button" id="revealButton">
+        <button onclick="revealMystery(this.parentNode.id)" class="button reveal-button" id="revealButton">
           REVEAL THE CRIME
         </button>
       </section>
       <section class="reveal-wrapper invisible" id="revealWindow">
         <h1 class="mystery-reveal" id="mystery"></h1>
+        <article
+          class="reveal-deck"
+          id="mysteryCard"
+        >
+          <p class="p-header">REVEAL THE MYSTERY</p>
+          <p id="mysteryKiller"></p>
+          <img id="mysteryKillerImage" class="killer-image" src=""/>
+          <p id="mysteryRoom"></p>
+          <p id="mysteryWeapon"></p>
+        </article>
       </section>
     <!-- </div> -->
     <script src="clue.js"></script>

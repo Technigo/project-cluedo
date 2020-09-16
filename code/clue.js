@@ -127,35 +127,35 @@ const pistol = {
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-const diningRoom = "Dining Room";
+const diningRoom = "dining room";
 
-const conservatory = "Conservatory";
+const conservatory = "conservatory";
 
-const kitchen = "Kitchen";
+const kitchen = "kitchen";
 
-const study = "Study";
+const study = "study";
 
-const library = "Library";
+const library = "library";
 
-const billiardRoom = "Billiard Room";
+const billiardRoom = "billiard room";
 
-const lounge = "Lounge";
+const lounge = "lounge";
 
-const ballRoom = "Ball Room";
+const ballRoom = "ballroom";
 
-const hall = "Hall";
+const hall = "hall";
 
-const spa = "Spa";
+const spa = "spa";
 
-const livingRoom = "Living Room";
+const livingRoom = "living room";
 
-const observatory = "Observatory";
+const observatory = "observatory";
 
-const theater = "Theater";
+const theater = "theater";
 
-const guestHouse = "Guest House";
+const guestHouse = "guest house";
 
-const patio = "Patio";
+const patio = "patio";
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
@@ -226,7 +226,7 @@ const pickKiller = (loaderId) => {
     setTimeout(function () {
       toggleLoader(loaderId);
       mystery.killer = randomSelector(suspects);
-      shuffleFavouriteWeapon();
+      //shuffleFavouriteWeapon();
       document.getElementById("killerCard").style.background =
         mystery.killer.color;
       document.getElementById(
@@ -282,8 +282,11 @@ const pickRoom = (loaderId) => {
       mystery.room = randomSelector(rooms);
       document.getElementById("roomCard").style.background =
         mystery.killer.color;
-      document.getElementById("roomName").innerHTML = `${mystery.room}`;
+      document.getElementById("roomName").innerHTML = `${capitalizeFirstLetter(
+        mystery.room
+      )}`;
       roomPicked = true;
+      document.getElementById("revealButton").style.display = "block";
     }, 2000);
   } // else show message
 };
@@ -297,7 +300,21 @@ const revealMystery = (windowId) => {
     document.getElementById(
       "mystery"
     ).innerHTML = `The murder was commited by ${mystery.killer.firstName} 
-  ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`;
+    ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`;
+    document.getElementById("mysteryCard").style.background =
+      mystery.killer.color;
+    document.getElementById(
+      "mysteryKiller"
+    ).innerHTML = `Mystery Killer: ${mystery.killer.firstName} 
+    ${mystery.killer.lastName}`;
+    document.getElementById("mysteryKillerImage").src = mystery.killer.image;
+    document.getElementById(
+      "mysteryRoom"
+    ).innerHTML = `Room: ${capitalizeFirstLetter(mystery.room)}`;
+    document.getElementById(
+      "mysteryWeapon"
+    ).innerHTML = `Weapon: ${capitalizeFirstLetter(mystery.weapon.name)}`;
+    console.log();
   } // else show message
 };
 
