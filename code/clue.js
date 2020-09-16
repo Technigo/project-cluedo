@@ -91,6 +91,19 @@ const rooms = [
 
 console.log(rooms[5])
 
+// Group OBJECTS (just suspects because i choosed to no give the weapons a discirption (not at least in this point)
+
+const suspects = [
+  mrGreen,
+  professorPlum,
+  missScarlet,
+  colonelMustard,
+  mrsPeacock,
+  mrsWhite
+]
+
+console.log(suspects[5].description, weapons[3], rooms[2])
+
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
