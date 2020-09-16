@@ -9,29 +9,31 @@
     <link rel="shortcut icon" href="./assets/blood.png" type="image/png" />
   </head>
   <body>
-    <div class="flex-wrapper">
-      <header class="header-container">
-        <div>
-          <h1 class="header">CLUEDO</h1>
+    <!-- <div class="flex-wrapper"> -->
+      <header class="header-wrapper visible" id="startWindow">
+        <div class="header-container">
+          <h1 class="header-text">CLUEDO</h1>
           <div class="drop"></div>
         </div>
+        <button onclick="startGame(this.parentNode.id)" class="button button-start" id="startButton">
+          LET'S PLAY
+        </button>
       </header>
 
-      <button onclick="startGame" id="startButton">LET'S PLAY</button>
-
-      <section class="cards">
+      <section class="game-wrapper invisible" id="gameWindow">
+        <div class="cards cards-container">
         <article
           class="decks killer-deck"
           onclick="pickKiller(this.lastElementChild.id)"
           id="killerCard"
         >
-          <p>KILLER</p>
+          <p class="p-header">KILLER</p>
           <p id="killerNameAge"></p>
-          <img id="killerImage" class="killer-image" src="" />
           <p id="killerAge"></p>
           <p id="killerOccupation"></p>
-          <p id="killerDescription"></p>
           <p id="killerFavouriteWeapon"></p>
+          <img id="killerImage" class="killer-image" src="" />
+          <p id="killerDescription"></p>
           <div class="loader-container" id="loaderKiller">
             <img
               src="./assets/question-mark-48.png"
@@ -45,7 +47,7 @@
           onclick="pickWeapon(this.lastElementChild.id)"
           id="weaponCard"
         >
-          <p>WEAPON</p>
+          <p class="p-header">WEAPON</p>
           <p id="weaponName"></p>
           <p id="weaponWeight"></p>
           <div class="loader-container" id="loaderWeapon">
@@ -61,7 +63,7 @@
           onclick="pickRoom(this.lastElementChild.id)"
           id="roomCard"
         >
-          <p>ROOM</p>
+          <p class="p-header">ROOM</p>
           <p id="roomName"></p>
           <div class="loader-container" id="loaderRoom">
             <img
@@ -70,14 +72,17 @@
               alt=""
             />
           </div>
+        </div>
         </article>
-        <h1 class="mystery-reveal" id="mystery"></h1>
 
-        <button onclick="revealMystery(mystery)" id="revealButton">
+        <button onclick="revealMystery(this.parentNode.id)" class="button" id="revealButton">
           REVEAL THE CRIME
         </button>
       </section>
-    </div>
+      <section class="reveal-wrapper invisible" id="revealWindow">
+        <h1 class="mystery-reveal" id="mystery"></h1>
+      </section>
+    <!-- </div> -->
     <script src="clue.js"></script>
   </body>
 </html>

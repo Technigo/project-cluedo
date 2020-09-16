@@ -157,9 +157,6 @@ const guestHouse = "Guest House";
 
 const patio = "Patio";
 
-console.log(missScarlet.firstName);
-console.log(knife.name);
-
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
@@ -201,41 +198,35 @@ const rooms = [
   patio,
 ];
 
-console.log(rooms);
-console.log(weapons);
-console.log(suspects);
-
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
-const randomSelector = (array) => {
-  return array[Math.floor(Math.random() * array.length)];
-};
-
-console.log(randomSelector(suspects));
-
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
 const mystery = {
   killer: "",
   weapon: "",
   room: "",
 };
 
-// This function will be invoked when you click on the killer card.
+/* Called when the 'Let's Play' button is clicked, toggles the window and then
+ shuffles the suspects' favourite weapon */
+const startGame = (windowId) => {
+  toggleWindow(windowId);
+  shuffleFavouriteWeapon();
+};
+
+/* Function to randomly select one item from the array passed as a paramater */
+const randomSelector = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
+};
+
+/* The function is invoked when the killer card deck is clicked. It checks that
+ a killer hasn't already been picked, then toggles the loader animation. After 
+ 3 seconds a killer is randomly selected and added to the mystery object and 
+ then displayed  */
 const pickKiller = (loaderId) => {
   if (!killerPicked) {
-    console.log(loaderId);
     toggleAnimation(loaderId);
-    console.log(loaderId);
     setTimeout(function () {
       toggleLoader(loaderId);
-      console.log(loaderId);
-      // This will randomly select a killer from the suspects. And add that to the mystery object.
       mystery.killer = randomSelector(suspects);
       shuffleFavouriteWeapon();
-      console.log(mystery);
-      // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
       document.getElementById("killerCard").style.background =
         mystery.killer.color;
       document.getElementById(
@@ -247,68 +238,62 @@ const pickKiller = (loaderId) => {
       document.getElementById("killerImage").src = mystery.killer.image;
       document.getElementById(
         "killerDescription"
-      ).innerHTML = `${mystery.killer.description}`;
-      mystery.killer.favouriteWeapon = capitalizeFirstLetter(
-        mystery.killer.favouriteWeapon
-      );
-      console.log(mystery.killer.favouriteWeapon);
+      ).innerHTML = `Description: ${mystery.killer.description}`;
       document.getElementById(
         "killerFavouriteWeapon"
-      ).innerHTML = `Weapon of choice: ${mystery.killer.favouriteWeapon}`;
-      console.log(mystery.killer.favouriteWeapon);
+      ).innerHTML = `Weapon of choice: ${capitalizeFirstLetter(
+        mystery.killer.favouriteWeapon
+      )}`;
       killerPicked = true;
-    }, 3000);
+    }, 2000);
   }
 };
 
+/* The function is evoked when the user clicks on the weapon card deck. Checks
+ that a killer but no weapon or room has been picked, then works like the 
+ pickKiller function */
 const pickWeapon = (loaderId) => {
   if (killerPicked && !weaponPicked && !roomPicked) {
     toggleAnimation(loaderId);
-    console.log(loaderId);
     setTimeout(function () {
       toggleLoader(loaderId);
-      console.log(loaderId);
-      console.log(loaderId);
-      // This will randomly select a weapon from the suspects. And add that to the mystery object.
       mystery.weapon = randomSelector(weapons);
-      console.log(mystery);
-      // This will change the background color of the card to the one connected to the chosen killer.
       document.getElementById("weaponCard").style.background =
         mystery.killer.color;
-      console.log(mystery.killer.color);
-      mystery.weapon.name = capitalizeFirstLetter(mystery.weapon.name);
-      document.getElementById(
-        "weaponName"
-      ).innerHTML = `${mystery.weapon.name}`;
+      document.getElementById("weaponName").innerHTML = capitalizeFirstLetter(
+        mystery.weapon.name
+      );
       document.getElementById(
         "weaponWeight"
       ).innerHTML = `Weight: ${mystery.weapon.weight}`;
       weaponPicked = true;
-    }, 3000);
+    }, 2000);
   } // else show message
 };
 
+/* The function is evoked when the user clicks on the room card deck. Checks
+ that a weapon but no room has been picked, then works like pickKiller and 
+ pickWeapon functions */
 const pickRoom = (loaderId) => {
   if (weaponPicked && !roomPicked) {
     toggleAnimation(loaderId);
-    console.log(loaderId);
     setTimeout(function () {
       toggleLoader(loaderId);
-      console.log(loaderId);
-      // This will randomly select a room from the rooms and add that to the mystery object.
       mystery.room = randomSelector(rooms);
-      console.log(mystery);
-      // This will change the background color of the card to the one connected to the chosen killer.
       document.getElementById("roomCard").style.background =
         mystery.killer.color;
       document.getElementById("roomName").innerHTML = `${mystery.room}`;
       roomPicked = true;
-    }, 3000);
+    }, 2000);
   } // else show message
 };
 
-const revealMystery = (mystery) => {
+/* The function is called when the 'Reveal the Crime' button is clicked. Checks
+ if all cards have been picked and then toggles window to display a message 
+ with the mystery object  */
+const revealMystery = (windowId) => {
   if (killerPicked && weaponPicked && roomPicked) {
+    toggleWindow(windowId);
     document.getElementById(
       "mystery"
     ).innerHTML = `The murder was commited by ${mystery.killer.firstName} 
@@ -316,19 +301,17 @@ const revealMystery = (mystery) => {
   } // else show message
 };
 
+/* The function is called when the game starts. Shuffles the suspects favourite
+ weapons */
 const shuffleFavouriteWeapon = () => {
   suspects.forEach((suspect) => {
     suspect.favouriteWeapon = randomSelector(weapons).id;
-    console.log(suspect.favouriteWeapon);
   });
 };
 
 /* Capitalizes the first letter */
 const capitalizeFirstLetter = (inputToCheck) => {
-  const inputToCapitalize =
-    inputToCheck[0].toUpperCase() + inputToCheck.slice(1);
-  console.log(inputToCapitalize);
-  return inputToCapitalize;
+  return inputToCheck[0].toUpperCase() + inputToCheck.slice(1);
 };
 
 /* Toggles the loader animation */
@@ -341,4 +324,17 @@ const toggleAnimation = (loaderId) => {
 /* Hides the loader image when a card is picked */
 const toggleLoader = (loaderId) => {
   document.getElementById(loaderId).style.display = "none";
+};
+
+/* Hides the current window and displays the next */
+const toggleWindow = (windowId) => {
+  let windowElement = document.getElementById(windowId);
+  toggleWindowClass(windowId);
+  toggleWindowClass(windowElement.nextElementSibling.id);
+};
+
+/* Toggles between classes to hide/display a window */
+const toggleWindowClass = (id) => {
+  document.getElementById(id).classList.toggle("visible");
+  document.getElementById(id).classList.toggle("invisible");
 };
