@@ -175,7 +175,8 @@ const revealMystery = () => {
     document.getElementById(cards[i]).style.background = "#30F2C6"
   }
 
-  mystery.killer = null
-  mystery.weapon = null
-  mystery.room = null
+  Object.keys(mystery).forEach(key => {
+    mystery[key] = null;
+  })
+
 }
