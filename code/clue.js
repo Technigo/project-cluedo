@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  color: '#006a71',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -13,7 +13,7 @@ const mrGreen = {
 const mrMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'yellow',
+  color: '#ffd571',
   description: 'Dijon mustard hoarder',
   age: 60,
   image: 'assets/mustard.png',
@@ -23,7 +23,7 @@ const mrMustard = {
 const mrsPeacock= {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: 'blue',
+  color: '#1e5f74',
   description: 'Illegal is her middle name',
   age: 45,
   image: 'assets/peacock.png',
@@ -33,7 +33,7 @@ const mrsPeacock= {
 const mrPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'purple',
+  color: '#654062',
   description: 'Loves to (un)fix things',
   age: 50,
   image: 'assets/plum.png',
@@ -43,7 +43,7 @@ const mrPlum = {
 const mrsScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlett',
-  color: 'red',
+  color: '#931a25',
   description: 'Scars hearts with no mercy',
   age: 35,
   image: 'assets/scarlet.png',
@@ -53,11 +53,12 @@ const mrsScarlet = {
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: 'white',
+  color: '#ecf4f3',
   description: 'Knows all the secrets',
   age: 68,
   image: 'assets/white.png',
-  occupation: 'Housekeeper'
+  occupation: 'Housekeeper',
+  favouriteWeapon: 'knife'
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
