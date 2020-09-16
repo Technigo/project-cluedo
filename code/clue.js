@@ -141,21 +141,6 @@ const rooms = ['Dining Room',
   'Guest House',
   'Patio',]
 
-const adjectives = [
-  'bitter',
-  'clumsy',
-  'witty',
-  'dramatic',
-  'one of a kind',
-  'unformidable',
-  'clueless',
-  'sour',
-  'over-the-top',
-  'hopeless',
-  'laughable',
-  'mastermind'
-]
-
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
@@ -200,10 +185,11 @@ document.getElementById('roomCard').onclick = pickRoom
 const thisMystery = document.getElementById('mystery')
 
 const revealMystery = () => {
-  if (mystery.killer == "" || mystery.weapon == "" || mystery.room == "") {
+  if (mystery.killer == '' || mystery.weapon == '' || mystery.room == '') {
+    //   if (mystery.killer == null || mystery.weapon == null || mystery.room == null) -this prints no mystery to be revealed yet but it prints the same when all cards chosen, too
     document.getElementById('mystery').innerHTML = `No mystery to be revealed yet!`
   } else {
-    thisMystery.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} , room: ${mystery.rooms}, executed with a ${mystery.weapon.weight} lbs ${mystery.weapon.name}. ${mystery.weapon.fact}!`
+    thisMystery.innerHTML = `The murder was committed by the ${mystery.killer.occupation}, ${mystery.killer.firstName} ${mystery.killer.lastName} , room: ${mystery.rooms}, executed with a ${mystery.weapon.weight} lbs ${mystery.weapon.name}. ${mystery.weapon.fact}!`
 
   }
 }
