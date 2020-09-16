@@ -11,32 +11,46 @@
   <body>
     <header>
       <h1>Create your own cluedo mystery!<img class="magnifying-icon" src="assets/icons8-magnifying-glass-tilted-left-48.png"></h1>
-      <p>Click the cards and pick a killer, weapon and room</p>
+      <p>Click the cards to generate a killer, weapon and room</p>
     </header>
 
 
     <section class="cards">
       <article class="killer-deck" id="killerCard">
-        <p class="start-view-cards" id="start-view-card-killer">PICK KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="favoriteWeapon"></p>
-        <p id="killerDescription"></p>
+        <div class="killer-info-wrapper" id="killer-info-wrapper">
+          <p class="start-view-cards" id="start-view-card-killer">PICK KILLER</p>
+          <p id="killerName"></p>
+          <p id="killerAge"></p>
+          <p id="killerOccupation"></p>
+          <img id="killerImage" src="" height="100" />
+          <p id="favoriteWeapon"></p>
+          <p id="killerDescription"></p>
+        </div>
+        <div class="loader-wrapper" id="loader-wrapper-killer">
+          <div class="loader"></div>
+          <p class="generating-text">Generating a suspect</p>
+        </div>
       </article>
       <article class="weapon-deck" id="weaponCard">
         <p class="start-view-cards" id="start-view-card-weapon">PICK WEAPON</p>
-        <div class="weapon-info-wrapper">
+        <div class="weapon-info-wrapper" id="weapon-info-wrapper">
           <p id="weaponName"></p>
           <p id="weaponWeight"></p>
+        </div>
+        <div class="loader-wrapper" id="loader-wrapper-weapon">
+          <div class="loader"></div>
+          <p>Generating a weapon</p>
         </div>
       </article>
       <article class="room-deck" id="roomCard">
         <p class="start-view-cards" id="start-view-card-room">PICK ROOM</p>
-        <div class="room-info-wrapper">
+        <div class="room-info-wrapper" id="room-info-wrapper">
           <p id="roomName"></p>
         </div> 
+        <div class="loader-wrapper" id="loader-wrapper-room">
+          <div class="loader"></div>
+          <p>Generating a room</p>
+        </div>
       </article>
     </section>
 
