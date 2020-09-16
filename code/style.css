@@ -1,6 +1,25 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: "Courier New", Courier, monospace;
+  background-image: url(./assets/hallway.jpeg);
+  background-size: cover;
+  backdrop-filter: blur(9px);
+}
+
+h1 {
+  text-align: center;
+  border: 10px double yellowgreen;
+  padding: 50px;
+  margin: 0px 300px 0px 300px;
+  font-size: 60px;
+  color: yellow;
+}
+
+h3,h2 {
+  font-family: 'Mystery Quest', cursive;
+  text-align: center;
+  color: whitesmoke;
 }
 
 p {
@@ -17,6 +36,7 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-image: url(./assets/investigate.jpeg);
 }
 
 .killer-deck {
@@ -54,5 +74,12 @@ button {
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin: 50px auto;
+}
+
+footer {
+  padding: 10px 0px 10px 0px;
+  border-top: 10px double white;
+  border-bottom: 10px double white;
+  
 }

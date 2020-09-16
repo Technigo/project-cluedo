@@ -1,37 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Technigo Project Cluedo</title>
-  </head>
-  <body>
-    <section class="cards">
-      <article class="killer-deck" id="killerCard">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
-      </article>
-      <article class="weapon-deck" id="weaponCard">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-      </article>
-      <article class="room-deck" id="roomCard">
-        <p>ROOM</p>
-        <p id="roomName"></p>
-      </article>
-    </section>
 
-    <h1 id="mystery"></h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Technigo Project Cluedo</title>
+</head>
 
-    <button>REVEAL THE CRIME</button>
+<body>
+  <section>
+    <h1>CLUEDO</h1>
+    <h3>Who commited the murder?</h3>
+  </section>
+  <section class="cards">
+    <!-- All three Cards-->
+    <article class="killer-deck" id="killerCard">
+      <!-- Killer Deck-->
+      <p>KILLER</p>
+      <p id="killerName"></p>
+      <p id="killerAge"></p>
+      <p id="killerOccupation"></p>
+      <img id="killerImage" src="" height="100" />
+      <p id="killerDescription"></p>
+    </article>
+    <article class="weapon-deck" id="weaponCard">
+      <!-- Weapons Deck-->
+      <p>WEAPON</p>
+      <p id="weaponName"></p>
+      <p id="weaponWeight"></p>
+    </article>
+    <article class="room-deck" id="roomCard">
+      <!-- Rooms Deck-->
+      <p>ROOM</p>
+      <p id="roomName"></p>
+    </article>
+  </section>
 
-    <script src="clue.js"></script>
-  </body>
+  <h1 id="mystery">Who, Where and with What ?</h1>
+
+  <button>REVEAL THE CRIME !</button>
+
+  <footer>
+    <h3>Made by Karan Mann of Team Foxes as a part of my Technigo Project</h3>
+  </footer>
+
+  <script src="clue.js"></script>
+</body>
+
 </html>
