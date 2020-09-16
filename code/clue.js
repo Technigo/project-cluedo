@@ -5,9 +5,55 @@ const mrGreen = {
   lastName: 'Green',
   color: 'green',
   description: 'He has a lot of connections',
-  age: 45,
+  age: 70,
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
+};
+
+const professorPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'A professor in history and criminal technology',
+  age: 62,
+  image: 'plum.png',
+  occupation: 'Detective'
+}
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'A famous actor, been in many movies. Love antrophology',
+  age: 47,
+  image: 'scarlet.png',
+  occupation: 'Actor'
+}
+const mrsPeacock = {
+  firstName: 'Eleonor',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'Degree in criminal history and writing. Love tea and cookies',
+  age: 59,
+  image: 'assets/green.png',
+  occupation: 'Author'
+}
+const colonelMustard = {
+  firstName: 'Jack',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'Passion of the military and hunting on his free time',
+  age: 76,
+  image: 'mustard.png',
+  occupation: 'Military Officer'
+}
+const mrsWhite = {
+  firstName: 'Jane',
+  lastName: 'White',
+  color: 'white',
+  description: 'A nurse that worked as a midwife all her life',
+  age: 74,
+  image: 'white.png',
+  occupation: 'Nurse'
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
@@ -16,9 +62,58 @@ const rope = {
   name: 'rope',
   weight: 10
 }
+const knife = {
+  name: 'knife',
+  weight: 1
+}
+const candlestick = {
+  name: 'candlestick',
+  weight: 0.1
+}
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 5
+}
+const poison = {
+  name: 'poison',
+  weight: 0.2
+}
+const axe = {
+  name: 'axe',
+  weight: 6
+}
+const bat = {
+  name: 'bat',
+  weight: 1.5
+}
+const trophy = {
+  name: 'trophy',
+  weight: 4
+}
+const pistol = {
+  name: 'pistol',
+  weight: 2
+}
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
+/*
+const rooms 
+Dining Room 
+Conservatory 
+Kitchen 
+Study 
+Library 
+Billiard Room 
+Lounge 
+Ballroom 
+Hall 
+Spa 
+Living Room 
+Observatory 
+Theater 
+Guest House 
+Patio
+*/
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
