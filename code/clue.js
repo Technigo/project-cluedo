@@ -11,6 +11,7 @@ const mrGreen = {
   age: 45,
   image: "assets/green.png",
   occupation: "Entrepreneur",
+  favouriteWeapon: "bat", //exactly the same as weapon name, like 'name: "bat",'
 };
 // *** 2. Professor Plum
 const profPlum = {
@@ -21,6 +22,7 @@ const profPlum = {
   age: 36,
   image: "assets/plum.png",
   occupation: "Professor",
+  favouriteWeapon: "trophy",
 };
 // *** 3. Miss Scarlet
 const missScarlet = {
@@ -31,6 +33,7 @@ const missScarlet = {
   age: 25,
   image: "assets/scarlet.png",
   occupation: "Actress",
+  favouriteWeapon: "pistol",
 };
 // *** 4. Mrs Peacock
 const mrsPeacock = {
@@ -41,6 +44,7 @@ const mrsPeacock = {
   age: 32,
   image: "assets/peacock.png",
   occupation: "Socialite",
+  favouriteWeapon: "knife",
 };
 // *** 5. Colonel Mustard
 const colMustard = {
@@ -51,6 +55,7 @@ const colMustard = {
   age: 55,
   image: "assets/mustard.png",
   occupation: "Colonel",
+  favouriteWeapon: "candlestick",
 };
 // *** 6. Mrs White
 const mrsWhite = {
@@ -61,6 +66,7 @@ const mrsWhite = {
   age: 67,
   image: "assets/white.png",
   occupation: "Housekeeper",
+  favouriteWeapon: "poison",
 };
 
 // WEAPONS:
@@ -87,7 +93,7 @@ const dumbbel = {
 };
 // *** 5. poison
 const poison = {
-  name: "paison",
+  name: "poison",
   weight: 1,
 };
 // *** 6. axe
@@ -240,4 +246,11 @@ const revealMystery = () => {
       "mystery"
     ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
   }
+  shuffleFavouriteWeapon();
+};
+
+const shuffleFavouriteWeapon = () => {
+  suspects.forEach((suspect) => {
+    suspect.favouriteWeapon = randomSelector(weapons).name;
+  });
 };
