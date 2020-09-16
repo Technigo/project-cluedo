@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta property="og:title" content="Games to turn you into a top-notch detective">
     <meta property="og:description" content="Who is the killer? What is the weapon? and where is the real location of the murder?">
-    <meta property="og:image" content="https://detectivegame.netlify.app/assets/green.png">
+    <meta property="og:image" content="https://detectivegame.netlify.app/assets/sherlock.jpg">
     <meta property="og:url" content="https://detectivegame.netlify.app/">
     <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
@@ -22,13 +22,14 @@
       <section class="cards">
         <article class="killer-deck" id="killerCard" onclick ="pickKiller(suspects)">
           <p class="decktitle">KILLER</p>
+          <svg class="killerIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M376.61 54.46c-82.95-72.61-222.26-72.61-305.22 0C7.36 110.5-31.01 224.44 32.63 416 64.53 512 224 512 224 512s159.47 0 191.37-96c63.64-191.56 25.27-305.5-38.76-361.54zM288 64c8.84 0 16 7.16 16 16s-7.16 16-16 16-16-7.16-16-16 7.16-16 16-16zm-128 0c8.84 0 16 7.16 16 16s-7.16 16-16 16-16-7.16-16-16 7.16-16 16-16zm16 400c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm0-64c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm0-64c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm-48-64c-35.35 0-64-28.65-64-64 0-17.67 14.33-32 32-32h64c17.67 0 32 14.33 32 32 0 35.35-28.65 64-64 64zm96-128c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm48 320c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm0-64c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm0-64c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm48-64c-35.35 0-64-28.65-64-64 0-17.67 14.33-32 32-32h64c17.67 0 32 14.33 32 32 0 35.35-28.65 64-64 64z"/></svg>
           <p class="cardContent"id="killerName"></p>
           <p class="cardContent"id="killerAge"></p>
           <p class="cardContent"id="killerOccupation"></p>
           <img id="killerImage" src="" height="200" />
           <p class="cardContent"id="killerDescription"></p>
           <p class="cardContent"id="favouriteWeapon"> </p>
-          <svg class="killerIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M376.61 54.46c-82.95-72.61-222.26-72.61-305.22 0C7.36 110.5-31.01 224.44 32.63 416 64.53 512 224 512 224 512s159.47 0 191.37-96c63.64-191.56 25.27-305.5-38.76-361.54zM288 64c8.84 0 16 7.16 16 16s-7.16 16-16 16-16-7.16-16-16 7.16-16 16-16zm-128 0c8.84 0 16 7.16 16 16s-7.16 16-16 16-16-7.16-16-16 7.16-16 16-16zm16 400c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm0-64c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm0-64c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm-48-64c-35.35 0-64-28.65-64-64 0-17.67 14.33-32 32-32h64c17.67 0 32 14.33 32 32 0 35.35-28.65 64-64 64zm96-128c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm48 320c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm0-64c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm0-64c-8.84 0-16-7.16-16-16s7.16-16 16-16 16 7.16 16 16-7.16 16-16 16zm48-64c-35.35 0-64-28.65-64-64 0-17.67 14.33-32 32-32h64c17.67 0 32 14.33 32 32 0 35.35-28.65 64-64 64z"/></svg>
+          
         </article>
         <article class="weapon-deck" id="weaponCard" onclick="pickWeapon(weapons)">
           <p class="decktitle">WEAPON</p>

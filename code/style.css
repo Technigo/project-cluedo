@@ -128,20 +128,6 @@ button {
   padding: 10px;
 }
 
-/* .revealMessage:after {
-	content: '';
-	position: absolute;
-	right: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 20px solid transparent;
-	border-left-color: #bb9457;
-	border-right: 0;
-	border-top: 0;
-	margin-top: -10px;
-	margin-right: -20px;
-} */
 
 .reveal {
   display: none;
