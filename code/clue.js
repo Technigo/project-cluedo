@@ -59,28 +59,33 @@ const mrsWhite = {
 
 const rope = {
   name: 'rope',
-  weight: 5
+  weight: 5,
+  image: 'assets/rope.png'
 }
 const gun = {
   name: 'gun',
-  weight: 40
+  weight: 40,
+  image: 'assets/gun.png'
 }
 const knife = {
   name: 'knife',
-  weight: 20
+  weight: 20,
+  image: 'assets/knife.png'
 }
 const wrench = {
   name: 'wrench',
   weight: 50,
-  image: 'wrench.png'
+  image: 'assets/wrench.png'
 }
 const candlestick = {
   name: 'candlestick',
-  weight: 30
+  weight: 30,
+  image: 'assets/candle.png'
 }
 const pipe = {
   name: 'pipe',
-  weight: 10
+  weight: 10,
+  image: 'assets/pipe.png'
 }
 
 
@@ -149,6 +154,7 @@ const pickKiller = () => {
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapon)
+  document.getElementById('weaponCard').style.background = mystery.killer.color;
   document.getElementById('weaponCard').addEventListener('click', pickWeapon)
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
   document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}`
@@ -157,6 +163,7 @@ const pickWeapon = () => {
 
 const pickRoom = () => {
   mystery.room = randomSelector(room)
+  document.getElementById('roomCard').style.background = mystery.killer.color;
   document.getElementById('roomName').innerHTML = `${mystery.room}`
 }
 

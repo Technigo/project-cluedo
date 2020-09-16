@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
-  background-image: url('https://thumbs.gfycat.com/GrotesqueFaintBactrian-size_restricted.gif');
+  background-image: url('https://static.wixstatic.com/media/c88f3c_80f37c005f9a46209de3525512af4e1d~mv2.gif');
   background-size: cover;
 }
 
@@ -16,18 +16,21 @@ p {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background-image: url('https://img-eshop.cdn.nintendo.net/i/bed27e323984fc5df2b13178ec1e011fbff3801a6830f9de6e9f1db30817e006.jpg');
+  background-image: url('https://i.pinimg.com/736x/71/84/8f/71848fd22b78ca45b3dd628888f6b866.jpg');
   background-size: cover;
+  opacity: 0.9;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 15px;
 }
 
 .killer-deck {
 
   width: 250px;
   height: 400px;
- background-image: image('card-image.png');
+  background-image: url('assets/card-image.png');
+  background-size: cover;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -38,7 +41,8 @@ p {
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background-image: url('assets/card-image.png');
+  background-size: cover;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -49,7 +53,8 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
+  background-image: url('assets/card-image.png');
+  background-size: cover;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -65,6 +70,7 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 40px;
 }
 .button:hover,
 .button:focus {
