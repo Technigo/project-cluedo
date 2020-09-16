@@ -235,19 +235,19 @@ const pickWeapon = () => {
     document.querySelector('.weapon-deck').classList.remove('bounce');
     document.querySelector('.weapon-deck').classList.remove('shakeX');
     
-    const favoriteWeapon = weapons.find((w) => {
-      return w.id === mystery.suspect.favouriteWeapon;
-    });
+    // const favoriteWeapon = weapons.find((w) => {
+    //   return w.id === mystery.suspect.favouriteWeapon;
+    // });
 
-    const weaponsCopy = [
-      ...weapons,
-      favoriteWeapon,
-      favoriteWeapon,
-      favoriteWeapon,
-      favoriteWeapon
-    ];
+    // const weaponsCopy = [
+    //   ...weapons,
+    //   favoriteWeapon,
+    //   favoriteWeapon,
+    //   favoriteWeapon,
+    //   favoriteWeapon
+    // ];
 
-    console.log(weaponsCopy);
+    // console.log(weaponsCopy);
 
     mystery.weapon = randomSelector(weaponsCopy)
     // document.getElementById('weaponCard').style.background = mystery.killer.color
