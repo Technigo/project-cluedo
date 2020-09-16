@@ -8,3 +8,4 @@ I planned the different functions and events by discussing different approaches,
 
 ## View it live
 
+https://confident-jones-ebcb32.netlify.app/
