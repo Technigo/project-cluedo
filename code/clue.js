@@ -71,7 +71,8 @@ const knife = {
 }
 const wrench = {
   name: 'wrench',
-  weight: 50
+  weight: 50,
+  image: 'wrench.png'
 }
 const candlestick = {
   name: 'candlestick',
@@ -151,6 +152,7 @@ const pickWeapon = () => {
   document.getElementById('weaponCard').addEventListener('click', pickWeapon)
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
   document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}`
+  document.getElementById('weaponImage').src = mystery.weapon.image;
 }
 
 const pickRoom = () => {

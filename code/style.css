@@ -24,10 +24,10 @@ p {
 }
 
 .killer-deck {
+
   width: 250px;
   height: 400px;
-  background-image: url('./card-image.png');
-  
+ background-image: image('card-image.png');
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
