@@ -249,7 +249,7 @@ const pickWeapon = () => {
 
     // console.log(weaponsCopy);
 
-    mystery.weapon = randomSelector(weaponsCopy)
+    mystery.weapon = randomSelector(weapons)
     // document.getElementById('weaponCard').style.background = mystery.killer.color
     document.getElementById('weaponName').innerHTML = `${mystery.weapon.name} of ${mystery.weapon.weight} pounds`
   }, 1500);
