@@ -1,28 +1,71 @@
+/* font-family: 'Kanit', sans-serif;
+font-family: 'Roboto Condensed', sans-serif; */
+
+html {
+  background-color:#d50000;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      rgba(0,0,0,0.1),
+      rgba(0,0,0,0.1) 100px,
+      transparent 0px,
+      transparent 200px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0,0,0,0.1),
+      rgba(0,0,0,0.1) 100px,
+      transparent 0px,
+      transparent 200px
+    );
+    height: 100%;
+    width: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
-  background: url(assets/clue-bg.jpg) no-repeat center center fixed; 
+  /* background: url(assets/clue-bg.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
+  background-size: cover; */
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
 }
 
 p {
   margin: 1px;
   font-weight: 300;
-  background-color: #fff;
+  color: #fff;
+}
+
+.p-big {
+  font-family: 'Kanit', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 80%;
+  margin-right: 16px;
+  margin-left: 16px;
+  overflow-wrap: break-word;
+}
+
+.logo {
+  margin: auto;
+  width: 334px;
 }
 
 .cards {
   margin: 50px auto;
-  width: 90%;
-  height: 600px;
+  max-width: 1200px;
   /* background: #ccc; */
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 1px dashed hotpink;
+  /* border: 1px dashed hotpink; */
 }
 
 .deck {
@@ -34,6 +77,33 @@ p {
   height: 400px;
   text-align: center;
   padding-top: 30px;
+  top: 0;
+  position: relative;
+  transition: all 0.1s;
+  margin-left: 16px;
+  margin-right: 16px;
+
+  /* Prevents user from selecting test and image in the card */
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.deck * {
+  margin-bottom: 8px;
+}
+
+.deck:hover {
+  box-shadow: 0px 11px 13px rgba(0, 0, 0, 0.1), 0px 20px 0px #D5D5D5, 0px 40px 24px rgba(0, 0, 0, 0.25);
+  position: relative;
+  top: -8px;
+}
+
+.deck:active {
+  box-shadow: 0px 11px 13px rgba(0, 0, 0, 0.1), 0px 20px 0px #D5D5D5, 0px 32px 16px rgba(0, 0, 0, 0.25);
+  position: relative;
+  top: -6px;
 }
 
 .killer-deck {
@@ -49,16 +119,79 @@ p {
 }
 
 button {
-  padding: 8px 16px;
-  background: crimson;
-  border: none;
-  font-size: 20px;
-  border-radius: 8px;
   display: block;
   margin: 0 auto;
+
+  background: #FFFFFF;
+  box-shadow: 0px 11px 13px rgba(0, 0, 0, 0.1), 0px 20px 0px #D5D5D5, 0px 24px 12px rgba(0, 0, 0, 0.35);
+  border-radius: 16px;
+  font-family: 'Kanit', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  border: 0;
+  padding: 16px 32px;
 }
 
 .deck img {
   border-radius: 100%;
   box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+/* CODE FOR THE OVERLAY HERE */
+.fullscreen-cover {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen-cover img {
+  position: fixed;
+  bottom: 0;
+  width: 250px;
+  right: 50%;
+  transform: translate(50%);
+}
+
+.speech-bubble {
+  max-width: 640px;
+  height: 400px;
+  margin: auto;
+  background-color: #fafafa;
+  border-radius: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 200px;
+  flex-direction: column;
+}
+
+.mystery-reveal-text {
+  margin: auto;
+  font-size: 40px;
+  color: #000;
+  font-weight: 600;
+  line-height: 120%;
+  text-align: center;
+}
+
+.redlink {
+  font-size: 32px;
+  text-decoration: underline;
+  cursor: pointer;
+  color: #B11E39;
+  font-weight: 600;
+}
+
+.weapon-emoji {
+  font-size: 80px;
 }
