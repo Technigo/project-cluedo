@@ -1,13 +1,22 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
+### This project was made as part of Technigo’s front-end developer boot camp Fall 2020.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project is a recreation of the board game Cluedeo. The user (the game leader), is able to click on three decks of cards, to randomly get a character, a weapon and a room. Then there is a button to "reveal" the mystery.
 
-## The problem
+## the process
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+- Creating and manipulating objects
+- Creating arrays
+- Createing functions
+- Manipulating the DOM using Javascript
+- Styling the page
 
 ## View it live
+The site is deployed <a href="https://stupefied-murdock-efd290.netlify.app">here.</a>  
+Let's reminisce Cluedo!
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+### Author and contact   
+My name: Johanna Blom,   
+My <a href="https://www.linkedin.com/in/johanna-blom-2419a181/">Linkedin</a>,   
+My <a href="https://twitter.com/idsintehittapa">Twitter</a>  

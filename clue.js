@@ -209,9 +209,7 @@ const patio = {
   image: './assets/patio.png'
 }
 
-
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+//GROUPING ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS
 
 const suspects = [
   mrGreen,
@@ -253,14 +251,12 @@ const rooms = [
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
 
 let mysteryobject = {
   killer: "",
@@ -273,14 +269,14 @@ const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  // This will change the background color of the card to the one connected to the chosen killer and show selected elements
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
   document.getElementById('killerImage').src = `${mystery.killer.image}`
   document.getElementById('killerAge').innerHTML = `Age: ${mystery.killer.age}`
   document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
   document.getElementById('killerDescription').innerHTML = `Description: ${mystery.killer.description}`
-  document.getElementById("favouriteWeapon").innerHTML = `Favourite weapon: ${shuffleFavouriteWeapon()}`
+  document.getElementById("killerFavouriteWeapon").innerHTML = `Favourite weapon: ${shuffleFavouriteWeapon()}`
 }
 
 document.getElementById('killerCard').addEventListener('click', pickKiller)
@@ -290,9 +286,9 @@ document.getElementById('killerCard').addEventListener('click', pickKiller)
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
 
-  document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
+  document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`
   document.getElementById("weaponWeight").innerHTML = `Weight: ${mystery.weapon.weight} kilos`
-  document.getElementById("weaponImage").src = mystery.weapon.image;
+  document.getElementById("weaponImage").src = mystery.weapon.image
 }
 
 document.getElementById('weaponCard').addEventListener('click', pickWeapon)
@@ -310,10 +306,7 @@ const pickRoom = () => {
 document.getElementById('roomCard').addEventListener('click', pickRoom)
 
 
-
-// STEP 5 Create a function which change favorite weapon for each person
-
-// This function will be invoked when you click on the killer card.
+// Shuffle killers favourite weapon
 const shuffleFavouriteWeapon = () => {
   return randomSelector(weapons).id
 }
@@ -323,7 +316,7 @@ const shuffleFavouriteWeapon = () => {
 
 const revealMystery = () => {
   if (!mystery.killer || !mystery.weapon || !mystery.room) {
-    alert("No mystery is yet to be revealed!");
+    alert("No mystery is yet to be revealed!")
   } else {
     document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, a ${mystery.killer.age} years old ${mystery.killer.occupation}, in the ${mystery.room.name} with a ${mystery.weapon.name} - Shocking!`
   }
