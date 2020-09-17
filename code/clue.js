@@ -180,6 +180,15 @@ const pickKiller = () => {
 }
 document.getElementById('killerCard').onclick = pickKiller
 
+//favouriteWeapon
+const shuffleFavouriteWeapon = () => {
+  mystery.favouriteWeapon = randomSelector(weapons)
+  document.getElementById('favouriteWeapon').innerHTML = ` fav weapon: ${mystery.favouriteWeapon.name} `
+}
+shuffleFavouriteWeapon()
+
+const favourite = suspects.favouriteWeapon
+const shuffleFavouriteWeaponDuplicate = new Array(6).fill(favourite)
 // FUNCTIONS pickWeapon and pickRoom 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
@@ -190,12 +199,6 @@ const pickWeapon = () => {
 }
 document.getElementById('weaponCard').onclick = pickWeapon
 
-//favouriteWeapon
-const shuffleFavouriteWeapon = () => {
-  mystery.favouriteWeapon = randomSelector(weapons)
-  document.getElementById('favouriteWeapon').innerHTML = ` Fav weapon: ${mystery.favouriteWeapon.name} `
-}
-shuffleFavouriteWeapon()
 //
 const pickRoom = () => {
   mystery.rooms = randomSelector(rooms)
