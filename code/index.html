@@ -8,13 +8,17 @@
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
+    <header>
+      <h5>No1</h5>
+      <h1>Cluedo</h1>
+    </header> 
     <section class="cards">
       <article class="killer-deck" id="killerCard">
         <p>KILLER</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
+        <img id="killerImage" src="" height="250" />
         <p id="killerDescription"></p>
       </article>
       <article class="weapon-deck" id="weaponCard">
@@ -27,9 +31,15 @@
         <p id="roomName"></p>
       </article>
     </section>
-    <h1 id="mystery"></h1>
-    <button onclick="revealMystery()" id="revealButton">REVEAL THE CRIME</button>
-    <p id="killerMessage"></p>
+    <div class=reveal>
+      <p id="killerMessage"></p>
+      <button onclick="revealMystery()" id="revealButton">REVEAL THE CRIME</button>
+      </div>  
+    <footer> 
+      <img src= "./sherlock.png" alt=sherlock></img> 
+       <p>© Moa Blomkvist</p>
+    
+    </footer>  
     <script src="clue.js"></script>
   </body>
 </html>

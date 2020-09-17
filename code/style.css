@@ -1,20 +1,55 @@
-body {
-  margin: 0;
-  font-family: "Courier New", Courier, monospace;
+*, *::before, *::after { 
+  box-sizing: inherit; 
 }
 
+html {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background-color: #096e74;
+  font-family: "Courier New", Courier, monospace;
+}
+/**** HEADER ****/
+header {  
+  background-color: #8fe8c9;
+  display:flex; 
+  flex-direction: column;
+  text-align-last: center;
+  justify-content: center;
+  width: 100%;
+  height: 250px;
+}
+
+h1 {
+  margin-top:10px;
+  color: #000000;
+  font-size: 85px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: lighter;
+}
+
+h5 {
+  margin-bottom: 0;
+  font-size: 20px;
+}
+
+/**** GAME ****/
 p {
-  margin: 1px;
   font-weight: 300;
-  background-color: #fff;
+  color: #000000;
 }
 
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
-  background: #ccc;
+  height: 550px;
+  background-image: url("./teal-.jpg");
+  background-position: bottom;
+  background-size: cover;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
@@ -22,37 +57,120 @@ p {
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: #77f29c;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
+
+.killer-deck:hover {
+  background: #8fe8c9;
+  border-color: #8fe8c9;
+  transition: all 0.4s ease 0s;
+  }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: #1a856b;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
+
+.weapon-deck:hover {
+  background: #8fe8c9;
+  border-color: #8fe8c9;
+  transition: all 0.4s ease 0s;
+  }
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: #006675;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
+.room-deck:hover {
+  background: #8fe8c9;
+  border-color: #8fe8c9;
+  transition: all 0.4s ease 0s;
+  }
+
+
+/**** REVEAL MYSTERY ****/
+
+.reveal {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  flex-flow: column;
+}
+
+p#killerMessage {
+  padding: 20px;
+  margin: 0;  
+  display: flex;
+  justify-content: center;
+}
+
 button {
-  padding: 8px 16px;
-  background: crimson;
+  padding: 35px 20px;
+  background: #8fe8c9;
+  color: #000000;
+  font-family: 'Times New Roman', Times, serif;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
+
+button:hover {
+  color: #ffffff;
+  background: #660c00;
+  border-color: #660c00;
+  transition: all 0.4s ease 0s;
+  }
+
+
+footer {
+  left: 0px;
+  right: 0px;
+  height: 200px;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  text-align: center;
+}
+
+footer img {
+  width: 70px;
+}
+
+/**** Responsive IPAD ****/
+@media screen and (max-width: 1024px) {
+
+.cards {
+ height: 1000px;
+ background-image: url("./teal-.jpg"); 
+}
+p#killerMessage {
+  padding: 70px;
+}
+
+/**** Responsive MOBILE ****/
+@media screen and (max-width: 768px) {
+  
+ .cards {
+ height: 1800px;
+ background-image: url("./teal-.jpg"); 
+}
+
+
+
+
+
+

@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// OBJECTS FOR SUSPECTS
 
 //OBJECTS 
 const mrGreen = {
@@ -31,7 +31,7 @@ const missScarlet = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'black',
+  color: 'grey',
   description: 'he is always late',
   age: 48,
   image: 'assets/mustard.png',
@@ -49,7 +49,7 @@ const mrsPeacock = {
 const mrsWhite = {
   firstName: 'Ana',
   lastName: 'White',
-  color: 'White',
+  color: 'Orange',
   description: 'she is always one step behind you',
   age: 35,
   image: 'assets/white.png',
@@ -96,15 +96,13 @@ const suspects = [
   mrsWhite
 ];
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+// FUNCTION RANDOMLY SELECT ONE ITEM FROM THE ARRAY 
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+
 
 const mystery = {
   suspects,
@@ -117,13 +115,14 @@ const mystery = {
 
 // FUNCTIONS pickKiller
 const pickKiller = () => {
-  mystery.killer = randomSelector(suspects)
+  mystery.killer = randomSelector(suspects);killerImage.src = mystery.killer.image;
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 };
 document.getElementById(
   'killerCard'
   ).addEventListener('click', pickKiller);
+
 
 // FUNCTIONS pickWeapon
 const pickWeapon = () => {
@@ -151,9 +150,9 @@ document.getElementById(
   ).addEventListener('click', pickRoom);
 
 
-// STEP 4 - CREATE A FUNCTION revealMystery 
+// FUNCTION revealMystery 
 
 const revealMystery = () => {
   const killerAnnoncement = document.getElementById("revealButton").innerText;
-  document.getElementById("killerMessage").innerHTML = `The murder was committed by ${mrsPeacock.firstName} ${mrsPeacock.lastName}, in the ${rooms[2]} with a ${weapons[3]}.`;
+  document.getElementById("killerMessage").innerHTML = `Psst! The murder was committed by ${mrsPeacock.firstName} ${mrsPeacock.lastName}, in the ${rooms[2]} with a ${weapons[8]}.`;
 }
