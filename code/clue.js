@@ -1,10 +1,8 @@
-//Setup some vars
 let gameStarted = false;
 let killerPicked = false;
 let weaponPicked = false;
 let roomPicked = false;
 
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
@@ -70,8 +68,6 @@ const mrsWhite = {
   occupation: 'Servant',
   favoriteWeapon: ''
 };
-
-// CREATE OBJECTS FOR ALL THE WEAPONS
 
 const rope = {
   name: 'Rope',
@@ -163,7 +159,6 @@ const pistol = {
   likelyFoundIn: 'Living Room'
 };
 
-//GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS
 const suspects = [
   mrGreen,
   clMustard,
@@ -203,20 +198,16 @@ const rooms = [
   'Patio'
 ];
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-//Object that keeps the mystery
 const mystery = {
   killer: null,
   weapon: null,
   room: null
 };
 
-// This function will be invoked when you click on the killer card.
 const pickKiller = (loadID) => {
   if (gameStarted && !killerPicked) {
     document.getElementById(loadID.id).style.opacity = 1;
@@ -226,15 +217,13 @@ const pickKiller = (loadID) => {
       document.getElementById('killerName').style.background = mystery.killer.color;
       document.getElementById('killerImage').src = mystery.killer.image;
       document.getElementById('killerName').innerHTML = (`${mystery.killer.firstName} ${mystery.killer.lastName}`);
-      //Get the name from the preferred weapon ID
-      let weaponID = mystery.killer.favoriteWeapon;
-      let weaponName = weapons.find(weapon => weapon.id === weaponID).name;
+      const weaponID = mystery.killer.favoriteWeapon;
+      const weaponName = weapons.find(weapon => weapon.id === weaponID).name;
       document.getElementById('killerFavoriteWeapon').innerHTML = (`Preferred weapon: ${weaponName}`);
       document.getElementById('killerAge').innerHTML = (`Age: ${mystery.killer.age}`);
       document.getElementById('killerOccupation').innerHTML = (`Occupation: ${mystery.killer.occupation}`);
       document.getElementById('killerDescription').innerHTML = (`Description: ${mystery.killer.description}`);
       killerPicked = true;
-      console.log(mystery);
       checkScroll();
     }, 2000);
   }
@@ -242,14 +231,11 @@ const pickKiller = (loadID) => {
 
 const pickWeapon = (loadID) => {
   if (killerPicked) {
-    console.log("In pickweapon");
-    //Look at the killers favorite weapon and change the prob. of it being picked
-    increaseChanceForFavWeapon(mystery.killer);
+    const weaponsIncreased = increaseChanceForFavWeapon(mystery.killer);
     document.getElementById(loadID.id).style.opacity = 1;
     setTimeout(function () {
       document.getElementById(loadID.id).style.opacity = 0;
-      mystery.weapon = randomSelector(weapons);
-      console.log(mystery);
+      mystery.weapon = randomSelector(weaponsIncreased);
       document.getElementById('weaponName').style.background = mystery.weapon.color;
       document.getElementById('weaponName').innerHTML = `Type: ${mystery.weapon.name}`;
       document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`;
@@ -264,9 +250,8 @@ const pickRoom = (loadID) => {
     document.getElementById(loadID.id).style.opacity = 1;
     setTimeout(function () {
       document.getElementById(loadID.id).style.opacity = 0;
-      increaseChanceForRoom(mystery.weapon);
-      mystery.room = randomSelector(rooms);
-      console.log(mystery);
+      const increasedRoom = increaseChanceForRoom(mystery.weapon);
+      mystery.room = randomSelector(increasedRoom);
       document.getElementById('roomName').innerHTML = mystery.room;
       roomPicked = true;
       checkScroll();
@@ -276,19 +261,16 @@ const pickRoom = (loadID) => {
 
 const showInfoMessage = (callerFunctionName) => {
   if (callerFunctionName === "pickWeapon" || (callerFunctionName === "pickRoom" && !killerPicked)) {
-    //If pickWeapon calls this function, it means the user hasn't picked a killer yet.
     document.getElementById("killerInfoMessage").style.opacity = 1;
     setTimeout(function () {
       document.getElementById("killerInfoMessage").style.opacity = 0;
     }, 2000);
   } else if (callerFunctionName === "pickRoom" && killerPicked) {
-    //Is pickRoom calls this function  and the killer has been picked, the user hasn't picked a weapon. 
     document.getElementById("weaponInfoMessage").style.opacity = 1;
     setTimeout(function () {
       document.getElementById("weaponInfoMessage").style.opacity = 0;
     }, 2000);
   } else if (callerFunctionName === "revealMystery") {
-    //This means that the user has clicked the reveal button before drawing all the cards.
     document.getElementById("mysteryInfoMessage").style.opacity = 1;
     setTimeout(function () {
       document.getElementById("mysteryInfoMessage").style.opacity = 0;
@@ -296,30 +278,34 @@ const showInfoMessage = (callerFunctionName) => {
   }
 }
 
-//Select a random weapon from the weapons array and assign in to the suspects fav-weapon property
 const shuffleFavoriteWeapon = () => {
   suspects.forEach(suspect => {
-    let selectedRandomWeapon = randomSelector(weapons).id;
+    const selectedRandomWeapon = randomSelector(weapons).id;
     suspect.favoriteWeapon = selectedRandomWeapon;
   });
 }
 
 const increaseChanceForFavWeapon = (killerObject) => {
-  let preferredWeapon = killerObject.favoriteWeapon;
-  let weaponObject = weapons.find(weapon => weapon.id === preferredWeapon);
-  let increaseChance = weaponObject.increasedChanceOfDraw;
+  let weaponsIncreased = new Array();
+  const preferredWeapon = killerObject.favoriteWeapon;
+  const weaponObject = weapons.find(weapon => weapon.id === preferredWeapon);
+  const increaseChance = weaponObject.increasedChanceOfDraw;
   for (i = 0; i < increaseChance; i++) {
-    weapons.push(weaponObject);
+    weaponsIncreased.push(weaponObject);
   }
+  weaponsIncreased = weaponsIncreased.concat(weapons);
+  return weaponsIncreased;
 }
 
 const increaseChanceForRoom = (weaponObject) => {
-  let preferredRoom = weaponObject.likelyFoundIn;
-  //Increase chance for weapon in room is random(Some number between 1 and 10) every time.
-  let increaseChance = Math.floor(Math.random() * 10) + 1;
+  let roomsIncreased = new Array();
+  const preferredRoom = weaponObject.likelyFoundIn;
+  const increaseChance = Math.floor(Math.random() * 10) + 1;
   for (i = 0; i < increaseChance; i++) {
-    rooms.push(preferredRoom);
+    roomsIncreased.push(preferredRoom);
   }
+  roomsIncreased = roomsIncreased.concat(rooms);
+  return roomsIncreased;
 }
 
 const startGame = () => {
@@ -328,13 +314,12 @@ const startGame = () => {
   shuffleFavoriteWeapon();
 }
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button
 const revealMystery = () => {
   if (killerPicked && weaponPicked && roomPicked) {
-    let killer = mystery.killer.firstName + " " + mystery.killer.lastName;
-    let weapon = mystery.weapon.article + " " + mystery.weapon.name;
-    let room = mystery.room;
-    let mysteryString = (`
+    const killer = mystery.killer.firstName + " " + mystery.killer.lastName;
+    const weapon = mystery.weapon.article + " " + mystery.weapon.name;
+    const room = mystery.room;
+    const mysteryString = (`
                 It was ${
                   killer
                 }
@@ -348,7 +333,7 @@ const revealMystery = () => {
 }
 
 const restartGame = () => {
-  var check = confirm("Are you sure? Window will reload");
+  const check = confirm("Are you sure? Window will reload");
   if (check == true) {
     window.location.reload();
   }
@@ -362,8 +347,8 @@ const toggleGameBoard = () => {
 }
 
 const checkScroll = () => {
-  let x = window.matchMedia("(max-width: 600px)");
-  let y = window.matchMedia("(max-width: 769px)");
+  const x = window.matchMedia("(max-width: 600px)");
+  const y = window.matchMedia("(max-width: 769px)");
   if (x.matches) {
     setTimeout(function () {
       window.scrollBy(0, window.innerHeight / 1.3);
