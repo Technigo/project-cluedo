@@ -107,7 +107,7 @@ const rooms = [
 
 //*** MYSTERY OBJECT ***//
 
-let mystery =  {
+const mystery =  {
   killer: null,
   weapon: null,
   room: null
@@ -115,7 +115,7 @@ let mystery =  {
 
 //*** FUNCTIONS ***//
 
-// Randomly selects array item
+// Randomly selects array value
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -125,7 +125,7 @@ const changeCard = (card) => {
   document.getElementById(card).style.background = "#ff7ee3"
 }
 
-// Changes back button content and background
+// Changes button when card is clicked
 const changeButton = () => {
   mysteryButton.innerHTML = "?"
   
