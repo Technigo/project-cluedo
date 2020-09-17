@@ -263,12 +263,17 @@ const pickKiller = () => {
   ).innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
 };
 
-const clickKiller = (somefunction) => {
-  move(pickKiller); //animation
+const clickCard = (card) => {
+  move(card); //animation
   //setTimeout(pickKiller, 2500); //reveal killer card
 }
 
-document.getElementById('killerCard').onclick = clickKiller;
+//document.getElementById('killerCard').onclick = clickCard(pickKiller);
+document.getElementById('killerCard').addEventListener('click', (e) => {
+  e.preventDefault();
+  clickCard(pickKiller);
+})
+
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
@@ -288,7 +293,11 @@ const pickWeapon = () => {
   ).innerHTML = `Weight: ${mystery.weapon.weight}`;
 };
 
-document.getElementById('weaponCard').onclick = pickWeapon;
+//document.getElementById('weaponCard').onclick = pickWeapon;
+document.getElementById('weaponCard').addEventListener('click', (e) => {
+  e.preventDefault();
+  clickCard(pickWeapon);
+})
 
 const pickRoom = () => {
   // This will randomly select a room from the suspects. And add that to the mystery object.
@@ -302,7 +311,11 @@ const pickRoom = () => {
   //document.getElementById("killerImage").src = mystery.killer.image;
 };
 
-document.getElementById('roomCard').onclick = pickRoom;
+//document.getElementById('roomCard').onclick = pickRoom;
+document.getElementById('roomCard').addEventListener('click', (e) => {
+  e.preventDefault();
+  clickCard(pickRoom);
+})
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
