@@ -56,3 +56,16 @@ button {
   display: block;
   margin: 0 auto;
 }
+
+/* flipping the card */
+.flip {
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  transition: transform 1s;
+}
+
+/* makes the card not to be mirror inverted after flip */
+.flip > .inner-card-style {
+  transform: rotateY(180deg);
+  transition: transform 1s;
+}

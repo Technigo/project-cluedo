@@ -191,27 +191,43 @@ const mystery = {
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects);
+  document.getElementById("killerCard").classList.add("flip");
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById("killerCard").style.background = mystery.killer.color;
-  document.getElementById(
-    "killerName"
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  document.getElementById(
-    "killerAge"
-  ).innerHTML = `${mystery.killer.age} yaers`;
-  document.getElementById(
-    "killerOccupation"
-  ).innerHTML = `${mystery.killer.occupation}`;
-  document.getElementById("killerImage").src = `${mystery.killer.image}`;
-  document.getElementById(
-    "killerDescription"
-  ).innerHTML = `${mystery.killer.description}`;
-  document.getElementById(
-    "favouriteWeapon"
-  ).innerHTML = `Favourite weapon:<br>${mystery.killer.favouriteWeapon}`;
+  // HÄNDER DIREKT
+
+  setTimeout(() => {
+    // HÄNDER EFTER 1.5 SEKUNDER
+
+    // This will randomly select a killer from the suspects. And add that to the mystery object.
+    mystery.killer = randomSelector(suspects);
+
+    // killerCard.onclick = rotateCard
+
+    // function rotateCard() {
+    //   this.classList.add('rotate')
+    //   // the word "this" refers to the element that is the selector.
+    // }
+
+    // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+    document.getElementById("killerCard").style.background =
+      mystery.killer.color;
+    document.getElementById(
+      "killerName"
+    ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+    document.getElementById(
+      "killerAge"
+    ).innerHTML = `${mystery.killer.age} yaers`;
+    document.getElementById(
+      "killerOccupation"
+    ).innerHTML = `${mystery.killer.occupation}`;
+    document.getElementById("killerImage").src = `${mystery.killer.image}`;
+    document.getElementById(
+      "killerDescription"
+    ).innerHTML = `${mystery.killer.description}`;
+    document.getElementById(
+      "favouriteWeapon"
+    ).innerHTML = `Favourite weapon:<br>${mystery.killer.favouriteWeapon}`;
+  }, 300);
 };
 
 document.getElementById("killerCard").addEventListener("click", pickKiller);
