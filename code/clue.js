@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// Objects for suspects
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -66,7 +66,7 @@ const mrsWhite = {
   favouriteWeapon: 'axe'
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// Objects for weapons
 
 const rope = {
   name: 'rope',
@@ -118,9 +118,8 @@ const pistol = {
   weight: 25
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// Arrays for suspects, weapons and rooms
 
 const suspects = [
   mrGreen,
@@ -161,13 +160,14 @@ const rooms = [
   'patio'
 ]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
+// Selects randomly one item from the array passed into the function
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
+// Creates an object that stores the mystery 
 // The values will be set later.
+
 
 const mystery = {
   killer: undefined,
@@ -181,15 +181,15 @@ const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
 
-  //This will randomly change each killer's favourite weapon.
+  // This will randomly change each killer's favourite weapon.
   const shuffleFavouriteWeapon = () => {
     mystery.favouriteWeapon = randomSelector(weapons)
   }
  
-  //This calls/executes the above function.
-  shuffleFavouriteWeapon();
+  // This calls/executes the above function.
+shuffleFavouriteWeapon();
 
-//These connects the js and the html, and outputs in browser.
+// These connects the js and the html, and outputs in browser.
   document.getElementById('favouriteWeapon').innerHTML = `Favourite weapon: ${mystery.favouriteWeapon.name}`
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}` 
@@ -197,7 +197,6 @@ const pickKiller = () => {
   document.getElementById('killerAge').innerHTML = `${mystery.killer.age}` 
   document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}` 
   document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}` 
-  //document.getElementById('loader').style.display = 'none';
 }
 
 // This function will be invoked when you click on the weapon card.
@@ -206,8 +205,6 @@ const pickWeapon = () => {
   // This will randomly select a weapon from the weapon array. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-  //document.getElementById('loader').style.display = 'none';
-  //document.getElementById('shuffleFavouriteWeapon').onclick = favouriteWeapon
 }
 
 // This function will be invoked when you click on the room card.
@@ -217,15 +214,16 @@ const pickRoom = () => {
   mystery.room = randomSelector(rooms)
   document.getElementById('roomCard').style.background = mystery.room.color
   document.getElementById('roomName').innerHTML = `${mystery.room}`
-  //document.getElementById('loader').style.display = 'none';
 }
 
-//This generates random items from the arrays on onclick.
+// This generates random items from the arrays on onclick.
 document.getElementById('killerCard').onclick = pickKiller
 document.getElementById('weaponCard').onclick = pickWeapon
 document.getElementById('roomCard').onclick = pickRoom
 
-//CREATE A FUNCTION revealMystery that will be invoked when you click that button.
+
+
+// Creates a function - revealMystery - that will be invoked when you click that button.
 const revealMystery = () => {
     if (mystery.killer === undefined || mystery.weapon === undefined || mystery.room === undefined) {
     document.getElementById('revealButton').innerText = 'Please, pick killer, weapon and room.';

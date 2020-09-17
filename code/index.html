@@ -9,14 +9,15 @@
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
+<!-- HEADER -->
     <header>
       <h1>CLUEDO - who did it?</h1>
     </header>
+<!-- SECTION CARDS-->
     <section class="cards">
       <article class="killer-deck allCards" id="killerCard">
         <img id="killerImage" src="./assets/questionmark.jpg" height="200" />
         <h3>KILLER<h3>
-          </div>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
@@ -34,15 +35,17 @@
         <p id="roomName"></p>
       </article>
     </section>
+<!-- LOADER -->
     <div class="wrapper">
       <div id="loader" class="bouncing-ball">
         <div class="ball"></div>
     </div>
+<!-- REVEAL BUTTON-->
     <h1 id="mystery" class="mystery"></h1>
     <div class="button-container">
       <button class="reveal" id="revealButton" onclick="revealMystery()">REVEAL MYSTERY!</button> 
       <button class="restart" id="playAgain" onclick="location.reload()">PLAY AGAIN?</button>
     </div>
-      <script src="clue.js"></script>
+    <script src="clue.js"></script>
   </body>
 </html>
