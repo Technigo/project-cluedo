@@ -190,6 +190,13 @@ const pickWeapon = () => {
 }
 document.getElementById('weaponCard').onclick = pickWeapon
 
+//favouriteWeapon
+const shuffleFavouriteWeapon = () => {
+  mystery.favouriteWeapon = randomSelector(weapons)
+  document.getElementById('favouriteWeapon').innerHTML = ` Fav weapon: ${mystery.favouriteWeapon.name} `
+}
+shuffleFavouriteWeapon()
+//
 const pickRoom = () => {
   mystery.rooms = randomSelector(rooms)
   document.getElementById('roomName').innerHTML = `${mystery.rooms}`
