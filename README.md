@@ -19,5 +19,5 @@ I if i had more time i would add a pre loader to my cards.
 
 ## View it live
 Here you can see the finsihed result: 
-
+https://clue-docards.netlify.app/code/
 Hope you like it!
