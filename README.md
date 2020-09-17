@@ -1,8 +1,8 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
+This is a project I made when doing the Technigo bootcamp (autumn 2020). The project was to practice creating objects and arrays by creating the classic board game Cluedo. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The game lets you pick three different cards with clues to a committed murder. When you have picked the clues, you reveal the crime by submitting a button. 
 
 ## The problem
 
