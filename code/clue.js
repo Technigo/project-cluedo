@@ -180,19 +180,7 @@ const pickKiller = () => {
 }
 document.getElementById('killerCard').onclick = pickKiller
 
-//favouriteWeapon
-const shuffleFavouriteWeapon = () => {
-  mystery.favouriteWeapon = randomSelector(weapons)
-  document.getElementById('favouriteWeapon').innerHTML = ` fav weapon: ${mystery.favouriteWeapon.name} `
-}
-shuffleFavouriteWeapon()
 
-const favourite = suspects.favouriteWeapon
-const shuffleFavouriteWeaponDuplicate = new Array(6).fill(favourite)
-const randomArray = [...weapons, ...favouriteWeaponDuplicate]
-const pickNotSoRandomWeapon = () => {
-  mystery.favouriteWeapon = Math.floor(Math.random() * randomArray.length)
-}
 // FUNCTIONS pickWeapon and pickRoom 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
@@ -209,6 +197,21 @@ const pickRoom = () => {
   document.getElementById('roomName').innerHTML = `${mystery.rooms}`
 }
 document.getElementById('roomCard').onclick = pickRoom
+
+//favouriteWeapon
+// const shuffleFavouriteWeapon = () => {
+//   mystery.favouriteWeapon = randomSelector(weapons)
+//   document.getElementById('favouriteWeapon').innerHTML = ` fav weapon: ${mystery.favouriteWeapon.name} `
+// }
+// shuffleFavouriteWeapon()
+
+// const favourite = suspects.favouriteWeapon
+// const shuffleFavouriteWeaponDuplicate = new Array(6).fill(favourite)
+// const randomArray = [...weapons, ...favouriteWeaponDuplicate]
+// const pickNotSoRandomWeapon = () => {
+//   mystery.favouriteWeapon = randomArray[Math.floor(Math.random() * randomArray.length)]
+// }
+// pickNotSoRandomWeapon()
 // FUNCTION revealMystery that will be invoked when you click that button
 const thisMystery = document.getElementById('mystery')
 
