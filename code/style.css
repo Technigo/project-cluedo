@@ -82,6 +82,7 @@ img.questionmark  {
 }
 
 /*BOUNCY LOADER*/
+
 .wrapper {
   width: 100%;
   text-align: center;
@@ -135,6 +136,10 @@ img.questionmark  {
   100% {
     top: 0;
   }
+}
+
+.button-container {
+  text-align: center;
 }
 
 button {

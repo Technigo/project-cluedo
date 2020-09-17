@@ -176,8 +176,22 @@ const mystery = {
 };
 
 // This function will be invoked when you click on the killer card.
-const pickKiller = () => {
-  document.getElementById('killerCard').innerHTML
+//const pickKiller = () => {
+
+  //document.getElementById('killerCard').innerHTML
+
+document.getElementById('killerCard').addEventListener('click', pickKiller);
+
+function pickKiller() {
+  document.getElementById('loader1').style.display = 'block';
+  setTimeout(delayedPickKiller, 1300);
+};
+
+const delayedPickKiller = () => {
+  document.getElementById('loader1').style.display = 'none';
+  document.getElementById('killerCard').removeEventListener('click', pickKiller);
+
+
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
 
@@ -200,16 +214,43 @@ shuffleFavouriteWeapon();
 }
 
 // This function will be invoked when you click on the weapon card.
-const pickWeapon = () => {
-  document.getElementById('weaponCard').innerHTML
+//const pickWeapon = () => {
+  //document.getElementById('weaponCard').innerHTML
+  
+  document.getElementById('weaponCard').addEventListener('click', pickWeapon);
+
+function pickWeapon() {
+  document.getElementById('loader2').style.display = 'block';
+  setTimeout(delayedPickWeapon, 1300);
+};
+
+const delayedPickWeapon = () => {
+  document.getElementById('loader2').style.display = 'none';
+  document.getElementById('weaponCard').removeEventListener('click', pickWeapon);
+
+  
   // This will randomly select a weapon from the weapon array. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
 }
 
 // This function will be invoked when you click on the room card.
-const pickRoom = () => {
-  document.getElementById('roomCard').innerHTML
+//const pickRoom = () => {
+  //document.getElementById('roomCard').innerHTML
+
+
+  document.getElementById('roomCard').addEventListener('click', pickRoom);
+
+  function pickRoom() {
+    document.getElementById('loader3').style.display = 'block';
+    setTimeout(delayedPickRoom, 1400);
+  };
+  
+  const delayedPickRoom = () => {
+    document.getElementById('loader3').style.display = 'none';
+    document.getElementById('roomCard').removeEventListener('click', pickRoom);
+  
+
   // This will randomly select a room from the room array. And add that to the mystery object.
   mystery.room = randomSelector(rooms)
   document.getElementById('roomCard').style.background = mystery.room.color
@@ -229,7 +270,7 @@ const revealMystery = () => {
     document.getElementById('revealButton').innerText = 'Please, pick killer, weapon and room.';
   }  else {
     document.getElementById('revealButton').innerText = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room}.`
-    document.getElementById('loader').style.display = 'none';
+    //document.getElementById('loader').style.display = 'none';
 }
   }
 
