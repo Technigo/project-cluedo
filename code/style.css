@@ -1,12 +1,24 @@
 body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
+  background-image: url('./assets/jan-jakub-nanista-z9hvkSDWMIM-unsplash.jpg');
+  background-size: contain;
 }
 
 p {
   margin: 1px;
   font-weight: 300;
   background-color: #fff;
+}
+
+.header-styling {
+  color: rgba(10, 11, 13, 0.4);
+  text-shadow: 2px 4px 4px white;
+  text-align: right;
+  background: rgba(10, 11, 13, 0.7);
+  height: 100px;
+  font-size: 70px;
+  padding: 30px;
 }
 
 .cards {
@@ -18,17 +30,17 @@ p {
   align-items: center;
   border-radius: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-  background-image: url('./assets/rodolfo-puchulu-O8yTWl006BY-unsplash.jpg');
 }
 
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #290001;
+  background: rgba(10, 11, 13, 0.7);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(27, 107, 29, 0.2),
+    0 6px 20px 0 rgba(221, 217, 217, 0.4);
   transition: transform 0.2s;
 }
 
@@ -39,11 +51,12 @@ p {
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: #290001;
+  background: rgba(10, 11, 13, 0.7);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(27, 107, 29, 0.2),
+    0 6px 20px 0 rgba(221, 217, 217, 0.4);
   transition: transform 0.2s;
 }
 
@@ -54,11 +67,12 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: #290001;
+  background: rgba(10, 11, 13, 0.7);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(27, 107, 29, 0.2),
+    0 6px 20px 0 rgba(221, 217, 217, 0.4);
   transition: transform 0.2s;
 }
 
@@ -68,24 +82,34 @@ p {
 
 button {
   padding: 8px 16px;
-  background: #c87941;
+  background: rgba(10, 11, 13, 0.7);
+  color: white;
   border: none;
   font-size: 20px;
   border-radius: 12px;
   display: block;
   margin: 0 auto;
   margin-bottom: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(27, 107, 29, 0.2),
+    0 6px 20px 0 rgba(221, 217, 217, 0.4);
   transition-duration: 0.3s;
 }
 
 button:hover {
-  background: #87431d;
-  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.4), 0 8px 25px 0 rgba(0, 0, 0, 0.4);
+  background: #114555;
+  box-shadow: 0 4px 8px 0 rgba(27, 107, 29, 0.2),
+    0 6px 20px 0 rgba(221, 217, 217, 0.4);
   transform: scale(1.1);
 }
 
+.footer-style {
+  color: white;
+  background: rgba(10, 11, 13, 0.7);
+  height: 50px;
+}
+
 .mystery-text {
+  color: white;
   text-align: center;
   margin: 30px;
 }

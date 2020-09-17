@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: '#557571',
+  color: '#0D5669',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -14,7 +14,7 @@ const mrGreen = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: '#31112c',
+  color: '#0D1216',
   description: 'He is an excentric man',
   age: 35,
   image: 'assets/plum.png',
@@ -24,7 +24,7 @@ const professorPlum = {
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: '#7d0633',
+  color: '#815550',
   description: 'She is a fortuneseeker',
   age: 27,
   image: 'assets/scarlet.png',
@@ -35,7 +35,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: '#00416d',
+  color: '#0E4253',
   description: 'She is jealous and mean',
   age: 45,
   image: 'assets/peacock.png',
@@ -46,7 +46,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: '#c87941',
+  color: '#674416',
   description: 'He is senile and tired',
   age: 70,
   image: 'assets/mustard.png',
@@ -57,7 +57,7 @@ const colonelMustard = {
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: '#dbcbbd',
+  color: '#E2E1B6',
   description: 'She is the grumpy old matriark',
   age: 85,
   image: 'assets/white.png',
