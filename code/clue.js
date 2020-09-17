@@ -11,7 +11,7 @@ const mrGreen = {
   age: 45,
   image: "assets/mr_green.jpg",
   occupation: "Entrepreneur",
-  favoriteWeapon: "rope",
+  favoriteWeapon: "",
 };
 
 const colMustard = {
@@ -23,7 +23,7 @@ const colMustard = {
   age: 60,
   image: "assets/col_mustard.jpg",
   occupation: "Colonel",
-  favoriteWeapon: "pistol";
+  favoriteWeapon: "",
 };
 
 const msScarlett = {
@@ -35,7 +35,7 @@ const msScarlett = {
   age: 25,
   image: "assets/ms_scarlett.jpg",
   occupation: "Actress",
-  favoriteWeapon: knife;
+  favoriteWeapon: "",
 };
 
 const mrWhite = {
@@ -47,7 +47,7 @@ const mrWhite = {
   age: 65,
   image: "assets/mr_white.jpg",
   occupation: "Butler",
-  favoriteWeapon: "candlestick",
+  favoriteWeapon: "",
 };
 
 const mrsPeacock = {
@@ -59,7 +59,7 @@ const mrsPeacock = {
   age: 42,
   image: "assets/mrs_peacock.jpg",
   occupation: "Socialite",
-  favoriteWeapon: "piping",
+  favoriteWeapon: "",
 };
 
 const profPlum = {
@@ -71,7 +71,7 @@ const profPlum = {
   age: 46,
   image: "./assets/prof_plum.jpg",
   occupation: "Professor",
-  favoriteWeapon: "wrench",
+  favoriteWeapon: "",
 };
 
 const rope = {
@@ -239,16 +239,19 @@ const showKiller = () => {
   loader.classList.toggle("is-active");
   setTimeout(() => {
     loader.classList.toggle("is-active");
-    pickKiller();
-  }, 750);
+    //pickKiller();
+  }, 700);
 };
 
 shuffleFavoriteWeapon = () => {
-  mystery.favoriteWeapon = randomSelector(weapons);
+  mystery.killer.favoriteWeapon = randomSelector(weapons);
+  document.getElementById("killerFavoriteWeapon").innerHTML = `${mystery.killer.favoriteWeapon.name}`
 }
 
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
+  shuffleFavoriteWeapon();
+  console.log(mystery.killer.favoriteWeapon);
   document.getElementById("killerCard").style.background = mystery.killer.color;
   document.getElementById(
     "killerName"
@@ -260,7 +263,10 @@ const pickKiller = () => {
   document.querySelector(
     "#killerDescription"
   ).innerHTML = `${mystery.killer.description}`;
+ 
 };
+
+
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
