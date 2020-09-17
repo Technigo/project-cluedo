@@ -172,31 +172,42 @@ const randomSelector = array => {
 const mystery = {
   killer: undefined,
   weapon: undefined,
-  room: undefined
+  room: undefined,
 };
-
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   document.getElementById('killerCard').innerHTML
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
+
+  //This will randomly change each killer's favourite weapon.
+  const shuffleFavouriteWeapon = () => {
+    mystery.favouriteWeapon = randomSelector(weapons)
+  }
+ 
+  //This calls/executes the above function.
+  shuffleFavouriteWeapon();
+
+//These connects the js and the html, and outputs in browser.
+  document.getElementById('favouriteWeapon').innerHTML = `Favourite weapon: ${mystery.favouriteWeapon.name}`
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}` 
   document.getElementById('killerImage').src = mystery.killer.image
   document.getElementById('killerAge').innerHTML = `${mystery.killer.age}` 
   document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}` 
   document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}` 
-  document.getElementById('favouriteWeapon').innerHTML = `${mystery.killer.favouriteWeapon}` 
-  document.getElementById('loader').style.display = 'block';
+  //document.getElementById('loader').style.display = 'none';
 }
+
 // This function will be invoked when you click on the weapon card.
 const pickWeapon = () => {
   document.getElementById('weaponCard').innerHTML
   // This will randomly select a weapon from the weapon array. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-  document.getElementById('loader').style.display = 'block';
+  //document.getElementById('loader').style.display = 'none';
+  //document.getElementById('shuffleFavouriteWeapon').onclick = favouriteWeapon
 }
 
 // This function will be invoked when you click on the room card.
@@ -206,7 +217,7 @@ const pickRoom = () => {
   mystery.room = randomSelector(rooms)
   document.getElementById('roomCard').style.background = mystery.room.color
   document.getElementById('roomName').innerHTML = `${mystery.room}`
-  document.getElementById("loader").style.display = 'block';
+  //document.getElementById('loader').style.display = 'none';
 }
 
 //This generates random items from the arrays on onclick.

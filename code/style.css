@@ -138,11 +138,18 @@ img.questionmark  {
 }
 
 /*REVEAL MYSTERY BUTTON*/
+
+/*.button-container {
+  display: flex;
+  justify-content: center;
+}
+*/
+
 button {
   padding: 16px 16px;
   background: rgb(238, 228, 186);
   border: none;
-  font-size: 20px;
+  font-size: 26px;
   font-weight: bolder;
   border-radius: 8px;
   margin: 0 50px;

@@ -13,8 +13,9 @@
     </header>
     <section class="cards">
       <article class="killer-deck allCards" id="killerCard">
-        <img id="killerImage" src="./assets/questionmark (kopia 2).jpg" height="100" />
+        <img id="killerImage" src="./assets/questionmark (kopia 2).jpg" height="200" />
         <h3>KILLER<h3>
+          </div>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
@@ -22,12 +23,12 @@
         <p id="favouriteWeapon"></p>
       </article>
       <article class="weapon-deck allCards" id="weaponCard">
-        <img id="questionmarkWeapon" class="questionmark" src="./assets/questionmark (kopia 2).jpg" height="100" />
+        <img id="questionmarkWeapon" class="questionmark" src="./assets/questionmark (kopia 2).jpg" height="200" />
         <h3>WEAPON</h3>
         <p id="weaponName"></p>
       </article>
       <article class="room-deck allCards" id="roomCard">
-        <img id="questionmarkRoom" class="questionmark" src="./assets/questionmark (kopia 2).jpg" height="100" />
+        <img id="questionmarkRoom" class="questionmark" src="./assets/questionmark (kopia 2).jpg" height="200" />
         <h3>ROOM</h3>
         <p id="roomName"></p>
       </article>
@@ -37,8 +38,10 @@
         <div class="ball"></div>
     </div>
     <h1 id="mystery" class="mystery"></h1>
-    <button class="reveal" id="revealButton" onclick="revealMystery()">REVEAL MYSTERY!</button> 
-    <button class="restart" id="playAgain" onclick="location.reload()">PLAY AGAIN?</button>
-    <script src="clue.js"></script>
+    <div class="button-container">
+      <button class="reveal" id="revealButton" onclick="revealMystery()">REVEAL MYSTERY!</button> 
+      <button class="restart" id="playAgain" onclick="location.reload()">PLAY AGAIN?</button>
+    </div>
+      <script src="clue.js"></script>
   </body>
 </html>
