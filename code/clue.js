@@ -15,7 +15,7 @@ const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
   color: 'yellow',
-  description: 'He"s an old-school army man.',
+  description: 'He is an old-school army man.',
   age: 'Age: ' + 62,
   image: 'assets/mustard.png',
   occupation: 'Occupation: officer',
