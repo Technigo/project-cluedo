@@ -13,7 +13,7 @@ body {
 /**** HEADER ****/
 header {  
   background-color: #8fe8c9;
-  display:flex; 
+  display: flex; 
   flex-direction: column;
   text-align-last: center;
   justify-content: center;
@@ -64,8 +64,8 @@ p {
 }
 
 .killer-deck:hover {
-  background: #8fe8c9;
-  border-color: #8fe8c9;
+  background: #006675;
+  border-color: #006675;
   transition: all 0.4s ease 0s;
   }
 
@@ -154,23 +154,20 @@ footer img {
 @media screen and (max-width: 1024px) {
 
 .cards {
- height: 1000px;
+ height: 800px;
  background-image: url("./teal-.jpg"); 
 }
+
 p#killerMessage {
   padding: 70px;
+}
 }
 
 /**** Responsive MOBILE ****/
 @media screen and (max-width: 768px) {
   
  .cards {
- height: 1800px;
+ height: 2000px;
  background-image: url("./teal-.jpg"); 
 }
-
-
-
-
-
-
+}
