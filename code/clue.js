@@ -6,7 +6,7 @@
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
-  color: "green",
+  color: "#7FFF00",
   description: "He has a lot of connections",
   age: 45,
   image: "assets/green.png",
