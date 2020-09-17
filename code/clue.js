@@ -175,7 +175,7 @@ const pickRoom = () => {
 
 roomCardElement.addEventListener("click", pickRoom);
  
-//*** FUNCTION THAT REVEALS THE MYSTERY - invoked by button onclick in HTML ***//
+//*** FUNCTION THAT REVEALS THE MYSTERY (or tells the user to pick a killer/weapon/room) - invoked by button onclick in HTML ***//
 
 const revealMystery = () => {
 
