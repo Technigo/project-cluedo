@@ -1,19 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
-  background-image: url("./assets/house.jpg");
+  background-image: url("./assets/castle.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom center; 
+  background-position: bottom; 
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-p {
+h1{
+  font-family: 'Anton', sans-serif;
+  color: white;
+  font-size: 4.5em;
+  text-shadow: 10px #000;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+h3{
+  font-family: 'Oswald', sans-serif;
+  color: white;
+  margin: 0 auto;
+  font-size: 2em;
+}
+
+span.red{
+  color:rgba(242, 27, 34);
+}
+
+span.yellow{
+  color:#e0c582;
+}
+
+p{
+  margin: 0 auto;
+}
+
+p.title-font {
   margin: 1px;
-  font-weight: 300;
+  font-weight: 900;
+  font-size: 1.2em;
   background-color: #fff;
+  font-family: 'Oswald', sans-serif;
+}
+
+p.second-title-font{
+  font-family: 'Oswald', sans-serif;
+  font-size: 1em;
+  background-color: #fff;
+  margin-bottom: 2px;
+}
+
+p.third-title-font{
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9em;
+  background-color: #fff;
+  margin-bottom: 2px;
 }
 
 .cards {
@@ -29,7 +76,7 @@ p {
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: rgba(0, 0, 0, 0.8);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -39,7 +86,7 @@ p {
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: rgba(242, 27, 34, 0.8);
   background-image: './assets/detective.png';
   text-align: center;
   padding-top: 30px;
@@ -49,21 +96,27 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: rgba(242, 27, 34, 0.8);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
+#weaponImage,
+#roomImage 
+{
+  margin: 35px 0px;
+}
+
+
 button {
   padding: 8px 16px;
-  background: crimson;
+  background:#e0c582;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 #mystery{
