@@ -14,6 +14,11 @@ When the user clicks on each deck a card will be displayed by calling a function
 
 Then there's a "Reveal mystery" button that once the cards mentioned above have been clicked will manipulate the DOM by JavaScript and reveal the mystery. 
 
+## Tech ⚡
+- HTML5
+- CSS3
+- JavaScript
+
 
 ## View it live 🔴
 https://cluendo.netlify.app/
