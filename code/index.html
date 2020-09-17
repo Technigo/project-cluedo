@@ -66,9 +66,17 @@
     <div class="title">
       <h1>CLUEDO</h1>
     </div>
+    <div class="title-p">
+      <p>
+        Choose your suspect, the room and a weapon to reveal the crime.
+        <br />You may shuffle the cards as many times as you'd like to, but the
+        mystery won't be revealed unless all three decks are shuffled! When
+        you're finished, click on the 'New Round' button.
+      </p>
+    </div>
     <section class="cards">
       <article class="killer-deck" id="killerCard">
-        <p>KILLER</p>
+        <p>SUSPECT</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
@@ -90,7 +98,7 @@
 
     <h1 id="mystery"></h1>
 
-    <button id="crimeButton">REVEAL THE CRIME</button>
+    <button id="crimeButton">REVEAL THE MYSTERY</button>
 
     <div class="refresh">
       <button id="refreshPage" onclick="window.location.reload();">
