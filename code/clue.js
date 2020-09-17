@@ -5,7 +5,7 @@ const mrGreen = {
   lastName: 'Green',
   color: '#0b6623',
   description: 'He has a lot of connections',
-  age: 45,
+  age: 47,
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 };
@@ -34,8 +34,8 @@ const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
   color: '#111e6c',
-  description: 'She is an intellectual and well dressed woman',
-  age: 55,
+  description: 'She is an intellectual well dressed woman',
+  age: 54,
   image: 'assets/peacock.png',
   occupation: 'Socialite'
 };
@@ -45,7 +45,7 @@ const colonelMustard = {
   lastName: 'Mustard',
   color: '#e1ad01',
   description: 'He is a dapper ex military man',
-  age: 60,
+  age: 61,
   image: 'assets/mustard.png',
   occupation: 'Colonel'
 };
@@ -55,7 +55,7 @@ const mrsWhite = {
   lastName: 'White',
   color: '#e8e8e8',
   description: 'She is a widow and a long serving cleaner',
-  age: 67,
+  age: 70,
   image: 'assets/white.png',
   occupation: 'Housekeeper'
 };
@@ -65,13 +65,13 @@ const mrsWhite = {
 const rope = {
   name: 'rope',
   weight: 10,
-  image: 'assets/rope2.png'
+  image: 'assets/rope.png'
 };
 
 const knife = {
   name: 'knife',
   weight: 15,
-  image: 'assets/knife2.png'
+  image: 'assets/knife.png'
 };
 
 const candlestick = {
@@ -83,37 +83,37 @@ const candlestick = {
 const dumbbell = {
   name: 'dumbbell',
   weight: 40,
-  image: 'assets/dumbbell2.png'
+  image: 'assets/dumbbell.png'
 };
 
 const poison = {
   name: 'poison',
   weight: 5,
-  image: 'assets/poison2.png'
+  image: 'assets/poison.png'
 };
 
 const axe = {
   name: 'axe',
   weight: 35,
-  image: 'assets/axe2.png'
+  image: 'assets/axe.png'
 };
 
 const bat = {
   name: 'bat',
   weight: 30,
-  image: 'assets/bat2.png'
+  image: 'assets/bat.png'
 };
 
 const trophy = {  
   name: 'trophy',
   weight: 10,
-  image: 'assets/trophy2.png'
+  image: 'assets/trophy.png'
 };
 
 const pistol = {
   name: 'pistol',
   weight: 25,
-  image: 'assets/pistol2.png'
+  image: 'assets/pistol.png'
 };
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.

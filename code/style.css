@@ -1,10 +1,11 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
-  background-image: url(./assets/image-main.jpg);
+  background-image: url(./assets/image-main-dark5.jpg);
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position-x: center;
-  background-position-y: 65%;
+  background-position-y: center;
 }
 
 p {
@@ -47,7 +48,7 @@ p {
   margin: 30px auto;
   width: 90%;
   height: 500px;
-  background: rgba(204, 204, 204, 0.7);
+  background: rgba(204, 204, 204, 0.6);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -93,6 +94,8 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  font-family: 'Architects Daughter', cursive;
+  font-weight: bold;
 }
 
 .weapon-img-div {
