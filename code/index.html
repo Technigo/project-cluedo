@@ -24,16 +24,15 @@
       <section class="cards">
         <!-- HEADER FOR CARDS DESCRIBING WHAT USER SHOULD DO TO REVEAL THE THE MYSTERY -->
         <div class="card-header-container">
-          <h2>Click on a card to reveal a murderer, weapon and room then reveal the crime!</h2>
+          <h2>Click on a card to reveal a murderer, weapon and room, then reveal the crime!</h2>
         </div>
 
         <!-- KILLER CARD -->
         <div class="card-container">
-
-          <article onclick="showPickKiller()" class="killer-deck" id="killerCard">
+          <article class="killer-deck" id="killerCard">
             <div class="card-front" id="frontOfCard">
               <h4 class="card-title">KILLER</h4>
-              <img onclick="pickKillerLoader()" id="loader1" class="loader-image" src="assets/magnify-glass.png" height= 100px;/>
+              <img  id="loader1" class="loader-image" src="assets/magnify-glass.png" height= 100px;/>
             </div>
             <div class="card-details" id="cardDetails1">
               <h4 id="killerName"></h4>
@@ -44,10 +43,10 @@
           </article>
 
           <!-- WEAPON CARD -->
-          <article onclick="showPickWeapon()" class="weapon-deck" id="weaponCard">
+          <article class="weapon-deck" id="weaponCard">
             <div class="card-front" id="frontOfCard">
               <h4 class="card-title">WEAPON</h4>
-              <img onclick="pickWeaponLoader()" id="loader2" class="loader-image" src="assets/magnify-glass.png" height= 100px;/>
+              <img  id="loader2" class="loader-image" src="assets/magnify-glass.png" height= 100px;/>
             </div>
             <div class="card-details" id="cardDetails2">
               <h4 id="weaponName"></h4>
@@ -58,10 +57,10 @@
           </article>
 
           <!-- ROOM CARD -->
-          <article onclick="showPickRoom()" class="room-deck" id="roomCard">
+          <article class="room-deck" id="roomCard">
             <div class="card-front" id="frontOfCard">
               <h4 class="card-title">ROOM</h4>
-              <img onclick="pickRoomLoader()" id="loader3" class="loader-image" src="assets/magnify-glass.png" height= 100px;/>
+              <img id="loader3" class="loader-image" src="assets/magnify-glass.png" height= 100px;/>
             </div>
             <div class="card-details" id="cardDetails3">
               <h4 id="roomName"></h4>
