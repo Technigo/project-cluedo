@@ -14,30 +14,47 @@
   <img class="game-image" src="cluedo.png" alt="Cluedo logo" width="20%">
 </header>
 
-  <!--Cards -->
+<!--Cards -->
   <section class="cards">
+    
+    <!--Killer card-->
     <article class="killer-deck" id="killerCard">
-      <p class="card-type">KILLER</p>
+    <div class="killer-card-wrapper" id="killer-card-wrapper">
+       <p class="start-display-cards" id="start-display-card-killer">PICK A KILLER CARD</p>
       <p id="killerName"></p>
       <p id="killerAge"></p>
       <p id="killerOccupation"></p>
       <img id="killerImage" src="" height="100" />
       <p id="killerDescription"></p>
       <p id="favouriteWeapon"></p>
-
-  
+    </div>
+  <!--Loader to killer-->
+      <div class="loader-wrapper" id="loader-wrapper-killer">
+      <div class="loader"></div>
+      <p class="generating-text">Generating a suspect</p>
+      </div>
     </article>
 
-  
+  <!--Weapon card-->  
     <article class="weapon-deck" id="weaponCard">
-      <p class="card-type">WEAPON</p>
+      <div class="weapon-card-wrapper" id="weapon-card-wrapper">
+      <p class="start-display-cards" id="start-display-card-weapon">PICK A WEAPON CARD</p>
       <p id="weaponName"></p>
       <p id="weaponMaterial"></p>
       <img id="weaponsImage" src="" height="100" />
+  </div>
+  <!--Loader to weapon-->  
+    <div class="loader-wrapper" id="loader-wrapper-weapon">
+    <div class="loader"></div>
+    <p>Generating a weapon</p>
+      </div>
     </article>
+
+  <!--Room card-->  
     <article class="room-deck" id="roomCard">
       <p class="card-type">ROOM</p>
       <p id="roomName"></p>
+
 
     </article>
 
