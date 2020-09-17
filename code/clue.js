@@ -120,7 +120,7 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// Changes card color
+// Changes card background when clicked
 const changeCard = (card) => {
   document.getElementById(card).style.background = "#ff7ee3"
 }
@@ -128,7 +128,12 @@ const changeCard = (card) => {
 // Changes back button content and background
 const changeButton = () => {
   mysteryButton.innerHTML = "?"
-  mysteryButton.style.background = "#EFF066"
+  
+  if (mystery.killer !== null && mystery.weapon !== null && mystery.room !== null) {
+    mysteryButton.style.background = "#EFF066"
+  } else {
+    mysteryButton.style.background = "transparent"
+  }
 }
 
 //*** FUNCTION FOR KILLER CARD and how it is invoked***//
@@ -181,6 +186,7 @@ const revealMystery = () => {
   const revealMysteryNow = () => {
     mysteryButton.innerHTML = (`It was ${mystery.killer.fullName()} with a ${mystery.weapon.name} in the ${mystery.room.name}.`)
     mysteryButton.style.background = "transparent"
+    mysteryButton.style.opacity = 1.0;
     textClass.forEach(text => text.innerHTML = "")
     cardClass.forEach(card => card.style.background = "#30F2C6")
     Object.keys(mystery).forEach(key => mystery[key] = null)  
