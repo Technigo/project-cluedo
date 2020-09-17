@@ -8,7 +8,7 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
-  favouriteWeapon: "knife"
+  favouriteWeapon: 'knife',
 }
 console.log(mrGreen.description);
 
@@ -20,7 +20,7 @@ const professorPlum = {
   age: 35,
   image: 'assets/plum.png',
   occupation: 'Professor',
-  favouriteWeapon: "rope"
+  favouriteWeapon: 'rope',
 }
 console.log(professorPlum.description);
 
@@ -32,7 +32,7 @@ const missScarlet = {
   age: 30,
   image: 'assets/scarlet.png',
   occupation: 'Runs an underground brothel',
-  favouriteWeapon: "candlestick"
+  favouriteWeapon: 'candlestick',
 }
 console.log(missScarlet.description);
 
@@ -44,7 +44,7 @@ const mrsPeacock = {
   age: 55,
   image: 'assets/peacock.png',
   occupation: 'Housewife',
-  favouriteWeapon: "dumbbell"
+  favouriteWeapon: 'dumbbell',
 }
 console.log(mrsPeacock.description);
 
@@ -56,7 +56,7 @@ const colonelMustard = {
   age: 60,
   image: 'assets/mustard.png',
   occupation: 'War profiteer',
-  favouriteWeapon: "poison"
+  favouriteWeapon: 'poison',
 }
 console.log(colonelMustard.description);
 
@@ -68,7 +68,7 @@ const mrsWhite = {
   age: 63,
   image: 'assets/white.png',
   occupation: 'Nurse',
-  favouriteWeapon: "axe"
+  favouriteWeapon: 'axe',
 }
 console.log(mrsWhite.description);
 
@@ -77,23 +77,23 @@ console.log(mrsWhite.description);
 const rope = {
   name: 'rope',
   material: 'textile',
-  id: "rope",
-  image: 'assets/green.png',
+  id: 'rope',
+  image: 'assets/rope.jpg',
 }
 console.log(rope);
 
 const knife = {
   name: 'knife',
   material: 'metal',
-  id: "knife",
-  image: 'assets/green.png',
+  id: 'knife',
+  image: 'assets/knife.png',
 }
 console.log(knife);
 
 const candlestick = {
   name: 'candlestick',
   material: 'silver',
-  id: "candlestick",
+  id: 'candlestick',
   image: 'assets/green.png',
 }
 console.log(candlestick);
@@ -101,7 +101,7 @@ console.log(candlestick);
 const dumbbell = {
   name: 'dumbbell',
   material: 'iron',
-  id: "dumbbell",
+  id: 'dumbbell',
   image: 'assets/green.png',
 }
 console.log(dumbbell);
@@ -109,7 +109,7 @@ console.log(dumbbell);
 const poison = {
   name: 'poison',
   material: 'liquid',
-  id: "poison",
+  id: 'poison',
   image: 'assets/green.png',
 }
 console.log(poison);
@@ -117,7 +117,7 @@ console.log(poison);
 const axe = {
   name: 'axe',
   material: 'metal',
-  id: "axe",
+  id: 'axe',
   image: 'assets/green.png',
 }
 console.log(axe);
@@ -168,7 +168,6 @@ const weapons = [
   trophy,
   pistol
 ]
-console.log(weapons);
 
 const rooms = [
   "Dining Room",
@@ -189,15 +188,6 @@ const rooms = [
 ]
 console.log(rooms);
 
-const favouriteWeaponArray = [
-  "rope",
-  "knife",
-  "candlestick",
-  "dumbbell",
-  "poison",
-  "axe"
-]
-
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
@@ -214,33 +204,29 @@ let mystery = {
 };
 console.log(mystery);
 
-// Try to add shuffleFavouriteWeapon
-
-const shuffleFavouriteWeapon = (suspects) => {
-favouriteWeaponArray.favouriteWeapon = randomSelector(suspects).favouriteWeapon;
-//}
-
-console.log(shuffleFavouriteWeapon);
+// Function to shuffle the suspects favorite weapon
+const shuffleFavouriteWeapon = () => {
+  console.log(mystery.killer);
+  randomFavouriteWeapon = weapons[Math.floor(Math.random() * weapons.length)];
+  console.log(mystery.killer.favouriteWeapon);
+  mystery.killer.favouriteWeapon = randomFavouriteWeapon.name;
+  document.getElementById('favouriteWeapon').innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
+}
 
 // This function will be invoked when you click on the killer card.
 
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
-
+  
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color;
-  document.getElementById(
-    'killerName'
-    ).innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  document.getElementById(
-    'killerDescription'
-  ).innerHTML = `${mystery.killer.description}`;
-  document.getElementById(
-    'killerFavouriteWeapon'
-    ).innerHTML = `This persons favourite weapon is ${mystery.killer.favouriteWeapon}`;
+  document.getElementById('killerName').innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`;
+  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`;
   let killerImage = document.getElementById('killerImage');
   killerImage.src = mystery.killer.image;
+  shuffleFavouriteWeapon();
 };
 console.log(pickKiller);
 
@@ -250,14 +236,12 @@ const pickWeapon = () => {
   mystery.weapons = randomSelector(weapons);
 
   document.getElementById('weaponCard');
-  document.getElementById(
-    'weaponName'
-  ).innerHTML = `Weapon: ${mystery.weapons.name}`;
-  document.getElementById(
-   'weaponMaterial' 
-  ).innerHTML = `Material: ${mystery.weapons.material}`
+
   let weaponsImage = document.getElementById('weaponsImage');
-  weaponsImage.src = mystery.weapons.Image;
+  weaponsImage.src = mystery.weapons.image;
+
+  document.getElementById('weaponName').innerHTML = `Weapon: ${mystery.weapons.name}`;
+  document.getElementById('weaponMaterial').innerHTML = `Material: ${mystery.weapons.material}`
 };
 console.log(pickWeapon);
 
@@ -296,5 +280,4 @@ document.getElementById('reveal').onclick = revealMystery;
 
 // Function to Restart the game
 const restart = () => {
-  document.location.href = "";
-};}
+  document.location.href = ""};
