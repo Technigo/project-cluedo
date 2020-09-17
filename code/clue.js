@@ -107,24 +107,24 @@ const pistol = {
 // STEP 2 - GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS:
 
 const suspects = [
-  'mrGreen',
-  'professorPlum',
-  'missScarlet',
-  'mrsPeacock',
-  'colonelMustard',
-  'mrsWhite'
+  mrGreen,
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
+  mrsWhite
 ]
 
 const weapons = [
-  'rope',
-  'knife',
-  'candlestick',
-  'dumbbell',
-  'poison',
-  'axe',
-  'bat',
-  'trophy',
-  'pistol'
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
 ]
 
 
