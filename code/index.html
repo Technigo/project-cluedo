@@ -9,39 +9,48 @@
     <link rel="icon" type="image/png" href="./assets/fairytale.ico.ico"> 
   </head>
   <body>
+    <!------ HEADER ------>
     <header></header>
     <h1>A MURDER HAS BEEN COMMITED!<br>Who is the killer? Which is the weapon?<br>And in which room was it commited?</h1>
-
+    
+    <!------ THE CARD WITH THE DECKS/CARDS ------>
     <section class="cards">
       <article class="killer-deck" id="killerCard" onclick="pickKiller()">
         <p><b>KILLER</b></p>
+        <div id="loader1"></div>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
+        <p id="favouriteWeapon"></p>
+        <img id="killerImage" src=""/>
         <p id="killerDescription"></p>
       </article>
       <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
         <p><b>WEAPON</b></p>
+        <div id="loader2"></div>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
+        <img id="weaponImage" src=""/>
       </article>
       <article class="room-deck" id="roomCard" onclick="pickRoom()">
         <p><b>ROOM</b></p>
+        <div id="loader3"></div>
         <p id="roomName"></p>
+        <img id="roomImage" src="" height="100"/>
       </article>
     </section>
 
+    <!------ REVEALING OF THE MYSTERY ------>
     <h2 id="mystery"></h2>
-    <img class="mysteryImage" id="mysteryImage" src="" />
+    <button onclick="revealMystery()"><p>REVEAL THE CRIME!</p><img class="detectivepic" src="./assets/detective.png" alt="Picture of detective"></button>
 
-    <button onclick="revealMystery()">REVEAL THE CRIME!</button>
-
-  <footer>
-    This website is made my Gabriella Bolin as Project 5 @Technigo Bootcamp 2020.<br>
-    Thanks to Eric Marty for sharing their work on Unsplash. 🙌
-  </footer>
+    <!------ FOOTER ------>
+    <footer>
+    This website is made by Gabriella Bolin as Project 5 @Technigo Bootcamp 2020.<br>
+    Thanks to Eric Marty for sharing the photo on Unsplash. Icons from icons8.com 
+    </footer>
 
     <script src="clue.js"></script>
+  
   </body>
 </html>
