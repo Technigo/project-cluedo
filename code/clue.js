@@ -282,7 +282,7 @@ const pickKiller = () => {
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
   document.getElementById('killerAge').innerHTML = ` Age:${mystery.killer.age}`
   document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
-   let favWeapon = weapons.find(weapon => weapon.id === mystery.killer.favouriteWeapon)
+  let favWeapon = weapons.find(weapon => weapon.id === mystery.killer.favouriteWeapon)
   document.getElementById('killerFavouriteWeapon').innerHTML = `Favourite weapon: ${favWeapon.name}`
 
 }
@@ -316,18 +316,21 @@ document.getElementById('roomCard').onclick = pickRoom
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
+  if (mystery.killer === '' || mystery.weapon === '' || mystery.room === '') {
+  document.getElementById('mystery').innerHTML = 'Sorry, you have to pick one of each card to reveal the murder mystery'
+  } else {
   document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}.`
+  }
 }
 
 document.getElementById('revealMystery').onclick = revealMystery
 
-
-const shuffleFavouriteWeapon = () => {
-  suspects.forEach((suspect) => {
-    console.log(suspect.firstName, suspect.favouriteWeapon)
-    let randomWeapon = randomSelector(weapons)
-    suspect.favouriteWeapon = randomWeapon.id 
-    console.log(suspect.firstName, suspect.favouriteWeapon)
-  })
-}
-shuffleFavouriteWeapon()
+  const shuffleFavouriteWeapon = () => {
+    suspects.forEach((suspect) => {
+      console.log(suspect.firstName, suspect.favouriteWeapon)
+      let randomWeapon = randomSelector(weapons)
+      suspect.favouriteWeapon = randomWeapon.id
+      console.log(suspect.firstName, suspect.favouriteWeapon)
+    })
+  }
+  shuffleFavouriteWeapon()
