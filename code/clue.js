@@ -189,6 +189,10 @@ shuffleFavouriteWeapon()
 
 const favourite = suspects.favouriteWeapon
 const shuffleFavouriteWeaponDuplicate = new Array(6).fill(favourite)
+const randomArray = [...weapons, ...favouriteWeaponDuplicate]
+const pickNotSoRandomWeapon = () => {
+  mystery.favouriteWeapon = Math.floor(Math.random() * randomArray.length)
+}
 // FUNCTIONS pickWeapon and pickRoom 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
