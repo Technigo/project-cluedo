@@ -32,8 +32,8 @@ header{
 }
 
 .loader-item.is-active {
-  position: absolute;
-  top: 45%;
+  position: fixed;
+  top: 40%;
   left: 45%;
   display: block;
   border: 20px solid rgba(186, 185, 185, .7);

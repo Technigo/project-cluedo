@@ -1,180 +1,197 @@
 // GENERAL VARIABLES
-const loader = document.querySelector('.loader-item');
+const loader = document.querySelector(".loader-item");
 
-// OBJECTS OF SUSPECTS
+// OBJECTS 
 const mrGreen = {
-  title: 'Mr',
-  firstName: 'Jacob',
-  lastName: 'Green',
-  color: 'green',
-  description: 'He has a lot of connections',
+  title: "Mr",
+  firstName: "Jacob",
+  lastName: "Green",
+  color: "green",
+  description: "He has a lot of connections",
   age: 45,
-  image: 'assets/mr_green.jpg',
-  occupation: 'Entrepreneur'
-}
+  image: "assets/mr_green.jpg",
+  occupation: "Entrepreneur",
+  favoriteWeapon: "rope",
+};
 
 const colMustard = {
-  title: 'Colonel',
-  firstName: 'Jack',
-  lastName: 'Mustard',
-  color: 'yellow',
-  description: 'He is a dignified and dangerous military man',
+  title: "Colonel",
+  firstName: "Jack",
+  lastName: "Mustard",
+  color: "yellow",
+  description: "He is a dignified and dangerous military man",
   age: 60,
-  image: 'assets/col_mustard.jpg',
-  occupation: 'Colonel'
-}
+  image: "assets/col_mustard.jpg",
+  occupation: "Colonel",
+  favoriteWeapon: "pistol";
+};
 
 const msScarlett = {
-  title: 'Miss',
-  firstName: 'Cassandra',
-  lastName: 'Scarlett',
-  color: 'red',
-  description: 'She is a femme fatale.',
+  title: "Miss",
+  firstName: "Cassandra",
+  lastName: "Scarlett",
+  color: "red",
+  description: "She is a femme fatale.",
   age: 25,
-  image: 'assets/ms_scarlett.jpg',
-  occupation: 'Actress'
-}
+  image: "assets/ms_scarlett.jpg",
+  occupation: "Actress",
+  favoriteWeapon: knife;
+};
 
 const mrWhite = {
-  title: 'Mr',
-  firstName: 'Jim',
-  lastName: 'White',
-  color: 'white',
-  description: 'He is a dominant butler.',
+  title: "Mr",
+  firstName: "Jim",
+  lastName: "White",
+  color: "white",
+  description: "He is a dominant butler.",
   age: 65,
-  image: 'assets/mr_white.jpg',
-  occupation: 'Butler'
-}
+  image: "assets/mr_white.jpg",
+  occupation: "Butler",
+  favoriteWeapon: "candlestick",
+};
 
 const mrsPeacock = {
-  title: 'Mrs',
-  firstName: 'Eleanor',
-  lastName: 'Peacock',
-  color: 'blue',
-  description: 'She is an elegant and classy aristocrat.',
+  title: "Mrs",
+  firstName: "Eleanor",
+  lastName: "Peacock",
+  color: "blue",
+  description: "She is an elegant and classy aristocrat.",
   age: 42,
-  image: 'assets/mrs_peacock.jpg',
-  occupation: 'Socialite'
-}
+  image: "assets/mrs_peacock.jpg",
+  occupation: "Socialite",
+  favoriteWeapon: "piping",
+};
 
 const profPlum = {
-  title: 'Professor',
-  firstName: 'Henrietta',
-  lastName: 'Plum',
-  color: 'purple',
-  description: 'She is a quick witted professor with a dubious past',
+  title: "Professor",
+  firstName: "Henrietta",
+  lastName: "Plum",
+  color: "purple",
+  description: "She is a quick witted professor with a dubious past",
   age: 46,
-  image: './assets/prof_plum.jpg',
-  occupation: 'Professor'
-}
-
-// OBJECTS FOR WEAPONS
+  image: "./assets/prof_plum.jpg",
+  occupation: "Professor",
+  favoriteWeapon: "wrench",
+};
 
 const rope = {
-  name: 'rope',
+  id: "rope",
+  name: "rope",
   weight: 10,
-  image: 'assets/rope.jpg'
-}
+  image: "assets/rope.jpg",
+};
 
 const candlestick = {
-  name: 'candlestick',
+  id: "candlesstick",
+  name: "candlestick",
   weight: 25,
-  image: 'assets/candlestick.jpg'
-}
+  image: "assets/candlestick.jpg",
+};
 
 const pistol = {
-  name: 'pistol',
+  id: "pistol",
+  name: "pistol",
   weight: 15,
-  image: 'assets/revolver.jpg'
-}
+  image: "assets/revolver.jpg",
+};
 
 const knife = {
-  name: 'knife',
+  id: "knife",
+  name: "knife",
   weight: 12,
-  image: 'assets/knife.jpg'
-}
+  image: "assets/knife.jpg",
+};
 
 const piping = {
-  name: 'piping',
+  id: "piping",
+  name: "piping",
   weight: 19,
-  image: 'assets/piping.jpg'
-}
+  image: "assets/piping.jpg",
+};
 
 const wrench = {
-  name: 'wrench',
+  id: "wrench",
+  name: "wrench",
   weight: 21,
-  image: 'assets/wrench.jpg'
-}
+  image: "assets/wrench.jpg",
+};
 
 const dumbbell = {
-  name: 'dumbbell',
+  id: "dumbbell",
+  name: "dumbbell",
   weight: 35,
-}
+};
 
 const axe = {
-  name: 'axe',
+  id: "axe",
+  name: "axe",
   weight: 7,
-}
+};
 
 const bat = {
-  name: 'bat',
+  id: "bat",
+  name: "bat",
   weight: 4,
-}
+};
 
 const trophy = {
-  name: 'trophy',
+  id: "trophy",
+  name: "trophy",
   weight: 9,
-}
-
-// OBJECTS FOR ROOMS
+};
 
 const ballroom = {
   name: "ballroom",
-  image: 'assets/ballroom.jpg'
-}
+  image: "assets/ballroom.jpg",
+};
 
 const billiardRoom = {
   name: "billiard room",
-  image: 'assets/billiard_room.jpg'
-}
+  image: "assets/billiard_room.jpg",
+};
 
 const conservatory = {
   name: "conservatory",
-  image: 'assets/conservatory.jpg'
-}
+  image: "assets/conservatory.jpg",
+};
 
 const kitchen = {
   name: "kitchen",
-  image: 'assets/kitchen.jpg'
-}
+  image: "assets/kitchen.jpg",
+};
 
 const diningRoom = {
   name: "dining room",
-  image: 'assets/dining_room.jpg'
-}
+  image: "assets/dining_room.jpg",
+};
 
 const library = {
   name: "library",
-  image: 'assets/kitchen.jpg'
-}
+  image: "assets/kitchen.jpg",
+};
 
 const study = {
   name: "study",
-  image: 'assets/study.jpg'
-}
+  image: "assets/study.jpg",
+};
 
 const hall = {
   name: "hall",
-  image: 'assets/hall.jpg'
-}
+  image: "assets/hall.jpg",
+};
 
 const lounge = {
   name: "lounge",
-  image: 'assets/lounge.jpg'
-}
+  image: "assets/lounge.jpg",
+};
 
+const mystery = {
+  killer: "",
+  weapon: "",
+  room: "",
+};
 
-// ARRAYS FOR GROUPS OF OBJECTS
+// ARRAYS TO GROUP OBJECTS
 
 const suspects = [
   mrGreen,
@@ -183,7 +200,7 @@ const suspects = [
   msScarlett,
   mrsPeacock,
   profPlum,
-]
+];
 
 const weapons = [
   rope,
@@ -194,9 +211,9 @@ const weapons = [
   wrench,
   dumbbell,
   axe,
-  bat, 
+  bat,
   trophy,
-]
+];
 
 const rooms = [
   kitchen,
@@ -213,67 +230,63 @@ const rooms = [
 // FUNCTIONS
 
 // RANDOM SELECTOR
-const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
+const randomSelector = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
 };
 
-
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
-
-const mystery = {
-  killer: '',
-  weapon: '',
-  room: '',
-};
-
-// LOADING EFFECT
+// LOADER
 const showKiller = () => {
-  loader.classList.toggle('is-active');
+  loader.classList.toggle("is-active");
   setTimeout(() => {
-    loader.classList.toggle('is-active');
+    loader.classList.toggle("is-active");
     pickKiller();
   }, 750);
-}
-
-
-// This function will be invoked when you click on the killer card.
-const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
-
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-  document.getElementById('killerImage').src = mystery.killer.image;
-  document.querySelector('#killerAge').innerHTML = `${mystery.killer.age} years old.`
-  document.querySelector('#killerDescription').innerHTML = `${mystery.killer.description}`
 };
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+shuffleFavoriteWeapon = () => {
+  mystery.favoriteWeapon = randomSelector(weapons);
+}
+
+const pickKiller = () => {
+  mystery.killer = randomSelector(suspects);
+  document.getElementById("killerCard").style.background = mystery.killer.color;
+  document.getElementById(
+    "killerName"
+  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById("killerImage").src = mystery.killer.image;
+  document.querySelector(
+    "#killerAge"
+  ).innerHTML = `${mystery.killer.age} years old.`;
+  document.querySelector(
+    "#killerDescription"
+  ).innerHTML = `${mystery.killer.description}`;
+};
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
-  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight} kg`
-  document.getElementById('weaponImage').src = mystery.weapon.image;
-}
+  document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
+  document.getElementById(
+    "weaponWeight"
+  ).innerHTML = `${mystery.weapon.weight} kg`;
+  document.getElementById("weaponImage").src = mystery.weapon.image;
+};
 
 const pickRoom = () => {
-  mystery.room = randomSelector(rooms)
-  document.getElementById('roomName').innerHTML = `${mystery.room.name}`
-  document.getElementById('roomImage').src = mystery.room.image;
-}
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+  mystery.room = randomSelector(rooms);
+  document.getElementById("roomName").innerHTML = `${mystery.room.name}`;
+  document.getElementById("roomImage").src = mystery.room.image;
+};
 
 const showMystery = () => {
-  document.querySelector('#mysteryTitle').innerHTML = `<h1>Mystery</h1>`;
-  document.querySelector('#mysterySecret').innerHTML = `<p>Mr Black will be killed by ${mystery.killer.title} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.</p>`
-  document.querySelector('#mysteryInfo').innerHTML = `<p>Hush! Remember to keep it a secret!</p>`
-}
+  document.querySelector("#mysteryTitle").innerHTML = `<h1>Mystery</h1>`;
+  document.querySelector(
+    "#mysterySecret"
+  ).innerHTML = `<p>Mr Black will be killed by ${mystery.killer.title} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.</p>`;
+  document.querySelector(
+    "#mysteryInfo"
+  ).innerHTML = `<p>Hush! Remember to keep it a secret!</p>`;
+};
 
-document.getElementById('killerCard').addEventListener("click", showKiller);
-document.getElementById('weaponCard').addEventListener("click", pickWeapon);
-document.getElementById('roomCard').addEventListener("click", pickRoom);
+document.getElementById("killerCard").addEventListener("click", showKiller);
+document.getElementById("weaponCard").addEventListener("click", pickWeapon);
+document.getElementById("roomCard").addEventListener("click", pickRoom);
