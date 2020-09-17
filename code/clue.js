@@ -126,7 +126,7 @@ const changeCard = (card) => {
   document.getElementById(card).style.background = "#ff7ee3"
 }
 
-// Changes button content and background
+// Changes back button content and background
 const changeButton = () => {
   mysteryElement.innerHTML = "?"
   mysteryElement.style.background = "#EFF066"
@@ -179,42 +179,30 @@ roomCardElement.addEventListener("click", pickRoom);
 
 const revealMystery = () => {
 
-  const pickKiller = () => {
-    killerNameElement.innerHTML = "Pick a killer"
-  }
-  const pickWeapon = () => {
-    weaponNameElement.innerHTML = "Pick a weapon"
-  }
-  const pickRoom = () => {
-    roomNameElement.innerHTML = "Pick a room"
-  }
-
-  if (mystery.killer === null && mystery.weapon === null && mystery.room === null) {
-    pickKiller()
-    pickWeapon()
-    pickRoom()
-  } else if (mystery.killer === null && mystery.weapon === null && mystery.room !== null) {
-    pickKiller()
-    pickWeapon()
-  } else if (mystery.killer === null && mystery.weapon !== null && mystery.room === null) {
-    pickKiller()
-    pickRoom()
-  } else if (mystery.killer !== null && mystery.weapon === null && mystery.room === null) {
-    pickWeapon()
-    pickRoom()
-  } else if (mystery.killer === null && mystery.weapon !== null && mystery.room !== null) {
-    pickKiller()
-  } else if (mystery.killer !== null && mystery.weapon === null && mystery.room !== null) {
-    pickWeapon()
-  } else if (mystery.killer !== null && mystery.weapon !== null && mystery.room === null) {
-    pickRoom()
-  } else {
+  const revealMysteryNow = () => {
     mysteryElement.innerHTML = (`It was ${mystery.killer.fullName()} with a ${mystery.weapon.name} in the ${mystery.room.name}.`)
-    
     mysteryElement.style.background = "transparent"
     textClass.forEach(text => text.innerHTML = "")
     cardClass.forEach(card => card.style.background = "#30F2C6")
-
-    Object.keys(mystery).forEach(key => mystery[key] = null)
+    Object.keys(mystery).forEach(key => mystery[key] = null)  
   }
+
+  const pickCard = () => {
+    if (mystery.killer === null) {
+      killerNameElement.innerHTML = "Pick a killer"
+    }
+    if (mystery.weapon === null) {
+      weaponNameElement.innerHTML = "Pick a weapon"
+    }
+    if (mystery.room === null) {
+      roomNameElement.innerHTML = "Pick a room"
+    }
+  }
+
+  if (mystery.killer !== null && mystery.weapon !== null && mystery.room !== null) {
+    revealMysteryNow()
+  } else {
+    pickCard()
+  }
+
 }
