@@ -190,7 +190,7 @@ const shuffleFavouriteWeapon = () => {
 }
   
 const showKillerLoader = () => {
-  document.getElementById('killerLoader').style.display = 'block';
+  document.getElementById('killerLoader').style.display = 'flex';
   document.getElementById('killerHeadline').style.display = 'none';
   document.getElementById('killerTitle').style.display = 'none';
   document.getElementById('killerContent').style.display = 'none';
@@ -200,8 +200,10 @@ const showKillerLoader = () => {
 }
 
 const showWeaponLoader = () => {
-  document.getElementById('weaponLoader').style.display = 'block';
-  document.getElementById('weaponLoader').classList.add('weapon-loader');
+  document.getElementById('weaponLoader').style.display = 'flex';
+  document.getElementById('weaponRoundLoader').classList.add('weapon-loader');
+  document.getElementById('weaponSmallLoader').style.borderRight = '5px solid #575A53';
+  document.getElementById('weaponLoaderStick').style.backgroundColor = '#575A53';
   document.getElementById('weaponHeadline').style.display = 'none';
   document.getElementById('weaponTitle').style.display = 'none';
   document.getElementById('weaponContent').style.display = 'none';
@@ -211,14 +213,16 @@ const showWeaponLoader = () => {
 }
 
 const showRoomLoader = () => {
-  document.getElementById('roomLoader').style.display = 'block';
-  document.getElementById('roomLoader').classList.add('room-loader');
+  document.getElementById('roomLoader').style.display = 'flex';
+  document.getElementById('roomRoundLoader').classList.add('room-loader');
+  document.getElementById('roomSmallLoader').style.borderRight = '5px solid #a8979f';
+  document.getElementById('roomLoaderStick').style.backgroundColor = '#a8979f';
   document.getElementById('roomHeadline').style.display = 'none';
   document.getElementById('roomTitle').style.display = 'none';
   document.getElementById('roomContent').style.display = 'none';
-  document.getElementById('roomDecoration').style.display = 'flex'
-  document.getElementById('roomCard').style.background = 'black'
-  document.getElementById('roomDecoration').style.border = '8px solid #a8979f'
+  document.getElementById('roomDecoration').style.display = 'flex';
+  document.getElementById('roomCard').style.background = 'black';
+  document.getElementById('roomDecoration').style.border = '8px solid #a8979f';
 }
   
 const generateKiller = () => {

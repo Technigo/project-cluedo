@@ -141,7 +141,7 @@ button {
   font-weight: bold;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin: 20px auto;
   cursor: pointer;
   
 }
@@ -156,6 +156,15 @@ button {
   border-radius: 10px;
 }
 
+
+/*** LOADING ANIMATION **/
+
+@keyframes searching {
+  0% {transform: translate(0px, 0px) rotate(-45deg);}
+  50% {transform: translate(0px, 10px) rotate(-45deg);}
+  100% {transform: translate(0px, 0px) rotate(-45deg);}
+}
+
 @keyframes loading {
   0% {transform: rotate(0deg);}
   25% {transform: rotate(-50deg);}
@@ -163,29 +172,68 @@ button {
   100% {transform: rotate(-360deg);}
 }
 
+@keyframes inner-loading {
+  0% {transform: rotate(0deg);}
+  25% {transform: rotate(50deg);}
+  75% {transform: rotate(310deg);}
+  100% {transform: rotate(360deg);}
+}
+
 .loader {
   display: none;
-  width: 100px;
-  height: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: searching 2s ease-in-out infinite;
+  transform: rotate(-45deg);
+}
+
+.round-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   border-top: 10px solid rgba(129, 164, 175,1);
-  border-right: 6px solid rgba(129, 164, 175,0.9);
-  border-bottom: 2px solid  rgba(129, 164, 175,0.6);
-  border-left: 8px solid rgba(129, 164, 175,0.1);
-  animation: loading 1s linear infinite;
+  border-right: 10px solid rgba(129, 164, 175,0.9);
+  border-bottom: 10px solid  rgba(129, 164, 175,0.8);
+  border-left: 10px solid rgba(129, 164, 175,0.1);
+  animation: loading 2s linear infinite;
+}
+
+.loader-stick {
+  margin: 0;
+  width: 15px;
+  height: 60px;
+  background-color: rgba(129, 164, 175,1);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.small-loader {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-top: 5px solid rgba(129, 164, 175,0);
+  border-right: 5px solid rgba(129, 164, 175,1);
+  border-bottom: 5px solid  rgba(129, 164, 175,0.0);
+  border-left: 5px solid rgba(129, 164, 175,0.0);
+  animation: inner-loading 2s linear infinite;
 }
 
 .weapon-loader {
-   border-top: 10px solid rgba(87, 90, 83,1);
-  border-right: 6px solid rgba(87, 90, 83,0.9);
-  border-bottom: 2px solid  rgba(87, 90, 83,0.6);
-  border-left: 8px solid rgba(87, 90, 83,0.1);
+  border-top: 10px solid rgba(87, 90, 83,1);
+  border-right: 10px solid rgba(87, 90, 83,0.9);
+  border-bottom: 10px solid  rgba(87, 90, 83,0.8);
+  border-left: 10px solid rgba(87, 90, 83,0.1);
 }
 
 .room-loader {
-  border-top: 10px solid rgba(168, 151, 159,1);
- border-right: 6px solid rgba(168, 151, 159,0.9);
- border-bottom: 2px solid  rgba(168, 151, 159,0.6);
- border-left: 8px solid rgba(168, 151, 159,0.1);
-}
-
+ border-top: 10px solid rgba(168, 151, 159,1);
+ border-right: 10px solid rgba(168, 151, 159,0.9);
+ border-bottom: 10px solid  rgba(168, 151, 159,0.8);
+ border-left: 10px solid rgba(168, 151, 159,0.1);
+} 
