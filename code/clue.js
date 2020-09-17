@@ -214,19 +214,17 @@ const pickKiller = () => {
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  document.getElementById(
-    'killerOccupation'
-  ).innerHTML = `${mystery.killer.occupation}`;
-  document.getElementById(
-    'favouriteWeapon'
-  ).innerHTML = `${mystery.killer.favouriteWeapon}`;
-
-
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`;
   const killerImage = document.getElementById('killerImage');
   killerImage.src = mystery.killer.image;
+
+  // shuffel favorite weapon function.
+  const shuffleFavouriteWeapon = () => {
+    mystery.favouriteWeapon = randomSelector(weapons);
+    document.getElementById('favouriteWeapon').innerHTML = `Favourite weapon: ${mystery.favouriteWeapon.name}`;
+  }
+  shuffleFavouriteWeapon();
 };
 
 
@@ -253,15 +251,6 @@ const pickRoom = () => {
     'roomName'
   ).innerHTML = `${mystery.rooms}`
 }
-
-
-// shuffel favorite weapon function.
-shuffleFavouriteWeapon = () => {
-  mystery.favouriteWeapon = randomSelector(weapons); 
-};
-shuffleFavouriteWeapon();
-
-document.getElementById('favouriteWeapon').innerHTML = `favouriteWeapon: ${mystery.favouriteWeapon.name}`;
 
 
 //invoke function onclick
