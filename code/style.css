@@ -8,10 +8,30 @@ body {
   background-color: #fdcb9e;
 }
 
-p {
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.title {
+  text-align: center;
+}
+
+.deck-title {
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.deck-content {
   margin: 1px;
   font-weight: 300;
   background-color: #fff;
+}
+
+h1 {
+  text-align: center;
 }
 
 .cards {
@@ -24,7 +44,7 @@ p {
 
 .deck {
   width: 250px;
-  height: 400px;
+  height: 440px;
   text-align: center;
   padding-top: 30px;
   margin-bottom: 16px;
@@ -45,7 +65,7 @@ p {
 
 button {
   padding: 8px 16px;
-  background: #dd2c00;
+  background: #ec4d73;
   border: none;
   font-size: 20px;
   border-radius: 8px;
@@ -59,9 +79,13 @@ button {
 /***** TABLET and DESKTOP ****/
 @media (min-width: 481px) {
   .cards {
-    height: 600px;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-around;
   }
 }
