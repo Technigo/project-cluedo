@@ -1,18 +1,21 @@
 # Cluedo - Mystery Randomizer
 
 This project was made during the Technigo Bootcamp. 
-- Create and manipulate objects
-- Create arrays
-- Manipulating the DOM using Javascript
-
+The task was to practice objects, arrays and manipulating the DOM using Javascript
 
 ## The problem
 
+I started with creating all the objects and arrays. 
+Then i created a function for each "cluedo card" that is called when the card is clicked. 
+The reveal mystery button will show the mystery by printing out html on the page using Javascript.
+
+Later i created a function to shuffle the mystery killers favourite weapon. I did the mistake of creating
+a correct function but placed it wrong. And a working function in the wrong place is just not really usefull. I got help using both slack and stackOverflow to find the right placement. 
+
+I choose to have a basic design and just added some gradients on the cards, a box shadow and hover effect.
+I if i had more time i would add a pre loader to my cards. 
 
 
-I let the design be very basic and just added some gradients on the cards, a box shadow and hover effect.
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
 ## View it live
 Here you can see the finsihed result: 
