@@ -1,4 +1,4 @@
-// STEP 1
+///////////////////////////// *** CLUEDO *** /////////////////////////////
 
 // SUSPECTS:
 
@@ -69,6 +69,8 @@ const mrsWhite = {
   favouriteWeapon: "poison",
 };
 
+////////////////////////////////////////////////////////////////////////////////////////
+
 // WEAPONS:
 
 // *** 1. rope
@@ -120,7 +122,9 @@ const pistol = {
 console.log(profPlum.occupation);
 console.log(axe.weight);
 
-// STEP 2
+////////////////////////////////////////////////////////////////////////////////////////
+
+// ARRAYS:
 
 // suspects array
 const suspects = [
@@ -172,43 +176,34 @@ console.log(suspects[3]);
 console.log(weapons[0]);
 console.log(rooms[rooms.length - 1]);
 
-// STEP 3
+////////////////////////////////////////////////////////////////////////////////////////
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+// Random selector
 const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+// Mystery object
 const mystery = {
   killer: null,
   weapon: null,
   room: null,
 };
 
-// This function will be invoked when you click on the killer card.
+////////////////////////////////////////////////////////////////////////////////////////
+
+// *** Clicking "KILLER CARD" ***
+
 const pickKiller = () => {
+  // flips card
   document.getElementById("killerCard").classList.add("flip");
 
-  // HÄNDER DIREKT
-
+  // time delay starts
   setTimeout(() => {
-    // HÄNDER EFTER 1.5 SEKUNDER
-
-    // This will randomly select a killer from the suspects. And add that to the mystery object.
+    // random killer selector
     mystery.killer = randomSelector(suspects);
 
-    // killerCard.onclick = rotateCard
-
-    // function rotateCard() {
-    //   this.classList.add('rotate')
-    //   // the word "this" refers to the element that is the selector.
-    // }
-
-    // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+    // changing card info
     document.getElementById("killerCard").style.background =
       mystery.killer.color;
     document.getElementById(
@@ -227,50 +222,73 @@ const pickKiller = () => {
     document.getElementById(
       "favouriteWeapon"
     ).innerHTML = `Favourite weapon:<br>${mystery.killer.favouriteWeapon}`;
+
+    // time delay millisecond
   }, 300);
 };
 
 document.getElementById("killerCard").addEventListener("click", pickKiller);
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+////////////////////////////////////////////////////////////////////////////////////////
 
-// Random weapon picker
+// *** Clicking "WEAPON CARD" ***
+
 const pickWeapon = () => {
+  // flips card
   document.getElementById("weaponCard").classList.add("flip");
 
+  // time delay stars
   setTimeout(() => {
+    // random weapon selector
     mystery.weapon = randomSelector(weapons);
+
+    // changing card info
     document.getElementById("weaponCard");
     document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
     document.getElementById(
       "weaponWeight"
     ).innerHTML = `${mystery.weapon.weight}`;
+
+    // time delay millisecond
   }, 300);
 };
 
 document.getElementById("weaponCard").addEventListener("click", pickWeapon);
 
-// Random room picker
+////////////////////////////////////////////////////////////////////////////////////////
+
+// *** Clicking "ROOM CARD" ***
+
 const pickRoom = () => {
+  // flips card
   document.getElementById("roomCard").classList.add("flip");
 
+  // time delay starts
   setTimeout(() => {
+    // random room selector
     mystery.room = randomSelector(rooms);
+
+    // changing card info
     document.getElementById("roomCard");
     document.getElementById("roomName").innerHTML = `${mystery.room}`;
+
+    // time delay millisecond
   }, 300);
 };
 
 document.getElementById("roomCard").addEventListener("click", pickRoom);
 
-// Favourite weapon
+// *** Favourite weapon ***
+
 const shuffleFavouriteWeapon = () => {
   suspects.forEach((suspect) => {
     suspect.favouriteWeapon = randomSelector(weapons).name;
   });
 };
 
-// STEP 4 + validation
+////////////////////////////////////////////////////////////////////////////////////////
+
+// *** Reveal Mystery ***
 
 const revealMystery = () => {
   if (mystery.killer === null) {
