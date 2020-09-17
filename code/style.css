@@ -13,6 +13,7 @@ h1 {
   color: white;
   font-family: creepster;
   font-size: 52px;
+  text-shadow: 5px 5px  #fa3a3a;
 }
 
 /*** HEADER ***/
@@ -28,7 +29,7 @@ header {
 
 /*** CARD SECTION ***/
 .cards {
-  margin: 50px 100px;
+  margin: 45px 100px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -46,7 +47,7 @@ header {
   text-align: center;
   border-radius: 16px;
   cursor: pointer;
-  box-shadow: 5px 5px 5px red;
+  box-shadow: 5px 5px 5px #fa3a3a;
   border: 1px solid white;
   color: black;
 }
@@ -63,7 +64,7 @@ header {
   text-align: center;
   border-radius: 16px;
   cursor: pointer;
-  box-shadow: 5px 5px 5px red;
+  box-shadow: 5px 5px 5px #fa3a3a;
   border: 1px solid white;
   font-size: 24px;
 }
@@ -79,7 +80,7 @@ header {
   text-align: center;
   border-radius: 16px;
   cursor: pointer;
-  box-shadow: 5px 5px 5px red;
+  box-shadow: 5px 5px 5px #fa3a3a;
   border: 1px solid white;
   font-size: 24px;
 }
@@ -124,18 +125,19 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 10px;
 }
 
 #mystery {
   color: white;
   /*font-family: 'Times New Roman', Times, serif;*/
   font-size: 20px;
-  background-color: rgb(128, 128, 128, 0.5);
+  background-color: rgb(128, 128, 128, 0.9);
 }
 
 button {
   padding: 8px 16px;
-  background: #5e7391;
+  background: black;
   color: white;
   border: none;
   font-size: 20px;
@@ -145,6 +147,7 @@ button {
   box-shadow: 2px 2px 2px white;
   cursor: url(./assets/icons8-magnifying-glass-tilted-left-48.png),auto;
   outline: none;
+  border: 1px solid white;
 }
 
 

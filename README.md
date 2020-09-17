@@ -1,13 +1,19 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Focus for this assignment has been to dig deeper into objects, arrays and functions. Use that knowledge and build a mystery randomizer.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Started by solving the iterations given in the project brief,
+and from there added/changed functions, and added object propertys. Manipulating the DOM to display the data stored in the objects.
+I added the shuffle weapon function, which randomly picks a weapon from the array and assign it as a value to the object of the suspect. '
+
+If I had more time I would have:
+- put some more effort into styling.
+- added an animation to flip the cards when they are picked. I tried but felt I needed some more time to get it right.
+- made it responsive.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Link to the project on Netlify: 
+https://create-cluedo-mystery.netlify.app/

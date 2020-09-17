@@ -216,7 +216,7 @@ const shuffleFavoriteWeapon = () => {
   document.getElementById('favoriteWeapon').innerHTML = `Prefered weapon: ${mystery.killer.favoriteWeapon}`; //Prints favoriteweapon to card
 }
 
-// This function will be invoked when clicking on the killer card.
+// This function will be invoked in the loadingPickKiller function.
 const pickKiller = () => {
   document.getElementById("loader-wrapper-killer").style.display = "none";
   document.getElementById("killer-info-wrapper").style.display = "block";
@@ -248,7 +248,7 @@ const loadingPickKiller = () => {
 document.getElementById("killerCard").onclick = loadingPickKiller;
 
 
-//This function will be invoked when clicking on the weapon card.
+//This function will be invoked in the loadingPickWeapon function.
 const pickWeapon = () => {
   document.getElementById("loader-wrapper-weapon").style.display = "none";
   document.getElementById("weapon-info-wrapper").style.display = "block";
@@ -271,10 +271,10 @@ const loadingPickWeapon = () => {
   document.getElementById('loader-wrapper-weapon').style.display = "flex";
   document.getElementById('weaponCard').style.backgroundColor = '#000'; 
 }
-// Calling the loadingPickWeapon function
+// Calling the loadingPickWeapon function when clicking the card
 document.getElementById("weaponCard").onclick = loadingPickWeapon;
 
-//This function will be invoked when clicking on the room card.
+//This function will be invoked in the loadingPickRoom function.
 const pickRoom = () => {
   document.getElementById("loader-wrapper-room").style.display = "none";
   document.getElementById("room-info-wrapper").style.display = "block";
@@ -296,7 +296,7 @@ const loadingPickRoom = () => {
   document.getElementById('loader-wrapper-room').style.display = "flex";
   document.getElementById('roomCard').style.backgroundColor = '#000'; 
 }
-// Calling the loadingPickRoom function
+// Calling the loadingPickRoom function when clicking the card
 document.getElementById("roomCard").onclick = loadingPickRoom;
 
 
