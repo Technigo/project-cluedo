@@ -36,6 +36,7 @@ p {
 button {
   padding: 8px 15px;
   width: 32.5%;
+  height: 45px;
   background: #000;
   color: #fff;
   border: none;
@@ -78,19 +79,51 @@ header {
 
 
 /* ------------------- INTRO ------------------- */
-.intro p {
+.intro--text {
   font-size: 44px;
   width: 40vw;
 }
+.intro--main-button {
+  margin: 50px 0 0;
+}
 
-.buttons {
+.intro--buttons {
   display: flex;
   justify-content: space-between;
-  margin: 50px 0;
+  align-items: center;
+  margin: 30px 0;
 }
 
 .main-button {
   background: #8900C9;
+}
+
+.favorite-fruit--form-box {
+  text-align: left;
+  width: 65%
+}
+
+.favorite-fruit--label {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.favorite-fruit--select {
+  width: 50%; 
+  font-size: 20px;
+  padding: 8px;
+}
+
+.favorite-fruit-form--button {
+  width: 5vw;
+  display: inline-block;
+}
+
+.favorite-fruit--comment {
+  margin-top: 10px; 
+  font-size: 12px;
+  font-style: italic;
 }
 
 
@@ -101,7 +134,7 @@ header {
   margin-bottom: 10px;
 }
 
-.ingredients-headers div {
+.main-fruit-header, .mixer-header, .super-booster-header {
   width: 33.3%;
   font-size: 28px;
 }
@@ -128,8 +161,15 @@ header {
   width: 33.3%;
 }
 
-.mixer-box, .mixer-header {
+.ingredients-randomizer-buttons {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.mixer-box, .mixer-randomizer-button {
   margin: 0 20px;
+  font-size: 20px;
 }
 
 /* Had to use !important to make it overrule */
@@ -138,6 +178,7 @@ header {
   background-size: cover !important;
   object-fit: cover !important;
   background-repeat: no-repeat !important;
+  transition: background .5s ease;
 }
 
 #main-fruit-box {
@@ -175,16 +216,26 @@ header {
   color: #8900C9;
 }
 
-.recipe--mixer-button, .favorite-fruit--form-box {
+/* .recipe--mixer-button, .favorite-fruit--form-box {
   float: right;
+} */
+
+.recipe--left {
+  width: 32.5%;
 }
 
-.recipe--finished-smoothie, .recipe--right {
-  width: 50%;
+.recipe--finished-smoothie {
+  width: 66.6%;
+  margin-left: 25px;
+}
+
+.active-textbox {
+  border: 1px solid #8900C9 !important;
+  padding: 30px 50px !important;
 }
 
 .recipe--mixer-button {
-  width: 65%;
+  width: 100%;
   background: #999;
   margin-bottom: 10px;
 }
@@ -196,35 +247,6 @@ header {
 /* Had to use !important to make it overrule */
 .active {
   background: #8900C9 !important;
-}
-
-.favorite-fruit--form-box {
-  padding: 30px 0;
-  text-align: left;
-  width: 65%
-}
-
-.favorite-fruit--label {
-  font-size: 20px;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.favorite-fruit--select {
-  width: 100%; 
-  font-size: 20px;
-  padding: 8px;
-}
-
-.favorite-fruit-form--button {
-  width: 5vw;
-  display: inline-block;
-}
-
-.favorite-fruit--comment {
-  margin-top: 10px; 
-  font-size: 12px;
-  font-style: italic;
 }
 
 
