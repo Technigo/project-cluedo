@@ -197,18 +197,22 @@ const randomSelector = array => {
 };
 
 //----- Killer card -----//
-//Function for loading animation which will work for 1.5 secs
+//Function for loading animation and delaying the card-details to be shown and calls after 1.5 seconds
 const pickKillerLoader = () => {
-  document.getElementById("loader1").style.display = "flex";
+  document.getElementById("loader1").classList.add("animated-loader");
   setTimeout(showPickKiller, 1500);
-}
+};
 
-// Function invoked when you click on the killer card.
+//On click the funcation pickKillerLoader will be called
+document.getElementById("killerCard").addEventListener("click", pickKillerLoader); 
+
+// Function invoked after the loader has run
 const showPickKiller = () => {
   // Will randomly select a killer from the suspects + add that to the mystery object.
   mystery.killer = randomSelector(suspects);
-  //Will hide the loader
-  document.getElementById("loader1").style.display = "none"
+  //Will hide the loader image
+  document.getElementById("loader1").style.display = "none";
+
   //Will stop the loader showing next time you click the card
   document.getElementById('killerCard').removeEventListener('click', pickKillerLoader);
 
@@ -223,11 +227,13 @@ const showPickKiller = () => {
 };
 
 //----- Weapon card -----//
-//Function for loading animation which will work for 1.5 secs
 const pickWeaponLoader = () => {
-  document.getElementById("loader2").style.display = "flex";
+  document.getElementById("loader2").classList.add("animated-loader");
   setTimeout(showPickWeapon, 1500);
-}
+};
+
+document.getElementById("weaponCard").addEventListener("click", pickWeaponLoader); 
+
 // Function invoked when you click on the weapon card.
 const showPickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
@@ -243,15 +249,17 @@ const showPickWeapon = () => {
   document.getElementById("weaponStrength").innerHTML = `Strength: ${mystery.weapon.strength}`;
 
   document.getElementById("cardDetails2").style.display = "flex";
-  document.getElementById("magnifyGlassTwo").style.display = "none";
 };
 
 //----- Room card -----//
 //Function for loading animation which will work for 1.5 secs
 const pickRoomLoader = () => {
-  document.getElementById("loader3").style.display = "flex";
+  document.getElementById("loader3").classList.add("animated-loader");
   setTimeout(showPickRoom, 1500);
-}
+};
+
+document.getElementById("roomCard").addEventListener("click", pickRoomLoader); 
+
 // Function invoked when you click on the room card.
 const showPickRoom = () => {
   mystery.room = randomSelector(rooms);
@@ -267,7 +275,6 @@ const showPickRoom = () => {
   document.getElementById("roomfave").innerHTML = `Favourite room: ${mystery.room.favespot}`;
 
   document.getElementById("cardDetails3").style.display = "flex";
-  document.getElementById("magnifyGlassThree").style.display = "none";
 };
 
 //----- Reveal mystery or get a message asking you to choose each card to then beable to reveal the mystery-----//
@@ -302,16 +309,5 @@ const shuffleFavouriteWeapon = () => {
 };
 
 //----- Calling all functions -----//
-document.getElementById("loader1").onclick = pickKillerLoader;
-document.getElementById("killerCard").onclick = showPickKiller;
-
-document.getElementById("loader2").onclick = pickWeaponLoader;
-document.getElementById("weaponCard").onclick = showPickWeapon;
-
-document.getElementById("loader3").onclick = pickRoomLoader;
-document.getElementById("roomCard").onclick = showPickRoom;
-
-
-document.getElementById("mystery").onclick = revealMystery;
 shuffleFavouriteWeapon();
 
