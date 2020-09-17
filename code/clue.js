@@ -8,6 +8,7 @@ const mrGreen = {
   age: 45,
   image: "./assets/green.png",
   occupation: "Entrepreneur",
+  favouriteWeapon: "rope",
 };
 
 const professorPlum = {
@@ -18,6 +19,7 @@ const professorPlum = {
   age: 48,
   image: "./assets/plum.png",
   occupation: "Professor",
+  favouriteWeapon: "knife",
 };
 
 const missScarlet = {
@@ -28,6 +30,7 @@ const missScarlet = {
   age: 39,
   image: "./assets/scarlet.png",
   occupation: "Nail painter",
+  favouriteWeapon: "candlestick",
 };
 
 const mrsPeacock = {
@@ -38,6 +41,7 @@ const mrsPeacock = {
   age: 51,
   image: "./assets/peacock.png",
   occupation: "Teacher",
+  favouriteWeapon: "dumbbell",
 };
 
 const colonelMustard = {
@@ -48,6 +52,7 @@ const colonelMustard = {
   age: 36,
   image: "./assets/mustard.png",
   occupation: "Plummer",
+  favouriteWeapon: "poison",
 };
 
 const mrsWhite = {
@@ -56,54 +61,64 @@ const mrsWhite = {
   color: "white",
   // description: 'He has a lot of connections',
   age: 54,
-  image: "./assets/mustard.png",
+  image: "./assets/white.png",
   occupation: "Relaxing",
+  favouriteWeapon: "axe",
 };
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: "rope",
+  id: "rope",
   weight: 10,
 };
 
 const knife = {
   name: "knife",
+  id: "knife",
   weight: 2,
 };
 
 const candleStick = {
   name: "candlestick",
+  id: "candlestick",
   weight: 6,
 };
 
 const dumbBell = {
   name: "dumbbell",
+  id: "dumbbell",
   weight: 4,
 };
 
 const poison = {
   name: "poison",
+  id: "poison",
   weight: 1,
 };
 
 const axe = {
   name: "axe",
+  id: "axe",
   weight: 5,
 };
 
 const bat = {
   name: "bat",
+  id: "axe",
   weight: 3,
 };
 
 const throphy = {
   name: "throphy",
+  id: "throphy",
   weight: 8,
 };
 
 const pistol = {
   name: "pistol",
+  id: "pistol",
   weight: 7,
 };
 
@@ -182,9 +197,19 @@ const mystery = {
   room: null,
 };
 
+// This function will randomly change favourite weapons of each person
+const shuffleFavouriteWeapon = () => {
+  suspects.forEach((suspect) => {
+    const randomWeapon = randomSelector(weapons);
+    suspect.favouriteWeapon = randomWeapon.id;
+  });
+};
+
 // This function will be invoked when you click on the killer card.
 const pickKiller = (event) => {
   event.preventDefault();
+  shuffleFavouriteWeapon();
+
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
 
@@ -198,6 +223,9 @@ const pickKiller = (event) => {
     "killerOccupation"
   ).innerHTML = `${mystery.killer.occupation}`;
   document.getElementById("killerImage").src = `${mystery.killer.image}`;
+  document.getElementById(
+    "killerFavouriteWeapon"
+  ).innerHTML = `${mystery.killer.favouriteWeapon}`;
 };
 
 document.getElementById("killerCard").addEventListener("click", pickKiller);
