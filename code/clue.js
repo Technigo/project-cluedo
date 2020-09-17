@@ -14,7 +14,7 @@ const professorPlum = {
   color: 'purple',
   description: 'A professor in history and criminal technology',
   age: 62,
-  image: 'plum.png',
+  image: 'assets/plum.png',
   occupation: 'Detective'
 }
 const missScarlet = {
@@ -23,7 +23,7 @@ const missScarlet = {
   color: 'red',
   description: 'A famous actor, been in many movies. Love antrophology',
   age: 47,
-  image: 'scarlet.png',
+  image: 'assets/scarlet.png',
   occupation: 'Actor'
 }
 const mrsPeacock = {
@@ -32,7 +32,7 @@ const mrsPeacock = {
   color: 'blue',
   description: 'Degree in criminal history and writing. Love tea and cookies',
   age: 59,
-  image: 'assets/green.png',
+  image: 'assets/peacock.png',
   occupation: 'Author'
 }
 const colonelMustard = {
@@ -41,7 +41,7 @@ const colonelMustard = {
   color: 'yellow',
   description: 'Passion of the military and hunting on his free time',
   age: 76,
-  image: 'mustard.png',
+  image: 'assets/mustard.png',
   occupation: 'Military Officer'
 }
 const mrsWhite = {
@@ -50,7 +50,7 @@ const mrsWhite = {
   color: 'white',
   description: 'A nurse that worked as a midwife all her life',
   age: 74,
-  image: 'white.png',
+  image: 'assets/white.png',
   occupation: 'Nurse'
 }
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
@@ -159,10 +159,27 @@ function pickKiller(mystery) {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color;
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`;
+  document.getElementById('killerImage').src = mystery.killer.image
+  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`;
+  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`;
 }
 document.getElementById('killerCard').addEventListener('click', pickKiller);
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+function pickWeapon(mystery) {
+  mystery.weapon = randomSelector(weapons);
+  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
+  document.getElementById('weapon.Weigth').innerHTML = `${mystery.weapon.weigth}`;
+}
+document.getElementById('weaponCard').addEventListener('click', pickWeapon);
+
+function pickRoom(mystery) {
+  mystery.room = randomSelector(rooms);
+  document.getElementById('roomName').innerHTML = `${mystery.room}`;
+}
+document.getElementById('roomCard').addEventListener('click', pickRoom);
+
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
