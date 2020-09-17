@@ -62,7 +62,7 @@ p {
   border-radius: 16px;
 }
 
-button {
+#crimeButton {
   padding: 10px 20px;
   background: rgb(141, 115, 118);
   border: 5px solid rgb(141, 115, 118);
@@ -73,6 +73,23 @@ button {
   margin: 0 auto;
   cursor: pointer;
 }
+#refreshPage {
+  padding: 10px 20px;
+  color: rgb(90, 62, 67);
+  background: none;
+  border: 1px solid black;
+  font-size: 20px;
+  display: flex;
+  position: absolute;
+  margin: 0 auto;
+  cursor: pointer;
+  cursor: pointer;
+}
+.refresh {
+  display: block;
+  position: relative;
+}
+
 #mystery {
   display: flex;
   position: relative;
