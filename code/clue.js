@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// OBJECTS FOR ALL THE SUSPECTS
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -66,7 +66,7 @@ const mrsWhite = {
   favouriteWeapon: 'knife'
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// OBJECTS FOR ALL THE WEAPONS
 
 const rope = {
   name: 'Rope',
@@ -131,7 +131,7 @@ const pistol = {
   image: 'assets/gun.jpg'
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+// OBJECTS FOR THE ROOMS 
 
 const diningroom = { 
   name: 'Dining Room',
@@ -208,7 +208,7 @@ const patio = {
   image: 'assets/patio.jpg'
 }
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS 
 
 const suspects = [
   mrGreen,
@@ -250,14 +250,11 @@ const rooms = [
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+// OBJECT THAT KEEPS THE MYSTERY.
 
 const mystery = {
   killer: null,
@@ -267,13 +264,14 @@ const mystery = {
 
 // RANDOM KILLER FUNCTION
 
+// FUNCTION TO DELAY PICK KILLER FUNCTION
 const delayPickKiller = () => {
   document.getElementById('loaderKiller').style.display = 'block'
   setTimeout(pickKiller, 1000)
 }
-
 document.getElementById('killerCard').addEventListener('click', delayPickKiller);
 
+// PICK KILLER FUNCTION
 const pickKiller = () => {
   document.getElementById('loaderKiller').style.display = 'none'
   document.getElementById('killerCard').removeEventListener('click', delayPickKiller) // So the loader doesn't show in next click
@@ -301,13 +299,14 @@ const pickKiller = () => {
 
 // RANDOM WEAPON FUNCTION
 
+// FUNCTION TO DELAY PICK WEAPON FUNCTION
 const delayPickWeapon = () => {
   document.getElementById('loaderWeapon').style.display = 'block'
   setTimeout(pickWeapon, 1000)
 }
-
 document.getElementById('weaponCard').addEventListener('click', delayPickWeapon);
 
+// PICK WEAPON FUNCTION
 const pickWeapon = () => { 
   document.getElementById('loaderWeapon').style.display = 'none'
   document.getElementById('weaponCard').removeEventListener('click', delayPickWeapon)
@@ -322,12 +321,14 @@ const pickWeapon = () => {
 
 // RANDOM ROOM FUNCTION
 
+// FUNCTION TO DELAY PICK ROOM FUNCTION
 const delayPickRoom = () => {
   document.getElementById('loaderRoom').style.display = 'block'
   setTimeout(pickRoom, 1000)
 }
 document.getElementById('roomCard').addEventListener('click', delayPickRoom)
 
+// PICK ROOM FUNCTION
 const pickRoom = () => { 
   document.getElementById('loaderRoom').style.display = 'none'
   document.getElementById('roomCard').removeEventListener('click', delayPickRoom)
