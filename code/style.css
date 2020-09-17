@@ -1,6 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background-color: #fdcb9e;
 }
 
 p {
@@ -12,7 +17,6 @@ p {
 .cards {
   margin: 50px auto;
   width: 90%;
-  background: #ccc;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,29 +27,31 @@ p {
   height: 400px;
   text-align: center;
   padding-top: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   border-radius: 16px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.3);
 }
 .killer-deck {
-  background: #000;
+  background: #1b262c;
 }
 
 .weapon-deck {
-  background: rgb(10, 53, 10);
+  background: #0f4c75;
 }
 
 .room-deck {
-  background: midnightblue;
+  background: #00b7c2;
 }
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: #dd2c00;
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  margin: 20px auto;
+  box-shadow: 6px 6px 3px 0px rgba(0, 0, 0, 0.3);
 }
 
 /***** MEDIA QUERIES ****/

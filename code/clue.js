@@ -25,7 +25,7 @@ const professorPlum = {
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlett",
-  color: "pink",
+  color: "#e97171",
   description: "She likes to create nail paintings",
   age: 48,
   image: "./assets/scarlet.png",
@@ -200,8 +200,8 @@ const pickKiller = (event) => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById("killerCard").style.background = mystery.killer.color;
   document.getElementById("killerName").innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  document.getElementById("killerAge").innerHTML = `${mystery.killer.age} years`;
-  document.getElementById("killerOccupation").innerHTML = `${mystery.killer.occupation}`;
+  document.getElementById("killerAge").innerHTML = `Age: ${mystery.killer.age}`;
+  document.getElementById("killerOccupation").innerHTML = `Occupation: ${mystery.killer.occupation}`;
   document.getElementById("killerImage").src = `${mystery.killer.image}`;
   document.getElementById("killerDescription").innerHTML = `${mystery.killer.description}`;
   document.getElementById("killerFavouriteWeapon").innerHTML = `Favourite Weapon: ${mystery.killer.favouriteWeapon}`;
