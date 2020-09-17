@@ -12,39 +12,30 @@ p {
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
   background: #ccc;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
 }
 
-.killer-deck {
+.deck {
   width: 250px;
   height: 400px;
-  background: #000;
   text-align: center;
   padding-top: 30px;
+  margin-bottom: 10px;
   border-radius: 16px;
+}
+.killer-deck {
+  background: #000;
 }
 
 .weapon-deck {
-  width: 250px;
-  height: 400px;
   background: rgb(10, 53, 10);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
 }
 
 .room-deck {
-  width: 250px;
-  height: 400px;
   background: midnightblue;
-
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
 }
 
 button {
@@ -55,4 +46,16 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+/***** MEDIA QUERIES ****/
+
+/***** TABLET and DESKTOP ****/
+@media (min-width: 481px) {
+  .cards {
+    height: 600px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
