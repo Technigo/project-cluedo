@@ -1,6 +1,12 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background-color: rgb(49, 48, 47);
+}
+
+h1, h3, h4{
+  text-align: center;
+  color: antiquewhite;
 }
 
 p {
@@ -16,43 +22,56 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  
 }
 
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: rgb(243, 87, 87);
+  background: rgb(49, 47, 47);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: 0 0 150px 30px white;
+
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(106, 119, 241);
+  background: rgb(94, 94, 99);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: 0 0 150px 30px white;
+  
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: rgb(164, 248, 125);
+  background: rgb(159, 165, 157);
 
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  box-shadow: 0 0 150px 30px white;
+  
 }
 
 button {
   padding: 8px 16px;
-  background: rgb(121, 77, 85);
+  background: rgb(49, 47, 47);
   border: none;
   font-size: 20px;
-  border-radius: 8px;
   display: block;
   margin: 0 auto;
-  color: rgb(231, 195, 195);
+  color: antiquewhite;
+  box-shadow: 0 0 150px 30px white;
+}
+footer {
+  margin-top: 200px;
+  margin-bottom: 60px;
+  text-align: center;
+  color: antiquewhite;
 }
