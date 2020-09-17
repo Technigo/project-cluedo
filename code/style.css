@@ -174,3 +174,18 @@ button {
   border-left: 8px solid rgba(129, 164, 175,0.1);
   animation: loading 1s linear infinite;
 }
+
+.weapon-loader {
+   border-top: 10px solid rgba(87, 90, 83,1);
+  border-right: 6px solid rgba(87, 90, 83,0.9);
+  border-bottom: 2px solid  rgba(87, 90, 83,0.6);
+  border-left: 8px solid rgba(87, 90, 83,0.1);
+}
+
+.room-loader {
+  border-top: 10px solid rgba(168, 151, 159,1);
+ border-right: 6px solid rgba(168, 151, 159,0.9);
+ border-bottom: 2px solid  rgba(168, 151, 159,0.6);
+ border-left: 8px solid rgba(168, 151, 159,0.1);
+}
+

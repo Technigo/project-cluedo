@@ -189,7 +189,7 @@ const shuffleFavouriteWeapon = () => {
   
 }
   
-const showLoader = () => {
+const showKillerLoader = () => {
   document.getElementById('killerLoader').style.display = 'block';
   document.getElementById('killerHeadline').style.display = 'none';
   document.getElementById('killerTitle').style.display = 'none';
@@ -197,6 +197,28 @@ const showLoader = () => {
   document.getElementById('killerDecoration').style.display = 'flex'
   document.getElementById('killerCard').style.background = 'black'
   document.getElementById('killerDecoration').style.border = '8px solid rgb(129, 164, 175)'
+}
+
+const showWeaponLoader = () => {
+  document.getElementById('weaponLoader').style.display = 'block';
+  document.getElementById('weaponLoader').classList.add('weapon-loader');
+  document.getElementById('weaponHeadline').style.display = 'none';
+  document.getElementById('weaponTitle').style.display = 'none';
+  document.getElementById('weaponContent').style.display = 'none';
+  document.getElementById('weaponDecoration').style.display = 'flex'
+  document.getElementById('weaponCard').style.background = 'black'
+  document.getElementById('weaponDecoration').style.border = '8px solid #575A53'
+}
+
+const showRoomLoader = () => {
+  document.getElementById('roomLoader').style.display = 'block';
+  document.getElementById('roomLoader').classList.add('room-loader');
+  document.getElementById('roomHeadline').style.display = 'none';
+  document.getElementById('roomTitle').style.display = 'none';
+  document.getElementById('roomContent').style.display = 'none';
+  document.getElementById('roomDecoration').style.display = 'flex'
+  document.getElementById('roomCard').style.background = 'black'
+  document.getElementById('roomDecoration').style.border = '8px solid #a8979f'
 }
   
 const generateKiller = () => {
@@ -249,28 +271,40 @@ const generateKiller = () => {
   }
 }
 
-const pickKiller = () => {
-  // This function will be invoked when you click on the killer card.
+const generateWeapon = () => {
 
-  showLoader();
-  setTimeout(generateKiller, 1500);
-}
+  document.getElementById('weaponLoader').style.display = 'none';
+  document.getElementById('weaponTitle').style.display = 'block';
+  document.getElementById('weaponContent').style.display = 'flex';
+  
 
-const pickWeapon = () => {
+  if (mystery.killer === 'who') {
+    document.getElementById('weaponTitle').innerHTML = 'Please pick a killer first';
+  } else {
   mystery.weapon = randomSelector(moreWeapons)
+
+  // Hides the loader and shows killer title and content 
+ 
+
   document.getElementById('weaponName').innerHTML = mystery.weapon.name
   document.getElementById('weaponWeight').innerHTML = 'Weight: ' + mystery.weapon.weight
   document.getElementById('weaponCard').style.background = '#575A53'
   document.getElementById('weaponHeadline').style.display = 'none'
-  document.getElementById('weaponTitle').style.display = 'block'
+  document.getElementById('weaponTitle').innerHTML = 'WEAPON'
   document.getElementById('weaponDecoration').style.display = 'block'
   document.getElementById('weaponDecoration').style.border = '0px'
   document.getElementById('weaponContent').style.justifyContent = 'center'
-  
+}
 }
 
-const pickRoom = () => {
+const generateRoom = () => {
   mystery.room = randomSelector(rooms)
+
+  // Hides the loader and shows killer title and content 
+  document.getElementById('roomLoader').style.display = 'none';
+  document.getElementById('roomTitle').style.display = 'block';
+  document.getElementById('roomContent').style.display = 'flex';
+
   document.getElementById('roomName').innerHTML = mystery.room
   document.getElementById('roomCard').style.background = '#a8979f'
   document.getElementById('roomHeadline').style.display = 'none'
@@ -280,9 +314,32 @@ const pickRoom = () => {
   document.getElementById('roomContent').style.justifyContent = 'center'
 }
 
+const pickKiller = () => {
+  // This function will be invoked when you click on the killer card.
+
+  showKillerLoader();
+  setTimeout(generateKiller, 1000);
+}
+
+const pickWeapon = () => {
+  // This function will be invoked when you click on the killer card.
+
+  showWeaponLoader();
+  setTimeout(generateWeapon, 1200);
+}
+
+const pickRoom = () => {
+  // This function will be invoked when you click on the killer card.
+
+  showRoomLoader();
+  setTimeout(generateRoom, 1200);
+}
+
+
+
 const revealMystery = () => {
   document.getElementById('mystery').style.display = 'block'
-  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}, but the killers favourite weapon is actually ${mystery.killer.favouriteWeapon.name}`
+  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}, the killers favourite weapon is actually ${mystery.killer.favouriteWeapon.name}`
 }
 
 // Executing functions
@@ -294,3 +351,4 @@ document.getElementById('roomCard').onclick = pickRoom;
 document.getElementsByTagName("button")[0].onclick = revealMystery;
 
 
+// !!! ADD FUNCTION OF WHAT HAPPENS IF KILLER IS NOT PICKED BEFORE ROOM AND WEAPON !!!
