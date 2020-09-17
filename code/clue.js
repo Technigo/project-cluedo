@@ -316,21 +316,53 @@ const pickRoom = () => {
 
 document.getElementById("roomCard").addEventListener("click", pickRoom);
 
-/* 
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// STEP 4 
 
-*/
-/*
-const Alert = () => {
+// GET OPEN MODEL ELEMENT
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+// GET CLOSE MODAL ELEMENT
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+// SHOW AND HIDE OVERLAY
+const overlay = document.getElementById('overlay')
 
-  if mystery.room is emoty
-  document.getElementById("rutan").innerHTML = `${mystery.room} where ${mystery.killer.name} used ${mystery.killer.weapon}`;
 
-};
+// OPEN MODAL
+function openModal(modal) {
+  if (modal == null) return
+  modal.classList.add('active')
+  overlay.classList.add('active')
+  document.getElementById(
+    "modal-body"
+  ).innerHTML = `The brutal murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`
+}
 
-document.getElementById("knappen").addEventListener("click", showAlert);
-*/
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal)
+  })
+})
+
+// CLOSE MODAL
+function closeModal(modal) {
+  if (modal == null) return
+  modal.classList.remove('active')
+  overlay.classList.remove('active')
+}
+
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal)
+  })
+})
+
+// CLOSE MODAL OUTSIDE MODAL-CONTAINER
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+    closeModal(modal)
+  })
+})
