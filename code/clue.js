@@ -164,23 +164,24 @@ const randomSelector = (array) => {
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
+// The values will be set later.
 let mystery = {
-  killer: suspects,
-  weapon: weapons,
-  room: rooms,
+  killer: null,
+  weapon: null,
+  room: null,
 };
 //function to shuffle the suspects favourite weapon
 const randomFavouriteWeapon = () => randomSelector(weapons);
 
-//variables for the loading-animation and the changing headlines
 const killerLoader = document.getElementById('load');
 const weaponLoader = document.getElementById('load2');
 const roomLoader = document.getElementById('load3');
+
 const killerHeadLine = document.getElementById('killer-headline');
 const weaponHeadLine = document.getElementById('weapon-headline');
 const roomHeadLine = document.getElementById('room-headline');
 
-//functions to show loaders and change the card-headline, before the information
+//functions to show loaders and change the before the information
 const showKillerLoader = () => {
   killerHeadLine.innerHTML = 'Loading killer-information..';
   killerLoader.style.display = 'block';
@@ -214,7 +215,9 @@ const killerInformation = () => {
   killerAge.innerHTML = `${mystery.killer.age} years old`;
   killerOccupation.innerHTML = `${mystery.killer.occupation}`;
   killerDescription.innerHTML = `${mystery.killer.description}`;
-  killerFavouriteWeapon.innerHTML = `Favourite weapon: ${randomFavouriteWeapon.name}`;
+  killerFavouriteWeapon.innerHTML = `Favourite weapon: ${
+    randomFavouriteWeapon().name
+  }`;
 };
 //function to show weapon information
 const weaponInformation = () => {
@@ -266,9 +269,8 @@ roomHeadLine.innerHTML = 'Pick a room';
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = () => {
-  const mysteryRevealed = document.getElementById('mystery');
-  const revealButton = document.getElementById('revealButton');
-
-  mysteryRevealed.innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`;
-  revealButton.onclick = revealMystery;
+  document.getElementById(
+    'mystery'
+  ).innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`;
 };
+document.getElementById('revealButton').onclick = revealMystery;
