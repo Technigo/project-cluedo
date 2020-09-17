@@ -79,7 +79,7 @@ const rope = {
   weight: 10,
   article: 'a',
   id: 'rope',
-  chanceOfKillerWeapon: 5
+  foundIn: 'Guest House'
 }
 
 const knife = {
@@ -87,7 +87,7 @@ const knife = {
   weight: 7,
   article: 'a',
   id: 'knife',
-  chanceOfKillerWeapon: 25
+  foundIn: 'Kitchen'
 }
 
 const candelstick = {
@@ -95,7 +95,7 @@ const candelstick = {
   weight: 12,
   article: 'a',
   id: 'candelstick',
-  chanceOfKillerWeapon: 8
+  foundIn: 'Hall'
 }
 
 const dumbbell = {
@@ -103,7 +103,7 @@ const dumbbell = {
   weight: 24,
   article: 'a',
   id: 'dumbbell',
-  chanceOfKillerWeapon: 12
+  foundIn: 'Spa'
 }
 
 const poison = {
@@ -111,7 +111,7 @@ const poison = {
   weight: 1,
   article: '',
   id: 'poison',
-  chanceOfKillerWeapon: 20
+  foundIn: 'Library'
 }
 
 const axe = {
@@ -119,7 +119,7 @@ const axe = {
   weight: 17,
   article: 'an',
   id: 'axe',
-  chanceOfKillerWeapon: 12
+  foundIn: 'Patio'
 }
 
 const bat = {
@@ -127,7 +127,7 @@ const bat = {
   weight: 4,
   article: 'a',
   id: 'bat',
-  chanceOfKillerWeapon: 4
+  foundIn: 'Billiard Room'
 }
 
 
@@ -136,7 +136,7 @@ const trophy = {
   weight: 29,
   article: 'a',
   id: 'trophy',
-  chanceOfKillerWeapon: 2
+  foundIn: 'Living Room'
 }
 
 const pistol = {
@@ -144,7 +144,7 @@ const pistol = {
   weight: 11,
   article: 'a',
   id: 'pistol',
-  chanceOfKillerWeapon: 12
+  foundIn: 'Lounge'
 }
 
 
@@ -210,19 +210,21 @@ const mystery = {
 };
 
 
+
 // This function will be invoked when you click the killer card.
 const pickKiller = () => {
   if (!killerIsPicked) {
     document.getElementById('loaderKiller').style.opacity = 1
     setTimeout(function () {
       document.getElementById('loaderKiller').style.opacity = 0
-      let randomWeapon = shuffleFavoriteWeapon();
+      shuffleFavoriteWeapon();
       // This will randomly select a killer from the suspects. And add that to the mystery object.
       mystery.killer = randomSelector(suspects)
       document.getElementById('killerCard').style.background = mystery.killer.color
       document.getElementById(
         'killerName'
       ).innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`
+      document.getElementById('killerAge').innerHTML = (`Age: ${mystery.killer.age}`)
       document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
       document.getElementById('killerDescription').innerHTML = `Descripton: ${mystery.killer.description}`
       document.getElementById('killerFavouriteWeapon').innerHTML = `Preferred weapon: ${mystery.killer.favouriteWeapon}` //red level to check that the fav-weap changes by using function "shuffleFavouriteWeapon"
@@ -238,15 +240,18 @@ const pickKiller = () => {
 const pickWeapon = () => {
   if (killerIsPicked && !weaponIsPicked) {
     document.getElementById('loaderWeapon').style.opacity = 1
+    //chanceOfFavouriteWeapon(mystery.killer); //look at killers fav weapon and change prob of that weapon being picked. 
     setTimeout(function() {
       document.getElementById('loaderWeapon').style.opacity = 0
-      mystery.weapon = randomSelector(weapons)
+      let chanceFavWeapon = chanceOfFavouriteWeapon();
+      console.log(chanceFavWeapon);
+      mystery.weapon = randomSelector(chanceFavWeapon)
       document.getElementById('weaponName').innerHTML = `Type: ${mystery.weapon.name}`
       document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`
       weaponIsPicked = true
     }, 2500)
   } else {
-    alert('pick killer card')
+    alert('Found out who the killer is first');
   }
 };
 
@@ -257,12 +262,14 @@ const pickRoom = () => {
     document.getElementById('loaderRoom').style.opacity = 1
     setTimeout(function() { 
       document.getElementById('loaderRoom').style.opacity = 0
+      let chanceForSuspectedRoom = chanceOfRoom();
+      console.log(chanceForSuspectedRoom);
       mystery.room = randomSelector(rooms)
       document.getElementById('roomName').innerHTML = `Where murder was commited: ${mystery.room}`
       weaponIsPicked = true
     },2500)   
   } else {
-    alert('pick room')
+    alert('See who the killer was and murder weapon used first!')
   }
 };
 
@@ -275,6 +282,29 @@ const shuffleFavoriteWeapon = () => {
     //console.log(randomWeapon);
   });
 };
+
+
+//created favouriteWeapon above to be able to add them to the new array. 
+const chanceOfFavouriteWeapon = () => {
+  const favWeapon = weapons.find(weapon => weapon.id === mystery.killer.favouriteWeapon);
+  const favWeaponArray = new Array(7).fill(favWeapon);
+  //console.log(favWeaponArray);
+  const calculatedWeapon = [...weapons, ...favWeaponArray];
+  //console.log(calculatedWeapon);
+  return calculatedWeapon;
+};
+
+
+//RETURNS AS A STRING VALUE, DONT GET THE ENTIRE OBJECT TO RETURN...
+const chanceOfRoom = () => {
+  const suspectedRooms = rooms.find(room => room === mystery.weapon.foundIn);
+  const suspectedRoomArray = new Array(7).fill(suspectedRooms);
+  console.log(suspectedRoomArray);
+  const calculatedRooms = [...weapons, ...suspectedRoomArray];
+  console.log(calculatedRooms);
+  return calculatedRooms;
+};
+
 
 
 
@@ -298,6 +328,7 @@ const revealMystery = () => {
 
 const restartGame = () => {
   let confirmation = confirm(`Click OK if you want to restart the game?`);
+  
   if (confirmation === true) {
     location.reload();
   }
