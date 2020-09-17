@@ -16,7 +16,7 @@ let professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
   color: 'purple',
-  description: ' bla bla bla ',
+  description: ' Crazy professor with large dreams ',
   age: 40,
   image: 'assets/plum.png',
   occupation: 'Professor',
