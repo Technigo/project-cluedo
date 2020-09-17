@@ -2,7 +2,7 @@ body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
   background-image: url('./assets/jan-jakub-nanista-z9hvkSDWMIM-unsplash.jpg');
-  background-size: contain;
+  background-size: cover;
 }
 
 p {
