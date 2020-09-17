@@ -7,7 +7,8 @@ const mrGreen = {
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur',
+  favouriteWeapon: 'knife',
 }
 
 const profPlum = {
@@ -17,7 +18,8 @@ const profPlum = {
   description: 'He fancies beautiful women',
   age: 37,
   image: 'assets/plum.png',
-  occupation: 'Psychiatrist'
+  occupation: 'Psychiatrist',
+  favouriteWeapon: 'dumbbell',
 }
 
 const msScarlet = {
@@ -27,7 +29,8 @@ const msScarlet = {
   description: 'She is a femme fatale',
   age: 25,
   image: 'assets/scarlet.png',
-  occupation: 'Escort girl'
+  occupation: 'Escort girl',
+  favouriteWeapon: 'poison',
 }
 
 const mrsPeacock = {
@@ -37,7 +40,8 @@ const mrsPeacock = {
   description: 'She is a former miss USA',
   age: 55,
   image: 'assets/peacock.png',
-  occupation: 'Teacher'
+  occupation: 'Teacher',
+  favouriteWeapon: 'trophy',
 }
 
 const colMustard = {
@@ -47,7 +51,8 @@ const colMustard = {
   description: 'He is a colonial imperialist',
   age: 65,
   image: 'assets/mustard.png',
-  occupation: 'Retired soldier'
+  occupation: 'Retired soldier',
+  favouriteWeapon: 'pistol',
 }
 
 const mrsWhite = {
@@ -57,7 +62,8 @@ const mrsWhite = {
   description: 'She works at a prestigious restaurant',
   age: 60,
   image: 'assets/white.png',
-  occupation: 'Waitress'
+  occupation: 'Waitress',
+  favouriteWeapon: 'candlestick',
 }
 
 // console.log(msScarlet.occupation);
@@ -66,47 +72,56 @@ const mrsWhite = {
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  id: 'rope',
 }
 
 const knife = {
   name: 'knife',
-  weight: 5
+  weight: 5,
+  id: 'knife',
 }
 
 const candlestick = {
   name: 'candlestick',
-  weight: 20
+  weight: 20,
+  id: 'candlestick',
 }
 
 const dumbbell = {
   name: 'dumbbell',
-  weight: 50
+  weight: 50,
+  id: 'dumbbell',
 }
 
 const poison = {
   name: 'poison',
-  weight: 4
+  weight: 4,
+  id: 'poison',
 }
 
 const axe = {
   name: 'axe',
-  weight: 30
+  weight: 30,
+  id: 'axe',
 }
 
 const bat = {
   name: 'bat',
-  weight: 25
+  weight: 25,
+  id: 'bat',
 }
 
 const trophy = {
   name: 'trophy',
-  weight: 15
+  weight: 15,
+  id: 'trophy',
 }
 
 const pistol = {
   name: 'pistol',
-  weight: 16
+  weight: 16,
+  id: 'pistol',
 }
 
 // console.log(dumbbell.weight);
@@ -205,14 +220,18 @@ const randomSelector = array => {
 // The values will be set later.
 const mystery = {
   killer: '',
+  weapon: '',
   room: '',
-  weapon: ''
 };
 // console.log(mystery)
 
 const killerCard = document.getElementById('killerCard');
 const killerName = document.getElementById('killerName');
+const killerAge = document.getElementById('killerAge');
+const killerOccupation = document.getElementById('killerOccupation');
 const killerImage = document.getElementById('killerImage');
+const killerDescription = document.getElementById('killerDescription');
+const killerFavouriteWeapon = document.getElementById('killerFavouriteWeapon');
 const weaponCard = document.getElementById('weaponCard');
 const weaponName = document.getElementById('weaponName');
 const roomCard = document.getElementById('roomCard');
@@ -220,6 +239,7 @@ const roomName = document.getElementById('roomName');
 const revealedMystery = document.getElementById('mystery');
 const revealButton = document.getElementById('revealButton');
 const resetButton = document.getElementById('resetButton');
+const shuffleButton = document.getElementById('shuffleButton');
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -229,6 +249,10 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   killerCard.style.background = mystery.killer.color;
   killerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  killerAge.innerHTML = mystery.killer.age;
+  killerOccupation.innerHTML = mystery.killer.occupation;
+  killerDescription.innerHTML = mystery.killer.description;
+  killerFavouriteWeapon.innerHTML = mystery.killer.favouriteWeapon;
   killerImage.src = mystery.killer.image;
 };
 
@@ -265,5 +289,14 @@ const resetMystery = () => {
   location.reload();
 };
 
+// This function will change favourite weapons of each person
+const shuffleFavouriteWeapon = () => {
+  suspects.forEach((item) => {
+    item.favouriteWeapon = randomSelector(weapons).name;
+  });
+  killerFavouriteWeapon.innerHTML = mystery.killer.favouriteWeapon;
+};
+
 revealButton.onclick = revealMystery;
 resetButton.onclick = resetMystery;
+shuffleButton.onclick = shuffleFavouriteWeapon;
