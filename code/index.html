@@ -9,53 +9,81 @@
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
-    <header>
-      <div>
-        <h1>Cluedo</h1>
-        <img src="./assets/magnify-glass.jpg" alt="Image of a magnify glass" width = "65px;">
-      </div>
-      <h2>Murder Mystery Picker</h2>
-    </header>
-
-    <section class="cards">
-      <div class="card-header-container">
-        <h2>Click on a card to reveal a murderer, weapon and room then reveal the crime</h2>
-      </div>
-        <!-- KILLER CARD -->
-       <div class="card-container">
-        <article onclick="pickKiller()" class="killer-deck" id="killerCard">
-          <h4 class="card-title">KILLER</h4>
-          <div class="card-details" id="cardDetails1">
-            <h4 id="killerName"></h4>
-            <img id="killerImage" src="" height="190px" />
-            <p id="killerDescription"></p>
+    <section class="main-wrapper">
+      <header>
+        <div class="header-container">
+          <div class="header-title">
+            <h1>Cluedo</h1>
+            <img src="./assets/magnify-glass.png" alt="Image of a magnify glass" width = "100px;">
           </div>
-        </article>
-
-        <!-- WEAPON CARD -->
-        <article onclick="pickWeapon()" class="weapon-deck" id="weaponCard">
-          <h4 class="card-title">WEAPON</h4>
-          <div class="card-details" id="cardDetails2">
-            <h4 id="weaponName"></h4>
-            <img id="weaponImage" src="" height="190px" />
-            <p id="weaponLastSeen"></p>
+          <h2>Murder Mystery Picker</h2>
           </div>
-        </article>
-
-        <!-- ROOM CARD -->
-        <article onclick="pickRoom()" class="room-deck" id="roomCard">
-          <h4 class="card-title">ROOM</h4>
-        <div class="card-details" id="cardDetails3">
-          <h4 id="roomName"></h4>
-          <img id="roomImage" src="" height="190px" />
-          <p id="roomLastSeen"></p>
         </div>
-        </article>
-      </div>
-    </section>
+      </header>
 
-    <button onclick="revealMystery()">REVEAL THE CRIME</button>
-    <h2 class="mystery-sentance" id="mystery"></h2>
+      <section class="cards">
+        <!-- HEADER FOR CARDS DESCRIBING WHAT USER SHOULD DO TO REVEAL THE THE MYSTERY -->
+        <div class="card-header-container">
+          <h2>Click on a card to reveal a murderer, weapon and room then reveal the crime!</h2>
+        </div>
+
+        <!-- KILLER CARD -->
+        <div class="card-container">
+
+          <article onclick="showPickKiller()" class="killer-deck" id="killerCard">
+            <div class="card-front" id="frontOfCard">
+              <h4 class="card-title">KILLER</h4>
+              <img onclick="pickKillerLoader()" id="loader1" class="loader-image" src="assets/magnify-glass.png" height= 100px;/>
+            </div>
+            <div class="card-details" id="cardDetails1">
+              <h4 id="killerName"></h4>
+              <img id="killerImage" class="images" src="" alt="Image of suspect" height="230px" />
+              <p id="killerDescription"></p>
+              <p id="faveWeapon"></p>
+            </div>
+          </article>
+
+          <!-- WEAPON CARD -->
+          <article onclick="showPickWeapon()" class="weapon-deck" id="weaponCard">
+            <div class="card-front" id="frontOfCard">
+              <h4 class="card-title">WEAPON</h4>
+              <img onclick="pickWeaponLoader()" id="loader2" class="loader-image" src="assets/magnify-glass.png" height= 100px;/>
+            </div>
+            <div class="card-details" id="cardDetails2">
+              <h4 id="weaponName"></h4>
+              <img id="weaponImage" class="images" src="" alt="Image of weapon" height="230px" />
+              <p id="weaponStrength"></p>
+              <p id="weaponLastSeen"></p>
+            </div>
+          </article>
+
+          <!-- ROOM CARD -->
+          <article onclick="showPickRoom()" class="room-deck" id="roomCard">
+            <div class="card-front" id="frontOfCard">
+              <h4 class="card-title">ROOM</h4>
+              <img onclick="pickRoomLoader()" id="loader3" class="loader-image" src="assets/magnify-glass.png" height= 100px;/>
+            </div>
+            <div class="card-details" id="cardDetails3">
+              <h4 id="roomName"></h4>
+              <img id="roomImage" class="images" src="" alt="Image of room" height="230px" />
+              <p id="roomLastSeen"></p>
+              <p id="roomfave"></p>
+            </div>
+          </article>
+        </div>
+
+        <!-- REVEAL MYSTERY SECTION -->
+        <div class="reveal-mystery-container">
+          <button onclick="revealMystery()" id="revealMysteryButton">REVEAL THE CRIME</button>
+          <h2 class="mystery-sentance" id="mystery"></h2>
+          <h2 class="choose-card-sentance" id="choose-card-prompt"></h2>
+        </div>
+      </section>
+
+      <footer>
+        <h4>Cluedo murder mystery picker created by Claire Caudwell for the Technigo bootcamp 2020 </h4>
+      </footer>
+    </section>
 
     <script src="clue.js"></script>
   </body>
