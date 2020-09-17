@@ -10,47 +10,47 @@
 </head>
 
 <body>
-<header class="game-header">
-  <img class="game-image" src="cluedo.png" alt="Cluedo logo" width="20%">
-</header>
+  <header class="game-header">
+    <img class="game-image" src="cluedo.png" alt="Cluedo logo" width="20%">
+  </header>
 
-<!--Cards -->
+  <!--Cards -->
   <section class="cards">
-    
+
     <!--Killer card-->
     <article class="killer-deck" id="killerCard">
-    <div class="killer-card-wrapper" id="killer-card-wrapper">
-       <p class="start-display-cards" id="start-display-card-killer">PICK A KILLER CARD</p>
-      <p id="killerName"></p>
-      <p id="killerAge"></p>
-      <p id="killerOccupation"></p>
-      <img id="killerImage" src="" height="100" />
-      <p id="killerDescription"></p>
-      <p id="favouriteWeapon"></p>
-    </div>
-  <!--Loader to killer-->
+      <div class="killer-card-wrapper" id="killer-card-wrapper">
+        <p class="start-display-cards" id="start-display-card-killer">PICK A KILLER CARD</p>
+        <p id="killerName"></p>
+        <p id="killerAge"></p>
+        <p id="killerOccupation"></p>
+        <img id="killerImage" src="" height="100" />
+        <p id="killerDescription"></p>
+        <p id="favouriteWeapon"></p>
+      </div>
+      <!--Loader to killer-->
       <div class="loader-wrapper" id="loader-wrapper-killer">
-      <div class="loader"></div>
-      <p class="generating-text">Generating a suspect</p>
+        <div class="loader"></div>
+        <p class="generating-text">Generating a suspect</p>
       </div>
     </article>
 
-  <!--Weapon card-->  
+    <!--Weapon card-->
     <article class="weapon-deck" id="weaponCard">
       <div class="weapon-card-wrapper" id="weapon-card-wrapper">
-      <p class="start-display-cards" id="start-display-card-weapon">PICK A WEAPON CARD</p>
-      <p id="weaponName"></p>
-      <p id="weaponMaterial"></p>
-      <img id="weaponsImage" src="" height="100" />
-  </div>
-  <!--Loader to weapon-->  
-    <div class="loader-wrapper" id="loader-wrapper-weapon">
-    <div class="loader"></div>
-    <p>Generating a weapon</p>
+        <p class="start-display-cards" id="start-display-card-weapon">PICK A WEAPON CARD</p>
+        <p id="weaponName"></p>
+        <p id="weaponMaterial"></p>
+        <img id="weaponsImage" src="" height="100" />
+      </div>
+      <!--Loader to weapon-->
+      <div class="loader-wrapper" id="loader-wrapper-weapon">
+        <div class="loader"></div>
+        <p>Generating a weapon</p>
       </div>
     </article>
 
-  <!--Room card-->  
+    <!--Room card-->
     <article class="room-deck" id="roomCard">
       <p class="card-type">ROOM</p>
       <p id="roomName"></p>
@@ -64,8 +64,8 @@
 
   <button id="reveal">REVEAL THE CRIME!</button>
   <!--<button onclick="revealMystery()"</button>-->
-    
-    <button onclick="restart()" id="restartButton">Start Again</button>
+
+  <button onclick="restart()" id="restartButton">Start Again</button>
   <script src="clue.js"></script>
 </body>
 

@@ -12,15 +12,16 @@ body {
   background-color: #ccc;
 }
 
-.game-header{
+.game-header {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.card-type{
+.card-type {
   background-color: whitesmoke;
 }
+
 p {
   margin: 1px;
   font-weight: 300;
@@ -75,12 +76,14 @@ button {
   color: white;
 }
 
-#revealButton{
+#revealButton {
   text-align: center;
 }
+
 #restartButton {
   display: none;
 }
+
 article, #revealButton, #restartButton {
   cursor: pointer;
 }
@@ -95,7 +98,6 @@ article, #revealButton, #restartButton {
   justify-content: center;
   align-items: center;
   padding-top: 50px;
-
 }
 
 .loader {
@@ -109,20 +111,27 @@ article, #revealButton, #restartButton {
 }
 
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.start-display-cards{
-background-color: whitesmoke;
+.start-display-cards {
+  background-color: whitesmoke;
 }
 
-.generating-text{
+.generating-text {
   padding: 25px;
 }
-
