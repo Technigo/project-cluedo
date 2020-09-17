@@ -234,35 +234,39 @@ const pickKiller = (loadID) => {
       document.getElementById('killerOccupation').innerHTML = (`Occupation: ${mystery.killer.occupation}`);
       document.getElementById('killerDescription').innerHTML = (`Description: ${mystery.killer.description}`);
       killerPicked = true;
+      console.log(mystery);
       checkScroll();
     }, 2000);
   }
 }
 
 const pickWeapon = (loadID) => {
-  if (killerPicked && !weaponPicked && !roomPicked) {
+  if (killerPicked) {
+    console.log("In pickweapon");
     //Look at the killers favorite weapon and change the prob. of it being picked
     increaseChanceForFavWeapon(mystery.killer);
     document.getElementById(loadID.id).style.opacity = 1;
     setTimeout(function () {
       document.getElementById(loadID.id).style.opacity = 0;
       mystery.weapon = randomSelector(weapons);
+      console.log(mystery);
       document.getElementById('weaponName').style.background = mystery.weapon.color;
       document.getElementById('weaponName').innerHTML = `Type: ${mystery.weapon.name}`;
       document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`;
       weaponPicked = true;
       checkScroll();
     }, 2000);
-  } else(showInfoMessage("pickWeapon"));
+  } else if (showInfoMessage("pickWeapon"));
 }
 
 const pickRoom = (loadID) => {
-  if (weaponPicked && !roomPicked) {
+  if (killerPicked && weaponPicked) {
     document.getElementById(loadID.id).style.opacity = 1;
     setTimeout(function () {
       document.getElementById(loadID.id).style.opacity = 0;
       increaseChanceForRoom(mystery.weapon);
       mystery.room = randomSelector(rooms);
+      console.log(mystery);
       document.getElementById('roomName').innerHTML = mystery.room;
       roomPicked = true;
       checkScroll();

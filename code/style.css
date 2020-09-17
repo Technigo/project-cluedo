@@ -18,13 +18,14 @@ body {
 }
 
 .header {
-  min-height: 22vh;
+  min-height: 20vh;
   background: black;
   font-family: 'Futura-Extra-Bold', sans-serif;
   color: white;
-  font-size: 7em;
+  font-size: 6em;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .special-color-header {
