@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -6,7 +6,7 @@ const mrGreen = {
   color: 'green',
   description: 'He has a lot of connections',
   age: 45,
-  image: 'assets/green.png',
+  image: './assets/green.png',
   occupation: 'Entrepreneur'
 }
 
@@ -16,7 +16,7 @@ const professorPlum = {
   color: 'plum',
   description: 'He has knowledge in anatomy',
   age: 70,
-  image: 'assets/plum.png',
+  image: './assets/plum.png',
   occupation: 'Professor'
 }
 
@@ -26,7 +26,7 @@ const missScarlet = {
   color: 'scarlet',
   description: 'She is a student at the local college',
   age: 24,
-  image: 'assets/scarlet.png',
+  image: './assets/scarlet.png',
   occupation: 'Student'
 }
 
@@ -36,7 +36,7 @@ const mrsPeacock = {
   color: 'peacock',
   description: 'She knows everybody in the neighborhood',
   age: 40,
-  image: 'assets/peacock.png',
+  image: './assets/peacock.png',
   occupation: 'Teacher'
 }
 
@@ -46,7 +46,7 @@ const colonelMustard = {
   color: 'mustard',
   description: 'He is an old general in the army',
   age: 65,
-  image: 'assets/mustard.png',
+  image: './assets/mustard.png',
   occupation: 'Colonel'
 }
 
@@ -56,11 +56,11 @@ const mrsWhite = {
   color: 'white',
   description: 'She is a retired doctor',
   age: 55,
-  image: 'assets/white.png',
+  image: './assets/white.png',
   occupation: 'Retired'
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+
 
 const rope = {
   name: 'rope',
@@ -157,23 +157,71 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
 
-// This function will be invoked when you click on the killer card.
-const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+const mystery = {
+  killer: '',
+  weapon: '',
+  room: ''
 }
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+const pickKiller = () => {
+  
+  mystery.killer = randomSelector(suspects);
+  
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerImage')
+  
+  document.getElementById('killerName').innerHTML = 
+  `${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.description} ${mystery.killer.age} ${mystery.killer.occupation}`
+}
+
+
+
+const pickWeapon = () => {
+  
+  mystery.weapon = randomSelector(weapons);
+
+  document.getElementById('weaponCard')
+  document.getElementById('weaponName');
+  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.name} ${mystery.weapon.weight}`
+}
+
+const pickRoom = () => {
+  
+  mystery.room = randomSelector(rooms);
+
+  document.getElementById('roomCard')
+  roomName.innerHTML = mystery.room
+  
+}
+
+
+
+
+
+document.getElementById('playAgainButton').style.display = 'none';
+const revealMystery = () => {
+
+      if (mystery.killer === '' || mystery.weapon === '' || mystery.room === '') {
+      document.getElementById('mystery').innerHTML = 'Pick all three cards'
+    } else {
+      document.getElementById('mystery').innerHTML = `The crime was commited by ${mystery.killer.firstName} in the ${mystery.room} with a/an ${mystery.weapon.name}.`;
+      document.getElementById('allCards').style.display = 'none';
+      document.getElementById('findKiller').style.display = 'none';
+      document.getElementById('pickCard').style.display = 'none';
+      document.getElementById('revealButton').style.display = 'none';
+      document.getElementById('playAgainButton').style.display = 'block';
+    }
+    
+  }
+
+  document.getElementById('playAgainButton').addEventListener('click', () => {
+    history.back();
+  });
+
+  
+
+

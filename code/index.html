@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Technigo Project Cluedo</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+
+    <title>Cluedo</title>
   </head>
   <body>
-    <section class="cards">
-      <article class="killer-deck" id="killerCard">
+    <h1 id="findKiller">Who is the killer?</h1>
+    <h2 id="pickCard">Pick three cards to find out...</h2>
+    <section class="cards" id="allCards">
+      <article class="killer-deck" id="killerCard" onclick="pickKiller()">
         <p>KILLER</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
@@ -17,21 +21,22 @@
         <img id="killerImage" src="" height="100" />
         <p id="killerDescription"></p>
       </article>
-      <article class="weapon-deck" id="weaponCard">
+      <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
         <p>WEAPON</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
       </article>
-      <article class="room-deck" id="roomCard">
+      <article class="room-deck" id="roomCard" onclick="pickRoom()">
         <p>ROOM</p>
         <p id="roomName"></p>
       </article>
     </section>
 
     <h1 id="mystery"></h1>
+    
 
-    <button>REVEAL THE CRIME</button>
-
+    <button id="revealButton" onclick="revealMystery()">Reveal the crime</button>
+    <button id="playAgainButton" value="Back" onclick="startOver()">Play Again</button>
     <script src="clue.js"></script>
   </body>
 </html>
