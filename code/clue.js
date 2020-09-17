@@ -11,7 +11,7 @@ const mrGreen = {
   age: 45,
   image: "./assets/green.png",
   occupation: "Entrepreneur",
-  favouriteWeapon: "knife",
+  favourite: "knife",
 };
 
 const professorPlum = {
@@ -22,7 +22,7 @@ const professorPlum = {
   age: 34,
   image: "./assets/plum.png",
   occupation: "Professor",
-  favouriteWeapon: "poison",
+  favourite: "poison",
 };
 
 const missScarlet = {
@@ -33,7 +33,7 @@ const missScarlet = {
   age: 42,
   image: "./assets/scarlet.png",
   occupation: "Recruiter",
-  favouriteWeapon: "pistol",
+  favourite: "pistol",
 };
 
 const mrsPeacock = {
@@ -44,7 +44,7 @@ const mrsPeacock = {
   age: 29,
   image: "./assets/peacock.png",
   occupation: "Novelist",
-  favouriteWeapon: "bat",
+  favourite: "bat",
 };
 
 const colonelMustard = {
@@ -55,7 +55,7 @@ const colonelMustard = {
   age: 63,
   image: "./assets/mustard.png",
   occupation: "Colonel",
-  favouriteWeapon: "pistol",
+  favourite: "pistol",
 };
 
 const mrsWhite = {
@@ -66,7 +66,7 @@ const mrsWhite = {
   age: 45,
   image: "./assets/white.png",
   occupation: "Chef",
-  favouriteWeapon: "axe",
+  favourite: "axe",
 };
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
@@ -75,87 +75,141 @@ const rope = {
   name: "rope",
   weight: 10,
   id: "rope",
+  favourite: "patio",
 };
 
 const knife = {
   name: "knife",
   weight: 25,
   id: "knife",
+  favourite: "kitchen",
 };
 
 const candlestick = {
   name: "candlestick",
   weight: 105,
   id: "candlestick",
+  favourite: "dining room",
 };
 
 const dumbbell = {
   name: "dumbbell",
   weight: 150,
   id: "dumbbell",
+  favourite: "spa",
 };
 
 const poison = {
   name: "poison",
   weight: 5,
   id: "poison",
+  favourite: "conservatory",
 };
 
 const axe = {
   name: "axe",
   weight: 85,
   id: "axe",
+  favourite: "observatory",
 };
 
 const bat = {
   name: "bat",
   weight: 30,
   id: "bat",
+  favourite: "billiard room",
 };
 
 const trophy = {
   name: "trophy",
   weight: 20,
   id: "trophy",
+  favourite: "living room",
 };
 
 const pistol = {
   name: "pistol",
   weight: 35,
   id: "pistol",
+  favourite: "study",
 };
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
-const diningRoom = "dining room";
+const diningRoom = {
+  name: "dining room",
+  id: "dining room",
+};
 
-const conservatory = "conservatory";
+const conservatory = {
+  name: "conservatory",
+  id: "conservatory",
+};
 
-const kitchen = "kitchen";
+const kitchen = {
+  name: "kitchen",
+  id: "kitchen",
+};
 
-const study = "study";
+const study = {
+  name: "study",
+  id: "study",
+};
 
-const library = "library";
+const library = {
+  name: "library",
+  id: "library",
+};
 
-const billiardRoom = "billiard room";
+const billiardRoom = {
+  name: "billiard room",
+  id: "billiard room",
+};
 
-const lounge = "lounge";
+const lounge = {
+  name: "lounge",
+  id: "lounge",
+};
 
-const ballRoom = "ballroom";
+const ballroom = {
+  name: "ballroom",
+  id: "ballroom",
+};
 
-const hall = "hall";
+const hall = {
+  name: "hall",
+  id: "hall",
+};
 
-const spa = "spa";
+const spa = {
+  name: "spa",
+  id: "spa",
+};
 
-const livingRoom = "living room";
+const livingRoom = {
+  name: "living room",
+  id: "living room",
+};
 
-const observatory = "observatory";
+const observatory = {
+  name: "observatory",
+  id: "observatory",
+};
 
-const theater = "theater";
+const theater = {
+  name: "theater",
+  id: "theater",
+};
 
-const guestHouse = "guest house";
+const guestHouse = {
+  name: "guest house",
+  id: "guest house",
+};
 
-const patio = "patio";
+const patio = {
+  name: "patio",
+  id: "patio",
+};
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
@@ -188,7 +242,7 @@ const rooms = [
   library,
   billiardRoom,
   lounge,
-  ballRoom,
+  ballroom,
   hall,
   spa,
   livingRoom,
@@ -204,11 +258,12 @@ const mystery = {
   room: "",
 };
 
-/* Called when the 'Let's Play' button is clicked, toggles the window and then
- shuffles the suspects' favourite weapon */
+/* Called when the 'Let's Play' button is clicked, toggles the window, hides
+ the Reveal button and shuffles the suspects' favourite weapon */
 const startGame = (windowId) => {
   toggleWindow(windowId);
-  shuffleFavouriteWeapon();
+  //shuffleFavouriteWeapon();
+  hideButton();
 };
 
 /* Function to randomly select one item from the array passed as a paramater */
@@ -225,24 +280,24 @@ const pickKiller = (loaderId) => {
     toggleAnimation(loaderId);
     setTimeout(function () {
       toggleLoader(loaderId);
+      shuffleFavourite(suspects, weapons);
       mystery.killer = randomSelector(suspects);
-      //shuffleFavouriteWeapon();
-      document.getElementById("killerCard").style.background =
-        mystery.killer.color;
-      document.getElementById(
+      console.log(mystery.killer.favourite);
+      style("killerCard").background = mystery.killer.color;
+      get(
         "killerNameAge"
       ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}, ${mystery.killer.age}`;
-      document.getElementById(
+      get(
         "killerOccupation"
       ).innerHTML = `Occupation: ${mystery.killer.occupation}`;
-      document.getElementById("killerImage").src = mystery.killer.image;
-      document.getElementById(
+      get("killerImage").src = mystery.killer.image;
+      get(
         "killerDescription"
       ).innerHTML = `Description: ${mystery.killer.description}`;
-      document.getElementById(
+      get(
         "killerFavouriteWeapon"
       ).innerHTML = `Weapon of choice: ${capitalizeFirstLetter(
-        mystery.killer.favouriteWeapon
+        mystery.killer.favourite
       )}`;
       killerPicked = true;
     }, 2000);
@@ -253,19 +308,16 @@ const pickKiller = (loaderId) => {
  that a killer but no weapon or room has been picked, then works like the 
  pickKiller function */
 const pickWeapon = (loaderId) => {
-  if (killerPicked && !weaponPicked && !roomPicked) {
+  if (killerPicked && !weaponPicked) {
     toggleAnimation(loaderId);
     setTimeout(function () {
       toggleLoader(loaderId);
-      mystery.weapon = randomSelector(weapons);
-      document.getElementById("weaponCard").style.background =
-        mystery.killer.color;
-      document.getElementById("weaponName").innerHTML = capitalizeFirstLetter(
-        mystery.weapon.name
-      );
-      document.getElementById(
-        "weaponWeight"
-      ).innerHTML = `Weight: ${mystery.weapon.weight}`;
+      shuffleFavourite(weapons, rooms);
+      mystery.weapon = increaseChance(mystery.killer);
+      console.log(mystery.weapon);
+      style("weaponCard").background = mystery.killer.color;
+      get("weaponName").innerHTML = capitalizeFirstLetter(mystery.weapon.name);
+      get("weaponWeight").innerHTML = `Weight: ${mystery.weapon.weight}`;
       weaponPicked = true;
     }, 2000);
   } // else show message
@@ -279,14 +331,11 @@ const pickRoom = (loaderId) => {
     toggleAnimation(loaderId);
     setTimeout(function () {
       toggleLoader(loaderId);
-      mystery.room = randomSelector(rooms);
-      document.getElementById("roomCard").style.background =
-        mystery.killer.color;
-      document.getElementById("roomName").innerHTML = `${capitalizeFirstLetter(
-        mystery.room
-      )}`;
+      mystery.room = increaseChance(mystery.weapon);
+      style("roomCard").background = mystery.killer.color;
+      get("roomName").innerHTML = `${capitalizeFirstLetter(mystery.room.name)}`;
       roomPicked = true;
-      document.getElementById("revealButton").style.display = "block";
+      style("revealButton").visibility = "visible";
     }, 2000);
   } // else show message
 };
@@ -297,32 +346,38 @@ const pickRoom = (loaderId) => {
 const revealMystery = (windowId) => {
   if (killerPicked && weaponPicked && roomPicked) {
     toggleWindow(windowId);
-    document.getElementById(
+    get(
       "mystery"
     ).innerHTML = `The murder was commited by ${mystery.killer.firstName} 
-    ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}`;
-    document.getElementById("mysteryCard").style.background =
-      mystery.killer.color;
-    document.getElementById(
+    ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}`;
+    style("mysteryCard").background = mystery.killer.color;
+    get(
       "mysteryKiller"
     ).innerHTML = `Mystery Killer: ${mystery.killer.firstName} 
     ${mystery.killer.lastName}`;
-    document.getElementById("mysteryKillerImage").src = mystery.killer.image;
-    document.getElementById(
-      "mysteryRoom"
-    ).innerHTML = `Room: ${capitalizeFirstLetter(mystery.room)}`;
-    document.getElementById(
-      "mysteryWeapon"
-    ).innerHTML = `Weapon: ${capitalizeFirstLetter(mystery.weapon.name)}`;
+    get("mysteryKillerImage").src = mystery.killer.image;
+    get("mysteryRoom").innerHTML = `Room: ${capitalizeFirstLetter(
+      mystery.room.name
+    )}`;
+    get("mysteryWeapon").innerHTML = `Weapon: ${capitalizeFirstLetter(
+      mystery.weapon.name
+    )}`;
     console.log();
   } // else show message
 };
 
-/* The function is called when the game starts. Shuffles the suspects favourite
+/* The function is called when a killer is picked. Shuffles the suspects favourite
  weapons */
 const shuffleFavouriteWeapon = () => {
   suspects.forEach((suspect) => {
-    suspect.favouriteWeapon = randomSelector(weapons).id;
+    suspect.favourite = randomSelector(weapons).id;
+  });
+};
+
+const shuffleFavourite = (mysteryObject, favouriteObject) => {
+  mysteryObject.forEach((object) => {
+    object.favourite = randomSelector(favouriteObject).id;
+    console.log(object.favourite);
   });
 };
 
@@ -333,25 +388,81 @@ const capitalizeFirstLetter = (inputToCheck) => {
 
 /* Toggles the loader animation */
 const toggleAnimation = (loaderId) => {
-  document
-    .getElementById(loaderId)
-    .classList.toggle("loader-container-animation");
+  get(loaderId).classList.toggle("loader-container-animation");
 };
 
 /* Hides the loader image when a card is picked */
 const toggleLoader = (loaderId) => {
-  document.getElementById(loaderId).style.display = "none";
+  get(loaderId).style.display = "none";
 };
 
 /* Hides the current window and displays the next */
 const toggleWindow = (windowId) => {
-  let windowElement = document.getElementById(windowId);
+  let windowElement = get(windowId);
   toggleWindowClass(windowId);
   toggleWindowClass(windowElement.nextElementSibling.id);
 };
 
 /* Toggles between classes to hide/display a window */
 const toggleWindowClass = (id) => {
-  document.getElementById(id).classList.toggle("visible");
-  document.getElementById(id).classList.toggle("invisible");
+  get(id).classList.toggle("visible");
+  get(id).classList.toggle("invisible");
+};
+
+const hideButton = () => {
+  const button = (style("revealButton").visibility = "hidden");
+  // if (button.style.visibility === "hidden"){
+  //   button.style.visibility = "visible";
+  // } else {
+  //   button.style.visibility = "hidden"
+  // }
+};
+
+const increaseChance = (object) => {
+  // find objects favourite weapon
+  if (object === mystery.killer) {
+    arrayDuplicated = duplicateArray(findFavourite(mystery.killer, weapons));
+    console.log(arrayDuplicated);
+    return randomFavourite(weapons, arrayDuplicated);
+  } else if (object === mystery.weapon) {
+    arrayDuplicated = duplicateArray(findFavourite(mystery.weapon, rooms));
+    console.log(arrayDuplicated);
+    return randomFavourite(rooms, arrayDuplicated);
+  }
+};
+
+/* The function is called to find the favourite object that matches the id of 
+the favourite property of the mystery object */
+const findFavourite = (mysteryObject, favouriteObjects) => {
+  console.log(mysteryObject);
+  console.log(favouriteObjects);
+  const favourite = favouriteObjects.find(
+    (favourite) => favourite.id === mysteryObject.favourite
+  );
+  return favourite;
+};
+
+const duplicateArray = (favourite) => {
+  //create a random number between 0 and 10
+  const randomNumber = Math.floor(Math.random() * 11);
+  console.log(randomNumber);
+  const arrayDuplicated = new Array(randomNumber).fill(favourite);
+  console.log("weapons duplicated: " + JSON.stringify(arrayDuplicated));
+  return arrayDuplicated;
+};
+
+const randomFavourite = (favourite, arrayDuplicated) => {
+  const increasedFavourite = [...favourite, ...arrayDuplicated];
+  console.log(increasedFavourite);
+  return randomSelector(increasedFavourite);
+};
+
+/* Function that returns an object to which the id refers */
+const get = (id) => {
+  return document.getElementById(id);
+};
+
+/* Function that returns the style property of the object referred to */
+const style = (id) => {
+  return get(id).style;
 };

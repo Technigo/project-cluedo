@@ -195,7 +195,7 @@ p {
 }
 
 .reveal-button {
-  display: none;
+  /* display: none; */
 }
 
 /*** BUTTON ***/
@@ -270,14 +270,17 @@ p {
   0% {
     background-color: #000;
     color: rgba(255, 255, 255, 0);
+    transform: scale(0.25);
   }
   75% {
     background-color: crimson;
     color: rgba(255, 255, 255, 1);
+    transform: scale(0.75);
   }
   100% {
     background-color: #000;
     color: rgba(255, 255, 255, 0);
+    transform: scale(1);
   }
 }
 
@@ -300,13 +303,16 @@ p {
   0% {
     background-color: #000;
     color: rgba(255, 255, 255, 0);
+    transform: scale(0.25);
   }
   75% {
     background-color: crimson;
     color: rgba(255, 255, 255, 1);
+    transform: scale(1);
   }
   100% {
     background-color: #000;
     color: rgba(255, 255, 255, 0);
+    transform: scale(0.25);
   }
 }
