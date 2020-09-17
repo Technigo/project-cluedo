@@ -4,8 +4,8 @@ const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
   color: "green",
-  // description: 'He has a lot of connections',
-  age: 45,
+  description: "He has a lot of connections",
+  age: 69,
   image: "./assets/green.png",
   occupation: "Entrepreneur",
   favouriteWeapon: "rope",
@@ -15,8 +15,8 @@ const professorPlum = {
   firstName: "Victor",
   lastName: "Plum",
   color: "plum",
-  // description: 'He has a lot of connections',
-  age: 48,
+  description: "He likes to philosophize",
+  age: 55,
   image: "./assets/plum.png",
   occupation: "Professor",
   favouriteWeapon: "knife",
@@ -26,8 +26,8 @@ const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlett",
   color: "pink",
-  // description: 'He has a lot of connections',
-  age: 39,
+  description: "She likes to create nail paintings",
+  age: 48,
   image: "./assets/scarlet.png",
   occupation: "Nail painter",
   favouriteWeapon: "candlestick",
@@ -37,8 +37,8 @@ const mrsPeacock = {
   firstName: "Elenor",
   lastName: "Peacock",
   color: "blue",
-  // description: 'He has a lot of connections',
-  age: 51,
+  description: "She likes to teach kids history",
+  age: 58,
   image: "./assets/peacock.png",
   occupation: "Teacher",
   favouriteWeapon: "dumbbell",
@@ -48,8 +48,8 @@ const colonelMustard = {
   firstName: "Jack",
   lastName: "Mustard",
   color: "yellow",
-  // description: 'He has a lot of connections',
-  age: 36,
+  description: "He has just one leg",
+  age: 74,
   image: "./assets/mustard.png",
   occupation: "Plummer",
   favouriteWeapon: "poison",
@@ -59,8 +59,8 @@ const mrsWhite = {
   firstName: "Mrs",
   lastName: "White",
   color: "white",
-  // description: 'He has a lot of connections',
-  age: 54,
+  description: "She do as little as possible",
+  age: 82,
   image: "./assets/white.png",
   occupation: "Relaxing",
   favouriteWeapon: "axe",
@@ -133,25 +133,9 @@ console.log(knife.weight);
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
-const suspects = [
-  mrGreen,
-  professorPlum,
-  missScarlet,
-  mrsPeacock,
-  colonelMustard,
-  mrsWhite,
-];
+const suspects = [mrGreen, professorPlum, missScarlet, mrsPeacock, colonelMustard, mrsWhite];
 
-const weapons = [
-  rope,
-  knife,
-  candleStick,
-  dumbBell,
-  poison,
-  bat,
-  throphy,
-  pistol,
-];
+const weapons = [rope, knife, candleStick, dumbBell, poison, bat, throphy, pistol];
 
 const rooms = [
   "Dinning Room",
@@ -215,17 +199,12 @@ const pickKiller = (event) => {
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById("killerCard").style.background = mystery.killer.color;
-  document.getElementById(
-    "killerName"
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  document.getElementById("killerAge").innerHTML = `${mystery.killer.age}`;
-  document.getElementById(
-    "killerOccupation"
-  ).innerHTML = `${mystery.killer.occupation}`;
+  document.getElementById("killerName").innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById("killerAge").innerHTML = `${mystery.killer.age} years`;
+  document.getElementById("killerOccupation").innerHTML = `${mystery.killer.occupation}`;
   document.getElementById("killerImage").src = `${mystery.killer.image}`;
-  document.getElementById(
-    "killerFavouriteWeapon"
-  ).innerHTML = `${mystery.killer.favouriteWeapon}`;
+  document.getElementById("killerDescription").innerHTML = `${mystery.killer.description}`;
+  document.getElementById("killerFavouriteWeapon").innerHTML = `Favourite Weapon: ${mystery.killer.favouriteWeapon}`;
 };
 
 document.getElementById("killerCard").addEventListener("click", pickKiller);
@@ -240,9 +219,7 @@ const pickWeapon = (event) => {
 
   // This will change the card to the one connected to the chosen weapon and show the name and weight of the weapon.
   document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
-  document.getElementById(
-    "weaponWeight"
-  ).innerHTML = `${mystery.weapon.weight}`;
+  document.getElementById("weaponWeight").innerHTML = `Weight: ${mystery.weapon.weight} lbs`;
 };
 
 document.getElementById("weaponCard").addEventListener("click", pickWeapon);
@@ -263,13 +240,8 @@ document.getElementById("roomCard").addEventListener("click", pickRoom);
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = (event) => {
   event.preventDefault();
-  if (
-    mystery.killer === null ||
-    mystery.weapon === null ||
-    mystery.room === null
-  ) {
-    document.getElementById("mystery").innerHTML =
-      "Click all cards above to reveal the crime!";
+  if (mystery.killer === null || mystery.weapon === null || mystery.room === null) {
+    document.getElementById("mystery").innerHTML = "Click all cards above to reveal the crime!";
   } else {
     document.getElementById(
       "mystery"
