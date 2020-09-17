@@ -4,6 +4,7 @@ body {
   background-image: url(./background1.jpg);
   background-size: cover;
 }
+
 h1 {
   color: #fff;
   font-size: 70px;
@@ -28,6 +29,7 @@ p {
    display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-bottom: 5px;
 }
 
 .killer-deck {
@@ -59,7 +61,6 @@ p {
 
 #mystery {
   font-size: 30px;
-
 }
 
 button {
@@ -72,11 +73,19 @@ button {
   margin: 0 auto;
 }
 
+button:hover {
+  background-color: #700a0a;
+}
+
+button:active {
+  transform: translateY(5px);
+}
+
 footer {
-background-color: black;
-color: white;
-text-align: center;
-padding-top: 30px;
-padding-bottom: 30px;
-margin-top: 30px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 30px;
 }

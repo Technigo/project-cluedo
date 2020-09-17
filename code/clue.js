@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// STEP 1 - OBJECTS FOR ALL THE SUSPECTS
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -8,7 +8,6 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
-  favouriteWeapon: 'pistol'
 }
 
 const professorPlum = {
@@ -19,7 +18,6 @@ const professorPlum = {
   age: 55,
   image: 'assets/plum.png',
   occupation: 'Professor in Latin',
-  favouriteWeapon: 'candlestick'
 }
 
 const missScarlet = {
@@ -30,7 +28,6 @@ const missScarlet = {
   age: 37,
   image: 'assets/scarlet.png',
   occupation: 'Business woman',
-  favouriteWeapon: 'bat'
 }
 
 const mrsPeacock = {
@@ -41,7 +38,6 @@ const mrsPeacock = {
   age: 49,
   image: 'assets/peacock.png',
   occupation: 'Extremely rich heiress',
-  favouriteWeapon: 'poison'
 }
 
 const colonelMustard = {
@@ -52,7 +48,6 @@ const colonelMustard = {
   age: 64,
   image: 'assets/mustard.png',
   occupation: 'War veteran',
-  favouriteWeapon: 'axe'
 }
 
 const mrsWhite = {
@@ -63,17 +58,15 @@ const mrsWhite = {
   age: 69,
   image: 'assets/white.png',
   occupation: 'Maid',
-  favouriteWeapon: 'trophy'
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// OBJECTS FOR ALL THE WEAPONS
 
 const rope = {
   name: 'rope',
   color: "white",
   weight: 10,
   image: 'assets/rope.jpg',
-  id: 'rope'
 }
 
 const knife = {
@@ -81,7 +74,6 @@ const knife = {
   color: "white",
   weight: 2,
   image: 'assets/knife.jpg',
-  id: 'knife'
 }
   
 const candlestick = {
@@ -89,7 +81,6 @@ const candlestick = {
   color: "white",
   weight: 12,
   image: 'assets/candlestick.jpg',
-  id: 'candlestick'
 }
 
 const dumbbell = {
@@ -97,7 +88,6 @@ const dumbbell = {
   color: "white",
   weight: 6,
   image: 'assets/dumbbell.jpg',
-  id: 'dumbbell'
 }
 
 const poison = {
@@ -105,7 +95,6 @@ const poison = {
   color: "white",
   weight: 0.5,
   image: 'assets/poison.PNG',
-  id: 'poison'
 }
 
 const axe = {
@@ -113,7 +102,6 @@ const axe = {
   color: "white",
   weight: 4,
   image: 'assets/axe.jpg',
-  id: 'axe'
 }
 
 const bat = {
@@ -121,7 +109,6 @@ const bat = {
   color: "white",
   weight: 1,
   image: 'assets/bat.jpg',
-  id: 'bat'
 }
 
 const trophy = {
@@ -129,7 +116,6 @@ const trophy = {
   color: "white",
   weight: 5,
   image: 'assets/trophy.jpg',
-  id: 'trophy'
 }
 
 const pistol = {
@@ -137,12 +123,11 @@ const pistol = {
   color: "white",
   weight: 3,
   image: 'assets/pistol.jpg',
-  id: 'pistol'
 }
 
   
 
-// CREATED OBJECTS FOR THE ROOM TO GET A COLOR ON THE CARDS
+// CREATED OBJECTS FOR THE ROOM TO GET DIFFERENT COLORS ON THE CARDS
 
 const diningRoom = {
   name: "dining room",
@@ -220,7 +205,7 @@ const patio = {
 }
 
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// ARRAYS WITH SUSPECTS, WEAPONS AND ROOMS
 
 const suspects = [
   mrGreen,
@@ -268,34 +253,7 @@ const rooms = [
 console.log(rooms);
 
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-/* // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
-const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
-}
-
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
-
-
-// This function will be invoked when you click on the killer card.
-function pickKiller() {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
-
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-} */
-
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
-
-const mystery = {
-  killer: null,
-  weapon: null,
-  room: null
-}
+// RANDOM SELECTOR FUNCTION
 
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
@@ -307,13 +265,12 @@ document.getElementById('killerCard').onclick = pickKiller;
 
 function pickKiller() {
   mystery.killer = randomSelector(suspects)
-  document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
-  document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`
-  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
-  document.getElementById('killerImage'); killerImage.src = mystery.killer.image;
-/*   document.getElementById('killerfavouriteWeapon').innerHTML = `${mystery.killer.favouriteWeapon}` */
+    document.getElementById('killerCard').style.background = mystery.killer.color
+    document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+    document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
+    document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`
+    document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
+    document.getElementById('killerImage'); killerImage.src = mystery.killer.image;
 }  
 
 
@@ -322,13 +279,12 @@ function pickKiller() {
 document.getElementById('weaponCard').onclick = pickWeapon;
 
 function pickWeapon() {
-mystery.weapon = randomSelector(weapons)
-document.getElementById('weaponCard').style.background = mystery.weapon.color
-document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}`
-document.getElementById('weaponImage'); weaponImage.src = mystery.weapon.image;
+  mystery.weapon = randomSelector(weapons)
+    document.getElementById('weaponCard').style.background = mystery.weapon.color
+    document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
+    document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}`
+    document.getElementById('weaponImage'); weaponImage.src = mystery.weapon.image;
 }  
-
 
 
 // FUNCTION FOR THE ROOM
@@ -337,28 +293,24 @@ document.getElementById('roomCard').onclick = pickRoom;
 
 function pickRoom() {
   mystery.room = randomSelector(rooms)
-  document.getElementById('roomName').innerHTML = `${mystery.room.name}`
-  document.getElementById('roomCard').style.background = mystery.room.color
-  }  
-  
-  
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+    document.getElementById('roomName').innerHTML = `${mystery.room.name}`
+    document.getElementById('roomCard').style.background = mystery.room.color
+}  
 
+  
+// MYSTERY OBJECT
+
+const mystery = {
+  killer: null,
+  weapon: null,
+  room: null
+}
+  
+  
+// FUNCTION TO REVEAL THE CRIME
 
 const revealMystery = () => {
-document.getElementById("mystery").innerHTML= `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`
-document.getElementById("clickMe").onclick = revealMystery;
+  document.getElementById("mystery").innerHTML= `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`
+  document.getElementById("clickMe").onclick = revealMystery;
 }
 console.log(revealMystery)
-
-
-
-//Red Level - - Create `shuffleFavouriteWeapon` function to change favourite weapons of each person
-
-/* const shuffleFavouriteWeapon = () => {
-  suspects.forEach((suspect) =>
-  (suspect.favouriteWeapon = randomSelector(suspects).favouriteWeapon));
-}
-
-document.getElementById('killerCard').onclick = shuffleFavouriteWeapon(); */
