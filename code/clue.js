@@ -7,7 +7,8 @@ const mrGreen = {
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur',
+  favouriteWeapon: 'trophy'
 }
 const colonelMustard = {
   firstName: 'Jack',
@@ -16,7 +17,8 @@ const colonelMustard = {
   description: 'He is a dignified, dapper and dangerous military man',
   age: 54,
   image: 'assets/mustard.png',
-  occupation: 'Colonel'
+  occupation: 'Colonel',
+  favouriteWeapon: 'knife'
 }
 const mrsPeacock = {
   firstName: 'Eleanor',
@@ -25,7 +27,8 @@ const mrsPeacock = {
   description: 'A grande dame, an elderly, attractive woman who nearly always maintains her dignity',
   age: 63,
   image: 'assets/peacock.png',
-  occupation: 'Socialite'
+  occupation: 'Socialite',
+  favouriteWeapon: 'candlestick'
 }
 const professorPlum = {
   firstName: 'Victor',
@@ -34,7 +37,8 @@ const professorPlum = {
   description: 'A quick-witted, professor with a bow tie and glasses',
   age: 46,
   image: 'assets/plum.png',
-  occupation: 'Professor'
+  occupation: 'Professor',
+  favouriteWeapon: 'dumbbell'
 }
 const missScarlet = {
   firstName: 'Cassandra',
@@ -43,7 +47,8 @@ const missScarlet = {
   description: 'A stock femme fatale, as young, cunning and attractive',
   age: 28,
   image: 'assets/scarlet.png',
-  occupation: 'Actor'
+  occupation: 'Actor',
+  favouriteWeapon: 'poison'
 }
 const mrsWhite = {
   firstName: 'Mrs',
@@ -52,52 +57,62 @@ const mrsWhite = {
   description: 'A frazzled domestic sever, appears as a guest',
   age: 37,
   image: 'assets/white.png',
-  occupation: 'Maid'
+  occupation: 'Maid',
+  favouriteWeapon: 'axe'
 }
 // OBJECTS FOR ALL THE WEAPONS
 
 const rope = {
   name: 'Rope',
+  id: 'rope',
   fact: 'Not for the clumsy ones!',
   weight: 50,
 }
 const knife = {
   name: 'Knife',
+  id: 'knife',
   fact: 'Handle with care',
   weight: 7,
 }
 const candlestick = {
   name: 'Candlestick',
+  id: 'candlestick',
   fact: 'Deadlier without a candle',
   weight: 16,
 }
 const dumbbell = {
   name: 'Dumbbell',
+  id: 'dumbbell',
   fact: 'For the gym nut',
   weight: 22,
 }
 const poison = {
   name: 'Poison',
+  id: 'poison',
   fact: 'Deadliest of all',
   weight: .8,
 }
 const axe = {
   name: 'Axe',
+  id: 'axe',
   fact: 'Miss at first swing',
   weight: 36,
 }
 const bat = {
   name: 'Bat',
+  id: 'bat',
   fact: 'A fool-proof weapon',
   weight: 43,
 }
 const trophy = {
   name: 'Trophy',
+  id: 'tropy',
   fact: 'To celebrate the wins',
   weight: 86,
 }
 const pistol = {
   name: 'Pistol',
+  id: 'pistol',
   fact: 'Loaded or not',
   weight: 17,
 }
@@ -174,7 +189,6 @@ const pickWeapon = () => {
 
 }
 document.getElementById('weaponCard').onclick = pickWeapon
-
 
 const pickRoom = () => {
   mystery.rooms = randomSelector(rooms)
