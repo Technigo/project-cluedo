@@ -276,7 +276,7 @@ const loadingpickWeapon = () => {
 }
 // Calling the loadingPickWeapon function
 document.getElementById("weaponCard").onclick = loadingpickWeapon;
-document.getElementById("weaponCard").onclick = loadingPickWeapon;
+//document.getElementById("weaponCard").onclick = loadingPickWeapon;*/
 
 
 // CREATE FUNCTIONS pickRoom
@@ -293,7 +293,7 @@ console.log(pickRoom);
 
 // To show all of this cool stuff in the browser
 //document.getElementById('killerCard').onclick = pickKiller;
-document.getElementById('weaponCard').onclick = pickWeapon;
+//document.getElementById('weaponCard').onclick = pickWeapon;
 document.getElementById('roomCard').onclick = pickRoom;
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
