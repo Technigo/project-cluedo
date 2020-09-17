@@ -7,7 +7,8 @@ const mrGreen = {
   description: 'He has a lot of connections',
   age: 45,
   image: './assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur',
+  favouriteWeapon: "rope"
 }
 
 const professorPlum = {
@@ -17,7 +18,8 @@ const professorPlum = {
   description: 'He talks much but say little',
   age: 45,
   image: './assets/plum.png',
-  occupation: 'Visting STEM professor'
+  occupation: 'Visting STEM professor',
+  favouriteWeapon: "poison"
 }
 
 const missScarlet = {
@@ -27,7 +29,8 @@ const missScarlet = {
   description: 'She can stare down a lion',
   age: 30,
   image: './assets/scarlet.png',
-  occupation: 'Manager of the Batman Zoo'
+  occupation: 'Manager of the Batman Zoo',
+  favouriteWeapon: "pistol"
 }
 
 const mrsPeacock = {
@@ -37,7 +40,8 @@ const mrsPeacock = {
   description: 'She is stronger than you',
   age: 37,
   image: './assets/peacock.png',
-  occupation: 'Yoga teacher'
+  occupation: 'Yoga teacher',
+  favouriteWeapon: "dumbbell"
 }
 
 const colonelMustard = {
@@ -47,7 +51,9 @@ const colonelMustard = {
   description: "He was part of Franco's gang",
   age: 73,
   image: './assets/mustard.png',
-  occupation: 'Colonel'
+  occupation: 'Colonel',
+  favouriteWeapon: "knife"
+
 }
 
 const mrsWhite = {
@@ -57,7 +63,8 @@ const mrsWhite = {
   description: 'She will not miss one thing',
   age: 63,
   image: './assets/white.png',
-  occupation: 'Facility consultant'
+  occupation: 'Facility consultant',
+  favouriteWeapon: "axe"
 }
 
 // OBJECTS FOR ALL THE WEAPONS
@@ -65,54 +72,63 @@ const mrsWhite = {
 const rope = {
   name: 'Rope',
   weight: 10,
+  id: "Rope",
   image: './assets/rope.png'
 }
 
 const knife = {
   name: 'Knife',
   weight: 2,
+  id: "Knife",
   image: './assets/knife.png'
 }
 
 const candlestick = {
   name: 'Candlestick',
   weight: 10,
+  id: "Candlestick",
   image: './assets/candlestick.png'
 }
 
 const dumbbell = {
   name: 'Dumbbell',
   weight: 16,
+  id: "Dumbbell",
   image: './assets/dumbell.png'
 }
 
 const poison = {
   name: 'Bottole of Poison',
   weight: 0.1,
+  id: "Poison",
   image: './assets/poison.png'
 }
 
 const axe = {
   name: 'Axe',
   weight: 5,
+  id: "Axe",
   image: './assets/axe.png'
 }
 
 const bat = {
   name: 'Bat',
   weight: 8,
+  id: "Bat",
   image: './assets/bat.png'
 }
 
 const trophy = {
   name: 'Trophy',
   weight: 8,
+  id: "Trophy",
   image: './assets/trophy.png'
 }
 
 const pistol = {
   name: 'Pistol',
   weight: 3,
+  id: "Pistol",
   image: './assets/pistol.png'
 }
 
@@ -264,6 +280,7 @@ const pickKiller = () => {
   document.getElementById('killerAge').innerHTML = `Age: ${mystery.killer.age}`
   document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
   document.getElementById('killerDescription').innerHTML = `Description: ${mystery.killer.description}`
+  document.getElementById("favouriteWeapon").innerHTML = `Favourite weapon: ${shuffleFavouriteWeapon()}`
 }
 
 document.getElementById('killerCard').addEventListener('click', pickKiller)
@@ -293,9 +310,21 @@ const pickRoom = () => {
 document.getElementById('roomCard').addEventListener('click', pickRoom)
 
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+// STEP 5 Create a function which change favorite weapon for each person
+
+// This function will be invoked when you click on the killer card.
+const shuffleFavouriteWeapon = () => {
+  return randomSelector(weapons).id
+}
+
+
+// CREATE A FUNCTION revealMystery that will be invoked when you click that button. 
 
 const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, a ${mystery.killer.age} years old ${mystery.killer.occupation}, in the ${mystery.room.name} with a ${mystery.weapon.name}`
+  if (!mystery.killer || !mystery.weapon || !mystery.room) {
+    alert("No mystery is yet to be revealed!");
+  } else {
+    document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, a ${mystery.killer.age} years old ${mystery.killer.occupation}, in the ${mystery.room.name} with a ${mystery.weapon.name}`
+  }
 }
