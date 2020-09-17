@@ -140,7 +140,11 @@ const randomSelector = (array) => {
 };
 
 //object mystery that will store new random values
-const mystery = {};
+const mystery = {
+  killer: null,
+  weapon: null,
+  room: null,
+};
 
 // This function randomly selects a killer from the suspects. And add that to the mystery object.
 const pickKiller = () => {
@@ -188,12 +192,19 @@ const pickRoom = () => {
 document.getElementById("roomCard").onclick = pickRoom;
 
 // This is revealMystery function that will be invoked when you click that button.
-const revealMystery = () => {
-  pickKiller();
-  pickWeapon();
-  pickRoom();
-  document.getElementById(
-    "noclue"
-  ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
+
+document.getElementById("lastbutton").onclick = () => {
+  if (
+    mystery.killer == null ||
+    mystery.weapon == null ||
+    mystery.room == null
+  ) {
+    document.getElementById("noclue").innerHTML =
+      "Please choose the killer, the weapon and ther room by clicking on each card";
+  } else {
+    document.getElementById(
+      "noclue"
+    ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
+  }
+  return false;
 };
-document.getElementById("lastbutton").onclick = revealMystery;
