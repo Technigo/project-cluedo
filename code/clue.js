@@ -77,50 +77,56 @@ const mrsWhite = {
 const rope = {
   name: "rope",
   weight: 10,
+  place: "Theater",
 };
 // *** 2. knife
 const knife = {
   name: "knife",
   weight: 2,
+  place: "kitchen",
 };
 // *** 3. candlestick
 const candlestick = {
   name: "candlestick",
   weight: 4,
+  place: "Ballroom",
 };
 // *** 4. dumbbel
 const dumbbel = {
   name: "dumbbel",
   weight: 7,
+  place: "Spa",
 };
 // *** 5. poison
 const poison = {
   name: "poison",
   weight: 1,
+  place: "Lounge",
 };
 // *** 6. axe
 const axe = {
   name: "axe",
   weight: 5,
+  place: "Conservatory",
 };
 // *** 7. bat
 const bat = {
   name: "bat",
   weight: 6,
+  place: "Hall",
 };
 // *** 8. trophy
 const trophy = {
   name: "trophy",
   weight: 8,
+  place: "Library",
 };
 // *** 9. pistol
 const pistol = {
   name: "pistol",
   weight: 3,
+  place: "Study",
 };
-
-console.log(profPlum.occupation);
-console.log(axe.weight);
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -185,7 +191,6 @@ const randomSelector = (array) => {
 ////////////////////////////////////////////////////////////////////////////////////////
 
 // *** tryed to solve and undertand this problem in sandbox:
-//https://codesandbox.io/s/random-pet-fvb4z
 //https://codesandbox.io/s/random-pet-with-favourite-pet-u11le *** WITH COMMENTS!
 
 // *** Most-likely machine ***
@@ -200,7 +205,7 @@ const mostLikelyRandomSelector = (items, favouriteItem) => {
   const randomArray = [...items, ...favouriteItemsDuplicated];
 
   const randomIndex = Math.floor(Math.random() * randomArray.length);
-  //console.log(randomArray);
+  console.log(randomArray);
   return randomArray[randomIndex];
 };
 
@@ -248,28 +253,35 @@ document.getElementById("killerCard").addEventListener("click", pickKiller);
 // *** Clicking "WEAPON CARD" ***
 
 const pickWeapon = () => {
-  // flips card
-  document.getElementById("weaponCard").classList.add("flip");
+  // validating killer-card
+  if (mystery.killer) {
+    // flips card
+    document.getElementById("weaponCard").classList.add("flip");
 
-  // finding the weapon object with the killers favourite weapon id
-  const favouriteWeapon = weapons.find(
-    (weapon) => weapon.name === mystery.killer.favouriteWeaponId
-  );
+    // finding the weapon object with the killers favourite weapon id
+    const favouriteWeapon = weapons.find(
+      (weapon) => weapon.name === mystery.killer.favouriteWeaponId
+    );
 
-  // time delay stars
-  setTimeout(() => {
-    // "most likely" random weapon selector
-    mystery.weapon = mostLikelyRandomSelector(weapons, favouriteWeapon);
+    // time delay starts
+    setTimeout(() => {
+      // "most likely" random weapon selector
+      mystery.weapon = mostLikelyRandomSelector(weapons, favouriteWeapon);
 
-    // changing card info
-    document.getElementById("weaponCard");
-    document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
-    document.getElementById(
-      "weaponWeight"
-    ).innerHTML = `${mystery.weapon.weight} of weight`;
+      // changing card info
+      document.getElementById("weaponCard");
+      document.getElementById(
+        "weaponName"
+      ).innerHTML = `${mystery.weapon.name}`;
+      document.getElementById(
+        "weaponWeight"
+      ).innerHTML = `${mystery.weapon.weight} of weight`;
 
-    // time delay millisecond
-  }, 300);
+      // time delay millisecond
+    }, 300);
+  } /* else {
+    document.getElementById("mystery").innerHTML = "Select a killer card!";
+  } */
 };
 
 document.getElementById("weaponCard").addEventListener("click", pickWeapon);
@@ -279,20 +291,32 @@ document.getElementById("weaponCard").addEventListener("click", pickWeapon);
 // *** Clicking "ROOM CARD" ***
 
 const pickRoom = () => {
-  // flips card
-  document.getElementById("roomCard").classList.add("flip");
+  // validating weapon-card
+  if (mystery.weapon) {
+    // flips card
+    document.getElementById("roomCard").classList.add("flip");
 
-  // time delay starts
-  setTimeout(() => {
-    // random room selector
-    mystery.room = randomSelector(rooms);
+    // finding the weapons place
+    const weaponPlace = mystery.weapon.place;
 
-    // changing card info
-    document.getElementById("roomCard");
-    document.getElementById("roomName").innerHTML = `${mystery.room}`;
+    // time delay starts
+    setTimeout(() => {
+      // "most likely" random weapon selector
+      mystery.room = mostLikelyRandomSelector(rooms, weaponPlace);
+      // random room selector
+      // mystery.room = randomSelector(rooms);
 
-    // time delay millisecond
-  }, 300);
+      // changing card info
+      document.getElementById("roomCard");
+      document.getElementById("roomName").innerHTML = `${mystery.room}`;
+
+      console.log(mystery.room);
+
+      // time delay millisecond
+    }, 300);
+  } /* else {
+    document.getElementById("mystery").innerHTML = "Select a weapon card!";
+  } */
 };
 
 document.getElementById("roomCard").addEventListener("click", pickRoom);
