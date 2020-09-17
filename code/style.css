@@ -59,6 +59,7 @@ header img {
   background-size: cover;
   background-repeat: no-repeat;
   color: black;
+
 }
 
 .kdeck {
@@ -83,6 +84,7 @@ header img {
   border-radius: 16px;
   margin-left: 50px;
   margin-top: 20px;
+  
 }
 
 .kdeck p{
@@ -93,7 +95,6 @@ header img {
 .killer-deck img {
   width: 150px;
   height: auto;
-
 }
 
 .wdeck {
@@ -169,21 +170,31 @@ h1 {
 }
 
 button {
-  font-weight: bold;
   padding: 18px 16px;
   font-size: 26px;
-  color: black;
+  color: red;
   font-family: "Courier New", Courier, monospace;
-  background-image: linear-gradient(red, black);
-  border: inset black 2px;
+  background-color: white;
+  outline: none;
   border-radius: 8px;
   display: block;
   margin: 16px auto;
+  cursor: pointer;
+  box-shadow: 10px 10px 10px black;
+}
+
+button:hover {
+  background-image:url(blod.png);
+  
+}
+
+button:active {
+  background-color: white;
+  transform: translateY(4px);
 }
 
 #mystery {
   width: auto;
-
   height: 100px;
   text-align: center;
   padding-top: 30px;
@@ -191,6 +202,7 @@ button {
   opacity: 50%;
   color: black;
   border-radius: 16px;
+  box-shadow: 10px 10px 10px darkred;
 }
 
 
