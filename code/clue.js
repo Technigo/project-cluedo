@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// Objects
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -66,10 +66,6 @@ const mrsWhite = {
   favouriteWeapon: 'candlestick',
 }
 
-// console.log(msScarlet.occupation);
-
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
-
 const rope = {
   name: 'rope',
   weight: 10,
@@ -124,10 +120,6 @@ const pistol = {
   id: 'pistol',
 }
 
-// console.log(dumbbell.weight);
-
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
 const diningRoom = 'Dining Room'
 
 const conservatory = 'Conservatory'
@@ -158,7 +150,7 @@ const guestHouse = 'Guest House'
 
 const patio = 'Patio'
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// Arrays
 
 const suspects = [
   mrGreen,
@@ -199,31 +191,7 @@ const rooms = [
   patio
 ]
 
-// console.log(suspects);
-// console.log(weapons);
-// console.log(rooms);
-
-// first suspect in the suspects array
-// console.log(suspects[0]);
-
-// last room in the room array
-// console.log(rooms[rooms.length - 1]);
-
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
-const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
-}
-
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
-const mystery = {
-  killer: '',
-  weapon: '',
-  room: '',
-};
-// console.log(mystery)
+// Variables
 
 const killerCard = document.getElementById('killerCard');
 const killerName = document.getElementById('killerName');
@@ -234,19 +202,48 @@ const killerDescription = document.getElementById('killerDescription');
 const killerFavouriteWeapon = document.getElementById('killerFavouriteWeapon');
 const weaponCard = document.getElementById('weaponCard');
 const weaponName = document.getElementById('weaponName');
+const weaponWeight = document.getElementById('weaponWeight');
 const roomCard = document.getElementById('roomCard');
 const roomName = document.getElementById('roomName');
 const revealedMystery = document.getElementById('mystery');
 const revealButton = document.getElementById('revealButton');
 const resetButton = document.getElementById('resetButton');
 const shuffleButton = document.getElementById('shuffleButton');
+const killerLoader = document.getElementById('killerLoader');
+const weaponLoader = document.getElementById('weaponLoader');
+const roomLoader = document.getElementById('roomLoader');
 
-// This function will be invoked when you click on the killer card.
+// Shuffle function
+
+const randomSelector = array => {
+  return array[Math.floor(Math.random() * array.length)]
+}
+
+// Mystery storage
+
+const mystery = {
+  killer: '',
+  weapon: '',
+  room: '',
+};
+
+// Actions related to Killer deck
+
+const killerAnimation = () => {
+  killerLoader.style.display = "block";
+  setTimeout(pickKiller, 2000);
+  killerCard.style.background = "#000";
+  killerName.innerHTML = '';
+  killerAge.innerHTML = '';
+  killerOccupation.innerHTML = '';
+  killerDescription.innerHTML = '';
+  killerFavouriteWeapon.innerHTML = '';
+  killerImage.src = '';
+};
+
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
-
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  killerLoader.style.display = "none";
   killerCard.style.background = mystery.killer.color;
   killerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   killerAge.innerHTML = mystery.killer.age;
@@ -256,26 +253,43 @@ const pickKiller = () => {
   killerImage.src = mystery.killer.image;
 };
 
-killerCard.onclick = pickKiller;
+killerCard.onclick = killerAnimation;
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+// Actions related to Weapon deck
+
+const weaponAnimation = () => {
+  weaponLoader.style.display = "block";
+  setTimeout(pickWeapon, 2000);
+  weaponName.innerHTML = '';
+  weaponWeight.innerHTML = '';
+};
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
+  weaponLoader.style.display = "none";
   weaponName.innerHTML = mystery.weapon.name;
+  weaponWeight.innerHTML = mystery.weapon.weight;
 };
 
-weaponCard.onclick = pickWeapon;
+weaponCard.onclick = weaponAnimation;
+
+// Actions related to Room deck
+
+const roomAnimation = () => {
+  roomLoader.style.display = "block";
+  setTimeout(pickRoom, 2000);
+  roomName.innerHTML = '';
+};
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms);
+  roomLoader.style.display = "none";
   roomName.innerHTML = mystery.room;
 };
 
-roomCard.onclick = pickRoom;
+roomCard.onclick = roomAnimation;
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// Functions related to revelation of mystery 
 
 const revealMystery = () => {
   if (mystery.killer === '' || mystery.weapon === '' || mystery.room === '') {
@@ -290,12 +304,15 @@ const resetMystery = () => {
 };
 
 // This function will change favourite weapons of each person
+
 const shuffleFavouriteWeapon = () => {
   suspects.forEach((item) => {
     item.favouriteWeapon = randomSelector(weapons).name;
   });
   killerFavouriteWeapon.innerHTML = mystery.killer.favouriteWeapon;
 };
+
+// Buttons
 
 revealButton.onclick = revealMystery;
 resetButton.onclick = resetMystery;

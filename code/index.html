@@ -7,12 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
   <title>🔍 Sandrine's Cluedo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <section class="cards">
     <article class="killer-deck" id="killerCard">
       <p>KILLER</p>
+      <div class="loader" id="killerLoader">
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+      </div>
       <p id="killerName"></p>
       <p id="killerAge"></p>
       <p id="killerOccupation"></p>
@@ -22,11 +26,17 @@
     </article>
     <article class="weapon-deck" id="weaponCard">
       <p>WEAPON</p>
+      <div class="loader" id="weaponLoader">
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+      </div>
       <p id="weaponName"></p>
       <p id="weaponWeight"></p>
     </article>
     <article class="room-deck" id="roomCard">
       <p>ROOM</p>
+      <div class="loader" id="roomLoader">
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+      </div>
       <p id="roomName"></p>
     </article>
   </section>

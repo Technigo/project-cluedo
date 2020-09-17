@@ -9,6 +9,13 @@ p {
   background-color: #fff;
 }
 
+.loader {
+  color: #fff;
+  font-size: 80px;
+  margin-top: 125px;
+  display: none;
+}
+
 .cards {
   margin: 50px auto;
   width: 90%;
