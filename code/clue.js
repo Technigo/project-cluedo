@@ -192,6 +192,10 @@ const shuffleFavouriteWeapon = () => {
 // This function will be invoked when you click on the killer card.
 const pickKiller = (event) => {
   event.preventDefault();
+
+  // To remove the reveal the crime message if any
+  cleanRevealMysteryMessage();
+
   shuffleFavouriteWeapon();
 
   // This will randomly select a killer from the suspects. And add that to the mystery object.
@@ -214,6 +218,10 @@ document.getElementById("killerCard").addEventListener("click", pickKiller);
 // This function will be invoked when you click on the weapon card.
 const pickWeapon = (event) => {
   event.preventDefault();
+
+  // To remove the reveal the crime message if any
+  cleanRevealMysteryMessage();
+
   // This will randomly select a weapon from the weapons. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons);
 
@@ -227,6 +235,10 @@ document.getElementById("weaponCard").addEventListener("click", pickWeapon);
 // This function will be invoked when you click on the room card.
 const pickRoom = (event) => {
   event.preventDefault();
+
+  // To remove the reveal the crime message if any
+  cleanRevealMysteryMessage();
+
   // This will randomly select a room from the rooms. And add that to the mystery object.
   mystery.room = randomSelector(rooms);
 
@@ -250,3 +262,7 @@ const revealMystery = (event) => {
 };
 
 document.getElementById("revealCard").addEventListener("click", revealMystery);
+
+const cleanRevealMysteryMessage = () => {
+  document.getElementById("mystery").innerHTML = "";
+};
