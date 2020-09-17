@@ -4,34 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Technigo Project Cluedo</title>
+    <link rel="stylesheet" href="style.css"/>
+    <title>A Game of Cluedo</title>
   </head>
   <body>
+
+<!-- HEADER SECTION -->
+    <header>
+      <h1 class="header-title">
+        WELCOME TO A GAME OF CLUEDO
+      </h1>
+      <h2 class="header-subtitle">
+        Start your game by clicking on each card below.
+      </h2>
+    </header>
+
+<!-- CARDS SECTION -->
     <section class="cards">
       <article class="killer-deck" id="killerCard" onclick='pickKiller()'>
-        <p>KILLER</p>
+        <p class="card-title">KILLER</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
+        <img id="killerImage" class="killer-images" src=""/>
         <p id="killerDescription"></p>
+        <img id="killerIcon" class="deck-image" src="./killer.png" alt="killer">
       </article>
       <article class="weapon-deck" id="weaponCard" onclick='pickWeapon()'>
-        <p>WEAPON</p>
+        <p class="card-title">WEAPON</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
         <p id="weaponDanger"></p>
+        <img id="weaponImage" class="weapon-images" src=""/>
+        <img id="weaponIcon" class="deck-image" src="./weapon.png" alt="killer-weapon">
       </article>
       <article class="room-deck" id="roomCard" onclick='pickRoom()'>
-        <p>ROOM</p>
+        <p class="card-title">ROOM</p>
         <p id="roomName"></p>
+        <img id="roomImage" class="room-images" src=""/>
+        <img id="roomIcon" class="deck-image" src="./room.png" alt="killer">
       </article>
     </section>
 
-    <h1 id="mystery"></h1>
+  <!-- REVEAL SECTION -->
+    <div class="buttons-wrapper">
+      <button class="button" onclick="revealMystery()">REVEAL THE CRIME</button>
+      <button class="new-button" onclick="clearRevealResults()">START A NEW GAME</button>
+    </div>
 
-    <button onclick='revealMystery()'>REVEAL THE CRIME</button>
+    <div id="reveal" class="reveal-wrapper">
+      <img class="reveal-detective" src="./detective.png" alt="detective">
+      <div class="bubble">
+        <h1 id="mystery" class="reveal-text"></h1>
+      </div>
+    </div>
 
     <script src="clue.js"></script>
   </body>

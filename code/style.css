@@ -1,10 +1,55 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Courier New", monospace, "Courier New", Courier;
+  padding-bottom: 50px;
+}
+
+/** HEADER **/
+
+header {
+  background-color:whitesmoke;
+  margin:0;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 2px #7f0000;
+}
+
+.header-title {
+  padding: 0;
+  margin: 0;
+  color: #7f0000;
+  font-size: 62px;
+  font-weight: normal;
+}
+
+.header-subtitle {
+  padding: 20px 0;
+  margin: 0;
+  color:  #7f0000;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+/** CARD SECTION **/
+
+.card-title {
+  background-color: transparent;
+  font-size: 20px;
+  color: #7f0000;
+  font-weight: bold;
+  padding-bottom: 5px;
+  transition: 0.3s;
+}
+
+.card-title:hover {
+  color: #c70000;
 }
 
 p {
-  margin: 1px;
+  margin: 2px;
   font-weight: 300;
   background-color: #fff;
 }
@@ -13,7 +58,7 @@ p {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  background: #7f0000;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -22,37 +67,135 @@ p {
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: whitesmoke;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  cursor: pointer;
+}
+
+.killer-images {
+  padding: 20px;
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: whitesmoke;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  cursor: pointer;
+}
+
+.weapon-images {
+  width: 150px;
+  padding: 40px 0px;
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: whitesmoke;;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  cursor: pointer;
+}
+
+.room-images {
+  width: 150px;
+  padding-top: 80px;
+}
+
+.deck-image {
+  position: relative;
+  width: 50%;
+  padding-top: 70px;
+}
+
+.killer-deck .deck-image {
+  padding-top: 40px;
+}
+
+/* REVEAL SECTION */
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 button {
-  padding: 8px 16px;
-  background: crimson;
-  border: none;
-  font-size: 20px;
-  border-radius: 8px;
+  padding: 16px 16px;
+  background: #7f0000;
+  border: 1px solid #7f0000;
+  color: white;
+  font-size: 25px;
+  font-family: 'Courier New', Courier, monospace;
+  border-radius: 12px;
   display: block;
-  margin: 0 auto;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+.new-button {
+  background: whitesmoke;
+  color: #7f0000;
+}
+
+button:hover {
+  background: #ce0018;
+  color: white;
+  border: none;
+  cursor: pointer;
+  -webkit-box-shadow: 11px 11px 53px 32px rgba(206,0,24,0.8);
+  -moz-box-shadow: 11px 11px 53px 32px rgba(206,0,24,0.8);
+  box-shadow: 11px 11px 53px 32px rgba(206,0,24,0.8);
+}
+
+.reveal-wrapper {
+  display: none;
+  justify-content: center;
+  align-content: center;
+  padding: 40px 0px;
+  transition: 0.3s;
+}
+
+.reveal-detective {
+  width: 15%;
+  padding: 20px;
+}
+
+.bubble {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	background:whitesmoke;
+  border-radius: .4em;
+  width: 25%;
+  height: 100%;
+}
+
+.bubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 22px solid transparent;
+	border-right-color: whitesmoke;
+	border-left: 0;
+	margin-top: -22px;
+	margin-left: -22px;
+}
+
+.reveal-text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 36px;
+  font-weight: normal;
+  color: #7f0000;
+  padding: 20px;
+  margin: 0;
 }
