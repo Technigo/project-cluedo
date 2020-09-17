@@ -85,7 +85,7 @@ h2 {
 button {
   padding: 8px 16px;
   font-family: 'didot';
-  background: rgb(30, 189, 210);
+  background:crimson;
   border: none;
   font-size: 20px;
   border-radius: 8px;
@@ -94,8 +94,9 @@ button {
 }
 
 button:hover {
-  background:crimson;
+  background: rgb(30, 189, 210);
   color: #fff;
+  cursor: pointer;
 }
 
  /* FOOTER */
