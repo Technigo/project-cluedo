@@ -4,17 +4,103 @@ const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
   color: 'green',
-  description: 'He has a lot of connections',
+  description: 'Hypocritical Anglican priest',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Reverend'
+}
+const profPlum = {
+  firstName: 'Victor',
+  lastName: 'Plum',
+  color: 'plum',
+  description: 'Disgraced former psychiatrist',
+  age: 39,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
+const missScarlet = {
+  firstName: 'Cassandra',
+  lastName: 'Scarlet',
+  color: 'red',
+  description: 'Young, cunning and attractive',
+  age: 25,
+  image: 'assets/scarlet.png',
+  occupation: 'Madame'
+}
+const mrsPeacock = {
+  firstName: 'Eleanor',
+  lastName: 'Peacock',
+  color: 'blue',
+  description: 'A grande dame',
+  age: 54,
+  image: 'assets/peacock.png',
+  occupation: 'Shady housevife'
+}
+const cMustard = {
+  firstName: 'Colonel',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'A dignified, dapper and dangerous military man',
+  age: 61,
+  image: 'assets/mustard.png',
+  occupation: 'Military officer'
+}
+const mrsWhite = {
+  firstName: 'Mrs',
+  lastName: 'White',
+  color: 'white',
+  description: 'He has a lot of connections',
+  age: 48,
+  image: 'assets/white.png',
+  occupation: 'Servant'
 }
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  style: 'long',
+}
+const knife = {
+  name: 'knife',
+  weight: 10,
+  style: 'sharp',
+}
+const candlestick = {
+  name: 'candlestick',
+  weight: 10,
+  style: 'cemetary',
+}
+const dumbbell = {
+  name: 'dumbbell',
+  weight: 10,
+  style: 'heavy',
+}
+const poison = {
+  name: 'poison',
+  weight: 10,
+  style: 'deadly',
+}
+const axe = {
+  name: 'axe',
+  weight: 10,
+  style: 'rusty',
+}
+const bat = {
+  name: 'bat',
+  weight: 10,
+  style: 'baseball',
+}
+const trophy = {
+  name: 'trophy',
+  weight: 10,
+  style: 'beautypagant',
+}
+const pistol = {
+  name: 'pistol',
+  weight: 10,
+  style: 'military',
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -23,19 +109,49 @@ const rope = {
 
 const suspects = [
   mrGreen,
-  mrsWhite
-  // ...  and the rest
+  mrsWhite,
+  profPlum,
+  missScarlet,
+  mrsPeacock,
+  cMustard
 ]
 
-const weapons = []
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol,
+]
 
-const rooms = []
+const rooms = [
+  "Dining Room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Biliard Room",
+  "Lounge",
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "Living Room",
+  "Observatory",
+  "Theater",
+  "GuestHouse",
+  "Patio",
+]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
-const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
+const randomSelector = arrays => {
+  return arrays[Math.floor(Math.random() * arrays.length)]
 }
+randomSelector()
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
