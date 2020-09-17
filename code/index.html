@@ -1,65 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>SmoothDay - Smoothies for all days</title>
-  </head>
 
-  <body>
-    <!------------------ HEADER ------------------>
-    <header>
-      <h1>SmoothDay</h1>
-      <a href="#"><div class="hamburger"></a>
-        <div></div><div></div><div></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>SmoothDay - Smoothies for all days</title>
+</head>
+
+<body>
+<!-- HEADER -->
+  <header>
+    <h1>SmoothDay</h1>
+    <a href="#">
+      <div class="hamburger">
+    </a>
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>
+  </header>
+
+<!-- INTRO -->
+  <section class="intro">
+    <p>Start off your day with a smoothie of <span class="italic">our</span> choice.</p>
+
+    <div class="buttons">
+      <button class="main-button" onclick="randomizeSmoothie()">Randomize today's mix &#8594;</button>
+      <button>Current inventory &#8594;</button>
+    </div>
+  </section>
+
+
+<!-- INGREDIENTS/MAIN -->
+  <section class="ingredients-headers"> 
+    <div id="fruit-header" class="main-fruit-header">Main Fruit/berry</div>
+    <div id="mixer-header" class="mixer-header">Mixer</div>
+    <div id="superbooster-header" class="super-booster-header">Super Booster</div>
+  </section>
+
+  <section class="ingredients">
+    <div id="main-fruit-box"></div>
+    <div id="mixer-box" class="mixer"></div>
+    <div id="superbooster-box"></div>
+  </section>
+  <section class="ingredients-headers">
+    <button onclick="pickMainFruit()">Randomize main fruit/berry &#8594;</button>
+    <button class="mixer-header" onclick="pickMixer()">Randomize Mixer &#8594;</button>
+    <button onclick="pickSuperBooster()">Randomize Super Booster &#8594;</button>
+  </section>
+
+
+<!-- RECIPE / FAVORITES -->
+  <section class="recipe">
+    <div class="recipe--finished-smoothie">
+      <p id="date" class="date"></p>
+      <p id="finished-smoothie"></p>
+    </div>
+
+    <div class="recipe--right">
+      <button id="mixer-button" class="recipe--mixer-button" onclick="mixSmoothie()">Show recipe &#8594; </button>
+      <button id="mixer-button" class="recipe--mixer-button black-background">Save recipe as favorite &#8594; </button>
+
+      <div class="favorite-fruit--form-box">
+        <form>
+          <label for="favorite-fruit" class="favorite-fruit--label">Select your favorite fruit: </label>
+          <select onchange="selectFavorite(value)" id="fruit-input"  class="favorite-fruit--select">
+           <option value="Select">Select Fruit</option>
+           <option value="Apple">Apple</option>
+           <option value="Banana">Banana</option>
+           <option value="Mango">Mango</option>
+           <option value="Orange">Orange</option>
+           <option value="Raspberry">Raspberry</option>
+           <option value="Lemon">Lemon</option>
+         </select>
+         <!-- <button type="submit" value="submit" id="favorite-fruit--submit" class="favorite-fruit-form--button" onclick="selectFavorite()">OK!</button> -->
+         </form>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <!------------------ INTRO ------------------>
-    <section class="intro">      
-      <p>Start off your day with a smoothie of <span class="italic">our</span> choice.</p>
 
-      <div class="buttons">
-        <button class="main-button" onclick="randomizeSmoothie()">Randomize today's mix &#8594;</button>
-        <button>Current inventory &#8594;</button>
-      </div>
-    </section>
+  <footer>
+    <p>A website made by Karin Nordkvist @ Technigo - 4/24</p>
+    <p>Copyright 2020 - Images from Unsplash/Google</p>
+  </footer>
 
-    <!------------------ INGREDIENTS/MAIN ------------------>
-    
-    <section class="ingredients-headers">
-      <div id="fruit-header" class="main-fruit-header">Main Fruit/berry</div>
-      <div id="mixer-header" class="mixer-header">Mixer</div>
-      <div id="superbooster-header" class="super-booster-header">Super Booster</div>
-    </section>
-    <section class="ingredients">
-      <div id="main-fruit-box" onclick="pickMainFruit()"></div>
-      <div id="mixer-box" class="mixer" onclick="pickMixer()"></div>
-      <div id="superbooster-box" onclick="pickSuperBooster()"></div>
-    </section>
 
-    <!------------------ RESULT/SMOOTHIE ------------------>
-    
-    <section class="recipe">
-      <div>
-        <p id="date" class="date"></p>
-        <p id="finished-smoothie"></p>
-      </div>
+  <script src="./smoothie.js"></script>
+</body>
 
-      <div class="mixer-button">
-        <button id="mixer-button" onclick="mixSmoothie()">Show/update mix &#8594;  </button>
-      </div>
-    </section>
-    
-
-    <footer>
-      <p>A website made by Karin Nordkvist @ Technigo - 4/24</p>
-      <p>Copyright 2020 - Images from Unsplash/Google</p>
-    </footer>
-    
-
-    <script src="./smoothie.js"></script>
-  </body>
 </html>

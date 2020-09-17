@@ -34,7 +34,7 @@ p {
 }
 
 button {
-  padding: 8px 0px;
+  padding: 8px 15px;
   width: 32.5%;
   background: #000;
   color: #fff;
@@ -42,6 +42,7 @@ button {
   font-size: 20px;
   display: block;
   text-decoration: none;
+  text-align: left;
 }
 
 button:hover {
@@ -84,7 +85,6 @@ header {
 
 .buttons {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   margin: 50px 0;
 }
@@ -95,15 +95,10 @@ header {
 
 
 /* ------------------- INGREDIENTS ------------------- */
-.ingredients {
-  display: flex;
-  align-items: center;
-  margin: 20px 0 50px 0;
-}
-
 .ingredients-headers {
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .ingredients-headers div {
@@ -111,10 +106,19 @@ header {
   font-size: 28px;
 }
 
+.ingredients {
+  display: flex;
+  align-items: center;
+}
+
 .ingredients div {
   width: 33.3%;
   background: #ccc;
   height: 400px;
+}
+
+.ingredients-headers button {
+  width: 33.3%;
 }
 
 .mixer, .mixer-header {
@@ -124,9 +128,23 @@ header {
 /* Had to use !important to make it overrule */
 #main-fruit-box, #mixer-box, #superbooster-box {
   background-position: center !important;
+  background-size: cover !important;
   object-fit: cover !important;
   background-repeat: no-repeat !important;
 }
+
+#main-fruit-box {
+  background: url(./images/fruits.jpg);
+}
+
+#mixer-box {
+  background: url(./images/mixers.jpg);
+}
+
+#superbooster-box {
+  background: url(./images/superbooster.jpg)
+}
+
 
 /* Had to use !important to make it overrule */
 .loading {
@@ -141,6 +159,7 @@ header {
   display: flex;
   align-items: flex-start;
   justify-items: flex-end;
+  margin-top: 50px;
 }
 
 .date {
@@ -149,22 +168,50 @@ header {
   color: #8900C9;
 }
 
-.mixer-button {
-  text-align: -webkit-right;
+.recipe--mixer-button, .favorite-fruit--form-box {
+  float: right;
 }
 
-.recipe div {
+.recipe--finished-smoothie, .recipe--right {
   width: 50%;
 }
 
-.recipe button {
+.recipe--mixer-button {
   width: 65%;
   background: #999;
+  margin-bottom: 10px;
+}
+
+.black-background {
+  background: #000;
 }
 
 /* Had to use !important to make it overrule */
 .active {
   background: #8900C9 !important;
+}
+
+.favorite-fruit--form-box {
+  padding: 30px 0;
+  text-align: left;
+  width: 65%
+}
+
+.favorite-fruit--label {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.favorite-fruit--select {
+  width: 81%; 
+  font-size: 20px;
+  padding: 8px;
+}
+
+.favorite-fruit-form--button {
+  width: 5vw;
+  display: inline-block;
 }
 
 

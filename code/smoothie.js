@@ -96,6 +96,11 @@ const chiaSeeds = {
   image: './images/chia.jpg'
 }
 
+let favorite = {
+  name: undefined,
+  tastesGoodWith: undefined
+}
+
 // Arrays made with all ingredients separated into 3 groups
 const mainFruits = [
   apple,
@@ -120,12 +125,58 @@ const superBoosters = [
   chiaSeeds
 ]
 
+let mainFruitsPlusFavorite = [
+  apple,
+  banana,
+  mango,
+  orange,
+  raspberry,
+  lemon
+]
+
 // Object that will define all ingredients currently selected in the smoothie
 let smoothie = {
   mainFruit: undefined,
   mixer: undefined,
   superBooster: undefined
 }
+
+let favoriteFruit = document.getElementById('fruit-input')
+
+const selectFavorite = (value) => {
+  event.preventDefault()
+  favoriteFruit = value.replace(/(^"|"$)/g, '')
+
+  // mainFruitsPlusFavorite.splice(6, 1, favoriteFruit)
+  const removeFavorites = () => {
+    if (mainFruitsPlusFavorite.length > 6) {
+      mainFruitsPlusFavorite.splice(-3, 3)
+    }
+  }
+
+  if (favoriteFruit == "Apple") {
+    removeFavorites()
+    mainFruitsPlusFavorite.push(mainFruits[0], mainFruits[0], mainFruits[0])
+  } else if (favoriteFruit == "Banana") {
+    removeFavorites()
+    mainFruitsPlusFavorite.push(mainFruits[1], mainFruits[1], mainFruits[1])
+  } else if (favoriteFruit == "Mango") {
+    removeFavorites()
+    mainFruitsPlusFavorite.push(mainFruits[2], mainFruits[2], mainFruits[2])
+  } else if (favoriteFruit == "Orange") {
+    removeFavorites()
+    mainFruitsPlusFavorite.push(mainFruits[3], mainFruits[3], mainFruits[3])
+  } else if (favoriteFruit == "Raspberry") {
+    removeFavorites()
+    mainFruitsPlusFavorite.push(mainFruits[4], mainFruits[4], mainFruits[4])
+  } else if (favoriteFruit == "Lemon") {
+    removeFavorites()
+    mainFruitsPlusFavorite.push(mainFruits[5], mainFruits[5], mainFruits[5])
+  }
+  
+  console.log(mainFruitsPlusFavorite)
+}
+
 
 // Function that selects a random object from chosen array
 const randomSelector = array => {
@@ -135,11 +186,11 @@ const randomSelector = array => {
 // Function that toggles loading-gif
 const toggleLoader = (whatBox) => {
   document.getElementById(whatBox).classList.add('loading')
-
+  // remove the loading-gif...
   const removeLoader = () => {
     document.getElementById(whatBox).classList.remove('loading')
   }
-
+  //... after 1.5 second
   setTimeout(removeLoader, 1500)
 }
 
@@ -147,12 +198,28 @@ const toggleLoader = (whatBox) => {
 // + add value to smoothie-object
 // + check if smoothie-button color should be changed
 const pickMainFruit = () => {
+
+  console.log(mainFruitsPlusFavorite)
+  
   mainFruit = randomSelector(mainFruits)
+  
+  if (mainFruitsPlusFavorite[6] == undefined) {
+    mainFruit = randomSelector(mainFruits)
+   console.log("Not added")
+  } else {
+    mainFruit = randomSelector(mainFruitsPlusFavorite)
+  }
 
   toggleLoader('main-fruit-box')
 
-  document.getElementById('main-fruit-box').style.background = `url('${mainFruit.image}')`
-  document.getElementById('fruit-header').innerHTML = `Main Fruit/berry: ${mainFruit.name}`
+  //TODO: Create a function for this to apply to all categories
+  const header = document.getElementById('fruit-header')
+  const box = document.getElementById('main-fruit-box')
+
+  box.style.background = `url('${mainFruit.image}')`
+  // header.innerHTML = `Main Fruit/berry: ${mainFruit.name}`
+  // document.getElementById('main-fruit-box').style.background = `url('${mainFruit.image}')`
+  // document.getElementById('fruit-header').innerHTML = `Main Fruit/berry: ${mainFruit.name}`
 
   smoothie.mainFruit = mainFruit.name
   colorCheck()
@@ -164,7 +231,7 @@ const pickMixer = () => {
   toggleLoader('mixer-box')
 
   document.getElementById('mixer-box').style.background = `url('${mixer.image}')`
-  document.getElementById('mixer-header').innerHTML = `Mixer: ${mixer.name}`
+  // document.getElementById('mixer-header').innerHTML = `Mixer: ${mixer.name}`
 
   smoothie.mixer = mixer.name
   colorCheck()
@@ -176,7 +243,7 @@ const pickSuperBooster = () => {
   toggleLoader('superbooster-box')
 
   document.getElementById('superbooster-box').style.background = `url('${superBooster.image}')`
-  document.getElementById('superbooster-header').innerHTML = `Super Booster: ${superBooster.name}`
+  // document.getElementById('superbooster-header').innerHTML = `Super Booster: ${superBooster.name}`
 
   smoothie.superBooster = superBooster.name
   colorCheck()
@@ -201,7 +268,7 @@ const mixSmoothie = () => {
   } else if (smoothie.superBooster == undefined) {
     document.getElementById('finished-smoothie').innerHTML = "Please select a Super Booster"
   } else {
-    document.getElementById('finished-smoothie').innerHTML = `A ${mainFruit.color}, ${mainFruit.category} ${mainFruit.name} smoothie mixed with ${mixer.name} and spiced up with ${superBooster.amount} of ${superBooster.name}.`
+    document.getElementById('finished-smoothie').innerHTML = `A smoothie made of ${mainFruit.color}, ${mainFruit.category} ${mainFruit.name} mixed with ${mixer.name} and spiced up with ${superBooster.amount} of ${superBooster.name}.`
   }
 }
 
@@ -216,3 +283,4 @@ const randomizeSmoothie = () => {
   pickMixer()
   pickSuperBooster()
 }
+
