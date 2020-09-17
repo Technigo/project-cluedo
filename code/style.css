@@ -111,17 +111,24 @@ header {
   align-items: center;
 }
 
-.ingredients div {
+.main-fruit-box, .mixer-box, .superbooster-box {
   width: 33.3%;
   background: #ccc;
   height: 400px;
+}
+
+.main-fruit-box--ingredient {
+  display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+  background: #fff;
 }
 
 .ingredients-headers button {
   width: 33.3%;
 }
 
-.mixer, .mixer-header {
+.mixer-box, .mixer-header {
   margin: 0 20px;
 }
 
@@ -204,7 +211,7 @@ header {
 }
 
 .favorite-fruit--select {
-  width: 81%; 
+  width: 100%; 
   font-size: 20px;
   padding: 8px;
 }
@@ -212,6 +219,12 @@ header {
 .favorite-fruit-form--button {
   width: 5vw;
   display: inline-block;
+}
+
+.favorite-fruit--comment {
+  margin-top: 10px; 
+  font-size: 12px;
+  font-style: italic;
 }
 
 

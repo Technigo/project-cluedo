@@ -1,13 +1,10 @@
 // ------------------ Main Fruits ------------------
-
-// tastesGoodWith = favoriteWeapon
-
 const apple = {
   name: 'Apple',
   color: 'green',
   category: 'fresh',
   image: './images/apple.jpg',
-  tastesGoodWith: 'Coconut water'
+  tastesGoodWith: 'Coconut water' //Not using these for now, rather saving them for later
 }
 
 const banana = {
@@ -96,12 +93,7 @@ const chiaSeeds = {
   image: './images/chia.jpg'
 }
 
-let favorite = {
-  name: undefined,
-  tastesGoodWith: undefined
-}
-
-// Arrays made with all ingredients separated into 3 groups
+// Arrays made with all ingredients, separated into 3 groups
 const mainFruits = [
   apple,
   banana,
@@ -125,6 +117,7 @@ const superBoosters = [
   chiaSeeds
 ]
 
+// Array for favorites (Objects will be added when favorite is selected in browser)
 let mainFruitsPlusFavorite = [
   apple,
   banana,
@@ -143,17 +136,20 @@ let smoothie = {
 
 let favoriteFruit = document.getElementById('fruit-input')
 
+// Select a favorite fruit to make it appear more frequently in the mix
 const selectFavorite = (value) => {
   event.preventDefault()
   favoriteFruit = value.replace(/(^"|"$)/g, '')
 
-  // mainFruitsPlusFavorite.splice(6, 1, favoriteFruit)
+  // If a favorite is selected, remove the extra favorite-objects in array
   const removeFavorites = () => {
     if (mainFruitsPlusFavorite.length > 6) {
       mainFruitsPlusFavorite.splice(-3, 3)
     }
   }
 
+  // If favorite is selected in browser, add matching object from mainFruit-array x 3 
+  // to a new array which will later be used to randomize fruit 
   if (favoriteFruit == "Apple") {
     removeFavorites()
     mainFruitsPlusFavorite.push(mainFruits[0], mainFruits[0], mainFruits[0])
@@ -173,10 +169,7 @@ const selectFavorite = (value) => {
     removeFavorites()
     mainFruitsPlusFavorite.push(mainFruits[5], mainFruits[5], mainFruits[5])
   }
-  
-  console.log(mainFruitsPlusFavorite)
 }
-
 
 // Function that selects a random object from chosen array
 const randomSelector = array => {
@@ -198,27 +191,19 @@ const toggleLoader = (whatBox) => {
 // + add value to smoothie-object
 // + check if smoothie-button color should be changed
 const pickMainFruit = () => {
-
-  console.log(mainFruitsPlusFavorite)
-  
   mainFruit = randomSelector(mainFruits)
-  
+
+  // Pick a random fruit, unless favorite is selected, 
+  // then pick random from a different array
   if (mainFruitsPlusFavorite[6] == undefined) {
     mainFruit = randomSelector(mainFruits)
-   console.log("Not added")
   } else {
     mainFruit = randomSelector(mainFruitsPlusFavorite)
   }
 
   toggleLoader('main-fruit-box')
 
-  //TODO: Create a function for this to apply to all categories
-  const header = document.getElementById('fruit-header')
-  const box = document.getElementById('main-fruit-box')
-
-  box.style.background = `url('${mainFruit.image}')`
-  // header.innerHTML = `Main Fruit/berry: ${mainFruit.name}`
-  // document.getElementById('main-fruit-box').style.background = `url('${mainFruit.image}')`
+  document.getElementById('main-fruit-box').style.background = `url('${mainFruit.image}')`
   // document.getElementById('fruit-header').innerHTML = `Main Fruit/berry: ${mainFruit.name}`
 
   smoothie.mainFruit = mainFruit.name
@@ -249,6 +234,13 @@ const pickSuperBooster = () => {
   colorCheck()
 }
 
+// Randomize-button in the header - to quickly randomize a smoothie
+const randomizeSmoothie = () => {
+  pickMainFruit()
+  pickMixer()
+  pickSuperBooster()
+}
+
 // Check if the show smoothie-button should change into 'active' color
 // (based on if all object properties of smoothie-object is set)
 const colorCheck = () => {
@@ -274,13 +266,8 @@ const mixSmoothie = () => {
 
 // Not finished. TODO: Fix function that will 
 // display what day, date, month and year it is
-document.getElementById('date').innerText = `<Day>, <date> of <month> <year>`
+// document.getElementById('date').innerText = `<Day>, <date> of <month> <year>`
 
 
-// Randomize-button in the header - to quickly randomize a smoothie
-const randomizeSmoothie = () => {
-  pickMainFruit()
-  pickMixer()
-  pickSuperBooster()
-}
+
 

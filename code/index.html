@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" type="image/png" href="./images/favicon.png">
   <title>SmoothDay - Smoothies for all days</title>
 </head>
 
@@ -41,10 +42,13 @@
   </section>
 
   <section class="ingredients">
-    <div id="main-fruit-box"></div>
-    <div id="mixer-box" class="mixer"></div>
-    <div id="superbooster-box"></div>
+    <div id="main-fruit-box" class="main-fruit-box">
+      <!-- <div id="main-fruit-ingredient" class="main-fruit-box--ingredient">Mango</div> -->
+    </div>
+    <div id="mixer-box" class="mixer-box"></div>
+    <div id="superbooster-box" class="superbooster-box"></div>
   </section>
+  
   <section class="ingredients-headers">
     <button onclick="pickMainFruit()">Randomize main fruit/berry &#8594;</button>
     <button class="mixer-header" onclick="pickMixer()">Randomize Mixer &#8594;</button>
@@ -55,7 +59,7 @@
 <!-- RECIPE / FAVORITES -->
   <section class="recipe">
     <div class="recipe--finished-smoothie">
-      <p id="date" class="date"></p>
+      <!-- <p id="date" class="date"></p> -->
       <p id="finished-smoothie"></p>
     </div>
 
@@ -65,7 +69,7 @@
 
       <div class="favorite-fruit--form-box">
         <form>
-          <label for="favorite-fruit" class="favorite-fruit--label">Select your favorite fruit: </label>
+          <label for="favorite-fruit" class="favorite-fruit--label">If you want to, select your favorite fruit*: </label>
           <select onchange="selectFavorite(value)" id="fruit-input"  class="favorite-fruit--select">
            <option value="Select">Select Fruit</option>
            <option value="Apple">Apple</option>
@@ -77,6 +81,7 @@
          </select>
          <!-- <button type="submit" value="submit" id="favorite-fruit--submit" class="favorite-fruit-form--button" onclick="selectFavorite()">OK!</button> -->
          </form>
+         <p class="favorite-fruit--comment">*This will be chosen more frequently in the randomizer</p>
       </div>
     </div>
   </section>
