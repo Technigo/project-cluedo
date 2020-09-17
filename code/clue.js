@@ -183,7 +183,7 @@ const mystery = {
   room: null
 };
 
-// Progress bar for loading cards
+// Progress bar for loading cards. Bar will oly be shown once clicked. 
 
 var i = 0;
 function move() {
@@ -210,13 +210,30 @@ function move() {
   }
 }
 
-const shuffleFavouriteWeapon = (suspect) => {
+/*const shuffleFavouriteWeapon = () => {
   suspect.favouriteWeapon = randomSelector(suspects).favouriteWeapon;
+  suspects.forEach((suspect) => (killer.favouriteWeapon = randomSelector(suspects).favouriteWeapon));
+  //suspects.forEach(suspect) => ((suspect.favouriteWeapon = randomSelector(weapons).name));
+  //mystery.killer.favouriteWeapon = randomSelector(weapons).name;
+  document.getElementById(
+    "killerFavWeapon"
+  ).innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
+}*/
+
+const shuffleFavouriteWeapon = (suspect) => {
+  suspects.forEach((suspect) => (suspect.favouriteWeapon = randomSelector(weapons).name));
+  //suspect.favouriteWeapon = randomSelector(weapons).name;
 }
 
 const testShuffle = () => {
   suspects.forEach(shuffleFavouriteWeapon);
 }
+
+document.getElementById("change").onclick = shuffleFavouriteWeapon;
+
+/*const testShuffle = () => {
+  suspects.forEach(shuffleFavouriteWeapon);
+}*/
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
