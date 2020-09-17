@@ -70,54 +70,63 @@ const mrsWhite = {
 
 const rope = {
   name: "rope",
+  image: "assets/rope.png",
   weight: 10,
   id : "rope"
 };
 
 const knife = {
   name: "knife",
+  image: "assets/knife.png",
   weight: 1,
   id: "knife"
 };
 
 const candlestick = {
   name: "candlestick",
+  image: "assets/candlestick.png",
   weight: 1,
   id: "candlestick"
 };
 
-const dumbell = {
-  name: "dumbell",
+const bomb = {
+  name: "bomb",
+  image: "assets/bomb.png",
   weight: 5,
-  id: "dumbell"
+  id: "bomb"
 };
 
 const poison = {
   name: "poison",
+  image: "assets/poison.png",
   weight: 1,
   id: "poison"
 };
 
 const axe = {
   name: "axe",
+  image: "assets/axe.png",
   weight: 7,
   id: "axe"
 };
 
 const bat = {
   name: "bat",
+  image: "assets/bat.png",
   weight: 4,
   id: "bat"
 };
 
-const trophy = {
-  name: "trophy",
+const wench = {
+  name: "wench",
+  image: "assets/wench.png",
   weight: 8,
-  id: "trophy"
+  id: "wench"
 };
 
 const pistol = {
   name: "pistol",
+  image: "assets/pistol.png",
   weight: 3,
   id: "pistol"
 };
@@ -141,11 +150,11 @@ const weapons = [
   rope,
   knife,
   candlestick,
-  dumbell,
+  bomb,
   poison,
   axe,
   bat,
-  trophy,
+  wench,
   pistol,
 ];
 
@@ -268,7 +277,10 @@ const pickWeapon = () => {
   document.getElementById(
     "weaponName"
   ).innerHTML = `${mystery.weapon.name}`;
-  //document.getElementById("killerImage").src = mystery.killer.image;
+  document.getElementById("weaponImage").src = mystery.weapon.image;
+  document.getElementById(
+    "weaponWeight"
+  ).innerHTML = `Weight: ${mystery.weapon.weight}`;
 };
 
 document.getElementById('weaponCard').onclick = pickWeapon;
