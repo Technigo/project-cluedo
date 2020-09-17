@@ -11,25 +11,28 @@
 
   <header>
     <div>CLUE <span style="color:red">&</span> DO</div>
-    <h1>Unveil the Mystery</h1>
+    <h1>Murder Mistery Picker</h1>
   </header>
   <body>
     <section class="cards">
-      <article class="killer-deck" id="killerCard">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="250" />
-        <p id="killerDescription"></p>
-        <p id ="favouriteWeapon"></p>
-      </article>
+        <article class="killer-deck" id="killerCard">
+          <div id="loaderKiller"></div>
+          <p>KILLER</p>
+          <p id="killerName"></p>
+          <p id="killerAge"></p>
+          <p id="killerOccupation"></p>
+          <img id="killerImage" src="" height="250" />
+          <p id="killerDescription"></p>
+          <p id ="favouriteWeapon"></p>
+        </article>
       <article class="weapon-deck" id="weaponCard">
+        <div id="loaderWeapon"></div>
         <p>WEAPON</p>
         <p id="weaponName"></p>
         <img id="weaponImage" src="" height="250" />
       </article>
       <article class="room-deck" id="roomCard">
+        <div id="loaderRoom"></div>
         <p>ROOM</p>
         <p id="roomName"></p>
         <img id="roomImage" src="" height="250" />

@@ -66,8 +66,35 @@ p {
   border-radius: 16px;
 }
 
+#loaderKiller, #loaderWeapon, #loaderRoom{
+  display:none;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #ffd571;
+  border-right: 16px solid #006a71;
+  border-bottom: 16px solid #931a25;
+  border-left: 16px solid #654062;
+  width: 75px;
+  height: 75px;
+  position: relative;
+  top:33%;
+  left:31%;
+  -webkit-animation: spin 2s infinite;
+  animation: spin 2s infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 h1 { 
-  font-size: 50px;
+  font-size: 30px;
   font-family: "Candal";
   color: #f72828;
   text-align: center;
@@ -75,7 +102,7 @@ h1 {
 
 h2 { 
   font-weight: bold;
-  font-size: 30px;
+  font-size: 25px;
   font-family: "didot";
   color: #ffffff;
   text-align: center;

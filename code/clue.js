@@ -263,53 +263,81 @@ const mystery = {
   killer: null,
   weapon: null,
   room: null
-}
+};
 
 // RANDOM KILLER FUNCTION
-const pickKiller = () => {
 
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects)
+const delayPickKiller = () => {
+  document.getElementById('loaderKiller').style.display = 'block'
+  setTimeout(pickKiller, 1000)
+}
+
+document.getElementById('killerCard').addEventListener('click', delayPickKiller);
+
+const pickKiller = () => {
+  document.getElementById('loaderKiller').style.display = 'none'
+  document.getElementById('killerCard').removeEventListener('click', delayPickKiller) // So the loader doesn't show in next click
+
+  mystery.killer = randomSelector(suspects) // This will randomly select a killer from the suspects. And add that to the mystery object.
+
 
   // This will change what information about the killer is displayed
-
-  document.getElementById('killerCard').style.background = mystery.killer.color;
-  document.getElementById('killerImage').src = mystery.killer.image;
-  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`;
-  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`;
+  document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerImage').src = mystery.killer.image
+  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
 
   // SHUFFLE FAVOURITE WEAPON
-  const shuffleFavouriteWeapon = () => { 
+  const shuffleFavouriteWeapon = () => {
     mystery.favouriteWeapon = randomSelector(weapons)
     document.getElementById('favouriteWeapon').innerHTML = `Favourite Weapon: ${mystery.favouriteWeapon.name}`
+  }
+  shuffleFavouriteWeapon()
 }
-      shuffleFavouriteWeapon()
-}
-document.getElementById('killerCard').onclick = pickKiller;
+
+
 
 
 // RANDOM WEAPON FUNCTION
 
+const delayPickWeapon = () => {
+  document.getElementById('loaderWeapon').style.display = 'block'
+  setTimeout(pickWeapon, 1000)
+}
+
+document.getElementById('weaponCard').addEventListener('click', delayPickWeapon);
+
 const pickWeapon = () => { 
+  document.getElementById('loaderWeapon').style.display = 'none'
+  document.getElementById('weaponCard').removeEventListener('click', delayPickWeapon)
+  
   mystery.weapon = randomSelector(weapons)
 
   document.getElementById('weaponCard').style.background = '#FFFFFF';
   document.getElementById('weaponImage').src = mystery.weapon.image;
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
 }
-document.getElementById('weaponCard').onclick = pickWeapon;
 
 
 // RANDOM ROOM FUNCTION
+
+const delayPickRoom = () => {
+  document.getElementById('loaderRoom').style.display = 'block'
+  setTimeout(pickRoom, 1000)
+}
+document.getElementById('roomCard').addEventListener('click', delayPickRoom)
+
 const pickRoom = () => { 
+  document.getElementById('loaderRoom').style.display = 'none'
+  document.getElementById('roomCard').removeEventListener('click', delayPickRoom)
+  
   mystery.room = randomSelector(rooms)
 
   document.getElementById('roomCard').style.background = '#FFFFFF';
   document.getElementById('roomName').innerHTML = `${mystery.room.name}`;
   document.getElementById('roomImage').src = mystery.room.image;
 }
-document.getElementById('roomCard').onclick = pickRoom;
 
 // MYSTERY REVEAL FUNCTION 
 
