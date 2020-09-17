@@ -4,7 +4,7 @@ const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
   color: "green",
-  description: "He is an entrepeneur with a illegal hobby",
+  description: "He is an entrepeneur with an illegal hobby",
   age: 45,
   image: "image/killer/green.jpg",
   occupation: "Entrepreneur",
@@ -316,8 +316,6 @@ const pickRoom = () => {
 
 document.getElementById("roomCard").addEventListener("click", pickRoom);
 
-
-
 // STEP 4 
 
 // GET OPEN MODEL ELEMENT
@@ -327,15 +325,15 @@ const closeModalButtons = document.querySelectorAll('[data-close-button]')
 // SHOW AND HIDE OVERLAY
 const overlay = document.getElementById('overlay')
 
+// OPEN MODAL const pickWeapon = () => {
 
-// OPEN MODAL
-function openModal(modal) {
+const openModal = (modal) => {
   if (modal == null) return
   modal.classList.add('active')
   overlay.classList.add('active')
   document.getElementById(
     "modal-body"
-  ).innerHTML = `The brutal murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`
+  ).innerHTML = `The brutal murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}....`
 }
 
 openModalButtons.forEach(button => {
@@ -346,7 +344,7 @@ openModalButtons.forEach(button => {
 })
 
 // CLOSE MODAL
-function closeModal(modal) {
+const closeModal = (modal) => {
   if (modal == null) return
   modal.classList.remove('active')
   overlay.classList.remove('active')
