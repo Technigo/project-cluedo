@@ -102,7 +102,7 @@ const dumbbell = {
   name: 'dumbbell',
   material: 'iron',
   id: 'dumbbell',
-  image: 'assets/green.png',
+  image: 'assets/dumbbell.png',
 }
 console.log(dumbbell);
 
@@ -110,7 +110,7 @@ const poison = {
   name: 'poison',
   material: 'liquid',
   id: 'poison',
-  image: 'assets/green.png',
+  image: 'assets/poison.png',
 }
 console.log(poison);
 
@@ -118,28 +118,28 @@ const axe = {
   name: 'axe',
   material: 'metal',
   id: 'axe',
-  image: 'assets/green.png',
+  image: 'assets/axe.png',
 }
 console.log(axe);
 
 const bat = {
   name: 'bat',
   material: 'wood',
-  image: 'assets/green.png',
+  image: 'assets/bat.png',
 }
 console.log(bat);
 
 const trophy = {
   name: 'trophy',
   material: 'silver',
-  image: 'assets/green.png',
+  image: 'assets/trophy.png',
 }
 console.log(trophy);
 
 const pistol = {
   name: 'pistol',
   material: 'metal',
-  image: 'assets/green.png',
+  image: 'assets/pistol.png',
 }
 console.log(pistol);
 

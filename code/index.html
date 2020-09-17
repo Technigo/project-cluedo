@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600,900&display=swap" rel="stylesheet">
   <title>Technigo Project Cluedo</title>
 </head>
 
 <body>
   <header class="game-header">
-    <img class="game-image" src="cluedo.png" alt="Cluedo logo" width="20%">
+    <h1>Cluedo</h1>
+    <!--<img class="game-image" src="assets/cluedologo.png" alt="Cluedo logo" width="20%" height="">-->
   </header>
 
   <!--Cards -->
@@ -60,11 +62,16 @@
 
   </section>
 
-  <h1 id="mystery"></h1>
+  <h3 id="mystery"></h3>
 
   <button id="reveal">REVEAL THE CRIME!</button>
   <!--<button onclick="revealMystery()"</button>-->
 
+  <footer>
+    <h2>A site made by Agnes Harrysson Hansson
+    </h2>
+    <h6>A Technigo Project</h6>
+  </footer>
   <button onclick="restart()" id="restartButton">Start Again</button>
   <script src="clue.js"></script>
 </body>
