@@ -1,4 +1,5 @@
-//*** HTML ELEMENT VARIABLES ***//
+
+///*** VARIABLES ***//
 
 const killerNameElement = document.getElementById("killerName")
 const killerAgeElement = document.getElementById("killerAge")
@@ -51,7 +52,6 @@ const missScarlet = {
   occupation: 'Developer'
 }
 
-// Killers array
 const killers = [
   mrGreen,
   professorPlum,
@@ -106,9 +106,8 @@ const rooms = [
   library
 ]
 
-//*** OTHER OBJECTS AND ARRAYS ***//
+//*** MYSTERY OBJECT ***//
 
-// Mystery object
 let mystery =  {
   killer: null,
   weapon: null,
