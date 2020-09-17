@@ -11,7 +11,7 @@ const mrGreen = {
   age: 45,
   image: "assets/green.png",
   occupation: "Entrepreneur",
-  favouriteWeapon: "bat", //exactly the same as weapon name, like 'name: "bat",'
+  favouriteWeaponId: "bat", //exactly the same as weapon name, e.g. 'name: "bat",'
 };
 // *** 2. Professor Plum
 const profPlum = {
@@ -22,7 +22,7 @@ const profPlum = {
   age: 36,
   image: "assets/plum.png",
   occupation: "Professor",
-  favouriteWeapon: "trophy",
+  favouriteWeaponId: "trophy",
 };
 // *** 3. Miss Scarlet
 const missScarlet = {
@@ -33,7 +33,7 @@ const missScarlet = {
   age: 25,
   image: "assets/scarlet.png",
   occupation: "Actress",
-  favouriteWeapon: "pistol",
+  favouriteWeaponId: "pistol",
 };
 // *** 4. Mrs Peacock
 const mrsPeacock = {
@@ -44,7 +44,7 @@ const mrsPeacock = {
   age: 32,
   image: "assets/peacock.png",
   occupation: "Socialite",
-  favouriteWeapon: "knife",
+  favouriteWeaponId: "knife",
 };
 // *** 5. Colonel Mustard
 const colMustard = {
@@ -55,7 +55,7 @@ const colMustard = {
   age: 55,
   image: "assets/mustard.png",
   occupation: "Colonel",
-  favouriteWeapon: "candlestick",
+  favouriteWeaponId: "candlestick",
 };
 // *** 6. Mrs White
 const mrsWhite = {
@@ -66,7 +66,7 @@ const mrsWhite = {
   age: 67,
   image: "assets/white.png",
   occupation: "Housekeeper",
-  favouriteWeapon: "poison",
+  favouriteWeaponId: "poison",
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -168,13 +168,12 @@ const rooms = [
   "Patio",
 ];
 
-console.log(suspects);
-console.log(weapons);
-console.log(rooms);
-
-console.log(suspects[3]);
-console.log(weapons[0]);
-console.log(rooms[rooms.length - 1]);
+// Mystery object
+const mystery = {
+  killer: null,
+  weapon: null,
+  room: null,
+};
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -183,11 +182,26 @@ const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-// Mystery object
-const mystery = {
-  killer: null,
-  weapon: null,
-  room: null,
+////////////////////////////////////////////////////////////////////////////////////////
+
+// *** tryed to solve and undertand this problem in sandbox:
+//https://codesandbox.io/s/random-pet-fvb4z
+//https://codesandbox.io/s/random-pet-with-favourite-pet-u11le *** WITH COMMENTS!
+
+// *** Most-likely machine ***
+const mostLikelyRandomSelector = (items, favouriteItem) => {
+  // For each favouriteItem there will be space for 5 more of them in an array. E.g. "5 knifes".
+  const favouriteItemsDuplicated = new Array(5).fill(favouriteItem);
+
+  // (...spread) Takes the array and spreads the items out.
+  // E.g. taking out all your nested individual russian dolls and lay them out in its own individual pieces.
+  // Explains Spread ---> https://www.samanthaming.com/tidbits/92-6-use-cases-of-spread-with-array/
+  // Merging arrays. RandomArray = random Array + favouriteItemsDuplicated (e.g all weapons + 5 knifes)
+  const randomArray = [...items, ...favouriteItemsDuplicated];
+
+  const randomIndex = Math.floor(Math.random() * randomArray.length);
+  //console.log(randomArray);
+  return randomArray[randomIndex];
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -221,7 +235,7 @@ const pickKiller = () => {
     ).innerHTML = `${mystery.killer.description}`;
     document.getElementById(
       "favouriteWeapon"
-    ).innerHTML = `Favourite weapon:<br>${mystery.killer.favouriteWeapon}`;
+    ).innerHTML = `Favourite weapon:<br>${mystery.killer.favouriteWeaponId}`;
 
     // time delay millisecond
   }, 300);
@@ -237,17 +251,22 @@ const pickWeapon = () => {
   // flips card
   document.getElementById("weaponCard").classList.add("flip");
 
+  // finding the weapon object with the killers favourite weapon id
+  const favouriteWeapon = weapons.find(
+    (weapon) => weapon.name === mystery.killer.favouriteWeaponId
+  );
+
   // time delay stars
   setTimeout(() => {
-    // random weapon selector
-    mystery.weapon = randomSelector(weapons);
+    // "most likely" random weapon selector
+    mystery.weapon = mostLikelyRandomSelector(weapons, favouriteWeapon);
 
     // changing card info
     document.getElementById("weaponCard");
     document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
     document.getElementById(
       "weaponWeight"
-    ).innerHTML = `${mystery.weapon.weight}`;
+    ).innerHTML = `${mystery.weapon.weight} of weight`;
 
     // time delay millisecond
   }, 300);
@@ -278,13 +297,17 @@ const pickRoom = () => {
 
 document.getElementById("roomCard").addEventListener("click", pickRoom);
 
+////////////////////////////////////////////////////////////////////////////////////////
+
 // *** Favourite weapon ***
 
+/*
 const shuffleFavouriteWeapon = () => {
   suspects.forEach((suspect) => {
     suspect.favouriteWeapon = randomSelector(weapons).name;
   });
 };
+*/
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
