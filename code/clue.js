@@ -1,21 +1,20 @@
-
 ///*** VARIABLES ***//
 
-const killerNameElement = document.getElementById("killerName")
-const killerAgeElement = document.getElementById("killerAge")
-const killerOccupationElement = document.getElementById("killerOccupation")
+const killerName = document.getElementById("killerName")
+const killerAge = document.getElementById("killerAge")
+const killerOccupation = document.getElementById("killerOccupation")
 
-const weaponNameElement = document.getElementById("weaponName")
-const weaponWeightElement = document.getElementById("weaponWeight")
+const weaponName = document.getElementById("weaponName")
+const weaponWeight = document.getElementById("weaponWeight")
 
-const roomNameElement = document.getElementById("roomName")
-const roomColorElement = document.getElementById("roomColor")
+const roomName = document.getElementById("roomName")
+const roomColor = document.getElementById("roomColor")
 
-const mysteryElement = document.getElementById("mystery")
+const mysteryButton = document.getElementById("mysteryButton")
 
-const killerCardElement = document.getElementById("killerCard")
-const weaponCardElement = document.getElementById("weaponCard")
-const roomCardElement = document.getElementById("roomCard")
+const killerCard = document.getElementById("killerCard")
+const weaponCard = document.getElementById("weaponCard")
+const roomCard = document.getElementById("roomCard")
 
 const textClass = document.querySelectorAll(".text") 
 const cardClass = document.querySelectorAll(".card")
@@ -128,8 +127,8 @@ const changeCard = (card) => {
 
 // Changes back button content and background
 const changeButton = () => {
-  mysteryElement.innerHTML = "?"
-  mysteryElement.style.background = "#EFF066"
+  mysteryButton.innerHTML = "?"
+  mysteryButton.style.background = "#EFF066"
 }
 
 //*** FUNCTION FOR KILLER CARD and how it is invoked***//
@@ -137,51 +136,51 @@ const changeButton = () => {
 const pickKiller = () => {
   mystery.killer = randomSelector(killers)
 
-  killerNameElement.innerHTML = `${mystery.killer.fullName()}`
-  killerAgeElement.innerHTML = `Age: ${mystery.killer.age}`
-  killerOccupationElement.innerHTML = `Occupation: ${mystery.killer.occupation}`
+  killerName.innerHTML = `${mystery.killer.fullName()}`
+  killerAge.innerHTML = `Age: ${mystery.killer.age}`
+  killerOccupation.innerHTML = `Occupation: ${mystery.killer.occupation}`
 
   changeCard("killerCard")
   changeButton()
 }
 
-killerCardElement.addEventListener("click", pickKiller);
+killerCard.addEventListener("click", pickKiller);
 
 //*** FUNCTION FOR WEAPON CARD and how it is invoked ***//
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
 
-  weaponNameElement.innerHTML = `${mystery.weapon.name}`
-  weaponWeightElement.innerHTML = `Weight: ${mystery.weapon.weight} kg`
+  weaponName.innerHTML = `${mystery.weapon.name}`
+  weaponWeight.innerHTML = `Weight: ${mystery.weapon.weight} kg`
 
   changeCard("weaponCard")
   changeButton()
 }
 
-weaponCardElement.addEventListener("click", pickWeapon);
+weaponCard.addEventListener("click", pickWeapon);
 
 //*** FUNCTION FOR ROOM CARD and how it is invoked ***//
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
-  roomNameElement.innerHTML = `${mystery.room.name}`
-  roomColorElement.innerHTML = `Color: ${mystery.room.color}`
+  roomName.innerHTML = `${mystery.room.name}`
+  roomColor.innerHTML = `Color: ${mystery.room.color}`
 
   changeCard("roomCard")
   changeButton()
 }
 
-roomCardElement.addEventListener("click", pickRoom);
+roomCard.addEventListener("click", pickRoom);
  
 //*** FUNCTION THAT REVEALS THE MYSTERY (or tells the user to pick a killer/weapon/room) - invoked by button onclick in HTML ***//
 
 const revealMystery = () => {
 
   const revealMysteryNow = () => {
-    mysteryElement.innerHTML = (`It was ${mystery.killer.fullName()} with a ${mystery.weapon.name} in the ${mystery.room.name}.`)
-    mysteryElement.style.background = "transparent"
+    mysteryButton.innerHTML = (`It was ${mystery.killer.fullName()} with a ${mystery.weapon.name} in the ${mystery.room.name}.`)
+    mysteryButton.style.background = "transparent"
     textClass.forEach(text => text.innerHTML = "")
     cardClass.forEach(card => card.style.background = "#30F2C6")
     Object.keys(mystery).forEach(key => mystery[key] = null)  
@@ -189,13 +188,13 @@ const revealMystery = () => {
 
   const pickCard = () => {
     if (mystery.killer === null) {
-      killerNameElement.innerHTML = "Pick a killer"
+      killerName.innerHTML = "Pick a killer"
     }
     if (mystery.weapon === null) {
-      weaponNameElement.innerHTML = "Pick a weapon"
+      weaponName.innerHTML = "Pick a weapon"
     }
     if (mystery.room === null) {
-      roomNameElement.innerHTML = "Pick a room"
+      roomName.innerHTML = "Pick a room"
     }
   }
 
