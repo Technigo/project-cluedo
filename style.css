@@ -17,7 +17,6 @@ h1{
   font-family: 'Anton', sans-serif;
   color: white;
   font-size: 4.5em;
-  text-shadow: 10px #000;
   margin: 0 auto;
   margin-top: 10px;
 }
@@ -121,4 +120,8 @@ button {
 
 #mystery{
   color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2em;
+  text-align: center;
+  margin: 0px 50px 35px;
 }

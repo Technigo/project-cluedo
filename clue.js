@@ -325,6 +325,6 @@ const revealMystery = () => {
   if (!mystery.killer || !mystery.weapon || !mystery.room) {
     alert("No mystery is yet to be revealed!");
   } else {
-    document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, a ${mystery.killer.age} years old ${mystery.killer.occupation}, in the ${mystery.room.name} with a ${mystery.weapon.name}`
+    document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, a ${mystery.killer.age} years old ${mystery.killer.occupation}, in the ${mystery.room.name} with a ${mystery.weapon.name} - Shocking!`
   }
 }
