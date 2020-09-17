@@ -236,21 +236,29 @@ document.getElementById("killerCard").addEventListener("click", pickKiller);
 
 // Random weapon picker
 const pickWeapon = () => {
-  mystery.weapon = randomSelector(weapons);
-  document.getElementById("weaponCard");
-  document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
-  document.getElementById(
-    "weaponWeight"
-  ).innerHTML = `${mystery.weapon.weight}`;
+  document.getElementById("weaponCard").classList.add("flip");
+
+  setTimeout(() => {
+    mystery.weapon = randomSelector(weapons);
+    document.getElementById("weaponCard");
+    document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
+    document.getElementById(
+      "weaponWeight"
+    ).innerHTML = `${mystery.weapon.weight}`;
+  }, 300);
 };
 
 document.getElementById("weaponCard").addEventListener("click", pickWeapon);
 
 // Random room picker
 const pickRoom = () => {
-  mystery.room = randomSelector(rooms);
-  document.getElementById("roomCard");
-  document.getElementById("roomName").innerHTML = `${mystery.room}`;
+  document.getElementById("roomCard").classList.add("flip");
+
+  setTimeout(() => {
+    mystery.room = randomSelector(rooms);
+    document.getElementById("roomCard");
+    document.getElementById("roomName").innerHTML = `${mystery.room}`;
+  }, 300);
 };
 
 document.getElementById("roomCard").addEventListener("click", pickRoom);
