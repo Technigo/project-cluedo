@@ -1,9 +1,5 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
 This week’s project was to create a piece of the classic board game Cluedo or Clue. 
 The purpose was to practice creating objects and arrays and also connect this to the DOM.
 
