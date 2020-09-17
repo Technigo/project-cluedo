@@ -272,15 +272,39 @@ const pickRoom = () => {
   mystery.room = randomSelector(rooms);
   document.getElementById('roomName').innerHTML = `${mystery.room}`
   //Add image here for room-card later
+  document.getElementById('revealButton').style.visibility='visible' //Makes the reveal-button visible when the room-card has been clicked.
 }
-document.getElementById('roomCard').addEventListener('click', pickRoom);
+document.getElementById('roomCard').addEventListener('click', pickRoom); 
+
+
+//Typ göra en ny funktion pageReload där jag gör ett if-statement som säger att om revealbutton har innertext play again så onclick så ska page reload ske. Annars...inte?
+
+
+
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
-
-//If 
 const revealMystery = (mystery) => {
   //Invoke when button in html is clicked and show elements from mystery object in text.
   //Put also some kind of if-statement(?) here that conditions this to reveal ONLY if the three cards above has been clicked.
 document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} in the ${mystery.room} with ${mystery.weapon.name}` 
+document.getElementById('revealButton').innerHTML = `PLAY AGAIN?` //This works to change the text on button. But how do I get the page to reload when clicked again?
+//Can I put a function in a function?
+
+
+//pageReload(); //Om jag har den här så laddar sidan om direkt när jag tryckt på Roomcard. Detta är ju eftersom villkoret i if-satsen i pageReload är uppfyllt.
 }
+//documentGetElementById('revealButton').addEventListener('click', revealMystery(mystery));
+
+//Denna funkar inte i alla fall härifrån:
+const pageReload = () => {
+  //revealButton.onclick = pageReload; //Provar sätta den här.
+  //document.getElementById('revealButton').onclick.innerHTML = `PLAY AGAIN?` 
+   if  (document.getElementById('revealButton').innerHtml === `PLAY AGAIN?`) {
+        revealButton.onclick === location.reload();
+   } else {
+        revealButton.onclick !== location.reload();
+  }
+  // pageReload();
+ }
+ //pageReload(); //Om jag har den här så laddar sian om hela tiden från start. Har jag skrivit min funktion fel eller vad?

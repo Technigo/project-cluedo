@@ -105,7 +105,8 @@ article p {
   text-shadow: 3px 2px 3px rgb(36, 36, 36);
 }
 
-button {
+.reveal-button {
+  visibility: hidden;
   padding: 8px 16px;
   background: crimson;
   border: none;

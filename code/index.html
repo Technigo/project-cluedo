@@ -50,13 +50,13 @@
 
     <h1 class="mystery-heading" id="mystery"></h1>
 
-    <button onclick="revealMystery(mystery)">
+    <button class="reveal-button" id="revealButton" onclick="revealMystery(mystery)">
       REVEAL THE CRIME
     </button>
   </section> 
 
     <!-- Maybe put another button here that says "Play again?" that only shows after the reveal-button has been clicked? Should I make a pseudo-class in CSS also (or instead?) that shows/hides this new button which I control with JS? Hmmm...-->
-
+    <!-- Should I do a function for the button? I need to do this: when all the three cards are hown, the button appears. When it is clicked to reveal, I want to change text so that the button says "Play again?" and when the button then is clicked once again, I want the whole page to reload. How do I do that? -->
     <script src="clue.js"></script>
   </body>
 </html>
