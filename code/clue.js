@@ -7,7 +7,8 @@ const mrGreen = {
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur',
+  favouriteWeapon: 'trophy'
 }
 
 const mrMustard = {
@@ -17,7 +18,8 @@ const mrMustard = {
   description: 'Dijon mustard hoarder',
   age: 60,
   image: 'assets/mustard.png',
-  occupation: 'Colonel'
+  occupation: 'Colonel',
+  favouriteWeapon: 'axe'
 }
 
 const mrsPeacock= {
@@ -27,7 +29,8 @@ const mrsPeacock= {
   description: 'Illegal is her middle name',
   age: 45,
   image: 'assets/peacock.png',
-  occupation: 'Exotic birds trafficker'
+  occupation: 'Exotic birds trafficker',
+  favouriteWeapon: 'poison'
 }
 
 const mrPlum = {
@@ -37,7 +40,8 @@ const mrPlum = {
   description: 'Loves to (un)fix things',
   age: 50,
   image: 'assets/plum.png',
-  occupation: 'PLUMber'
+  occupation: 'PLUMber',
+  favouriteWeapon: 'candlestick'
 }
 
 const mrsScarlet = {
@@ -47,7 +51,8 @@ const mrsScarlet = {
   description: 'Scars hearts with no mercy',
   age: 35,
   image: 'assets/scarlet.png',
-  occupation: 'TikTok celebrity'
+  occupation: 'TikTok celebrity',
+  favouriteWeapon: 'bat'
 }
 
 const mrsWhite = {
@@ -65,54 +70,63 @@ const mrsWhite = {
 
 const rope = {
   name: 'Rope',
+  id:'rope',
   color: 'brown',
   image:'assets/rope.jpg'
 }
 
 const knife = {
   name: 'Knife',
+  id:'knife',
   color: 'grey',
   image: 'assets/knife.jpg'
 }
 
 const candlestick = {
   name: 'Candlestick',
+  id:'candlestick',
   color: 'white',
   image: 'assets/candlestick.jpg'
 }
 
 const dumbbell = {
   name: 'Dumbbell',
+  id:'dumbbell',
   color: 'black',
   image: 'assets/dumbbell.jpg'
 }
 
 const poison = {
   name: 'Poison',
+  id:'poison',
   color: 'green',
   image: 'assets/poison.jpg'
 }
 
 const axe = {
   name: 'Axe',
+  id:'axe',
   color: 'red',
   image: 'assets/axe.jpg'
 }
 
 const bat = {
   name: 'Bat',
+  id:'bat',
   color: 'light brown',
   image: 'assets/bat.jpg'
 }
 
 const trophy = {
   name: 'Trophy',
+  id:'trophy',
   color: 'yellow',
   image: 'assets/trophy.jpg'
 }
 
 const pistol = {
   name: 'Pistol',
+  id:'pistol',
   color: 'blue',
   image: 'assets/gun.jpg'
 }
@@ -251,27 +265,34 @@ const mystery = {
   room: null
 }
 
-// This function will be invoked when you click on the killer card.
+// RANDOM KILLER FUNCTION
 const pickKiller = () => {
 
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  // This will change what information about the killer is displayed
+
   document.getElementById('killerCard').style.background = mystery.killer.color;
   document.getElementById('killerImage').src = mystery.killer.image;
   document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`;
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`;
-  
+
+  // SHUFFLE FAVOURITE WEAPON
+  const shuffleFavouriteWeapon = () => { 
+    mystery.favouriteWeapon = randomSelector(weapons)
+    document.getElementById('favouriteWeapon').innerHTML = `Favourite Weapon: ${mystery.favouriteWeapon.name}`
+}
+      shuffleFavouriteWeapon()
 }
 document.getElementById('killerCard').onclick = pickKiller;
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+
+// RANDOM WEAPON FUNCTION
 
 const pickWeapon = () => { 
   mystery.weapon = randomSelector(weapons)
-  console.log(mystery.weapon)
 
   document.getElementById('weaponCard').style.background = '#FFFFFF';
   document.getElementById('weaponImage').src = mystery.weapon.image;
@@ -280,6 +301,7 @@ const pickWeapon = () => {
 document.getElementById('weaponCard').onclick = pickWeapon;
 
 
+// RANDOM ROOM FUNCTION
 const pickRoom = () => { 
   mystery.room = randomSelector(rooms)
 
@@ -289,8 +311,8 @@ const pickRoom = () => {
 }
 document.getElementById('roomCard').onclick = pickRoom;
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// MYSTERY REVEAL FUNCTION 
+
 const revealMystery = () => {
   document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}`
 }

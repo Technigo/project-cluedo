@@ -1,13 +1,19 @@
-# Cluedo - Mystery Randomizer
+# Clue & do 🕵️‍♀️ - Mystery Randomizer
 
-Replace this readme with your own information about your project.
+Random mystery picker inspired in the classic board game Cluedo®. 
+The user (who is the game leader and the one that will know all about the murder) should be able to click on three decks of cards, to randomly get a character, a weapon and a room. Then there should also be a button to "reveal" the mystery.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The focus of this project is to practice objects and arrays and also to manipulate the DOM with JavaScript.
 
-## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
-## View it live
+## Planning & The problem 🧩
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+I've started by building the card decks by styling them and then create all the object lists and the arrays, I wanted all to show details and images about the suspect, weapon and room respectively so I changed my object lists to reflect that when the functions are called. 
+When the user clicks on each deck a card will be displayed by calling a function which will randomly select from the arrays a "killer", "weapon" and "room" a card will be displayed. I've also added a function to random generate a "killer's favourite weapon. 
+
+Then there's a "Reveal mystery" button that once the cards mentioned above have been clicked will manipulate the DOM by JavaScript and reveal the mystery. 
+
+
+## View it live 🔴
+https://cluendo.netlify.app/
