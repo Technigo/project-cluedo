@@ -54,16 +54,20 @@
 
     <!--Room card-->
     <article class="room-deck" id="roomCard">
-      <p class="card-type">ROOM</p>
-      <p id="roomName"></p>
-
-
+      <div class="room-card-wrapper" id="room-card-wrapper">
+        <p class="start-display-cards" id="start-display-card-room">PICK A ROOM CARD</p>
+        <p id="roomName"></p>
+      </div>
+      <!--Loader to room -->
+     <div class="loader-wrapper"id="loader-wrapper-room">
+       <div class="loader"></div>
+       <p>Generating a room</p>
+     </div> 
     </article>
 
   </section>
 
   <h3 id="mystery"></h3>
-
   <button id="reveal">REVEAL THE CRIME!</button>
   <!--<button onclick="revealMystery()"</button>-->
 
