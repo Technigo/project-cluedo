@@ -276,7 +276,7 @@ const loadingpickWeapon = () => {
 }
 // Calling the loadingPickWeapon function
 document.getElementById("weaponCard").onclick = loadingpickWeapon;
-gitdocument.getElementById("weaponCard").onclick = loadingPickWeapon;
+document.getElementById("weaponCard").onclick = loadingPickWeapon;
 
 
 // CREATE FUNCTIONS pickRoom
