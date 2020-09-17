@@ -7,7 +7,7 @@ const mrGreen = {
   age: 45,
   image: './assets/green.png',
   occupation: 'Entrepreneur',
-  favouriteWeapon: 'bat' // Might need to remove these names if I do not get it to work
+  favouriteWeapon: '' 
 };
 
 const professorPlum = {
@@ -18,7 +18,7 @@ const professorPlum = {
   age: 36,
   image: './assets/plum.png',
   occupation: 'Professor',
-  favouriteWeapon: 'pistol'
+  favouriteWeapon: ''
 };
 
 const missScarlet = {
@@ -29,7 +29,7 @@ const missScarlet = {
   age: 25,
   image: './assets/scarlet.png',
   occupation: 'Actress',
-  favouriteWeapon: 'candlestick'
+  favouriteWeapon: ''
 };
 
 const mrsPeacock = {
@@ -40,7 +40,7 @@ const mrsPeacock = {
   age: 32,
   image: './assets/peacock.png',
   occupation: 'Socialite',
-  favouriteWeapon: 'poison'
+  favouriteWeapon: ''
 };
 
 const colonelMustard = {
@@ -51,7 +51,7 @@ const colonelMustard = {
   age: 56,
   image: './assets/mustard.png',
   occupation: 'Colonel',
-  favouriteWeapon: 'axe'
+  favouriteWeapon: ''
 };
 
 const mrsWhite = {
@@ -62,7 +62,7 @@ const mrsWhite = {
   age: 67,
   image: './assets/white.png',
   occupation: 'Housekeeper',
-  favouriteWeapon: 'knife'
+  favouriteWeapon: ''
 };
 
 // OBJECTS FOR ALL THE WEAPONS 
@@ -225,12 +225,6 @@ const weapons = [
   bat,
   trophy,
   pistol,
-  bat, // Added some of them again.. remove?
-  pistol,
-  candlestick,
-  poison,
-  trophy,
-  knife
 ];
 
 const rooms = [ 
@@ -268,7 +262,6 @@ const killerImage = document.getElementById('killerImage');
 const weaponImage = document.getElementById('weaponImage');
 const roomImage = document.getElementById('roomImage');
 
-
 // PICK-KILLER-FUNCTION! This function will be invoked when you click on the killer card.
 document.getElementById('killerCard').addEventListener('click', pickKiller);
 
@@ -284,22 +277,11 @@ const realPickKiller = () => { // The REAL function getting the values for the s
   mystery.killer = randomSelector(suspects);  // This will randomly select a killer from the suspects and add that to the mystery object.
 
   // This function does randomly select a favourite weapon.
-    /*shuffleFavouriteWeapon = () => {
+  shuffleFavouriteWeapon = () => {
     mystery.favouriteWeapon = randomSelector(weapons); 
   };
   shuffleFavouriteWeapon();
-  */
-
-  // Function to shuffle favouriteWeapon - but it is more likely that the actual favourite weapon pops up. Does not work. 
-  const favourite = suspects.favouriteWeapon; 
-  const favoriteWeaponDuplicate = new Array(1).fill(favourite);
-  const randomArray = [...weapons, ...favoriteWeaponDuplicate];
   
-  const pickNotsorandomWeapon = () => {
-  mystery.favouriteWeapon = randomArray[Math.floor(Math.random() * randomArray.length)];
-  };  
-  pickNotsorandomWeapon();
-
   // This will change the background color of the card to the one connected to the chosen killer and show the different properties of the killer. 
   document.getElementById('killerCard').style.background = mystery.killer.color;
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
@@ -320,23 +302,13 @@ function pickWeapon()  { // Shows loading animation
   setTimeout(realPickWeapon, 1000); // Delays the real pickWeapon function and calls it after 1.5 sec.
 };
 
-  // Function picking a not so randomly weapon.. doesn't work randomly at all at the moment. I am afraid I do not know where to put it neither
-  const favouriteweapon = suspects.favouriteWeapon; 
-  const favoriteWeaponDuplicate = new Array(1).fill(favouriteweapon);
-  const randomArray = [...weapons, ...favoriteWeaponDuplicate];
-  
-  const pickNotsorandomWeapon = () => {
-  mystery.favouriteWeapon = randomArray[Math.floor(Math.random() * randomArray.length)];
-  };  
-  pickNotsorandomWeapon();
-
 const realPickWeapon = () => { // The REAL function getting the values for the weapons
   document.getElementById('loader2').style.display = 'none';
   document.getElementById('weaponCard').removeEventListener('click', pickWeapon); // So the loader doesn't pops up in next click
 
-  //mystery.weapon = randomSelector(weapons); // Randomly selects a weapon
-  
-  document.getElementById('weaponName').innerHTML = `${mystery.favouriteWeapon.name}`;
+  mystery.weapon = randomSelector(weapons); // Randomly selects a weapon
+
+  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
   document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight} pounds`;
   weaponImage.src = mystery.weapon.image;
 
@@ -366,7 +338,7 @@ const realPickRoom = () => { // The REAL function getting the values for the roo
 // STEP 4 - A FUNCTION that will be invoked when you click that button. 
 
 revealMystery = () => {
- document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}.`;  
- document.getElementById('weaponCard').style.background = mystery.killer.color; // All decks get the color from the mystery.killer when revealing the mystery
- document.getElementById('roomCard').style.background = mystery.killer.color; // All decks get the color from the mystery.killer when revealing the mystery
+  document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}.`;  
+  document.getElementById('weaponCard').style.background = mystery.killer.color; // All decks get the color from the mystery.killer when revealing the mystery
+  document.getElementById('roomCard').style.background = mystery.killer.color; // All decks get the color from the mystery.killer when revealing the mystery
 };

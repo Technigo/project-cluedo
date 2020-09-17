@@ -40,6 +40,7 @@ h2 {
   align-self: center;
   color: #fff;
   font-style: italic;
+  text-align: center;
 }
 
 p {
@@ -57,14 +58,21 @@ header {
 }
 
 /*** Styling of the cards***/
-.cards {
-  margin: 10px auto;
+.cards { /* Outerbox containing desription and then a section with the decks. */
   width: 90%;
   height: 600px;
   background: rgba(237, 228, 228, 0.3);
+}
+
+.cards-inner-box {
+  margin: 20px auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.boldheading { /*Bold heading on the decks for 'Killer', 'Weapon', and 'Room'. */
+  font-weight: bold;
 }
 
 /* Killer-card */
@@ -121,7 +129,7 @@ header {
   border-radius: 16px;
 }
 
-/* Styling of Loaders */
+/* Styling of the loaders */
 #loader1, #loader2, #loader3 {
   margin-left: 90px;
   margin-top: 50px;
@@ -188,7 +196,6 @@ footer {
   text-transform: uppercase;
 }
 
-
 /*** MEDIA QUERIES ***/
 @media (max-width: 888px)  {/* Choosed this measure becuase that's when the cards got to narrow and to close each other */
    .killer-deck, .weapon-deck, .room-deck {
@@ -204,9 +211,13 @@ footer {
   h2 {
     text-align: center;
   } 
+
   .cards {
-    flex-direction: column;
     height: auto;
     width: 90vw;
+  }
+
+  .cards-inner-box {
+    flex-direction: column;
   }
 }
