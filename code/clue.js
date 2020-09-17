@@ -177,13 +177,14 @@ const randomSelector = (array) => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 const mystery = {
-  killer: "",
-  weapon: "",
-  room: "",
+  killer: null,
+  weapon: null,
+  room: null,
 };
 
 // This function will be invoked when you click on the killer card.
-const pickKiller = () => {
+const pickKiller = (event) => {
+  event.preventDefault();
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
 
@@ -204,7 +205,8 @@ document.getElementById("killerCard").addEventListener("click", pickKiller);
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
 // This function will be invoked when you click on the weapon card.
-const pickWeapon = () => {
+const pickWeapon = (event) => {
+  event.preventDefault();
   // This will randomly select a weapon from the weapons. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons);
 
@@ -218,7 +220,8 @@ const pickWeapon = () => {
 document.getElementById("weaponCard").addEventListener("click", pickWeapon);
 
 // This function will be invoked when you click on the room card.
-const pickRoom = () => {
+const pickRoom = (event) => {
+  event.preventDefault();
   // This will randomly select a room from the rooms. And add that to the mystery object.
   mystery.room = randomSelector(rooms);
 
@@ -230,8 +233,13 @@ document.getElementById("roomCard").addEventListener("click", pickRoom);
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
-const revealMystery = () => {
-  if (mystery.killer === "" || mystery.weapon === "" || mystery.room === "") {
+const revealMystery = (event) => {
+  event.preventDefault();
+  if (
+    mystery.killer === null ||
+    mystery.weapon === null ||
+    mystery.room === null
+  ) {
     document.getElementById("mystery").innerHTML =
       "Click all cards above to reveal the crime!";
   } else {
