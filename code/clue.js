@@ -195,7 +195,7 @@ const mystery = {
 // Progress bar for loading cards. Bar will oly be shown once clicked. 
 
 var i = 0;
-function move() {
+function move(callback) {
   document.getElementById('myProgress').style.display = "block";
   if (i == 0) {
     i = 1;
@@ -208,7 +208,7 @@ function move() {
         i = 0;
         document.getElementById('myProgress').style.display = "none";
       } else if (width == 100){
-        pickKiller();
+        callback();
         width++;
       } 
       else {
@@ -263,7 +263,12 @@ const pickKiller = () => {
   ).innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
 };
 
-document.getElementById('killerCard').onclick = move;
+const clickKiller = (somefunction) => {
+  move(pickKiller); //animation
+  //setTimeout(pickKiller, 2500); //reveal killer card
+}
+
+document.getElementById('killerCard').onclick = clickKiller;
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 

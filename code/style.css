@@ -12,7 +12,8 @@ p {
 span {
   font-weight: 300;
   position: relative;
-  left: 50px;
+  margin-left: 50%;
+  margin-right: 50%;
 }
 
 .cards {
@@ -73,6 +74,7 @@ button {
   display: none;
   width: 100%;
   background-color: #ddd;
+  margin-top: 50px;
 }
 
 #myBar {
