@@ -9,4 +9,4 @@ Followed every step of the exercise, making sure every step worked before I went
 
 ## View it live
 
-Netlifylink:
+Netlifylink: https://trusting-almeida-370420.netlify.app/
