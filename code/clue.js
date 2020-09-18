@@ -12,7 +12,7 @@ const mrGreen = {
   age: 45,
   image: "assets/mr_green.jpg",
   occupation: "Entrepreneur",
-  favoriteWeapon: "",
+  favoriteWeapon: "rope",
 };
 
 const colMustard = {
@@ -24,7 +24,7 @@ const colMustard = {
   age: 60,
   image: "assets/col_mustard.jpg",
   occupation: "Colonel",
-  favoriteWeapon: "",
+  favoriteWeapon: "pistol",
 };
 
 const msScarlett = {
@@ -36,7 +36,7 @@ const msScarlett = {
   age: 25,
   image: "assets/ms_scarlett.jpg",
   occupation: "Actress",
-  favoriteWeapon: "",
+  favoriteWeapon: "knife",
 };
 
 const mrWhite = {
@@ -48,7 +48,7 @@ const mrWhite = {
   age: 65,
   image: "assets/mr_white.jpg",
   occupation: "Butler",
-  favoriteWeapon: "",
+  favoriteWeapon: "candlestick",
 };
 
 const mrsPeacock = {
@@ -60,7 +60,7 @@ const mrsPeacock = {
   age: 42,
   image: "assets/mrs_peacock.jpg",
   occupation: "Socialite",
-  favoriteWeapon: "",
+  favoriteWeapon: "piping",
 };
 
 const profPlum = {
@@ -72,7 +72,7 @@ const profPlum = {
   age: 46,
   image: "./assets/prof_plum.jpg",
   occupation: "Professor",
-  favoriteWeapon: "",
+  favoriteWeapon: "wrench",
 };
 
 const rope = {
@@ -197,6 +197,7 @@ const killerCard = {
   age: document.getElementById("killerAge"),
   image: document.getElementById("killerImage"),
   color: document.getElementById("killerColor"),
+  favoriteWeapon: document.getElementById("killerFavoriteWeapon"),
   description: document.getElementById("killerDescription"),
 }
 
@@ -295,20 +296,25 @@ const getMystery = () => {
 
 // ----------Shuffle suspects favorite weapon--------------
 
-shuffleFavoriteWeapon = () => {
-  mystery.killer.favoriteWeapon = randomSelector(weapons);
-  document.getElementById("killerFavoriteWeapon").innerHTML = `${mystery.killer.favoriteWeapon.name}`
-}
+shuffleFavoriteWeapon = (suspects) => {
+  suspects.forEach(suspect => {
+    const favoriteWeaponArray = [
+      ...weapons
+    ];
+    suspect.favoriteWeapon = randomSelector(weapons);
+  });
+};
 
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
-  shuffleFavoriteWeapon();
   document.getElementById("killerCard").style.background = mystery.killer.color;
   killerCard.name.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   killerCard.image.src = mystery.killer.image;
   killerCard.age.innerHTML = `${mystery.killer.age} years old.`;
   killerCard.description.innerHTML = mystery.killer.description;
- 
+  shuffleFavoriteWeapon(suspects);
+  console.log(suspects);
+  killerCard.favoriteWeapon.innerHTML = `${mystery.killer.favoriteWeapon.name}`;
 };
 
 const pickWeapon = () => {
