@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 5px;
   font-family: "Courier New", Courier, monospace;
+  background-color: aquamarine;
 }
 
 p {
@@ -14,19 +15,19 @@ p {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
+  background: rgb(156, 240, 229);
   display: flex;
   justify-content: space-around;
   align-items: center;
   border: 1px solid;
   padding: 10px;
-  box-shadow: 10px 15px 20px #888888;
+  box-shadow: 10px 15px 20px hsl(0, 3%, 13%);
 }
 
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: rgb(103, 221, 152);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -35,7 +36,7 @@ p {
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: rgb(54, 150, 54);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -44,7 +45,7 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
+  background: rgb(49, 119, 116);
 
   text-align: center;
   padding-top: 30px;
@@ -58,7 +59,7 @@ p {
 
 button {
   padding: 8px 16px;
-  background: rgb(122, 223, 152);
+  background: rgb(204, 206, 86);
   border: none;
   font-size: 20px;
   border-radius: 20px;

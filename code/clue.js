@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// OBJECTS FOR ALL THE SUSPECTS
 
   const mrGreen = {
   firstName: 'Jacob',
@@ -56,7 +56,7 @@ const mrsWhite = {
 }
 
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// CREATED OBJECTS FOR ALL THE WEAPONS
 
 const Rope = {
   name: 'Rope',
@@ -111,14 +111,11 @@ const rooms = [
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+// CREATED AN OBJECT THAT KEEPS THE MYSTERY.
 
 let mystery = { 
   killer: "",
@@ -128,11 +125,12 @@ let mystery = {
 
 
 
-// This function will be invoked when you click on the killer card.
+// CREATE FUNCTIONS pickKiller
+
 const pickKiller = () => {
   // This will randomly select a kiler from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. 
   document.getElementById("killerCard").style.background = mystery.killer.color 
   document.getElementById('killerImage').src = mystery.killer.image
   document.getElementById('killerName').innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`
@@ -143,12 +141,12 @@ const pickKiller = () => {
 
 document.getElementById('killerCard').addEventListener('click', pickKiller)
 
-// // CREATE FUNCTIONS pickWeapon 
+// CREATED FUNCTIONS pickWeapon 
 
 const pickWeapon  = () => {
   // This will randomly select a weapon from the weaponslist. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
-   // This will change the background color of the card to the one connected to the chosen killer.
+   // This will change the background color of the card to the one connected to the chosen killer and show weapon info.
    document.getElementById('weaponCard').style.background = mystery.killer.color
    document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
    document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}kg`
@@ -156,21 +154,20 @@ const pickWeapon  = () => {
 
    document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 
-// // CREATE FUNCTIONS pickRoom 
+// CREATED FUNCTIONS pickRoom 
 
 const pickRoom   = () => {
 
-//   // This will randomly select a weapon from the weaponslist. And add that to the mystery object.
+ // This will randomly select a weapon from the weaponslist. And add that to the mystery object.
   mystery.room = randomSelector(rooms)
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
+  // This will change the background color of the card to the one connected to the chosen killer and show the room.
   document.getElementById('roomCard').style.background = mystery.killer.color
   document.getElementById('roomName').innerHTML = `${mystery.room}`
 }
 
 document.getElementById('roomCard').addEventListener('click', pickRoom)
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// CREATED A FUNCTION revealMystery that will be invoked when you click that button. 
 
 const revealMystery = () => {
 
@@ -188,7 +185,3 @@ document.location.href = "";
 
 document.getElementById('resetBtn').addEventListener('click', restart)
 
-// Tas bort senare
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-// dessa har jag klistrat in själv
-// Dining Room, Conservatory, Kitchen, Study, Library, Billiard Room, Lounge, Ballroom, Hall, Spa, Living Room, Observatory, Theater, Guest House, Patio '

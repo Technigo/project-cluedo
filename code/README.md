@@ -3,10 +3,10 @@ This week’s project is to create a piece of the classic board game Cluedo, and
 
 ## The problem
 
-javaScript
+Invoking the right functions to pick (generate) a murderer, a room or a weapon. Storing info in objects and arrays. Visually see the chosen cards in the browser, and resetting the cards solving it all with JavaScript, Html and Css.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Followed every step of the exercise, making sure every step worked before I went to the next one, console log and showning in the browser. If I had more time, I would like to work on the Css design and adding more futures to the interactivity. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Netlifylink:
