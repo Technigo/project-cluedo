@@ -74,55 +74,63 @@ const weapons = [
     name: "rope",
     weight: 3,
     description: "worn out",
+    image: "assets/rope.png",
   },
   {
     id: "knife",
     name: "knife",
     weight: 2,
     description: "brand new",
+    image: "assets/knife.png",
   },
   {
     id: "candlestick",
     name: "candlestick",
     weight: 4,
     description: "polished, but old",
+    image: "assets/candlestick.png",
   },
   {
     id: "dumbbell",
     name: "dumbbell",
     weight: 22,
     description: "rusty",
+    image: "assets/dumbbell.png",
   },
   {
     id: "poison",
     name: "poison",
     weight: 1,
     description: "small bottle containing rests of transparent liquid",
+    image: "assets/poison.png",
   },
   {
     id: "axe",
     name: "axe",
     weight: 7,
     description: "has a worn handle, blade has a tear",
+    image: "assets/axe.png",
   },
   {
     id: "bat",
     name: "bat",
     weight: 7,
     description: "long, wooden bat with a small crack on handle",
+    image: "assets/bat.png",
   },
   {
     id: "trophy",
     name: "trophy",
     weight: 16,
-    description:
-      "heavy, brass trophy with a marble pedestal and inscription on bottom",
+    description: "heavy, brass trophy with a marble pedestal and inscription on bottom",
+    image: "assets/trophy.png",
   },
   {
     id: "pistol",
     name: "pistol",
     weight: 8,
     description: "old Astra model 903, heavy thing with a muffle",
+    image: "assets/pistol.png",
   },
 ];
 
@@ -232,7 +240,6 @@ const shuffleFavourite = () => {
 };
 
 const pickKiller = () => {
-
   shuffleFavourite();
 
   mystery.killer = randomSelector(suspects);
@@ -262,11 +269,13 @@ const pickWeapon = () => {
   document.getElementById("weapon-card").style.background =
     mystery.weapon.color;
   document.getElementById("weapon-name").innerHTML = `${mystery.weapon.name}`;
+  document.getElementById("weapon-image").classList.remove("hidden");
+  document.getElementById("weapon-image").src = mystery.weapon.image;
   document.getElementById(
     "weapon-weight"
   ).innerHTML = `${mystery.weapon.weight} lbs`;
   document.getElementById(
-    "weapon.description"
+    "weapon-description"
   ).innerHTML = `${mystery.weapon.description}`;
 };
 

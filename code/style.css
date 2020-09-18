@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
@@ -40,6 +44,7 @@ h3{
   padding-top: 30px;
   border-radius: 16px;
 }
+
 .killer-deck:hover {
   background: rgb(25, 26, 26, 0.8);
 }
@@ -71,9 +76,21 @@ h3{
   background: rgb(3, 40, 80, 0.8);
 }
 
-img {
+.img {
   border: solid #fff 2px;
+  border-radius: 80%;
+  background: #fff;
+  height: 150px;
+  width: auto;
 }
+
+/* .image-container {
+  border: solid #fff 2px;
+  border-radius: 80%;
+  background: #fff;
+  height: 150px;
+  width: auto;
+} */
 
 .conclusion-container {
   display: flex;

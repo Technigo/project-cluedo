@@ -11,25 +11,47 @@
 
 <body>
   <section class="cards">
+
     <article class="killer-deck" id="killer-card" onclick="pickKiller()">
-      <h3>KILLER</h3>
-      <p id="killer-name"></p>
-      <p id="killer-age"></p>
-      <p id="killer-occupation"></p>
-      <img class="hidden" id="killer-image" src="" height="100" />
-      <p id="killer-description"></p>
-      <p id="favourite-weapon"></p>
+      <div class="front-side" id="front-side-killer">
+        <h3>KILLER</h3>
+      </div>
+      <div class="back-side" id="back-side-killer">
+        <p id="killer-name"></p>
+        <p id="killer-age"></p>
+        <p id="killer-occupation"></p>
+        <div class="image-container">
+          <img class="hidden" id="killer-image" src="" height="100" />
+        </div>
+        <p id="killer-description"></p>
+        <p id="favourite-weapon"></p>
+      </div>
     </article>
+
     <article class="weapon-deck" id="weapon-card" onclick="pickWeapon()">
-      <h3>WEAPON</h3>
-      <p id="weapon-name"></p>
-      <p id="weapon-weight"></p>
-      <p id="weapon-description"></p>
+      <div class="front-side" id="front-side-weapon">
+        <h3>WEAPON</h3>
+      </div>
+      <div class="back-side" id="back-side-weapon">
+        <p id="weapon-name"></p>
+        <div class="image-container">
+          <img class="hidden" id="weapon-image" src="" height="100"></p>
+        </div>
+        <p id="weapon-weight"></p>
+        <p id="weapon-description"></p>
+      </div>
     </article>
+
     <article class="room-deck" id="room-card" onclick="pickRoom()">
-      <h3>ROOM</h3>
-      <img class="hidden" id="room-image" src="" height="150" />
-      <p id="room-name"></p>
+      <div class="front-side" id="front-side-room">
+        <h3>ROOM</h3>
+      </div>
+      <div class="back-side" id="back-side-room">
+        <div class="image-container">
+          <img class="hidden" id="room-image" src="" height="150" />
+        </div>
+        <p id="room-name"></p>
+      </div>
     </article>
   </section>
   <section class="conclusion-container">
