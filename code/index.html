@@ -1,36 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
-    <title>Cluedo</title>
-  </head>
-  <body>
 
-    <section class="cards-container">
-      <article class="card" id="killerCard">
-        <p>KILLER</p>
-        <p class="info" id="killerName"></p>
-        <p class="info" id="killerAge"></p>
-        <p class="info" id="killerOccupation"></p>
-      </article>
-      <article class="card" id="weaponCard">
-        <p>WEAPON</p>
-        <p class="info" id="weaponName"></p>
-        <p class="info" id="weaponWeight"></p>
-      </article>
-      <article class="card" id="roomCard">
-        <p>ROOM</p>
-        <p class="info" id="roomName"></p>
-        <p class="info" id="roomColor"></p>
-      </article>
-    </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+  <title>Cluedo</title>
+</head>
 
-    <button onclick="revealMystery()" id="mysteryButton">?</button>
+<body>
 
-    <script src="clue.js"></script>
-  </body>
+  <section class="cards-container">
+
+    <article class="card" id="killerCard">
+      <p>KILLER</p>
+      <p class="name" id="killerName"></p>
+      <p class="info" id="killerAge"></p>
+      <p class="info" id="killerOccupation"></p>
+    </article>
+
+    <article class="card" id="weaponCard">
+      <p>WEAPON</p>
+      <p class="name" id="weaponName"></p>
+      <p class="info" id="weaponWeight"></p>
+    </article>
+
+    <article class="card" id="roomCard">
+      <p>ROOM</p>
+      <p class="name" id="roomName"></p>
+      <p class="info" id="roomColor"></p>
+    </article>
+
+  </section>
+
+  <button onclick="revealMystery()" id="mysteryButton">?</button>
+
+  <script src="clue.js"></script>
+</body>
+
 </html>

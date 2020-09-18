@@ -16,7 +16,11 @@ const killerCard = document.getElementById("killerCard")
 const weaponCard = document.getElementById("weaponCard")
 const roomCard = document.getElementById("roomCard")
 
-const infoClass = document.querySelectorAll(".info")
+const nameAndInfoClass = [
+  ...document.querySelectorAll(".name"),
+  ...document.querySelectorAll(".info")
+]
+
 const cardClass = document.querySelectorAll(".card")
 
 //*** KILLERS ***//
@@ -182,7 +186,7 @@ const revealMystery = () => {
     mysteryButton.innerHTML = (`It was ${mystery.killer.fullName()} with a ${mystery.weapon.name} in the ${mystery.room.name}.`)
     mysteryButton.style.background = "transparent"
     mysteryButton.style.opacity = 1.0;
-    infoClass.forEach(info => info.innerHTML = "")
+    nameAndInfoClass.forEach(info => info.innerHTML = "")
     cardClass.forEach(card => card.style.background = "#30F2C6")
     Object.keys(mystery).forEach(key => mystery[key] = null)
   }

@@ -35,12 +35,12 @@ p {
   font-weight: 300;
 }
 
-#killerName, #weaponName, #roomName {
+.name {
   font-family: 'Ranchers', cursive;
   font-size: 30px;
 }
 
-#killerAge, #killerOccupation, #weaponWeight, #roomColor {
+.info {
   margin: 5px;
   font-size: 16px;
 }
