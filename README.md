@@ -1,13 +1,18 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
+https://festive-haibt-e39877.netlify.app/
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The assignment this week was to create a version of the board game Cluedo, making use of arrays and objects as well as connecting and manipulating the DOM with JavaScript.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started with deconstructing the project to see what kinds of input and output would be requried. I also visualized the user structure: first this happens, and then this etc.. to get an idea of what the end product would look like. I read up on objects, arrays and loops. I also tried to learn more about functions in functions, and then started to code.
 
-## View it live
+I created arrays and arrays of objects for the three main categories: suspects, weapon and room. I used Math.random to generate random items and connect these in a final reveal mystery-button. The same Math.random- method was used to randomise each killer's favourite weapon and to be able to output this in the browser.
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+In order to get a loader working for each card click I used add/remove eventlistener, and manipulated the the DOM to output the flow I was after. I could not solve the second card click which brought back the loader but did not hide the results from the first click.
+
+I made the site responsive using flex box and media query.
+
+
+
