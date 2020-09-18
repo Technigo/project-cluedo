@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: '#7ae69e',
+  color: '#9ba396',
   description: 'He has a lot of connections.',
   age: 45,
   image: 'assets/green.png',
@@ -14,7 +14,7 @@ const mrGreen = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: '#c27ae6',
+  color: '#9c96a3',
   description: 'Has a talent for solving crimes.',
   age: 35,
   image: 'assets/plum.png',
@@ -25,18 +25,18 @@ const professorPlum = {
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: '#ed7461',
+  color: '#a87780',
   description: 'Young, cunning and attractive.',
   age: 31,
   image: 'assets/scarlet.png',
-  occupation: 'brothel mami',
+  occupation: 'Brothel Mami',
   favouriteWeapon: 'poison'
 }
 
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: '#6b95e8',
+  color: '#7e809c',
   description: 'Royal-like appearance.',
   age: 55,
   image: 'assets/peacock.png',
@@ -47,7 +47,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: '#e1eba9',
+  color: '#abab89',
   description: 'Very dangerous and cunning relying on his military training.',
   age: 65,
   image: 'assets/mustard.png',
@@ -58,7 +58,7 @@ const colonelMustard = {
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: '#f7fae8',
+  color: '#dbdbc1',
   description: 'Domestic worker and cook.',
   age: 40,
   image: 'assets/white.png',
@@ -100,7 +100,7 @@ const dumbbell = {
 const poison = {
   name: 'Poison',
   weight: 3,
-  color: '#c1f5ec',
+  color: '#6e9692',
   mortality: 8,
   id: 'poison'
 }
@@ -114,14 +114,14 @@ const axe = {
 const bat = {
   name: 'Bat',
   weight: 30,
-  color: '#e3de94',
+  color: '#909c76',
   mortality: 5,
   id: 'bat'
 }
 const trophy = {
   name: 'Trophy',
   weight: 50,
-  color: '#fae484',
+  color: '#a8ad7d',
   mortality: 3,
   id: 'trophy'
 }
@@ -137,17 +137,17 @@ const pistol = {
 
 const diningRoom = {
   name: 'Dining Room',
-  color: '#e0c4af'
+  color: '#737260'
 
 }
 const conservatory = {
   name: 'Conservatory',
-  color: '#80b2ba'
+  color: '#6e8264'
 }
 
 const kitchen = {
   name: 'Kitchen',
-  color: '#b08fcf'
+  color: '#77637d'
 }
 
 const study = {
@@ -157,32 +157,32 @@ const study = {
 
 const library = {
   name: 'Library',
-  color: '#e3edcc'
+  color: '#75685b'
 }
 
 const billiardRoom = {
   name: 'Billiard Room',
-  color: '#e0999d'
+  color: '#804f62'
 }
 
 const lounge = {
   name: 'Lounge',
-  color: '#f7efdc'
+  color: '#8a895c'
 }
 
 const ballRoom = {
   name: 'Ballroom',
-  color: '#c5e5f0'
+  color: '#697c91'
 }
 
 const hall = {
   name: 'Hall',
-  color: '#e7c5f0'
+  color: '#99708b'
 }
 
 const spa = {
   name: 'Spa',
-  color: '#ebc8be'
+  color: '#82745f'
 }
 
 const livingRoom = {
@@ -197,17 +197,17 @@ const observatory = {
 
 const theater = {
   name: 'Theater',
-  color: '#bce3cd'
+  color: '#608281'
 }
 
 const guestHouse = {
   name: 'Guest House',
-  color: '#9da0cc'
+  color: '#655c80'
 }
 
 const patio = {
   name: 'Patio',
-  color: '#bda4a6'
+  color: '#755b70'
 }
 
 
