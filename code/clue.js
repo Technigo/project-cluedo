@@ -177,7 +177,7 @@ const mystery = {
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
   document.getElementById('loader1').style.display = 'block';
-  setTimeout(delayedPickKiller, 1300);
+  setTimeout(afterLoaderPickKiller, 1300);
 };
   
 document.getElementById('killerImage').style.filter = 'sepia(100%)';
@@ -185,7 +185,7 @@ document.getElementById('loader1').style.display = 'none'; // prevents loader to
 document.getElementById('killerCard').addEventListener('click', pickKiller); // allows us to connect en event when clicked to the killer card
 
 // This function triggers when loader is done.
-const delayedPickKiller = () => {
+const afterLoaderPickKiller = () => {
   document.getElementById('killerImage').style.filter = 'sepia(0%)';
   document.getElementById('loader1').style.display = 'none';
   document.getElementById('killerCard').removeEventListener('click', pickKiller);
@@ -211,14 +211,14 @@ const delayedPickKiller = () => {
 // This function will be invoked when you click on the room card.
 const pickWeapon = () => {
   document.getElementById('loader2').style.display = 'block';
-  setTimeout(delayedPickWeapon, 1300);
+  setTimeout(afterLoaderPickWeapon, 1300);
 };
 
 document.getElementById('loader2').style.display = 'none';
 document.getElementById('weaponCard').addEventListener('click', pickWeapon);
 
 // This function will be invoked when loader is done.
-const delayedPickWeapon = () => {
+const afterLoaderPickWeapon = () => {
   document.getElementById('loader2').style.display = 'none';
   document.getElementById('weaponCard').removeEventListener('click', pickWeapon);
 
@@ -230,14 +230,14 @@ const delayedPickWeapon = () => {
 // This function will be invoked when you click on the room card.
 const pickRoom = () => {
   document.getElementById('loader3').style.display = 'block';
-  setTimeout(delayedPickRoom, 1400);
+  setTimeout(afterLoaderPickRoom, 1400);
 };
 
 document.getElementById('loader3').style.display = 'none';
 document.getElementById('roomCard').addEventListener('click', pickRoom);
 
 // This function will be invoked when loader is done.
-const delayedPickRoom = () => {
+const afterLoaderPickRoom = () => {
   document.getElementById('loader3').style.display = 'none';
   document.getElementById('roomCard').removeEventListener('click', pickRoom);
   
@@ -255,9 +255,9 @@ document.getElementById('roomCard').onclick = pickRoom
 // Creates a function - revealMystery - that will be invoked when you click reveal button.
 const revealMystery = () => {
     if (mystery.killer === undefined || mystery.weapon === undefined || mystery.room === undefined) {
-    document.getElementById('revealButton').innerText = 'Please, pick killer, weapon and room.';
+    document.getElementById('revealButton').innerHTML = 'Please, pick killer, weapon and room.';
   }  else {
-    document.getElementById('revealButton').innerText = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room}.`
+    document.getElementById('revealButton').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room}.`
   }
 }
 
