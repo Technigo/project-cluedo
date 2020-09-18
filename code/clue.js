@@ -185,6 +185,7 @@ const pickKiller = () => {
   document.getElementById('killerImage').src = mystery.killer.image
 }
 document.getElementById('killerCard').onclick = pickKiller
+
 // FUNCTIONS pickWeapon 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
@@ -205,12 +206,7 @@ const shuffleFavouriteWeapon = () => {
 }
 shuffleFavouriteWeapon()
 
-// pickRoom
-const pickRoom = () => {
-  mystery.rooms = randomSelector(rooms)
-  document.getElementById('roomName').innerHTML = `${mystery.rooms}`
-}
-document.getElementById('roomCard').onclick = pickRoom
+//This block of code is the one I really wanted to make work but somehow it never did:
 
 // const favourite = suspects.favouriteWeapon
 // const shuffleFavouriteWeaponDuplicate = new Array(6).fill(favourite)
@@ -219,6 +215,14 @@ document.getElementById('roomCard').onclick = pickRoom
 //   mystery.favouriteWeapon = randomArray[Math.floor(Math.random() * randomArray.length)]
 // }
 // pickNotSoRandomWeapon()
+
+// pickRoom
+const pickRoom = () => {
+  mystery.rooms = randomSelector(rooms)
+  document.getElementById('roomName').innerHTML = `${mystery.rooms}`
+}
+document.getElementById('roomCard').onclick = pickRoom
+
 // FUNCTION revealMystery that will be invoked when you click that button
 const thisMystery = document.getElementById('mystery')
 
@@ -227,7 +231,7 @@ const revealMystery = () => {
     //   if (mystery.killer == null || mystery.weapon == null || mystery.room == null) -this prints no mystery to be revealed yet but it prints the same when all cards chosen, too
     document.getElementById('mystery').innerHTML = `No mystery to be revealed yet!`
   } else {
-    thisMystery.innerHTML = `The murder was committed by the ${mystery.killer.occupation} ${mystery.killer.firstName} ${mystery.killer.lastName} , room: ${mystery.rooms}, executed with a ${mystery.weapon.weight} lbs ${mystery.weapon.name}. ${mystery.weapon.fact}! This suspect's favourite weapon is: ${mystery.favouriteWeapon.name}. Spooky`
+    thisMystery.innerHTML = `The murder was committed by the ${mystery.killer.occupation} ${mystery.killer.firstName} ${mystery.killer.lastName} , room: ${mystery.rooms}, executed with a ${mystery.weapon.weight} lbs ${mystery.weapon.name}. ${mystery.weapon.fact}! This suspect's favourite weapon is: ${mystery.favouriteWeapon.name}. Spooky.`
 
   }
 }
