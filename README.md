@@ -10,7 +10,7 @@ We were giving a bit of code in advance for this project which made it easier to
 I tried to make a modal to reveal the mystery after pressing the button and I am quite satisfied with how it turned out.
 Overall I am happy with my design and I decided not to show so much info on my cards due to that i think it looks better without. I only made it to the blue level of requirements this time but I am happy with it. 
 
-## If i would have had more time
+## If I would have had more time
 
 I would have wanted to make the animations on the cards.
 I would have made a refresh button.
