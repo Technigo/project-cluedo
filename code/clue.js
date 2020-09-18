@@ -297,11 +297,11 @@ const getMystery = () => {
 // ----------Shuffle suspects favorite weapon--------------
 
 shuffleFavoriteWeapon = (suspects) => {
-  suspects.forEach(suspect => {
+  return suspects.map(suspect => {
     const favoriteWeaponArray = [
       ...weapons
     ];
-    suspect.favoriteWeapon = randomSelector(weapons);
+    suspect.favoriteWeapon = randomSelector(favoriteWeaponArray);
   });
 };
 
