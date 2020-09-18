@@ -181,6 +181,7 @@ button:active {
 
   .wrapper {
     width: 100%;
+    height: auto;
     text-align: center;
     margin-top: 50px;
   }
@@ -188,14 +189,17 @@ button:active {
   .killer-deck {
     width: 90%;
     margin-bottom: 20px;
+    height: auto;
   }
 
   .weapon-deck {
     width: 90%;
     margin-bottom: 20px;
+    height: auto;
   }
 
   .room-deck {
     width: 90%;
+    height: auto;
   }
 }
