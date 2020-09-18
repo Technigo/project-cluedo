@@ -9,8 +9,6 @@ document.getElementById('weaponInner').classList.add("front");
 document.getElementById('killerInner').classList.add("front");
 document.getElementById('roomInner').classList.add("front");
 
-//Hides the mystery-revealing div when loading the page.
-document.getElementById('revealedMystery').classList.add('invisible');
 
 
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
@@ -183,12 +181,8 @@ const randomSelector = array => {
 }
 
 
-//FUNCTION THAT SHUFFLES THE FAVOURITE WEAPON OF ONE SUSPECT
-const shuffleFavouriteWeapon = suspect => suspect.favouriteWeapon = randomSelector(weapons).id
-
-//Calling the shuffle-function for each suspect:
-suspects.forEach(shuffleFavouriteWeapon)
-
+//FUNCTION THAT SHUFFLES THE FAVOURITE WEAPON OF A PERSON
+const shuffleFavouriteWeapon = person => person.favouriteWeapon = randomSelector(weapons).id
 
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
@@ -200,14 +194,39 @@ const mystery = {
   room: null
 };
 
+//Function to delay pickKiller-function:
+const delayPickKiller = () => {
+  document.getElementById('killerLoader').style.display = 'block';
+  setTimeout(pickKiller, 1600);
+}
+
+document.getElementById('killerInner').addEventListener('click', delayPickKiller);
+
+//Function to delay pickWeapon-function:
+const delayPickWeapon = () => {
+  document.getElementById('weaponLoader').style.display = 'block';
+  setTimeout(pickWeapon, 1600);
+}
+
+document.getElementById('weaponInner').addEventListener('click', delayPickWeapon);
+
+//Function to delay pickRoom-function:
+const delayPickRoom = () => {
+  document.getElementById('roomLoader').style.display = 'block';
+  setTimeout(pickRoom, 1600);
+}
+
+document.getElementById('roomInner').addEventListener('click', delayPickRoom);
 
 //FUNCTIONS THAT WILL BE INVOKED WHEN YOU CLICK ON THE CARD DECKS
 
 // 1. for the killer card deck.
 
-const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
+function pickKiller() {
+  document.getElementById('killerLoader').style.display = 'none';
+  // This will randomly select a killer from the suspects, add that to the mystery object and give him/her a random favourite weapon.
   mystery.killer = randomSelector(suspects);
+  shuffleFavouriteWeapon(mystery.killer);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerInner').style.background = mystery.killer.color;
@@ -226,13 +245,15 @@ const pickKiller = () => {
   document.getElementById('killerImage').src = `${mystery.killer.image}`;
   document.getElementById(
     'killerDescription').innerHTML = `${mystery.killer.description}`;
-    document.getElementById('killerFavWeapon').innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
-};
+  document.getElementById('killerFavWeapon').innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
+}
 
 
 // 2. for the weapon card deck.
 
 const pickWeapon = () => {
+  document.getElementById('weaponLoader').style.display = 'none';
+
   mystery.weapon = randomSelector(weapons);
 
   //This will remove the card frontside styling.
@@ -251,6 +272,8 @@ const pickWeapon = () => {
 //3. for the room card deck.
 
 const pickRoom = () => {
+  document.getElementById('roomLoader').style.display = 'none';
+
   mystery.room = randomSelector(rooms);
 
   //This will remove the card frontside styling.
@@ -263,34 +286,23 @@ const pickRoom = () => {
 };
 
 
-//CALLING THE THREE CARD DECK FUNCTIONS
-
-document.getElementById('weaponCard').onclick = pickWeapon;
-// console.log(mystery.weapon)
-
-document.getElementById('killerCard').onclick = pickKiller;
-// console.log(mystery.killer)
-
-document.getElementById('roomCard').onclick = pickRoom;
-// console.log(mystery.room)
-
-
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
   // console.log(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} 
   // in the ${mystery.room} with a ${mystery.weapon.name}.`)
-
+  const revealText = document.getElementById('revealedMystery')
+  revealText.style.display = 'block'
   //Only reveal a mystery, when killer, weapon and room are chosen.
   if (mystery.killer !== null && mystery.weapon !== null && mystery.room !== null) {
-  document.getElementById('revealedMystery').classList.remove('invisible');
-  }
+      //Show a box with a text that reveals the mystery
+    revealText.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} 
+    in the ${mystery.room} with a ${mystery.weapon.name}.`;
 
-  //Show a box with a text that reveals the mystery
-  document.getElementById('revealedMystery').innerHTML = 
-  `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} 
-  in the ${mystery.room} with a ${mystery.weapon.name}.`;
+  } else {
+      revealText.innerHTML = 'Please choose one card from each deck!'
+    }
 }
 
 //Call the revealMystery function

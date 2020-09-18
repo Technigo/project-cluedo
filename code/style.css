@@ -1,13 +1,31 @@
 body {
   margin: 0;
   font-family: Girassol;
-}
-
-.main {
   background-image: url(./castleroom.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+header {
+  color: whitesmoke;
+  text-align: center;
+  font-family: Girassol;
+  padding: 27px;
+  background-color: rgba(0,0,0,0.55);
+}
+
+header h1 {
+  margin: 0;
+  padding: 15px;
+  font-size: 65px;
+}
+
+header p {
+  font-size: 20px;
+}
+
+.main {
   padding: 50px 0px 200px 0px;
 }
 
@@ -23,6 +41,32 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-right: 16px solid green;
+  border-bottom: 16px solid red;
+  border-left: 16px solid pink;
+  width: 60px;
+  height: 60px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  left: 70px;
+  top: 250px;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg);}
+  100% { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
 }
 
 
@@ -52,6 +96,7 @@ p {
   text-align: center;
   border-radius: 16px;
   border: 2px solid brown;
+  position: relative;
 }
 
 .room-deck {
@@ -64,21 +109,14 @@ p {
   align-items: center;
 }
 
-/*THE MYTERY REVEALING SECTION*/
+/*THE MYSTERY REVEALING SECTION*/
 
 .revealing {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 150px;
 }
-
-/* .revealing div {
-  margin-top: 30px;
-  background-color: rgba(255,255,255,0.7);
-  text-align: center;
-  border: 1px solid white;
-  border-radius: 16px;
-} */
 
 .revealing p {
   padding: 20px;
@@ -97,6 +135,29 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+/*THE FOOTER*/
+
+footer {
+  color: whitesmoke;
+  font-family: Girassol;
+  padding: 15px;
+  background-color: rgba(0,0,0,0.55);
+  display: flex;
+}
+footer div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.footer-right {
+  align-items: flex-end;
+}
+
+footer img {
+  width: 40px;
 }
 
 /*Classes that get removed from the card decks when clicking on them*/
@@ -127,11 +188,6 @@ button {
   margin: 30px;
 }
 
-/*Classes that get activated when clicking on the reveal-button*/
-
-.invisible {
-display: none;
-}
 
 /*MEDIA QUERIES*/
 
