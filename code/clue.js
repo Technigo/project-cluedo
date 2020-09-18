@@ -78,7 +78,7 @@ const Turkey = {
 
 const RedBagel = {
   name: 'Red Bagel',
-  taste: 'Taste: 6'
+  taste: 'Taste: 6',
   image: 'assets/bagel.jpg'
 }
 
