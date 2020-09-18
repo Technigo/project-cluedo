@@ -9,4 +9,4 @@ I started creating objects for each catergory and arrays with the objects create
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://cluedomurdermystery.netlify.app/
