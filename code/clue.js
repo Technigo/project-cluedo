@@ -13,6 +13,7 @@ const mrGreen = {
   image: "killers/green.png",
   occupation: "Entrepreneur",
   favouriteWeaponId: "bat", //exactly the same as weapon name, e.g. 'name: "bat",'
+  heading: "black",
 };
 // *** 2. Professor Plum
 const profPlum = {
@@ -25,6 +26,7 @@ const profPlum = {
   image: "killers/plum.png",
   occupation: "Professor",
   favouriteWeaponId: "trophy",
+  heading: "black",
 };
 // *** 3. Miss Scarlet
 const missScarlet = {
@@ -37,6 +39,7 @@ const missScarlet = {
   image: "killers/scarlet.png",
   occupation: "Actress",
   favouriteWeaponId: "pistol",
+  heading: "black",
 };
 // *** 4. Mrs Peacock
 const mrsPeacock = {
@@ -49,6 +52,7 @@ const mrsPeacock = {
   image: "killers/peacock.png",
   occupation: "Socialite",
   favouriteWeaponId: "knife",
+  heading: "black",
 };
 // *** 5. Colonel Mustard
 const colMustard = {
@@ -61,6 +65,7 @@ const colMustard = {
   image: "killers/mustard.png",
   occupation: "Colonel",
   favouriteWeaponId: "candlestick",
+  heading: "black",
 };
 // *** 6. Mrs White
 const mrsWhite = {
@@ -73,6 +78,7 @@ const mrsWhite = {
   image: "killers/white.png",
   occupation: "Housekeeper",
   favouriteWeaponId: "poison",
+  heading: "black",
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -86,6 +92,7 @@ const rope = {
   place: "theater",
   image: "weapons/rope.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 2. knife
 const knife = {
@@ -94,6 +101,7 @@ const knife = {
   place: "kitchen",
   image: "weapons/knife.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 3. candlestick
 const candlestick = {
@@ -102,6 +110,7 @@ const candlestick = {
   place: "ballroom",
   image: "weapons/candlestick.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 4. dumbbel
 const dumbbel = {
@@ -110,6 +119,7 @@ const dumbbel = {
   place: "spa",
   image: "weapons/dumbbel.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 5. poison
 const poison = {
@@ -118,6 +128,7 @@ const poison = {
   place: "lounge",
   image: "weapons/poison.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 6. axe
 const axe = {
@@ -126,6 +137,7 @@ const axe = {
   place: "conservatory",
   image: "weapons/axe.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 7. bat
 const bat = {
@@ -134,6 +146,7 @@ const bat = {
   place: "hall",
   image: "weapons/bat.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 8. trophy
 const trophy = {
@@ -142,6 +155,7 @@ const trophy = {
   place: "library",
   image: "weapons/trophy.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 9. pistol
 const pistol = {
@@ -150,6 +164,7 @@ const pistol = {
   place: "study",
   image: "weapons/pistol.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -163,6 +178,7 @@ const diningRoom = {
   id: "dining",
   image: "rooms/dining-room.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 2. Conservatory
 const conservatory = {
@@ -171,6 +187,7 @@ const conservatory = {
   id: "conservatory",
   image: "rooms/conservatory.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 3. Kitchen
 const kitchen = {
@@ -179,6 +196,7 @@ const kitchen = {
   id: "kitchen",
   image: "rooms/kitchen.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 4. Study
 const study = {
@@ -187,6 +205,7 @@ const study = {
   id: "study",
   image: "rooms/study.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 5. Library
 const library = {
@@ -195,6 +214,7 @@ const library = {
   id: "library",
   image: "rooms/library.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 6. Billiard Room
 const billiardRoom = {
@@ -203,6 +223,7 @@ const billiardRoom = {
   id: "billiard",
   image: "rooms/billiard-room.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 7. Lounge
 const lounge = {
@@ -211,6 +232,7 @@ const lounge = {
   id: "lounge",
   image: "rooms/lounge.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 8. Ballroom
 const ballRoom = {
@@ -219,6 +241,7 @@ const ballRoom = {
   id: "ballroom",
   image: "rooms/ballroom.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 9. Hall
 const hall = {
@@ -227,6 +250,7 @@ const hall = {
   id: "hall",
   image: "rooms/hall.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 10. Spa
 const spa = {
@@ -235,6 +259,7 @@ const spa = {
   id: "spa",
   image: "rooms/spa.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 11. Living Room
 const livingRoom = {
@@ -243,6 +268,7 @@ const livingRoom = {
   id: "livingRoom",
   image: "rooms/living-room.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 12. Observatory
 const observatory = {
@@ -251,6 +277,7 @@ const observatory = {
   id: "observatory",
   image: "rooms/observatory.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 13. Theater
 const theater = {
@@ -259,6 +286,7 @@ const theater = {
   id: "theater",
   image: "rooms/theater.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 14. Guest House
 const guestHouse = {
@@ -267,6 +295,7 @@ const guestHouse = {
   id: "guestHouse",
   image: "rooms/guest-house.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 // *** 15. Patio
 const patio = {
@@ -275,6 +304,7 @@ const patio = {
   id: "patio",
   image: "rooms/patio.png",
   color: "#F5F5F5",
+  heading: "black",
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -374,6 +404,8 @@ const pickKiller = () => {
     // changing card info
     document.getElementById("killerCard").style.background =
       mystery.killer.color;
+    document.getElementById("cardHeadingKiller").style.background =
+      mystery.killer.heading;
     document.getElementById(
       "killerName"
     ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
@@ -411,6 +443,8 @@ const pickWeapon = () => {
       // changing card info
       document.getElementById("weaponCard").style.background =
         mystery.weapon.color;
+      document.getElementById("cardHeadingWeapon").style.background =
+        mystery.weapon.heading;
       document.getElementById("weaponCard");
       document.getElementById(
         "weaponName"
@@ -453,6 +487,8 @@ const pickRoom = () => {
 
       // changing card info
       document.getElementById("roomCard").style.background = mystery.room.color;
+      document.getElementById("cardHeadingRoom").style.background =
+        mystery.room.heading;
       document.getElementById("roomCard");
       document.getElementById("roomName").innerHTML = `${mystery.room.name}`;
       document.getElementById(
