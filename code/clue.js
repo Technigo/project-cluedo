@@ -201,20 +201,21 @@ function move(callback) {
     i = 1;
     var elem = document.getElementById("myBar");
     var width = 1;
-    var id = setInterval(frame, 25);
+    var id = setInterval(frame, 75);
     function frame() {
       if (width > 100) {
         clearInterval(id);
         i = 0;
         document.getElementById('myProgress').style.display = "none";
       } else if (width == 100){
-        callback();
+        //callback();
         width++;
       } 
       else {
         width++;
         elem.style.width = width + "%";
       }
+      callback();
     }
   }
 }
@@ -229,8 +230,16 @@ function move(callback) {
   ).innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
 }*/
 
+const remove = () => {
+  document.getElementById("mystery").classList.remove("h1fade");
+  document.getElementById("mystery").innerHTML = "";
+}
+
 const shuffleFavouriteWeapon = (suspect) => {
   suspects.forEach((suspect) => (suspect.favouriteWeapon = randomSelector(weapons).name));
+  document.getElementById("mystery").innerHTML = "Weapons Changed";
+  document.getElementById("mystery").classList.add("h1fade"); // = "h1fade";
+  setTimeout(remove, 6000);
   //suspect.favouriteWeapon = randomSelector(weapons).name;
 }
 
@@ -254,6 +263,7 @@ const pickKiller = () => {
   document.getElementById(
     "killerName"
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById("killerImage").classList.toggle("imgflip");
   document.getElementById("killerImage").src = mystery.killer.image;
   document.getElementById(
     "killerDescription"
@@ -321,6 +331,12 @@ document.getElementById('roomCard').addEventListener('click', (e) => {
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
+  if ((mystery.killer == null) || (mystery.weapon == null) || (mystery.room == null)){
+  document.getElementById("mystery").innerHTML = `You don´t have all the clues yet! Please click all cards`;
+  document.getElementById("mystery").classList.add("h1fade"); // = "h1fade";
+  setTimeout(remove, 6000);
+  }
+  else
   document.getElementById("mystery").innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
 }
 
