@@ -284,4 +284,4 @@ document.getElementById('roomCard').onclick = pickRoom;
 const revealMystery = () => {
   document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}.`
 }
-document.getElementById('revealButton').onclick = revealMysteryg
+document.getElementById('revealButton').onclick = revealMystery
