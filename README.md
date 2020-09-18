@@ -1,13 +1,15 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+My goal this week was to get the most basic (blue level) features in order and prevent the stress I felt last week. 
+ 
+– next time I would definitely have focused on heading the red and black level. But I'm happy the game looks quite ok, after all. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+My focus was: trying to understand javascript and become better at googling these topics and filter between the results. I started to get all the basic (blue level) functions in order. 
+If i had more time I would try red and black level and also style the cards more.  
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://vibrant-haibt-bed6d3.netlify.app
