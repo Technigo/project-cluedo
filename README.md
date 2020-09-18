@@ -1,7 +1,7 @@
 # Cluedo - Mystery Randomizer
 
-The website shows three cluedo card decks that display a random value when cliked, one deck with suspects, one with weapons and the last with rooms.
-The point was to practise to work with objects and arrays. Project made for technigo bootcamp. 
+The website shows three cluedo card decks that display a random value when clicked, one deck with suspects, one with weapons and the last with rooms.
+The point was learn more about objects and arrays. Project made for technigo bootcamp. 
 
 ## The problem
 
