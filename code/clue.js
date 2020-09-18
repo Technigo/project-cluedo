@@ -95,21 +95,17 @@ const Pistol = {
   weight: 8
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-// dessa har jag klistrat in själv
-// Dining Room, Conservatory, Kitchen, Study, Library, Billiard Room, Lounge, Ballroom, Hall, Spa, Living Room, Observatory, Theater, Guest House, Patio '
-
-// ARRAY SUSPECTS
+// SUSPECTS
 const suspects = [
   mrGreen, mrsWhite, professorPlum, missScarlet, mrsPeacock, colonelMustard, 
 ]
 
-// ARRAY WEAPONS 
+// WEAPONS 
 const weapons = [
    Rope, Knife, Candlestick, Dumbbell, Poison, Axe, Bat, Trophy, Pistol
 ]
 
-// // ARRAY ROOMS
+// ROOMS
 const rooms = [
   'Dining room', 'Conservatory', 'Kitchen', 'Study', 'Library', 'Billiard room', 'Lounge', 'Ballroom', 'Hall', 'Spa', 'Living room', 'Observatory', 'Theater','Guest house', 'Patio'
 ]
@@ -125,15 +121,16 @@ const randomSelector = array => {
 // The values will be set later.
 
 let mystery = { 
-  killer: null,
-  weapon: null,
-  room: null,
-};
-console.log(mystery)
+  killer: "",
+  weapon: "",
+  room: "",
+}
+
+
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  // This will randomly select a kiler from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById("killerCard").style.background = mystery.killer.color 
@@ -164,23 +161,27 @@ const pickWeapon  = () => {
 const pickRoom   = () => {
 
 //   // This will randomly select a weapon from the weaponslist. And add that to the mystery object.
-  mystery.rooms = randomSelector(rooms)
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  mystery.room = randomSelector(rooms)
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer.
   document.getElementById('roomCard').style.background = mystery.killer.color
-  document.getElementById('roomName').innerHTML = `${mystery.rooms}`
+  document.getElementById('roomName').innerHTML = `${mystery.room}`
 }
 
 document.getElementById('roomCard').addEventListener('click', pickRoom)
 
-// // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// // 'The murder was committed by Jacob Green, in the living room with a rope.'
+// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
+// 'The murder was committed by Jacob Green, in the living room with a rope.'
 
-// const revealMystery = () => {
+const revealMystery = () => {
 
-// document.getElementById("mystery").innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}` in the ${mystery.rooms} with a ${mystery.weapon.name}.'
-  
-// }
+document.getElementById('theMystery').innerHTML =`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`
 
-// document.getElementById('button').addEventListener('click', revealMystery)
+}
+
+document.getElementById('revealBtn').addEventListener('click', revealMystery)
 
 
+// Tas bort senare
+// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+// dessa har jag klistrat in själv
+// Dining Room, Conservatory, Kitchen, Study, Library, Billiard Room, Lounge, Ballroom, Hall, Spa, Living Room, Observatory, Theater, Guest House, Patio '

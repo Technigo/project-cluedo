@@ -17,6 +17,9 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 10px 15px 20px #888888;
 }
 
 .killer-deck {
@@ -49,7 +52,7 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: rgb(122, 223, 152);
   border: none;
   font-size: 20px;
   border-radius: 20px;
