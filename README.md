@@ -1,13 +1,11 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week we created a classic boardgame, cluedo. The focus of this project was to practice objects and arrays and also to manipulate the DOM with JavaScript.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I made a mistake when creating some of the object where made a mistake with a punctuation mark but I found it quickly and could move on with the coding. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://lucid-murdock-f820e7.netlify.app
