@@ -1,5 +1,8 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+const killerCard = document.getElementById("killerCard");
+const weaponCard = document.getElementById("weaponCard")
+const roomCard = document.getElementById("roomCard")
 
+// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
@@ -9,7 +12,7 @@ const mrGreen = {
   image: "assets/green.png",
   occupation: "Entrepreneur",
   favouriteWeapon: "axe"
-}
+};
 
 const professorPlum = {
   firstName: "Victor",
@@ -20,7 +23,7 @@ const professorPlum = {
   image: "assets/plum.png",
   occupation: "Professor",
   favouriteWeapon: "rope"
-}
+};
 
 const missScarlet = {
   firstName: "Cassandra",
@@ -31,7 +34,7 @@ const missScarlet = {
   image: "assets/scarlet.png",
   occupation: "Actress",
   favouriteWeapon: "candlestick"
-}
+};
 
 const mrsPeacock = {
   firstName: "Eleanor",
@@ -42,7 +45,7 @@ const mrsPeacock = {
   image: "assets/peacock.png",
   occupation: "None",
   favouriteWeapon: "dumbbell"
-}
+};
 
 const colonelMustard = {
   firstName: "Jack",
@@ -53,7 +56,7 @@ const colonelMustard = {
   image: "assets/mustard.png",
   occupation: "Colonel",
   favouriteWeapon: "knife"
-}
+};
 
 const mrsWhite = {
   firstName: "Blanche",
@@ -64,7 +67,7 @@ const mrsWhite = {
   image: "assets/white.png",
   occupation: "Maid",
   favouriteWeapon: "poison"
-}
+};
 
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
@@ -75,7 +78,7 @@ const rope = {
   weight: 10,
   image: "assets/rope.svg",
   id: "rope"
-}
+};
 
 const knife = {
   name: "knife",
@@ -83,7 +86,7 @@ const knife = {
   weight: 11,
   image: "assets/knife.svg",
   id: "knife"
-}
+};
 
 const candlestick = {
   name: "candlestick",
@@ -91,7 +94,7 @@ const candlestick = {
   weight: 12,
   image: "assets/candlestick.svg",
   id: "candlestick"
-}
+};
 
 const dumbbell = {
   name: "dumbbell",
@@ -99,7 +102,7 @@ const dumbbell = {
   weight: 13,
   image: "assets/gym.svg",
   id: "dumbbell"
-}
+};
 
 const poison = {
   name: "poison",
@@ -107,7 +110,7 @@ const poison = {
   weight: 14,
   image: "assets/potion.svg",
   id: "poison"
-}
+};
 
 const axe = {
   name: "axe",
@@ -115,28 +118,31 @@ const axe = {
   weight: 15,
   image: "assets/axe.svg",
   id: "axe"
-}
+};
 
 const bat = {
   name: "bat",
   color: "pink",
   weight: 16,
-  image: "assets/baseballBat.svg"
-}
+  image: "assets/baseballBat.svg",
+  id: "bat"
+};
 
 const trophy = {
   name: "trophy",
   color: "gold",
   weight: 17,
-  image: "assets/award.svg"
-}
+  image: "assets/award.svg",
+  id: "trohpy"
+};
 
 const pistol = {
   name: "pistol",
   color: "orange",
   weight: 18,
-  image: "assets/gun.svg"
-}
+  image: "assets/gun.svg",
+  id: "pistol"
+};
 
 //OBJECTS FOR THE ROOMS
 
@@ -144,91 +150,91 @@ const diningRoom = {
   name: "Dining Room",
   image: "assets/diningRoom.svg",
   color: "darkred"
-}
+};
 
 const conservatory = {
   name: "Conservatory",
   image: "assets/door.svg",
   color: "BlanchedAlmond"
-}
+};
 
 const kitchen = {
   name: "Kitchen",
   image: "assets/kitchen.svg",
   color: "Coral"
-}
+};
 
 const study = {
   name: "Study",
   image: "assets/work.svg",
   color: "Chocolate"
-}
+};
 
 const library = {
   name: "Library",
   image: "assets/library.svg",
   color: "CadetBlue"
-}
+};
 
 const billiardRoom = {
   name: "Billiard Room",
   image: "assets/snooker.svg",
   color: "DarkCyan"
-}
+};
 
 const lounge = {
   name: "Lounge",
   image: "assets/lounge.svg",
   color: "DarkGoldenRod"
-}
+};
 
 const ballroom = {
   name: "Ballroom",
   image: "assets/chandelier.svg",
   color: "DarkSlateBlue"
-}
+};
 
 const hall = {
   name: "Hall",
   image: "assets/hanger.svg",
   color: "Khaki"
-}
+};
 
 const spa = {
   name: "Spa",
   image: "assets/beauty.svg",
   color: "HotPink"
-}
+};
 
 const livingRoom = {
   name: "Living Room",
   image: "assets/lamp.svg",
   color: "LavenderBlush"
-}
+};
 
 const observatory = {
   name: "Observatory",
   image: "assets/telescope.svg",
   color: "LightSalmon"
-} 
+};
 
 const theater = {
   name: "Theater",
   image: "assets/doorStar.svg",
   color: "NavajoWhite"
-}
+};
 
 const guestHouse = {
   name: "Guest House",
   image: "assets/realEstate.svg",
   color: "PeachPuff"
-}
+};
 
 const patio = {
   name: "Patio",
   image: "assets/outdoor.svg",
   color: "Olive"
-}
+};
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
@@ -283,52 +289,120 @@ const mystery = {
   room: undefined 
 };
 
-// This function will be invoked when you click on the killer card.
+// FUNCTIONS
+
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
 
-  document.getElementById("killerCard").style.background = mystery.killer.color;
-  document.getElementById("killerName").innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  document.getElementById("killerImage").src = `${mystery.killer.image}`;
-  document.getElementById("killerAge").innerHTML = `Age: ${mystery.killer.age}`;
-  document.getElementById("favouriteWeapon").innerHTML = `Favourite Weapon: ${mystery.killer.favouriteWeapon}`;
+  const killerImage = document.getElementById("killerImage");
+  const favouriteWeapon = document.getElementById("favouriteWeapon");
+  const killerAge = document.getElementById("killerAge");
+  const killerName = document.getElementById("killerName");
+
+  mystery.killer.favouriteWeapon= shuffleFavoriteWeapon(suspects);
+
+  killerImage.style.display = "block";
+  favouriteWeapon.style.display = "block";
+  killerAge.style.display = "block";
+  killerName.style.display = "block";
+  killerCard.style.background = mystery.killer.color;
+
+  killerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  killerImage.src = `${mystery.killer.image}`;
+  killerAge.innerHTML = `Age: ${mystery.killer.age}`;
+  favouriteWeapon.innerHTML = `Favourite Weapon: ${mystery.killer.favouriteWeapon}`;
+
+  document.getElementById("loadingAnimation1").style.display = "none";
 }
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
 
-  document.getElementById("weaponCard").style.background = mystery.weapon.color;
-  document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
-  document.getElementById("weaponWeight").innerHTML = `${mystery.weapon.weight}`;
-  document.getElementById("weaponImage").src = `${mystery.weapon.image}`;
+  const weaponImage = document.getElementById("weaponImage");
+  const weaponName = document.getElementById("weaponName");
+  const weaponWeight = document.getElementById("weaponWeight");
+
+  weaponName.style.display = "block";
+  weaponWeight.style.display = "block";
+  weaponImage.style.display =  "block";
+
+  weaponCard.style.background = mystery.weapon.color;
+  weaponName.innerHTML = `${mystery.weapon.name}`;
+  weaponWeight.innerHTML = `${mystery.weapon.weight}`;
+  weaponImage.src = `${mystery.weapon.image}`;
+
+  document.getElementById("loadingAnimation2").style.display = "none";
 };
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms);
 
-  document.getElementById("roomCard").style.background = mystery.room.color;
-  document.getElementById("roomName").innerHTML = `${mystery.room.name}`;
-  document.getElementById('roomImage').src = `${mystery.room.image}`;
+  const roomCard = document.getElementById("roomCard");
+  const roomName = document.getElementById("roomName");
+  const roomImage = document.getElementById("roomImage");
+
+  roomName.style.display = "block";
+  roomImage.style.display = "block";
+
+  roomCard.style.background = mystery.room.color;
+  roomName.innerHTML = `${mystery.room.name}`;
+  roomImage.src = `${mystery.room.image}`;
+
+  document.getElementById("loadingAnimation3").style.display = "none";
 };
 
 const startAnimation1 = () => {
+  const killerImage = document.getElementById("killerImage");
+  const favouriteWeapon = document.getElementById("favouriteWeapon");
+  const killerAge = document.getElementById("killerAge");
+  const killerName = document.getElementById("killerName");
+
+  killerImage.style.display = "none";
+  favouriteWeapon.style.display = "none";
+  killerAge.style.display = "none";
+  killerName.style.display = "none";
+
   document.getElementById("loadingAnimation1").style.display = "block";
-  setTimeout(pickKiller, 2000)
+
+  setTimeout(pickKiller, 1500)
 };
 
 const startAnimation2 = () => {
+  const weaponImage = document.getElementById("weaponImage");
+  const weaponName = document.getElementById("weaponName");
+  const weaponWeight = document.getElementById("weaponWeight");
+
+  weaponName.style.display = "none";
+  weaponWeight.style.display = "none";
+  weaponImage.style.display = "none";
+
   document.getElementById("loadingAnimation2").style.display = "block";
-  setTimeout(pickWeapon, 2000)
+  setTimeout(pickWeapon, 1500)
 }
 
 const startAnimation3 = () => {
+  const roomName = document.getElementById("roomName");
+  const roomImage = document.getElementById("roomImage");
+
+  roomName.style.display = "none";
+  roomImage.style.display = "none";
+
   document.getElementById("loadingAnimation3").style.display = "block";
-  setTimeout(pickRoom, 2000)
+  setTimeout(pickRoom, 1500)
 }
 
-document.getElementById('killerCard').onclick = startAnimation1;
-document.getElementById('weaponCard').onclick = startAnimation2;
-document.getElementById('roomCard').onclick = startAnimation3;
+const shuffleFavoriteWeapon = (suspectarray) => {
+  suspectarray.forEach((suspect) => (suspect.favouriteWeapon = randomSelector(weapons)))
+}
+
+// CALL FUNCTIONS WHEN CLICK ON CARDS
+
+killerCard.onclick = startAnimation1;
+weaponCard.onclick = startAnimation2;
+roomCard.onclick = startAnimation3;
+
+
+// FINAL FUNCTION
 
 const revealMystery = () => {
   const answerMystery = document.getElementById("mysteryAnswer")
