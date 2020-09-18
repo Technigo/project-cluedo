@@ -163,12 +163,11 @@ article, #revealButton, #restartButton {
   align-items: center;
   justify-content: center;
   padding: 10px;
-  background-color: #900d0d;
+  background-color:none;
 }
 
 #killerImage {
   border-radius: 50%;
-  background-color: #900d0d;
   margin-top: 15px;
   margin-bottom: 15px;
   object-fit: cover;
@@ -176,7 +175,6 @@ article, #revealButton, #restartButton {
 
 #weaponsImage {
   border-radius: 30%;
-  background-color: #900d0d;
   margin-top: 15px;
   margin-bottom: 15px;
   object-fit: cover;
@@ -192,7 +190,6 @@ article, #revealButton, #restartButton {
 }
 
 #killerOccupation, #killerAge {
-  background-color: whitesmoke;
   margin: 0px;
 }
 

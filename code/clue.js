@@ -222,9 +222,12 @@ const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard'); //.style.background = mystery.killer.color; (commented out because it looks awful)
+  document.getElementById('killerCard').style.background = '#e7cb96'; //mystery.killer.color; (commented out because it looks awful)
   let killerImage = document.getElementById('killerImage');
   killerImage.src = mystery.killer.image;
+  //document.getElementById('killerName').style.background = '#900d0d'; 
+  document.getElementById('killerName').style.padding = '15px';
+  //document.getElementById('killerName').style.margin = '0px';
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   document.getElementById('killerOccupation').innerHTML
   document.getElementById('killerAge').innerHTML = `${mystery.killer.occupation}, ${mystery.killer.age}`;
@@ -257,6 +260,8 @@ const pickWeapon = () => {
   mystery.weapons = randomSelector(weapons);
 
   // This will change styling 
+  document.getElementById('weaponCard').style.background = '#e7cb96';
+  document.getElementById('weaponName').style.padding = '15px';
   document.getElementById('weaponName').innerHTML = `${mystery.weapons.name}`;
   let weaponsImage = document.getElementById('weaponsImage');
   weaponsImage.src = mystery.weapons.image;
@@ -289,7 +294,8 @@ const pickRoom = () => {
   mystery.rooms = randomSelector(rooms);
 
   //This will change styling 
-  document.getElementById('roomCard');
+  document.getElementById('roomCard').style.background = '#e7cb96';
+  document.getElementById('roomName').style.padding = '15px';
   document.getElementById('roomName').innerHTML = `In the ${mystery.rooms}`;
   let roomName = document.getElementById('roomName');
 };
