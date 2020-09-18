@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// SUSPECTS
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -60,7 +60,7 @@ const mrsWhite = {
   occupation: 'chef',
 }
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+// WEAPONS
 
 const rope = {
   name: 'Rope',
@@ -116,7 +116,7 @@ const pistol = {
   image: 'assets/pistol.jpg',
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+// THE ROOMS 
 
 const diningRoom = {
   name: 'Dining room',
@@ -193,7 +193,7 @@ const patio = {
   image: 'assets/patio.jpg',
 }
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// ARRAYS
 
 const suspects = [
   mrGreen,
@@ -235,53 +235,43 @@ const rooms = [
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+// OBJECT THAT KEEPS THE MYSTERY.
 const mystery = {
   killer: '',
   weapon: '',
   room: '',
 }
 
-// This function will be invoked when you click on the killer card.
+// Random killer function
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerImage').src = mystery.killer.image
-  // THIS IS FROM THE INDEX.HTML, REMEMBER TO CREATE IDS FOR WEAPONS AND ROOMS IN INDEX.HTML TO ADD PHOTOS TO THEM AS WELL ----> <img id="killerImage" src="" height="100" />
   document.getElementById(
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.age} ${mystery.killer.occupation}`
 }
 document.getElementById('killerCard').onclick = pickKiller;
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+// Random weapon function
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
   document.getElementById('weaponImage').src = mystery.weapon.image
-  // REMEMBER TO CREATE IDS FOR WEAPONS AND ROOMS IN INDEX.HTML TO ADD PHOTOS TO THEM AS WELL ----> LIEK THIS <img id="killerImage" src="" height="100" />
   document.getElementById(
     'weaponName'
   ).innerHTML = `Weapon: ${mystery.weapon.name}, weight: ${mystery.weapon.weight}`
 }
 document.getElementById('weaponCard').onclick = pickWeapon;
 
-
-
+// Random room function
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
-
   document.getElementById('roomImage').src = mystery.room.image
-  // THIS IS FROM THE INDEX.HTML, REMEMBER TO CREATE IDS FOR WEAPONS AND ROOMS IN INDEX.HTML TO ADD PHOTOS TO THEM AS WELL ----> LIEK THIS <img id="killerImage" src="" height="100" />
   document.getElementById(
     'roomName'
   ).innerHTML = `${mystery.room.name}`
@@ -289,8 +279,7 @@ const pickRoom = () => {
 document.getElementById('roomCard').onclick = pickRoom;
 
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// revealMystery function
 
 const revealMystery = () => {
   document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}.`
