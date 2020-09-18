@@ -1,3 +1,13 @@
+const loader = document.createElement("div");
+loader.classList.add("clock");
+const handle = document.createElement("div");
+handle.classList.add("handle");
+
+const showLoader = (card) => {
+  loader.appendChild(handle);
+  card.appendChild(loader);
+};
+
 const suspects = [
   {
     name: "Mr Green",
@@ -122,7 +132,8 @@ const weapons = [
     id: "trophy",
     name: "trophy",
     weight: 16,
-    description: "heavy, brass trophy with a marble pedestal and inscription on bottom",
+    description:
+      "heavy, brass trophy with a marble pedestal and inscription on bottom",
     image: "assets/trophy.png",
   },
   {
@@ -247,57 +258,74 @@ const shuffleFavourite = () => {
 
 const pickKiller = () => {
   shuffleFavourite();
+  setTimeout(() => {
+    killerCard.classList.add("hidden");
 
-  mystery.killer = randomSelector(suspects);
+    mystery.killer = randomSelector(suspects);
 
-  document.getElementById("killer-card").style.background =
-    mystery.killer.color;
-  document.getElementById(
-    "killer-name"
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  document.getElementById(
-    "killer-occupation"
-  ).innerHTML = `${mystery.killer.occupation}`;
-  document.getElementById("killer-image").classList.remove("hidden");
-  document.getElementById("killer-container").classList.remove("hidden");
-  document.getElementById("killer-image").src = mystery.killer.image;
-  document.getElementById(
-    "killer-description"
-  ).innerHTML = `${mystery.killer.description}`;
-  document.getElementById(
-    "favourite-weapon"
-  ).innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
+    document.getElementById("killer-card").style.background =
+      mystery.killer.color;
+    document.getElementById(
+      "killer-name"
+    ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+    document.getElementById(
+      "killer-occupation"
+    ).innerHTML = `${mystery.killer.occupation}`;
+    document.getElementById("killer-image").classList.remove("hidden");
+    document.getElementById("killer-container").classList.remove("hidden");
+    document.getElementById("killer-image").src = mystery.killer.image;
+    document.getElementById(
+      "killer-description"
+    ).innerHTML = `${mystery.killer.description}`;
+    document.getElementById(
+      "favourite-weapon"
+    ).innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
+  }, 2000);
+
+  const killerCard = document.getElementById("front-side-killer");
+  showLoader(killerCard);
 };
 
 const pickWeapon = () => {
-  mystery.weapon = randomSelector(weapons);
-  console.log(mystery);
+  setTimeout(() => {
+    weaponCard.classList.add("hidden");
+    mystery.weapon = randomSelector(weapons);
+    document.getElementById("weapon-card").style.background =
+      mystery.killer.color;
 
-  document.getElementById("weapon-card").style.background =
-    mystery.killer.color;
+    document.getElementById("weapon-card").style.background =
+      mystery.weapon.color;
+    document.getElementById("weapon-name").innerHTML = `${mystery.weapon.name}`;
+    document.getElementById("weapon-image").classList.remove("hidden");
+    document.getElementById("weapon-container").classList.remove("hidden");
+    document.getElementById("weapon-image").src = mystery.weapon.image;
+    document.getElementById(
+      "weapon-weight"
+    ).innerHTML = `${mystery.weapon.weight} lbs`;
+    document.getElementById(
+      "weapon-description"
+    ).innerHTML = `${mystery.weapon.description}`;
+  }, 2000);
 
-  document.getElementById("weapon-card").style.background =
-    mystery.weapon.color;
-  document.getElementById("weapon-name").innerHTML = `${mystery.weapon.name}`;
-  document.getElementById("weapon-image").classList.remove("hidden");
-  document.getElementById("weapon-container").classList.remove("hidden");
-  document.getElementById("weapon-image").src = mystery.weapon.image;
-  document.getElementById(
-    "weapon-weight"
-  ).innerHTML = `${mystery.weapon.weight} lbs`;
-  document.getElementById(
-    "weapon-description"
-  ).innerHTML = `${mystery.weapon.description}`;
+  const weaponCard = document.getElementById("front-side-weapon");
+  showLoader(weaponCard);
 };
 
 const pickRoom = () => {
-  mystery.room = randomSelector(rooms);
-  document.getElementById("room-card").style.background =
-    mystery.killer.color;
-  document.getElementById("room-name").innerHTML = `${mystery.room.name}`;
-  document.getElementById("room-container").classList.remove("hidden");
-  document.getElementById("room-image").classList.remove("hidden");
-  document.getElementById("room-image").src = mystery.room.image;
+  const roomCard = document.getElementById("front-side-room");
+  showLoader(roomCard);
+  setTimeout(() => {
+    roomCard.classList.add("hidden");
+    mystery.room = randomSelector(rooms);
+
+    document.getElementById("room-card").style.background =
+      mystery.killer.color;
+    document.getElementById("room-name").innerHTML = `${mystery.room.name}`;
+    document.getElementById("room-container").classList.remove("hidden");
+    document.getElementById("room-image").classList.remove("hidden");
+    document.getElementById("room-image").src = mystery.room.image;
+  }, 2000);
+  
 };
 
 const revealMystery = () => {
