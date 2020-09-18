@@ -60,49 +60,49 @@ const Phoebe = {
 
 const Hamburger = {
   name: 'Hamburger',
-  taste: 8,
+  taste: 'Taste: 9',
   image: 'assets/hamburger.jpg'
 }
 
 const RachelTrifle = {
   name: "Rachel's Trifle",
-  taste: 2,
+  taste: 'Taste: 2',
   image: 'assets/trifle.jpg'
 }
 
 const Turkey = {
   name: 'Turkey',
-  taste: 7,
+  taste: 'Taste: 10',
   image: 'assets/turkey.jpeg'
 }
 
 const RedBagel = {
   name: 'Red Bagel',
-  taste: 6,
+  taste: 'Taste: 6'
   image: 'assets/bagel.jpg'
 }
 
 const Pizza = {
   name: 'Pizza',
-  taste: 7,
+  taste: 'Taste: 7',
   image: 'assets/pizza.png'
 }
 
 const Muffin = {
   name: 'Muffin',
-  taste: 6,
+  taste: 'Taste: 4',
   image: 'assets/muffin.jpg'
 }
 
 const KiwiPie = {
   name: 'Kiwi Pie',
-  taste: 9,
+  taste: 'Taste: 3',
   image: 'assets/pie.jpg'
 }
 
 const Sandwich = {
   name: 'Sandwich',
-  taste: 5,
+  taste:'Taste: 5',
   image: 'assets/sandwich.jpg'
 }
 
