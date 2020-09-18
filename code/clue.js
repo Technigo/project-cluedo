@@ -211,6 +211,11 @@ const roomCard = {
   image: document.getElementById("roomImage"),
 }
 
+const showMysteryInfo = {
+  title: document.querySelector("#mysteryTitle"),
+  mysteryReveal: document.querySelector("#mysterySecret"),
+  mysteryInfo: document.querySelector("#mysteryInfo"),
+}
 // ----------ARRAYS TO GROUP OBJECTS------------
 
 const suspects = [
@@ -320,13 +325,9 @@ const pickRoom = () => {
 };
 
 const showMystery = () => {
-  document.querySelector("#mysteryTitle").innerHTML = `<h1>Mystery</h1>`;
-  document.querySelector(
-    "#mysterySecret"
-  ).innerHTML = `<p>Mr Black will be killed by ${mystery.killer.title} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.</p>`;
-  document.querySelector(
-    "#mysteryInfo"
-  ).innerHTML = `<p>Hush! Remember to keep it a secret!</p>`;
+  showMysteryInfo.title.innerHTML = `Mystery`;
+  showMysteryInfo.mysteryReveal.innerHTML = `Mr Black will be killed by ${mystery.killer.title} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`;
+  showMysteryInfo.mysteryInfo.innerHTML = `Hush! Remember to keep it a secret!`;
 };
 
 document.getElementById("killerCard").addEventListener("click", showKiller);
