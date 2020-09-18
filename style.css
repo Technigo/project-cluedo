@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
-body {
+body{
   margin: 0;
   font-family: "Courier New", Courier, monospace;
   background-image: url("./assets/castle.jpg");
@@ -40,7 +40,7 @@ p{
   margin: 0 auto;
 }
 
-p.title-font {
+p.title-font{
   margin: 1px;
   font-weight: 900;
   font-size: 1.2em;
@@ -62,7 +62,7 @@ p.third-title-font{
   margin-bottom: 2px;
 }
 
-.cards {
+.cards{
   margin: 50px auto;
   width: 90%;
   height: 600px;
@@ -72,7 +72,7 @@ p.third-title-font{
   align-items: center;
 }
 
-.killer-deck {
+.killer-deck{
   width: 250px;
   height: 400px;
   background: rgba(0, 0, 0, 0.8);
@@ -82,7 +82,7 @@ p.third-title-font{
 }
 
 
-.weapon-deck {
+.weapon-deck{
   width: 250px;
   height: 400px;
   background: rgba(242, 27, 34, 0.8);
@@ -92,7 +92,7 @@ p.third-title-font{
   border-radius: 16px;
 }
 
-.room-deck {
+.room-deck{
   width: 250px;
   height: 400px;
   background: rgba(242, 27, 34, 0.8);
@@ -101,14 +101,14 @@ p.third-title-font{
   border-radius: 16px;
 }
 
-#weaponImage,
-#roomImage 
+
+.weapon-image,
+.room-image
 {
   margin: 35px 0px;
 }
 
-
-button {
+button{
   padding: 8px 16px;
   background:#e0c582;
   border: none;
@@ -118,7 +118,7 @@ button {
   margin-bottom: 30px;
 }
 
-#mystery{
+.mystery-reveal-text{
   color: white;
   font-family: 'Oswald', sans-serif;
   font-size: 2em;
