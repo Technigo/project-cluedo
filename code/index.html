@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/x-icon" href= "./sherlock.png" />
-    <title>No1 Cluedo</title>
-  </head>
-  <body>
-    <header>
-      <h5>No1</h5>
-      <h1>Cluedo</h1>
-    </header> 
-    <section class="cards">
-      <article class="killer-deck" id="killerCard">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="250" />
-        <p id="killerDescription"></p>
-      </article>
-      <article class="weapon-deck" id="weaponCard">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-      </article>
-      <article class="room-deck" id="roomCard">
-        <p>ROOM</p>
-        <p id="roomName"></p>
-      </article>
-    </section>
-    <div class=reveal>
-      <p id="killerMessage"></p>
-      <button onclick="revealMystery()" id="revealButton">REVEAL THE CRIME</button>
-      </div>  
-    <footer> 
-      <img src= "./detective.png" alt=detective></img> 
-       <p>© Moa Blomkvist</p>
-    </footer>  
-    <script src="clue.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/x-icon" href="./sherlock.png" />
+  <title>No1 Cluedo</title>
+</head>
+
+<body>
+  <header>
+    <h5>No1</h5>
+    <h1>Cluedo</h1>
+  </header>
+  <section class="cards">
+    <article class="killer-deck" id="killerCard">
+      <p>KILLER</p>
+      <p id="killerName"></p>
+      <p id="killerAge"></p>
+      <p id="killerOccupation"></p>
+      <img id="killerImage" src="" height="250" />
+      <p id="killerDescription"></p>
+    </article>
+    <article class="weapon-deck" id="weaponCard">
+      <p>WEAPON</p>
+      <p id="weaponName"></p>
+      <p id="weaponWeight"></p>
+    </article>
+    <article class="room-deck" id="roomCard">
+      <p>ROOM</p>
+      <p id="roomName"></p>
+    </article>
+  </section>
+  <div class=reveal>
+    <p id="killerMessage"></p>
+    <button onclick="revealMystery()" id="revealButton">REVEAL THE CRIME</button>
+  </div>
+  <footer>
+    <img src="./detective.png" alt=detective></img>
+    <p>© Moa Blomkvist</p>
+  </footer>
+  <script src="clue.js"></script>
+</body>
+
 </html>

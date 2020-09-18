@@ -106,6 +106,7 @@ p {
 
 .room-deck:hover {
   background: #8fe8c9;
+  background-position: center;
   border-color: #8fe8c9;
   transition: all 0.4s ease 0s;
   }
@@ -125,6 +126,8 @@ p#killerMessage {
   margin: 0;  
   display: flex;
   justify-content: center;
+  color: #fff;
+  font-size: 18px;
 }
 
 button {
@@ -165,11 +168,11 @@ footer img {
 @media screen and (max-width: 1024px) {
 
 .cards {
- height: 800px;
  background-image: url("./teal-.jpg"); 
+ flex-direction: column;
 }
 
-p#killerMessage {
+#killerMessage {
   padding: 70px;
 }
 }
