@@ -214,6 +214,7 @@ const pickFoods = () => {
   mystery.foods = randomSelector(foods)
   document.getElementById('foodsName').innerHTML = mystery.foods.name;
   document.getElementById('foodsImage').src = mystery.foods.image
+  document.getElementById('foodsTaste').innerHTML = mystery.foods.taste
 }
 
 document.getElementById('foodCard').onclick = pickFoods
