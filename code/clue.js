@@ -1,6 +1,5 @@
 // -----------------GENERAL VARIABLES-----------
-const loader = document.querySelector(".loader-item");
-const deck = document.querySelectorAll(".deck");
+const loader = document.querySelector(".loader-container");
 
 // ----------------OBJECTS---------------
 const mrGreen = {
@@ -260,6 +259,67 @@ const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
+
+// ----------Shuffle suspects favorite weapon--------------
+
+shuffleFavoriteWeapon = (suspects) => {
+  return suspects.map(suspect => {
+    const favoriteWeaponArray = [
+      ...weapons
+    ];
+    suspect.favoriteWeapon = randomSelector(favoriteWeaponArray);
+  });
+};
+
+// ---------Validate mystery before reveal----------
+const validateMysteryReveal = () => {
+  if (mystery.killer && mystery.weapon && mystery.room) {
+      return true;
+  } 
+};
+
+
+//-----------Actions invoked in the event handler on click on killerCard----------
+const pickKiller = () => {
+  mystery.killer = randomSelector(suspects);
+  document.getElementById("killerCard").style.background = mystery.killer.color;
+  killerCard.name.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  killerCard.image.src = mystery.killer.image;
+  killerCard.age.innerHTML = `${mystery.killer.age} years old.`;
+  killerCard.description.innerHTML = mystery.killer.description;
+  shuffleFavoriteWeapon(suspects);
+  console.log(suspects);
+  killerCard.favoriteWeapon.innerHTML = `${mystery.killer.favoriteWeapon.name}`;
+};
+
+//---------Actions invoked in the event handler on click weaponCard-------
+const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons);
+  weaponCard.name.innerHTML = mystery.weapon.name;
+  weaponCard.weight.innerHTML = `${mystery.weapon.weight} kg`;
+  weaponImage.src = mystery.weapon.image;
+};
+
+//---------Actions invoked in the event handler on click roomCard--------
+const pickRoom = () => {
+  mystery.room = randomSelector(rooms);
+  roomCard.name.innerHTML = mystery.room.name;
+  roomCard.image.src = mystery.room.image;
+};
+
+//--------Actions invoked in the getMystery event click---------
+const showMystery = () => {
+  const isValidReveal = validateMysteryReveal();
+  if (isValidReveal === true) {
+    showMysteryInfo.title.innerHTML = `Mystery`;
+    showMysteryInfo.mysteryReveal.innerHTML = `Mr Black will be killed by ${mystery.killer.title} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`;
+    showMysteryInfo.mysteryInfo.innerHTML = `Hush! Remember to keep it a secret!`;
+  } else {
+    showMysteryInfo.title.innerHTML = `Error`;
+    showMysteryInfo.mysteryReveal.innerHTML = `Please pick one card from each deck to unravel the mystery.`
+  }
+};
+
 // --------------Loader------------------
 
 const showKiller = () => {
@@ -294,69 +354,10 @@ const getMystery = () => {
   }, 1000);
 };
 
-// ----------Shuffle suspects favorite weapon--------------
-
-shuffleFavoriteWeapon = (suspects) => {
-  return suspects.map(suspect => {
-    const favoriteWeaponArray = [
-      ...weapons
-    ];
-    suspect.favoriteWeapon = randomSelector(favoriteWeaponArray);
-  });
-};
-
-// ---------Validate mystery before reveal----------
-const validateMysteryReveal = () => {
-  if (mystery.killer && mystery.weapon && mystery.room) {
-      return true;
-  } 
-};
-
-const pickKiller = () => {
-  mystery.killer = randomSelector(suspects);
-  document.getElementById("killerCard").style.background = mystery.killer.color;
-  killerCard.name.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  killerCard.image.src = mystery.killer.image;
-  killerCard.age.innerHTML = `${mystery.killer.age} years old.`;
-  killerCard.description.innerHTML = mystery.killer.description;
-  shuffleFavoriteWeapon(suspects);
-  console.log(suspects);
-  killerCard.favoriteWeapon.innerHTML = `${mystery.killer.favoriteWeapon.name}`;
-};
-
-const pickWeapon = () => {
-  mystery.weapon = randomSelector(weapons);
-  weaponCard.name.innerHTML = mystery.weapon.name;
-  weaponCard.weight.innerHTML = `${mystery.weapon.weight} kg`;
-  weaponImage.src = mystery.weapon.image;
-};
-
-const pickRoom = () => {
-  mystery.room = randomSelector(rooms);
-  roomCard.name.innerHTML = mystery.room.name;
-  roomCard.image.src = mystery.room.image;
-};
-
-const showMystery = () => {
-  const isValidReveal = validateMysteryReveal();
-  if (isValidReveal === true) {
-    showMysteryInfo.title.innerHTML = `Mystery`;
-    showMysteryInfo.mysteryReveal.innerHTML = `Mr Black will be killed by ${mystery.killer.title} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`;
-    showMysteryInfo.mysteryInfo.innerHTML = `Hush! Remember to keep it a secret!`;
-  } else {
-    showMysteryInfo.title.innerHTML = `Error`;
-    showMysteryInfo.mysteryReveal.innerHTML = `Please pick one card from each deck to unravel the mystery.`
-  }
-};
-
+//-----------------------EVENTLISTENERS-------------------------
 document.getElementById("killerCard").addEventListener("click", showKiller);
 document.getElementById("weaponCard").addEventListener("click", showWeapon);
 document.getElementById("roomCard").addEventListener("click", showRoom);
 
-
-// Petra meddelande när alla kort ej har valts börjar så här
-//if (mystery.killer && mystery.weapon && mystery.room) {}
-
-//if undefined don't click
 
 

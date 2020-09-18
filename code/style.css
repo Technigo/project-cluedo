@@ -17,25 +17,23 @@ header{
   justify-content: center;
   text-align: center;
 }
-
 .loader-container {
+  display: none;
+}
+.loader-container.is-active {
   display: flex;
-  height: 100vh;
-  width: 100%;
-  justify-content: center;
   position: fixed;
-  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .9);
 }
 
 .loader-item {
-  display: none;
-}
-
-.loader-item.is-active {
   position: fixed;
   top: 40%;
   left: 45%;
-  display: block;
   border: 20px solid rgba(186, 185, 185, .7);
   border-radius: 50%;
   border-top: 20px solid #e0eb0b;
@@ -43,6 +41,14 @@ header{
   height: 120px;
   animation: spin 2s linear infinite;
   -webkit-animation: spin 2s linear infinite; 
+}
+
+.loader-container.p {
+  color: yellow;
+  z-index: 100 !important;
+  position: fixed;
+  top: 60%;
+  font-size: 90px;
 }
 
 @keyframes spin {
