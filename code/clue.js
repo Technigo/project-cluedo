@@ -4,22 +4,22 @@ const suspects = [
     firstName: "Jacob",
     lastName: "Green",
     color: "green",
-    description: "He has a lot of connections",
+    description: "He has a lot of connections and owns a candlefactory",
     age: 45,
     image: "assets/green.png",
     occupation: "Entrepreneur",
-    favouriteWeapon: "",
+    favouriteWeapon: "Candlestick",
   },
   {
     name: "Miss Scarlet",
     firstName: "Cassandra",
     lastName: "Scarlet",
     color: "red",
-    description: "She has a temper",
+    description: "She has a temper and is stronger than she looks",
     age: 32,
     image: "assets/scarlet.png",
     occupation: "Writer",
-    favouriteWeapon: "",
+    favouriteWeapon: "Axe",
   },
   {
     name: "Professor Plum",
@@ -30,7 +30,7 @@ const suspects = [
     age: 37,
     image: "assets/plum.png",
     occupation: "Professor in detergents",
-    favouriteWeapon: "",
+    favouriteWeapon: "Trophy",
   },
   {
     name: "Mrs Peacock",
@@ -41,7 +41,7 @@ const suspects = [
     age: 46,
     image: "assets/peacock.png",
     occupation: "Entrepreneur",
-    favouriteWeapon: "",
+    favouriteWeapon: "Pistol",
   },
   {
     name: "Colonel Mustard",
@@ -52,7 +52,7 @@ const suspects = [
     age: 68,
     image: "assets/mustard.png",
     occupation: "Colonel",
-    favouriteWeapon: "",
+    favouriteWeapon: "Knife",
   },
   {
     name: "Mrs White",
@@ -64,53 +64,62 @@ const suspects = [
     age: "unknown",
     image: "assets/white.png",
     occupation: "Housekeeper",
-    favouriteWeapon: "",
+    favouriteWeapon: "Poison",
   },
 ];
 
 const weapons = [
   {
+    id: "rope",
     name: "rope",
     weight: 3,
     description: "worn out",
   },
   {
+    id: "knife",
     name: "knife",
     weight: 2,
     description: "brand new",
   },
   {
+    id: "candlestick",
     name: "candlestick",
     weight: 4,
     description: "polished, but old",
   },
   {
+    id: "dumbbell",
     name: "dumbbell",
     weight: 22,
     description: "rusty",
   },
   {
+    id: "poison",
     name: "poison",
     weight: 1,
     description: "small bottle containing rests of transparent liquid",
   },
   {
+    id: "axe",
     name: "axe",
     weight: 7,
     description: "has a worn handle, blade has a tear",
   },
   {
+    id: "bat",
     name: "bat",
     weight: 7,
     description: "long, wooden bat with a small crack on handle",
   },
   {
+    id: "trophy",
     name: "trophy",
     weight: 16,
     description:
       "heavy, brass trophy with a marble pedestal and inscription on bottom",
   },
   {
+    id: "pistol",
     name: "pistol",
     weight: 8,
     description: "old Astra model 903, heavy thing with a muffle",
