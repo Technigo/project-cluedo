@@ -271,7 +271,7 @@ const pickWeapon = () => {
   // REMEMBER TO CREATE IDS FOR WEAPONS AND ROOMS IN INDEX.HTML TO ADD PHOTOS TO THEM AS WELL ----> LIEK THIS <img id="killerImage" src="" height="100" />
   document.getElementById(
     'weaponName'
-  ).innerHTML = `${mystery.weapon.name} ${mystery.weapon.weight}`
+  ).innerHTML = `Weapon: ${mystery.weapon.name}, weight: ${mystery.weapon.weight}`
 }
 document.getElementById('weaponCard').onclick = pickWeapon;
 
