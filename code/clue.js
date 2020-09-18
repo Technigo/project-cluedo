@@ -274,7 +274,7 @@ document.getElementById('killerCard').addEventListener('click', delayPickKiller)
 // PICK KILLER FUNCTION
 const pickKiller = () => {
   document.getElementById('loaderKiller').style.display = 'none'
-  document.getElementById('killerCard').removeEventListener('click', delayPickKiller) // So the loader doesn't show in next click
+  // document.getElementById('killerCard').removeEventListener('click', delayPickKiller) // So the loader doesn't show in next click
 
   mystery.killer = randomSelector(suspects) // This will randomly select a killer from the suspects. And add that to the mystery object.
 
@@ -309,7 +309,7 @@ document.getElementById('weaponCard').addEventListener('click', delayPickWeapon)
 // PICK WEAPON FUNCTION
 const pickWeapon = () => { 
   document.getElementById('loaderWeapon').style.display = 'none'
-  document.getElementById('weaponCard').removeEventListener('click', delayPickWeapon)
+  // document.getElementById('weaponCard').removeEventListener('click', delayPickWeapon)
   
   mystery.weapon = randomSelector(weapons)
 
@@ -331,7 +331,7 @@ document.getElementById('roomCard').addEventListener('click', delayPickRoom)
 // PICK ROOM FUNCTION
 const pickRoom = () => { 
   document.getElementById('loaderRoom').style.display = 'none'
-  document.getElementById('roomCard').removeEventListener('click', delayPickRoom)
+  // document.getElementById('roomCard').removeEventListener('click', delayPickRoom)
   
   mystery.room = randomSelector(rooms)
 
