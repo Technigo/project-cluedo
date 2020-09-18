@@ -1,7 +1,8 @@
-// GENERAL VARIABLES
+// -----------------GENERAL VARIABLES-----------
 const loader = document.querySelector(".loader-item");
+const deck = document.querySelectorAll(".deck");
 
-// OBJECTS 
+// ----------------OBJECTS---------------
 const mrGreen = {
   title: "Mr",
   firstName: "Jacob",
@@ -191,7 +192,26 @@ const mystery = {
   room: "",
 };
 
-// ARRAYS TO GROUP OBJECTS
+const killerCard = {
+  name: document.getElementById("killerName"),
+  age: document.getElementById("killerAge"),
+  image: document.getElementById("killerImage"),
+  color: document.getElementById("killerColor"),
+  description: document.getElementById("killerDescription"),
+}
+
+const weaponCard = {
+  name: document.getElementById("weaponName"),
+  weight: document.getElementById("weaponWeight"),
+  image: document.getElementById("weaponImage")
+}
+
+const roomCard = {
+  name: document.getElementById("roomName"),
+  image: document.getElementById("roomImage"),
+}
+
+// ----------ARRAYS TO GROUP OBJECTS------------
 
 const suspects = [
   mrGreen,
@@ -227,21 +247,48 @@ const rooms = [
   diningRoom,
 ];
 
-// FUNCTIONS
+// -------------FUNCTIONS----------------
 
-// RANDOM SELECTOR
+// -------------Random selector----------
 const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-// LOADER
+// --------------Loader------------------
+
 const showKiller = () => {
   loader.classList.toggle("is-active");
   setTimeout(() => {
     loader.classList.toggle("is-active");
-    //pickKiller();
+    pickKiller();
   }, 700);
 };
+
+const showWeapon = () => {
+  loader.classList.toggle("is-active");
+  setTimeout(() => {
+    loader.classList.toggle("is-active");
+    pickWeapon();
+  }, 700);
+};
+
+const showRoom = () => {
+  loader.classList.toggle("is-active");
+  setTimeout(() => {
+    loader.classList.toggle("is-active");
+    pickRoom();
+  }, 700);
+};
+
+const getMystery = () => {
+  loader.classList.toggle("is-active");
+  setTimeout(() => {
+    loader.classList.toggle("is-active");
+    showMystery();
+  }, 1000);
+};
+
+// ----------Shuffle suspects favorite weapon--------------
 
 shuffleFavoriteWeapon = () => {
   mystery.killer.favoriteWeapon = randomSelector(weapons);
@@ -251,36 +298,25 @@ shuffleFavoriteWeapon = () => {
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
   shuffleFavoriteWeapon();
-  console.log(mystery.killer.favoriteWeapon);
   document.getElementById("killerCard").style.background = mystery.killer.color;
-  document.getElementById(
-    "killerName"
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  document.getElementById("killerImage").src = mystery.killer.image;
-  document.querySelector(
-    "#killerAge"
-  ).innerHTML = `${mystery.killer.age} years old.`;
-  document.querySelector(
-    "#killerDescription"
-  ).innerHTML = `${mystery.killer.description}`;
+  killerCard.name.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  killerCard.image.src = mystery.killer.image;
+  killerCard.age.innerHTML = `${mystery.killer.age} years old.`;
+  killerCard.description.innerHTML = mystery.killer.description;
  
 };
 
-
-
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
-  document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
-  document.getElementById(
-    "weaponWeight"
-  ).innerHTML = `${mystery.weapon.weight} kg`;
-  document.getElementById("weaponImage").src = mystery.weapon.image;
+  weaponCard.name.innerHTML = mystery.weapon.name;
+  weaponCard.weight.innerHTML = `${mystery.weapon.weight} kg`;
+  weaponImage.src = mystery.weapon.image;
 };
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms);
-  document.getElementById("roomName").innerHTML = `${mystery.room.name}`;
-  document.getElementById("roomImage").src = mystery.room.image;
+  roomCard.name.innerHTML = mystery.room.name;
+  roomCard.image.src = mystery.room.image;
 };
 
 const showMystery = () => {
@@ -294,5 +330,5 @@ const showMystery = () => {
 };
 
 document.getElementById("killerCard").addEventListener("click", showKiller);
-document.getElementById("weaponCard").addEventListener("click", pickWeapon);
-document.getElementById("roomCard").addEventListener("click", pickRoom);
+document.getElementById("weaponCard").addEventListener("click", showWeapon);
+document.getElementById("roomCard").addEventListener("click", showRoom);
