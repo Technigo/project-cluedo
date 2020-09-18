@@ -1,16 +1,17 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
 This is a javascript Murder Mystery game.
 The assignment was to create a cluedo-game consisting of three cards with suspects and weapons.
+I added a little story-card to help the user set the mood.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I had two problems during this project that I really got stuck on. 
+Firstly I had a problem understanding and getting my shuffle-function to work. I approached the problem by consulting my teammates and they helped me through the process.
+
+Secondly I had a problem with getting my images to fit within my div-container.
+This was solved by posting a question on Stack Overflow and getting help that way. It turned out I could use the object-fit attribute in CSS (Which I actually have used on a previous project). 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://inspiring-davinci-c8076d.netlify.app/
