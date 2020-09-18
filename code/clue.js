@@ -103,6 +103,12 @@ const trophy = {
   weight: 300
 }
 
+const pistol = {
+  name: 'pistol',
+  weight: 600
+}
+
+// STEP 2 - ARRAYS
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
@@ -123,7 +129,7 @@ const weapons = [
   axe,
   bat,
   trophy,
-  pistol
+  pistol  
 ]
 
 const rooms = [
@@ -149,10 +155,6 @@ console.log(mrGreen.description)
 console.log(rope.weight)
 
 
-// STEP 2 - ARRAYS
-
-console.log()
-
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
@@ -162,6 +164,12 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
+
+let mystery = {
+ suspects, 
+ weapons, 
+ rooms: []
+}
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -174,6 +182,37 @@ const pickKiller = () => {
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 }
+
+document.getElementById('killerCard').addEventListener('click', pickKiller)
+
+
+// This function will be invoked when you click on the weapon card.
+const pickWeapons = () => {
+  // This will randomly select a weapon. And add that to the mystery object.
+  mystery.weapon = randomSelector(weapons)
+
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  document.getElementById('weaponCard').style.background = mystery.killer.color
+  document.getElementById(
+    'weaponName'
+  ).innerHTML = `${mystery.weapon.name} ${mystery.weapon.weight}`
+}
+
+document.getElementById('weaponCard').addEventListener('click', pickWeapons)
+
+// This function will be invoked when you click on the rooms card.
+const pickRooms = () => {
+  // This will randomly select a room. And add that to the mystery object.
+  mystery.room = randomSelector(rooms)
+
+  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  document.getElementById('roomCard').style.background = mystery.killer.color
+  document.getElementById(
+    'roomName'
+  ).innerHTML = `${mystery.room}`
+}
+
+document.getElementById('roomCard').addEventListener('click', pickRooms)
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
