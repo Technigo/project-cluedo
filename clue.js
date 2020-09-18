@@ -8,7 +8,6 @@ const mrGreen = {
   age: 45,
   image: './assets/green.png',
   occupation: 'Entrepreneur',
-  favouriteWeapon: "rope"
 }
 
 const professorPlum = {
@@ -19,7 +18,6 @@ const professorPlum = {
   age: 45,
   image: './assets/plum.png',
   occupation: 'Visting STEM professor',
-  favouriteWeapon: "poison"
 }
 
 const missScarlet = {
@@ -30,7 +28,6 @@ const missScarlet = {
   age: 30,
   image: './assets/scarlet.png',
   occupation: 'Manager of the Batman Zoo',
-  favouriteWeapon: "pistol"
 }
 
 const mrsPeacock = {
@@ -41,7 +38,6 @@ const mrsPeacock = {
   age: 37,
   image: './assets/peacock.png',
   occupation: 'Yoga teacher',
-  favouriteWeapon: "dumbbell"
 }
 
 const colonelMustard = {
@@ -52,8 +48,6 @@ const colonelMustard = {
   age: 73,
   image: './assets/mustard.png',
   occupation: 'Colonel',
-  favouriteWeapon: "knife"
-
 }
 
 const mrsWhite = {
@@ -64,7 +58,6 @@ const mrsWhite = {
   age: 63,
   image: './assets/white.png',
   occupation: 'Facility consultant',
-  favouriteWeapon: "axe"
 }
 
 // OBJECTS FOR ALL THE WEAPONS
