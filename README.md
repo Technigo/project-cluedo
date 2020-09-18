@@ -1,13 +1,9 @@
 # Cluedo - Mystery Randomizer
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This weeks project was to build a game called Cluedo using Javascript (and HTML and CSS).
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I did the project step by step and asked for help as soon as I faced problems. I still feel that Javascript is really hard to understand and even though people answer my questions on Stack Overflow and the code then works, I don't really get why. I'm gonna try to read my code even more to understand every part of it.
+If I had more time I would just spend it on understanding Javascript so that I can hopefully feel better prepared for next weeks project.
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://practical-ride-c5ceed.netlify.app/
