@@ -121,7 +121,7 @@ const randomSelector = array => {
 }
 
 // Changes card background when clicked
-const changeCard = (card) => {
+const changeCard = card => {
   document.getElementById(card).style.background = "#ff7ee3"
 }
 
