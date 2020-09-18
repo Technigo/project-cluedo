@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <title>Technigo Project Cluedo</title>
   </head>
@@ -20,46 +21,80 @@
     <h1>CLUEDO</h1>
     <section class="cards">
       <article class="deck killer-deck" id="killerCard" onclick="pickKiller()">
-        <h2>SUSPECT</h2>
-        <img id="killerImage" class="killer-image" src="" height="150" />
-        <div class="information-container">
-          <label class="killer-label">NAME</label>
-          <p id="killerName" class="killer-name"></p>
-          <label class="killer-label">AGE</label>
-          <p id="killerAge" class="killer-age"></p>
-          <label class="killer-label">OCCUPATION </label>
-          <p id="killerOccupation" class="killer-occupation"></p>
-          <label class="killer-label">DESCRIPTION</label>
-          <p id="killerDescription" class="killer-description"></p>
+        <div id="killerDeckFront" class="front">
+          <h3>SUSPECT</h3>
+          <img id="killerImage" class="killer-image" src="" height="150" />
+          <div class="information-container">
+            <label class="killer-label">NAME / AGE</label>
+            <div class="name-age-container">
+              <p id="killerName" class="killer-name"></p>
+              <p id="killerAge" class="killer-age"></p>
+            </div>
+            <label class="killer-label">OCCUPATION </label>
+            <p id="killerOccupation" class="killer-occupation"></p>
+            <label class="killer-label">FAVOURITE WEAPON </label>
+            <p id="killerFavouriteWeapon" class="killer-favourite-weapon"></p>
+            <label class="killer-label">DESCRIPTION</label>
+            <p id="killerDescription" class="killer-description"></p>
+          </div>
+        </div>
+        <div id="killerDeckBack" class="back active">
+          <h2 class="back-header">KILLER</h2>
+          <div id="killerLoader" class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
       </article>
 
       <article class="deck weapon-deck" id="weaponCard" onclick="pickWeapon()">
-        <h2>WEAPON</h2>
-        <img id="weaponImage" src="" height="150" />
-        <div class="information-container">
-          <label class="weapon-label">WEAPON</label>
-          <p id="weaponName"></p>
-          <label class="weapon-label">WEIGHT (KG)</label>
-          <p id="weaponWeight"></p>
+        <div id="weaponDeckFront" class="front">
+          <h3>WEAPON</h3>
+          <img id="weaponImage" src="" height="150" />
+          <div class="information-container">
+            <label class="weapon-label">WEAPON</label>
+            <p id="weaponName"></p>
+            <label class="weapon-label">WEIGHT (KG)</label>
+            <p id="weaponWeight"></p>
+          </div>
+        </div>
+        <div id="weaponDeckBack" class="back active">
+          <h2 class="back-header">WEAPON</h2>
+          <div id="weaponLoader" class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
       </article>
 
       <article class="deck room-deck" id="roomCard" onclick="pickRoom()">
-        <h2>ROOM</h2>
-        <!-- <img id="roomImage" src="img/moonlight-3468090_640.jpg" /> -->
-        <div class="information-container">
-          <label class="room-label">ROOM</label>
-          <p id="roomName" class="room-name"></p>
+        <div id="roomDeckFront" class="front">
+          <h3>ROOM</h3>
+          <div class="information-container">
+            <label class="room-label">ROOM</label>
+            <p id="roomName" class="room-name"></p>
+          </div>
+        </div>
+        <div id="roomDeckBack" class="back active">
+          <h2 class="back-header">ROOM</h2>
+          <div id="roomLoader" class="loader">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </article>
     </section>
 
     <section class="reveal">
-      <p id="mystery" class="mystery"></p>
-      <button onclick="revealMystery()">REVEAL THE CRIME</button>
-      <p id="mysteryReveald"></p>
+      <!-- <p id="mystery" class="mystery"></p> -->
+      <span id="mysteryReveald" class="mysteryReveald"></span>
+      <button onclick="revealMystery()">Reveal the crime</button>
     </section>
+
+    <!-- <footer>
+      <p>Petra Almgren for Technigo Bootcamp</p>
+    </footer> -->
 
     <script src="clue.js"></script>
   </body>
