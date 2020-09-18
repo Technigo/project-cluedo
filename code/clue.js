@@ -197,24 +197,21 @@ const randomSelector = array => {
 };
 
 //----- Killer card -----//
-//Function for loading animation and delaying the card-details to be shown and calls after 1.5 seconds
+//Function is called when user clicks on card. The animation is run for 1.5 seconds, which delays the showPickKiller function from being called for that duration. Once over it will then call the showPickKiller function and the code inside of it e.g. show the card-details for that killer. The animation will be done by adding the animated-loader styling to the loader1 id.
 const pickKillerLoader = () => {
   document.getElementById("loader1").classList.add("animated-loader");
-  setTimeout(showPickKiller, 1500);
+  setTimeout(showPickKiller, 2000);
 };
 
-//On click the funcation pickKillerLoader will be called
+//On click the function pickKillerLoader will be called by using the addEventListner()
 document.getElementById("killerCard").addEventListener("click", pickKillerLoader); 
 
-// Function invoked after the loader has run
+// Function invoked after the pickKillerLoader has run
 const showPickKiller = () => {
-  // Will randomly select a killer from the suspects + add that to the mystery object.
-  mystery.killer = randomSelector(suspects);
-  //Will hide the loader image
-  document.getElementById("loader1").style.display = "none";
+  mystery.killer = randomSelector(suspects);// Will randomly select a killer from the suspects + add that to the mystery object.
+  document.getElementById("loader1").style.display = "none";//Will hide the loader image
 
-  //Will stop the loader showing next time you click the card
-  document.getElementById('killerCard').removeEventListener('click', pickKillerLoader);
+  document.getElementById('killerCard').removeEventListener('click', pickKillerLoader); //Will stop the loader showing next time you click the card
 
   // Will change the background color of the card, the first/last name, the image and descrption for the selected killer. 
   document.getElementById("killerCard").style.background = mystery.killer.color;
@@ -223,23 +220,23 @@ const showPickKiller = () => {
   document.getElementById("killerDescription").innerHTML = `${mystery.killer.description}`;
   document.getElementById("faveWeapon").innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon.name}`;
   
+  //Shows the details of the killer
   document.getElementById("cardDetails1").style.display = "flex"; 
 };
 
 //----- Weapon card -----//
 const pickWeaponLoader = () => {
   document.getElementById("loader2").classList.add("animated-loader");
-  setTimeout(showPickWeapon, 1500);
+  setTimeout(showPickWeapon, 2000);
 };
 
 document.getElementById("weaponCard").addEventListener("click", pickWeaponLoader); 
 
-// Function invoked when you click on the weapon card.
 const showPickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
 
+
   document.getElementById("loader2").style.display = "none"
-  //Will stop the loader showing next time you click the card
   document.getElementById('weaponCard').removeEventListener('click', pickWeaponLoader);
 
   document.getElementById("weaponCard").style.background = mystery.weapon.color;
@@ -252,20 +249,16 @@ const showPickWeapon = () => {
 };
 
 //----- Room card -----//
-//Function for loading animation which will work for 1.5 secs
 const pickRoomLoader = () => {
   document.getElementById("loader3").classList.add("animated-loader");
-  setTimeout(showPickRoom, 1500);
+  setTimeout(showPickRoom, 2000);
 };
 
 document.getElementById("roomCard").addEventListener("click", pickRoomLoader); 
 
-// Function invoked when you click on the room card.
 const showPickRoom = () => {
   mystery.room = randomSelector(rooms);
-
   document.getElementById("loader3").style.display = "none"
-  //Will stop the loader showing next time you click the card
   document.getElementById('roomCard').removeEventListener('click', pickRoomLoader);
 
   document.getElementById("roomCard").style.background = mystery.room.color;
@@ -277,8 +270,7 @@ const showPickRoom = () => {
   document.getElementById("cardDetails3").style.display = "flex";
 };
 
-//----- Reveal mystery or get a message asking you to choose each card to then beable to reveal the mystery-----//
-// Function invoked when you click on the Reveal crime button.
+//----- Function for on button click reveal mystery or get a message asking you to choose each card to then beable to reveal the mystery-----//
 function revealMystery() {
   if (mystery.killer.hasOwnProperty("name") === true) {
     document.getElementById("mystery").innerHTML = `The murder was commited by ${mystery.killer.name} with the ${mystery.weapon.name.toLowerCase()} in the ${mystery.room.name.toLowerCase()}`;
@@ -291,11 +283,6 @@ function revealMystery() {
   }
 };
 
-//Function for re-loading the page
-const resetPage = () => {
-  location.reload();
-};
-
 //----- Shuffle function -----//
 // Allows for the weapons to be shuffled between the suspects
 const shuffleFavouriteWeapon = () => {
@@ -304,10 +291,14 @@ const shuffleFavouriteWeapon = () => {
     let randomIndex = Math.floor(Math.random() * copyWeapons.length);
     let randomWeapon = copyWeapons.splice(randomIndex, 1);
     suspects[i].favouriteWeapon = randomWeapon[0];
-
   }
 };
 
-//----- Calling all functions -----//
+//Function for re-loading the page
+const resetPage = () => {
+  location.reload();
+};
+
+//----- Calling functions that I want to run when the page is loaded -----//
 shuffleFavouriteWeapon();
 
