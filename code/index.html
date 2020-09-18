@@ -8,9 +8,11 @@
     <title>Johannas Project Cluedo</title>
   </head>
   <body>
+    <h1>Welcome to the game Cluedo</h1>
+    <h3 class="text">Play by clicking on the cards.</h3>
     <section class="cards">
       <article class="killer-deck" id="killerCard">
-        <p>KILLER</p>
+        <p><strong>KILLER</strong></p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
@@ -18,12 +20,12 @@
         <p id="killerDescription"></p>
       </article>
       <article class="weapon-deck" id="weaponCard">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
+        <p><strong>WEAPON</strong></p>
+        <p id="weaponName" style = "text-transform:capitalize;"></p>
         <p id="weaponWeight"></p>
       </article>
       <article class="room-deck" id="roomCard">
-        <p>ROOM</p>
+        <p><strong>ROOM</strong></p>
         <p id="roomName"></p>
       </article>
     </section>
@@ -31,6 +33,8 @@
     <button onclick="revealMystery()" id="button">REVEAL THE CRIME</button>
 
     <h3 id="message"></h3>
+    
+  </div>
 
     <script src="clue.js"></script>
   </body>

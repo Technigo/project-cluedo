@@ -1,37 +1,54 @@
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("assets/background_image.jpg");
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
 p {
   margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+  font-weight: 300;  
 }
 
 .cards {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  color: white;
 }
 
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: #000066;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: #000066;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -40,8 +57,7 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: #000066;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -49,7 +65,7 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: white;
   border: none;
   font-size: 20px;
   border-radius: 8px;
@@ -57,6 +73,10 @@ button {
   margin: 0 auto;
 }
 
-.message {
-
+#message {
+color: white;
+display: flex;
+justify-content: center;
 }
+
+

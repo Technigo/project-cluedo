@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  color: '#008060',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -13,7 +13,7 @@ const mrGreen = {
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'purple',
+  color: '#47476b',
   description: 'He loves plums',
   age: 30,
   image: 'assets/plum.png',
@@ -23,7 +23,7 @@ const professorPlum = {
 const missScarlet = {
   firstName: 'Casandra',
   lastName: 'Scarlet',
-  color: 'red',
+  color: '#ac3939',
   description: 'She is dangerous.',
   age: 35,
   image: 'assets/scarlet.png',
@@ -33,7 +33,7 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: 'blue',
+  color: '#336699',
   description: 'She likes hats.',
   age: 50,
   image: 'assets/peacock.png',
@@ -43,7 +43,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'yellow',
+  color: '#d9d926',
   description: 'He is a captain.',
   age: 65,
   image: 'assets/mustard.png',
@@ -53,7 +53,7 @@ const colonelMustard = {
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: 'white',
+  color: 'grey',
   description: 'She is cool.',
   age: 80,
   image: 'assets/white.png',
@@ -133,21 +133,21 @@ const weapons = [
 ]
 
 const rooms = [
-  "diningRoom",
-  "conservatory",
-  "kitchen",
-  "study",
-  "library",
-  "billiardRoom",
-  "lounge",
-  "ballroom",
-  "hall",
-  "spa",
-  "livingRoom",
-  "observatory",
-  "theater",
-  "guestHouse",
-  "patio"
+  "Dining room",
+  "Conservatory",
+  "Kitchen",
+  "Study",
+  "Library",
+  "Billiard room",
+  "Lounge",
+  "Ballroom",
+  "Hall",
+  "Spa",
+  "Living room",
+  "Observatory",
+  "Theater",
+  "Guest house",
+  "Patio"
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
