@@ -9,6 +9,8 @@ body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
   background-color: #000;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 p {
@@ -30,6 +32,8 @@ p {
 
 .header-wrapper {
   flex-direction: column;
+  justify-content: center;
+  height: 100vh;
 }
 
 .header-container {
@@ -37,11 +41,11 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 200px 100px 100px 100px;
+  padding: 100px;
 }
 
 .header-text {
-  font-size: 200px;
+  font-size: 7em;
   color: crimson;
   margin-bottom: -50px;
 }
@@ -52,8 +56,10 @@ p {
   position: relative;
   width: 20px;
   height: 20px;
-  top: -30px;
-  margin: 0 0 0 -400px;
+  top: 5px;
+  /* top: -30px; */
+  /* margin: 0 0 0 -400px; */
+  margin: 0 0 0 375px;
   background: crimson;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -95,7 +101,6 @@ p {
 .game-wrapper {
   margin: 50px auto;
   width: 90%;
-  height: 90vh;
   flex-direction: column;
   justify-content: space-evenly;
 }
@@ -104,9 +109,12 @@ p {
 
 .cards-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
+  flex-direction: column;
+  max-width: 1100px;
+  margin: auto;
+  padding: 16px;
 }
 
 .decks {
@@ -120,6 +128,7 @@ p {
   border-radius: 16px;
   cursor: pointer;
   background: #000;
+  margin: 25px 0;
 }
 
 .killer-deck {
@@ -135,6 +144,8 @@ p {
   margin-bottom: 20px;
   background-color: crimson;
   color: #fff;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 /*** LOADER ***/
@@ -147,9 +158,9 @@ p {
 }
 
 .loader-container-animation {
-  -webkit-animation: scale-spin 2s linear infinite;
-  -moz-animation: scale-spin 2s linear infinite;
-  animation: scale-spin 2s linear infinite;
+  -webkit-animation: scale-spin 1.5s linear infinite;
+  -moz-animation: scale-spin 1.5s linear infinite;
+  animation: scale-spin 1.5s linear infinite;
 }
 
 .loader-image {
@@ -162,6 +173,7 @@ p {
   flex-direction: column;
   align-items: center;
   width: 90%;
+  height: 100vh;
   margin: 0 auto;
   text-align: center;
 }
@@ -196,6 +208,49 @@ p {
   border-radius: 8px;
   margin: 50px auto;
   font-family: "Courier New", Courier, monospace;
+}
+
+/*** MEDIA QUERIES ***/
+
+@media (min-width: 768px) {
+  .header-text {
+    font-size: 8em;
+  }
+
+  .drop {
+    top: 0;
+    margin-left: 435px;
+  }
+
+  .cards-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .decks {
+    flex-basis: 30%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-text {
+    font-size: 12.5em;
+  }
+
+  .drop {
+    top: -30px;
+    margin: 0 0 0 -400px;
+  }
+
+  .cards-container {
+    justify-content: space-between;
+  }
+
+  .decks {
+    flex-basis: 29%;
+    margin: 15px;
+  }
 }
 
 /*** KEYFRAMES ***/

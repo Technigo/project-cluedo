@@ -10,18 +10,22 @@
   </head>
   <body>
     <!-- <div class="flex-wrapper"> -->
-      <header class="header-wrapper visible" id="startWindow">
-        <div class="header-container">
-          <h1 class="header-text">CLUEDO</h1>
-          <div class="drop"></div>
-        </div>
-        <button onclick="startGame(this.parentNode.id)" class="button button-start" id="startButton">
-          LET'S PLAY
-        </button>
-      </header>
+    <header class="header-wrapper visible" id="startWindow">
+      <div class="header-container">
+        <h1 class="header-text">CLUEDO</h1>
+        <div class="drop"></div>
+      </div>
+      <button
+        onclick="startGame(this.parentNode.id)"
+        class="button button-start"
+        id="startButton"
+      >
+        LET'S PLAY
+      </button>
+    </header>
 
-      <section class="game-wrapper invisible" id="gameWindow">
-        <div class="cards cards-container">
+    <section class="game-wrapper invisible" id="gameWindow">
+      <div class="cards cards-container">
         <article
           class="decks killer-deck"
           onclick="pickKiller(this.lastElementChild.id)"
@@ -73,30 +77,31 @@
               alt=""
             />
           </div>
-        </div>
         </article>
+      </div>
 
-        <button onclick="revealMystery(this.parentNode.id)" class="button" id="revealButton">
-          REVEAL THE CRIME
-        </button>
-      </section>
-      <section class="reveal-wrapper invisible" id="revealWindow">
-        <h1 class="mystery-reveal" id="mystery"></h1>
-        <article
-          class="reveal-deck"
-          id="mysteryCard"
-        >
-          <p class="p-header">MYSTERY REVEALED</p>
-          <p id="mysteryKiller"></p>
-          <img id="mysteryKillerImage" class="killer-image" src=""/>
-          <p id="mysteryRoom"></p>
-          <p id="mysteryWeapon"></p>
-        </article>
-        <div>
-          <button onclick="restartGame()" class="button">PLAY AGAIN</button>
-          <button onclick="" class="button">QUIT</button>
-        </div>
-      </section>
+      <button
+        onclick="revealMystery(this.parentNode.id)"
+        class="button"
+        id="revealButton"
+      >
+        REVEAL THE CRIME
+      </button>
+    </section>
+    <section class="reveal-wrapper invisible" id="revealWindow">
+      <h1 class="mystery-reveal" id="mystery"></h1>
+      <article class="reveal-deck" id="mysteryCard">
+        <p class="p-header">MYSTERY REVEALED</p>
+        <p id="mysteryKiller"></p>
+        <img id="mysteryKillerImage" class="killer-image" src="" />
+        <p id="mysteryRoom"></p>
+        <p id="mysteryWeapon"></p>
+      </article>
+      <div>
+        <button onclick="restartGame()" class="button">PLAY AGAIN</button>
+        <button onclick="" class="button">QUIT</button>
+      </div>
+    </section>
     <!-- </div> -->
     <script src="clue.js"></script>
   </body>

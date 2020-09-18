@@ -229,7 +229,7 @@ const pickKiller = (loaderId) => {
         mystery.killer.favourite
       )}`;
       killerPicked = true;
-    }, 2000);
+    }, 1500);
   }
 };
 
@@ -253,7 +253,7 @@ const pickWeapon = (loaderId) => {
         mystery.weapon.favourite
       )}`;
       weaponPicked = true;
-    }, 2000);
+    }, 1500);
   } // else show message
 };
 
@@ -270,7 +270,7 @@ const pickRoom = (loaderId) => {
       get("roomName").innerHTML = `${capitalizeFirstLetter(mystery.room.name)}`;
       roomPicked = true;
       style("revealButton").visibility = "visible";
-    }, 2000);
+    }, 1000);
   } // else show message
 };
 
@@ -428,7 +428,7 @@ const startGame = (windowId) => {
   toggleWindow(windowId);
   hideButton();
   document.getElementsByTagName("BODY")[0].style.backgroundImage =
-    "url(./assets/spooky-castle.jpg)";
+    "url(./assets/castle.jpg)";
   shuffleFavourite(suspects, weapons);
   shuffleFavourite(weapons, rooms);
   // get(cardId).addEventListener("click", pickFunction);
