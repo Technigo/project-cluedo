@@ -7,7 +7,7 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
-  favouriteWeapon: 'knife'
+  favorite: 'knife'
 };
 
 const professorPlum = {
@@ -18,7 +18,7 @@ const professorPlum = {
   age: 53,
   image: 'assets/plum.png',
   occupation: 'Professor',
-  favouriteWeapon: 'axe' 
+  favorite: 'axe' 
 };
 
 const missScarlet = {
@@ -29,7 +29,7 @@ const missScarlet = {
   age: 41,
   image: 'assets/scarlet.png',
   occupation: 'Superhero',
-  favouriteWeapon: 'dumbBell'
+  favorite: 'dumbBell'
 };
 
 const mrsPeacock = {
@@ -40,7 +40,7 @@ const mrsPeacock = {
   age: 52,
   image: 'assets/peacock.png',
   occupation: 'Headhunter',
-  favouriteWeapon: 'poison'
+  favorite: 'poison'
 };
 
 const colonelMustard = {
@@ -51,7 +51,7 @@ const colonelMustard = {
   age: 66,
   image: 'assets/mustard.png',
   occupation: 'Colonel',
-  favouriteWeapon: 'pistol'
+  favorite: 'pistol'
 };
 
 const mrsWhite = {
@@ -62,7 +62,7 @@ const mrsWhite = {
   age: 68,
   image: 'assets/white.png',
   occupation: 'Retired project manager',
-  favouriteWeapon: 'candleStick'
+  favorite: 'candleStick'
 };
 
 //CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
@@ -173,6 +173,7 @@ const patio = "Patio";
 //CONSOLE LOG TO TEST:
 console.log(mrsWhite.description);
 console.log(candleStick.flexibility);
+console.log(mrsWhite.favouriteWeapon); //returns undefined
 
 // STEP 2. NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 const suspects = [
@@ -242,16 +243,29 @@ const mystery = {
   room: "",
 };
 
+//Function to shuffle the favourite weapons of the suspects in a randomized way.
+const shuffleWeapons = (arrayOfSuspects) => {
+  arrayOfSuspects.forEach(suspect => {
+    //console.log(suspect.favoriteWeapon);
+    suspect.favoriteWeapon = weapons[Math.floor(Math.random() * 9)];
+    console.log(suspect.favoriteWeapon);
+  })
+}
+//shuffleWeapons(suspects);
+
+
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects); //mystery.killer selects the property killer in mystery object and sets this equal to a randomly selected suspect. 
   //console.log(mystery);
+  mystery.killer.favorite = shuffleWeapons(suspects); //Prints weapon of chioce "undefined" on first card.
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`
   document.getElementById('killerAge').innerHTML = `Age: ${mystery.killer.age}`
   document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
+  document.getElementById('killerWeapon').innerHTML = `Weapon of choice: ${mystery.killer.favorite}`
   document.getElementById('killerDescription').innerHTML = `Description: ${mystery.killer.description}`
   document.getElementById('killerImage').src = `${mystery.killer.image}`
 }
@@ -328,3 +342,7 @@ document.getElementById('revealButton').innerHTML = `PLAY AGAIN?` //This works t
  //}
  //console.log(pageReload); this just prints the text-content of the function above in the console. Why?
  //pageReload(); //Om jag har den här så laddar sian om hela tiden från start. Har jag skrivit min funktion fel eller vad?
+
+
+
+ 
