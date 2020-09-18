@@ -1,255 +1,190 @@
+/*** VARIABLES ***/
+
 let killerPicked = false;
 let weaponPicked = false;
 let roomPicked = false;
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
-const mrGreen = {
-  firstName: "Jacob",
-  lastName: "Green",
-  color: "green",
-  description: "Has a lot of connections",
-  age: 45,
-  image: "./assets/green.png",
-  occupation: "Entrepreneur",
-  favourite: "knife",
-};
-
-const professorPlum = {
-  firstName: "Victor",
-  lastName: "Plum",
-  color: "purple",
-  description: "Enjoys the outdoors",
-  age: 34,
-  image: "./assets/plum.png",
-  occupation: "Professor",
-  favourite: "poison",
-};
-
-const missScarlet = {
-  firstName: "Cassandra",
-  lastName: "Scarlet",
-  color: "red",
-  description: "Collects weapons",
-  age: 42,
-  image: "./assets/scarlet.png",
-  occupation: "Recruiter",
-  favourite: "pistol",
-};
-
-const mrsPeacock = {
-  firstName: "Eleanor",
-  lastName: "Peacock",
-  color: "blue",
-  description: "Strong swimmer",
-  age: 29,
-  image: "./assets/peacock.png",
-  occupation: "Novelist",
-  favourite: "bat",
-};
-
-const colonelMustard = {
-  firstName: "Jack",
-  lastName: "Mustard",
-  color: "yellow",
-  description: "Collects war memorabilia",
-  age: 63,
-  image: "./assets/mustard.png",
-  occupation: "Colonel",
-  favourite: "pistol",
-};
-
-const mrsWhite = {
-  firstName: "Josephine",
-  lastName: "White",
-  color: "white",
-  description: "Avid reader",
-  age: 45,
-  image: "./assets/white.png",
-  occupation: "Chef",
-  favourite: "axe",
-};
-
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
-
-const rope = {
-  name: "rope",
-  weight: 10,
-  id: "rope",
-  favourite: "patio",
-};
-
-const knife = {
-  name: "knife",
-  weight: 25,
-  id: "knife",
-  favourite: "kitchen",
-};
-
-const candlestick = {
-  name: "candlestick",
-  weight: 105,
-  id: "candlestick",
-  favourite: "dining room",
-};
-
-const dumbbell = {
-  name: "dumbbell",
-  weight: 150,
-  id: "dumbbell",
-  favourite: "spa",
-};
-
-const poison = {
-  name: "poison",
-  weight: 5,
-  id: "poison",
-  favourite: "conservatory",
-};
-
-const axe = {
-  name: "axe",
-  weight: 85,
-  id: "axe",
-  favourite: "observatory",
-};
-
-const bat = {
-  name: "bat",
-  weight: 30,
-  id: "bat",
-  favourite: "billiard room",
-};
-
-const trophy = {
-  name: "trophy",
-  weight: 20,
-  id: "trophy",
-  favourite: "living room",
-};
-
-const pistol = {
-  name: "pistol",
-  weight: 35,
-  id: "pistol",
-  favourite: "study",
-};
-
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
-const diningRoom = {
-  name: "dining room",
-  id: "dining room",
-};
-
-const conservatory = {
-  name: "conservatory",
-  id: "conservatory",
-};
-
-const kitchen = {
-  name: "kitchen",
-  id: "kitchen",
-};
-
-const study = {
-  name: "study",
-  id: "study",
-};
-
-const library = {
-  name: "library",
-  id: "library",
-};
-
-const billiardRoom = {
-  name: "billiard room",
-  id: "billiard room",
-};
-
-const lounge = {
-  name: "lounge",
-  id: "lounge",
-};
-
-const ballroom = {
-  name: "ballroom",
-  id: "ballroom",
-};
-
-const hall = {
-  name: "hall",
-  id: "hall",
-};
-
-const spa = {
-  name: "spa",
-  id: "spa",
-};
-
-const livingRoom = {
-  name: "living room",
-  id: "living room",
-};
-
-const observatory = {
-  name: "observatory",
-  id: "observatory",
-};
-
-const theater = {
-  name: "theater",
-  id: "theater",
-};
-
-const guestHouse = {
-  name: "guest house",
-  id: "guest house",
-};
-
-const patio = {
-  name: "patio",
-  id: "patio",
-};
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
-  mrGreen,
-  professorPlum,
-  missScarlet,
-  mrsPeacock,
-  colonelMustard,
-  mrsWhite,
+  {
+    firstName: "Jacob",
+    lastName: "Green",
+    color: "green",
+    description: "Has a lot of connections",
+    age: 45,
+    image: "./assets/green.png",
+    occupation: "Entrepreneur",
+    favourite: "knife",
+  },
+  {
+    firstName: "Victor",
+    lastName: "Plum",
+    color: "purple",
+    description: "Enjoys the outdoors",
+    age: 34,
+    image: "./assets/plum.png",
+    occupation: "Professor",
+    favourite: "poison",
+  },
+  {
+    firstName: "Cassandra",
+    lastName: "Scarlet",
+    color: "red",
+    description: "Collects weapons",
+    age: 42,
+    image: "./assets/scarlet.png",
+    occupation: "Recruiter",
+    favourite: "pistol",
+  },
+  {
+    firstName: "Eleanor",
+    lastName: "Peacock",
+    color: "blue",
+    description: "Strong swimmer",
+    age: 29,
+    image: "./assets/peacock.png",
+    occupation: "Novelist",
+    favourite: "bat",
+  },
+  {
+    firstName: "Jack",
+    lastName: "Mustard",
+    color: "yellow",
+    description: "Collects war memorabilia",
+    age: 63,
+    image: "./assets/mustard.png",
+    occupation: "Colonel",
+    favourite: "pistol",
+  },
+  {
+    firstName: "Josephine",
+    lastName: "White",
+    color: "white",
+    description: "Avid reader",
+    age: 45,
+    image: "./assets/white.png",
+    occupation: "Chef",
+    favourite: "axe",
+  },
 ];
 
 const weapons = [
-  rope,
-  knife,
-  candlestick,
-  dumbbell,
-  poison,
-  axe,
-  bat,
-  trophy,
-  pistol,
+  {
+    name: "rope",
+    weight: 10,
+    id: "rope",
+    favourite: "patio",
+  },
+  {
+    name: "knife",
+    weight: 25,
+    id: "knife",
+    favourite: "kitchen",
+  },
+  {
+    name: "candlestick",
+    weight: 105,
+    id: "candlestick",
+    favourite: "dining room",
+  },
+  {
+    name: "dumbbell",
+    weight: 150,
+    id: "dumbbell",
+    favourite: "spa",
+  },
+  {
+    name: "poison",
+    weight: 5,
+    id: "poison",
+    favourite: "conservatory",
+  },
+  {
+    name: "axe",
+    weight: 85,
+    id: "axe",
+    favourite: "observatory",
+  },
+  {
+    name: "bat",
+    weight: 30,
+    id: "bat",
+    favourite: "billiard room",
+  },
+  {
+    name: "trophy",
+    weight: 20,
+    id: "trophy",
+    favourite: "living room",
+  },
+  {
+    name: "pistol",
+    weight: 35,
+    id: "pistol",
+    favourite: "study",
+  },
 ];
 
 const rooms = [
-  diningRoom,
-  conservatory,
-  kitchen,
-  study,
-  library,
-  billiardRoom,
-  lounge,
-  ballroom,
-  hall,
-  spa,
-  livingRoom,
-  observatory,
-  theater,
-  guestHouse,
-  patio,
+  {
+    name: "dining room",
+    id: "dining room",
+  },
+  {
+    name: "conservatory",
+    id: "conservatory",
+  },
+  {
+    name: "kitchen",
+    id: "kitchen",
+  },
+  {
+    name: "study",
+    id: "study",
+  },
+  {
+    name: "library",
+    id: "library",
+  },
+  {
+    name: "billiard room",
+    id: "billiard room",
+  },
+  {
+    name: "lounge",
+    id: "lounge",
+  },
+  {
+    name: "ballroom",
+    id: "ballroom",
+  },
+  {
+    name: "hall",
+    id: "hall",
+  },
+  {
+    name: "spa",
+    id: "spa",
+  },
+  {
+    name: "living room",
+    id: "living room",
+  },
+  {
+    name: "observatory",
+    id: "observatory",
+  },
+  {
+    name: "theater",
+    id: "theater",
+  },
+  {
+    name: "guest house",
+    id: "guest house",
+  },
+  {
+    name: "patio",
+    id: "patio",
+  },
 ];
 
 const mystery = {
@@ -258,13 +193,7 @@ const mystery = {
   room: "",
 };
 
-/* Called when the 'Let's Play' button is clicked, toggles the window, hides
- the Reveal button and shuffles the suspects' favourite weapon */
-const startGame = (windowId) => {
-  toggleWindow(windowId);
-  //shuffleFavouriteWeapon();
-  hideButton();
-};
+/*** FUNCTIONS ***/
 
 /* Function to randomly select one item from the array passed as a paramater */
 const randomSelector = (array) => {
@@ -280,7 +209,7 @@ const pickKiller = (loaderId) => {
     toggleAnimation(loaderId);
     setTimeout(function () {
       toggleLoader(loaderId);
-      shuffleFavourite(suspects, weapons);
+      //shuffleFavourite(suspects, weapons);
       mystery.killer = randomSelector(suspects);
       console.log(mystery.killer.favourite);
       style("killerCard").background = mystery.killer.color;
@@ -312,12 +241,17 @@ const pickWeapon = (loaderId) => {
     toggleAnimation(loaderId);
     setTimeout(function () {
       toggleLoader(loaderId);
-      shuffleFavourite(weapons, rooms);
+      //shuffleFavourite(weapons, rooms);
       mystery.weapon = increaseChance(mystery.killer);
       console.log(mystery.weapon);
       style("weaponCard").background = mystery.killer.color;
       get("weaponName").innerHTML = capitalizeFirstLetter(mystery.weapon.name);
       get("weaponWeight").innerHTML = `Weight: ${mystery.weapon.weight}`;
+      get(
+        "weaponFavouriteRoom"
+      ).innerHTML = `Likely found in: ${capitalizeFirstLetter(
+        mystery.weapon.favourite
+      )}`;
       weaponPicked = true;
     }, 2000);
   } // else show message
@@ -374,6 +308,8 @@ const shuffleFavouriteWeapon = () => {
   });
 };
 
+/* The function is called when the Let's play button is clicked to shuffle
+ favourite weapon and favourite room */
 const shuffleFavourite = (mysteryObject, favouriteObject) => {
   mysteryObject.forEach((object) => {
     object.favourite = randomSelector(favouriteObject).id;
@@ -393,12 +329,12 @@ const toggleAnimation = (loaderId) => {
 
 /* Hides the loader image when a card is picked */
 const toggleLoader = (loaderId) => {
-  get(loaderId).style.display = "none";
+  style(loaderId).display = "none";
 };
 
 /* Hides the current window and displays the next */
 const toggleWindow = (windowId) => {
-  let windowElement = get(windowId);
+  const windowElement = get(windowId);
   toggleWindowClass(windowId);
   toggleWindowClass(windowElement.nextElementSibling.id);
 };
@@ -409,24 +345,20 @@ const toggleWindowClass = (id) => {
   get(id).classList.toggle("invisible");
 };
 
+/* Hides the reveal the crime button when the game is started */
 const hideButton = () => {
   const button = (style("revealButton").visibility = "hidden");
-  // if (button.style.visibility === "hidden"){
-  //   button.style.visibility = "visible";
-  // } else {
-  //   button.style.visibility = "hidden"
-  // }
 };
 
+/* Increases the chance of the referred obeject's favourite property to be picked */
 const increaseChance = (object) => {
-  // find objects favourite weapon
   if (object === mystery.killer) {
     arrayDuplicated = duplicateArray(findFavourite(mystery.killer, weapons));
-    console.log(arrayDuplicated);
+    console.log(arrayDuplicated); // ta bort sen
     return randomFavourite(weapons, arrayDuplicated);
   } else if (object === mystery.weapon) {
     arrayDuplicated = duplicateArray(findFavourite(mystery.weapon, rooms));
-    console.log(arrayDuplicated);
+    console.log(arrayDuplicated); // ta bort sen
     return randomFavourite(rooms, arrayDuplicated);
   }
 };
@@ -434,26 +366,28 @@ const increaseChance = (object) => {
 /* The function is called to find the favourite object that matches the id of 
 the favourite property of the mystery object */
 const findFavourite = (mysteryObject, favouriteObjects) => {
-  console.log(mysteryObject);
-  console.log(favouriteObjects);
+  console.log(mysteryObject); // ta bort sen
+  console.log(favouriteObjects); // ta bort sen
   const favourite = favouriteObjects.find(
     (favourite) => favourite.id === mysteryObject.favourite
   );
   return favourite;
 };
 
+/* The function creates a new array where the favourite object occurs a random
+ number of times */
 const duplicateArray = (favourite) => {
-  //create a random number between 0 and 10
   const randomNumber = Math.floor(Math.random() * 11);
-  console.log(randomNumber);
+  console.log(randomNumber); // ta bort sen
   const arrayDuplicated = new Array(randomNumber).fill(favourite);
-  console.log("weapons duplicated: " + JSON.stringify(arrayDuplicated));
+  console.log("weapons duplicated: " + JSON.stringify(arrayDuplicated)); // ta bort sen
   return arrayDuplicated;
 };
 
+/* The functions merges two arrays to create a new array where the favourite object occurs more than once */
 const randomFavourite = (favourite, arrayDuplicated) => {
   const increasedFavourite = [...favourite, ...arrayDuplicated];
-  console.log(increasedFavourite);
+  console.log(increasedFavourite); // ta bort sen
   return randomSelector(increasedFavourite);
 };
 
@@ -462,7 +396,40 @@ const get = (id) => {
   return document.getElementById(id);
 };
 
-/* Function that returns the style property of the object referred to */
+/* Function that returns the style property of the referred object */
 const style = (id) => {
   return get(id).style;
+};
+
+const restartGame = () => {
+  console.log("restartButton");
+  location.reload();
+};
+
+// cardId = document.getElementById("demo").addEventListener("click", myFunction);
+
+// const eventClick = () => {
+//   // get the elements id
+//   // get this last elements child id
+// };
+
+// press the card of deck, get the element class and pass to the function eventClickCard
+//and the loader id, this.lastElementChild.id
+
+// click, the event listener
+
+// pass the loaderID to the pickKiller function
+
+/*** EXECUTION ***/
+
+/* Called when the 'Let's Play' button is clicked, toggles the window, hides
+ the Reveal button and shuffles the suspects' favourite weapon */
+const startGame = (windowId) => {
+  toggleWindow(windowId);
+  hideButton();
+  document.getElementsByTagName("BODY")[0].style.backgroundImage =
+    "url(./assets/spooky-castle.jpg)";
+  shuffleFavourite(suspects, weapons);
+  shuffleFavourite(weapons, rooms);
+  // get(cardId).addEventListener("click", pickFunction);
 };

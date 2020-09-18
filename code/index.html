@@ -43,13 +43,14 @@
           </div>
         </article>
         <article
-          class="decks weapon-deck"
+          class="decks"
           onclick="pickWeapon(this.lastElementChild.id)"
           id="weaponCard"
         >
           <p class="p-header">WEAPON</p>
           <p id="weaponName"></p>
           <p id="weaponWeight"></p>
+          <p id="weaponFavouriteRoom"></p>
           <div class="loader-container" id="loaderWeapon">
             <img
               src="./assets/question-mark-48.png"
@@ -59,7 +60,7 @@
           </div>
         </article>
         <article
-          class="decks room-deck"
+          class="decks"
           onclick="pickRoom(this.lastElementChild.id)"
           id="roomCard"
         >
@@ -75,7 +76,7 @@
         </div>
         </article>
 
-        <button onclick="revealMystery(this.parentNode.id)" class="button reveal-button" id="revealButton">
+        <button onclick="revealMystery(this.parentNode.id)" class="button" id="revealButton">
           REVEAL THE CRIME
         </button>
       </section>
@@ -85,12 +86,16 @@
           class="reveal-deck"
           id="mysteryCard"
         >
-          <p class="p-header">REVEAL THE MYSTERY</p>
+          <p class="p-header">MYSTERY REVEALED</p>
           <p id="mysteryKiller"></p>
           <img id="mysteryKillerImage" class="killer-image" src=""/>
           <p id="mysteryRoom"></p>
           <p id="mysteryWeapon"></p>
         </article>
+        <div>
+          <button onclick="restartGame()" class="button">PLAY AGAIN</button>
+          <button onclick="" class="button">QUIT</button>
+        </div>
       </section>
     <!-- </div> -->
     <script src="clue.js"></script>
