@@ -79,9 +79,22 @@ h3{
   background: rgb(3, 40, 80, 0.8);
 }
 
-.img {
-  width: 100%;
+.image-container {
+  background: #fff;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 20px;
+  margin: 10px 50px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  
 }
+
+img {
+  height: 100px;
+}
+
 
 .conclusion-container {
   display: flex;

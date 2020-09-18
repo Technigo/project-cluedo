@@ -259,6 +259,7 @@ const pickKiller = () => {
     "killer-occupation"
   ).innerHTML = `${mystery.killer.occupation}`;
   document.getElementById("killer-image").classList.remove("hidden");
+  document.getElementById("killer-container").classList.remove("hidden");
   document.getElementById("killer-image").src = mystery.killer.image;
   document.getElementById(
     "killer-description"
@@ -279,6 +280,7 @@ const pickWeapon = () => {
     mystery.weapon.color;
   document.getElementById("weapon-name").innerHTML = `${mystery.weapon.name}`;
   document.getElementById("weapon-image").classList.remove("hidden");
+  document.getElementById("weapon-container").classList.remove("hidden");
   document.getElementById("weapon-image").src = mystery.weapon.image;
   document.getElementById(
     "weapon-weight"
@@ -293,6 +295,7 @@ const pickRoom = () => {
   document.getElementById("room-card").style.background =
     mystery.killer.color;
   document.getElementById("room-name").innerHTML = `${mystery.room.name}`;
+  document.getElementById("room-container").classList.remove("hidden");
   document.getElementById("room-image").classList.remove("hidden");
   document.getElementById("room-image").src = mystery.room.image;
 };
