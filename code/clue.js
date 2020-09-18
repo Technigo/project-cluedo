@@ -4,7 +4,7 @@ const mrGreen = {
   color: "#499c65",
   description: "A entrepreneur who's made alot of dodgy connections",
   image: "assets/green.png",
-  favouriteWeapon: "knife"
+  favouriteWeapon: ""
 };
 
 const professorPlum = {
@@ -12,7 +12,7 @@ const professorPlum = {
   color: "#9c4973",
   description: "A proffessor of murder??",
   image: "assets/plum.png",
-  favouriteWeapon: "pistol"
+  favouriteWeapon: ""
 };
 
 const missScarlet = {
@@ -234,7 +234,7 @@ document.getElementById("weaponCard").addEventListener("click", pickWeaponLoader
 
 const showPickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
-
+  //find which weapon is the favourite for the killer card that has been chosen and make that weapon more likely to be put into mystery.weapon
 
   document.getElementById("loader2").style.display = "none"
   document.getElementById('weaponCard').removeEventListener('click', pickWeaponLoader);
