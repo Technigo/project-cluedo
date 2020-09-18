@@ -20,7 +20,7 @@ h1 {
 .top-container {
   display: flex;
   justify-content: center;
-  margin: 5px 0 20px;
+  margin: 40px;
 }
 
 .top-container img {
@@ -31,7 +31,7 @@ h1 {
 /* MYSTERY CARDS */
 
 .cards {
-  margin: 20px auto;
+  margin: 100px auto;
   width: 90%;
   display: flex;
   justify-content: space-evenly;
@@ -159,8 +159,6 @@ button:hover {
   pointer-events: all;
 }
 
-
-
 /* MEDIA QUERIES */
 
 @media (max-width: 800px) {
@@ -185,7 +183,7 @@ button:hover {
 @media (max-width: 540px) {
 
   .top-container img {
-    width: 400px;
+    width: 350px;
   }
 
   .cards {

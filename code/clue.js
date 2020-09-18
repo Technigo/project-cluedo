@@ -262,12 +262,8 @@ const room = [
   patio,
 ];
 
-console.log(room);
-console.log(weaponry);
-console.log(suspects);
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+// RANDOMLY SELECT ONE ITEM FROM THE ARRAY 
 const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
@@ -283,9 +279,8 @@ const mystery = {
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
 
-  console.log(mystery.killer);
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  // CHANGE CONTENT OF THE KILLER CARD
   document.getElementById("killerText").style.color = mystery.killer.color;
   document.getElementById(
     "killerText"
@@ -297,7 +292,7 @@ const pickKiller = () => {
 };
 document.getElementById("killerCard").addEventListener("click", pickKiller);
 
-// This function will be invoked when you click on the weapon card.
+// CHANGE CONTENT OF THE WEAPON CARD
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weaponry);
 
@@ -307,7 +302,7 @@ const pickWeapon = () => {
 
 document.getElementById("weaponCard").addEventListener("click", pickWeapon);
 
-// This function will be invoked when you click on the room card.
+// CHANGE CONTENT OF THE ROOM CARD
 const pickRoom = () => {
   mystery.room = randomSelector(room);
   document.getElementById("roomText").innerHTML = `${mystery.room.name}`;
