@@ -4,7 +4,7 @@ A Cluedo SPA where you randomly pick a killer, weapon and room, store them in a 
 
 ## The problem
 
-I planned the different functions and events by discussing different approaches, before starting to code. When coding I discovered I love making the code clean and future proof - it should not only work but also be able to handle larger objects, arrays and number of elements. 
+I planned the different functions and events by discussing different approaches, before starting to code. When coding I discovered I love making the code clean, reusable and scalable - it should not only work but also be able to handle larger objects, arrays and number of variables. 
 
 ## View it live
 
