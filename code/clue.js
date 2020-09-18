@@ -247,7 +247,7 @@ const rooms = [
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
+  return array[Math.floor(Math.random() * array.length)];
 };
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY. With a killer, a weapon and a room. The values are set later down.
@@ -263,12 +263,11 @@ const weaponImage = document.getElementById('weaponImage');
 const roomImage = document.getElementById('roomImage');
 
 // PICK-KILLER-FUNCTION! This function will be invoked when you click on the killer card.
-document.getElementById('killerCard').addEventListener('click', pickKiller);
-
-function pickKiller()  { // Shows loading animation
+const pickKiller = () => { // Shows loading animation
   document.getElementById('loader1').style.display = 'block';
   setTimeout(realPickKiller, 1000); // Delays the realPickKiller function and calls it after 1.5 sec.
 };
+document.getElementById('killerCard').addEventListener('click', pickKiller);
 
 const realPickKiller = () => { // The REAL function getting the values for the suspects
   document.getElementById('loader1').style.display = 'none';
@@ -281,7 +280,7 @@ const realPickKiller = () => { // The REAL function getting the values for the s
     mystery.favouriteWeapon = randomSelector(weapons); 
   };
   shuffleFavouriteWeapon();
-  
+
   // This will change the background color of the card to the one connected to the chosen killer and show the different properties of the killer. 
   document.getElementById('killerCard').style.background = mystery.killer.color;
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
@@ -295,18 +294,18 @@ const realPickKiller = () => { // The REAL function getting the values for the s
 };
 
 // PICK-WEAPON-FUNCTION! This function will be invoked when you click on the weapon card.- in the similar way as pickKiller.
-document.getElementById('weaponCard').addEventListener('click', pickWeapon);
-
-function pickWeapon()  { // Shows loading animation
+const pickWeapon = () => { // Shows loading animation
   document.getElementById('loader2').style.display = 'block';
   setTimeout(realPickWeapon, 1000); // Delays the real pickWeapon function and calls it after 1.5 sec.
 };
+document.getElementById('weaponCard').addEventListener('click', pickWeapon);
 
 const realPickWeapon = () => { // The REAL function getting the values for the weapons
   document.getElementById('loader2').style.display = 'none';
-  document.getElementById('weaponCard').removeEventListener('click', pickWeapon); // So the loader doesn't pops up in next click
+  document.getElementById('weaponCard').removeEventListener('click', pickWeapon); // So the loader doesn't pops up in next click, it looks a bit weird if that happens
 
   mystery.weapon = randomSelector(weapons); // Randomly selects a weapon
+      
 
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
   document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight} pounds`;
@@ -316,12 +315,12 @@ const realPickWeapon = () => { // The REAL function getting the values for the w
 };
 
 // PICK-ROOM-FUNCTION! This function will be invoked when you click on the room card.- in the similar way as pickKiller.
-document.getElementById('roomCard').addEventListener('click', pickRoom);
-
-function pickRoom()  { // Shows loading animation
+const pickRoom = () => { // Shows loading animation
   document.getElementById('loader3').style.display = 'block';
+  
   setTimeout(realPickRoom, 1000); // Delays the real pickRoom function and calls it after 1.5 sec.
 };
+document.getElementById('roomCard').addEventListener('click', pickRoom);
 
 const realPickRoom = () => { // The REAL function getting the values for the rooms
   document.getElementById('loader3').style.display = 'none';
@@ -336,7 +335,6 @@ const realPickRoom = () => { // The REAL function getting the values for the roo
 };
 
 // STEP 4 - A FUNCTION that will be invoked when you click that button. 
-
 revealMystery = () => {
   document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}.`;  
   document.getElementById('weaponCard').style.background = mystery.killer.color; // All decks get the color from the mystery.killer when revealing the mystery

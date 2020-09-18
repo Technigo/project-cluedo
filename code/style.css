@@ -86,7 +86,7 @@ header {
   cursor: pointer;
 }
 
-#killerImage {
+.killer-image {
   margin: 15px 0px;
   width: 150px;
   height: auto;
@@ -104,7 +104,7 @@ header {
   cursor: pointer;
 }
 
-#weaponImage {
+.weapon-image {
   width: 100px;
   margin-top: 100px;
   height: auto;
@@ -122,7 +122,7 @@ header {
   cursor: pointer;
 }
 
-#roomImage {
+.room-image {
   width: 150px;
   margin-top: 60px;
   height: auto;
@@ -130,14 +130,14 @@ header {
 }
 
 /* Styling of the loaders */
-#loader1, #loader2, #loader3 {
+.loader1, .loader2, .loader3 {
   margin-left: 90px;
-  margin-top: 50px;
+  margin-top: 80px;
   width: 60px;
   height: 60px;
-  border: 8px solid #fff;
+  border: 10px solid #fff;
   border-radius: 50%;
-  border-top: 8px solid #8c8e91;
+  border-top: 10px solid #8c8e91;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   display: none;

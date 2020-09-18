@@ -32,4 +32,5 @@ I hope to in the future learn even more about the relation between different obj
 
 ## View it live
 
-Link to view the site live: 
+Link to view the site live: https://cluedoshuffle.netlify.app/
+
