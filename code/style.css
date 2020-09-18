@@ -1,21 +1,24 @@
 body {
   margin: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #000;
+  font-size: 15px;
+  color: #fff;
   text-align: center;
-  background-color: beige;
 }
 
 p {
   margin: 1px;
   font-weight: 300;
   background-color: #fff;
+  color: #000;
 }
 
 .cards {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: whitesmoke;
+  background: beige;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -52,7 +55,7 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: beige;
   border: none;
   font-size: 20px;
   border-radius: 8px;
