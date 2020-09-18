@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
-  background-image: url(./assets/cederic-vandenberghe-21DP3hytVHw-unsplash.jpg);
+  background-image: url(./assets/cederic-vandenberghe-21DP3hytVHw-unsplash_2500.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -154,6 +154,7 @@ button {
   background-color: #000;
   color: rgb(129, 164, 175);
   border-radius: 10px;
+  font-size: 25px;
 }
 
 

@@ -353,6 +353,3 @@ document.getElementById('killerCard').onclick = pickKiller;
 document.getElementById('weaponCard').onclick = pickWeapon;
 document.getElementById('roomCard').onclick = pickRoom;
 document.getElementsByTagName("button")[0].onclick = revealMystery;
-
-
-// !!! ADD FUNCTION OF WHAT HAPPENS IF KILLER IS NOT PICKED BEFORE ROOM AND WEAPON !!!
