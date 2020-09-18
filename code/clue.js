@@ -305,6 +305,13 @@ shuffleFavoriteWeapon = (suspects) => {
   });
 };
 
+// ---------Validate mystery before reveal----------
+const validateMysteryReveal = () => {
+  if (mystery.killer && mystery.weapon && mystery.room) {
+      return true;
+  } 
+};
+
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
   document.getElementById("killerCard").style.background = mystery.killer.color;
@@ -331,11 +338,25 @@ const pickRoom = () => {
 };
 
 const showMystery = () => {
-  showMysteryInfo.title.innerHTML = `Mystery`;
-  showMysteryInfo.mysteryReveal.innerHTML = `Mr Black will be killed by ${mystery.killer.title} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`;
-  showMysteryInfo.mysteryInfo.innerHTML = `Hush! Remember to keep it a secret!`;
+  const isValidReveal = validateMysteryReveal();
+  if (isValidReveal === true) {
+    showMysteryInfo.title.innerHTML = `Mystery`;
+    showMysteryInfo.mysteryReveal.innerHTML = `Mr Black will be killed by ${mystery.killer.title} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`;
+    showMysteryInfo.mysteryInfo.innerHTML = `Hush! Remember to keep it a secret!`;
+  } else {
+    showMysteryInfo.title.innerHTML = `Error`;
+    showMysteryInfo.mysteryReveal.innerHTML = `Please pick one card from each deck to unravel the mystery.`
+  }
 };
 
 document.getElementById("killerCard").addEventListener("click", showKiller);
 document.getElementById("weaponCard").addEventListener("click", showWeapon);
 document.getElementById("roomCard").addEventListener("click", showRoom);
+
+
+// Petra meddelande när alla kort ej har valts börjar så här
+//if (mystery.killer && mystery.weapon && mystery.room) {}
+
+//if undefined don't click
+
+
