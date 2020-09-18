@@ -79,7 +79,7 @@ const rope = {
   weight: 10,
   article: 'a',
   id: 'rope',
-  foundIn: 'Guest House'
+  foundIn: 'guestHouse'
 }
 
 const knife = {
@@ -87,7 +87,7 @@ const knife = {
   weight: 7,
   article: 'a',
   id: 'knife',
-  foundIn: 'Kitchen'
+  foundIn: 'kitchen'
 }
 
 const candelstick = {
@@ -95,7 +95,7 @@ const candelstick = {
   weight: 12,
   article: 'a',
   id: 'candelstick',
-  foundIn: 'Hall'
+  foundIn: 'hall'
 }
 
 const dumbbell = {
@@ -103,7 +103,7 @@ const dumbbell = {
   weight: 24,
   article: 'a',
   id: 'dumbbell',
-  foundIn: 'Spa'
+  foundIn: 'spa'
 }
 
 const poison = {
@@ -111,7 +111,7 @@ const poison = {
   weight: 1,
   article: '',
   id: 'poison',
-  foundIn: 'Library'
+  foundIn: 'library'
 }
 
 const axe = {
@@ -119,7 +119,7 @@ const axe = {
   weight: 17,
   article: 'an',
   id: 'axe',
-  foundIn: 'Patio'
+  foundIn: 'patio'
 }
 
 const bat = {
@@ -127,7 +127,7 @@ const bat = {
   weight: 4,
   article: 'a',
   id: 'bat',
-  foundIn: 'Billiard Room'
+  foundIn: 'billiardRoom'
 }
 
 
@@ -136,7 +136,7 @@ const trophy = {
   weight: 29,
   article: 'a',
   id: 'trophy',
-  foundIn: 'Living Room'
+  foundIn: 'livingRoom'
 }
 
 const pistol = {
@@ -144,8 +144,87 @@ const pistol = {
   weight: 11,
   article: 'a',
   id: 'pistol',
-  foundIn: 'Lounge'
+  foundIn: 'lounge'
 }
+
+
+//objects for rooms
+const diningRoom = {
+  name: 'dining Room',
+  id: 'dining room'
+}
+
+const conservatory = {
+  name: 'conservatory',
+  id: 'conservatory'
+}
+
+const kitchen = {
+  name: 'kitchen',
+  id: 'kitchen'
+}
+
+const study = {
+  name: 'study',
+  id: 'study'
+}
+
+const library = {
+  name: 'library',
+  id: 'library'
+}
+
+const billiardRoom = {
+  name: 'billiard Room',
+  id: 'billiard Room'
+}
+
+const lounge = {
+  name: 'lounge',
+  id: 'lounge'
+}
+
+const ballroom = {
+  name: 'ballroom',
+  id: 'ballroom'
+}
+
+const hall = {
+  name: 'hall',
+  id: 'hall'
+}
+
+const spa = {
+  name: 'spa',
+  id: 'spa'
+}
+
+const livingRoom = {
+  name: 'living Room',
+  id: 'living Room'
+}
+
+const observatory = {
+  name: 'observatory',
+  id: 'observatory'
+}
+
+const theater = {
+  name: 'theater',
+  id: 'theater'
+}
+
+const guestHouse = {
+  name: 'guest House',
+  id: 'guest House'
+}
+
+const patio = {
+  name: 'patio',
+  id: 'patio'
+}
+ 
+
 
 
 //suspects array
@@ -174,7 +253,7 @@ const weapons = [
 
 
 //room array
-const rooms = [
+/*const rooms = [
   "Dining Room", 
   "Conservatory", 
   "Kitchen", 
@@ -190,6 +269,25 @@ const rooms = [
   "Theater", 
   "Guest House", 
   "Patio"
+]
+*/
+
+const rooms = [
+  diningRoom, 
+  conservatory, 
+  kitchen, 
+  study, 
+  library, 
+  billiardRoom, 
+  lounge, 
+  ballroom, 
+  hall, 
+  spa, 
+  livingRoom, 
+  observatory, 
+  theater, 
+  guestHouse, 
+  patio
 ]
 
 
@@ -264,8 +362,8 @@ const pickRoom = () => {
       document.getElementById('loaderRoom').style.opacity = 0
       let chanceForSuspectedRoom = chanceOfRoom();
       console.log(chanceForSuspectedRoom);
-      mystery.room = randomSelector(rooms)
-      document.getElementById('roomName').innerHTML = `Where murder was commited: ${mystery.room}`
+      mystery.room = randomSelector(chanceForSuspectedRoom) //need to be changed to chanceForSuspectedRoom when I get it to work
+      document.getElementById('roomName').innerHTML = `Where murder was commited: ${mystery.room.name}`
       weaponIsPicked = true
     },2500)   
   } else {
@@ -280,11 +378,16 @@ const shuffleFavoriteWeapon = () => {
     let randomWeapon = randomSelector(weapons).id;
     suspect.favouriteWeapon = randomWeapon
     //console.log(randomWeapon);
+    //suspect.favouriteWeapon=randomSelector(weapons).id
+    //in function call function (suspects, weapons) 
+    //SARA ANVÄNDE EN funktion med in params FavouriteObject, FavouriteRoom 
+    //La till argument när funktionen anropades i pickKiller och pickRoom 
+    //argumenten var suspects, weapons i första weapons, rooms in andra. 
   });
 };
 
 
-//created favouriteWeapon above to be able to add them to the new array. 
+//function to increase the probabilty of favourite weapon to be picked. 
 const chanceOfFavouriteWeapon = () => {
   const favWeapon = weapons.find(weapon => weapon.id === mystery.killer.favouriteWeapon);
   const favWeaponArray = new Array(7).fill(favWeapon);
@@ -292,24 +395,28 @@ const chanceOfFavouriteWeapon = () => {
   const calculatedWeapon = [...weapons, ...favWeaponArray];
   //console.log(calculatedWeapon);
   return calculatedWeapon;
+  //how do I add a random math function to mix the array?
+  //in console log the new array are in the bottom of the list
 };
 
 
-//RETURNS AS A STRING VALUE, DONT GET THE ENTIRE OBJECT TO RETURN...
+//function to increase the probability that the room is picked where weapon was found.
 const chanceOfRoom = () => {
-  const suspectedRooms = rooms.find(room => room === mystery.weapon.foundIn);
+  const suspectedRooms = rooms.find(room => room.name === mystery.weapon.foundIn);
+  //console.log(suspectedRooms);
   const suspectedRoomArray = new Array(7).fill(suspectedRooms);
-  console.log(suspectedRoomArray);
-  const calculatedRooms = [...weapons, ...suspectedRoomArray];
-  console.log(calculatedRooms);
+  //console.log(suspectedRoomArray);
+  const calculatedRooms = [...rooms, ...suspectedRoomArray];
+  //console.log(calculatedRooms);
   return calculatedRooms;
+  //how do I add a random math function to mix the array?
+  //in console log the new array are in the bottom of the list
 };
 
 
 
 
-// STEP 4 - revealMystery that will be invoked when you click that button.
-
+//revealMystery  will be invoked when you click the 'reveal the crime' button.
 const revealMystery = () => {
   if (
     mystery.killer === null ||
@@ -326,6 +433,7 @@ const revealMystery = () => {
 }
 
 
+//restartGAme will be invoked when you click 'resume game' button
 const restartGame = () => {
   let confirmation = confirm(`Click OK if you want to restart the game?`);
   
