@@ -95,7 +95,7 @@ header {
   border-radius: 16px;
 }
 
-.container-bottom {
+.container-reveal {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
@@ -133,7 +133,7 @@ button:hover {
   border-top: 10px solid #234668;
   width: 30px;
   height: 30px;
-  -webkit-animation: spin 4s linear infinite; /* Safari */
+  -webkit-animation: spin 4s linear infinite; 
   animation: spin 4s linear infinite;
   opacity: 0;
 }

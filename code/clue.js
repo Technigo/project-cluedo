@@ -1,3 +1,10 @@
+//TODO'S
+//style loader in CSS
+//see if I have time to change alert to innerHTML text
+//add meta property in html (Tara showed us)
+//'resume game' button to be displayed once I clicked reveal the crime button 
+//codeSandbox tasks 
+
 //variables to prevent clicking cards in wrong direction. 
 let killerIsPicked = false;
 let weaponIsPicked = false;
@@ -365,8 +372,8 @@ const chanceOfFavouriteWeapon = () => {
 
 //function to increase the probability that the room is picked where weapon was found.
 const chanceOfRoom = () => {
-  const suspectedRooms = rooms.find(room => room.name === mystery.weapon.foundIn);
-  const suspectedRoomArray = new Array(7).fill(suspectedRooms);
+  const suspectedRoom = rooms.find(room => room.name === mystery.weapon.foundIn);
+  const suspectedRoomArray = new Array(7).fill(suspectedRoom);
   const calculatedRooms = [...rooms, ...suspectedRoomArray];
   return calculatedRooms;
 };
@@ -391,7 +398,7 @@ const revealMystery = () => {
 }
 
 
-//restartGAme will be invoked when you click 'resume game' button
+//Function will be invoked when you click 'resume game' button
 const restartGame = () => {
   let confirmation = confirm(`Click OK if you want to restart the game?`);
   
