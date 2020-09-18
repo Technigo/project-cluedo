@@ -1,3 +1,8 @@
+let killerIsPicked = false;
+let weaponIsPicked = false;
+let roomIsPicked = false;
+
+
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS:
 const mrGreen = {
   firstName: 'Jacob',
@@ -173,7 +178,7 @@ const patio = "Patio";
 //CONSOLE LOG TO TEST:
 console.log(mrsWhite.description);
 console.log(candleStick.flexibility);
-console.log(mrsWhite.favouriteWeapon); //returns undefined
+console.log(mrsWhite.favorite); //returns undefined
 
 // STEP 2. NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 const suspects = [
@@ -215,62 +220,60 @@ const rooms = [
   patio
 ];
 
-console.log(suspects);
-console.log(rooms);
-console.log(weapons);
 //console log the first suspect in the suspects array:
 console.log(suspects[0]);
 //console log the last room in the rooms array:
 console.log(rooms[14]); //How to do it if I dont know how many elements I have in my string?
 console.log(rooms.length); //writes 15 in console
-//FIND OUT HOW TO PRINT THE LAST ITEM IN THE ROOMS-ARRAY!
-
-
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
-const randomSelector = array => { //I don't understand the syntax of this function. I could not have written it myself.
-  return array[Math.floor(Math.random() * array.length)] //What does array.length do here? I know length is the length of the array but not why it is in the function.
+const randomSelector = array => { //I don't understand this
+  return array[Math.floor(Math.random() * array.length)] //What does array.length do here?
 }
-console.log(randomSelector(rooms)); //prints random room/suspect/weapon
+//console.log(randomSelector(rooms)); //prints random room/suspect/weapon
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+// CREATE AN OBJECT THAT KEEPS THE MYSTERY. With a killer, a weapon and a room. The values will be set later.
 const mystery = {
   killer: "",
   weapon: "",
   room: "",
 };
 
-//Function to shuffle the favourite weapons of the suspects in a randomized way.
-const shuffleWeapons = (arrayOfSuspects) => {
-  arrayOfSuspects.forEach(suspect => {
-    //console.log(suspect.favoriteWeapon);
-    suspect.favoriteWeapon = weapons[Math.floor(Math.random() * 9)];
-    console.log(suspect.favoriteWeapon);
+//Function to shuffle the favourite weapons of the suspects in a randomized way. But how do I use it?
+const shuffleWeapons = () => {
+  suspects.forEach(suspect => {
+    suspect.favorite = randomSelector(weapons).id
+    console.log(suspect.favorite);
+    //suspect.favorite = weapons[Math.floor(Math.random() * 9)];
+    //console.log(suspect.favorite);
   })
 }
-//shuffleWeapons(suspects);
+
 
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
-  mystery.killer = randomSelector(suspects); //mystery.killer selects the property killer in mystery object and sets this equal to a randomly selected suspect. 
-  //console.log(mystery);
-  mystery.killer.favorite = shuffleWeapons(suspects); //Prints weapon of chioce "undefined" on first card.
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById('killerName').innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`
-  document.getElementById('killerAge').innerHTML = `Age: ${mystery.killer.age}`
-  document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
-  document.getElementById('killerWeapon').innerHTML = `Weapon of choice: ${mystery.killer.favorite}`
-  document.getElementById('killerDescription').innerHTML = `Description: ${mystery.killer.description}`
-  document.getElementById('killerImage').src = `${mystery.killer.image}`
-}
+  //randomly select a killer from the suspects. And add that to the mystery object.
+  if (!killerIsPicked) {
+    document.getElementById('killerLoader').style.visibility='visible' 
+    setTimeout(function () {
+      document.getElementById('killerLoader').style.visibility='hidden'
+      shuffleWeapons();
+      mystery.killer = randomSelector(suspects); //mystery.killer selects the property 'killer' in mystery object and sets this equal to a randomly selected suspect. 
+      document.getElementById('killerCard').style.background = mystery.killer.color
+      document.getElementById('killerName').innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`
+      document.getElementById('killerAge').innerHTML = `Age: ${mystery.killer.age}`
+      document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
+      document.getElementById('killerWeapon').innerHTML = `Weapon: ${mystery.killer.favorite}`
+      document.getElementById('killerDescription').innerHTML = `Description: ${mystery.killer.description}`
+      document.getElementById('killerImage').src = `${mystery.killer.image}`
+      killerIsPicked = true;
+    }, 2500)
+  }
+};
 //Added eventlistener below instead of "onclick" in HTML. Don't know which way is the best way to do it. This only works if the eventlistener is outside of the function. First param: type of event. Second param: the function to call on event.
-document.getElementById('killerCard').addEventListener('click', pickKiller);
+// document.getElementById('killerCard').addEventListener('click', pickKiller);
 //pickKiller();
 //console.log(mystery.killer); //Why does this return undefined in the console, but still it changes the first card in the browser and shows all the info about random killer above!?
 //console.log(`pickKiller.mystery.killer : ${pickKiller.mystery.killer}`); //Trying what Van did at the lecture, @about 18 min in, but doeasn't work?!?

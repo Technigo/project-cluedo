@@ -5,10 +5,10 @@ body {
 
 .main-wrapper {
   background-image: url("assets/main-wrapper-background.jpg");
-  background-position: 75% 0%; /* Center the image */
+  background-position: 55% 0%; /* Center the image */
   background-size: cover; /* Resize the background image to cover the entire container */
   padding: 40px;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .header-content {
@@ -41,12 +41,6 @@ p {
   line-height: 1.7;
 }
 
-.card-title {
-  font-family: 'IM Fell DW Pica SC', serif;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
 .cards {
   margin: 15px auto;
   width: 90%;
@@ -58,17 +52,33 @@ p {
   border-radius: 16px;
 }
 
-.killer-deck {
+.card-container {
+  position: relative;
+}
+
+.card-title {
+  font-family: 'IM Fell DW Pica SC', serif;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.killer-deck,
+.weapon-deck,
+.room-deck {
   width: 250px;
   height: 400px;
-  background: #7a5948;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
+.killer-deck {
+  background: #7a5948;
+  position: relative;
+}
+
 .killer-deck img {
-  height: 170px;
+  height: 150px;
 }
 
 .killer-deck p {
@@ -76,22 +86,13 @@ p {
 }
 
 .weapon-deck {
-  width: 250px;
-  height: 400px;
   background: #59a578;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+  position: relative;
 }
 
 .room-deck {
-  width: 250px;
-  height: 400px;
   background: #6b91ba;
-
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
+  position: relative;
 }
 
 .cards article,
@@ -105,10 +106,40 @@ article p {
   background: none;
 }
 
+.loader {
+  position: absolute;
+  top: 44%;
+  left: 40%;
+  width: 50px;
+  height: 50px;
+  /* background: white; */
+  /* width: 30px;
+    height: 30px; */
+  background: #8a365d;
+  border-radius: 50%;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-name: ripple1;
+  animation-timing-function: ease-out;
+  visibility: hidden;
+}
+
+@keyframes ripple1 {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(2);
+   }
+}  
+
 .reveal-mystery {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 0;
 }
 
 .mystery-heading {
@@ -135,7 +166,7 @@ article p {
   cursor: pointer;
   animation: pulsate 4s ease-in;
   animation-iteration-count: infinite;
-
+  outline: 0;
 }
 
 .reload-button {
@@ -156,5 +187,64 @@ article p {
     /* -webkit-transform: scale(1.1, 1.1);  */
     opacity: 0.75;
     background-color: #a02621;
+  }
+}
+
+@media(max-width:980px) {
+  .main-wrapper {
+    padding: 10px;
+  }
+  .cards {
+    width: 100%;
+  }
+}
+
+@media(max-width:800px) {
+  .killer-deck,
+  .weapon-deck,
+  .room-deck {
+    width: 200px;
+  }
+}
+
+@media(max-width:630px) {
+  .main-wrapper {
+    height: auto; 
+    /* is this correct? */
+  }
+
+  .header-content {
+    flex-direction: column;
+  }
+
+  .cards {
+    flex-direction: column;
+    height: 1345px;
+  }
+
+  .killer-deck,
+  .weapon-deck,
+  .room-deck {
+    width: 250px;
+  }
+
+  .reveal-mystery {
+    padding: 0 10px;
+  }
+  .mystery-heading {
+    margin: 10px auto;
+    height: 120px;
+  }
+}
+
+@media(max-width:420px) {
+  .mystery-heading {
+    height: 180px;
+  }
+}
+
+@media(max-width:320px) {
+  .mystery-heading {
+    height: 230px;
   }
 }

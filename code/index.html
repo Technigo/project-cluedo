@@ -21,33 +21,42 @@
       </section>
     </header>
     <section class="cards">
-      <article class="killer-deck" id="killerCard"> 
-        <!-- I removed onclick="pickKiller()" from article above and instead added in JS below pickKiller-function:  document.getElementById('killerCard').addEventListener('click', pickKiller); -->
-        <p class="card-title">KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <p id="killerWeapon"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
-      </article>
+      <div class="card-container">
+        <article class="killer-deck" id="killerCard" onclick="pickKiller()"> 
+          <!-- I removed onclick="pickKiller()" from article above and instead added in JS below pickKiller-function:  document.getElementById('killerCard').addEventListener('click', pickKiller); -->
+          <p class="card-title">KILLER</p>
+          <p id="killerName"></p>
+          <p id="killerAge"></p>
+          <p id="killerOccupation"></p>
+          <p id="killerWeapon"></p>
+          <img id="killerImage" src="" height="100" />
+          <p id="killerDescription"></p>
+        </article>
+        <div class="loader" id="killerLoader"></div>
+      </div>
 
-      <article class="weapon-deck" " id="weaponCard">
-        <!-- Removed: onclick="pickWeapon() & put eventlistener in JS -->
-        <p class="card-title">WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-        <p id="weaponFlexibility"></p>
-        <img id="weaponImage" src=""/>
-        <!-- removed from img: height="100"  -->
-      </article>
+      <div class="card-container">
+        <article class="weapon-deck" " id="weaponCard">
+          <!-- Removed: onclick="pickWeapon() & put eventlistener in JS -->
+          <p class="card-title">WEAPON</p>
+          <p id="weaponName"></p>
+          <p id="weaponWeight"></p>
+          <p id="weaponFlexibility"></p>
+          <img id="weaponImage" src=""/>
+          <!-- removed from img: height="100"  -->
+        </article>
+        <div class="loader" id="weaponLoader"></div>
+      </div>
 
-      <article class="room-deck" id="roomCard">
-        <!-- Removed: onclick="pickRoom()" & put eventlistener in JS instead -->
-        <p class="card-title">ROOM</p>
-        <p id="roomName"></p>
-        <img id="roomImage" src="" height="100" />
-      </article>
+      <div class="card-container">
+        <article class="room-deck" id="roomCard">
+          <!-- Removed: onclick="pickRoom()" & put eventlistener in JS instead -->
+          <p class="card-title">ROOM</p>
+          <p id="roomName"></p>
+          <img id="roomImage" src="" height="100" />
+        </article>
+        <div class="loader"id="roomLoader"></div>
+      </div>
     </section>
     <section class="reveal-mystery"> 
       <h1 class="mystery-heading" id="mystery"></h1>
