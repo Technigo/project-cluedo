@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Prata&display=swap" rel="stylesheet">
-    <title>Technigo Project Cluedo</title>
+    <title>Cluedo Murder Mystery</title>
   </head>
   <body>
     <section class="main-wrapper">
@@ -14,9 +14,9 @@
         <div class="header-container">
           <div class="header-title">
             <h1>Cluedo</h1>
-            <img src="./assets/magnify-glass.png" alt="Image of a magnify glass" width = "100px;">
+            <img src="./assets/magnify-glass.png" alt="Image of a magnify glass" width = "90px;">
           </div>
-          <h2>Murder Mystery Picker</h2>
+          <h2>Murder Mystery</h2>
           </div>
         </div>
       </header>
@@ -32,11 +32,11 @@
           <article class="killer-deck" id="killerCard">
             <div class="card-front" id="frontOfCard">
               <h4 class="card-title">KILLER</h4>
-              <img  id="loader1" class="loader-image" src="assets/magnify-glass.png" height= 100px;/>
+              <img  id="loader1" class="loader-image" src="assets/magnify-glass.png" height="90px";/>
             </div>
             <div class="card-details" id="cardDetails1">
               <h4 id="killerName"></h4>
-              <img id="killerImage" class="images" src="" alt="Image of suspect" height="230px" />
+              <img id="killerImage" class="images" src="" alt="Image of suspect" height="230px"/>
               <p id="killerDescription"></p>
               <p id="faveWeapon"></p>
             </div>
@@ -46,7 +46,7 @@
           <article class="weapon-deck" id="weaponCard">
             <div class="card-front" id="frontOfCard">
               <h4 class="card-title">WEAPON</h4>
-              <img  id="loader2" class="loader-image" src="assets/magnify-glass.png" height= 100px;/>
+              <img  id="loader2" class="loader-image" src="assets/magnify-glass.png" height="90px";/>
             </div>
             <div class="card-details" id="cardDetails2">
               <h4 id="weaponName"></h4>
@@ -60,11 +60,11 @@
           <article class="room-deck" id="roomCard">
             <div class="card-front" id="frontOfCard">
               <h4 class="card-title">ROOM</h4>
-              <img id="loader3" class="loader-image" src="assets/magnify-glass.png" height= 100px;/>
+              <img id="loader3" class="loader-image" src="assets/magnify-glass.png" height="90px";/>
             </div>
             <div class="card-details" id="cardDetails3">
               <h4 id="roomName"></h4>
-              <img id="roomImage" class="images" src="" alt="Image of room" height="230px" />
+              <img id="roomImage" class="images" src="" alt="Image of room"  height="230px" />
               <p id="roomLastSeen"></p>
               <p id="roomfave"></p>
             </div>
@@ -74,13 +74,13 @@
         <!-- REVEAL MYSTERY SECTION -->
         <div class="reveal-mystery-container">
           <button onclick="revealMystery()" id="revealMysteryButton">REVEAL THE CRIME</button>
-          <h2 class="mystery-sentance" id="mystery"></h2>
-          <h2 class="choose-card-sentance" id="choose-card-prompt"></h2>
+          <p class="mystery-sentance" id="mystery"></p>
+          <p class="choose-card-sentance" id="choose-card-prompt"></p>
         </div>
       </section>
 
       <footer>
-        <h4>Cluedo murder mystery picker created by Claire Caudwell for the Technigo bootcamp 2020 </h4>
+        <p>Cluedo murder mystery picker created by Claire Caudwell for the Technigo bootcamp 2020 </p>
       </footer>
     </section>
 
