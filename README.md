@@ -1,13 +1,11 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This site is made based on the popular game Cluedo
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+To create this game I had to write multilpe functions that would work with objects and arrays. Also I had to randomize item selection from the arrays. Often I had to debug my code with the help of debugger tool and console.log. When I got stucked with ideas or soultions I used Google and StackOverflow. In this project I mostly used JS, if I had more time I would concentrate on styling the page.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://wizardly-lovelace-493b3c.netlify.app/
