@@ -18,25 +18,27 @@ p {
   background-color: #fff;
 }
 
+/* CARDS BACKGROUND */
 .cards {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #093028;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #237A57, #093028);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #237A57, #093028); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #093028;  /* fallback for old browsers https://cssgradient.io/gradient-backgrounds/ */
+  background: -webkit-linear-gradient(to right, #237A57, #093028);  /* Chrome 10-25, Safari 5.1-6 https://cssgradient.io/gradient-backgrounds/*/
+  background: linear-gradient(to right, #237A57, #093028); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ https://cssgradient.io/gradient-backgrounds/ */
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
+/* CARDS */
 .killer-deck {
   width: 250px;
   height: 400px;
   background: #42275a;  /* fallback for old browsers https://cssgradient.io/gradient-backgrounds/*/
-background: -webkit-linear-gradient(to right, #734b6d, #42275a);  /* Chrome 10-25, Safari 5.1-6 https://cssgradient.io/gradient-backgrounds/*/
-background: linear-gradient(to right, #734b6d, #42275a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ https://cssgradient.io/gradient-backgrounds/*/
-text-align: center;
+  background: -webkit-linear-gradient(to right, #734b6d, #42275a);  /* Chrome 10-25, Safari 5.1-6 https://cssgradient.io/gradient-backgrounds/*/
+  background: linear-gradient(to right, #734b6d, #42275a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ https://cssgradient.io/gradient-backgrounds/*/
+  text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
@@ -63,12 +65,17 @@ text-align: center;
   border-radius: 16px;
 }
 
+/* MYSTERY BUTTON */
 button {
   padding: 8px 16px;
-  background: crimson;
+  background: #093028;  /* fallback for old browsers https://cssgradient.io/gradient-backgrounds/ */
+  background: -webkit-linear-gradient(to right, #237A57, #093028);  /* Chrome 10-25, Safari 5.1-6 https://cssgradient.io/gradient-backgrounds/*/
+  background: linear-gradient(to right, #237A57, #093028); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ https://cssgradient.io/gradient-backgrounds/ */
   border: none;
   font-size: 20px;
+  color: white;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
 }
+

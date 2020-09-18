@@ -8,7 +8,7 @@ Blue level was quite explanatory with the instructions, thank you for that.
 
 I got a better understanding of how to use getElementById, which is nice!
 
-I will try on the other levels and perhaps update this readme
+I have some issues with understanding loops and I will put some focus so that I do not fall behind
 ## View it live
 
 https://jovial-morse-ec2d00.netlify.app/
