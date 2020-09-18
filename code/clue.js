@@ -1,3 +1,7 @@
+let killerPicked = false;
+let weaponPicked = false;
+let roomPicked = false;
+
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
 const mrGreen = {
@@ -192,27 +196,30 @@ const shuffleFavouriteWeapon = () => {
 // This function will be invoked when you click on the killer card.
 const pickKiller = (event) => {
   event.preventDefault();
+  if (!killerPicked) {
+    // To remove the reveal the crime message if any
+    cleanRevealMysteryMessage();
+    toggleAnimationDeckCard("killerCard");
 
-  // To remove the reveal the crime message if any
-  cleanRevealMysteryMessage();
+    setTimeout(() => {
+      shuffleFavouriteWeapon();
 
-  toggleAnimationDeckCard("killerCard");
+      // This will randomly select a killer from the suspects. And add that to the mystery object.
+      mystery.killer = randomSelector(suspects);
 
-  setTimeout(() => {
-    shuffleFavouriteWeapon();
-
-    // This will randomly select a killer from the suspects. And add that to the mystery object.
-    mystery.killer = randomSelector(suspects);
-
-    // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-    document.getElementById("killerCard").style.background = mystery.killer.color;
-    document.getElementById("killerName").innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-    document.getElementById("killerAge").innerHTML = `Age: ${mystery.killer.age}`;
-    document.getElementById("killerOccupation").innerHTML = `Occupation: ${mystery.killer.occupation}`;
-    document.getElementById("killerImage").src = `${mystery.killer.image}`;
-    document.getElementById("killerDescription").innerHTML = `${mystery.killer.description}`;
-    document.getElementById("killerFavouriteWeapon").innerHTML = `Favourite Weapon: ${mystery.killer.favouriteWeapon}`;
-  }, 2000);
+      // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+      document.getElementById("killerCard").style.background = mystery.killer.color;
+      document.getElementById("killerName").innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+      document.getElementById("killerAge").innerHTML = `Age: ${mystery.killer.age}`;
+      document.getElementById("killerOccupation").innerHTML = `Occupation: ${mystery.killer.occupation}`;
+      document.getElementById("killerImage").src = `${mystery.killer.image}`;
+      document.getElementById("killerDescription").innerHTML = `${mystery.killer.description}`;
+      document.getElementById(
+        "killerFavouriteWeapon"
+      ).innerHTML = `Favourite Weapon: ${mystery.killer.favouriteWeapon}`;
+    }, 2000);
+    killerPicked = true;
+  }
 };
 
 document.getElementById("killerCard").addEventListener("click", pickKiller);
@@ -223,19 +230,22 @@ document.getElementById("killerCard").addEventListener("click", pickKiller);
 const pickWeapon = (event) => {
   event.preventDefault();
 
-  // To remove the reveal the crime message if any
-  cleanRevealMysteryMessage();
+  if (!weaponPicked) {
+    // To remove the reveal the crime message if any
+    cleanRevealMysteryMessage();
 
-  toggleAnimationDeckCard("weaponCard");
+    toggleAnimationDeckCard("weaponCard");
 
-  // This will randomly select a weapon from the weapons. And add that to the mystery object.
-  setTimeout(() => {
-    mystery.weapon = randomSelector(weapons);
+    // This will randomly select a weapon from the weapons. And add that to the mystery object.
+    setTimeout(() => {
+      mystery.weapon = randomSelector(weapons);
 
-    // This will change the card to the one connected to the chosen weapon and show the name and weight of the weapon.
-    document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
-    document.getElementById("weaponWeight").innerHTML = `Weight: ${mystery.weapon.weight} lbs`;
-  }, 2000);
+      // This will change the card to the one connected to the chosen weapon and show the name and weight of the weapon.
+      document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
+      document.getElementById("weaponWeight").innerHTML = `Weight: ${mystery.weapon.weight} lbs`;
+    }, 2000);
+    weaponPicked = true;
+  }
 };
 
 document.getElementById("weaponCard").addEventListener("click", pickWeapon);
@@ -244,18 +254,21 @@ document.getElementById("weaponCard").addEventListener("click", pickWeapon);
 const pickRoom = (event) => {
   event.preventDefault();
 
-  // To remove the reveal the crime message if any
-  cleanRevealMysteryMessage();
+  if (!roomPicked) {
+    // To remove the reveal the crime message if any
+    cleanRevealMysteryMessage();
 
-  toggleAnimationDeckCard("roomCard");
+    toggleAnimationDeckCard("roomCard");
 
-  // This will randomly select a room from the rooms. And add that to the mystery object.
-  setTimeout(() => {
-    mystery.room = randomSelector(rooms);
+    // This will randomly select a room from the rooms. And add that to the mystery object.
+    setTimeout(() => {
+      mystery.room = randomSelector(rooms);
 
-    // This will change the card to the one connected to the chosen room and show which room it is.
-    document.getElementById("roomName").innerHTML = `${mystery.room}`;
-  }, 2000);
+      // This will change the card to the one connected to the chosen room and show which room it is.
+      document.getElementById("roomName").innerHTML = `${mystery.room}`;
+    }, 2000);
+    roomPicked = true;
+  }
 };
 
 document.getElementById("roomCard").addEventListener("click", pickRoom);
