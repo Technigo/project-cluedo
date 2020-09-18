@@ -37,7 +37,8 @@
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
         <p id="weaponFlexibility"></p>
-        <img id="weaponImage" src="" height="100" />
+        <img id="weaponImage" src=""/>
+        <!-- removed from img: height="100"  -->
       </article>
 
       <article class="room-deck" id="roomCard">
@@ -47,12 +48,16 @@
         <img id="roomImage" src="" height="100" />
       </article>
     </section>
+    <section class="reveal-mystery"> 
+      <h1 class="mystery-heading" id="mystery"></h1>
 
-    <h1 class="mystery-heading" id="mystery"></h1>
-
-    <button class="reveal-button" id="revealButton" onclick="revealMystery(mystery)">
-      REVEAL THE CRIME
-    </button>
+      <button class="reveal-button" id="revealButton" onclick="revealMystery(mystery)">
+        REVEAL THE CRIME
+      </button>
+      <button class="reload-button" id="reloadButton">
+        PLAY AGAIN?
+      </button>
+  </section>
   </section> 
 
     <!-- Maybe put another button here that says "Play again?" that only shows after the reveal-button has been clicked? Should I make a pseudo-class in CSS also (or instead?) that shows/hides this new button which I control with JS? Hmmm...-->

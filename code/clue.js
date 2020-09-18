@@ -71,63 +71,72 @@ const rope = {
   name: 'a rope',
   weight: 10,
   flexibility: 3,
-  color: '#7f4d33'
+  color: '#7f4d33',
+  id: "rope"
 };
 
 const knife = {
   name: 'a knife',
   weight: 1,
   flexibility: 9,
-  color: '#2f6a49'
+  color: '#2f6a49',
+  id: 'knife'
 };
 
 const candleStick = {
   name: 'a candle stick',
   weight: 2,
   flexibility: 7,
-  color: '#ddafd9'
+  color: '#ddafd9',
+  id: 'candleStick'
 };
 
 const dumbBell = {
   name: 'a dumbbell',
   weight: 20,
   flexibility: 6,
-  color: '#9b2c15'
+  color: '#9b2c15',
+  id: 'dumbBell'
 };
 
 const poison = {
   name: 'poison',
   weight: 0,
   flexibility: 10,
-  color: '#04b7d3'
+  color: '#04b7d3',
+  id: 'poison'
 };
 
 const axe = {
   name: 'an axe',
   weight: 12,
   flexibility: 3,
-  color: '#7b497f'
+  color: '#7b497f',
+  id: 'axe'
 };
 
 const bat = {
   name: 'a bat',
   weight: 3,
   flexibility: 7,
-  color: '#abb782'
+  color: '#abb782',
+  id: 'bat'
 };
 
 const trophy = {
   name: 'a trophy',
   weight: 5,
   flexibility: 3,
-  color: '#fce853'
+  color: '#fce853',
+  id: 'trophy'
 };
 
 const pistol = {
   name: ' a pistol',
   weight: 1,
   flexibility: 9,
-  color: '#d1a93c'
+  color: '#d1a93c',
+  id: 'pistol'
 };
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -281,7 +290,6 @@ document.getElementById('roomCard').addEventListener('click', pickRoom);
 
 
 
-
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = (mystery) => {
@@ -289,22 +297,34 @@ const revealMystery = (mystery) => {
   //Put also some kind of if-statement(?) here that conditions this to reveal ONLY if the three cards above has been clicked.
 document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} in the ${mystery.room} with ${mystery.weapon.name}` 
 document.getElementById('revealButton').innerHTML = `PLAY AGAIN?` //This works to change the text on button. But how do I get the page to reload when clicked again?
-//Can I put a function in a function?
-
-
-//pageReload(); //Om jag har den här så laddar sidan om direkt när jag tryckt på Roomcard. Detta är ju eftersom villkoret i if-satsen i pageReload är uppfyllt.
+//Can I put the function pageReload in this function? No it didn't work.
+//pageReload(); This makes the page reload once just after I clicked the Roomcard. Är detta för att villkoret i if-satsen i pageReload är uppfyllt?
 }
-//documentGetElementById('revealButton').addEventListener('click', revealMystery(mystery));
+// document.getElementById('revealButton').addEventListener('click', revealMystery(mystery)); 
+
+// const buttonOnClick = () => {
+//  console.log('hej');
+//   if (document.getElementById('revealButton').innerHtml === 'REVEAL THE CRIME') {
+//     console.log('if-statement');
+//     revealMystery(mystery);
+//   } else if (document.getElementById('revealButton').innerHtml === `PLAY AGAIN?`) {
+//     location.reload();
+//   }
+// }
+// document.getElementById('revealButton').addEventListener('click', (buttonOnClick));
+//console.log(revealMystery(mystery)); If I put this console.log here the page reloads repeatedly. Why?
 
 //Denna funkar inte i alla fall härifrån:
-const pageReload = () => {
+//const pageReload = () => {
   //revealButton.onclick = pageReload; //Provar sätta den här.
   //document.getElementById('revealButton').onclick.innerHTML = `PLAY AGAIN?` 
-   if  (document.getElementById('revealButton').innerHtml === `PLAY AGAIN?`) {
-        revealButton.onclick === location.reload();
-   } else {
-        revealButton.onclick !== location.reload();
-  }
+  //const playAgain = Document.getElementById('revealButton').innerHtml
+   //if  (document.getElementById('revealButton').innerHtml === `PLAY AGAIN?`) {
+   //     revealButton.onclick === location.reload();
+  // } else {
+ //       revealButton.onclick !== location.reload();
+//}
   // pageReload();
- }
+ //}
+ //console.log(pageReload); this just prints the text-content of the function above in the console. Why?
  //pageReload(); //Om jag har den här så laddar sian om hela tiden från start. Har jag skrivit min funktion fel eller vad?
