@@ -13,7 +13,7 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
-  favouriteWeapon: 'rope' //rope
+  favouriteWeapon: 'rope' 
 }
 
 const professorPlum = {
@@ -24,7 +24,7 @@ const professorPlum = {
   age: 84,
   image: 'assets/plum.png',
   occupation: 'Retired',
-  favouriteWeapon: 'pistol' //pistol
+  favouriteWeapon: 'pistol' 
 }
 
 const missScarlet = {
@@ -35,7 +35,7 @@ const missScarlet = {
   age: 28,
   image: 'assets/scarlet.png',
   occupation: 'Actress',
-  favouriteWeapon: 'knife'//knife
+  favouriteWeapon: 'knife'
 }
 
 const mrsPeacock = {
@@ -46,7 +46,7 @@ const mrsPeacock = {
   age: 57,
   image: 'assets/peacock.png',
   occupation: 'Socialite',
-  favouriteWeapon: 'candlestick' //candlestick
+  favouriteWeapon: 'candlestick' 
 }
 
 const colonelMustard = {
@@ -57,7 +57,7 @@ const colonelMustard = {
   age: 65,
   image: 'assets/mustard.png',
   occupation: 'Colonel',
-  favouriteWeapon: 'axe' //axe
+  favouriteWeapon: 'axe' 
 }
 
 
@@ -69,7 +69,7 @@ const mrsWhite = {
   age: 72,
   image: 'assets/white.png',
   occupation: 'Housekeeper',
-  favouriteWeapon: 'posion' //poison
+  favouriteWeapon: 'posion' 
 }
 
 
@@ -227,7 +227,6 @@ const patio = {
 
 
 
-//suspects array
 const suspects = [
   mrGreen,
   professorPlum,
@@ -238,7 +237,6 @@ const suspects = [
 ]
 
 
-//weapons array
 const weapons = [
   rope,
   knife,
@@ -251,26 +249,6 @@ const weapons = [
   pistol
 ]
 
-
-//room array
-/*const rooms = [
-  "Dining Room", 
-  "Conservatory", 
-  "Kitchen", 
-  "Study", 
-  "Library", 
-  "Billiard Room", 
-  "Lounge", 
-  "Ballroom", 
-  "Hall", 
-  "Spa", 
-  "Living Room", 
-  "Observatory", 
-  "Theater", 
-  "Guest House", 
-  "Patio"
-]
-*/
 
 const rooms = [
   diningRoom, 
@@ -293,7 +271,6 @@ const rooms = [
 
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -316,7 +293,6 @@ const pickKiller = () => {
     setTimeout(function () {
       document.getElementById('loaderKiller').style.opacity = 0
       shuffleFavoriteWeapon();
-      // This will randomly select a killer from the suspects. And add that to the mystery object.
       mystery.killer = randomSelector(suspects)
       document.getElementById('killerCard').style.background = mystery.killer.color
       document.getElementById(
@@ -338,11 +314,9 @@ const pickKiller = () => {
 const pickWeapon = () => {
   if (killerIsPicked && !weaponIsPicked) {
     document.getElementById('loaderWeapon').style.opacity = 1
-    //chanceOfFavouriteWeapon(mystery.killer); //look at killers fav weapon and change prob of that weapon being picked. 
     setTimeout(function() {
       document.getElementById('loaderWeapon').style.opacity = 0
       let chanceFavWeapon = chanceOfFavouriteWeapon();
-      console.log(chanceFavWeapon);
       mystery.weapon = randomSelector(chanceFavWeapon)
       document.getElementById('weaponName').innerHTML = `Type: ${mystery.weapon.name}`
       document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`
@@ -361,8 +335,7 @@ const pickRoom = () => {
     setTimeout(function() { 
       document.getElementById('loaderRoom').style.opacity = 0
       let chanceForSuspectedRoom = chanceOfRoom();
-      console.log(chanceForSuspectedRoom);
-      mystery.room = randomSelector(chanceForSuspectedRoom) //need to be changed to chanceForSuspectedRoom when I get it to work
+      mystery.room = randomSelector(chanceForSuspectedRoom) 
       document.getElementById('roomName').innerHTML = `Where murder was commited: ${mystery.room.name}`
       weaponIsPicked = true
     },2500)   
@@ -377,12 +350,6 @@ const shuffleFavoriteWeapon = () => {
   suspects.forEach(suspect => {
     let randomWeapon = randomSelector(weapons).id;
     suspect.favouriteWeapon = randomWeapon
-    //console.log(randomWeapon);
-    //suspect.favouriteWeapon=randomSelector(weapons).id
-    //in function call function (suspects, weapons) 
-    //SARA ANVÄNDE EN funktion med in params FavouriteObject, FavouriteRoom 
-    //La till argument när funktionen anropades i pickKiller och pickRoom 
-    //argumenten var suspects, weapons i första weapons, rooms in andra. 
   });
 };
 
@@ -391,26 +358,17 @@ const shuffleFavoriteWeapon = () => {
 const chanceOfFavouriteWeapon = () => {
   const favWeapon = weapons.find(weapon => weapon.id === mystery.killer.favouriteWeapon);
   const favWeaponArray = new Array(7).fill(favWeapon);
-  //console.log(favWeaponArray);
   const calculatedWeapon = [...weapons, ...favWeaponArray];
-  //console.log(calculatedWeapon);
   return calculatedWeapon;
-  //how do I add a random math function to mix the array?
-  //in console log the new array are in the bottom of the list
 };
 
 
 //function to increase the probability that the room is picked where weapon was found.
 const chanceOfRoom = () => {
   const suspectedRooms = rooms.find(room => room.name === mystery.weapon.foundIn);
-  //console.log(suspectedRooms);
   const suspectedRoomArray = new Array(7).fill(suspectedRooms);
-  //console.log(suspectedRoomArray);
   const calculatedRooms = [...rooms, ...suspectedRoomArray];
-  //console.log(calculatedRooms);
   return calculatedRooms;
-  //how do I add a random math function to mix the array?
-  //in console log the new array are in the bottom of the list
 };
 
 
@@ -427,7 +385,7 @@ const revealMystery = () => {
     } else {
       let killer = mystery.killer.firstName + " " + mystery.killer.lastName;
       let weapon = mystery.weapon.article + " " + mystery.weapon.name;
-      let room = mystery.room;
+      let room = mystery.room.name;
     document.getElementById('mystery').innerHTML = `The murder was comitted by ${killer} using ${weapon} in the ${room}!`; 
     }
 }
