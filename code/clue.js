@@ -180,6 +180,13 @@ document.getElementById('theMystery').innerHTML =`The murder was committed by ${
 
 document.getElementById('revealBtn').addEventListener('click', revealMystery)
 
+const restart = () => { 
+  
+document.location.href = ""; 
+
+}
+
+document.getElementById('resetBtn').addEventListener('click', restart)
 
 // Tas bort senare
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
