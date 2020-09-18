@@ -51,7 +51,7 @@ const scarlet = {
   age: 43,
   image: "image/killer/scarlet.jpg",
   occupation: "Trophy-wife",
-  favouriteWeapon: "bat",
+  favouriteWeapon: "baseball bat",
 };
 
 const wadsworth = {
@@ -96,7 +96,7 @@ const axe = {
 };
 
 const bat = {
-  name: "Bat",
+  name: "Baseball bat",
   weight: "2 kg",
   image: "image/weapon/bat.png",
 };
@@ -262,8 +262,7 @@ const room = [
   patio,
 ];
 
-
-// RANDOMLY SELECT ONE ITEM FROM THE ARRAY 
+// RANDOMLY SELECT ONE ITEM FROM THE ARRAY
 const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
@@ -278,7 +277,6 @@ const mystery = {
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
-
 
   // CHANGE CONTENT OF THE KILLER CARD
   document.getElementById("killerText").style.color = mystery.killer.color;
@@ -311,51 +309,51 @@ const pickRoom = () => {
 
 document.getElementById("roomCard").addEventListener("click", pickRoom);
 
-// STEP 4 
+// STEP 4
 
 // GET OPEN MODEL ELEMENT
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const openModalButtons = document.querySelectorAll("[data-modal-target]");
 // GET CLOSE MODAL ELEMENT
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const closeModalButtons = document.querySelectorAll("[data-close-button]");
 // SHOW AND HIDE OVERLAY
-const overlay = document.getElementById('overlay')
+const overlay = document.getElementById("overlay");
 
 // OPEN MODAL const pickWeapon = () => {
 
 const openModal = (modal) => {
-  if (modal == null) return
-  modal.classList.add('active')
-  overlay.classList.add('active')
+  if (modal == null) return;
+  modal.classList.add("active");
+  overlay.classList.add("active");
   document.getElementById(
     "modal-body"
-  ).innerHTML = `The brutal murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}....`
-}
+  ).innerHTML = `The brutal murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}....`;
+};
 
-openModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = document.querySelector(button.dataset.modalTarget)
-    openModal(modal)
-  })
-})
+openModalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = document.querySelector(button.dataset.modalTarget);
+    openModal(modal);
+  });
+});
 
 // CLOSE MODAL
 const closeModal = (modal) => {
-  if (modal == null) return
-  modal.classList.remove('active')
-  overlay.classList.remove('active')
-}
+  if (modal == null) return;
+  modal.classList.remove("active");
+  overlay.classList.remove("active");
+};
 
-closeModalButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = button.closest('.modal')
-    closeModal(modal)
-  })
-})
+closeModalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const modal = button.closest(".modal");
+    closeModal(modal);
+  });
+});
 
 // CLOSE MODAL OUTSIDE MODAL-CONTAINER
-overlay.addEventListener('click', () => {
-  const modals = document.querySelectorAll('.modal.active')
-  modals.forEach(modal => {
-    closeModal(modal)
-  })
-})
+overlay.addEventListener("click", () => {
+  const modals = document.querySelectorAll(".modal.active");
+  modals.forEach((modal) => {
+    closeModal(modal);
+  });
+});
