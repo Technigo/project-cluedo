@@ -321,13 +321,13 @@ const showMystery = () => {
 };
 
 // --------------Loader------------------
-
+/*
 const showKiller = () => {
   loader.classList.toggle("is-active");
   setTimeout(() => {
     loader.classList.toggle("is-active");
     pickKiller();
-  }, 700);
+  }, 1000);
 };
 
 const showWeapon = () => {
@@ -335,7 +335,7 @@ const showWeapon = () => {
   setTimeout(() => {
     loader.classList.toggle("is-active");
     pickWeapon();
-  }, 700);
+  }, 1000);
 };
 
 const showRoom = () => {
@@ -343,21 +343,41 @@ const showRoom = () => {
   setTimeout(() => {
     loader.classList.toggle("is-active");
     pickRoom();
-  }, 700);
+  }, 1000);
 };
+
+*/
 
 const getMystery = () => {
   loader.classList.toggle("is-active");
   setTimeout(() => {
     loader.classList.toggle("is-active");
     showMystery();
-  }, 1000);
+  }, 1500);
+};
+
+
+//Experimenting with another loader 
+
+const showCard = (event) => {
+  console.log(event);
+  loader.classList.toggle("is-active");
+  setTimeout(() => {
+    loader.classList.toggle("is-active");
+    if (event.srcElement.id === "killerCard") {
+        pickKiller();
+    } else if (event.srcElement.id === "weaponCard") {
+      pickWeapon();
+    } else if (event.srcElement.id === "roomCard") {
+      pickRoom();
+    }
+  }, 700);
 };
 
 //-----------------------EVENTLISTENERS-------------------------
-document.getElementById("killerCard").addEventListener("click", showKiller);
-document.getElementById("weaponCard").addEventListener("click", showWeapon);
-document.getElementById("roomCard").addEventListener("click", showRoom);
+document.getElementById("killerCard").addEventListener("click", showCard);
+document.getElementById("weaponCard").addEventListener("click", showCard);
+document.getElementById("roomCard").addEventListener("click", showCard);
 
 
 
