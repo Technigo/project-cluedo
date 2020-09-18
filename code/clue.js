@@ -226,15 +226,11 @@ const showRoomLoader = () => {
 }
   
 const generateKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
+  // This will randomly select a killer from the suspects, add that to the mystery object and that killers favourite weapon to the moreWeapons array. 
   mystery.killer = randomSelector(suspects)
-  
   killerWeapons.fill(mystery.killer.favouriteWeapon);
   moreWeapons = weapons.concat(killerWeapons)
-  console.log(killerWeapons)
-  console.log(moreWeapons)
-  console.log(weapons)
-
+ 
   // Hides the loader and shows killer title and content 
   document.getElementById('killerLoader').style.display = 'none';
   document.getElementById('killerTitle').style.display = 'block';
@@ -251,8 +247,8 @@ const generateKiller = () => {
   document.getElementById('killerTitle').style.display = 'block'
   document.getElementById('killerDecoration').style.display = 'block'
   document.getElementById('killerDecoration').style.border = '0px'
-  const classKillerContent = document.getElementsByClassName('killer-content')[0];
   document.getElementsByTagName('img')[0].style.borderRadius = '50%'
+  const classKillerContent = document.getElementsByClassName('killer-content')[0];
 
   //Changes the text color on the killer card, if the background color is white
   if (mystery.killer.color === 'white') {
@@ -271,34 +267,30 @@ const generateKiller = () => {
     for (i=0; i < killerTagP.length; i++) {
       killerTagP[i].style.color = 'white';
     }
-
   }
 }
 
 const generateWeapon = () => {
 
+  // Hides the loader and shows weapon title and content 
   document.getElementById('weaponLoader').style.display = 'none';
   document.getElementById('weaponTitle').style.display = 'block';
   document.getElementById('weaponContent').style.display = 'flex';
   
-
+  //Generates and shows a weapon, but only if the killer deck is picked first
   if (mystery.killer === 'who') {
     document.getElementById('weaponTitle').innerHTML = 'Please pick a killer first';
   } else {
-  mystery.weapon = randomSelector(moreWeapons)
-
-  // Hides the loader and shows killer title and content 
- 
-
-  document.getElementById('weaponName').innerHTML = mystery.weapon.name
-  document.getElementById('weaponWeight').innerHTML = 'Weight: ' + mystery.weapon.weight
-  document.getElementById('weaponCard').style.background = '#575A53'
-  document.getElementById('weaponHeadline').style.display = 'none'
-  document.getElementById('weaponTitle').innerHTML = 'WEAPON'
-  document.getElementById('weaponDecoration').style.display = 'block'
-  document.getElementById('weaponDecoration').style.border = '0px'
-  document.getElementById('weaponContent').style.justifyContent = 'center'
-}
+    mystery.weapon = randomSelector(moreWeapons)
+    document.getElementById('weaponName').innerHTML = mystery.weapon.name
+    document.getElementById('weaponWeight').innerHTML = 'Weight: ' + mystery.weapon.weight
+    document.getElementById('weaponCard').style.background = '#575A53'
+    document.getElementById('weaponHeadline').style.display = 'none'
+    document.getElementById('weaponTitle').innerHTML = 'WEAPON'
+    document.getElementById('weaponDecoration').style.display = 'block'
+    document.getElementById('weaponDecoration').style.border = '0px'
+    document.getElementById('weaponContent').style.justifyContent = 'center'
+  }
 }
 
 const generateRoom = () => {

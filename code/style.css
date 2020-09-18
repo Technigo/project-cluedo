@@ -13,16 +13,18 @@ p {
   font-weight: 300;
   width: 100%;
   color: white;
-
 }
 
-.card-title {
-  background-color: #000;
-  box-sizing: border-box;
-  padding: 10px;
-  margin: 0px;
-  display: none;
+h2 {
+  color: rgb(129, 164, 175);
+  font-weight: 00;
+  padding-bottom: 30px;
+}
 
+h3 {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 .cards {
@@ -36,18 +38,23 @@ p {
   border-radius: 10px;
 }
 
-.killer-deck {
+.card-title {
+  background-color: #000;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0px;
+  display: none;
+}
+
+.card-deck {
   width: 250px;
   height: 420px;
   background: #000;
   text-align: center;
-  padding-top: 0px;
   border-radius: 25px;
   border: 10px solid #000;
   cursor: pointer;
-
 }
-
 
 .killer-decoration {
   display: flex;
@@ -84,50 +91,12 @@ p {
   color: #575A53;
 }
 
-h2 {
-  color: rgb(129, 164, 175);
-  font-weight: 00;
-  padding-bottom: 30px;
-
-}
-
-h3 {
-  color: white;
-  font-weight: bold;
-  font-size: 25px;
-
-}
-
 .killer-content {
   height: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-}
-
-
-
-.weapon-deck {
-  width: 250px;
-  height: 420px;
-  background: black;
-  text-align: center;
-  border-radius: 25px;
-  border: 10px solid #000;
-  cursor: pointer;
-
-}
-
-.room-deck {
-  width: 250px;
-  height: 420px;
-  background:black;
-  text-align: center;
-  border-radius: 25px;
-  border: 10px solid #000;
-  cursor: pointer;
-
 }
 
 button {
@@ -143,7 +112,6 @@ button {
   display: block;
   margin: 20px auto;
   cursor: pointer;
-  
 }
 
 .mystery {
