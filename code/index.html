@@ -12,38 +12,66 @@
 <body>
 
     <header>
-        <h1>Cleudo Myster Picker</h1>
-        <img src="./assets/detective.png" alt="detective">
+        <img src="./assets/magnifying-glass.png" alt="magnifying glass and footprints">
+        <h1>Cleudo Mystery Picker</h1>
+        <img src="./assets/detective.png" alt="detective face">
     </header>
     <section class="cards">
-        <article class="killer-deck" id="killerCard">
-            <p class="card-title">KILLER</p>
-            <p id="killerName"></p>
-            <img id="killerImage" src="" height="100" />
-            <p id="killerAge"></p>
-            <p id="killerOccupation"></p>
-            <p id="killerDescription"></p>
+        <article class="flip-card-container" id="killerContainer">
+            <article class="flip-card" id="killerCard">
+                <article class="flip-card-front">
+                    <p class="card-title">KILLER</p>
+                    <img src="./assets/question.png" class="questionImg" alt="question mark">
+                </article>
+                <article class="flip-card-back">
+                    <p id="killerName"></p>
+                    <img id="killerImage" src="" height="100" />
+                    <p id="killerAge"></p>
+                    <p id="killerOccupation"></p>
+                    <p id="killerDescription"></p>
+                </article>
+            </article>
         </article>
-        <article class="weapon-deck" id="weaponCard">
-            <p class="card-title">WEAPON</p>
-            <p id="weaponName"></p>
-            <p id="weaponWeight"></p>
+        <article class="flip-card-container" id="weaponContainer">
+            <article class="flip-card" id="weaponCard">
+                <article class="flip-card-front">
+                    <p class="card-title">WEAPON</p>
+                    <img src="./assets/question.png" id="questionImg" alt="question mark">
+                </article>
+                <article class="flip-card-back">
+                    <p id="weaponName"></p>
+                    <p id="weaponWeight"></p>
+                </article>
+            </article>
         </article>
-        <article class="room-deck" id="roomCard">
-            <p class="card-title" class="card-title">ROOM</p>
-            <p id="roomName"></p>
+        <article class="flip-card-container" id="roomContainer">
+            <article class="flip-card" id="roomCard">
+                <article class="flip-card-front">
+                    <p class="card-title" class="card-title">ROOM</p>
+                    <img src="./assets/question.png" id="questionImg" alt="question mark">
+                </article>
+                <article class="flip-card-back color-room">
+
+                    <p id="roomName"></p>
+                </article>
+            </article>
         </article>
     </section>
 
     <Section class="message">
         <article class="message-display">
+            <button onclick="revealMystery()" class="reveal-button">REVEAL THE CRIME </button>
+
             <h1 id="mysteryDisplay"></h1>
         </article>
+
+
+
         <article class="killer-image">
             <img id="image" src="" />
         </article>
     </Section>
-    <button onclick="revealMystery()">REVEAL THE CRIME</button>
+    <img src="" alt="">
 
     <script src="clue.js"></script>
 </body>

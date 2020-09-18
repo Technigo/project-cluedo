@@ -137,6 +137,7 @@ const pickKiller = () => {
     // Randomly selects a killer from the suspects-array and adds that to the mystery object.
     mystery.killer = randomSelector(suspects);
     // This will change the background color of the card and show picture and detail about the suspect.
+    // document.getElementById("questionImg").style.display = "none";
     document.getElementById('killerCard').style.background = mystery.killer.color;
     document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
     document.getElementById('killerImage').src = mystery.killer.image;
@@ -149,15 +150,19 @@ const pickKiller = () => {
 const pickWeapon = () => {
     // Randomly selects a weapon from the weapons-array and adds that to the mystery object.
     mystery.weapon = randomSelector(weapons);
+    // document.getElementById("questionImg").style.display = "none";
     document.getElementById('weaponCard').style.background = mystery.weapon.color
     document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
     document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight} kg`;
 }
 
 const pickRoom = () => {
+    // Randomly selects a weapon from the rooms-array and adds that to the mystery object
     mystery.room = randomSelector(rooms);
+    // document.getElementById("questionImg").style.display = "none";
     document.getElementById('roomName').innerHTML = `${mystery.room}`;
 }
+
 
 document.getElementById('killerCard').onclick = pickKiller;
 document.getElementById('weaponCard').onclick = pickWeapon;
@@ -175,3 +180,14 @@ const revealMystery = () => {
         document.getElementById('image').src = mystery.killer.image;
     }
 }
+
+//flips the cards on onclick
+// const flipCardContainer = document.querySelector(".flip-card-container");
+// flipCardContainer.onclick = () => {
+//     flipCardContainer.classList.toggle("flip");
+// }
+document.querySelectorAll('.flip-card-container').forEach(item => {
+    item.onclick = () => {
+        item.classList.toggle("flip");
+    }
+})
