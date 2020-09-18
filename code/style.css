@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
-  background: url(./assets/background.jpg);
+  background-image: url(./assets/background.jpg);
 
 }
 
@@ -80,20 +80,8 @@ h3{
 }
 
 .img {
-  border: solid #fff 2px;
-  border-radius: 80%;
-  background: #fff;
-  height: 150px;
-  width: auto;
+  width: 100%;
 }
-
-/* .image-container {
-  border: solid #fff 2px;
-  border-radius: 80%;
-  background: #fff;
-  height: 150px;
-  width: auto;
-} */
 
 .conclusion-container {
   display: flex;
