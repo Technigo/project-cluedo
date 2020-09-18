@@ -13,7 +13,6 @@
 <body>
   <header class="game-header">
     <h1>Cluedo</h1>
-    <!--<img class="game-image" src="assets/cluedologo.png" alt="Cluedo logo" width="20%" height="">-->
   </header>
 
   <!--Cards -->
@@ -24,12 +23,13 @@
       <div class="killer-card-wrapper" id="killer-card-wrapper">
         <p class="start-display-cards" id="start-display-card-killer">PICK A KILLER CARD</p>
         <p id="killerName"></p>
+        <img id="killerImage" src="" height="100" />
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
         <p id="killerDescription"></p>
         <p id="favouriteWeapon"></p>
       </div>
+
       <!--Loader to killer-->
       <div class="loader-wrapper" id="loader-wrapper-killer">
         <div class="loader"></div>
@@ -42,13 +42,14 @@
       <div class="weapon-card-wrapper" id="weapon-card-wrapper">
         <p class="start-display-cards" id="start-display-card-weapon">PICK A WEAPON CARD</p>
         <p id="weaponName"></p>
-        <p id="weaponMaterial"></p>
         <img id="weaponsImage" src="" height="100" />
+        <p id="weaponMaterial"></p>
       </div>
-      <!--Loader to weapon-->
+
+      <!--Animation to weapon-->
       <div class="loader-wrapper" id="loader-wrapper-weapon">
         <div class="loader"></div>
-        <p>Generating a weapon</p>
+        <p class="generating-text">Generating a weapon</p>
       </div>
     </article>
 
@@ -58,25 +59,30 @@
         <p class="start-display-cards" id="start-display-card-room">PICK A ROOM CARD</p>
         <p id="roomName"></p>
       </div>
-      <!--Loader to room -->
-     <div class="loader-wrapper"id="loader-wrapper-room">
-       <div class="loader"></div>
-       <p>Generating a room</p>
-     </div> 
-    </article>
 
+      <!--Animation to room -->
+      <div class="loader-wrapper" id="loader-wrapper-room">
+        <div class="loader"></div>
+        <p class="generating-text">Generating a room</p>
+      </div>
+    </article>
   </section>
 
   <h3 id="mystery"></h3>
-  <button id="reveal">REVEAL THE CRIME!</button>
-  <!--<button onclick="revealMystery()"</button>-->
 
+  <!--Reveal button-->
+  <button id="reveal">REVEAL THE CRIME!</button>
+
+  <!--Restart button-->
+  <button onclick="restart()" id="restartButton">Start Again</button>
+
+  <!--Footer-->
   <footer>
     <h2>A site made by Agnes Harrysson Hansson
     </h2>
     <h6>A Technigo Project</h6>
   </footer>
-  <button onclick="restart()" id="restartButton">Start Again</button>
+
   <script src="clue.js"></script>
 </body>
 

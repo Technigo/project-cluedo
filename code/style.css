@@ -20,7 +20,7 @@ body {
   background-color: lightgray;
 }
 
-h1{
+h1 {
   font-size: 6rem;
   padding: 2rem 0 0 0;
   text-align: center;
@@ -31,7 +31,8 @@ h1{
   background-color: whitesmoke;
   padding: 20px;
 }
-p#start-display-card-killer.start-display-cards{
+
+p#start-display-card-killer.start-display-cards {
   background-color: white;
 }
 
@@ -72,7 +73,7 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background:#900d0d;
+  background: #900d0d;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -89,7 +90,7 @@ button {
   color: whitesmoke;
 }
 
-button:after{
+button:after {
   border: none;
 }
 
@@ -105,7 +106,7 @@ article, #revealButton, #restartButton {
   cursor: pointer;
 }
 
-/*** Loader animation ***/
+/*** Animation styling ***/
 
 .loader-wrapper {
   display: none;
@@ -143,7 +144,6 @@ article, #revealButton, #restartButton {
   }
 }
 
-
 .start-display-cards {
   background-color: whitesmoke;
   padding: 15px;
@@ -155,18 +155,55 @@ article, #revealButton, #restartButton {
   padding: 25px;
 }
 
-.killer-card-wrapper,
-.weapon-card-wrapper,
-.room-card-wrapper {
+/* Card styling */
+
+.killer-card-wrapper, .weapon-card-wrapper, .room-card-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 10px;
+  background-color: #900d0d;
 }
 
+#killerImage {
+  border-radius: 50%;
+  background-color: #900d0d;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
 
-footer{
+#weaponsImage {
+  border-radius: 30%;
+  background-color: #900d0d;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+#killerName, #weaponName, #roomName {
+  margin-left: 0px;
+  border: none;
+  margin-bottom: 15px;
+  background-color: whitesmoke;
+  padding: 0px;
+  text-transform: capitalize;
+}
+
+#killerOccupation, #killerAge {
+  background-color: whitesmoke;
+  margin: 0px;
+}
+
+#killerDescription, #weaponMaterial, #favouriteWeapon {
+  background-color: #e7cb96;
+  margin: 0px;
+}
+
+/*Footer*/
+
+footer {
   background-color: #900d0d;
   margin-top: 20px;
   padding: 25px;
@@ -176,17 +213,19 @@ footer{
   margin-right: 0px;
 }
 
-h2{
+/*Font styling*/
+
+h2 {
   color: whitesmoke;
   padding: 15px;
 }
 
-h6{
+h6 {
   color: whitesmoke;
   padding: 5px;
 }
 
-h3{
+h3 {
   text-align: center;
   font-size: 25px;
   color: #900d0d;
