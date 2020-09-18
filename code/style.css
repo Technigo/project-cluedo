@@ -126,7 +126,6 @@ p {
   margin: 10px;
   font-size: 22px;
 }
-
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
   .title,
