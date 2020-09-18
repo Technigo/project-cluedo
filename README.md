@@ -1,12 +1,16 @@
-# Cluedo - Mystery Randomizer
+# Cluedo - Mystery Randomizer 🕵️
 
-Replace this readme with your own information about your project.
+This project features a simple game of Cluedo where the user is presented with 3 cards: suspects, room and weapon. Upon only selecting all 3 cards, the mystery is revealed. The user will then not only dicover what this mystery is, but also - what the favourite weapon of select suspect is. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+When the user is done playing, they may click on the NEW ROUND button to refresh the page, clear the input, and play again.
 
-## The problem
+The user may shuffle all 3 decks for as many times as they wish however, no mystery will be revealed until they have picked cards from all 3 decks.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## The problem 🔍
+
+This project is build using primarily JS, and by assigning, as well as calling functions in all of the decks. One particular problem or challenge was to make JS not display the mystery before all decks have been picked from. Another issue was displaying the suspect's favourite weapon. 
+
+All in all, correct placement of certain functions plays a big role in this one!
 
 ## View it live
 
