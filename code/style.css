@@ -13,6 +13,7 @@ body {
   font-family: 'Roboto', monospace;
   width: 90vw;
   margin: 50px auto;
+  font-weight: 300;
 }
 
 h1 {
@@ -22,42 +23,29 @@ h1 {
   font-size: 56px;
 }
 
-p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
-  font-size: 28px;
-}
-
 .italic {
   font-style: italic;
 }
 
 button {
-  padding: 8px 15px;
   width: 32.5%;
   height: 45px;
+  display: block;
+  padding: 8px 15px;
   background: #000;
   color: #fff;
   border: none;
+  border-radius: 0;
   font-size: 20px;
-  display: block;
   text-decoration: none;
   text-align: left;
+  transition: box-shadow .2s ease;
 }
 
 button:hover {
-  /* background: #4D106A; */
   box-shadow: 4px 10px 25px 6px rgba(137, 0, 201, 0.25);
   cursor: pointer;
 }
-
-button:visited {
-  background: #4D106A;
-  border-radius: 0;
-  cursor: pointer;
-}
-
 
 /* ------------------- HEADER ------------------- */
 header {
@@ -66,7 +54,11 @@ header {
   justify-content: space-between;
 }
 
-.hamburger div {
+.hamburger {
+  transition: transform .5s ease;
+}
+
+.hamburger--stroke {
   width: 60px;
   height: 5px;
   background: #8900C9;
@@ -75,6 +67,7 @@ header {
 
 .hamburger:hover {
   cursor: pointer;
+  transform: rotate(90deg);
 }
 
 
@@ -115,11 +108,6 @@ header {
   padding: 8px;
 }
 
-.favorite-fruit-form--button {
-  width: 5vw;
-  display: inline-block;
-}
-
 .favorite-fruit--comment {
   margin-top: 10px; 
   font-size: 12px;
@@ -157,17 +145,13 @@ header {
   background: #fff;
 }
 
-.ingredients-headers button {
-  width: 33.3%;
-}
-
-.ingredients-randomizer-buttons {
+.ingredients--randomizer-buttons {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.mixer-box, .mixer-randomizer-button {
+.mixer-box, .mixer--randomizer-button {
   margin: 0 20px;
   font-size: 20px;
 }
@@ -203,41 +187,34 @@ header {
 
 
 /* ------------------- RECIPE ------------------- */
-.recipe {
+.recipe-section {
   display: flex;
   align-items: flex-start;
   justify-items: flex-end;
   margin-top: 50px;
 }
 
-.date {
-  font-size: 18px;
-  font-weight: 700;
-  color: #8900C9;
-}
-
-/* .recipe--mixer-button, .favorite-fruit--form-box {
-  float: right;
-} */
-
-.recipe--left {
+.recipe-section--left {
   width: 32.5%;
 }
 
-.recipe--finished-smoothie {
+.recipe-section--finished-smoothie {
   width: 66.6%;
-  margin-left: 25px;
+  margin: 0 0 0 40px !important;
+  font-size: 20px;
+  height: auto;
 }
 
 .active-textbox {
   border: 1px solid #8900C9 !important;
   padding: 30px 50px !important;
+  margin: 0 0 0 -15px;
 }
 
 .recipe--mixer-button {
   width: 100%;
   background: #999;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .black-background {
@@ -256,6 +233,6 @@ footer {
   margin: 100px 0 50px 0;
 }
 
-footer p {
-  font-size: 14px;
+.footer--text {
+  font-size: 16px;
 }

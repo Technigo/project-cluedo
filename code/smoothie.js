@@ -139,14 +139,16 @@ let mainFruitsPlusFavorite = [
   lemon
 ]
 
-// Object that will define all ingredients currently selected in the smoothie
+// Object that will define all ingredients currently selected in the smoothie,
+// defined in the global scope
 let smoothie = {
   mainFruit: undefined,
   mixer: undefined,
   superBooster: undefined
 }
 
-let favoriteFruit = document.getElementById('fruit-input')
+// Defining the favoriteFruit-variable in the global scope
+let favoriteFruit = undefined
 
 // Select a favorite fruit to make it appear more frequently in the mix
 const selectFavorite = (value) => {
@@ -214,46 +216,46 @@ const toggleLoader = (whatBox) => {
 // + add value to smoothie-object
 // + check if smoothie-button color should be changed
 const pickMainFruit = () => {
+  mainFruit = randomSelector(mainFruits)
+
+  // Pick a random fruit, unless favorite is selected 
+  // (then pick random from mainFruitsPlusFavorite-array)
+  if (mainFruitsPlusFavorite[6] == undefined) {
     mainFruit = randomSelector(mainFruits)
+  } else {
+    mainFruit = randomSelector(mainFruitsPlusFavorite)
+  }
 
-    // Pick a random fruit, unless favorite is selected 
-    // (then pick random from mainFruitsPlusFavorite-array)
-    if (mainFruitsPlusFavorite[6] == undefined) {
-      mainFruit = randomSelector(mainFruits)
-    } else {
-      mainFruit = randomSelector(mainFruitsPlusFavorite)
-    }
+  // Change titile of Main Fruit to reveal what the fruit is
+  const toggleMainFruitTitle = () => {
+    document.getElementById('fruit-header').innerHTML = `Main Fruit/berry: ${mainFruit.name}`
+  }
 
-    // Change titile of Main Fruit to reveal what the fruit is
-    const toggleMainFruitTitle = () => {
-      document.getElementById('fruit-header').innerHTML = `Main Fruit/berry: ${mainFruit.name}`
-    }
+  toggleLoader('main-fruit-box')
+  // Delay the reveal of name with same as loader
+  setTimeout(function () { toggleMainFruitTitle(); }, 1500)
 
-    toggleLoader('main-fruit-box')
-    // Delay the reveal of name with same as loader
-    setTimeout(function() { toggleMainFruitTitle(); }, 1500)
+  document.getElementById('main-fruit-box').style.background = `url('${mainFruit.image}')`
 
-    document.getElementById('main-fruit-box').style.background = `url('${mainFruit.image}')`
-    
-    smoothie.mainFruit = mainFruit.name
-    colorCheck()
+  smoothie.mainFruit = mainFruit.name
+  colorCheck()
 }
 
 const pickMixer = () => {
-    mixer = randomSelector(mixers)
+  mixer = randomSelector(mixers)
 
-    // Change titile of Main Fruit to reveal what the fruit is
-    const toggleMixerTitle = () => {
-      document.getElementById('mixer-header').innerHTML = `Mixer: ${mixer.name}`
-    }
+  // Change titile of Main Fruit to reveal what the fruit is
+  const toggleMixerTitle = () => {
+    document.getElementById('mixer-header').innerHTML = `Mixer: ${mixer.name}`
+  }
 
-    toggleLoader('mixer-box')
-    setTimeout(function() { toggleMixerTitle(); }, 1500)
+  toggleLoader('mixer-box')
+  setTimeout(function () { toggleMixerTitle(); }, 1500)
 
-    document.getElementById('mixer-box').style.background = `url('${mixer.image}')`
+  document.getElementById('mixer-box').style.background = `url('${mixer.image}')`
 
-    smoothie.mixer = mixer.name
-    colorCheck()
+  smoothie.mixer = mixer.name
+  colorCheck()
 }
 
 const pickSuperBooster = () => {
@@ -264,7 +266,7 @@ const pickSuperBooster = () => {
   }
 
   toggleLoader('superbooster-box')
-  setTimeout(function() { toggleSuperBoosterTitle(); }, 1500)
+  setTimeout(function () { toggleSuperBoosterTitle(); }, 1500)
 
   document.getElementById('superbooster-box').style.background = `url('${superBooster.image}')`
 

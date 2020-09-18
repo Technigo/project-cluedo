@@ -11,19 +11,20 @@
 </head>
 
 <body>
+
 <!-- HEADER -->
   <header>
     <h1>SmoothDay</h1>
     <a href="#">
       <div class="hamburger">
+        <div class="hamburger--stroke"></div>
+        <div class="hamburger--stroke"></div>
+        <div class="hamburger--stroke"></div>
+      </div>
     </a>
-    <div></div>
-    <div></div>
-    <div></div>
-    </div>
   </header>
 
-<!-- INTRO -->
+<!-- INTRO + FAVORITE -->
   <section class="intro">
     <p class="intro--text">Start off your day with a smoothie of <span class="italic">our</span> choice.</p>
 
@@ -35,7 +36,7 @@
       <div class="favorite-fruit--form-box">
         <form>
           <label for="favorite-fruit" class="favorite-fruit--label">or, if you want to, select your favorite fruit*: </label>
-          <select onchange="selectFavorite(value)" id="fruit-input"  class="favorite-fruit--select">
+          <select onchange="selectFavorite(value)" class="favorite-fruit--select">
            <option value="Select">Select Fruit</option>
            <option value="Apple">Apple</option>
            <option value="Banana">Banana</option>
@@ -44,16 +45,13 @@
            <option value="Raspberry">Raspberry</option>
            <option value="Lemon">Lemon</option>
          </select>
-    
-         <!-- <button type="submit" value="submit" id="favorite-fruit--submit" class="favorite-fruit-form--button" onclick="selectFavorite()">OK!</button> -->
-         </form>
-         <p class="favorite-fruit--comment">*This will be chosen more frequently in the randomizer</p>
+        </form>
+        <p class="favorite-fruit--comment">*This will be chosen more frequently in the randomizer</p>
       </div>
+
       <button>Manage your inventory &#8594;</button>
     </div>
   </section>
-
-  
 
 
 <!-- INGREDIENTS/MAIN -->
@@ -69,33 +67,32 @@
     <div id="superbooster-box" class="superbooster-box"></div>
   </section>
   
-  <section class="ingredients-randomizer-buttons">
+  <section class="ingredients--randomizer-buttons">
     <button onclick="pickMainFruit()">Randomize main fruit/berry &#8594;</button>
-    <button class="mixer-randomizer-button" onclick="pickMixer()">Randomize Mixer &#8594;</button>
+    <button class="mixer--randomizer-button" onclick="pickMixer()">Randomize Mixer &#8594;</button>
     <button onclick="pickSuperBooster()">Randomize Super Booster &#8594;</button>
   </section>
 
 
-<!-- RECIPE / FAVORITES -->
-  <section class="recipe">
-    <div class="recipe--left">
+<!-- RECIPE -->
+  <section class="recipe-section">
+    <div class="recipe-section--left">
       <button id="mixer-button" class="recipe--mixer-button" onclick="mixSmoothie()">Reveal/update recipe &#8594; </button>
       <button class="recipe--mixer-button black-background">Save recipe as Favorite &#8594; </button>
       <button class="recipe--mixer-button black-background">Favorite Recipes &#8594; </button>
     </div>
 
-    <div class="recipe--finished-smoothie">
-      <!-- <p id="date" class="date"></p> -->
-      <p class="recepe--finished-smoothie--textbox" id="finished-smoothie"></p>
+    <div class="recipe-section--finished-smoothie">
+      <p class="recepe-section--finished-smoothie--textbox" id="finished-smoothie"></p>
     </div>
   </section>
 
 
+<!-- FOOTER -->
   <footer>
-    <p>A website made by Karin Nordkvist @ Technigo - 4/24</p>
-    <p>Copyright 2020 - Images from Unsplash/Google</p>
+    <p class="footer--text">A website made by Karin Nordkvist @ Technigo - 4/24</p>
+    <p class="footer--text">Copyright 2020 - Images from Unsplash/Google</p>
   </footer>
-
 
   <script src="./smoothie.js"></script>
 </body>
