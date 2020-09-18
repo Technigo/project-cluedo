@@ -167,7 +167,7 @@ const rooms = [
 
 let mystery = {
   killer: 'who',
-  weapon: 'whith what',
+  weapon: 'what',
   room: 'where'
 }
 
@@ -334,8 +334,14 @@ const pickRoom = () => {
 
 
 const revealMystery = () => {
-  document.getElementById('mystery').style.display = 'block'
-  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}, the killers favourite weapon is actually ${mystery.killer.favouriteWeapon.name}`
+  document.getElementById('mystery').style.display = 'flex'
+  if (mystery.killer === 'who' || mystery.weapon === 'what' || mystery.room === 'where' )
+  {
+    document.getElementById('mysteryText').innerHTML = `Please commit the murder by picking a killer, weapon and room first`
+
+  } else {
+  document.getElementById('mysteryText').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}, the killers favourite weapon is actually ${mystery.killer.favouriteWeapon.name}`
+  }
 }
 
 // Executing functions

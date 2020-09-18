@@ -61,7 +61,7 @@ h3 {
   justify-content: center;
   align-items: center;
   height: 96%;
-  border: 8px solid rgb(129, 164, 175);
+  border: 8px solid #81a4af;
   border-radius: 20px;
 }
 
@@ -115,14 +115,46 @@ button {
 }
 
 .mystery {
+  display:none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 90%;
-  display: none;
-  padding: 30px 0;
   margin: 30px auto;
-  background-color: #000;
   color: rgb(129, 164, 175);
+  
+  
+}
+
+.speech-bubble {
+  position: relative;
+  background-color: #000;
+  padding: 20px 20px;
   border-radius: 10px;
+}
+.speech-bubble:after {
+  content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-right-color: #000;
+	border-left: 0;
+	margin-top: -10px;
+  margin-left: -10px;
+}
+
+.mystery h1 {
   font-size: 25px;
+  
+}
+
+.mystery img {
+  width: 65px;
+  height: 65px;
+  margin: 20px;
 }
 
 
