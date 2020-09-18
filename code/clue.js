@@ -78,54 +78,63 @@ const rope = {
   name: "rope",
   weight: 10,
   place: "Theater",
+  image: "weapons/rope.jpg",
 };
 // *** 2. knife
 const knife = {
   name: "knife",
   weight: 2,
   place: "kitchen",
+  image: "weapons/knife.jpg",
 };
 // *** 3. candlestick
 const candlestick = {
   name: "candlestick",
   weight: 4,
   place: "Ballroom",
+  image: "weapons/candlestick.jpg",
 };
 // *** 4. dumbbel
 const dumbbel = {
   name: "dumbbel",
   weight: 7,
   place: "Spa",
+  image: "weapons/dumbbel.jpg",
 };
 // *** 5. poison
 const poison = {
   name: "poison",
   weight: 1,
   place: "Lounge",
+  image: "weapons/poison.jpg",
 };
 // *** 6. axe
 const axe = {
   name: "axe",
   weight: 5,
   place: "Conservatory",
+  image: "weapons/axe.jpg",
 };
 // *** 7. bat
 const bat = {
   name: "bat",
   weight: 6,
   place: "Hall",
+  image: "weapons/bat.jpg",
 };
 // *** 8. trophy
 const trophy = {
   name: "trophy",
   weight: 8,
   place: "Library",
+  image: "weapons/trophy.jpg",
 };
 // *** 9. pistol
 const pistol = {
   name: "pistol",
   weight: 3,
   place: "Study",
+  image: "weapons/pistol.jpg",
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -276,6 +285,7 @@ const pickWeapon = () => {
       document.getElementById(
         "weaponWeight"
       ).innerHTML = `${mystery.weapon.weight} of weight`;
+      document.getElementById("weaponImage").src = `${mystery.weapon.image}`;
 
       // time delay millisecond
     }, 300);
@@ -347,7 +357,7 @@ const revealMystery = () => {
   } else {
     document.getElementById(
       "mystery"
-    ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
+    ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}  who used the ${mystery.weapon.name} to kill the victim with in the ${mystery.room}.`;
   }
   //shuffleFavouriteWeapon(); in reaveal button instead!
 };
