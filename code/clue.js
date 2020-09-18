@@ -6,10 +6,11 @@
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
-  color: "#7FFF00",
-  description: "He has a lot of connections",
+  nickName: "Mr Green",
+  color: "#9ACD32",
+  description: "has a lot of connections",
   age: 45,
-  image: "assets/green.png",
+  image: "killers/green.png",
   occupation: "Entrepreneur",
   favouriteWeaponId: "bat", //exactly the same as weapon name, e.g. 'name: "bat",'
 };
@@ -17,10 +18,11 @@ const mrGreen = {
 const profPlum = {
   firstName: "Victor",
   lastName: "Plum",
-  color: "purple",
-  description: "He is widely seen as the intellectual",
+  nickName: "Professor Plum",
+  color: "#9370DB",
+  description: "is widely seen as the intellectual",
   age: 36,
-  image: "assets/plum.png",
+  image: "killers/plum.png",
   occupation: "Professor",
   favouriteWeaponId: "trophy",
 };
@@ -28,10 +30,11 @@ const profPlum = {
 const missScarlet = {
   firstName: "Cassandra",
   lastName: "Scarlet",
-  color: "red",
-  description: "Young, cunning, and highly attractive",
+  nickName: "Miss Scarlet",
+  color: "#FF4500",
+  description: "is young, cunning, and highly attractive",
   age: 25,
-  image: "assets/scarlet.png",
+  image: "killers/scarlet.png",
   occupation: "Actress",
   favouriteWeaponId: "pistol",
 };
@@ -39,10 +42,11 @@ const missScarlet = {
 const mrsPeacock = {
   firstName: "Eleanor",
   lastName: "Peacock",
-  color: "blue",
-  description: "Maintains her dignity in almost all cases",
+  nickName: "Mrs Peacock",
+  color: "#4169E1",
+  description: "maintains her dignity in almost all cases",
   age: 32,
-  image: "assets/peacock.png",
+  image: "killers/peacock.png",
   occupation: "Socialite",
   favouriteWeaponId: "knife",
 };
@@ -50,10 +54,11 @@ const mrsPeacock = {
 const colMustard = {
   firstName: "Jack",
   lastName: "Mustard",
+  nickName: "Colonel Mustard",
   color: "yellow",
-  description: "Both dignified and dangerous",
+  description: "is both dignified and dangerous",
   age: 55,
-  image: "assets/mustard.png",
+  image: "killers/mustard.png",
   occupation: "Colonel",
   favouriteWeaponId: "candlestick",
 };
@@ -61,10 +66,11 @@ const colMustard = {
 const mrsWhite = {
   firstName: "Mrs",
   lastName: "White",
-  color: "white",
-  description: "A frazzled servant",
+  nickName: "Mrs White",
+  color: "#FFFAF0",
+  description: "is a frazzled servant",
   age: 67,
-  image: "assets/white.png",
+  image: "killers/white.png",
   occupation: "Housekeeper",
   favouriteWeaponId: "poison",
 };
@@ -77,64 +83,198 @@ const mrsWhite = {
 const rope = {
   name: "rope",
   weight: 10,
-  place: "Theater",
-  image: "weapons/rope.jpg",
+  place: "theater",
+  image: "weapons/rope.png",
+  color: "#F5F5F5",
 };
 // *** 2. knife
 const knife = {
   name: "knife",
   weight: 2,
   place: "kitchen",
-  image: "weapons/knife.jpg",
+  image: "weapons/knife.png",
+  color: "#F5F5F5",
 };
 // *** 3. candlestick
 const candlestick = {
   name: "candlestick",
   weight: 4,
-  place: "Ballroom",
-  image: "weapons/candlestick.jpg",
+  place: "ballroom",
+  image: "weapons/candlestick.png",
+  color: "#F5F5F5",
 };
 // *** 4. dumbbel
 const dumbbel = {
   name: "dumbbel",
   weight: 7,
-  place: "Spa",
-  image: "weapons/dumbbel.jpg",
+  place: "spa",
+  image: "weapons/dumbbel.png",
+  color: "#F5F5F5",
 };
 // *** 5. poison
 const poison = {
   name: "poison",
   weight: 1,
-  place: "Lounge",
-  image: "weapons/poison.jpg",
+  place: "lounge",
+  image: "weapons/poison.png",
+  color: "#F5F5F5",
 };
 // *** 6. axe
 const axe = {
   name: "axe",
   weight: 5,
-  place: "Conservatory",
-  image: "weapons/axe.jpg",
+  place: "conservatory",
+  image: "weapons/axe.png",
+  color: "#F5F5F5",
 };
 // *** 7. bat
 const bat = {
   name: "bat",
   weight: 6,
-  place: "Hall",
-  image: "weapons/bat.jpg",
+  place: "hall",
+  image: "weapons/bat.png",
+  color: "#F5F5F5",
 };
 // *** 8. trophy
 const trophy = {
   name: "trophy",
   weight: 8,
-  place: "Library",
-  image: "weapons/trophy.jpg",
+  place: "library",
+  image: "weapons/trophy.png",
+  color: "#F5F5F5",
 };
 // *** 9. pistol
 const pistol = {
   name: "pistol",
   weight: 3,
-  place: "Study",
-  image: "weapons/pistol.jpg",
+  place: "study",
+  image: "weapons/pistol.png",
+  color: "#F5F5F5",
+};
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+// ROOMS:
+
+// *** 1. Dining Room
+const diningRoom = {
+  name: "Dining Room",
+  location: "East Wing",
+  id: "dining",
+  image: "rooms/dining-room.png",
+  color: "#F5F5F5",
+};
+// *** 2. Conservatory
+const conservatory = {
+  name: "Conservatory",
+  location: "East Garden",
+  id: "conservatory",
+  image: "rooms/conservatory.png",
+  color: "#F5F5F5",
+};
+// *** 3. Kitchen
+const kitchen = {
+  name: "Kitchen",
+  location: "South/East Wing",
+  id: "kitchen",
+  image: "rooms/kitchen.png",
+  color: "#F5F5F5",
+};
+// *** 4. Study
+const study = {
+  name: "Study",
+  location: "North/West Wing",
+  id: "study",
+  image: "rooms/study.png",
+  color: "#F5F5F5",
+};
+// *** 5. Library
+const library = {
+  name: "Library",
+  location: "West Wing",
+  id: "library",
+  image: "rooms/library.png",
+  color: "#F5F5F5",
+};
+// *** 6. Billiard Room
+const billiardRoom = {
+  name: "Billiard Room",
+  location: "West/South Wing",
+  id: "billiard",
+  image: "rooms/billiard-room.png",
+  color: "#F5F5F5",
+};
+// *** 7. Lounge
+const lounge = {
+  name: "Lounge",
+  location: "North Wing",
+  id: "lounge",
+  image: "rooms/lounge.png",
+  color: "#F5F5F5",
+};
+// *** 8. Ballroom
+const ballRoom = {
+  name: "Ballroom",
+  location: "South Wing",
+  id: "ballroom",
+  image: "rooms/ballroom.png",
+  color: "#F5F5F5",
+};
+// *** 9. Hall
+const hall = {
+  name: "Hall",
+  location: "East/West Wing",
+  id: "hall",
+  image: "rooms/hall.png",
+  color: "#F5F5F5",
+};
+// *** 10. Spa
+const spa = {
+  name: "Spa",
+  location: "East/North Wing",
+  id: "spa",
+  image: "rooms/spa.png",
+  color: "#F5F5F5",
+};
+// *** 11. Living Room
+const livingRoom = {
+  name: "Living Room",
+  location: "South/West Wing",
+  id: "livingRoom",
+  image: "rooms/living-room.png",
+  color: "#F5F5F5",
+};
+// *** 12. Observatory
+const observatory = {
+  name: "Observatory",
+  location: "North Garden",
+  id: "observatory",
+  image: "rooms/observatory.png",
+  color: "#F5F5F5",
+};
+// *** 13. Theater
+const theater = {
+  name: "Theater",
+  location: "South/East Wing",
+  id: "theater",
+  image: "rooms/theater.png",
+  color: "#F5F5F5",
+};
+// *** 14. Guest House
+const guestHouse = {
+  name: "Guest House",
+  location: "South Garden",
+  id: "guestHouse",
+  image: "rooms/guest-house.png",
+  color: "#F5F5F5",
+};
+// *** 15. Patio
+const patio = {
+  name: "Patio",
+  location: "West/East Wing",
+  id: "patio",
+  image: "rooms/patio.png",
+  color: "#F5F5F5",
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -166,21 +306,21 @@ const weapons = [
 
 // rooms array
 const rooms = [
-  "Dining Room",
-  "Conservatory",
-  "Kitchen",
-  "Study",
-  "Library",
-  "Billiard Room",
-  "Lounge",
-  "Ballroom",
-  "Hall",
-  "Spa",
-  "Living Room",
-  "Observatory",
-  "Theater",
-  "Guest House",
-  "Patio",
+  diningRoom,
+  conservatory,
+  kitchen,
+  study,
+  library,
+  billiardRoom,
+  lounge,
+  ballRoom,
+  hall,
+  spa,
+  livingRoom,
+  observatory,
+  theater,
+  theater,
+  patio,
 ];
 
 // Mystery object
@@ -238,18 +378,9 @@ const pickKiller = () => {
       "killerName"
     ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
     document.getElementById(
-      "killerAge"
-    ).innerHTML = `${mystery.killer.age} yaers`;
-    document.getElementById(
       "killerOccupation"
     ).innerHTML = `${mystery.killer.occupation}`;
     document.getElementById("killerImage").src = `${mystery.killer.image}`;
-    document.getElementById(
-      "killerDescription"
-    ).innerHTML = `${mystery.killer.description}`;
-    document.getElementById(
-      "favouriteWeapon"
-    ).innerHTML = `Favourite weapon:<br>${mystery.killer.favouriteWeaponId}`;
 
     // time delay millisecond
   }, 300);
@@ -278,6 +409,8 @@ const pickWeapon = () => {
       mystery.weapon = mostLikelyRandomSelector(weapons, favouriteWeapon);
 
       // changing card info
+      document.getElementById("weaponCard").style.background =
+        mystery.weapon.color;
       document.getElementById("weaponCard");
       document.getElementById(
         "weaponName"
@@ -307,7 +440,9 @@ const pickRoom = () => {
     document.getElementById("roomCard").classList.add("flip");
 
     // finding the weapons place
-    const weaponPlace = mystery.weapon.place;
+    const weaponPlace = rooms.find(
+      (room) => room.name === mystery.weapon.place
+    );
 
     // time delay starts
     setTimeout(() => {
@@ -317,10 +452,15 @@ const pickRoom = () => {
       // mystery.room = randomSelector(rooms);
 
       // changing card info
+      document.getElementById("roomCard").style.background = mystery.room.color;
       document.getElementById("roomCard");
-      document.getElementById("roomName").innerHTML = `${mystery.room}`;
+      document.getElementById("roomName").innerHTML = `${mystery.room.name}`;
+      document.getElementById(
+        "roomLocation"
+      ).innerHTML = `${mystery.room.location}`;
+      document.getElementById("roomImage").src = `${mystery.room.image}`;
 
-      console.log(mystery.room);
+      console.log(mystery.room.name);
 
       // time delay millisecond
     }, 300);
@@ -355,9 +495,19 @@ const revealMystery = () => {
   } else if (mystery.room === null) {
     document.getElementById("mystery").innerHTML = "Select a room";
   } else {
-    document.getElementById(
-      "mystery"
-    ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}  who used the ${mystery.weapon.name} to kill the victim with in the ${mystery.room}.`;
+    if (
+      mystery.killer.nickName === "Mr Green" ||
+      mystery.killer.nickName === "Professor Plum" ||
+      mystery.killer.nickName === "Colonel Mustard"
+    ) {
+      document.getElementById(
+        "mystery"
+      ).innerHTML = `The murder was committed by the ${mystery.killer.age} years old ${mystery.killer.firstName} ${mystery.killer.lastName} who ${mystery.killer.description}. He used the ${mystery.weapon.name} to kill the victim with in the ${mystery.room.name}. ${mystery.killer.nickName}'s favourite weapon is the ${mystery.killer.favouriteWeaponId} and the ${mystery.weapon.name} has its place usually in the ${mystery.weapon.place}.`;
+    } else {
+      document.getElementById(
+        "mystery"
+      ).innerHTML = `The murder was committed by the ${mystery.killer.age} years old ${mystery.killer.firstName} ${mystery.killer.lastName} who ${mystery.killer.description}. She used the ${mystery.weapon.name} to kill the victim with in the ${mystery.room.name}. ${mystery.killer.nickName}'s favourite weapon is the ${mystery.killer.favouriteWeaponId} and the ${mystery.weapon.name} has its place usually in the ${mystery.weapon.place}.`;
+    }
   }
   //shuffleFavouriteWeapon(); in reaveal button instead!
 };

@@ -22,32 +22,30 @@
     <!-- *** KILLER *** -->
     <article class="killer-deck" id="killerCard">
       <div class="inner-card-style">
-        <p>KILLER</p>
+        <h2>KILLER</h2>
         <p id="killerName"></p>
-        <p id="killerAge"></p>
+        <img id="killerImage" src="assets/killer.png" height="200" />
         <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
-        <p id="favouriteWeapon"></p>
       </div>
     </article>
 
     <!-- *** WEAPON *** -->
     <article class="weapon-deck" id="weaponCard">
       <div class="inner-card-style">
-        <p>WEAPON</p>
+        <h2>WEAPON</h2>
         <p id="weaponName"></p>
+        <img id="weaponImage" src="assets/weapon.png" height="200" />
         <p id="weaponWeight"></p>
-        <img id="weaponImage" src="" height="100" />
       </div>
     </article>
 
     <!-- *** ROOM *** -->
     <article class="room-deck" id="roomCard">
       <div class="inner-card-style">
-        <p>ROOM</p>
+        <h2>ROOM</h2>
         <p id="roomName"></p>
-        <img id="roomImage" src="" height="100" />
+        <img id="roomImage" src="assets/crime-scene.png" height="200" />
+        <p id="roomLocation"></p>
       </div>
     </article>
 
@@ -56,8 +54,9 @@
 
   <h1 id="mystery"></h1>
 
-  <button id="revealTheCrime" onclick="revealMystery()">REVEAL THE CRIME</button>
-  <button id="favvo" onclick="shuffleFavouriteWeapon()">SHUFFLE WEAPONS</button>
+  <button id="revealTheCrime" onclick="revealMystery()">Revial the crime</button>
+  <button id="revealTheCrime" onclick="">Play agsin!</button>
+  <!-- <button id="favvo" onclick="shuffleFavouriteWeapon()">SHUFFLE WEAPONS</button> -->
 
   <script src="clue.js"></script>
 </body>

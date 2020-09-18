@@ -6,7 +6,10 @@ body {
 p {
   margin: 1px;
   font-weight: 300;
-  background-color: #fff;
+}
+
+h2 {
+  margin: 4px;
 }
 
 .cards {
@@ -19,32 +22,20 @@ p {
   align-items: center;
 }
 
-.killer-deck {
-  width: 250px;
-  height: 400px;
-  background: #000;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-}
-
-.weapon-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-}
-
+.killer-deck,
+.weapon-deck,
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: #fff;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+}
+
+img {
+  padding-top: 40px;
+  padding-bottom: 10px;
 }
 
 button {
