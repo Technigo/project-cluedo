@@ -16,39 +16,39 @@ const killerCard = document.getElementById("killerCard")
 const weaponCard = document.getElementById("weaponCard")
 const roomCard = document.getElementById("roomCard")
 
-const textClass = document.querySelectorAll(".text") 
+const infoClass = document.querySelectorAll(".info")
 const cardClass = document.querySelectorAll(".card")
 
 //*** KILLERS ***//
 
 const mrGreen = {
-  firstName: 'Jacob',
-  lastName: 'Green',
-  fullName: function() {
+  firstName: "Jacob",
+  lastName: "Green",
+  fullName: function () {
     return this.firstName + " " + this.lastName;
   },
   age: 45,
-  occupation: 'Entrepreneur'
+  occupation: "Entrepreneur",
 }
 
 const professorPlum = {
-  firstName: 'Victor',
-  lastName: 'Plum',
-  fullName: function() {
+  firstName: "Victor",
+  lastName: "Plum",
+  fullName: function () {
     return this.firstName + " " + this.lastName;
   },
   age: 67,
-  occupation: 'Professor'
+  occupation: "Professor"
 }
 
 const missScarlet = {
-  firstName: 'Cassy',
-  lastName: 'Scarlet',
-  fullName: function() {
+  firstName: "Cassy",
+  lastName: "Scarlet",
+  fullName: function () {
     return this.firstName + " " + this.lastName;
   },
   age: 32,
-  occupation: 'Developer'
+  occupation: "Developer"
 }
 
 const killers = [
@@ -60,23 +60,23 @@ const killers = [
 //*** WEAPONS ***//
 
 const rope = {
-  name: 'Rope',
+  name: "Rope",
   weight: 10,
 }
 
 const knife = {
-  name: 'Knife',
+  name: "Knife",
   weight: 2
 }
 
 const candlestick = {
-  name: 'Candlestick',
+  name: "Candlestick",
   weight: 4
 }
 
 // Weapons array
 const weapons = [
-  rope, 
+  rope,
   knife,
   candlestick
 ]
@@ -84,30 +84,30 @@ const weapons = [
 //*** ROOMS ***//
 
 const kitchen = {
-  name: 'Kitchen',
-  color: 'Yellow'
+  name: "Kitchen",
+  color: "Yellow"
 }
 
 const study = {
-  name: 'Study',
-  color: 'Blue'
+  name: "Study",
+  color: "Blue"
 }
 
 const library = {
-  name: 'Library',
-  color: 'Green'
+  name: "Library",
+  color: "Green"
 }
 
 // Room array
 const rooms = [
-  kitchen, 
+  kitchen,
   study,
   library
 ]
 
 //*** MYSTERY OBJECT ***//
 
-const mystery =  {
+const mystery = {
   killer: null,
   weapon: null,
   room: null
@@ -128,7 +128,7 @@ const changeCard = (card) => {
 // Changes button when card is clicked
 const changeButton = () => {
   mysteryButton.innerHTML = "?"
-  
+
   if (mystery.killer !== null && mystery.weapon !== null && mystery.room !== null) {
     mysteryButton.style.background = "#EFF066"
   } else {
@@ -136,7 +136,7 @@ const changeButton = () => {
   }
 }
 
-//*** FUNCTION FOR KILLER CARD and how it is invoked***//
+//*** FUNCTION FOR KILLER CARD ***//
 
 const pickKiller = () => {
   mystery.killer = randomSelector(killers)
@@ -149,9 +149,7 @@ const pickKiller = () => {
   changeButton()
 }
 
-killerCard.addEventListener("click", pickKiller);
-
-//*** FUNCTION FOR WEAPON CARD and how it is invoked ***//
+//*** FUNCTION FOR WEAPON CARD ***//
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
@@ -163,9 +161,7 @@ const pickWeapon = () => {
   changeButton()
 }
 
-weaponCard.addEventListener("click", pickWeapon);
-
-//*** FUNCTION FOR ROOM CARD and how it is invoked ***//
+//*** FUNCTION FOR ROOM CARD ***//
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
@@ -177,9 +173,8 @@ const pickRoom = () => {
   changeButton()
 }
 
-roomCard.addEventListener("click", pickRoom);
- 
-//*** FUNCTION THAT REVEALS THE MYSTERY (or tells the user to pick a killer/weapon/room) - invoked by button onclick in HTML ***//
+//*** FUNCTION THAT REVEALS THE MYSTERY ***//
+//invoked by button onclick in index.html
 
 const revealMystery = () => {
 
@@ -187,9 +182,9 @@ const revealMystery = () => {
     mysteryButton.innerHTML = (`It was ${mystery.killer.fullName()} with a ${mystery.weapon.name} in the ${mystery.room.name}.`)
     mysteryButton.style.background = "transparent"
     mysteryButton.style.opacity = 1.0;
-    textClass.forEach(text => text.innerHTML = "")
+    infoClass.forEach(info => info.innerHTML = "")
     cardClass.forEach(card => card.style.background = "#30F2C6")
-    Object.keys(mystery).forEach(key => mystery[key] = null)  
+    Object.keys(mystery).forEach(key => mystery[key] = null)
   }
 
   const pickCard = () => {
@@ -211,3 +206,9 @@ const revealMystery = () => {
   }
 
 }
+
+//*** INVOKES FUNCTIONS ***//
+
+killerCard.addEventListener("click", pickKiller);
+weaponCard.addEventListener("click", pickWeapon);
+roomCard.addEventListener("click", pickRoom);
