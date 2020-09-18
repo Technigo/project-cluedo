@@ -8,6 +8,7 @@ const suspects = [
     age: 45,
     image: "assets/green.png",
     occupation: "Entrepreneur",
+    favouriteWeapon: "",
   },
   {
     name: "Miss Scarlet",
@@ -18,6 +19,7 @@ const suspects = [
     age: 32,
     image: "assets/scarlet.png",
     occupation: "Writer",
+    favouriteWeapon: "",
   },
   {
     name: "Professor Plum",
@@ -28,6 +30,7 @@ const suspects = [
     age: 37,
     image: "assets/plum.png",
     occupation: "Professor in detergents",
+    favouriteWeapon: "",
   },
   {
     name: "Mrs Peacock",
@@ -38,6 +41,7 @@ const suspects = [
     age: 46,
     image: "assets/peacock.png",
     occupation: "Entrepreneur",
+    favouriteWeapon: "",
   },
   {
     name: "Colonel Mustard",
@@ -48,6 +52,7 @@ const suspects = [
     age: 68,
     image: "assets/mustard.png",
     occupation: "Colonel",
+    favouriteWeapon: "",
   },
   {
     name: "Mrs White",
@@ -59,6 +64,7 @@ const suspects = [
     age: "unknown",
     image: "assets/white.png",
     occupation: "Housekeeper",
+    favouriteWeapon: "",
   },
 ];
 
@@ -211,7 +217,8 @@ const mystery = {
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
 
-  document.getElementById("killer-card").style.background = mystery.killer.color;
+  document.getElementById("killer-card").style.background =
+    mystery.killer.color;
   document.getElementById(
     "killer-name"
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
@@ -219,7 +226,8 @@ const pickKiller = () => {
     "killer-occupation"
   ).innerHTML = `${mystery.killer.occupation}`;
   document.getElementById("killer-image").classList.remove("hidden");
-  document.getElementById("killer-image").src = mystery.killer.image;
+  document.getElementById("killer-image").src 
+  = mystery.killer.image;
   document.getElementById(
     "killer-description"
   ).innerHTML = `${mystery.killer.description}`;
@@ -229,7 +237,8 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
   console.log(mystery);
 
-  document.getElementById("weapon-card").style.background = mystery.weapon.color;
+  document.getElementById("weapon-card").style.background =
+    mystery.weapon.color;
   document.getElementById("weapon-name").innerHTML = `${mystery.weapon.name}`;
   document.getElementById(
     "weapon-weight"
@@ -250,16 +259,16 @@ const revealMystery = () => {
   document.getElementById("instructions").classList.add("hidden");
 
   if (mystery.killer === "" || mystery.weapon === "" || mystery.room === "") {
-    document.getElementById("mystery").innerHTML = `Choose cards first!`
-  } else{
-  document.getElementById(
-    "mystery"
-  ).innerHTML = `The murder was commited by ${mystery.killer.name} in the ${mystery.room.name} with the ${mystery.weapon.name}. Scandalous!`;
-  document.getElementById(
-    "reveal-message"
-  ).innerHTML = `In the darkest hour, while everyone else were busy doing other stuff ${mystery.killer.name} acted quickly.`;
-  document.getElementById(
-    "room-description"
-  ).innerHTML = `${mystery.room.description}`;
-}
+    document.getElementById("mystery").innerHTML = `Choose cards first!`;
+  } else {
+    document.getElementById(
+      "mystery"
+    ).innerHTML = `The murder was commited by ${mystery.killer.name} in the ${mystery.room.name} with the ${mystery.weapon.name}. Scandalous!`;
+    document.getElementById(
+      "reveal-message"
+    ).innerHTML = `In the darkest hour, while everyone else were busy doing other stuff ${mystery.killer.name} acted quickly.`;
+    document.getElementById(
+      "room-description"
+    ).innerHTML = `${mystery.room.description}`;
+  }
 };
