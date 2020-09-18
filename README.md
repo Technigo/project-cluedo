@@ -1,12 +1,11 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Here's a, sort of, game of Cluedo. There's tre decks of cards and one button, all clickable. The card gives you a murderer, a weapon and a room and the reveal button gives you a summary of the murder. If you don't have all the cards there's no mystery to solve :) 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+It felt like I had a much calmer approach to problems this week. I think it is mostly becouse I didn't even look at the red level things before I was done with the blue level. I think that made me calmer and not so overwhealmed. A lot thanks to my team as well, we have talked a lot about the pressure we put ourself in. 
+Will take this way of thinking with me to next week aswell and hopefully troughout the course!
 
 ## View it live
 

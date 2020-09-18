@@ -40,7 +40,7 @@ const mrsPeacock = {
   description: 'Royal-like appearance.',
   age: 55,
   image: 'assets/peacock.png',
-  occupation: 'rich lady',
+  occupation: 'Rich Lady',
   favouriteWeapon: 'pistol'
 }
 
@@ -284,7 +284,7 @@ const pickKiller = () => {
   document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
   let favWeapon = weapons.find(weapon => weapon.id === mystery.killer.favouriteWeapon)
   document.getElementById('killerFavouriteWeapon').innerHTML = `Favourite weapon: ${favWeapon.name}`
-
+  document.getElementById('killerDescription').innerHTML = `Description: ${mystery.killer.description}`
 }
 document.getElementById('killerCard').onclick = pickKiller
 
