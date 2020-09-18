@@ -19,10 +19,11 @@ const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
   color: 'green',
-  description: 'He has a lot of connections',
+  description: 'He has a lot of connections.',
   age: 45,
   image: 'assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur',
+  favouriteWeapon: 'rope'
 };
 
 const mrsWhite = {
@@ -32,7 +33,8 @@ const mrsWhite = {
   description: 'She knows every corner of the house.',
   age: 65,
   image: 'assets/white.png',
-  occupation: 'Chef'
+  occupation: 'Chef',
+  favouriteWeapon: 'candlestick'
 };
 
 const missScarlet = {
@@ -42,7 +44,8 @@ const missScarlet = {
   description: 'The spotlight is always on her.',
   age: 32,
   image: 'assets/scarlet.png',
-  occupation: 'Actress'
+  occupation: 'Actress',
+  favouriteWeapon: 'dagger'
 };
 
 const colonelMustard = {
@@ -52,7 +55,8 @@ const colonelMustard = {
   description: 'He is trained with weapons.',
   age: 52,
   image: 'assets/mustard.png',
-  occupation: 'Soldier'
+  occupation: 'Soldier',
+  favouriteWeapon: 'revolver'
 };
 
 const mrsPeacock = {
@@ -62,7 +66,8 @@ const mrsPeacock = {
   description: 'She impresses people with her elegance.',
   age: 47,
   image: 'assets/peacock.png',
-  occupation: 'Socialite'
+  occupation: 'Socialite',
+  favouriteWeapon: 'wrench'
 };
 
 const profPlum = {
@@ -72,7 +77,8 @@ const profPlum = {
   description: 'His intelligence is stunning.',
   age: 39,
   image: 'assets/plum.png',
-  occupation: 'Professor'
+  occupation: 'Professor',
+  favouriteWeapon: 'lead pipe'
 }
 
 
@@ -81,37 +87,43 @@ const profPlum = {
 const rope = {
   name: 'rope',
   weight: 10,
-  material: 'hampen'
+  material: 'hampen',
+  id: 'rope'
 };
 
 const candlestick = {
   name: 'candlestick',
   weight: 22,
-  material: 'silver'
+  material: 'silver',
+  id: 'candlestick'
 };
 
 const revolver = {
   name: 'revolver',
   weight: 30,
-  material: 'iron'
+  material: 'iron',
+  id: 'revolver'
 };
 
 const leadPipe = {
   name: 'lead pipe',
   weight: 52,
-  material: 'lead'
+  material: 'lead',
+  id: 'lead pipe'
 };
 
 const dagger = {
   name: 'dagger',
   weight: 28,
-  material: 'steel'
+  material: 'steel',
+  id: 'dagger'
 };
 
 const wrench = {
   name: 'wrench',
   weight: 18,
-  material: 'stainless steel'
+  material: 'stainless steel',
+  id: 'wrench'
 };
 
 
@@ -170,6 +182,15 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
+
+//FUNCTION THAT SHUFFLES THE FAVOURITE WEAPON OF ONE SUSPECT
+const shuffleFavouriteWeapon = suspect => suspect.favouriteWeapon = randomSelector(weapons).id
+
+//Calling the shuffle-function for each suspect:
+suspects.forEach(shuffleFavouriteWeapon)
+
+
+
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
 // The values will be set later.
@@ -196,6 +217,7 @@ const pickKiller = () => {
   document.getElementById('killerInner').classList.remove('front');
   document.getElementById('killerInner').classList.add('back');
 
+  //This will show information about the killer
   document.getElementById(
     'killerName'
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
@@ -204,6 +226,7 @@ const pickKiller = () => {
   document.getElementById('killerImage').src = `${mystery.killer.image}`;
   document.getElementById(
     'killerDescription').innerHTML = `${mystery.killer.description}`;
+    document.getElementById('killerFavWeapon').innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
 };
 
 
@@ -258,14 +281,19 @@ document.getElementById('roomCard').onclick = pickRoom;
 const revealMystery = () => {
   // console.log(`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} 
   // in the ${mystery.room} with a ${mystery.weapon.name}.`)
+
+  //Only reveal a mystery, when killer, weapon and room are chosen.
   if (mystery.killer !== null && mystery.weapon !== null && mystery.room !== null) {
   document.getElementById('revealedMystery').classList.remove('invisible');
   }
+
+  //Show a box with a text that reveals the mystery
   document.getElementById('revealedMystery').innerHTML = 
   `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} 
   in the ${mystery.room} with a ${mystery.weapon.name}.`;
 }
 
+//Call the revealMystery function
 document.getElementById('revealButton').onclick = revealMystery;
 
 
