@@ -8,7 +8,7 @@ const suspects = [
     age: 45,
     image: "assets/green.png",
     occupation: "Entrepreneur",
-    favouriteWeapon: "Candlestick",
+    favouriteWeapon: "candlestick",
   },
   {
     name: "Miss Scarlet",
@@ -19,7 +19,7 @@ const suspects = [
     age: 32,
     image: "assets/scarlet.png",
     occupation: "Writer",
-    favouriteWeapon: "Axe",
+    favouriteWeapon: "axe",
   },
   {
     name: "Professor Plum",
@@ -30,7 +30,7 @@ const suspects = [
     age: 37,
     image: "assets/plum.png",
     occupation: "Professor in detergents",
-    favouriteWeapon: "Trophy",
+    favouriteWeapon: "trophy",
   },
   {
     name: "Mrs Peacock",
@@ -41,7 +41,7 @@ const suspects = [
     age: 46,
     image: "assets/peacock.png",
     occupation: "Entrepreneur",
-    favouriteWeapon: "Pistol",
+    favouriteWeapon: "pistol",
   },
   {
     name: "Colonel Mustard",
@@ -52,7 +52,7 @@ const suspects = [
     age: 68,
     image: "assets/mustard.png",
     occupation: "Colonel",
-    favouriteWeapon: "Knife",
+    favouriteWeapon: "knife",
   },
   {
     name: "Mrs White",
@@ -64,7 +64,7 @@ const suspects = [
     age: "unknown",
     image: "assets/white.png",
     occupation: "Housekeeper",
-    favouriteWeapon: "Poison",
+    favouriteWeapon: "poison",
   },
 ];
 
@@ -221,9 +221,20 @@ const mystery = {
   killer: "",
   weapon: "",
   room: "",
+  favouriteWeapon: "",
+};
+
+const shuffleFavourite = () => {
+  suspects.forEach((suspect) => {
+    suspect.favouriteWeapon = randomSelector(weapons).id;
+    console.log(suspect.favouriteWeapon);
+  });
 };
 
 const pickKiller = () => {
+
+  shuffleFavourite();
+
   mystery.killer = randomSelector(suspects);
 
   document.getElementById("killer-card").style.background =
@@ -235,11 +246,13 @@ const pickKiller = () => {
     "killer-occupation"
   ).innerHTML = `${mystery.killer.occupation}`;
   document.getElementById("killer-image").classList.remove("hidden");
-  document.getElementById("killer-image").src 
-  = mystery.killer.image;
+  document.getElementById("killer-image").src = mystery.killer.image;
   document.getElementById(
     "killer-description"
   ).innerHTML = `${mystery.killer.description}`;
+  document.getElementById(
+    "favourite-weapon"
+  ).innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
 };
 
 const pickWeapon = () => {
@@ -256,6 +269,7 @@ const pickWeapon = () => {
     "weapon.description"
   ).innerHTML = `${mystery.weapon.description}`;
 };
+
 const pickRoom = () => {
   mystery.room = randomSelector(rooms);
   document.getElementById("room-name").innerHTML = `${mystery.room.name}`;
