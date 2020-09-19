@@ -186,9 +186,9 @@ const lounge = {
 };
 
 const mystery = {
-  killer: "",
-  weapon: "",
-  room: "",
+  killer: undefined,
+  weapon: undefined,
+  room: undefined,
 };
 
 const killerCard = {
@@ -217,7 +217,6 @@ const showMysteryInfo = {
   mysteryInfo: document.querySelector("#mysteryInfo"),
 }
 // ----------ARRAYS TO GROUP OBJECTS------------
-
 const suspects = [
   mrGreen,
   mrWhite,
@@ -261,7 +260,6 @@ const randomSelector = (array) => {
 
 
 // ----------Shuffle suspects favorite weapon--------------
-
 shuffleFavoriteWeapon = (suspects) => {
   return suspects.map(suspect => {
     const favoriteWeaponArray = [
@@ -278,8 +276,7 @@ const validateMysteryReveal = () => {
   } 
 };
 
-
-//-----------Actions invoked in the event handler on click on killerCard----------
+//-----------Actions invoked in the event handler showCard on killerCard----------
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
   document.getElementById("killerCard").style.background = mystery.killer.color;
@@ -288,11 +285,10 @@ const pickKiller = () => {
   killerCard.age.innerHTML = `${mystery.killer.age} years old.`;
   killerCard.description.innerHTML = mystery.killer.description;
   shuffleFavoriteWeapon(suspects);
-  console.log(suspects);
   killerCard.favoriteWeapon.innerHTML = `${mystery.killer.favoriteWeapon.name}`;
 };
 
-//---------Actions invoked in the event handler on click weaponCard-------
+//---------Actions invoked in the event handler showCard on weaponCard-------
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
   weaponCard.name.innerHTML = mystery.weapon.name;
@@ -300,14 +296,14 @@ const pickWeapon = () => {
   weaponImage.src = mystery.weapon.image;
 };
 
-//---------Actions invoked in the event handler on click roomCard--------
+//---------Actions invoked in the event handler showCard on roomCard--------
 const pickRoom = () => {
   mystery.room = randomSelector(rooms);
   roomCard.name.innerHTML = mystery.room.name;
   roomCard.image.src = mystery.room.image;
 };
 
-//--------Actions invoked in the getMystery event click---------
+//--------Actions invoked in the getMystery onclick---------
 const showMystery = () => {
   const isValidReveal = validateMysteryReveal();
   if (isValidReveal === true) {
@@ -320,34 +316,14 @@ const showMystery = () => {
   }
 };
 
+//---------Actions invoked in the newMystery onclick---------
+const newMystery = () => {
+  console.log(`Before return ${mystery.killer}`)
+  return mystery.value = undefined;
+};
+
+
 // --------------Loader------------------
-/*
-const showKiller = () => {
-  loader.classList.toggle("is-active");
-  setTimeout(() => {
-    loader.classList.toggle("is-active");
-    pickKiller();
-  }, 1000);
-};
-
-const showWeapon = () => {
-  loader.classList.toggle("is-active");
-  setTimeout(() => {
-    loader.classList.toggle("is-active");
-    pickWeapon();
-  }, 1000);
-};
-
-const showRoom = () => {
-  loader.classList.toggle("is-active");
-  setTimeout(() => {
-    loader.classList.toggle("is-active");
-    pickRoom();
-  }, 1000);
-};
-
-*/
-
 const getMystery = () => {
   loader.classList.toggle("is-active");
   setTimeout(() => {
@@ -356,16 +332,13 @@ const getMystery = () => {
   }, 1500);
 };
 
-
-//Experimenting with another loader 
-
 const showCard = (event) => {
   loader.classList.toggle("is-active");
   const clickValue = event.currentTarget.id;
   setTimeout(() => {
     loader.classList.toggle("is-active");
     if (clickValue === "killerCard") {
-        pickKiller();
+      pickKiller();
     } else if (clickValue === "weaponCard") {
       pickWeapon();
     } else if (clickValue === "roomCard") {
@@ -374,12 +347,7 @@ const showCard = (event) => {
   }, 700);
 };
 
-
-
 //-----------------------EVENTLISTENERS-------------------------
 document.getElementById("killerCard").addEventListener("click", showCard);
 document.getElementById("weaponCard").addEventListener("click", showCard);
 document.getElementById("roomCard").addEventListener("click", showCard);
-
-
-
