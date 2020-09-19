@@ -291,7 +291,7 @@ const pickKiller = () => {
   killerCard.age.innerHTML = `${mystery.killer.age} years old.`;
   killerCard.description.innerHTML = mystery.killer.description;
   shuffleFavoriteWeapon(suspects);
-  killerCard.favoriteWeapon.innerHTML = `${mystery.killer.favoriteWeapon.name}`;
+  killerCard.favoriteWeapon.innerHTML = `Weapon of coice: ${mystery.killer.favoriteWeapon.name}`;
 };
 
 //---------Actions invoked in the event handler showCard on weaponCard-------
@@ -321,7 +321,6 @@ const showMystery = () => {
     showMysteryInfo.mysteryInfo.innerHTML = `Hush! Remember to keep it a secret!`;
   } else {
     mysteryText.classList.toggle("is-active");
-
     showMysteryInfo.title.innerHTML = `Error`;
     showMysteryInfo.mysteryReveal.innerHTML = `Please pick a card from each deck to unravel the mystery.`
   }
