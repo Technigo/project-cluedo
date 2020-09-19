@@ -115,21 +115,21 @@ const weapons = [
 
 
 const rooms = [
-  'diningRoom', 
-  'conservatory', 
-  'kitchen', 
-  'study', 
-  'library', 
-  'billiardRoom', 
-  'lounge', 
-  'ballroom', 
-  'hall', 
-  'spa', 
-  'livingRoom', 
-  'observatory', 
-  'theatre', 
-  'guestHouse', 
-  'patio'
+  'Dining Room', 
+  'Conservatory', 
+  'Kitchen', 
+  'Study', 
+  'Library', 
+  'Billiard Room', 
+  'Lounge', 
+  'Ballroom', 
+  'Hall', 
+  'Spa', 
+  'Living Room', 
+  'Observatory', 
+  'Theatre', 
+  'Guest House', 
+  'Patio'
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
@@ -151,7 +151,7 @@ room: ''
 }
 
 // This function will be invoked when you click on the killer card.
-function pickKiller(mystery) {
+function pickKiller() {
 
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects);
@@ -167,14 +167,14 @@ function pickKiller(mystery) {
 document.getElementById('killerCard').addEventListener('click', pickKiller);
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
-function pickWeapon(mystery) {
+function pickWeapon() {
   mystery.weapon = randomSelector(weapons);
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
   document.getElementById('weapon.Weigth').innerHTML = `${mystery.weapon.weigth}`;
 }
 document.getElementById('weaponCard').addEventListener('click', pickWeapon);
 
-function pickRoom(mystery) {
+function pickRoom() {
   mystery.room = randomSelector(rooms);
   document.getElementById('roomName').innerHTML = `${mystery.room}`;
 }
@@ -185,7 +185,7 @@ document.getElementById('roomCard').addEventListener('click', pickRoom);
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
-  document.getElementById('revealButton').innerText = `The murder was committed by Jacob Green, in the living room with a rope.`
+  document.getElementById('revealButton').innerText = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
 }
 
 //Göra om till modernare funktioner: =>
