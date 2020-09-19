@@ -1,9 +1,9 @@
-// Objects
+// Suspects
 
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  color: '#4b8666',
   description: 'He has a lot of connections',
   age: 45,
   image: 'assets/green.png',
@@ -14,7 +14,7 @@ const mrGreen = {
 const profPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'purple',
+  color: '#a361a1',
   description: 'He fancies beautiful women',
   age: 37,
   image: 'assets/plum.png',
@@ -25,7 +25,7 @@ const profPlum = {
 const msScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'red',
+  color: '#9f2d22',
   description: 'She is a femme fatale',
   age: 25,
   image: 'assets/scarlet.png',
@@ -36,7 +36,7 @@ const msScarlet = {
 const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
-  color: 'blue',
+  color: '#686ab5',
   description: 'She is a former miss USA',
   age: 55,
   image: 'assets/peacock.png',
@@ -47,7 +47,7 @@ const mrsPeacock = {
 const colMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'yellow',
+  color: '#efb72c',
   description: 'He is a colonial imperialist',
   age: 65,
   image: 'assets/mustard.png',
@@ -58,7 +58,7 @@ const colMustard = {
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
-  color: 'white',
+  color: '#ddd4c5',
   description: 'She works at a prestigious restaurant',
   age: 60,
   image: 'assets/white.png',
@@ -66,89 +66,156 @@ const mrsWhite = {
   favouriteWeapon: 'candlestick',
 }
 
+// Weapons
+
 const rope = {
   name: 'rope',
   weight: 10,
   id: 'rope',
+  favouriteRoom: 'Hall',
+  image: 'assets/rope.png',
 }
 
 const knife = {
   name: 'knife',
   weight: 5,
   id: 'knife',
+  favouriteRoom: 'Kitchen',
+  image: '',
 }
 
 const candlestick = {
   name: 'candlestick',
   weight: 20,
   id: 'candlestick',
+  favouriteRoom: 'Ballroom',
+  image: '',
 }
 
 const dumbbell = {
   name: 'dumbbell',
   weight: 50,
   id: 'dumbbell',
+  favouriteRoom: 'Spa',
+  image: '',
 }
 
 const poison = {
   name: 'poison',
   weight: 4,
   id: 'poison',
+  favouriteRoom: 'Patio',
+  image: '',
 }
 
 const axe = {
   name: 'axe',
   weight: 30,
   id: 'axe',
+  favouriteRoom: 'Theater',
+  image: '',
 }
 
 const bat = {
   name: 'bat',
   weight: 25,
   id: 'bat',
+  favouriteRoom: 'Billiard Room',
+  image: '',
 }
 
 const trophy = {
   name: 'trophy',
   weight: 15,
   id: 'trophy',
+  favouriteRoom: 'Living Room',
+  image: '',
 }
 
 const pistol = {
   name: 'pistol',
   weight: 16,
   id: 'pistol',
+  favouriteRoom: 'Study',
+  image: '',
 }
 
-const diningRoom = 'Dining Room'
+// Rooms
 
-const conservatory = 'Conservatory'
+const diningRoom = {
+  name: 'Dining Room',
+  image: '',
+}
 
-const kitchen = 'Kitchen'
+const conservatory = {
+  name: 'Conservatory',
+  image: '',
+}
 
-const study = 'Study'
+const kitchen = {
+  name: 'Kitchen',
+  image: '',
+}
 
-const library = 'Library'
+const study = {
+  name: 'Study',
+  image: '',
+}
 
-const billiardRoom = 'Billiard Room'
+const library = {
+  name: 'Library',
+  image: '',
+}
 
-const lounge = 'Lounge'
+const billiardRoom = {
+  name: 'Billiard Room',
+  image: '',
+}
 
-const ballroom = 'Ballroom'
+const lounge = {
+  name: 'Lounge',
+  image: '',
+}
 
-const hall = 'Hall'
+const ballroom = {
+  name: 'Ballroom',
+  image: '',
+}
 
-const spa = 'Spa'
+const hall = {
+  name: 'Hall',
+  image: '',
+}
 
-const livingRoom = 'Living Room'
+const spa = {
+  name: 'Spa',
+  image: '',
+}
 
-const observatory = 'Observatory'
+const livingRoom = {
+  name: 'Living Room',
+  image: '',
+}
 
-const theater = 'Theater'
+const observatory = {
+  name: 'Observatory',
+  image: '',
+}
 
-const guestHouse = 'Guest House'
+const theater = {
+  name: 'Theater',
+  image: '',
+}
 
-const patio = 'Patio'
+const guestHouse = {
+  name: 'Guest House',
+  image: '',
+}
+
+const patio = {
+  name: 'Patio',
+  image: '',
+}
 
 // Arrays
 
@@ -221,12 +288,14 @@ const randomSelector = array => {
 
 // Mystery storage
 
-let mystery = {
+const mystery = {
   killer: undefined,
+  favouriteWeapon: undefined,
   pickedWeapon: undefined,
   weapon: undefined,
+  favouriteRoom: undefined,
+  pickedRoom: undefined,
   room: undefined,
-  favouriteWeapon: undefined,
 };
 
 // This function will change favourite weapons of each person
@@ -273,19 +342,19 @@ killerCard.onclick = killerAnimation;
 
 // Actions related to Weapon deck
 
-const weaponAnimation = () => {
-  weaponLoader.style.display = "block";
-  weaponName.innerHTML = '';
-  weaponWeight.innerHTML = '';
-  setTimeout(pickWeapon, 2000);
-};
+// const weaponAnimation = () => {
+//   weaponLoader.style.display = "block";
+//   weaponName.innerHTML = '';
+//   weaponWeight.innerHTML = '';
+//   setTimeout(pickWeapon, 2000);
+// };
 
-const pickWeapon = () => {
-  mystery.weapon = randomSelector(weapons);
-  weaponLoader.style.display = "none";
-  weaponName.innerHTML = mystery.weapon.name;
-  weaponWeight.innerHTML = mystery.weapon.weight;
-};
+// const pickWeapon = () => {
+//   mystery.weapon = randomSelector(weapons);
+//   weaponLoader.style.display = "none";
+//   weaponName.innerHTML = mystery.weapon.name;
+//   weaponWeight.innerHTML = mystery.weapon.weight;
+// };
 
 // weaponCard.onclick = weaponAnimation;
 
@@ -327,6 +396,7 @@ const pickFavouriteWeapon = (suspect) => {
   });
   // console.log(mysteryWeapon);
   mystery.weapon = mysteryWeapon;
+  mystery.favouriteRoom = mysteryWeapon.favouriteRoom;
   weaponLoader.style.display = "none";
   weaponName.innerHTML = mystery.weapon.name;
   weaponWeight.innerHTML = mystery.weapon.weight;
@@ -335,6 +405,49 @@ const pickFavouriteWeapon = (suspect) => {
 weaponCard.onclick = favouriteWeaponAnimation;
 
 // Actions related to Room deck
+
+const favouriteRoomAnimation = () => {
+  if (mystery.weapon === undefined) {
+    revealedMystery.innerHTML = ('Pick a weapon first!');
+  } else {
+    roomLoader.style.display = "block";
+    roomName.innerHTML = '';
+    setTimeout(function () {
+      pickFavouriteRoom(mystery.weapon);
+    }, 2000);
+  };
+};
+
+const favouriteRoomDuplicated = (elementToPopulate, howManyTimes) => {
+  let result = [];
+  for (let i = 0; i < howManyTimes; i++) {
+    result.push(elementToPopulate);
+  };
+  return result;
+};
+
+const pickFavouriteRoom = (weapon) => {
+  const newArrayOfRooms = rooms.map(a => a.name);
+  console.log(newArrayOfRooms);
+  const randomRooms = [
+    ...newArrayOfRooms,
+    ...favouriteRoomDuplicated(weapon.favouriteRoom, 30)
+  ];
+  console.log(favouriteRoomDuplicated(weapon.favouriteRoom, 30));
+  console.log(randomRooms);
+  mystery.pickedRoom = randomSelector(randomRooms);
+  const mysteryRoom = rooms.find((item) => {
+    if (item.name === mystery.pickedRoom) {
+      return item;
+    };
+  });
+  console.log(mysteryRoom);
+  mystery.room = mysteryRoom;
+  roomLoader.style.display = "none";
+  roomName.innerHTML = mystery.room.name;
+};
+
+roomCard.onclick = favouriteRoomAnimation;
 
 const roomAnimation = () => {
   roomLoader.style.display = "block";
@@ -348,7 +461,7 @@ const pickRoom = () => {
   roomName.innerHTML = mystery.room;
 };
 
-roomCard.onclick = roomAnimation;
+// roomCard.onclick = roomAnimation;
 
 // Functions related to revelation of mystery 
 
