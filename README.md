@@ -1,13 +1,12 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week's project is to create a cluedo project picker.
 
 ## The problem
+The most challenging was definately the JavaScript part. 
+First I looked at the Technigo-material for this week at Canvas, done the labs, to be more prepared. Then forked the repository and looked at the code and tasks. Googled a lot and find solutions as well as testing/playing around. Also the demosession and repo with my teammates made me inspired and got me inputs/help with my problems.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+ If I had more time I would like to add more code to make it more like a real game and more visual effects as well as more JavaScript effects, and more styling.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
