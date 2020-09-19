@@ -5,6 +5,7 @@ body {
 }
 
 h1 {
+  margin: 30px 0 40px 0;
   color: crimson;
   font-size: 50px;
   font-family: "Nosifer", cursive;
@@ -177,24 +178,9 @@ img {
   flex-direction: column;
 }
 
-.mystery-reveald-container {
-  display: flex;
-  width: 300px;
-  height: 100px;
-  padding: 10px;
-  border: 10px solid gold;
-  border-style: ridge;
-}
-
-.mystery-reveald {
-  font-size: 20px;
-  color: #fff;
-  /* overflow: hidden; */
-}
-
 button {
   width: 205px;
-  margin: 30px 0;
+  margin: 0 0 50px 0;
   padding: 15px 25px;
   background-color: #960e29;
   background-image: linear-gradient(#960e29, #ef4e6e);
@@ -226,10 +212,26 @@ button:focus,
   outline: none;
 }
 
+.mystery-reveald-container {
+  display: flex;
+  /* justify-content: center; */
+  width: 300px;
+  height: 100px;
+  padding: 10px;
+  border: 10px solid gold;
+  border-style: ridge;
+}
+
+.mystery-reveald {
+  font-size: 20px;
+  color: gold;
+}
+
 /* FOOTER */
 
 .footer {
   width: 100%;
+  margin-top: 100px;
   padding: 10px;
   /* background: yellow; */
   color: crimson;

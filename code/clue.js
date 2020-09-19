@@ -181,6 +181,13 @@ const randomSelector = (array) => {
 };
 
 const shuffleFavouriteWeapon = (array) => {
+  const favouriteWeapon = array[Math.floor(Math.random() * array.length)];
+  for (let i = 0; i < 5; i++) {
+    array.push(favouriteWeapon);
+  }
+  array.forEach((item, index) => {
+    console.log(array[index].name);
+  });
   return array[Math.floor(Math.random() * array.length)].name;
 };
 
@@ -191,7 +198,7 @@ let mystery = {
   room: "",
 };
 
-// PICK KILLER //
+// *** PICK KILLER *** //
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   const mysteryReveald = document.getElementById("mysteryReveald");
@@ -242,7 +249,7 @@ const pickKiller = () => {
       killerDescription.innerHTML = mystery.killer.description;
 
       setTimeout(() => (killerDeckFront.style.opacity = 1), 50);
-    }, 3000);
+    }, 2000);
   } else {
     // Add class active to card back
     killerDeckFront.classList.toggle("active");
@@ -258,7 +265,7 @@ const pickKiller = () => {
   }
 };
 
-// PICK WEAPON //
+// *** PICK WEAPON *** //
 // This function will be invoked when you click on the weapon card.
 const pickWeapon = () => {
   const mysteryReveald = document.getElementById("mysteryReveald");
@@ -296,7 +303,7 @@ const pickWeapon = () => {
       weaponImage.src = mystery.weapon.image;
 
       setTimeout(() => (weaponDeckFront.style.opacity = 1), 50);
-    }, 3000);
+    }, 2000);
   } else {
     // Add class active to card back
     weaponDeckFront.classList.toggle("active");
@@ -311,7 +318,7 @@ const pickWeapon = () => {
   }
 };
 
-// PICK ROOM //
+// *** PICK ROOM *** //
 // This function will be invoked when you click on the room card.
 const pickRoom = () => {
   const mysteryReveald = document.getElementById("mysteryReveald");
@@ -345,7 +352,7 @@ const pickRoom = () => {
       roomName.innerHTML = `${mystery.room}`;
 
       setTimeout(() => (roomDeckFront.style.opacity = 1), 50);
-    }, 3000);
+    }, 2000);
   } else {
     // Add class active to card back
     roomDeckFront.classList.toggle("active");
@@ -360,14 +367,17 @@ const pickRoom = () => {
   }
 };
 
-// Will be invoked when you click that button. It should show something like:
+// *** REVEAL THE CRIME *** //
+// Will be invoked when you click that button.
 const revealMystery = () => {
   let revealMessage = "";
   document.getElementById("mysteryReveald").innerHTML = "";
 
   if (mystery.killer && mystery.weapon && mystery.room) {
     // document.getElementById("mysteryReveald").innerHTML =
-    revealMessage = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
+    revealMessage = `The murder was commited by ${mystery.killer.firstName} ${
+      mystery.killer.lastName
+    }, in the ${mystery.room.toLowerCase()} with a ${mystery.weapon.name.toLowerCase()}.`;
   } else {
     // document.getElementById("mysteryReveald").innerHTML =
     revealMessage = "Pick a card from each deck to reveal the mystery.";
