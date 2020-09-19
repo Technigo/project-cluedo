@@ -316,7 +316,7 @@ const showMystery = () => {
     showMysteryInfo.mysteryInfo.innerHTML = `Hush! Remember to keep it a secret!`;
   } else {
     showMysteryInfo.title.innerHTML = `Error`;
-    showMysteryInfo.mysteryReveal.innerHTML = `Please pick one card from each deck to unravel the mystery.`
+    showMysteryInfo.mysteryReveal.innerHTML = `Please pick a card from each deck to unravel the mystery.`
   }
 };
 
@@ -360,19 +360,21 @@ const getMystery = () => {
 //Experimenting with another loader 
 
 const showCard = (event) => {
-  console.log(event);
   loader.classList.toggle("is-active");
+  const clickValue = event.currentTarget.id;
   setTimeout(() => {
     loader.classList.toggle("is-active");
-    if (event.srcElement.id === "killerCard") {
+    if (clickValue === "killerCard") {
         pickKiller();
-    } else if (event.srcElement.id === "weaponCard") {
+    } else if (clickValue === "weaponCard") {
       pickWeapon();
-    } else if (event.srcElement.id === "roomCard") {
+    } else if (clickValue === "roomCard") {
       pickRoom();
     }
   }, 700);
 };
+
+
 
 //-----------------------EVENTLISTENERS-------------------------
 document.getElementById("killerCard").addEventListener("click", showCard);
