@@ -4,11 +4,63 @@ const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
   color: 'green',
-  description: 'He has a lot of connections',
+  description: 'A money-oriented businessman with a lot of connections in the mafia...',
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
+
+const colMustard = {
+  firstName: 'William',
+  lastName: 'Mustard',
+  color: 'yellow',
+  description: 'A dignified and dangerous military man. Also and big game hunter...',
+  age: 72,
+  image: 'assets/mustard.png',
+  occupation: 'Military colonel'
+}
+
+const mrsPeacock = {
+  firstName: 'Amelia',
+  lastName: 'Peacock',
+  color: 'pink',
+  description: 'An dignified and beautiful grande dame. The richest woman in England. Her husbands all have died mysterious deaths...',
+  age: 60,
+  image: 'assets/peacock.png',
+  occupation: 'Grande Dame'
+}
+
+const profPlum = {
+  firstName: 'Oliver',
+  lastName: 'Plum',
+  color: 'purple',
+  description: 'A quick-witted alchemy professor, maybe a little bit to interested in experimenting with different elixirs...',
+  age: 46,
+  image: 'assets/plum.png',
+  occupation: 'Professor'
+}
+
+const missScarlet = {
+  firstName: 'Eveline',
+  lastName: 'Scarlett',
+  color: 'red',
+  description: 'An attractive, cunning and mysterious woman. A museum curator and also a master thief...',
+  age: 35,
+  image: 'assets/scarlett.png',
+  occupation: 'Museum Curator'
+}
+
+const mrsWhite = {
+  firstName: 'Charlotte',
+  lastName: 'White',
+  color: 'white',
+  description: 'House Keeper at Scaryville Mansion. Knows every secret passage and dark corner of the house...',
+  age: 73,
+  image: 'assets/white.png',
+  occupation: 'Housekeeper'
+}
+
+
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
