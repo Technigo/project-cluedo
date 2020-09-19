@@ -1,7 +1,7 @@
 // -----------------GENERAL VARIABLES-----------
 const loader = document.querySelector(".loader-container");
 const mysteryText = document.querySelector(".mystery-text-container");
-const reloadButton = document.querySelector(".new-mystery-button")
+const reloadButton = document.querySelector(".new-mystery-button");
 
 // ----------------OBJECTS---------------
 const mrGreen = {
@@ -204,24 +204,25 @@ const killerCard = {
   color: document.getElementById("killerColor"),
   favoriteWeapon: document.getElementById("killerFavoriteWeapon"),
   description: document.getElementById("killerDescription"),
-}
+};
 
 const weaponCard = {
   name: document.getElementById("weaponName"),
   weight: document.getElementById("weaponWeight"),
   image: document.getElementById("weaponImage")
-}
+};
 
 const roomCard = {
   name: document.getElementById("roomName"),
   image: document.getElementById("roomImage"),
-}
+};
 
 const showMysteryInfo = {
   title: document.querySelector("#mysteryTitle"),
   mysteryReveal: document.querySelector("#mysterySecret"),
   mysteryInfo: document.querySelector("#mysteryInfo"),
-}
+};
+
 // ----------ARRAYS TO GROUP OBJECTS------------
 const suspects = [
   mrGreen,
@@ -314,15 +315,14 @@ const showMystery = () => {
   reloadButton.classList.toggle("is-active");
   const isValidReveal = validateMysteryReveal();
   if (isValidReveal === true) {
-      mysteryText.classList.toggle("is-active");
-
+    mysteryText.classList.toggle("is-active");
     showMysteryInfo.title.innerHTML = `Mystery`;
     showMysteryInfo.mysteryReveal.innerHTML = `Mr Black will be killed by ${mystery.killer.title} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`;
     showMysteryInfo.mysteryInfo.innerHTML = `Hush! Remember to keep it a secret!`;
   } else {
     mysteryText.classList.toggle("is-active");
     showMysteryInfo.title.innerHTML = `Error`;
-    showMysteryInfo.mysteryReveal.innerHTML = `Please pick a card from each deck to unravel the mystery.`
+    showMysteryInfo.mysteryReveal.innerHTML = `Please pick a card from each deck to unravel the mystery.`;
   }
 };
 
