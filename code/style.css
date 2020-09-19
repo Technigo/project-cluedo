@@ -1,19 +1,42 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  background-color: black;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  position: absolute;
+  font-family: sans-serif;
+  font-weight: 400000;
+  color :white;
+
+}
+
+img {
+  max-width: 100%;
+  z-index: -1;
+  margin-bottom: 100px;
 }
 
 p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+  margin: 4px;
+  font-weight: bold;
+  background-color: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
 }
 
 .cards {
+  position: absolute;
+  padding: 50px;
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -31,7 +54,7 @@ p {
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background:#000;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -40,8 +63,7 @@ p {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
+  background: #000;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -49,10 +71,20 @@ p {
 
 button {
   padding: 8px 16px;
-  background: crimson;
-  border: none;
+  background:black;
+  border: 5px white solid;
+  color: white;
   font-size: 20px;
-  border-radius: 8px;
+  border-radius: 16px;
   display: block;
-  margin: 0 auto;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-top: 80px;
+  margin-bottom: 20px;
 }
