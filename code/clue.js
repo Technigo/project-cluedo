@@ -199,7 +199,7 @@ const pickKiller = () => {
   ).innerHTML = `${mystery.killer.description}`;
   document.getElementById(
     "killerFavouriteWeapon"
-  ).innerHTML = `Loves to use his ${mystery.killer.favouriteWeapon}`;
+  ).innerHTML = `Loves to use their ${mystery.killer.favouriteWeapon}`;
 };
 
 //when you click on the killerCard card it will call pickKiller function
