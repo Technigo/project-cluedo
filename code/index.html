@@ -20,6 +20,7 @@
   <body>
     <h1>CLUEDO</h1>
     <section class="cards">
+      <!-- KILLER DECK -->
       <article class="deck killer-deck" id="killerCard" onclick="pickKiller()">
         <div id="killerDeckFront" class="front">
           <h3>SUSPECT</h3>
@@ -47,6 +48,7 @@
         </div>
       </article>
 
+      <!-- WEAPON DECK -->
       <article class="deck weapon-deck" id="weaponCard" onclick="pickWeapon()">
         <div id="weaponDeckFront" class="front">
           <h3>WEAPON</h3>
@@ -67,6 +69,7 @@
         </div>
       </article>
 
+      <!-- ROOM DECK -->
       <article class="deck room-deck" id="roomCard" onclick="pickRoom()">
         <div id="roomDeckFront" class="front">
           <h3>ROOM</h3>
@@ -86,15 +89,18 @@
       </article>
     </section>
 
+    <!-- REVEAL MYSTERY -->
     <section class="reveal">
-      <!-- <p id="mystery" class="mystery"></p> -->
-      <span id="mysteryReveald" class="mysteryReveald"></span>
+      <div class="mystery-reveald-container">
+        <span id="mysteryReveald" class="mystery-reveald"></span>
+      </div>
       <button onclick="revealMystery()">Reveal the crime</button>
     </section>
 
-    <!-- <footer>
-      <p>Petra Almgren for Technigo Bootcamp</p>
-    </footer> -->
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>&copy;<a href="mailto:petra.eriksson@live.com">Petra Almgren</a> for Technigo Bootcamp 2020</p>
+    </footer>
 
     <script src="clue.js"></script>
   </body>

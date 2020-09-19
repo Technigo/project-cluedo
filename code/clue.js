@@ -216,12 +216,6 @@ const pickKiller = () => {
     killerDeckFront.classList.toggle("active");
     killerDeckBack.classList.toggle("active");
 
-    // Select a random killer from the suspects and add to the mystery object
-    mystery.killer = randomSelector(suspects);
-
-    // Select a random favouriteWeapon and add to the suspect
-    mystery.killer.favouriteWeapon = shuffleFavouriteWeapon(weapons);
-
     // Start loader
     loader.style.display = "flex";
     setTimeout(() => {
@@ -230,6 +224,12 @@ const pickKiller = () => {
       // Show card front, hide card back
       killerDeckFront.style.display = "flex";
       killerDeckBack.style.display = "none";
+
+      // Select a random killer from the suspects and add to the mystery object
+      mystery.killer = randomSelector(suspects);
+
+      // Select a random favouriteWeapon and add to the suspect
+      mystery.killer.favouriteWeapon = shuffleFavouriteWeapon(weapons);
 
       // Show killer details
       document.getElementById("killerCard").style.background =
@@ -254,8 +254,7 @@ const pickKiller = () => {
     // Show card back, hide card front
     killerDeckBack.style.display = "flex";
     killerDeckFront.style.display = "none";
-    setTimeout(() => (killerDeckFront.style.opacity = 0), 50);
-    // killerDeckFront.style.opacity = 0;
+    killerDeckFront.style.opacity = 0;
   }
 };
 
@@ -279,9 +278,6 @@ const pickWeapon = () => {
     weaponDeckFront.classList.toggle("active");
     weaponDeckBack.classList.toggle("active");
 
-    // Select a random weapon and add to the mystery object.
-    mystery.weapon = randomSelector(weapons);
-
     // Start loader
     loader.style.display = "flex";
     setTimeout(() => {
@@ -290,6 +286,9 @@ const pickWeapon = () => {
       // Show card front, hide card back
       weaponDeckFront.style.display = "flex";
       weaponDeckBack.style.display = "none";
+
+      // Select a random weapon and add to the mystery object.
+      mystery.weapon = randomSelector(weapons);
 
       // Show weapon details
       weaponName.innerHTML = mystery.weapon.name;
@@ -330,9 +329,6 @@ const pickRoom = () => {
     roomDeckFront.classList.toggle("active");
     roomDeckBack.classList.toggle("active");
 
-    // Select a random room and add to the mystery object.
-    mystery.room = randomSelector(rooms);
-
     // Start loader
     loader.style.display = "flex";
     setTimeout(() => {
@@ -341,6 +337,9 @@ const pickRoom = () => {
       // Show card front, hide card back
       roomDeckFront.style.display = "flex";
       roomDeckBack.style.display = "none";
+
+      // Select a random room and add to the mystery object.
+      mystery.room = randomSelector(rooms);
 
       // Show room details
       roomName.innerHTML = `${mystery.room}`;
@@ -363,14 +362,28 @@ const pickRoom = () => {
 
 // Will be invoked when you click that button. It should show something like:
 const revealMystery = () => {
-  if (mystery.killer && mystery.weapon && mystery.room) {
-    document.getElementById(
-      "mysteryReveald"
-    ).innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
-  } else {
-    document.getElementById("mysteryReveald").innerHTML =
-      "Pick a card from each deck to reveal the mystery";
-  }
-};
+  let revealMessage = "";
+  document.getElementById("mysteryReveald").innerHTML = "";
 
-const emptyMysteryObject = () => {};
+  if (mystery.killer && mystery.weapon && mystery.room) {
+    // document.getElementById("mysteryReveald").innerHTML =
+    revealMessage = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
+  } else {
+    // document.getElementById("mysteryReveald").innerHTML =
+    revealMessage = "Pick a card from each deck to reveal the mystery.";
+  }
+
+  console.log("revealmessage: " + revealMessage);
+  const typedTextSpan = document.querySelector(".mystery-reveald");
+  const typingDelay = 20;
+  let charIndex = 0;
+
+  const type = () => {
+    if (charIndex < revealMessage.length) {
+      typedTextSpan.textContent += revealMessage.charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingDelay);
+    }
+  };
+  type();
+};

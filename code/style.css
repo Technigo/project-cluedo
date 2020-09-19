@@ -10,6 +10,11 @@ h1 {
   font-family: "Nosifer", cursive;
   text-shadow: 2px 2px #fff;
   text-align: center;
+  transform: translate(-4px, 15px) rotate(0deg);
+}
+
+h1:hover {
+  animation: shake 0.16s infinite alternate;
 }
 
 h2 {
@@ -18,22 +23,14 @@ h2 {
   background: #2c2c2c;
   width: 100%;
   text-align: center;
-  /* border: 1px solid gold; */
 }
 
 h3 {
   font-size: 32px;
   margin: 20px 0 5px 0;
-  /* background: #000; */
   background: rgba(18, 18, 18, 0.5);
   width: 100%;
   text-align: center;
-}
-
-.weapon-deck h3,
-.room-deck h3 {
-  /* background: rgba(18, 18, 18, 0.5); */
-  /* border: 1px solid gold; */
 }
 
 h2,
@@ -55,10 +52,13 @@ img {
   max-width: 200px;
 }
 
+/* LOADER ANIMATION */
+
 .loader {
   display: none;
   justify-content: center;
   align-items: center;
+  height: 50%;
 }
 
 .loader > span {
@@ -81,13 +81,7 @@ img {
   animation-delay: 0.4s;
 }
 
-@keyframes bounce {
-  to {
-    width: 16px;
-    height: 16px;
-    transform: translate3d(0, -16px, 0);
-  }
-}
+/* COMMON FOR ALL DECKS */
 
 .cards {
   margin: auto;
@@ -105,14 +99,23 @@ img {
   border-radius: 3px;
 }
 
+.deck:hover {
+  cursor: pointer;
+}
+
 .front {
   display: none;
   opacity: 0;
-  transition: opacity 1s ease-in;
+  transition: opacity 0.5s ease-in;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   height: 100%;
+}
+
+.information-container {
+  width: 100%;
+  padding: 10px;
 }
 
 .back {
@@ -126,9 +129,7 @@ img {
   margin-top: 100px;
 }
 
-.loader {
-  height: 50%;
-}
+/* SPECIFIC FOR KILLER DECK */
 
 .killer-label {
   padding: 0 4px;
@@ -143,21 +144,18 @@ img {
   padding-left: 0;
 }
 
+.killer-info-container {
+  width: 100%;
+  padding: 10px;
+}
+
+/* SPECIFIC FOR WEAPON & ROOM DECK */
+
 .weapon-label,
 .room-label {
   padding: 0 5px;
   font-size: 12px;
   color: #fff;
-}
-
-.information-container {
-  width: 100%;
-  padding: 10px;
-}
-
-.killer-info-container {
-  width: 100%;
-  padding: 10px;
 }
 
 .weapon-deck .front {
@@ -170,16 +168,33 @@ img {
   background-size: cover;
 }
 
+/* REVEAL MYSTERY */
+
 .reveal {
   margin-top: 50px;
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
+.mystery-reveald-container {
+  display: flex;
+  width: 300px;
+  height: 100px;
+  padding: 10px;
+  border: 10px solid gold;
+  border-style: ridge;
+}
+
+.mystery-reveald {
+  font-size: 20px;
+  color: #fff;
+  /* overflow: hidden; */
+}
+
 button {
-  margin: auto;
-  margin-top: 30px;
+  width: 205px;
+  margin: 30px 0;
   padding: 15px 25px;
   background-color: #960e29;
   background-image: linear-gradient(#960e29, #ef4e6e);
@@ -211,20 +226,82 @@ button:focus,
   outline: none;
 }
 
-.mysteryReveald {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 20px;
-  background: #fff;
+/* FOOTER */
+
+.footer {
+  width: 100%;
+  padding: 10px;
+  /* background: yellow; */
+  color: crimson;
 }
 
-footer {
+.footer p {
   background: #121212;
-  color: #fff;
 }
 
-@media (min-width: 600px) {
+.footer a {
+  text-decoration: none;
+  color: crimson;
+}
+
+/* KEYFRAMES */
+
+@keyframes bounce {
+  to {
+    width: 16px;
+    height: 16px;
+    transform: translate3d(0, -16px, 0);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(-3px, 14px) rotate(-1deg);
+  }
+  33% {
+    transform: translate(-3px, 16px) rotate(1deg);
+  }
+  66% {
+    transform: translate(-5px, 16px) rotate(-1deg);
+  }
+  100% {
+    transform: translate(-5px, 14px) rotate(1deg);
+  }
+}
+
+@keyframes blink {
+  0% {
+    background-color: #ccc;
+  }
+  49% {
+    background-color: #ccc;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #ccc;
+  }
+}
+
+/* MEDIA QUARIES */
+
+@media (min-width: 700px) {
   h1 {
     font-size: 80px;
+  }
+  .mystery-reveald-container {
+    width: 630px;
+    height: 75px;
+  }
+}
+
+@media (min-width: 1070px) {
+  .mystery-reveald-container {
+    width: 980px;
+    height: 50px;
   }
 }
