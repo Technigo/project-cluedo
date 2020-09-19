@@ -5,17 +5,19 @@ const mrGreen = {
   color: "green",
   description: "He has a lot of connections",
   age: 45,
-  image: "assets/green.png",
+  image: "./assets/green.png",
   occupation: "Entrepreneur",
+  favouriteWeapon: "knife",
 };
 const professorPlum = {
   firstName: "Victor",
   lastName: "Plum",
   color: "purple",
-  description: "Heis funny",
+  description: "He is funny",
   age: 40,
-  image: "assets/plum.png",
+  image: "./assets/plum.png",
   occupation: "Professor of Mathematics",
+  favouriteWeapon: "axe",
 };
 const missScarlet = {
   firstName: "Cassandra",
@@ -23,8 +25,9 @@ const missScarlet = {
   color: "orange",
   description: "She is beautiful and very smart",
   age: 30,
-  image: "assets/scarlet.png",
+  image: "./assets/scarlet.png",
   occupation: "Writer",
+  favouriteWeapon: "rope",
 };
 const peacock = {
   firstName: "Eleanor",
@@ -32,8 +35,9 @@ const peacock = {
   color: "blue",
   description: "She is elegant and loves luxury",
   age: 35,
-  image: "assets/peacock.png",
+  image: "./assets/peacock.png",
   occupation: "An antique boutique owner",
+  favouriteWeapon: "poison",
 };
 const mrMustard = {
   firstName: "Jack",
@@ -41,8 +45,9 @@ const mrMustard = {
   color: "yellow",
   description: "He is tough and stubborn",
   age: 60,
-  image: "assets/mustard.png",
+  image: "./assets/mustard.png",
   occupation: "Colonel",
+  favouriteWeapon: "candlestick",
 };
 const mrsWhite = {
   firstName: "Carol",
@@ -50,47 +55,66 @@ const mrsWhite = {
   color: "white",
   description: "Perfect negotiator",
   age: 77,
-  image: "assets/white.png",
+  image: "./assets/white.png",
   occupation: "Household manager",
+  favouriteWeapon: "pistol",
 };
 
 // weapons objects
 
 const rope = {
   name: "rope",
+  id: "rope",
   weight: 10,
+  color: "purple",
 };
 const knife = {
   name: "knife",
+  id: "knife",
   weight: 0.2,
+  color: "red",
 };
 const candlestick = {
   name: "candlestick",
+  id: "candlestick",
   weight: 5,
+  color: "beige",
 };
 const dumbbell = {
   name: "dumbbell",
+  id: "dumbbell",
   weight: 7,
+  color: "orange",
 };
 const poison = {
   name: "poison",
+  id: "poison",
   weight: 0.1,
+  color: "blue",
 };
 const axe = {
   name: "axe",
+  id: "axe",
   weight: 2,
+  color: "green",
 };
 const bat = {
   name: "bat",
+  id: "bat",
   weight: 3,
+  color: "yellow",
 };
 const trophy = {
   name: "trophy",
+  id: "trophy",
   weight: 1,
+  color: "pink",
 };
 const pistol = {
   name: "pistol",
+  id: "pistol",
   weight: 0.6,
+  color: "grey",
 };
 
 // grouping killers, weapons and rooms in arrays
@@ -144,14 +168,25 @@ const mystery = {
   killer: null,
   weapon: null,
   room: null,
+  //favouriteWeapon: null,
 };
+
+//shuffleWeapon function
+const shuffleWeapon = (arrayOfSuspects) => {
+  arrayOfSuspects.forEach((suspect) => {
+    suspect.favouriteWeapon = randomSelector(weapons).id;
+    //console.log(suspect.favouriteWeapon);
+  });
+};
+shuffleWeapon(suspects);
 
 // This function randomly selects a killer from the suspects. And add that to the mystery object.
 const pickKiller = () => {
+  //mystery.favouriteWeapon = shuffleWeapon(suspects);
   mystery.killer = randomSelector(suspects);
-
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer,age,occupation and description
   document.getElementById("killerCard").style.background = mystery.killer.color;
+  document.getElementById("killerImage").src = mystery.killer.image;
   document.getElementById(
     "killerName"
   ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
@@ -162,7 +197,11 @@ const pickKiller = () => {
   document.getElementById(
     "killerDescription"
   ).innerHTML = `${mystery.killer.description}`;
+  document.getElementById(
+    "killerFavouriteWeapon"
+  ).innerHTML = `Loves to use his ${mystery.killer.favouriteWeapon}`;
 };
+
 //when you click on the killerCard card it will call pickKiller function
 
 document.getElementById("killerCard").onclick = pickKiller;
@@ -172,6 +211,8 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
 
   //This will show the weapon name and weight on the card
+
+  document.getElementById("weaponCard").style.background = mystery.weapon.color;
 
   document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
 
