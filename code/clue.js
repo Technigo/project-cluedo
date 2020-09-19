@@ -153,79 +153,79 @@ const pistol = {
   image: 'assets/pistol.jpg'
 };
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+// OBJECTS FOR THE ROOMS (BECAUSE THEY HAVE PICTURES)
 const diningRoom = {
-  name: "Dining Room",
+  name: 'Dining Room',
   image: 'assets/dining.jpg'
 };
 
 const conservatory = {
-  name: "Conservatory",
+  name: 'Conservatory',
   image: 'assets/conservatory.jpg'
 };
 
 const kitchen = {
-  name: "Kitchen",
+  name: 'Kitchen',
   image: 'assets/kitchen.jpg'
 };
 
 const study = {
-  name: "Study",
+  name: 'Study',
   image: 'assets/study.jpg'
 };
 
 const library = {
-  name: "Library",
+  name: 'Library',
   image: 'assets/library.jpg'
 };
 
 const billiardRoom = {
-  name: "Billiard Room",
+  name: 'Billiard Room',
   image: 'assets/billiard.jpg'
 };
 
 const lounge = {
-  name: "Lounge",
+  name: 'Lounge',
   image: 'assets/lounge.jpg'
 };
 
 const ballRoom = {
-  name: "Ball Room",
+  name: 'Ball Room',
   image: 'assets/ballroom.jpg'
 };
 
 const hall = {
-  name: "Hall",
+  name: 'Hall',
   image: 'assets/hall.jpg'
 };
 
 const spa = {
-  name: "Spa",
+  name: 'Spa',
   image: 'assets/spa.jpg'
 };
 
 const livingRoom = {
-  name: "Living Room",
+  name: 'Living Room',
   image: 'assets/livingroom.jpg'
 };
 
 const observatory = {
-  name: "Observatory",
+  name: 'Observatory',
   image: 'assets/observatory.jpg'
 };
 
 const theater = {
-  name: "Theater",
+  name: 'Theater',
   image: 'assets/theater.jpg'
 };
 
 const guestHouse = {
-  name: "Guest House",
+  name: 'Guest House',
   image: 'assets/guesthouse.jpg'
 };
 
 const patio = {
-  name: "Patio",
+  name: 'Patio',
   image: 'assets/patio.jpg'
 };
 
@@ -320,11 +320,10 @@ const pickKiller = () => {
     }, 2500)
   }
 };
-//Added eventlistener below instead of "onclick" in HTML. Don't know which way is the best way to do it. This only works if the eventlistener is outside of the function. First param: type of event. Second param: the function to call on event.
+//Added eventlistener below instead of "onclick" in HTML. Don't know which way is the best way to do it. This only works if the eventlistener is outside of the function. 
+//First param: type of event. Second param: the function to call on event.
 document.getElementById('killerCard').addEventListener('click', pickKiller);
 
-
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 //If pickKiller function is excecuted/card is clicked then excecute this function:
 const pickWeapon = () => {
   if (killerIsPicked && !weaponIsPicked) {
