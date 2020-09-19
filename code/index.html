@@ -11,52 +11,75 @@
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22> 🔎</text></svg>">
 
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,700;1,900&display=swap"
+    rel="stylesheet">
+
   <title>Cluedo</title>
 </head>
 
 <body>
 
+  <header>
+    <h1>Cluedo</h1>
 
-  <section class="cards">
+    <div class="game-info-container">
+      <p class="game-info">Welcome to Cluedo!</p>
+      <p class="game-info">Pick first a killer, then a weapon and a room.</p>
+    </div>
 
-    <!-- *** KILLER *** -->
-    <article class="killer-deck" id="killerCard">
-      <div class="inner-card-style">
-        <h2 id="cardHeadingKiller">KILLER</h2>
-        <p id="killerName"></p>
-        <img id="killerImage" src="assets/killer.png" height="200" />
-        <p id="killerOccupation"></p>
-      </div>
-    </article>
+    <a href="#main" class="header-btn">Start the game</a>
 
-    <!-- *** WEAPON *** -->
-    <article class="weapon-deck" id="weaponCard">
-      <div class="inner-card-style">
-        <h2 id="cardHeadingWeapon">WEAPON</h2>
-        <p id="weaponName"></p>
-        <img id="weaponImage" src="assets/weapon.png" height="200" />
-        <p id="weaponWeight"></p>
-      </div>
-    </article>
+  </header>
 
-    <!-- *** ROOM *** -->
-    <article class="room-deck" id="roomCard">
-      <div class="inner-card-style">
-        <h2 id="cardHeadingRoom">ROOM</h2>
-        <p id="roomName"></p>
-        <img id="roomImage" src="assets/crime-scene.png" height="200" />
-        <p id="roomLocation"></p>
-      </div>
-    </article>
+  <main id="main">
+    <div class="game-board">
 
-  </section>
+      <section class="cards">
 
+        <!-- *** KILLER *** -->
+        <article class="killer-deck" id="killerCard">
+          <div class="inner-card-style">
+            <h2 id="cardHeadingKiller">Killer</h2>
+            <p id="killerName"></p>
+            <img id="killerImage" src="assets/killer.png" height="200" />
+            <p id="killerOccupation"></p>
+          </div>
+        </article>
 
-  <h1 id="mystery"></h1>
+        <!-- *** WEAPON *** -->
+        <article class="weapon-deck" id="weaponCard">
+          <div class="inner-card-style">
+            <h2 id="cardHeadingWeapon">Weapon</h2>
+            <p id="weaponName"></p>
+            <img id="weaponImage" src="assets/weapon.png" height="200" />
+            <p id="weaponWeight"></p>
+          </div>
+        </article>
 
-  <button id="revealTheCrime" onclick="revealMystery()">Revial the crime</button>
-  <button id="revealTheCrime" onclick="">Play agsin!</button>
-  <!-- <button id="favvo" onclick="shuffleFavouriteWeapon()">SHUFFLE WEAPONS</button> -->
+        <!-- *** ROOM *** -->
+        <article class="room-deck" id="roomCard">
+          <div class="inner-card-style">
+            <h2 id="cardHeadingRoom">Room</h2>
+            <p id="roomName"></p>
+            <img id="roomImage" src="assets/crime-scene.png" height="200" />
+            <p id="roomLocation"></p>
+          </div>
+        </article>
+
+    </div>
+
+    </section>
+
+    <div class="mystery-container">
+      <p id="mystery" class="mystery"></p>
+    </div>
+    <button id="revealTheCrime" class="main-btn" onclick="revealMystery()">Revial the crime</button>
+    <a href="#main" class="main-btn"> Play again!</a>
+
+  </main>
 
   <script src="clue.js"></script>
 </body>

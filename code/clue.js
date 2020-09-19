@@ -59,7 +59,7 @@ const colMustard = {
   firstName: "Jack",
   lastName: "Mustard",
   nickName: "Colonel Mustard",
-  color: "yellow",
+  color: "#FFD700",
   description: "is both dignified and dangerous",
   age: 55,
   image: "killers/mustard.png",
@@ -112,12 +112,12 @@ const candlestick = {
   color: "#F5F5F5",
   heading: "black",
 };
-// *** 4. dumbbel
+// *** 4. dumbbell
 const dumbbel = {
-  name: "dumbbel",
+  name: "dumbbell",
   weight: 7,
   place: "spa",
-  image: "weapons/dumbbel.png",
+  image: "weapons/dumbbell.png",
   color: "#F5F5F5",
   heading: "black",
 };
@@ -173,7 +173,7 @@ const pistol = {
 
 // *** 1. Dining Room
 const diningRoom = {
-  name: "Dining Room",
+  name: "dining Room",
   location: "East Wing",
   id: "dining",
   image: "rooms/dining-room.png",
@@ -182,7 +182,7 @@ const diningRoom = {
 };
 // *** 2. Conservatory
 const conservatory = {
-  name: "Conservatory",
+  name: "conservatory",
   location: "East Garden",
   id: "conservatory",
   image: "rooms/conservatory.png",
@@ -191,7 +191,7 @@ const conservatory = {
 };
 // *** 3. Kitchen
 const kitchen = {
-  name: "Kitchen",
+  name: "kitchen",
   location: "South/East Wing",
   id: "kitchen",
   image: "rooms/kitchen.png",
@@ -200,7 +200,7 @@ const kitchen = {
 };
 // *** 4. Study
 const study = {
-  name: "Study",
+  name: "study",
   location: "North/West Wing",
   id: "study",
   image: "rooms/study.png",
@@ -209,7 +209,7 @@ const study = {
 };
 // *** 5. Library
 const library = {
-  name: "Library",
+  name: "library",
   location: "West Wing",
   id: "library",
   image: "rooms/library.png",
@@ -218,7 +218,7 @@ const library = {
 };
 // *** 6. Billiard Room
 const billiardRoom = {
-  name: "Billiard Room",
+  name: "billiard room",
   location: "West/South Wing",
   id: "billiard",
   image: "rooms/billiard-room.png",
@@ -227,7 +227,7 @@ const billiardRoom = {
 };
 // *** 7. Lounge
 const lounge = {
-  name: "Lounge",
+  name: "lounge",
   location: "North Wing",
   id: "lounge",
   image: "rooms/lounge.png",
@@ -236,7 +236,7 @@ const lounge = {
 };
 // *** 8. Ballroom
 const ballRoom = {
-  name: "Ballroom",
+  name: "ballroom",
   location: "South Wing",
   id: "ballroom",
   image: "rooms/ballroom.png",
@@ -245,7 +245,7 @@ const ballRoom = {
 };
 // *** 9. Hall
 const hall = {
-  name: "Hall",
+  name: "hall",
   location: "East/West Wing",
   id: "hall",
   image: "rooms/hall.png",
@@ -254,7 +254,7 @@ const hall = {
 };
 // *** 10. Spa
 const spa = {
-  name: "Spa",
+  name: "spa",
   location: "East/North Wing",
   id: "spa",
   image: "rooms/spa.png",
@@ -263,7 +263,7 @@ const spa = {
 };
 // *** 11. Living Room
 const livingRoom = {
-  name: "Living Room",
+  name: "living Room",
   location: "South/West Wing",
   id: "livingRoom",
   image: "rooms/living-room.png",
@@ -272,7 +272,7 @@ const livingRoom = {
 };
 // *** 12. Observatory
 const observatory = {
-  name: "Observatory",
+  name: "observatory",
   location: "North Garden",
   id: "observatory",
   image: "rooms/observatory.png",
@@ -281,7 +281,7 @@ const observatory = {
 };
 // *** 13. Theater
 const theater = {
-  name: "Theater",
+  name: "theater",
   location: "South/East Wing",
   id: "theater",
   image: "rooms/theater.png",
@@ -290,7 +290,7 @@ const theater = {
 };
 // *** 14. Guest House
 const guestHouse = {
-  name: "Guest House",
+  name: "guest House",
   location: "South Garden",
   id: "guestHouse",
   image: "rooms/guest-house.png",
@@ -299,7 +299,7 @@ const guestHouse = {
 };
 // *** 15. Patio
 const patio = {
-  name: "Patio",
+  name: "patio",
   location: "West/East Wing",
   id: "patio",
   image: "rooms/patio.png",
@@ -353,6 +353,8 @@ const rooms = [
   patio,
 ];
 
+////////////////////////////////////////////////////////////////////////////////////////
+
 // Mystery object
 const mystery = {
   killer: null,
@@ -362,7 +364,7 @@ const mystery = {
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
-// Random selector
+// Random selector (((if not using the mostLikelyRandomSelector)))
 const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
@@ -374,17 +376,19 @@ const randomSelector = (array) => {
 
 // *** Most-likely machine ***
 const mostLikelyRandomSelector = (items, favouriteItem) => {
-  // For each favouriteItem there will be space for 5 more of them in an array. E.g. "5 knifes".
-  const favouriteItemsDuplicated = new Array(5).fill(favouriteItem);
+  // For each favouriteItem there will be space for, in this case, 7 more of them in an array. E.g. "7 knifes" or "7 kitchens".
+  const favouriteItemsDuplicated = new Array(7).fill(favouriteItem);
 
   // (...spread) Takes the array and spreads the items out.
   // E.g. taking out all your nested individual russian dolls and lay them out in its own individual pieces.
   // Explains Spread ---> https://www.samanthaming.com/tidbits/92-6-use-cases-of-spread-with-array/
-  // Merging arrays. RandomArray = random Array + favouriteItemsDuplicated (e.g all weapons + 5 knifes)
+  // Merging arrays. RandomArray = random Array + favouriteItemsDuplicated (e.g all weapons + 7 knifes):
   const randomArray = [...items, ...favouriteItemsDuplicated];
 
+  // Taking out a random index from the randomArray (items + favouriteItemsDuplicated)
   const randomIndex = Math.floor(Math.random() * randomArray.length);
-  console.log(randomArray);
+
+  // Returning the randomIndex ---> [] from the randomArray
   return randomArray[randomIndex];
 };
 
@@ -401,17 +405,23 @@ const pickKiller = () => {
     // random killer selector
     mystery.killer = randomSelector(suspects);
 
-    // changing card info
+    // *** changing card info ***
+
+    // card background color
     document.getElementById("killerCard").style.background =
       mystery.killer.color;
+    // heading background color
     document.getElementById("cardHeadingKiller").style.background =
       mystery.killer.heading;
+    // killer name
     document.getElementById(
       "killerName"
     ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+    // killer occupation
     document.getElementById(
       "killerOccupation"
     ).innerHTML = `${mystery.killer.occupation}`;
+    //killer image
     document.getElementById("killerImage").src = `${mystery.killer.image}`;
 
     // time delay millisecond
@@ -440,18 +450,23 @@ const pickWeapon = () => {
       // "most likely" random weapon selector
       mystery.weapon = mostLikelyRandomSelector(weapons, favouriteWeapon);
 
-      // changing card info
+      // *** changing card info ***
+
+      // card background color
       document.getElementById("weaponCard").style.background =
         mystery.weapon.color;
+      // heading background color
       document.getElementById("cardHeadingWeapon").style.background =
         mystery.weapon.heading;
-      document.getElementById("weaponCard");
+      // weapon name
       document.getElementById(
         "weaponName"
       ).innerHTML = `${mystery.weapon.name}`;
+      // weapon weight
       document.getElementById(
         "weaponWeight"
       ).innerHTML = `${mystery.weapon.weight} of weight`;
+      // weapon image
       document.getElementById("weaponImage").src = `${mystery.weapon.image}`;
 
       // time delay millisecond
@@ -475,28 +490,30 @@ const pickRoom = () => {
 
     // finding the weapons place
     const weaponPlace = rooms.find(
-      (room) => room.name === mystery.weapon.place
+      // rooms had uppercase from the beginning. Keeping this "toLowerCace()" if needing it:
+      (room) => room.name.toLowerCase() === mystery.weapon.place
     );
 
     // time delay starts
     setTimeout(() => {
       // "most likely" random weapon selector
       mystery.room = mostLikelyRandomSelector(rooms, weaponPlace);
-      // random room selector
-      // mystery.room = randomSelector(rooms);
 
-      // changing card info
+      // *** changing card info ***
+
+      // card background color
       document.getElementById("roomCard").style.background = mystery.room.color;
+      // heading background color
       document.getElementById("cardHeadingRoom").style.background =
         mystery.room.heading;
-      document.getElementById("roomCard");
+      // room name
       document.getElementById("roomName").innerHTML = `${mystery.room.name}`;
+      // room location
       document.getElementById(
         "roomLocation"
       ).innerHTML = `${mystery.room.location}`;
+      // room image
       document.getElementById("roomImage").src = `${mystery.room.image}`;
-
-      console.log(mystery.room.name);
 
       // time delay millisecond
     }, 300);
@@ -525,12 +542,14 @@ const shuffleFavouriteWeapon = () => {
 
 const revealMystery = () => {
   if (mystery.killer === null) {
-    document.getElementById("mystery").innerHTML = "Select a killer";
+    document.getElementById("mystery").innerHTML =
+      "Hey, you have to select a killer...";
   } else if (mystery.weapon === null) {
-    document.getElementById("mystery").innerHTML = "Select a weapon";
+    document.getElementById("mystery").innerHTML = "Select a weapon!";
   } else if (mystery.room === null) {
-    document.getElementById("mystery").innerHTML = "Select a room";
+    document.getElementById("mystery").innerHTML = "Select a room!";
   } else {
+    // "he" or "she"
     if (
       mystery.killer.nickName === "Mr Green" ||
       mystery.killer.nickName === "Professor Plum" ||
@@ -538,11 +557,11 @@ const revealMystery = () => {
     ) {
       document.getElementById(
         "mystery"
-      ).innerHTML = `The murder was committed by the ${mystery.killer.age} years old ${mystery.killer.firstName} ${mystery.killer.lastName} who ${mystery.killer.description}. He used the ${mystery.weapon.name} to kill the victim with in the ${mystery.room.name}. ${mystery.killer.nickName}'s favourite weapon is the ${mystery.killer.favouriteWeaponId} and the ${mystery.weapon.name} has its place usually in the ${mystery.weapon.place}.`;
+      ).innerHTML = `The murder was committed by the ${mystery.killer.age} years old ${mystery.killer.firstName} ${mystery.killer.lastName} who ${mystery.killer.description}. ${mystery.killer.nickName}'s favourite weapon is the ${mystery.killer.favouriteWeaponId}. ${mystery.killer.lastName} used the ${mystery.weapon.name} to kill the victim with in the ${mystery.room.name}. He found the ${mystery.weapon.name} in the ${mystery.weapon.place}.`;
     } else {
       document.getElementById(
         "mystery"
-      ).innerHTML = `The murder was committed by the ${mystery.killer.age} years old ${mystery.killer.firstName} ${mystery.killer.lastName} who ${mystery.killer.description}. She used the ${mystery.weapon.name} to kill the victim with in the ${mystery.room.name}. ${mystery.killer.nickName}'s favourite weapon is the ${mystery.killer.favouriteWeaponId} and the ${mystery.weapon.name} has its place usually in the ${mystery.weapon.place}.`;
+      ).innerHTML = `The murder was committed by the ${mystery.killer.age} years old ${mystery.killer.firstName} ${mystery.killer.lastName} who ${mystery.killer.description}. ${mystery.killer.nickName}'s favourite weapon is the ${mystery.killer.favouriteWeaponId}. ${mystery.killer.lastName} used the ${mystery.weapon.name} to kill the victim with in the ${mystery.room.name}. She found the ${mystery.weapon.name} in the ${mystery.weapon.place}.`;
     }
   }
   //shuffleFavouriteWeapon(); in reaveal button instead!

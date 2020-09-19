@@ -1,6 +1,11 @@
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  background: #f5f5f5;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 p {
@@ -8,19 +13,106 @@ p {
   font-weight: 300;
 }
 
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #000;
+}
+
+/*********************** HEADER ***********************/
+
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 160px;
+  padding-top: 100px;
+  margin: 0;
+  text-shadow: 0 0 20px red;
+  color: #fff6f2;
+  font-weight: normal;
+}
+
+.game-info-container {
+  padding: 20px 0 40px;
+}
+
+.game-info {
+  text-align: center;
+  font-size: 26px;
+}
+
+.header-btn,
+.main-btn {
+  display: inline-block;
+  text-align: center;
+  margin: 5px auto;
+  font-size: 20px;
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: 2px solid #000;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  text-transform: lowercase;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.header-btn:hover {
+  transition: 0.2s ease;
+  border: 2px solid #fff;
+  box-shadow: 0px 0px 10px red inset, 0px 0px 10px red;
+}
+
+/*********************** MAIN ***********************/
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  padding-bottom: 30px;
+}
+
 h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
   margin: 4px;
   color: #ff4500;
+  text-transform: uppercase;
+}
+
+img {
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.game-board {
+  display: flex;
+  justify-content: center;
 }
 
 .cards {
-  margin: 50px auto;
+  margin: 30px 50px auto;
   width: 90%;
-  height: 600px;
-  background: #ccc;
+  height: 500px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  background-image: url("assets/marble.jpg");
+  background-size: 100%;
+  min-width: 900px;
+  border-radius: 6px;
+  border: 1px solid silver;
+  box-shadow: 0 0 10px 0px rgba(000, 000, 000, 0.35);
 }
 
 .killer-deck,
@@ -32,24 +124,37 @@ h2 {
   padding-top: 30px;
   border-radius: 16px;
   background: #f5f5f5;
+  box-shadow: 0px 0px 10px rgba(000, 000, 000, 0.4);
+  cursor: pointer;
 }
 
-img {
-  padding-top: 40px;
-  padding-bottom: 10px;
-}
-
-button {
-  padding: 8px 16px;
-  background: crimson;
-  border: none;
-  font-size: 20px;
-  border-radius: 8px;
-  display: block;
+.mystery-container {
+  text-align: center;
   margin: 0 auto;
+  height: 80px;
+  width: 80%;
+  padding: 30px;
 }
 
-/* flipping the card */
+.mystery {
+  font-size: 24px;
+  font-style: italic;
+}
+
+.main-btn:hover {
+  transition: 0.2s ease;
+  color: #f5f5f5;
+  background: orangered;
+  border: 2px solid orangered;
+}
+
+/* changing the default outline on buttons*/
+button:focus {
+  outline: 2px solid silver;
+  outline-offset: 2px;
+}
+
+/* flipping the card ---> activated in javaScript */
 .flip {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
@@ -60,33 +165,4 @@ button {
 .flip > .inner-card-style {
   transform: rotateY(180deg);
   transition: transform 1s;
-}
-
-.five-seconds {
-  -webkit-animation: seconds 1s forwards;
-  -webkit-animation-iteration-count: 1;
-  -webkit-animation-delay: 5s;
-  animation: seconds 1s forwards;
-  animation-iteration-count: 1;
-  animation-delay: 5s;
-  position: relative;
-  background: red;
-}
-@-webkit-keyframes seconds {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    left: -9999px;
-  }
-}
-@keyframes seconds {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    left: -9999px;
-  }
 }
