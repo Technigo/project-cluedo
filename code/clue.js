@@ -2,93 +2,87 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
-  description: 'He has a lot of connections',
-  age: 70,
+  description: 'He has a lot of connections.',
+  age: '70 years old',
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
 }
 const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
-  color: 'purple',
-  description: 'A professor in history and criminal technology',
-  age: 62,
+  description: 'A professor in history and criminal technology.',
+  age: '62 years old',
   image: 'assets/plum.png',
   occupation: 'Detective'
 }
 const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: 'red',
-  description: 'A famous actor, been in many movies. Love antrophology',
-  age: 47,
+  description: 'A famous actor, been in many movies.',
+  age: '47 years old',
   image: 'assets/scarlet.png',
   occupation: 'Actor'
 }
 const mrsPeacock = {
   firstName: 'Eleonor',
   lastName: 'Peacock',
-  color: 'blue',
-  description: 'Degree in criminal history and writing. Love tea and cookies',
-  age: 59,
+  description: 'Degree in criminal history and writing. Love tea and cookies.',
+  age: '59 years old',
   image: 'assets/peacock.png',
   occupation: 'Author'
 }
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'yellow',
-  description: 'Passion of the military and hunting on his free time',
-  age: 76,
+  description: 'Passion of the military and hunting on his free time.',
+  age: '76 years old',
   image: 'assets/mustard.png',
   occupation: 'Military Officer'
 }
 const mrsWhite = {
   firstName: 'Jane',
   lastName: 'White',
-  color: 'white',
-  description: 'A nurse that worked as a midwife all her life',
-  age: 74,
+  description: 'A nurse that worked as a midwife all her life.',
+  age: '74 years old',
   image: 'assets/white.png',
   occupation: 'Nurse'
 }
 
 //OBJECTS FOR ALL THE WEAPONS
 const rope = {
-  name: 'rope',
+  name: 'Rope',
   weight: 10
 }
 const knife = {
-  name: 'knife',
+  name: 'Knife',
   weight: 1
 }
 const candlestick = {
-  name: 'candlestick',
+  name: 'Candlestick',
   weight: 0.1
 }
 const dumbbell = {
-  name: 'dumbbell',
+  name: 'Dumbbell',
   weight: 5
 }
 const poison = {
-  name: 'poison',
+  name: 'Poison',
   weight: 0.2
 }
 const axe = {
-  name: 'axe',
+  name: 'Axe',
   weight: 6
 }
 const bat = {
-  name: 'bat',
+  name: 'Bat',
   weight: 1.5
 }
 const trophy = {
-  name: 'trophy',
+  name: 'Trophy',
   weight: 4
 }
 const pistol = {
-  name: 'pistol',
+  name: 'Pistol',
   weight: 2
 }
 
@@ -148,7 +142,6 @@ room: ''
 //FUNCTIONS FOR THE PICK CARD KILLER, WEAPON & ROOM.
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
-  document.getElementById('killerCard').style.background = mystery.killer.color;
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`;
   document.getElementById('killerImage').src = mystery.killer.image
@@ -161,7 +154,7 @@ document.getElementById('killerCard').addEventListener('click', pickKiller);
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
-  document.getElementById('weapon.Weigth').innerHTML = `${mystery.weapon.weigth}`;
+  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}kg`;
 }
 document.getElementById('weaponCard').addEventListener('click', pickWeapon);
 

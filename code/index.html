@@ -8,47 +8,46 @@
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
-
     <main>
-
-     
-      <h1>CAN YOU REVEAL THE MYSTERY?</h1>
-      <img src="picture6.jpg" alt="background-img-castle">
-
-
-    <section class="cards"> 
-      <article class="killer-deck" id="killerCard">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
-      </article>
-      <article class="weapon-deck" id="weaponCard">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-      </article>
-      <article class="room-deck" id="roomCard">
-        <p>ROOM</p>
-        <p id="roomName"></p>
-      </article>
-    </section>
-
+      <!--Hero image and information-->
+      <img class="hero-image" src="picture6.jpg" alt="hero-image-crystalchandeliers">
+      <div class="hero-info" >
+        <h1>CAN YOU REVEAL THE MYSTERY?</h1>
+        <h4>During the ball at the castle a murder took place.
+          Click on the cards to read more about the suspects.
+          Also click on the cards for weapon and room.
+          Then, when you've choosed cards, click on the reveal crime button down below.
+        </h4>
+      </div>
+      <!--The cards-->
+      <section class="cards"> 
+        <article class="killer-deck" id="killerCard">
+          <h3>SUSPECT</h3>
+          <p id="killerName"></p>
+          <p id="killerAge"></p>
+          <p id="killerOccupation"></p>
+          <img class="killer-image" id="killerImage" src="" height="100" />
+          <p id="killerDescription"></p>
+        </article>
+        <article class="weapon-deck" id="weaponCard">
+          <h3>WEAPON</h3>
+          <p id="weaponName"></p>
+          <p id="weaponWeight"></p>
+        </article>
+        <article class="room-deck" id="roomCard">
+         <h3>ROOM</h3>
+          <p id="roomName"></p>
+        </article>
+      </section>
     </main>
-    <div>
+    <!--Reveal crime/mystery button-->
     <h1 id="mystery" class="mystery"></h1>
-    <div class="button-container">
-      <button class="reveal" id="revealButton" onclick="revealMystery()">REVEAL THE CRIME</button> 
-    </div>
-  </div>
-
+    <button class="reveal-button" id="revealButton" onclick="revealMystery()">REVEAL THE CRIME</button> 
+    <!--Footer-->
     <footer class="footer">
       <h4>© 2020 Elisa Blomberg</h4>
       <p> Project Week 5 (Cluedo mystery picker) during the Technigo Frontend Bootcamp Autumn 2020.</p>
     </footer>
-
     <script src="clue.js"></script>
   </body>
 </html>

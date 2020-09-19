@@ -8,32 +8,27 @@ main {
   justify-content: center;
 }
 
-h1 {
-  position: absolute;
-  font-family: sans-serif;
-  font-weight: 400000;
-  color :white;
-
-}
-
-img {
+.hero-image {
   max-width: 100%;
   z-index: -1;
   margin-bottom: 100px;
 }
 
-p {
-  margin: 4px;
-  font-weight: bold;
-  background-color: none;
-  color: white;
+.hero-info {
+  background-color:rgba(5, 4, 4, 0.2);
+  position: absolute;
   font-family: sans-serif;
-  font-weight: bold;
+  text-align: center;
+  color: white;
+  border-radius: 5%;
+  max-width: 50%;
+  padding: 5px;
+  margin-top: 30px;
 }
 
 .cards {
   position: absolute;
-  padding: 50px;
+  padding-top: 100px;
   margin: 50px auto;
   width: 90%;
   height: 600px;
@@ -41,35 +36,66 @@ p {
   justify-content: space-around;
   align-items: center;
 }
+.cards h3 {
+  margin: 4px;
+  padding-bottom: 20px;
+  font-weight: bold;
+  background-color: none;
+  color: white;
+  font-family: sans-serif;
+}
+
+.cards p {
+  margin: 2px;
+  padding-bottom: 3px;
+  font-weight: bold;
+  background-color: none;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.killer-image {
+  border-radius: 60%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  padding-bottom: none;
+}
 
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background-color:rgba(5, 4, 4, 0.9);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background:#000;
+  background-color:rgba(5, 4, 4, 0.9);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background-color:rgba(5, 4, 4, 0.9);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
-button {
+.reveal-button {
   padding: 8px 16px;
   background:black;
   border: 5px white solid;
@@ -78,9 +104,10 @@ button {
   border-radius: 16px;
   display: block;
   margin: auto;
+  cursor: pointer;
 }
 
-footer {
+.footer {
   text-align: center;
   color: white;
   font-family: sans-serif;
