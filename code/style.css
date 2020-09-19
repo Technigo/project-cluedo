@@ -97,9 +97,7 @@ button {
   }
 }
 
-/***** MEDIA QUERIES ****/
-
-/***** TABLET and DESKTOP ****/
+/***** MEDIA QUERIES - TABLET and DESKTOP ****/
 @media (min-width: 481px) {
   .cards {
     flex-direction: row;

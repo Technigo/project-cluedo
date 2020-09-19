@@ -3,7 +3,6 @@ let weaponPicked = false;
 let roomPicked = false;
 
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
 const mrGreen = {
   firstName: "Jacob",
   lastName: "Green",
@@ -71,7 +70,6 @@ const mrsWhite = {
 };
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
-
 const rope = {
   name: "rope",
   id: "rope",
@@ -136,10 +134,25 @@ console.log(knife.weight);
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+const suspects = [
+  mrGreen,
+  professorPlum,
+  missScarlet,
+  mrsPeacock,
+  colonelMustard,
+  mrsWhite,
+];
 
-const suspects = [mrGreen, professorPlum, missScarlet, mrsPeacock, colonelMustard, mrsWhite];
-
-const weapons = [rope, knife, candleStick, dumbBell, poison, bat, throphy, pistol];
+const weapons = [
+  rope,
+  knife,
+  candleStick,
+  dumbBell,
+  poison,
+  bat,
+  throphy,
+  pistol,
+];
 
 const rooms = [
   "Dinning Room",
@@ -193,12 +206,21 @@ const shuffleFavouriteWeapon = () => {
   });
 };
 
+const cleanRevealMysteryMessage = () => {
+  document.getElementById("mystery").innerHTML = "";
+};
+
+const toggleAnimationDeckCard = (id) => {
+  document.getElementById(id).classList.toggle("deck-heartbeat");
+};
+
 // This function will be invoked when you click on the killer card.
 const pickKiller = (event) => {
   event.preventDefault();
   if (!killerPicked) {
-    // To remove the reveal the crime message if any
+    // This will remove the reveal the crime message if any
     cleanRevealMysteryMessage();
+
     toggleAnimationDeckCard("killerCard");
 
     setTimeout(() => {
@@ -208,12 +230,21 @@ const pickKiller = (event) => {
       mystery.killer = randomSelector(suspects);
 
       // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-      document.getElementById("killerCard").style.background = mystery.killer.color;
-      document.getElementById("killerName").innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-      document.getElementById("killerAge").innerHTML = `Age: ${mystery.killer.age}`;
-      document.getElementById("killerOccupation").innerHTML = `Occupation: ${mystery.killer.occupation}`;
+      document.getElementById("killerCard").style.background =
+        mystery.killer.color;
+      document.getElementById(
+        "killerName"
+      ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+      document.getElementById(
+        "killerAge"
+      ).innerHTML = `Age: ${mystery.killer.age}`;
+      document.getElementById(
+        "killerOccupation"
+      ).innerHTML = `Occupation: ${mystery.killer.occupation}`;
       document.getElementById("killerImage").src = `${mystery.killer.image}`;
-      document.getElementById("killerDescription").innerHTML = `${mystery.killer.description}`;
+      document.getElementById(
+        "killerDescription"
+      ).innerHTML = `${mystery.killer.description}`;
       document.getElementById(
         "killerFavouriteWeapon"
       ).innerHTML = `Favourite Weapon: ${mystery.killer.favouriteWeapon}`;
@@ -222,16 +253,13 @@ const pickKiller = (event) => {
   }
 };
 
-document.getElementById("killerCard").addEventListener("click", pickKiller);
-
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
-
 // This function will be invoked when you click on the weapon card.
 const pickWeapon = (event) => {
   event.preventDefault();
 
   if (!weaponPicked) {
-    // To remove the reveal the crime message if any
+    // This will remove the reveal the crime message if any
     cleanRevealMysteryMessage();
 
     toggleAnimationDeckCard("weaponCard");
@@ -241,21 +269,23 @@ const pickWeapon = (event) => {
       mystery.weapon = randomSelector(weapons);
 
       // This will change the card to the one connected to the chosen weapon and show the name and weight of the weapon.
-      document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
-      document.getElementById("weaponWeight").innerHTML = `Weight: ${mystery.weapon.weight} lbs`;
+      document.getElementById(
+        "weaponName"
+      ).innerHTML = `${mystery.weapon.name}`;
+      document.getElementById(
+        "weaponWeight"
+      ).innerHTML = `Weight: ${mystery.weapon.weight} lbs`;
     }, 2000);
     weaponPicked = true;
   }
 };
-
-document.getElementById("weaponCard").addEventListener("click", pickWeapon);
 
 // This function will be invoked when you click on the room card.
 const pickRoom = (event) => {
   event.preventDefault();
 
   if (!roomPicked) {
-    // To remove the reveal the crime message if any
+    // This will remove the reveal the crime message if any
     cleanRevealMysteryMessage();
 
     toggleAnimationDeckCard("roomCard");
@@ -271,14 +301,17 @@ const pickRoom = (event) => {
   }
 };
 
-document.getElementById("roomCard").addEventListener("click", pickRoom);
-
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 const revealMystery = (event) => {
   event.preventDefault();
-  if (mystery.killer === null || mystery.weapon === null || mystery.room === null) {
-    document.getElementById("mystery").innerHTML = "Click all cards above to reveal the crime!";
+  if (
+    mystery.killer === null ||
+    mystery.weapon === null ||
+    mystery.room === null
+  ) {
+    document.getElementById("mystery").innerHTML =
+      "Click all cards above to reveal the crime!";
   } else {
     document.getElementById(
       "mystery"
@@ -286,12 +319,7 @@ const revealMystery = (event) => {
   }
 };
 
+document.getElementById("killerCard").addEventListener("click", pickKiller);
+document.getElementById("weaponCard").addEventListener("click", pickWeapon);
+document.getElementById("roomCard").addEventListener("click", pickRoom);
 document.getElementById("revealCard").addEventListener("click", revealMystery);
-
-const cleanRevealMysteryMessage = () => {
-  document.getElementById("mystery").innerHTML = "";
-};
-
-const toggleAnimationDeckCard = (id) => {
-  document.getElementById(id).classList.toggle("deck-heartbeat");
-};
