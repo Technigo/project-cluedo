@@ -58,6 +58,10 @@ p {
 
 }
 
+.killer-info img {
+  border-radius: 50%;
+}
+
 .killer-deck {
   width: 300px;
   height: 400px;

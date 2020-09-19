@@ -229,6 +229,10 @@ const pickKiller = () => {
     'favoriteWeapon'
   ).innerHTML = `Favorite weapon: ${mystery.killer.favouriteWeapon.name}`
 
+  document.getElementById(
+    'killerImage'
+  ).src = mystery.killer.image;
+
 
 };
 
