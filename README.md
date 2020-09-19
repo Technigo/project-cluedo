@@ -14,4 +14,6 @@ The problem I run into this week was when I started to work with red and black l
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+therese-cluedo.netlify.app
+
+
