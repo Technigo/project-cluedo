@@ -8,7 +8,7 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
-  favouriteWeapon: 'knife',
+  favouriteWeapon: 'Knife',
 }
 
 const profPlum = {
@@ -19,7 +19,7 @@ const profPlum = {
   age: 37,
   image: 'assets/plum.png',
   occupation: 'Psychiatrist',
-  favouriteWeapon: 'dumbbell',
+  favouriteWeapon: 'Dumbbell',
 }
 
 const msScarlet = {
@@ -30,7 +30,7 @@ const msScarlet = {
   age: 25,
   image: 'assets/scarlet.png',
   occupation: 'Escort girl',
-  favouriteWeapon: 'poison',
+  favouriteWeapon: 'Poison',
 }
 
 const mrsPeacock = {
@@ -41,7 +41,7 @@ const mrsPeacock = {
   age: 55,
   image: 'assets/peacock.png',
   occupation: 'Teacher',
-  favouriteWeapon: 'trophy',
+  favouriteWeapon: 'Trophy',
 }
 
 const colMustard = {
@@ -52,7 +52,7 @@ const colMustard = {
   age: 65,
   image: 'assets/mustard.png',
   occupation: 'Retired soldier',
-  favouriteWeapon: 'pistol',
+  favouriteWeapon: 'Pistol',
 }
 
 const mrsWhite = {
@@ -63,158 +63,158 @@ const mrsWhite = {
   age: 60,
   image: 'assets/white.png',
   occupation: 'Waitress',
-  favouriteWeapon: 'candlestick',
+  favouriteWeapon: 'Candlestick',
 }
 
 // Weapons
 
 const rope = {
-  name: 'rope',
+  name: 'Rope',
   weight: 10,
-  id: 'rope',
+  id: 'Rope',
   favouriteRoom: 'Hall',
   image: 'assets/rope.png',
 }
 
 const knife = {
-  name: 'knife',
+  name: 'Knife',
   weight: 5,
-  id: 'knife',
+  id: 'Knife',
   favouriteRoom: 'Kitchen',
-  image: '',
+  image: 'assets/knife.png',
 }
 
 const candlestick = {
-  name: 'candlestick',
+  name: 'Candlestick',
   weight: 20,
-  id: 'candlestick',
+  id: 'Candlestick',
   favouriteRoom: 'Ballroom',
-  image: '',
+  image: 'assets/candlestick.png',
 }
 
 const dumbbell = {
-  name: 'dumbbell',
+  name: 'Dumbbell',
   weight: 50,
-  id: 'dumbbell',
+  id: 'Dumbbell',
   favouriteRoom: 'Spa',
-  image: '',
+  image: 'assets/dumbbell.png',
 }
 
 const poison = {
-  name: 'poison',
+  name: 'Poison',
   weight: 4,
-  id: 'poison',
+  id: 'Poison',
   favouriteRoom: 'Patio',
-  image: '',
+  image: 'assets/poison.png',
 }
 
 const axe = {
-  name: 'axe',
+  name: 'Axe',
   weight: 30,
-  id: 'axe',
+  id: 'Axe',
   favouriteRoom: 'Theater',
-  image: '',
+  image: 'assets/axe.png',
 }
 
 const bat = {
-  name: 'bat',
+  name: 'Bat',
   weight: 25,
-  id: 'bat',
+  id: 'Bat',
   favouriteRoom: 'Billiard Room',
-  image: '',
+  image: 'assets/bat.png',
 }
 
 const trophy = {
-  name: 'trophy',
+  name: 'Trophy',
   weight: 15,
-  id: 'trophy',
+  id: 'Trophy',
   favouriteRoom: 'Living Room',
-  image: '',
+  image: 'assets/trophy.png',
 }
 
 const pistol = {
-  name: 'pistol',
+  name: 'Pistol',
   weight: 16,
-  id: 'pistol',
+  id: 'Pistol',
   favouriteRoom: 'Study',
-  image: '',
+  image: 'assets/pistol.png',
 }
 
 // Rooms
 
 const diningRoom = {
   name: 'Dining Room',
-  image: '',
+  image: 'assets/dining-room.png',
 }
 
 const conservatory = {
   name: 'Conservatory',
-  image: '',
+  image: 'assets/conservatory.png',
 }
 
 const kitchen = {
   name: 'Kitchen',
-  image: '',
+  image: 'assets/kitchen.png',
 }
 
 const study = {
   name: 'Study',
-  image: '',
+  image: 'assets/study.png',
 }
 
 const library = {
   name: 'Library',
-  image: '',
+  image: 'assets/library.png',
 }
 
 const billiardRoom = {
   name: 'Billiard Room',
-  image: '',
+  image: 'assets/billiard.png',
 }
 
 const lounge = {
   name: 'Lounge',
-  image: '',
+  image: 'assets/lounge.png',
 }
 
 const ballroom = {
   name: 'Ballroom',
-  image: '',
+  image: 'assets/ball-room.png',
 }
 
 const hall = {
   name: 'Hall',
-  image: '',
+  image: 'assets/hall.png',
 }
 
 const spa = {
   name: 'Spa',
-  image: '',
+  image: 'assets/spa.png',
 }
 
 const livingRoom = {
   name: 'Living Room',
-  image: '',
+  image: 'assets/living-room.png',
 }
 
 const observatory = {
   name: 'Observatory',
-  image: '',
+  image: 'assets/observatory.png',
 }
 
 const theater = {
   name: 'Theater',
-  image: '',
+  image: 'assets/theater.png',
 }
 
 const guestHouse = {
   name: 'Guest House',
-  image: '',
+  image: 'assets/guest-house.png',
 }
 
 const patio = {
   name: 'Patio',
-  image: '',
+  image: 'assets/patio.png',
 }
 
 // Arrays
@@ -270,8 +270,10 @@ const killerFavouriteWeapon = document.getElementById('killerFavouriteWeapon');
 const weaponCard = document.getElementById('weaponCard');
 const weaponName = document.getElementById('weaponName');
 const weaponWeight = document.getElementById('weaponWeight');
+const weaponImage = document.getElementById('weaponImage');
 const roomCard = document.getElementById('roomCard');
 const roomName = document.getElementById('roomName');
+const roomImage = document.getElementById('roomImage');
 const revealedMystery = document.getElementById('mystery');
 const revealButton = document.getElementById('revealButton');
 const resetButton = document.getElementById('resetButton');
@@ -305,8 +307,8 @@ const shuffleFavouriteWeapon = () => {
     item.favouriteWeapon = randomSelector(weapons).name;
   });
   if (mystery.killer !== undefined) {
-    killerFavouriteWeapon.innerHTML = mystery.killer.favouriteWeapon;
     mystery.favouriteWeapon = mystery.killer.favouriteWeapon;
+    killerFavouriteWeapon.innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
   }
 };
 
@@ -319,9 +321,10 @@ const killerAnimation = () => {
   killerCard.style.background = "";
   killerName.innerHTML = '';
   killerAge.innerHTML = '';
-  killerOccupation.innerHTML = '';
-  killerDescription.innerHTML = '';
+  // killerOccupation.innerHTML = '';
+  // killerDescription.innerHTML = '';
   killerFavouriteWeapon.innerHTML = '';
+  killerImage.style.display = "none";
   killerImage.src = '';
 };
 
@@ -330,11 +333,12 @@ const pickKiller = () => {
   mystery.favouriteWeapon = mystery.killer.favouriteWeapon;
   killerLoader.style.display = "none";
   killerCard.style.background = mystery.killer.color;
-  killerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  killerAge.innerHTML = mystery.killer.age;
-  killerOccupation.innerHTML = mystery.killer.occupation;
-  killerDescription.innerHTML = mystery.killer.description;
-  killerFavouriteWeapon.innerHTML = mystery.killer.favouriteWeapon;
+  killerName.innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  killerAge.innerHTML = `Age: ${mystery.killer.age}`;
+  // killerOccupation.innerHTML = mystery.killer.occupation;
+  // killerDescription.innerHTML = mystery.killer.description;
+  killerFavouriteWeapon.innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
+  killerImage.style.display = "inline-block";
   killerImage.src = mystery.killer.image;
 };
 
@@ -365,6 +369,8 @@ const favouriteWeaponAnimation = () => {
     weaponLoader.style.display = "block";
     weaponName.innerHTML = '';
     weaponWeight.innerHTML = '';
+    weaponImage.src = '';
+    weaponImage.style.display = "none";
     setTimeout(function () {
       pickFavouriteWeapon(mystery.killer);
     }, 2000);
@@ -398,8 +404,11 @@ const pickFavouriteWeapon = (suspect) => {
   mystery.weapon = mysteryWeapon;
   mystery.favouriteRoom = mysteryWeapon.favouriteRoom;
   weaponLoader.style.display = "none";
+  weaponCard.style.background = "#808080";
   weaponName.innerHTML = mystery.weapon.name;
-  weaponWeight.innerHTML = mystery.weapon.weight;
+  weaponWeight.innerHTML = `Weight: ${mystery.weapon.weight} oz`;
+  weaponImage.style.display = "inline-block";
+  weaponImage.src = mystery.weapon.image;
 };
 
 weaponCard.onclick = favouriteWeaponAnimation;
@@ -412,6 +421,8 @@ const favouriteRoomAnimation = () => {
   } else {
     roomLoader.style.display = "block";
     roomName.innerHTML = '';
+    roomImage.src = '';
+    roomImage.style.display = "none";
     setTimeout(function () {
       pickFavouriteRoom(mystery.weapon);
     }, 2000);
@@ -444,7 +455,10 @@ const pickFavouriteRoom = (weapon) => {
   console.log(mysteryRoom);
   mystery.room = mysteryRoom;
   roomLoader.style.display = "none";
+  roomCard.style.background = "#C0C0C0";
   roomName.innerHTML = mystery.room.name;
+  roomImage.style.display = "inline-block";
+  roomImage.src = mystery.room.image;
 };
 
 roomCard.onclick = favouriteRoomAnimation;
@@ -469,7 +483,7 @@ const revealMystery = () => {
   if (mystery.killer === undefined || mystery.weapon === undefined || mystery.room === undefined) {
     revealedMystery.innerHTML = ('Make sure you have picked a killer, a weapon and a room!');
   } else {
-    revealedMystery.innerHTML = (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room}.`);
+    revealedMystery.innerHTML = (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`);
   }
 };
 

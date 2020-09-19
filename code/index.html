@@ -8,49 +8,69 @@
   <link rel="stylesheet" href="style.css" />
   <title>🔍 Sandrine's Cluedo</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
 </head>
 
 <body>
-  <section class="cards">
-    <article class="killer-deck" id="killerCard">
-      <p>KILLER</p>
-      <div class="loader" id="killerLoader">
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-      </div>
-      <p id="killerName"></p>
-      <p id="killerAge"></p>
-      <p id="killerOccupation"></p>
-      <img id="killerImage" src="" height="100" />
-      <p id="killerDescription"></p>
-      <p id="killerFavouriteWeapon"></p>
-    </article>
-    <article class="weapon-deck" id="weaponCard">
-      <p>WEAPON</p>
-      <div class="loader" id="weaponLoader">
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-      </div>
-      <p id="weaponName"></p>
-      <p id="weaponWeight"></p>
-    </article>
-    <article class="room-deck" id="roomCard">
-      <p>ROOM</p>
-      <div class="loader" id="roomLoader">
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-      </div>
-      <p id="roomName"></p>
-    </article>
-  </section>
+  <header>
+    <h1>Cluedo mystery picker</h1>
+  </header>
+  <main>
+    <section class="cards">
+      <article class="killer-deck" id="killerCard">
+        <p class="card-headers">KILLER</p>
+        <div class="loader" id="killerLoader">
+          <i class="fa fa-circle-o-notch fa-spin"></i>
+        </div>
+        <p id="killerName"></p>
+        <p id="killerAge"></p>
+        <!-- <p id="killerOccupation"></p> -->
+        <img id="killerImage" src="" />
+        <!-- <p id="killerDescription"></p> -->
+        <p id="killerFavouriteWeapon"></p>
+      </article>
+      <article class="weapon-deck" id="weaponCard">
+        <p class="card-headers">WEAPON</p>
+        <div class="loader" id="weaponLoader">
+          <i class="fa fa-circle-o-notch fa-spin"></i>
+        </div>
+        <p id="weaponName"></p>
+        <p id="weaponWeight"></p>
+        <img id="weaponImage" src="" />
+      </article>
+      <article class="room-deck" id="roomCard">
+        <p class="card-headers">ROOM</p>
+        <div class="loader" id="roomLoader">
+          <i class="fa fa-circle-o-notch fa-spin"></i>
+        </div>
+        <p id="roomName"></p>
+        <img id="roomImage" src="" />
+      </article>
+    </section>
 
-  <h1 id="mystery"></h1>
+    <section class="mystery">
+      <h2 id="mystery"> </h2>
 
-  <button id="shuffleButton">SHUFFLE FAVOURITE WEAPON</button>
-  <button id="revealButton">REVEAL THE CRIME</button>
-  <button id="resetButton">RESET</button>
+      <button id="shuffleButton">🕱 SHUFFLE FAVOURITE WEAPON 🕱</button>
+      <button id="revealButton">🕱 REVEAL THE CRIME 🕱</button>
+      <button id="resetButton">🕱 RESET 🕱</button>
+
+    </section>
+  </main>
 
   <script src="clue.js"></script>
 </body>
 
-Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
-  href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+<footer>
+  <span>
+    Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a
+      href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+  </span>
+  <span>Photo by <a
+      href="https://unsplash.com/@jjbart7?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Joshua
+      Bartell</a> on <a
+      href="https://unsplash.com/s/photos/wood-background?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+</footer>
+
 
 </html>
