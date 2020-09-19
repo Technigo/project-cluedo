@@ -3,6 +3,8 @@ h1 {
   text-align: center;
 }
 
+/* Animation for text fading away on weapon change, reveal crime */
+
 .h1fade {
   animation-name: example;
   animation-duration: 4s;
@@ -34,6 +36,16 @@ p {
   background-color: #fff;
 }
 
+/* p paragraph for room is slightly different so therefore it has its own styling */
+
+.roomNameElement {
+  position: relative;
+  margin-top: 60%;
+  font: 30px bold;
+  line-height: 50px;
+
+}
+
 span {
   font-weight: 300;
   color: white;
@@ -45,7 +57,7 @@ span {
 .cards {
   margin: 50px auto;
   width: 90%;
-  height: 600px;
+  height: 500px;
   background: none;
   display: flex;
   justify-content: space-around;
@@ -70,6 +82,8 @@ span {
 .deck:hover {
   opacity: 1;
 }
+
+/* Animation to flip the killer weapons vard */
 
 .imgflip {
 transform: rotateY(360deg);
@@ -122,13 +136,7 @@ button:active {
   outline: 0;
 }
 
-
-
-/* #change {
-  position: absolute;
-  top: 580px;
-  margin-left: 17px;
-} */
+/* Styles for loading animation */
 
 #myProgress {
   display: none;
