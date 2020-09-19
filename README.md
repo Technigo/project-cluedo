@@ -1,12 +1,16 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
+This is weeks assignment was to create a piece of the classic board game Cluedo. We were suppose to create three different cards containing: 
+- a killer, 
+- a murder weapon,
+- and aroom where the murder took place. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The purpose of this assignment was to practice on how to create arrays and objects and connect them to the DOM. 
+
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The problem I run into this week was when I started to work with red and black level. I found it hard to create the shuffle weapon function, I recieved undefind message first. I solve the problem by trubbleshoot this with my classmate, it turned out that I had misspelled variable used. 
 
 ## View it live
 

@@ -1,11 +1,4 @@
-//TODO'S
-//style loader in CSS
-//see if I have time to change alert to innerHTML text
-//add meta property in html (Tara showed us)
-//'resume game' button to be displayed once I clicked reveal the crime button 
-//codeSandbox tasks 
-
-//variables to prevent clicking cards in wrong direction. 
+//variables to prevent clicking cards in wrong order. 
 let killerIsPicked = false;
 let weaponIsPicked = false;
 let roomIsPicked = false; 
@@ -344,10 +337,10 @@ const pickRoom = () => {
       let chanceForSuspectedRoom = chanceOfRoom();
       mystery.room = randomSelector(chanceForSuspectedRoom) 
       document.getElementById('roomName').innerHTML = `Where murder was commited: ${mystery.room.name}`
-      weaponIsPicked = true
+      roomsIsPicked = true
     },2500)   
   } else {
-    alert('See who the killer was and murder weapon used first!')
+    alert('Look at the other cards first!')
   }
 };
 
