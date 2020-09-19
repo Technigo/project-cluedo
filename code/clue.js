@@ -265,7 +265,7 @@ const pickKiller = () => {
       document.getElementById('killerName').innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`
       document.getElementById('killerAge').innerHTML = `Age: ${mystery.killer.age}`
       document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
-      document.getElementById('killerWeapon').innerHTML = `Weapon: ${mystery.killer.favorite}`
+      document.getElementById('killerWeapon').innerHTML = `Weapon of choice: ${mystery.killer.favorite}`
       document.getElementById('killerDescription').innerHTML = `Description: ${mystery.killer.description}`
       document.getElementById('killerImage').src = `${mystery.killer.image}`
       killerIsPicked = true;
@@ -281,25 +281,36 @@ const pickKiller = () => {
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 //If pickKiller function is excecuted/card is clicked then do this function pickWeapon:
 const pickWeapon = () => {
-  //Randomly select a weapon from weapons and add it to the mystery object
-  mystery.weapon = randomSelector(weapons);
-  document.getElementById('weaponCard').style.background = mystery.weapon.color
+  if (killerIsPicked && !weaponIsPicked) {
+    document.getElementById('weaponLoader').style.visibility='visible'
+    setTimeout(function () {
+      document.getElementById('weaponLoader').style.visibility='hidden'
+      mystery.weapon = randomSelector(weapons); //Randomly select a weapon from weapons and add it to the mystery object
+      document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
   document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`
   document.getElementById('weaponFlexibility').innerHTML = `Flexibility: ${mystery.weapon.flexibility}`
+  weaponIsPicked = true
+    }, 2500)
+  }
   //Add image here for weapon-card later
-  //Add colour to each weapon also?
-}
+};
 document.getElementById('weaponCard').addEventListener('click', pickWeapon);
 
-//Add something that makes this: If pickKiller AND pickWeapon function is excecuted/cards are clicked then do this function on the pickroom:
+//If pickKiller AND pickWeapon function is excecuted/cards are clicked then do this function on the pickroom:
 const pickRoom = () => {
-  //Randomly select a room from rooms and add it to the mystery object
-  mystery.room = randomSelector(rooms);
-  document.getElementById('roomName').innerHTML = `${mystery.room}`
+  if (killerIsPicked && weaponIsPicked) {
+    document.getElementById('roomLoader').style.visibility='visible'
+    document.getElementById('revealButton').style.visibility='visible'//Makes the reveal-button visible when the room-card has been clicked.
+    setTimeout(function () {
+      document.getElementById('roomLoader').style.visibility='hidden'
+      mystery.room = randomSelector(rooms);//Randomly select a room from rooms and add it to the mystery object
+      document.getElementById('roomName').innerHTML = `${mystery.room}`
+      roomIsPicked = true
+    }, 2500)
+  }
   //Add image here for room-card later
-  document.getElementById('revealButton').style.visibility='visible' //Makes the reveal-button visible when the room-card has been clicked.
-}
+};
 document.getElementById('roomCard').addEventListener('click', pickRoom); 
 
 
@@ -318,6 +329,18 @@ document.getElementById('revealButton').innerHTML = `PLAY AGAIN?` //This works t
 //pageReload(); This makes the page reload once just after I clicked the Roomcard. Är detta för att villkoret i if-satsen i pageReload är uppfyllt?
 }
 // document.getElementById('revealButton').addEventListener('click', revealMystery(mystery)); 
+
+//THIS DOESN'T WORK EITHER:
+ const playAgain = () => {
+   if (document.getElementById('revealButton').innerHtml === 'PLAY AGAIN?') {
+//      location.reload();
+        //revealButton.onclick === pageReload; 
+        revealButton.onclick === location.reload();
+    } 
+  };
+playAgain();
+//document.getElementById('revealButton').addEventListener('click', playAgain);
+//console.log(playAgain);
 
 // const buttonOnClick = () => {
 //  console.log('hej');
