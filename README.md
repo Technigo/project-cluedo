@@ -14,6 +14,6 @@ The problem I run into this week was when I started to work with red and black l
 
 ## View it live
 
-therese-cluedo.netlify.app
+https://therese-cluedo.netlify.app
 
 
