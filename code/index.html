@@ -15,6 +15,8 @@
     <section class="cards" id="allCards">
       <article class="killer-deck" id="killerCard" onclick="pickKiller()">
         <p>KILLER</p>
+        <div class="loader" id="killerLoader">
+        </div>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
@@ -23,19 +25,26 @@
       </article>
       <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
         <p>WEAPON</p>
+        <div class="loader" id="weaponLoader">
+
+        </div>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
       </article>
       <article class="room-deck" id="roomCard" onclick="pickRoom()">
         <p>ROOM</p>
+        <div class="loader" id="roomLoader">
+
+        </div>
         <p id="roomName"></p>
       </article>
     </section>
 
     <h1 id="mystery"></h1>
-    <h3 class="favourite-weapon" id="favouriteWeapon" onclick="favouriteWeapon()"></h3>
+    <h3 class="favourite-weapon" id="favouriteWeapon"></h3>
 
     <button id="revealButton" onclick="revealMystery()">Reveal the crime</button>
+    <button id="change" onclick="shuffleFavouriteWeapon()">Change weapon</button>
     <button id="playAgainButton" value="Back" onclick="startOver()">Play Again</button>
     <script src="clue.js"></script>
   </body>

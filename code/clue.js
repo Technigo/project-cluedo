@@ -177,9 +177,15 @@ const randomSelector = array => {
 const mystery = {
   killer: '',
   weapon: '',
-  room: ''
+  room: '',
+  favouriteWeapon: ''
 }
 
+const killerAnimation = () => {
+  killerLoader.style.display = 'block';
+  setTimeout(pickKiller, 3000);
+  
+}
 
 const pickKiller = () => {
   
@@ -188,9 +194,12 @@ const pickKiller = () => {
   
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerImage').src = mystery.killer.image;
+  document.getElementById('killerOccupation')
   
+  document.getElementById('killerDescription')
   document.getElementById('killerName').innerHTML = 
-  `${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.description} ${mystery.killer.age} ${mystery.killer.occupation}`
+  `Name: ${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.description} ${mystery.killer.age} ${mystery.killer.occupation} ${mystery.killer.favouriteWeapon}`
+
 }
 
 
@@ -213,19 +222,16 @@ const pickRoom = () => {
   
 }
 
-
-
+  
 const shuffleFavouriteWeapon = () => {
   
-  suspects.favouriteWeapon.forEach ((suspects) => {
-    suspects.favouriteWeapon = randomSelector(weapons).id;
-  });
-}
-  
-  
+  suspects.forEach((suspect) => {
+    suspect.favouriteWeapon = randomSelector(weapons).name;
     
+  })
   
   
+};
 
 
 
@@ -238,13 +244,15 @@ const revealMystery = () => {
       if (mystery.killer === '' || mystery.weapon === '' || mystery.room === '') {
       document.getElementById('mystery').innerHTML = 'Pick all three cards'
     } else {
+      document.getElementById('favouriteWeapon').innerHTML = `Favourite weapon: ${mystery.favouriteWeapon}`;
       document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} in the ${mystery.room} with a/an ${mystery.weapon.name}.`;
       document.getElementById('allCards').style.display = 'none';
       document.getElementById('findKiller').style.display = 'none';
       document.getElementById('pickCard').style.display = 'none';
       document.getElementById('revealButton').style.display = 'none';
+      document.getElementById('change').style.display = 'none';
       document.getElementById('playAgainButton').style.display = 'block';
-      document.getElementById('favouriteWeapon').innerHTML = `${mystery.killer.firstName}s favourite weapon is: ${mystery.favouriteWeapon.name}`;
+      document.getElementById('favouriteWeapon').innerHTML = `${mystery.killer.firstName}s favourite weapon is: ${mystery.killer.favouriteWeapon}`;
       
     }
     

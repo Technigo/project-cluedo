@@ -51,13 +51,18 @@ img {
   
 }
 
+.loader {
+  color: blue;
+
+}
+
 .killer-deck {
   width: 250px;
   height: 400px;
   background: #000;
   
   text-align: center;
-  padding-top: 30px;
+  padding-top: 0px;
   border-radius: 16px;
   cursor: pointer;
   border: solid white 5px;
@@ -68,7 +73,7 @@ img {
   height: 400px;
   background: #000;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 0px;
   border-radius: 16px;
   cursor: pointer;
   border: solid white 5px;
@@ -77,12 +82,13 @@ img {
 .room-deck {
   width: 250px;
   height: 400px;
-  background: #000;
+  background: black;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 0px;
   border-radius: 16px;
   cursor: pointer;
   border: solid white 5px;
+  
 }
 
 button {
