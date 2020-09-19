@@ -22,8 +22,8 @@
     </header>
     <section class="cards">
       <div class="card-container">
-        <article class="killer-deck" id="killerCard" onclick="pickKiller()"> 
-          <!-- I removed onclick="pickKiller()" from article above and instead added in JS below pickKiller-function:  document.getElementById('killerCard').addEventListener('click', pickKiller); -->
+        <article class="killer-deck" id="killerCard"> 
+          <!-- removed onclick="pickKiller()" above and added eventlistener in js below pickkiller function-->
           <p class="card-title">KILLER</p>
           <p id="killerName"></p>
           <p id="killerAge"></p>
@@ -37,23 +37,20 @@
 
       <div class="card-container">
         <article class="weapon-deck" " id="weaponCard">
-          <!-- Removed: onclick="pickWeapon() & put eventlistener in JS -->
           <p class="card-title">WEAPON</p>
           <p id="weaponName"></p>
           <p id="weaponWeight"></p>
-          <p id="weaponFlexibility"></p>
+          <p class="weapon-flexibility" id="weaponFlexibility"></p>
           <img id="weaponImage" src=""/>
-          <!-- removed from img: height="100"  -->
         </article>
         <div class="loader" id="weaponLoader"></div>
       </div>
 
       <div class="card-container">
         <article class="room-deck" id="roomCard">
-          <!-- Removed: onclick="pickRoom()" & put eventlistener in JS instead -->
           <p class="card-title">ROOM</p>
           <p id="roomName"></p>
-          <img id="roomImage" src="" height="100" />
+          <img class="room-image" id="roomImage" src="" height="100" />
         </article>
         <div class="loader"id="roomLoader"></div>
       </div>
@@ -64,14 +61,10 @@
       <button class="reveal-button" id="revealButton" onclick="revealMystery(mystery); playAgain();">
         REVEAL THE CRIME
       </button>
-      <button class="reload-button" id="reloadButton">
-        PLAY AGAIN?
-      </button>
+    
   </section>
   </section> 
-
-    <!-- Maybe put another button here that says "Play again?" that only shows after the reveal-button has been clicked? Should I make a pseudo-class in CSS also (or instead?) that shows/hides this new button which I control with JS? Hmmm...-->
-    <!-- Should I do a function for the button? I need to do this: when all the three cards are hown, the button appears. When it is clicked to reveal, I want to change text so that the button says "Play again?" and when the button then is clicked once again, I want the whole page to reload. How do I do that? -->
+    <!-- I want do do this for the button: when all the cards are shown, the button appears. When it is clicked to reveal, change text to "Play again?" and when button is clicked once again, I want the page to reload. How do I do that? -->
     <script src="clue.js"></script>
   </body>
 </html>
