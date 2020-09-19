@@ -10,4 +10,6 @@ First I looked at the Technigo-material for this week at Canvas, done the labs, 
  If I had more time I would like to add more code to make it more like a real game and more visual effects as well as more JavaScript effects, and more styling. I would also like to make it responsive, and mobile first.
 
 ## View it live
+https://cluedo-card-picker-project-week-5.netlify.app/
+
 
