@@ -195,9 +195,16 @@ const mystery = {
 
 /*** FUNCTIONS ***/
 
-/* Function to randomly select one item from the array passed as a paramater */
-const randomSelector = (array) => {
-  return array[Math.floor(Math.random() * array.length)];
+/* Called when the 'Let's Play' button is clicked, toggles the window, hides
+ the Reveal button and shuffles the suspects' favourite weapon and the weapons'
+  favourite room */
+const startGame = (windowId) => {
+  toggleWindow(windowId);
+  hideButton();
+  document.getElementsByTagName("BODY")[0].style.backgroundImage =
+    "url(./assets/starry-sky.jpg)";
+  shuffleFavourite(suspects, weapons);
+  shuffleFavourite(weapons, rooms);
 };
 
 /* The function is invoked when the killer card deck is clicked. It checks that
@@ -211,7 +218,6 @@ const pickKiller = (loaderId) => {
       toggleLoader(loaderId);
       //shuffleFavourite(suspects, weapons);
       mystery.killer = randomSelector(suspects);
-      console.log(mystery.killer.favourite);
       style("killerCard").background = mystery.killer.color;
       get(
         "killerNameAge"
@@ -243,7 +249,6 @@ const pickWeapon = (loaderId) => {
       toggleLoader(loaderId);
       //shuffleFavourite(weapons, rooms);
       mystery.weapon = increaseChance(mystery.killer);
-      console.log(mystery.weapon);
       style("weaponCard").background = mystery.killer.color;
       get("weaponName").innerHTML = capitalizeFirstLetter(mystery.weapon.name);
       get("weaponWeight").innerHTML = `Weight: ${mystery.weapon.weight}`;
@@ -270,7 +275,7 @@ const pickRoom = (loaderId) => {
       get("roomName").innerHTML = `${capitalizeFirstLetter(mystery.room.name)}`;
       roomPicked = true;
       style("revealButton").visibility = "visible";
-    }, 1000);
+    }, 1500);
   } // else show message
 };
 
@@ -280,11 +285,15 @@ const pickRoom = (loaderId) => {
 const revealMystery = (windowId) => {
   if (killerPicked && weaponPicked && roomPicked) {
     toggleWindow(windowId);
+    //document.getElementsByTagName("BODY")[0].style.backgroundImage =
+    //  "url(./assets/red-splatter.jpg)";
     get(
       "mystery"
     ).innerHTML = `The murder was commited by ${mystery.killer.firstName} 
     ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}`;
-    style("mysteryCard").background = mystery.killer.color;
+    style("mysteryCard").backgroundImage = "url(./assets/red-drip.jpg)";
+    //("url(./assets/red-splatter.jpg)");
+    // style("mysteryCard").background = mystery.killer.color;
     get(
       "mysteryKiller"
     ).innerHTML = `Mystery Killer: ${mystery.killer.firstName} 
@@ -296,8 +305,16 @@ const revealMystery = (windowId) => {
     get("mysteryWeapon").innerHTML = `Weapon: ${capitalizeFirstLetter(
       mystery.weapon.name
     )}`;
-    console.log();
   } // else show message
+};
+
+const restartGame = () => {
+  location.reload();
+};
+
+/* Function to randomly select one item from the array passed as a paramater */
+const randomSelector = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
 };
 
 /* The function is called when a killer is picked. Shuffles the suspects favourite
@@ -313,7 +330,6 @@ const shuffleFavouriteWeapon = () => {
 const shuffleFavourite = (mysteryObject, favouriteObject) => {
   mysteryObject.forEach((object) => {
     object.favourite = randomSelector(favouriteObject).id;
-    console.log(object.favourite);
   });
 };
 
@@ -354,11 +370,9 @@ const hideButton = () => {
 const increaseChance = (object) => {
   if (object === mystery.killer) {
     arrayDuplicated = duplicateArray(findFavourite(mystery.killer, weapons));
-    console.log(arrayDuplicated); // ta bort sen
     return randomFavourite(weapons, arrayDuplicated);
   } else if (object === mystery.weapon) {
     arrayDuplicated = duplicateArray(findFavourite(mystery.weapon, rooms));
-    console.log(arrayDuplicated); // ta bort sen
     return randomFavourite(rooms, arrayDuplicated);
   }
 };
@@ -366,8 +380,6 @@ const increaseChance = (object) => {
 /* The function is called to find the favourite object that matches the id of 
 the favourite property of the mystery object */
 const findFavourite = (mysteryObject, favouriteObjects) => {
-  console.log(mysteryObject); // ta bort sen
-  console.log(favouriteObjects); // ta bort sen
   const favourite = favouriteObjects.find(
     (favourite) => favourite.id === mysteryObject.favourite
   );
@@ -378,16 +390,13 @@ const findFavourite = (mysteryObject, favouriteObjects) => {
  number of times */
 const duplicateArray = (favourite) => {
   const randomNumber = Math.floor(Math.random() * 11);
-  console.log(randomNumber); // ta bort sen
   const arrayDuplicated = new Array(randomNumber).fill(favourite);
-  console.log("weapons duplicated: " + JSON.stringify(arrayDuplicated)); // ta bort sen
   return arrayDuplicated;
 };
 
 /* The functions merges two arrays to create a new array where the favourite object occurs more than once */
 const randomFavourite = (favourite, arrayDuplicated) => {
   const increasedFavourite = [...favourite, ...arrayDuplicated];
-  console.log(increasedFavourite); // ta bort sen
   return randomSelector(increasedFavourite);
 };
 
@@ -401,35 +410,22 @@ const style = (id) => {
   return get(id).style;
 };
 
-const restartGame = () => {
-  console.log("restartButton");
-  location.reload();
+/* The fuction is called by the event listener to check which deck is clicked */
+const getLoaderId = (elementId) => {
+  if (elementId === "loaderKiller") {
+    pickKiller(elementId);
+  } else if (elementId === "loaderWeapon") {
+    pickWeapon(elementId);
+  } else if (elementId === "loaderRoom") {
+    pickRoom(elementId);
+  }
 };
 
-// cardId = document.getElementById("demo").addEventListener("click", myFunction);
-
-// const eventClick = () => {
-//   // get the elements id
-//   // get this last elements child id
-// };
-
-// press the card of deck, get the element class and pass to the function eventClickCard
-//and the loader id, this.lastElementChild.id
-
-// click, the event listener
-
-// pass the loaderID to the pickKiller function
-
-/*** EXECUTION ***/
-
-/* Called when the 'Let's Play' button is clicked, toggles the window, hides
- the Reveal button and shuffles the suspects' favourite weapon */
-const startGame = (windowId) => {
-  toggleWindow(windowId);
-  hideButton();
-  document.getElementsByTagName("BODY")[0].style.backgroundImage =
-    "url(./assets/castle.jpg)";
-  shuffleFavourite(suspects, weapons);
-  shuffleFavourite(weapons, rooms);
-  // get(cardId).addEventListener("click", pickFunction);
-};
+/* Event listener attached to the decks classes. The function loops through the
+ array and attaches the event listener to each element before calling the
+ getLoaderId function with the loader id as a paramater */
+document.querySelectorAll(".decks").forEach((element) => {
+  element.addEventListener("click", () => {
+    getLoaderId(element.lastElementChild.id);
+  });
+});

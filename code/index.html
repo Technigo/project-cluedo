@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
     <title>Cluedo</title>
-    <link rel="shortcut icon" href="./assets/blood.png" type="image/png" />
+    <link rel="shortcut icon" href="./assets/splash.png" type="image/png" />
   </head>
   <body>
     <!-- <div class="flex-wrapper"> -->
@@ -25,12 +25,8 @@
     </header>
 
     <section class="game-wrapper invisible" id="gameWindow">
-      <div class="cards cards-container">
-        <article
-          class="decks killer-deck"
-          onclick="pickKiller(this.lastElementChild.id)"
-          id="killerCard"
-        >
+      <div class="cards-container">
+        <article class="decks killer-deck" id="killerCard">
           <p class="p-header">KILLER</p>
           <p id="killerNameAge"></p>
           <p id="killerAge"></p>
@@ -46,11 +42,7 @@
             />
           </div>
         </article>
-        <article
-          class="decks"
-          onclick="pickWeapon(this.lastElementChild.id)"
-          id="weaponCard"
-        >
+        <article class="decks" id="weaponCard">
           <p class="p-header">WEAPON</p>
           <p id="weaponName"></p>
           <p id="weaponWeight"></p>
@@ -63,11 +55,7 @@
             />
           </div>
         </article>
-        <article
-          class="decks"
-          onclick="pickRoom(this.lastElementChild.id)"
-          id="roomCard"
-        >
+        <article class="decks" id="roomCard">
           <p class="p-header">ROOM</p>
           <p id="roomName"></p>
           <div class="loader-container" id="loaderRoom">
@@ -99,7 +87,6 @@
       </article>
       <div>
         <button onclick="restartGame()" class="button">PLAY AGAIN</button>
-        <button onclick="" class="button">QUIT</button>
       </div>
     </section>
     <!-- </div> -->
