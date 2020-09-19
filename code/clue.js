@@ -163,7 +163,7 @@ const rooms = [
 // Selects randomly one item from the array passed into the function
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
-}
+};
 
 // Creates an object that stores the mystery 
 // The values will be set later.
@@ -173,24 +173,24 @@ const mystery = {
   room: undefined,
 };
 
-// This function will be invoked when you click on the killer card.
+// FUNCTION - this function will be invoked when you click on the killer card.
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
   document.getElementById('loader1').style.display = 'block';
-  setTimeout(afterLoaderPickKiller, 1300);
+  setTimeout(afterLoaderPickKiller, 1600);
 };
   
 document.getElementById('killerImage').style.filter = 'sepia(100%)';
 document.getElementById('loader1').style.display = 'none'; // prevents loader to begin when page is loaded
 document.getElementById('killerCard').addEventListener('click', pickKiller); // allows us to connect en event when clicked to the killer card
 
-// This function triggers when loader is done.
+// FUNCTION - this function triggers when loader is done.
 const afterLoaderPickKiller = () => {
   document.getElementById('killerImage').style.filter = 'sepia(0%)';
   document.getElementById('loader1').style.display = 'none';
   document.getElementById('killerCard').removeEventListener('click', pickKiller);
 
-// This function randomly changes each killer's favourite weapon.
+// FUNCTION - this function randomly changes each killer's favourite weapon.
   const shuffleFavouriteWeapon = () => {
     mystery.favouriteWeapon = randomSelector(weapons)
   }
@@ -208,44 +208,39 @@ const afterLoaderPickKiller = () => {
   document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}` 
 };
 
-// This function will be invoked when you click on the room card.
+// FUNCTION - this function will be invoked when you click on the weapon card.
 const pickWeapon = () => {
+  mystery.weapon = randomSelector(weapons)
   document.getElementById('loader2').style.display = 'block';
-  setTimeout(afterLoaderPickWeapon, 1300);
+  setTimeout(afterLoaderPickWeapon, 1600);
 };
 
 document.getElementById('loader2').style.display = 'none';
 document.getElementById('weaponCard').addEventListener('click', pickWeapon);
 
-// This function will be invoked when loader is done.
+// FUNCTION - this function triggers when loader is done.
 const afterLoaderPickWeapon = () => {
   document.getElementById('loader2').style.display = 'none';
   document.getElementById('weaponCard').removeEventListener('click', pickWeapon);
-
-  // This will randomly select a weapon from the weapon array. And add that to the mystery object.
-  mystery.weapon = randomSelector(weapons)
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-}
+};
 
-// This function will be invoked when you click on the room card.
+// FUNCTION - this function will be invoked when you click on the room card.
 const pickRoom = () => {
+  mystery.room = randomSelector(rooms)
   document.getElementById('loader3').style.display = 'block';
-  setTimeout(afterLoaderPickRoom, 1400);
+  setTimeout(afterLoaderPickRoom, 1600);
 };
 
 document.getElementById('loader3').style.display = 'none';
 document.getElementById('roomCard').addEventListener('click', pickRoom);
 
-// This function will be invoked when loader is done.
+// FUNCTION - This function will be invoked when loader is done.
 const afterLoaderPickRoom = () => {
   document.getElementById('loader3').style.display = 'none';
   document.getElementById('roomCard').removeEventListener('click', pickRoom);
-  
-  // This will randomly select a room from the room array. And add that to the mystery object.
-  mystery.room = randomSelector(rooms)
-  document.getElementById('roomCard').style.background = mystery.room.color
-  document.getElementById('roomName').innerHTML = `${mystery.room}`
-}
+  document.getElementById('roomName').innerHTML = `${mystery.room}` 
+};
 
 // This generates random items from the arrays on onclick.
 document.getElementById('killerCard').onclick = pickKiller
@@ -257,8 +252,8 @@ const revealMystery = () => {
     if (mystery.killer === undefined || mystery.weapon === undefined || mystery.room === undefined) {
     document.getElementById('revealButton').innerHTML = 'Please, pick killer, weapon and room.';
   }  else {
-    document.getElementById('revealButton').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room}.`
+    document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room}.`
   }
-}
+};
 
 

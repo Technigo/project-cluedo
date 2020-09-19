@@ -167,6 +167,11 @@ button:active {
   transform: translateY(4px);
 }
 
+h1.mystery {
+  text-align: center;
+  padding: 20px 200px;
+}
+
 /* MEDIA QUERY*/
 @media (max-width: 666px) {
   .cards {
@@ -201,5 +206,9 @@ button:active {
   .room-deck {
     width: 90%;
     height: auto;
+  }
+
+  h1.mystery {
+    padding: 10px;
   }
 }
