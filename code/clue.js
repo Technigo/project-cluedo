@@ -7,7 +7,8 @@ const mrGreen = {
   description: 'He has a lot of connections',
   age: 45,
   image: './assets/green.png',
-  occupation: 'Entrepreneur'
+  occupation: 'Entrepreneur',
+  favouriteWeapon: 'knife'
 }
 
 const professorPlum = {
@@ -17,7 +18,8 @@ const professorPlum = {
   description: 'He has knowledge in anatomy',
   age: 70,
   image: './assets/plum.png',
-  occupation: 'Professor'
+  occupation: 'Professor',
+  favouriteWeapon: 'poison'
 }
 
 const missScarlet = {
@@ -27,7 +29,8 @@ const missScarlet = {
   description: 'She is a student at the local college',
   age: 24,
   image: './assets/scarlet.png',
-  occupation: 'Student'
+  occupation: 'Student',
+  favouriteWeapon: 'rope'
 }
 
 const mrsPeacock = {
@@ -37,7 +40,8 @@ const mrsPeacock = {
   description: 'She knows everybody in the neighborhood',
   age: 40,
   image: './assets/peacock.png',
-  occupation: 'Teacher'
+  occupation: 'Teacher',
+  favouriteWeapon: 'candlestick'
 }
 
 const colonelMustard = {
@@ -47,7 +51,8 @@ const colonelMustard = {
   description: 'He is an old general in the army',
   age: 65,
   image: './assets/mustard.png',
-  occupation: 'Colonel'
+  occupation: 'Colonel',
+  favouriteWeapon: 'pistol'
 }
 
 const mrsWhite = {
@@ -57,7 +62,8 @@ const mrsWhite = {
   description: 'She is a retired doctor',
   age: 55,
   image: './assets/white.png',
-  occupation: 'Retired'
+  occupation: 'Retired',
+  favouriteWeapon: 'trophy'
 }
 
 
@@ -65,47 +71,56 @@ const mrsWhite = {
 const rope = {
   name: 'rope',
   weight: 10,
+  id: 'rope'
   
 }
 
 const knife = {
   name: 'knife',
-  weight: 5
+  weight: 5,
+  id: 'knife'
 }
 
 const candlestick = {
   name: 'candlestick',
-  weight: 15
+  weight: 15,
+  id: 'candlestick'
 }
 
 const dumbbell = {
   name: 'dumbbell',
-  weight: 30
+  weight: 30,
+  id: 'dumbbell'
 }
 
 const poison = {
   name: 'poison',
-  weight: 0
+  weight: 1,
+  id: 'poison'
 }
 
 const axe = {
   name: 'axe',
-  weight: 25
+  weight: 25,
+  id: 'axe'
 }
 
 const bat = {
   name: 'bat',
-  weight: 20
+  weight: 20,
+  id: 'bat'
 }
 
 const trophy = {
   name: 'trophy',
-  weight: 15
+  weight: 15,
+  id: 'trophy'
 }
 
 const pistol = {
   name: 'pistol',
-  weight: 8
+  weight: 8,
+  id: 'pistol'
 
 }
 
@@ -170,9 +185,9 @@ const pickKiller = () => {
   
   mystery.killer = randomSelector(suspects);
   
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
+  
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById('killerImage')
+  document.getElementById('killerImage').src = mystery.killer.image;
   
   document.getElementById('killerName').innerHTML = 
   `${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.description} ${mystery.killer.age} ${mystery.killer.occupation}`
@@ -200,6 +215,21 @@ const pickRoom = () => {
 
 
 
+const shuffleFavouriteWeapon = () => {
+  
+  suspects.favouriteWeapon.forEach ((suspects) => {
+    suspects.favouriteWeapon = randomSelector(weapons).id;
+  });
+}
+  
+  
+    
+  
+  
+
+
+
+
 
 
 document.getElementById('playAgainButton').style.display = 'none';
@@ -208,20 +238,23 @@ const revealMystery = () => {
       if (mystery.killer === '' || mystery.weapon === '' || mystery.room === '') {
       document.getElementById('mystery').innerHTML = 'Pick all three cards'
     } else {
-      document.getElementById('mystery').innerHTML = `The crime was commited by ${mystery.killer.firstName} in the ${mystery.room} with a/an ${mystery.weapon.name}.`;
+      document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} in the ${mystery.room} with a/an ${mystery.weapon.name}.`;
       document.getElementById('allCards').style.display = 'none';
       document.getElementById('findKiller').style.display = 'none';
       document.getElementById('pickCard').style.display = 'none';
       document.getElementById('revealButton').style.display = 'none';
       document.getElementById('playAgainButton').style.display = 'block';
+      document.getElementById('favouriteWeapon').innerHTML = `${mystery.killer.firstName}s favourite weapon is: ${mystery.favouriteWeapon.name}`;
+      
     }
     
   }
 
   document.getElementById('playAgainButton').addEventListener('click', () => {
-    history.back();
+    location.reload();
   });
 
   
 
+  
 
