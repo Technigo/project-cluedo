@@ -185,7 +185,11 @@ const killerInfo = document.getElementById('killerInfo');
 const weaponInfo = document.getElementById('weaponInfo');
 const roomInfo = document.getElementById('roomInfo');
 
-let mystery = {};
+let mystery = {
+  killer: null,
+  weapon: null,
+  room: null
+};
 
 
 const showKillerLoading = () => {
@@ -219,15 +223,15 @@ const pickKiller = () => {
 
   document.getElementById(
     'killerName'
-  ).innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`
+  ).innerHTML = `<strong>Name:</strong>  ${mystery.killer.firstName} ${mystery.killer.lastName}`
 
   document.getElementById(
     'killerAge'
-  ).innerHTML = `Age: ${mystery.killer.age}`
+  ).innerHTML = `<strong>Age:</strong>  ${mystery.killer.age}`
 
   document.getElementById(
     'favoriteWeapon'
-  ).innerHTML = `Favorite weapon: ${mystery.killer.favouriteWeapon.name}`
+  ).innerHTML = `<strong>Favorite weapon:</strong>  ${mystery.killer.favouriteWeapon.name}`
 
   document.getElementById(
     'killerImage'
@@ -247,7 +251,7 @@ const pickWeapon = () => {
   ).innerHTML = `${mystery.weapon.name}`
   document.getElementById(
     'weaponWeight'
-  ).innerHTML = `Weight: ${mystery.weapon.weight}`
+  ).innerHTML = `<strong> Weight: </strong> ${mystery.weapon.weight}`
 
 };
 
@@ -263,12 +267,22 @@ const pickRoom = () => {
 };
 
 
+const revealValdidation = () => {
+  if (mystery.killer === null || mystery.weapon === null || mystery.room === null) {
+    document.getElementById(
+      'revealText'
+    ).innerHTML = `Pick all three cards.`;
+  } else {
+    revealMystery();
+  }
+}; document.getElementById('reveal').onclick = revealValdidation;
+
 const revealMystery = () => {
   document.getElementById(
     'revealText'
   ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
 };
-document.getElementById('reveal').onclick = revealMystery;
+
 
 
 

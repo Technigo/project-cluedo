@@ -15,6 +15,7 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  background-color: rgb(27, 27, 27);
 }
 
 .start-text {
@@ -24,7 +25,7 @@ body {
   padding: 30px;
   margin-top: 30px;
   margin-bottom:  -50px;
-  color: rgb(45, 45, 45)
+  color: #ffffff;
 }
 
 p {
@@ -36,7 +37,7 @@ p {
 }
 
 .killer-deck h2 {
-  color: #ce86aa;
+  color: #527262;
 }
 
 .weapon-deck h2 {
@@ -59,13 +60,13 @@ p {
 }
 
 .killer-info img {
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 .killer-deck {
   width: 300px;
   height: 400px;
-  background: #E7C6D7;
+  background: #A6C8A6;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
