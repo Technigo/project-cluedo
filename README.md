@@ -1,13 +1,13 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
+This week’s project is to create a piece of the classic board game Cluedo.The user and game leader is able to click on three decks of cards, to randomly get a character, a weapon and a room. When clicking the button "Reveal the mystery" a message pops up with the information about the murder.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The focus on this project is to practice objects and arrays and also to manipulate the DOM with JavaScript.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started with styling the page. Then I went on to creating the objects for suspects, weapons and rooms.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Link to the deployed project on Netlify: 

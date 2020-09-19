@@ -1,5 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
+// Objects for all suspects
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
@@ -60,28 +59,114 @@ const mrsWhite = {
   occupation: 'Housekeeper'
 }
 
-
-
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
-
+// Objects for all weapons
 const rope = {
   name: 'rope',
-  weight: 10
+  color: 'brown',
+  length: '2 m',
+  weight: 5
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+const knife = {
+  name: 'knife',
+  color: 'silver',
+  length: '30 cm',
+  weight: 12
+}
+
+const candlestick = {
+  name: 'candlestick',
+  color: 'silver',
+  length: '40 cm',
+  weight: 20
+}
+
+const dumbbell = {
+  name: 'dumbbell',
+  color: 'black',
+  length: '20 cm',
+  weight: 50
+}
+
+const poison = {
+  name: 'poison',
+  color: 'green',
+  length: '10cm',
+  weight: 8
+}
+
+const axe = {
+  name: 'axe',
+  color: 'steel',
+  length: '50 cm',
+  weight: 45
+}
+
+const bat = {
+  name: 'bat',
+  color: 'wood',
+  length: '55 cm',
+  weight: 25
+}
+
+const trophy = {
+  name: 'trophy',
+  color: 'gold',
+  length: '45 cm',
+  weight: 35
+}
+
+const pistol = {
+  name: 'pistol',
+  color: 'black',
+  length: '35 cm',
+  weight: 25
+}
+
 
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
+//Array for suspects
 const suspects = [
   mrGreen,
+  colMustard,
+  mrsPeacock,
+  profPlum,
+  missScarlet,
   mrsWhite
-  // ...  and the rest
 ]
 
-const weapons = []
+//Array for weapons
+const weapons = [
+  rope,
+  knife,
+  candlestick,
+  dumbbell,
+  poison,
+  axe,
+  bat,
+  trophy,
+  pistol
+];
 
-const rooms = []
+// Array for rooms
+const rooms = [
+  "Dining Room",
+  "Conservatory",
+  "Kitchen",
+  "Study", 
+  "Library", 
+  "Billiard Room", 
+  "Lounge",
+  "Ballroom",
+  "Hall", 
+  "Spa",
+  "Living Room",
+  "Observatory",
+  "Theater",
+  "Guest House",
+  "Patio"
+];
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
