@@ -221,10 +221,24 @@ const randomSelector = array => {
 
 // Mystery storage
 
-const mystery = {
-  killer: '',
-  weapon: '',
-  room: '',
+let mystery = {
+  killer: undefined,
+  pickedWeapon: undefined,
+  weapon: undefined,
+  room: undefined,
+  favouriteWeapon: undefined,
+};
+
+// This function will change favourite weapons of each person
+
+const shuffleFavouriteWeapon = () => {
+  suspects.forEach((item) => {
+    item.favouriteWeapon = randomSelector(weapons).name;
+  });
+  if (mystery.killer !== undefined) {
+    killerFavouriteWeapon.innerHTML = mystery.killer.favouriteWeapon;
+    mystery.favouriteWeapon = mystery.killer.favouriteWeapon;
+  }
 };
 
 // Actions related to Killer deck
@@ -232,7 +246,8 @@ const mystery = {
 const killerAnimation = () => {
   killerLoader.style.display = "block";
   setTimeout(pickKiller, 2000);
-  killerCard.style.background = "#000";
+  revealedMystery.innerHTML = '';
+  killerCard.style.background = "";
   killerName.innerHTML = '';
   killerAge.innerHTML = '';
   killerOccupation.innerHTML = '';
@@ -243,6 +258,7 @@ const killerAnimation = () => {
 
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
+  mystery.favouriteWeapon = mystery.killer.favouriteWeapon;
   killerLoader.style.display = "none";
   killerCard.style.background = mystery.killer.color;
   killerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
@@ -259,9 +275,9 @@ killerCard.onclick = killerAnimation;
 
 const weaponAnimation = () => {
   weaponLoader.style.display = "block";
-  setTimeout(pickWeapon, 2000);
   weaponName.innerHTML = '';
   weaponWeight.innerHTML = '';
+  setTimeout(pickWeapon, 2000);
 };
 
 const pickWeapon = () => {
@@ -271,7 +287,52 @@ const pickWeapon = () => {
   weaponWeight.innerHTML = mystery.weapon.weight;
 };
 
-weaponCard.onclick = weaponAnimation;
+// weaponCard.onclick = weaponAnimation;
+
+const favouriteWeaponAnimation = () => {
+  if (mystery.killer === undefined) {
+    revealedMystery.innerHTML = ('Pick a killer first!');
+  } else {
+    weaponLoader.style.display = "block";
+    weaponName.innerHTML = '';
+    weaponWeight.innerHTML = '';
+    setTimeout(function () {
+      pickFavouriteWeapon(mystery.killer);
+    }, 2000);
+  };
+};
+
+const favouriteWeaponDuplicated = (elementToPopulate, howManyTimes) => {
+  let result = [];
+  for (let i = 0; i < howManyTimes; i++) {
+    result.push(elementToPopulate);
+  };
+  return result;
+};
+
+const pickFavouriteWeapon = (suspect) => {
+  const newArrayOfWeapons = weapons.map(a => a.name);
+  // console.log(newArrayOfWeapons);
+  const randomWeapons = [
+    ...newArrayOfWeapons,
+    ...favouriteWeaponDuplicated(suspect.favouriteWeapon, 10)
+  ];
+  // console.log(favouriteWeaponDuplicated(suspect.favouriteWeapon, 10));
+  // console.log(randomWeapons);
+  mystery.pickedWeapon = randomSelector(randomWeapons);
+  const mysteryWeapon = weapons.find((item) => {
+    if (item.name === mystery.pickedWeapon) {
+      return item;
+    };
+  });
+  // console.log(mysteryWeapon);
+  mystery.weapon = mysteryWeapon;
+  weaponLoader.style.display = "none";
+  weaponName.innerHTML = mystery.weapon.name;
+  weaponWeight.innerHTML = mystery.weapon.weight;
+};
+
+weaponCard.onclick = favouriteWeaponAnimation;
 
 // Actions related to Room deck
 
@@ -292,7 +353,7 @@ roomCard.onclick = roomAnimation;
 // Functions related to revelation of mystery 
 
 const revealMystery = () => {
-  if (mystery.killer === '' || mystery.weapon === '' || mystery.room === '') {
+  if (mystery.killer === undefined || mystery.weapon === undefined || mystery.room === undefined) {
     revealedMystery.innerHTML = ('Make sure you have picked a killer, a weapon and a room!');
   } else {
     revealedMystery.innerHTML = (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room}.`);
@@ -301,15 +362,6 @@ const revealMystery = () => {
 
 const resetMystery = () => {
   location.reload();
-};
-
-// This function will change favourite weapons of each person
-
-const shuffleFavouriteWeapon = () => {
-  suspects.forEach((item) => {
-    item.favouriteWeapon = randomSelector(weapons).name;
-  });
-  killerFavouriteWeapon.innerHTML = mystery.killer.favouriteWeapon;
 };
 
 // Buttons
