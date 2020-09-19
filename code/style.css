@@ -216,7 +216,7 @@ header{
   margin: 50px auto;
 }
 
-.mystery-button:focus:focus {
+.mystery-button:focus {
   outline: none;
   border: #0a2fc2 3px solid;
   box-shadow: 0 0 0 2px #fff;
@@ -230,16 +230,14 @@ header{
   border: none;
   font-size: 20px;
   border-radius: 50%;
-  display: block;
+  display: flex;
   margin: 50px auto;
 }
-
-.mystery-button:focus:focus {
+.new-mystery-button:focus {
   outline: none;
   border: #0a2fc2 3px solid;
   box-shadow: 0 0 0 2px #fff;
 }
-
 
 @media screen and (max-width: 1024px) {
   .cards {

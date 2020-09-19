@@ -78,111 +78,115 @@ const rope = {
   id: "rope",
   name: "rope",
   weight: 10,
-  image: "assets/rope.jpg",
+  image: "./assets/rope.jpg",
 };
 
 const candlestick = {
   id: "candlesstick",
   name: "candlestick",
   weight: 25,
-  image: "assets/candlestick.jpg",
+  image: "./assets/candlestick.jpg",
 };
 
 const pistol = {
   id: "pistol",
   name: "pistol",
   weight: 15,
-  image: "assets/revolver.jpg",
+  image: "./assets/revolver.jpg",
 };
 
 const knife = {
   id: "knife",
   name: "knife",
   weight: 12,
-  image: "assets/knife.jpg",
+  image: "./assets/knife.jpg",
 };
 
 const piping = {
   id: "piping",
   name: "piping",
   weight: 19,
-  image: "assets/piping.jpg",
+  image: "./assets/piping.jpg",
 };
 
 const wrench = {
   id: "wrench",
   name: "wrench",
   weight: 21,
-  image: "assets/wrench.jpg",
+  image: "./assets/wrench.jpg",
 };
 
 const dumbbell = {
   id: "dumbbell",
   name: "dumbbell",
   weight: 35,
+  image: "./assets/dumbbell.png"
 };
 
-const axe = {
-  id: "axe",
-  name: "axe",
-  weight: 7,
+const poison = {
+  id: "poison",
+  name: "poison",
+  weight: 0.2,
+  image: "./assets/poison.png"
 };
 
 const bat = {
   id: "bat",
   name: "bat",
   weight: 4,
+  image: "./assets/baseball-bat.png"
 };
 
 const trophy = {
   id: "trophy",
   name: "trophy",
   weight: 9,
+  image: "./assets/trophy.png"
 };
 
 const ballroom = {
   name: "ballroom",
-  image: "assets/ballroom.jpg",
+  image: "./assets/ballroom.jpg",
 };
 
 const billiardRoom = {
   name: "billiard room",
-  image: "assets/billiard_room.jpg",
+  image: "./assets/billiard_room.jpg",
 };
 
 const conservatory = {
   name: "conservatory",
-  image: "assets/conservatory.jpg",
+  image: "./assets/conservatory.jpg",
 };
 
 const kitchen = {
   name: "kitchen",
-  image: "assets/kitchen.jpg",
+  image: "./assets/kitchen.jpg",
 };
 
 const diningRoom = {
   name: "dining room",
-  image: "assets/dining_room.jpg",
+  image: "./assets/dining_room.jpg",
 };
 
 const library = {
   name: "library",
-  image: "assets/kitchen.jpg",
+  image: "./assets/kitchen.jpg",
 };
 
 const study = {
   name: "study",
-  image: "assets/study.jpg",
+  image: "./assets/study.jpg",
 };
 
 const hall = {
   name: "hall",
-  image: "assets/hall.jpg",
+  image: "./assets/hall.jpg",
 };
 
 const lounge = {
   name: "lounge",
-  image: "assets/lounge.jpg",
+  image: "./assets/lounge.jpg",
 };
 
 const mystery = {
@@ -234,7 +238,7 @@ const weapons = [
   piping,
   wrench,
   dumbbell,
-  axe,
+  poison,
   bat,
   trophy,
 ];
