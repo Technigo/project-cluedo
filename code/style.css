@@ -11,7 +11,7 @@ main {
 .hero-image {
   max-width: 100%;
   z-index: -1;
-  margin-bottom: 100px;
+  margin-bottom: 70px;
 }
 
 .hero-info {
@@ -112,6 +112,8 @@ main {
   color: white;
   font-family: sans-serif;
   font-weight: bold;
-  margin-top: 80px;
+  padding-right: 300px;
+  padding-left: 300px;
+  margin-top: 150px;
   margin-bottom: 20px;
 }
