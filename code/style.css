@@ -123,7 +123,7 @@ header{
 /* Card section style */
 .cards {
   width: 90%;
-  height: 550px;
+  height: 500px;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
@@ -222,7 +222,7 @@ header{
   border: none;
   font-size: 20px;
   border-radius: 50%;
-  margin: 30px auto;
+  margin: 10px auto 50px;
 }
 
 .mystery-button:focus {
