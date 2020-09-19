@@ -1,13 +1,15 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project is a Cluedo game. There are 3 cards and by clicking on each of them you can see a suspect, a weapon and a room where the crime was commited.
+When all the cards are open there is a button which you can click and it reveals the mistery in a displayed sentence.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+1. Created functions for picking cards and displaying information on them.
+2. Created a function when onclick of the Reveal button the mystery message appears, added if else condition so that if the cards are not open the mystery won't be revealed.
+   3)Created the favourite weapon function for random dispaly of favorite weapons of the supects.
+   I am planning to add the loader animation to each card as well.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+liza-minican-cluedo-project.netlify.app
