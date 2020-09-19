@@ -1,58 +1,103 @@
+/* 
+#E7C6D7
+#CF2E5D
+
+#EB8576
+#C46049
+
+#BFDCF0
+#5986BD
+
+#EAC76B
+#C7A54B
+*/
+
 body {
   margin: 0;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.start-text {
+  font-weight: 900;
+  font-size: 100px;
+  text-align: center;
+  padding: 30px;
+  margin-top: 30px;
+  margin-bottom:  -50px;
+  color: rgb(45, 45, 45)
 }
 
 p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+  margin: 15px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  /* background-color: #fff; */
 }
 
+.killer-deck h2 {
+  color: #CF2E5D;
+}
+
+.weapon-deck h2 {
+  color: #C46049;
+}
+
+.room-deck h2 {
+  color: #C7A54B;
+}
 .cards {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 30px;
+  max-width: 1200px;
+
 }
 
 .killer-deck {
-  width: 250px;
+  width: 300px;
   height: 400px;
-  background: #000;
+  background: #E7C6D7;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 15px;
 }
 
 .weapon-deck {
-  width: 250px;
+  width: 300px;
   height: 400px;
-  background: rgb(10, 53, 10);
+  background: #EB8576;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 15px;
 }
 
 .room-deck {
-  width: 250px;
+  width: 300px;
   height: 400px;
-  background: midnightblue;
+  background: #EAC76B;
 
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+  margin: 15px;
 }
 
 button {
-  padding: 8px 16px;
-  background: crimson;
+  padding: 20px 25px;
+  background: #BFDCF0;
+  color: rgb(45, 45, 45);
   border: none;
   font-size: 20px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+  font-weight: 900;
+  letter-spacing: 1.2px;
 }
