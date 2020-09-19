@@ -195,6 +195,7 @@ let mystery = {
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   const mysteryReveald = document.getElementById("mysteryReveald");
+  const loader = document.getElementById("killerLoader");
   const killerImage = document.getElementById("killerImage");
   const killerName = document.getElementById("killerName");
   const killerAge = document.getElementById("killerAge");
@@ -203,34 +204,58 @@ const pickKiller = () => {
     "killerFavouriteWeapon"
   );
   const killerDescription = document.getElementById("killerDescription");
-
-  // Toggle .active class for front and back of the killer card
-  document.getElementById("killerDeckFront").classList.toggle("active");
-  document.getElementById("killerDeckBack").classList.toggle("active");
+  const killerDeckFront = document.getElementById("killerDeckFront");
+  const killerDeckBack = document.getElementById("killerDeckBack");
 
   // Empty the field for old reveals
   mysteryReveald.innerHTML = "";
 
-  // Select a random killer from the suspects and add to the mystery object
-  mystery.killer = randomSelector(suspects);
-
-  // Select a random favouriteWeapon and add to the suspect
-  mystery.killer.favouriteWeapon = shuffleFavouriteWeapon(weapons);
-
   // If card front - show killer details, if card back - empty random selected killer
-  if (document.getElementById("killerDeckFront").classList.contains("active")) {
-    // Show killer details
-    document.getElementById("killerCard").style.background =
-      mystery.killer.color;
-    killerImage.src = mystery.killer.image;
-    killerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} /`;
-    killerAge.innerHTML = mystery.killer.age;
-    killerOccupation.innerHTML = mystery.killer.occupation;
-    killerFavouriteWeapon.innerHTML = mystery.killer.favouriteWeapon;
-    killerDescription.innerHTML = mystery.killer.description;
+  if (document.getElementById("killerDeckBack").classList.contains("active")) {
+    // Add class active to card front
+    killerDeckFront.classList.toggle("active");
+    killerDeckBack.classList.toggle("active");
+
+    // Select a random killer from the suspects and add to the mystery object
+    mystery.killer = randomSelector(suspects);
+
+    // Select a random favouriteWeapon and add to the suspect
+    mystery.killer.favouriteWeapon = shuffleFavouriteWeapon(weapons);
+
+    // Start loader
+    loader.style.display = "flex";
+    setTimeout(() => {
+      loader.style.display = "none";
+
+      // Show card front, hide card back
+      killerDeckFront.style.display = "flex";
+      killerDeckBack.style.display = "none";
+
+      // Show killer details
+      document.getElementById("killerCard").style.background =
+        mystery.killer.color;
+      killerImage.src = mystery.killer.image;
+      killerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} /`;
+      killerAge.innerHTML = mystery.killer.age;
+      killerOccupation.innerHTML = mystery.killer.occupation;
+      killerFavouriteWeapon.innerHTML = mystery.killer.favouriteWeapon;
+      killerDescription.innerHTML = mystery.killer.description;
+
+      setTimeout(() => (killerDeckFront.style.opacity = 1), 50);
+    }, 3000);
   } else {
-    document.getElementById("killerCard").style.background = "#121212";
+    // Add class active to card back
+    killerDeckFront.classList.toggle("active");
+    killerDeckBack.classList.toggle("active");
+
     mystery.killer = "";
+
+    document.getElementById("killerCard").style.background = "#121212";
+    // Show card back, hide card front
+    killerDeckBack.style.display = "flex";
+    killerDeckFront.style.display = "none";
+    setTimeout(() => (killerDeckFront.style.opacity = 0), 50);
+    // killerDeckFront.style.opacity = 0;
   }
 };
 
@@ -247,11 +272,6 @@ const pickWeapon = () => {
 
   // Empty the field for old reveals
   mysteryReveald.innerHTML = "";
-
-  // Add .active class to killer card front and remove from the back
-  weaponDeckFront.classList.toggle("active");
-  weaponDeckBack.classList.toggle("active");
-  console.log("hej: " + mystery.weapon);
 
   // if card front - show weapon details, if card back - empty random selected weapon
   if (weaponDeckBack.classList.contains("active")) {

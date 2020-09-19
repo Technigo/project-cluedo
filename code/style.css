@@ -18,21 +18,30 @@ h2 {
   background: #2c2c2c;
   width: 100%;
   text-align: center;
+  /* border: 1px solid gold; */
 }
 
 h3 {
   font-size: 32px;
   margin: 20px 0 5px 0;
-  background: #000;
-  background: rgba(18, 18, 18, 0.7);
+  /* background: #000; */
+  background: rgba(18, 18, 18, 0.5);
   width: 100%;
   text-align: center;
+}
+
+.weapon-deck h3,
+.room-deck h3 {
+  /* background: rgba(18, 18, 18, 0.5); */
+  /* border: 1px solid gold; */
 }
 
 h2,
 h3 {
   color: #121212;
   text-shadow: 1px 1px gold;
+  border-top: 1px solid gold;
+  border-bottom: 1px solid gold;
 }
 
 p,
