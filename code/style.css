@@ -188,12 +188,22 @@ header{
 
 .mystery-container {
   width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .mystery-text-container {
+  display: none;
+}
+
+
+.mystery-text-container.is-active{
   background-color: rgba(255, 255, 255, .6);
   margin: 25px 0;
   border-radius: 10px;
+  display: block;
 }
 
 .mystery-text-container h1 {
@@ -212,28 +222,33 @@ header{
   border: none;
   font-size: 20px;
   border-radius: 50%;
-  display: block;
   margin: 50px auto;
 }
 
 .mystery-button:focus {
+  display: block;
   outline: none;
   border: #0a2fc2 3px solid;
   box-shadow: 0 0 0 2px #fff;
 }
 
 .new-mystery-button {
-  height: 80px;
-  width: 80px;
+ display: none;
+}
+
+.new-mystery-button.is-active {
+  display: block;
+  height: 90px;
+  width: 90px;
   padding: 8px 16px;
   background: #ff0000;
   border: none;
   font-size: 20px;
   border-radius: 50%;
-  display: flex;
-  margin: 50px auto;
+  margin: 10px auto;
 }
-.new-mystery-button:focus {
+
+.new-mystery-button.is-active:focus {
   outline: none;
   border: #0a2fc2 3px solid;
   box-shadow: 0 0 0 2px #fff;

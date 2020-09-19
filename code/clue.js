@@ -1,5 +1,7 @@
 // -----------------GENERAL VARIABLES-----------
 const loader = document.querySelector(".loader-container");
+const mysteryText = document.querySelector(".mystery-text-container");
+const reloadButton = document.querySelector(".new-mystery-button")
 
 // ----------------OBJECTS---------------
 const mrGreen = {
@@ -283,7 +285,7 @@ const validateMysteryReveal = () => {
 //-----------Actions invoked in the event handler showCard on killerCard----------
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
-  document.getElementById("killerCard").style.background = mystery.killer.color;
+  document.querySelector("#killerCard").style.background = mystery.killer.color;
   killerCard.name.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   killerCard.image.src = mystery.killer.image;
   killerCard.age.innerHTML = `${mystery.killer.age} years old.`;
@@ -309,21 +311,20 @@ const pickRoom = () => {
 
 //--------Actions invoked in the getMystery onclick---------
 const showMystery = () => {
+  reloadButton.classList.toggle("is-active");
   const isValidReveal = validateMysteryReveal();
   if (isValidReveal === true) {
+      mysteryText.classList.toggle("is-active");
+
     showMysteryInfo.title.innerHTML = `Mystery`;
     showMysteryInfo.mysteryReveal.innerHTML = `Mr Black will be killed by ${mystery.killer.title} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`;
     showMysteryInfo.mysteryInfo.innerHTML = `Hush! Remember to keep it a secret!`;
   } else {
+    mysteryText.classList.toggle("is-active");
+
     showMysteryInfo.title.innerHTML = `Error`;
     showMysteryInfo.mysteryReveal.innerHTML = `Please pick a card from each deck to unravel the mystery.`
   }
-};
-
-//---------Actions invoked in the newMystery onclick---------
-const newMystery = () => {
-  console.log(`Before return ${mystery.killer}`)
-  return mystery.value = undefined;
 };
 
 
