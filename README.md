@@ -1,13 +1,9 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week’s project is to create a piece of the classic board game Cluedo. With clickable decks of cards, to randomly get a character, a weapon and a room.
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+When the project was forked, all the basic things like html and basic css code for the cards were already there. So I started with the javascript code, making the objects, arrays, and later used them in functions.  
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://cluedo-generator.netlify.app/code/
