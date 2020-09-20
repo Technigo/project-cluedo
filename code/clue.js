@@ -75,55 +75,74 @@ const mrsWhite = {
 const rope = {
   name: 'Rope',
   weight: 10,
-  id: 'rope'
+  id: 'rope',
+  favoritePlace: 'Conservatory',
+  place: null
 };
 
 const knife = {
   name: 'Knife',
   weight: 8,
-  id: 'knife'
+  id: 'knife',
+  favoritePlace: 'Kitchen',
+  place: null
 };
 
 const candlestick = {
   name: 'Candlestick',
   weight: 3,
-  id: 'candlestick'
+  id: 'candlestick',
+  favoritePlace: 'Living Room',
+  place: null
 };
 
 const dumbbel = {
   name: 'Dumbbel',
   weight: 15,
-  id: 'dumbbel'
+  id: 'dumbbel',
+  favoritePlace: 'Spa',
+  place: null
+
 };
 
 const poison = {
   name: 'Poison',
   weight: 1,
-  id: 'poison'
+  id: 'poison',
+  favoritePlace: 'Dining Room',
+  place: null
 };
 
 const axe = {
   name: 'Axe',
   weight: 10,
-  id: 'axe'
+  id: 'axe',
+  favoritePlace: 'Patio',
+  place: null
 };
 
 const bat = {
   name: 'Bat',
   weight: 15,
-  id: 'bat'
+  id: 'bat',
+  favoritePlace: 'Billiard Room',
+  place: null
 };
 
 const trophy = {
   name: 'Trophy',
   weight: 7,
-  id: 'trophy'
+  id: 'trophy',
+  favoritePlace: 'Library',
+  place: null
 };
 
 const pistol = {
   name: 'Pistol',
   weight: 9,
-  id: 'pistol'
+  id: 'pistol',
+  favoritePlace: 'Study',
+  place: null
 };
 
 
@@ -149,21 +168,21 @@ const weapons = [
 ]
 
 const rooms = [
-  "Dining Room", 
-  "Conservatory", 
-  "Kitchen", 
-  "Study", 
-  "Library", 
-  "Billiard Room", 
-  "Lounge", 
-  "Ballroom", 
-  "Hall", 
-  "Spa", 
-  "Living Room", 
-  "Observatory", 
-  "Theater", 
-  "Guest House", 
-  "Patio"
+  'Dining Room', 
+  'Conservatory', 
+  'Kitchen', 
+  'Study', 
+  'Library', 
+  'Billiard Room', 
+  'Lounge', 
+  'Ballroom', 
+  'Hall', 
+  'Spa', 
+  'Living Room', 
+  'Observatory', 
+  'Theater', 
+  'Guest House', 
+  'Patio'
 ]
 
 // returns the provided suspects favourite weapon as a weapon obj
@@ -171,6 +190,11 @@ const favoriteWeapon = (suspect) => {
   return weapons.find((weapon) => {return weapon.id === suspect.favouriteWeapon});
 }
 
+const weaponPlace = (weapon) => { 
+  return rooms.find((room) => {return room === weapon.favoritePlace});
+
+}
+ 
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -188,6 +212,48 @@ const shuffleWeapon = (arrayOfSuspects) => {
         suspectFavoriteWeapon   
     ];
     suspect.weapon = randomSelector(favoriteArray);
+  });
+};
+
+const shuffleRoom = (arrayOfweapons) => {
+
+  arrayOfweapons.forEach(weapon => {
+    const favoritePlace = [
+      ...rooms,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace,
+      weapon.favoritePlace
+    ];
+
+    weapon.place = randomSelector(favoritePlace);
+    console.log(weapon);
   });
 };
 
@@ -266,13 +332,13 @@ const pickWeapon = () => {
   weaponLoading.style.display = 'none';
   weaponInfo.style.display = 'block';
   shuffleWeapon(suspects);
-  mystery.weapon = mystery.killer.weapon.name;
+  mystery.weapon = mystery.killer.weapon;
 
   console.log(mystery.weapon);
 
   document.getElementById(
     'weaponName'
-  ).innerHTML = `${mystery.weapon}`
+  ).innerHTML = `${mystery.weapon.name}`
   document.getElementById(
     'weaponWeight'
   ).innerHTML = `<strong> Weight: </strong> ${favoriteWeapon(mystery.killer).weight}`
@@ -283,7 +349,8 @@ const pickWeapon = () => {
 const pickRoom = () => {
   roomLoading.style.display = 'none';
   roomInfo.style.display = 'block';
-  mystery.room = randomSelector(rooms)
+  shuffleRoom(weapons);
+  mystery.room = mystery.weapon.place;
 
   document.getElementById(
     'roomName'
