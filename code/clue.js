@@ -331,7 +331,7 @@ document.getElementById('roomcard').addEventListener('click', pickRoom);
 
 // Reveal function
 
-//const revealMystery() { - this function does not work when created using const keyword
+//const revealMystery = () => { - this function does not work when created using const keyword
   function revealMystery() {
     if (killerIsPicked === true && weaponIsPicked === true && roomIsPicked ===true) {
       document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with the ${mystery.weapon.name}`;
