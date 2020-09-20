@@ -183,51 +183,7 @@ const rooms = [
   'Theater', 
   'Guest House', 
   'Patio'
-]
-
-// returns the provided suspects favourite weapon as a weapon obj
-const favoriteWeapon = (suspect) => {
-  return weapons.find((weapon) => {return weapon.id === suspect.favouriteWeapon});
-}
-
- 
-const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
-}
-
-const shuffleWeapon = (arrayOfSuspects) => {
-  arrayOfSuspects.forEach(suspect => {
-    const suspectFavoriteWeapon = favoriteWeapon(suspect)
-    const favoriteArray = [
-        ...weapons,
-        suspectFavoriteWeapon,
-        suspectFavoriteWeapon,
-        suspectFavoriteWeapon,
-        suspectFavoriteWeapon,
-        suspectFavoriteWeapon   
-    ];
-    suspect.weapon = randomSelector(favoriteArray);
-  });
-};
-
-const shuffleRoom = (arrayOfweapons) => {
-  arrayOfweapons.forEach(weapon => {
-    const favoritePlace = [
-      ...rooms,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace
-    ];
-    weapon.place = randomSelector(favoritePlace);
-  });
-};
-
+];
 
 let mystery = {
   killer: null,
@@ -263,6 +219,46 @@ const revealButton = document.getElementById('reveal');
 const resetButton = document.getElementById('reset');
 
 
+// returns the provided suspects favourite weapon as a weapon obj
+const favoriteWeapon = (suspect) => {
+  return weapons.find((weapon) => {return weapon.id === suspect.favouriteWeapon});
+}
+
+ 
+const randomSelector = array => {
+  return array[Math.floor(Math.random() * array.length)]
+}
+
+
+const populateArray = (elementToPopulate, howManyTimes) => {
+  for (let i=0; i<howManyTimes; i++) {
+    return elementToPopulate
+  };
+};
+
+
+const shuffleWeapon = (arrayOfSuspects) => {
+  arrayOfSuspects.forEach(suspect => {
+    const suspectFavoriteWeapon = favoriteWeapon(suspect)
+    const favoriteArray = [
+        ...weapons,
+        populateArray(suspectFavoriteWeapon, 100)
+    ];
+    suspect.weapon = randomSelector(favoriteArray);
+  });
+};
+
+
+const shuffleRoom = (arrayOfweapons) => {
+  arrayOfweapons.forEach(weapon => {
+    const favoritePlace = [
+      ...rooms,
+      populateArray(weapon.favoritePlace, 100)
+    ];
+    weapon.place = randomSelector(favoritePlace);
+  });
+};
+
 
 const showKillerLoading = () => {
   killerLoading.style.display = 'inline-block';
@@ -270,11 +266,13 @@ const showKillerLoading = () => {
   setTimeout(pickKiller, 1000);
 };
 
+
 const showWeaponLoading = () => {
   weaponLoading.style.display = 'inline-block';
   weaponInfo.style.display = 'none';
   setTimeout(pickWeapon, 1000);
 };
+
 
 const showRoomLoading = () => {
   roomLoading.style.display = 'inline-block';
@@ -282,22 +280,18 @@ const showRoomLoading = () => {
   setTimeout(pickRoom, 1000);
 };
 
-killerCard.onclick = showKillerLoading;
-weaponCard.onclick = showWeaponLoading;
-roomCard.onclick = showRoomLoading;
-
 
 const pickKiller = () => {
   killerLoading.style.display = 'none';
   killerInfo.style.display = 'block';
-  mystery.killer = randomSelector(suspects)
+  mystery.killer = randomSelector(suspects);
 
   killerName.innerHTML = `<strong>Name:</strong>  ${mystery.killer.firstName} ${mystery.killer.lastName}`
   killerAge.innerHTML = `<strong>Age:</strong>  ${mystery.killer.age}`
   killerFavoriteWeapon.innerHTML = `<strong>Favorite weapon:</strong>  ${favoriteWeapon(mystery.killer).name}`
   killerImage.src = mystery.killer.image;
-
 };
+
 
 const pickWeapon = () => {
   weaponLoading.style.display = 'none';
@@ -308,7 +302,6 @@ const pickWeapon = () => {
 
   weaponName.innerHTML = `${mystery.weapon.name}`
   weaponWeight.innerHTML = `<strong> Weight: </strong> ${favoriteWeapon(mystery.killer).weight}`
-
 };
 
 
@@ -348,15 +341,18 @@ const resetCards = () => {
   killerInfo.style.display = 'none';
   weaponInfo.style.display = 'none';
   roomInfo.style.display = 'none';
-  
+
   mysteryText.innerHTML = '';
-  
 }; 
+
+
+killerCard.onclick = showKillerLoading;
+weaponCard.onclick = showWeaponLoading;
+roomCard.onclick = showRoomLoading;
 
 revealButton.onclick = revealValdidation;
 resetButton.onclick = resetCards;
 
-// on load
 
 
 
