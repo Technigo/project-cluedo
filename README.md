@@ -10,4 +10,4 @@ I started with styling the page. Then I went on to creating the objects for susp
 
 ## View it live
 
-Link to the deployed project on Netlify: 
+Link to the deployed project on Netlify: https://cluedo-mystery-game.netlify.app/
