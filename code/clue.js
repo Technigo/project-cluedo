@@ -62,47 +62,65 @@ const mrsWhite = {
 
 const rope = {
   name: 'rope',
-  weight: 10
+  weight: 10,
+  color: 'black',
+  image: 'assets/rope.png'
 }
 
 const knife = {
   name: 'knife',
-  weight: 4
+  weight: 4,
+  color: 'black',
+  image: 'assets/knife.png'
 }
 
 const candlestick = {
   name: 'candestick',
-  weight: 8
+  weight: 8,
+  color: 'black',
+  image: 'assets/candlestick.png',
 }
 
 const dumbbell = {
   name: 'dumbbell',
-  weight: 14
+  weight: 14,
+  color: 'black',
+  image: 'assets/dumbbell.png'
 }
 
 const poison = {
   name: 'poison',
-  weight: 1
+  weight: 1,
+  color: 'black',
+  image: 'assets/poison.png'
 }
 
 const axe = {
   name: 'axe',
-  weight: 12
+  weight: 12,
+  color: 'black',
+  image: 'assets/axe.png'
 }
 
 const bat = {
   name: 'bat',
-  weight: 9
+  weight: 9,
+  color: 'black',
+  image: 'assets/bat.png'
 }
 
 const trophy = {
   name: 'trophy',
-  weight: 7
+  weight: 7,
+  color: 'black',
+  image: 'assets/trophy.png'
 }
 
 const pistol = {
   name: 'pistol',
-  weight: 5
+  weight: 5,
+  color: 'black',
+  image: 'assets/pistol.png'
 }
 
 const suspects = [
@@ -164,13 +182,19 @@ const pickKiller = () => {
   mystery.killer = randomSelector(suspects)
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`
+  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
+  document.getElementById('killerImage').src = mystery.killer.image
+  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
 }
 document.getElementById('killerCard').addEventListener('click', pickKiller)
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
-  document.getElementById('weaponCard').style.background = mystery.killer.color
+  document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
+  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}`
+  document.getElementById('weaponImage').src = mystery.weapon.image
 }
 document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 

@@ -6,10 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto&display=swap" rel="stylesheet">
   <title>Technigo Project Cluedo</title>
 </head>
 
 <body>
+  <header>
+    <h1>CLUEDO</h1>
+  </header>
   <section class="cards">
     <article class="killer-deck" id="killerCard">
       <p>KILLER</p>
@@ -23,6 +27,7 @@
       <p>WEAPON</p>
       <p id="weaponName"></p>
       <p id="weaponWeight"></p>
+      <img id="weaponImage" src="" height="100" />
     </article>
     <article class="room-deck" id="roomCard">
       <p>ROOM</p>
@@ -33,6 +38,8 @@
   <h1 id="mystery"></h1>
 
   <button id="reveal">REVEAL THE CRIME</button>
+
+  <footer></footer>
 
   <script src="clue.js"></script>
 </body>
