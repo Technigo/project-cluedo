@@ -1,5 +1,5 @@
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-const suspects = [{
+let suspects = [{
         nickname: 'mrGreen',
         firstName: 'Jacob',
         lastName: 'Green',
@@ -66,58 +66,97 @@ const suspects = [{
         favouriteWeapon: 'trophy'
     }
 ];
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
+
+
+
+
+// CREATE OBJECTS FOR ALL THE favouriteWeaponS, ADD MORE CHARACTERISTICS TO THE favouriteWeaponS IF YOU LIKE.
 const weapons = [{
         name: 'rope',
         weight: 7,
-        color: 'brown'
+        color: 'brown',
+        image: 'assets/rope.jpg'
     },
     {
         name: 'knife',
         weight: 11,
-        color: 'black'
+        color: 'black',
+        image: 'assets/knife.png'
     },
     {
         name: 'candlestick',
         weight: 3,
-        color: 'orange'
+        color: 'orange',
+        image: 'assets/candlestick.jpg'
     },
     {
         name: 'dumbbell',
         weight: 12,
-        color: 'gold'
+        color: 'gold',
+        image: 'assets/dumbbel.jpg'
     },
     {
         name: 'poison',
         weight: 2,
-        color: 'pink'
+        color: 'pink',
+        image: 'assets/poison.jpg'
     },
     {
         name: 'axe',
         weight: 11,
-        color: 'yellow'
+        color: 'yellow',
+        image: 'assets/axe.png'
     },
     {
         name: 'bat',
         weight: 9,
-        color: 'purple'
+        color: 'purple',
+        image: 'assets/bat.jpg'
     },
     {
         name: 'trophy',
         weight: 6,
-        color: 'green'
+        color: 'green',
+        image: 'assets/trophy.jpg'
     },
     {
         name: 'pistol',
         weight: 12,
-        color: 'aqua'
+        color: 'brown',
+        image: 'assets/pistol.jpg'
     }
 ];
+
+
+
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 const rooms = ["Dining Room", "Conservatory", "Kitchen", "Study", "Library", "Billiard Room", "Lounge", "Ballroom",
     "Hall", "Spa", "Living Room", "Observatory", "Theater", "Guest House", "Patio"
 ];
 
+let weaponArray = [
+    'rope',
+    'knife',
+    'candlestick',
+    'dumbbell',
+    'poison',
+    'axe',
+    'bat',
+    'trophy',
+    'pistol'
+];
+
+
+const shufflefavouriteWeapons = (arrayOfSuspects) => {
+    arrayOfSuspects.forEach(suspect => {
+        suspect.weapon = weaponArray[Math.floor(Math.random() * 9)];
+
+    })
+};
+
+shufflefavouriteWeapons(suspects);
+
+console.log(suspects);
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
@@ -125,41 +164,40 @@ const randomSelector = array => {
 }
 
 
-// An object with a killer, a weapon and a room. The values will be set later.
+// An object with a killer, a favouriteWeapon and a room. The values will be set later.
 let mystery = {
     killer: '',
     weapon: '',
     room: ''
 }
 
+
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
     // Randomly selects a killer from the suspects-array and adds that to the mystery object.
     mystery.killer = randomSelector(suspects);
     // This will change the background color of the card and show picture and detail about the suspect.
-    // document.getElementById("questionImg").style.display = "none";
     document.getElementById('killerCard').style.background = mystery.killer.color;
     document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
     document.getElementById('killerImage').src = mystery.killer.image;
     document.getElementById('killerAge').innerHTML = `${mystery.killer.age} years old`;
     document.getElementById('killerDescription').innerHTML = mystery.killer.description;
-    document.getElementById('killerOccupation').innerHTML = mystery.killer.occupation;
+    document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`;
 }
 
-// This function will be invoked when you click on the weapon card.
+// This function will be invoked when you click on the favouriteWeapon card. 
 const pickWeapon = () => {
-    // Randomly selects a weapon from the weapons-array and adds that to the mystery object.
+    // Randomly selects a favouriteWeapon from the favouriteWeapons-array and adds that to the mystery object.
     mystery.weapon = randomSelector(weapons);
-    // document.getElementById("questionImg").style.display = "none";
     document.getElementById('weaponCard').style.background = mystery.weapon.color
-    document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
-    document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight} kg`;
+    document.getElementById('weaponName').innerHTML = mystery.weapon.name;
+    document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight} kg `;
+    document.getElementById('weaponImage').src = mystery.weapon.image;
 }
 
 const pickRoom = () => {
-    // Randomly selects a weapon from the rooms-array and adds that to the mystery object
+    // Randomly selects a favouriteWeapon from the rooms-array and adds that to the mystery object
     mystery.room = randomSelector(rooms);
-    // document.getElementById("questionImg").style.display = "none";
     document.getElementById('roomName').innerHTML = `${mystery.room}`;
 }
 
@@ -171,9 +209,9 @@ document.getElementById('roomCard').onclick = pickRoom;
 // Function that will be invoked when you click the reveal-button. It prints out a message
 //with facts about the murderer.
 const revealMystery = () => {
-
-    if (mystery.killer == "" || mystery.weapon == "" || mystery.room == "") {
-        document.getElementById('mysteryDisplay').innerHTML = `The murder can't be resolved yet`;
+    if (mystery.killer == "" || mystery.favouriteWeapon == "" || mystery.room == "") {
+        document.getElementById('mysteryDisplay').innerHTML = `
+    The murder can 't be resolved yet`;
     } else {
         document.getElementById('mysteryDisplay').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName},
          in the ${mystery.room } with a ${mystery.weapon.name}. `;
@@ -182,10 +220,6 @@ const revealMystery = () => {
 }
 
 //flips the cards on onclick
-// const flipCardContainer = document.querySelector(".flip-card-container");
-// flipCardContainer.onclick = () => {
-//     flipCardContainer.classList.toggle("flip");
-// }
 document.querySelectorAll('.flip-card-container').forEach(item => {
     item.onclick = () => {
         item.classList.toggle("flip");
