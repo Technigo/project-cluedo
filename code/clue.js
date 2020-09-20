@@ -1,4 +1,4 @@
-// OBJECTS FOR SUSPECTS AND WEAPONS
+// OBJECTS FOR SUSPECTS, ROOMS AND WEAPONS //
 
 // Objects for all suspects
 const mrGreen = {
@@ -201,7 +201,10 @@ const garden = {
   image: 'assets/room/garden.png'
 };
 
-// GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS
+
+
+// ARRAYS FOR SUSPECTS, WEAPONS AND ROOMS //
+
 //Array for suspects
 const suspects = [
   mrGreen,
@@ -240,28 +243,27 @@ const rooms = [
   garden
 ];
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+//FUNCTION FOR RANDOMLY SELECTING ONE ITEM FROM THE ARRAY THAT'S PASSED INTO THE FUNCTIONS FOR SUSPECTS, WEAPONS AND ROOMS.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
+//OBJECT THAT KEEPS THE MYSTERY //
 const mystery = {
  killer: null,
  weapon: null,
  room: null
 };
 
-//Function to show cards
+
+// FUNCTIONS FOR CARDS //
+
+//Function to show hidden cards
 const cardShow = () => {
   const element = document.getElementById("cardShow");
   element.classList.remove('cardShow');
 } 
 document.getElementById('startPlay').onclick = cardShow;
-
 
 
 // This function will be invoked when you click on the killer card.
@@ -298,11 +300,18 @@ const pickRoom = () => {
 }
 document.getElementById('roomCard').onclick = pickRoom;
 
-
-//Function to reveal the mystery
+// FUNCTION FOR REVEALING MYSTERY //
+//Function to reveal the mystery and verify that all cards are picked
 const revealMystery  = () => {
+  if(mystery.killer && mystery.weapon && mystery.room) {
   const element = document.getElementById("mysteryShow");
-  element.classList.remove('mysteryShow');
+  element.classList.remove('mysteryShow'); 
+  document.getElementById("mysteryHeader").innerHTML= `You solved it!`;
   document.getElementById("mysteryMessage").innerHTML= `The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`;
-} 
+  } else {
+    const element = document.getElementById("mysteryShow");
+    element.classList.remove('mysteryShow');
+    document.getElementById("mysteryMessage").innerHTML= `ERROR! You must pick three cards.`;
+  }
+}
 document.getElementById('revealMystery').onclick = revealMystery;

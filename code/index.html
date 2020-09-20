@@ -7,28 +7,33 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Titillium+Web&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ranchers&family=Ribeye+Marrow&display=swap" rel="stylesheet">
-    <title>Technigo Project Cluedo</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Cluedo Mystery Picker</title>
   </head>
   <body>
-
+    
     <div class="hero-image">
       <div class="hero-text">
         <h1> CLUEDO MYSTERY PICKER</h1>
         <p class="ingress">Do you have what it takes to solve the crime...?</p>
+        <button class="startPlay" id="startPlay"><a href="#letter">Start playing</a></button>
       </div>
     </div>
     
-    <section class="letter">
+    <section class="letter" id="letter">
       <div class="container">
         <div class="polaroid rotate_right">
           <img class="polaroidImg" src="img/splatter.png" alt="Mansion">
           <p class="caption">
             <p>Dear Detective,</p>
             <p>
-              A mystery crime has been comitted in Scaryville Mansion. You are the only one who can solve it!
+              A mysterious crime has been comitted, and you are the only one who can solve it!
             </p>
             <p>
-              Go through the clues and see if you can find the killer, weapon and place for the murder. 
+              Go through the clues and see if you can find the suspect, weapon and place for the murder. 
             </p>
             <p> We're counting on you!</p>
             <p>Sincerely,</p>
@@ -38,49 +43,50 @@
         
         <div class="polaroid rotate_left">
           <img class="polaroidImg" src="img/mansion.jpg" alt="Mansion">
-          <p class="caption">Scaryville Mansion. The who, what and where of the murder is a mystery though...</p>
+          <p class="caption">The only thing we know for certain is that the murder has taken place at Scaryville Mansion. The rest is up to you to figure out. Pick three cards from the deck below to reveal the mystery.</p>
         </div>
       </div>
     </section>
-
-    <button class="startPlay" id="startPlay">Start playing</button>
-
+    
     <div class="cardShow" id="cardShow">
-    <section class="cards">
-      <article class="killer-deck" id="killerCard">
-        <h2>KILLER</h2>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
-      </article>
-      <article class="weapon-deck" id="weaponCard">
-        <h2>WEAPON</h2>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-        <p id="weaponLenght"></p>
-        <img id="weaponImage" src="" height="100" />
-      </article>
-      <article class="room-deck" id="roomCard">
-        <h2>ROOM</h2>
-        <p id="roomName"></p>
-        <img id="roomImage" src="" height="100" />
-      </article>
-    </section>
-    <button class="revealMystery" id="revealMystery">Reveal the crime</button>
-  </div>
-  
-  <div class="mysteryShow" id="mysteryShow">
-  <div id="mystery" class="mystery">
-    <h1 class="mysteryHeader">You solved it!</h1>
-    <p id="mysteryMessage" class="mysteryMessage"></p>
-    <img class="mysteryImg" src="./assets/pointing.png" height="100"/>
-  </div>
-</div>
-    <script src="clue.js"></script>
+      <section class="cards">
+        <article class="killer-deck" id="killerCard">
+          <h2>KILLER</h2>
+          <p id="killerName"></p>
+          <p id="killerAge"></p>
+          <p id="killerOccupation"></p>
+          <img id="killerImage" src="" height="100" />
+          <p id="killerDescription"></p>
+        </article>
+        <article class="weapon-deck" id="weaponCard">
+          <h2>WEAPON</h2>
+          <p id="weaponName"></p>
+          <p id="weaponWeight"></p>
+          <p id="weaponLenght"></p>
+          <img id="weaponImage" src="" height="100" />
+        </article>
+        <article class="room-deck" id="roomCard">
+          <h2>ROOM</h2>
+          <p id="roomName"></p>
+          <img id="roomImage" src="" height="100" />
+        </article>
+        <button class="revealMystery" id="revealMystery"><a href="#mysteryShow">Reveal the crime</a></button>
+      </section>
+    </div>
+    
+    <div class="mysteryShow" id="mysteryShow">
+      <div id="mystery" class="mystery">
+        <h1 class="mysteryHeader" id=mysteryHeader></h1>
+        <p id="mysteryMessage" class="mysteryMessage"></p>
+        <img class="mysteryImg" src="./assets/pointing.png" height="100"/>
+        <button><a href="index.html">Play again?</a></button>
+      </div>
+    </div>
+
     <footer class="footer">
       <p class="footer-text">Week 5 project: Cluedo Mystery Picker | By: Emma Urman | Technigo Fall Bootcamp 2020 | All images from Unsplash & Pixabay</p>
     </footer>
+
+    <script src="clue.js"></script>
   </body>
 </html>

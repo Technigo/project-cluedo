@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
@@ -7,6 +11,7 @@ body {
 
 h1, h2 {
   font-family: 'Ribeye Marrow', cursive;
+  font-size: 38px;
   color: #fff;
 }
 
@@ -27,12 +32,16 @@ p {
   font-weight: 300;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+}
 
 /* The hero image */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   width: 100%;
-  height: 800px;
+  height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/mansion_hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -51,14 +60,12 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);}
-
+  
   /* LETTER STYLE */
-
-
 .container {
   display: inline-block;
   justify-content: center;
-  margin-left: 90px;
+  max-width: 80%;
   margin-bottom: 20px;
 }
 
@@ -73,9 +80,7 @@ p {
 
 .letter p {
   text-decoration: underline;
-
 }
-
 
 div.polaroid {
   text-align: left;
@@ -106,6 +111,9 @@ div.rotate_left {
   width: 284px;
   height: 213px;
 }
+
+/* CARD STYLE */
+
 .cardShow, .mysteryShow{
   display: none;
 }
@@ -172,21 +180,29 @@ div.rotate_left {
   border-radius: 5px;
 }
 
+/* BUTTON STYLE */
 button {
+  margin: 20px;
   font-family: 'Nosifer', cursive;
   padding: 8px 16px;
   background: rgb(138, 22, 45);
   color: #fff;
   border: none;
-  font-size: 30px;
+  font-size: 20px;
   border-radius: 8px;
-  display: block;
-  margin: auto;
-  margin-top: 10px;;
   text-align: center;
+  cursor: pointer;
+  box-shadow: 2px 3px 4px #5e5b5b;
 }
 
-/* Style for the footer */
+button:hover{
+  transition: 0.3s;
+  font-size: 15px;
+  transform: translateY(5px);
+  box-shadow: none;
+}
+
+/* FOOTER STYLE */
 .footer {
   display: flex;
   justify-content:center;
@@ -205,11 +221,17 @@ button {
   color: #d7d7d7;
 }
 
-
-/* Media Queries */
+/* MEDIA QUERIES */
 
 /*  Tablets in portrait mode, large display smartphones landscape mode */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  
+  .cards {
+    display: flex;
+		flex-direction: column;
+    align-items: center;
+    height: fit-content;
+  }
 
   .killer-deck {
    margin: 5px;
@@ -217,7 +239,6 @@ button {
   
   .weapon-deck {
     margin: 5px;
-
   }
   
   .room-deck {
@@ -287,4 +308,28 @@ button {
   p {
     font-size: 0.9rem;
   }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+  }
+  
+  div.polaroid {
+  width: 184px;
+}
+
+div.rotate_right {
+  width: 184px;
+}
+
+div.rotate_left {
+  width: 184px;
+}
+
+.polaroidImg {
+  width: 184px;
+  height: 113px;
+}
 }

@@ -6,7 +6,7 @@ The focus on this project is to practice objects and arrays and also to manipula
 
 ## The problem
 
-I started with styling the page. Then I went on to creating the objects for suspects, weapons and rooms.
+I started with styling the page. Then I went on to creating the objects for suspects, weapons and rooms. Then I created the functions for showing content on the different cards. In the "reveal mystery"-function I've worked with conditionals to verify that three cards have been picked. I've also worked with the DOM to show and hide different elements of the page. I've added a smooth scroll  with html and css when clicking the "start play /reveal"-buttons for enhancing the feeling of a game. 
 
 ## View it live
 
