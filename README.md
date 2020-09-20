@@ -7,4 +7,4 @@ I createded arrays with objects for the different elemnts - suspects, weapons an
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://cluedo-myster-picker.netlify.app/
