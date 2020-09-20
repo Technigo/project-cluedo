@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  bordercolor: 'green',
+  color: 'green',
   description: 'Hypocritical Anglican priest',
   age: 45,
   image: 'assets/green.png',
@@ -60,56 +60,42 @@ const mrsWhite = {
 const rope = {
   name: 'Rope',
   weight: 10,
-  style: 'long',
-  color: 'gray',
 }
 const knife = {
   name: 'Knife',
   weight: 10,
-  style: 'sharp',
-  color: 'gray',
 }
 const candlestick = {
   name: 'Candlestick',
   weight: 10,
-  style: 'cemetary',
-  color: 'white',
 }
+
 const dumbbell = {
   name: 'Dumbbell',
   weight: 10,
-  style: 'heavy',
-  color: 'gray',
 }
 const poison = {
   name: 'Poison',
   weight: 10,
-  style: 'deadly',
-  color: 'white',
 }
+
 const axe = {
   name: 'Axe',
   weight: 10,
-  style: 'rusty',
-  color: 'gray',
 }
 const bat = {
   name: 'Bat',
   weight: 10,
-  style: 'baseball',
-  color: 'white',
 }
 const trophy = {
   name: 'Trophy',
   weight: 10,
-  style: 'beautypagant',
-  color: 'gray',
 }
 const pistol = {
   name: 'Pistol',
   weight: 10,
-  style: 'military',
-  color: 'white',
+
+
 }
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
@@ -192,7 +178,7 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
 
   document.getElementById('weaponCard').style.background = mystery.weapon.color;
-  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name} ${mystery.weapon.style}`;
+  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
 };
 document.getElementById("weaponCard").onclick = pickWeapon;
 
