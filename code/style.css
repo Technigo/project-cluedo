@@ -10,27 +10,29 @@ body {
 }
 
 p {
-  margin: 1px;
+  margin: 0px;
   font-weight: 300;
   background-color: #fff;
 }
 
 .favourite-weapon {
   color: white;
-  background-color: black;
+  background-color: none;
   text-align: center;
 }
 
 h2 {
   color: white;
-  background-color: black;
+  background-color: none;
   text-align: center;
+  padding: 25px;
   
 }
 
 h1 {
   text-align: center;
   color: white;
+  padding: 25px;
   
 }
 
@@ -44,23 +46,35 @@ img {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  
   display: flex;
   justify-content: space-around;
   align-items: center;
   
 }
 
-.loader {
-  color: blue;
 
+
+#killerLoader, #weaponLoader, #roomLoader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  display: none;
+  
+  
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .killer-deck {
   width: 250px;
   height: 400px;
   background: #000;
-  
   text-align: center;
   padding-top: 0px;
   border-radius: 16px;

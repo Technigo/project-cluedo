@@ -1,5 +1,5 @@
 
-
+//Objects for suspects
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
@@ -67,7 +67,7 @@ const mrsWhite = {
 }
 
 
-
+//Objects for weapons
 const rope = {
   name: 'rope',
   weight: 10,
@@ -124,8 +124,67 @@ const pistol = {
 
 }
 
+const diningroom = {
+  name: 'dining room'
+}
 
+const conservatory = {
+  name: 'conservatory'
+}
 
+const kitchen = {
+  name: 'kitchen'
+}
+
+const study = {
+  name: 'study'
+}
+
+const library = {
+  name: 'library'
+}
+
+const billiardroom = {
+  name: 'billiard room'
+}
+
+const lounge = {
+  name: 'lounge'
+}
+
+const ballroom = {
+  name: 'ballroom'
+}
+
+const hall = {
+  name: 'hall'
+}
+
+const spa = {
+  name: 'spa'
+}
+
+const livingroom = {
+  name: 'living room'
+}
+
+const observatory = {
+  name: 'observatory'
+}
+
+const theater = {
+  name: 'theater'
+}
+
+const guesthouse = {
+  name: 'guest house'
+}
+
+const patio = {
+  name: 'patio'
+}
+
+//Arrays for suspects, weapons and rooms
 const suspects = [
   mrGreen,
   mrsWhite,
@@ -148,81 +207,113 @@ const weapons = [
 ]
 
 const rooms = [
-  'Dining Room', 
-  'Conservatory', 
-  'Kitchen', 
-  'Study', 
-  'Library', 
-  'Billiard Room', 
-  'Lounge', 
-  'Ballroom',
-  'Hall', 
-  'Spa', 
-  'Living Room', 
-  'Observatory', 
-  'Theater', 
-  'Guest House', 
-  'Patio'
+  diningroom, 
+  conservatory, 
+  kitchen, 
+  study, 
+  library, 
+  billiardroom, 
+  lounge, 
+  ballroom,
+  hall, 
+  spa, 
+  livingroom, 
+  observatory, 
+  theater, 
+  guesthouse, 
+  patio
 ]
 
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+// This function will randomly select one item from the array that's passed in the function
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
 
-
+// Mystery object
 const mystery = {
   killer: '',
   weapon: '',
   room: '',
   favouriteWeapon: ''
 }
-
+// Loader animation for picking killer
 const killerAnimation = () => {
-  killerLoader.style.display = 'block';
-  setTimeout(pickKiller, 3000);
+  document.getElementById('killerLoader').style.display = 'block';
+  document.getElementById('killerImage').style.display = 'none';
+  document.getElementById('killerName').style.display = 'none';
+  document.getElementById('killerAge').style.display = 'none';
+  document.getElementById('killerDescription').style.display = 'none';
+  setTimeout(pickKiller, 1000);
   
-}
+  }
+  
+  document.getElementById('killerCard').addEventListener('click', killerAnimation);
 
+//Function for picking a random killer
 const pickKiller = () => {
   
+  document.getElementById('killerLoader').style.display = 'none';
   mystery.killer = randomSelector(suspects);
   
   
+  document.getElementById('killerImage').style.display = 'block';
+  document.getElementById('killerName').style.display = 'block';
+  document.getElementById('killerAge').style.display = 'block';
+  document.getElementById('killerDescription').style.display = 'block';
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerImage').src = mystery.killer.image;
   document.getElementById('killerOccupation')
   
   document.getElementById('killerDescription')
   document.getElementById('killerName').innerHTML = 
-  `Name: ${mystery.killer.firstName} ${mystery.killer.lastName} ${mystery.killer.description} ${mystery.killer.age} ${mystery.killer.occupation} ${mystery.killer.favouriteWeapon}`
-
+  `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  document.getElementById('killerAge').innerHTML = `${mystery.killer.age} years old`;
+  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`; 
 }
 
+const weaponAnimation = () => {
+  document.getElementById('weaponLoader').style.display = 'block';
+  document.getElementById('weaponName').style.display = 'none';
+  document.getElementById('weaponWeight').style.display = 'none';
+  setTimeout(pickWeapon, 1000);
+  }
+  document.getElementById('weaponCard').addEventListener('click', weaponAnimation);
 
-
+//Function for picking a random weapon
 const pickWeapon = () => {
-  
+  document.getElementById('weaponLoader').style.display = 'none';
   mystery.weapon = randomSelector(weapons);
 
   document.getElementById('weaponCard')
-  document.getElementById('weaponName');
-  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.name} ${mystery.weapon.weight}`
+  document.getElementById('weaponName').style.display = 'block';
+  document.getElementById('weaponWeight').style.display = 'block';
+  document.getElementById('weaponName').innerHTML = `Name: ${mystery.weapon.name}`;
+  document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight} lbs`
+  
 }
 
+const roomAnimation = () => {
+  document.getElementById('roomLoader').style.display = 'block';
+  document.getElementById('roomName').style.display = 'none';
+  setTimeout(pickRoom, 1000);
+  }
+  document.getElementById('roomCard').addEventListener('click', roomAnimation);
+
+//Function for picking a random room
 const pickRoom = () => {
-  
+  document.getElementById('roomLoader').style.display = 'none';
   mystery.room = randomSelector(rooms);
 
+  document.getElementById('roomName').style.display = 'block';
+  
   document.getElementById('roomCard')
-  roomName.innerHTML = mystery.room
+  roomName.innerHTML = `Room: ${mystery.room.name}`;
   
 }
 
-  
+//Function for shuffling the favourite weapon amongst the suspects  
 const shuffleFavouriteWeapon = () => {
   
   suspects.forEach((suspect) => {
@@ -233,19 +324,15 @@ const shuffleFavouriteWeapon = () => {
   
 };
 
-
-
-
-
-
 document.getElementById('playAgainButton').style.display = 'none';
+// Function for revealing the mystery
 const revealMystery = () => {
 
       if (mystery.killer === '' || mystery.weapon === '' || mystery.room === '') {
       document.getElementById('mystery').innerHTML = 'Pick all three cards'
     } else {
       document.getElementById('favouriteWeapon').innerHTML = `Favourite weapon: ${mystery.favouriteWeapon}`;
-      document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} in the ${mystery.room} with a/an ${mystery.weapon.name}.`;
+      document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} in the ${mystery.room.name} with a/an ${mystery.weapon.name}.`;
       document.getElementById('allCards').style.display = 'none';
       document.getElementById('findKiller').style.display = 'none';
       document.getElementById('pickCard').style.display = 'none';
