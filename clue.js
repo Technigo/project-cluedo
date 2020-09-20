@@ -38,7 +38,7 @@ const mrsPeacock = {
 const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
-  color: 'black',
+  color: 'grey',
   description: 'He is funny',
   age: 56,
   image: 'assets/mustard.png',
@@ -56,39 +56,39 @@ const mrsWhite = {
 
 // Objects for weapons
 const rope = {
-  name: 'rope',
+  name: 'Rope',
   weight: 10
 };
 const knife = {
-  name: 'knife',
+  name: 'Knife',
   weight: 100
 };
 const candelstick = {
-  name: 'candelstick',
+  name: 'Candelstick',
   weight: 200
 };
 const dumbbell = {
-  name: 'dumbbell',
+  name: 'Dumbbell',
   weight: 300
 };
 const poison = {
-  name: 'poison',
+  name: 'Poison',
   weight: 2
 };
 const axe = {
-  name: 'axe',
+  name: 'Axe',
   weight: 400
 };
 const bat = {
-  name: 'bat',
+  name: 'Bat',
   weight: 110
 };
 const trophy = {
-  name: 'trophy',
+  name: 'Trophy',
   weight: 500
 };
 const pistol = {
-  name: 'pistol',
+  name: 'Pistol',
   weight: 150
 };
 
@@ -119,21 +119,21 @@ weapons.forEach((element) => console.log(element));
 
 //Array of rooms
 const rooms = [
-  'dining rooms',
+  'Dining rooms',
   'conservatory',
-  'kitchen',
-  'study',
-  'library',
-  'billiard room',
-  'lounge',
-  'ballroom',
-  'hall',
-  'spa',
-  'living room',
-  'observatory',
-  'theater',
-  'guest house',
-  'patio'
+  'Kitchen',
+  'Study',
+  'Library',
+  'Billiard room',
+  'Lounge',
+  'Ballroom',
+  'Hall',
+  'Spa',
+  'Living room',
+  'Observatory',
+  'Theater',
+  'Guest house',
+  'Patio'
 ]
 console.log(mrGreen.description)
 console.log(rope.name)
@@ -158,10 +158,10 @@ const pickKiller = () => {
   mystery.killer = randomSelector(suspects)
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-  document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`
-  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
-  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
+  document.getElementById('killerName').innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerAge').innerHTML = `Age: ${mystery.killer.age}`
+  document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
+  document.getElementById('killerDescription').innerHTML = `Killer description: ${mystery.killer.description}`
   document.getElementById("killerImage").src = mystery.killer.image
 }
 document.getElementById('killerCard').addEventListener('click', pickKiller)
@@ -169,9 +169,9 @@ document.getElementById('killerCard').addEventListener('click', pickKiller)
 // Function that picks a weapon
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
-  
-  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}`
+
+  document.getElementById('weaponName').innerHTML = `Type of weapon: ${mystery.weapon.name}`
+  document.getElementById('weaponWeight').innerHTML = `Weapon weight: ${mystery.weapon.weight}`
 
 }
 document.getElementById('weaponCard').addEventListener('click', pickWeapon)
@@ -179,13 +179,13 @@ document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 // Function that picks a room
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
-  
-  document.getElementById('roomName').innerHTML = `${mystery.room}`
+
+  document.getElementById('roomName').innerHTML = `Room where the crime happend: ${mystery.room}`
 }
 document.getElementById('roomCard').addEventListener('click', pickRoom)
 
 //Function that reveals the mystery
-const revealMystery = () =>{
+const revealMystery = () => {
   console.log(`The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}in the ${mystery.room} with a ${mystery.weapon.name} `)
   document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}in the ${mystery.room} with a ${mystery.weapon.name} `
 

@@ -7,37 +7,47 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <!--Mystery favicon-->
   <link href="./assets/favicon.ico" rel="icon" type="image/x-icon" />
+  <!--Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Lato" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <title>Mystery cluedo project</title>
 </head>
 
 <body>
+  <h1>Welcome to the myster cluedo game! </h1>
+  <h2>Choose a killer, a weapon and a room and then reveal the crime </h2>
   <section class="cards">
     <article class="killer-deck" id="killerCard">
-      <p>KILLER</p>
+      <h2>KILLER</h2>
       <p id="killerName"></p>
       <p id="killerAge"></p>
       <p id="killerOccupation"></p>
-      <div class="killerImg-container" id="killerImgContainer">
-        <img id="killerImage" height="100" src="" alt="Killer" />
-      </div>
       <p id="killerDescription"></p>
+      <div class="killerImg-container" id="killerImgContainer">
+        <img id="killerImage" src="./assets/icons8-inquiry-100.png" height="100" src="" alt="Killer" />
+      </div>
+
     </article>
     <article class="weapon-deck" id="weaponCard">
-      <p>WEAPON</p>
+      <h2>WEAPON</h2>
       <p id="weaponName"></p>
       <p id="weaponWeight"></p>
+      <img id="weaponImage" src="./assets/icons8-weapons-100.png" height="100" src="" alt="Weapon" />
     </article>
     <article class="room-deck" id="roomCard">
-      <p>ROOM</p>
+      <h2>ROOM</h2>
       <p id="roomName"></p>
+      <img id="weaponImage" src="./assets/icons8-prefab-house-100.png" height="100" src="" alt="House" />
     </article>
   </section>
 
-  <h1 id="mystery"></h1>
-
-  <button id="revealBtn">REVEAL THE CRIME</button>
-  
+  <h2 id="mystery"></h2>
+  <div class="buttonDiv">
+    <button id="revealBtn">Reveal the Crime</button>
+  </div>
+  <footer class="footer">
+    <p> © 2020 Marjaana Tienaho. Project Week 5 (Project Cluedo) during the Technigo Frontend Bootcamp Autumn 2020.</p>
+  </footer>
   <script src="clue.js"></script>
 </body>
 

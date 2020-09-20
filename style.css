@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
@@ -6,12 +10,30 @@ body {
 
 p {
   margin: 1px;
+  padding-top: 5px;
   font-weight: 300;
-  background-color: #fff;
+  Font-Family: 'Lato', Sans-Serif;
+  Font-Size: 16px;
+  text-align: center;
+
+}
+
+h1 {
+  Font-Family: 'Arvo', Serif;
+  Font-Size: 44px;
+  text-align: center;
+  text-shadow: 2px 2px rgb(233, 229, 229);
+}
+
+h2 {
+  Font-Family: 'Arvo', Serif;
+  Font-Size: 22px;
+  text-align: center;
+  text-shadow: 2px 2px rgb(233, 229, 229);
 }
 
 .cards {
-  margin: 50px auto;
+  margin: 30px auto;
   width: 90%;
   height: 600px;
   display: flex;
@@ -19,45 +41,78 @@ p {
   align-items: center;
 }
 
-.killer-deck {
-  width: 250px;
-  height: 400px;
-  background: #000;
-  text-align: center;
+img {
   padding-top: 30px;
-  border-radius: 16px;
 }
 
-.weapon-deck {
-  width: 250px;
-  height: 400px;
-  background: rgb(10, 53, 10);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-}
-
+.killer-deck,
+.weapon-deck,
 .room-deck {
+  background: rgb(233, 229, 229);
+  opacity: 0.7;
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+}
+
+.buttonDiv {
+  display: block;
+  width: 400px;
+  margin: 0 auto 0 auto;
+  padding-top: 20px;
+  left: 0;
+  right: 0;
+  top: 30vh;
 }
 
 button {
-  padding: 8px 16px;
-  background: crimson;
-  border: none;
-  font-size: 20px;
-  border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  Font-Family: 'Arvo', Serif;
+  Font-Size: 24x;
+  background: rgb(233, 229, 229);
+  opacity: 0.6;
+  width: 300px;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+  background-size: 100% 100%;
+  box-shadow: 0 0 0 3px black inset;
+  margin-bottom: 15px;
 }
 
-/*.killerImg-container {
+button:hover {
+  background-image: linear-gradient(145deg,
+      transparent 10%,
+      rgb(70, 67, 67) 10% 20%,
+      transparent 20% 30%,
+      rgb(70, 67, 67) 30% 40%,
+      transparent 40% 50%,
+      rgb(70, 67, 67) 50% 60%,
+      transparent 60% 70%,
+      rgb(70, 67, 67) 70% 80%,
+      transparent 80% 90%,
+      rgb(70, 67, 67) 90% 100%);
+  animation: background 3s linear infinite;
+}
 
-  display: none;
-}*/
+@keyframes background {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+footer {
+  color: white;
+  padding: 20px;
+}
