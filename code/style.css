@@ -160,10 +160,3 @@
         border-radius: 15px;
     }
     /* Media queries */
-    
-    @media (max-width: 1650px) {
-        .flip-card-front {
-            margin-right: 200px;
-            /* height: 300px; */
-        }
-    }
