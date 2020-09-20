@@ -1,12 +1,9 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
+In this project I've created a game where the user can randomly pick a card fork suspects, weapons and rooms. When the user click on the reveal- button after clicking the three cards - a message about the killer is displayed.
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I createded arrays with objects for the different elemnts - suspects, weapons and rooms. The the program sends the arrays to a randomizer funtion that "shuffles" the card. There is also a function that randomises the suspects favourite weapons. 
 
 ## View it live
 
