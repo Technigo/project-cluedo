@@ -14,19 +14,15 @@
       <h2>The <span class="gold-text">classic</span> mystery game</h2>
     </header>
     <section class="cards">
-      <article class="killer-deck" id="killerCard" onclick=pickKiller()>
+      <article class="killer-deck" id="killerCard" onclick="pickKiller()" >
         <p class="heading">KILLER</p>
         <img id="killerImage" class="killer-image" src="" />
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
         <p id="killerDescription"></p>
-        <p id="favoriteWeapon"></p>
-        <div class="loader">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <p id="favouriteWeapon"></p>
+        <div id="killerLoader" class="loader"></div>
       </article>
       <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
         <p class="heading">WEAPON</p>
@@ -35,6 +31,7 @@
         </div>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
+        <div id="weaponLoader" class="loader"></div>
       </article>
       <article class="room-deck" id="roomCard" onclick="pickRoom()">
         <p class="heading">ROOM</p>
@@ -42,17 +39,15 @@
           <img id="roomImage" class="room-image" src="" />
         </div>
         <p id="roomName"></p>
+        <div id="roomLoader" class="loader"></div>
       </article>
     </section>
     
     <section class="reveal-section">
       <h2 id="mystery" class="reveal-text"></h2>
       <button id="revealButton" class="button-reveal" onclick="revealMystery()">REVEAL THE CRIME</button>
-      <button id="resetButton" class="button-reset" onclick="clearMystery()">Reset</button>
+      <button id="resetButton" class="button-reset" onclick="clearMystery()">RESET</button>
     </section>
-    <!--<div class="reset-section">
-      
-    </div> -->
     <script src="clue.js"></script>
   </body>
 </html>
