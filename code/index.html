@@ -8,30 +8,43 @@
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
-    <section class="cards">
-      <article class="killer-deck" id="killerCard" onclick="pickKiller()">
-        <p>KILLER</p>
-        <p id="killerName"></p>
-        <p id="killerAge"></p>
-        <p id="killerOccupation"></p>
-        <img id="killerImage" src="" height="100" />
-        <p id="killerDescription"></p>
-      </article>
-      <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
-        <p>WEAPON</p>
-        <p id="weaponName"></p>
-        <p id="weaponWeight"></p>
-      </article>
-      <article class="room-deck" id="roomCard" onclick="pickRoom()">
-        <p>ROOM</p>
-        <p id="roomName"></p>
-      </article>
-    </section>
+    <div class="hero-image">
+      <img
+        src="./images/piano.jpg"
+        alt="close up on old, dusty, dirty, beaten piano keys"
+      />
+      <p class="hero-text">PLAY CLUE, KLICK EACH CARD</p>
+    </div>
+    <main>
+      <section class="cards">
+        <article class="killer-deck" id="killerCard" onclick="pickKiller()">
+          <p>KILLER</p>
+          <p id="killerName"></p>
+          <p id="killerAge"></p>
+          <p id="killerOccupation"></p>
+          <img id="killerImage" height="300" />
+          <p id="killerDescription"></p>
+        </article>
+        <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
+          <p>WEAPON</p>
+          <p id="weaponName"></p>
+          <p id="weaponWeight"></p>
+          <p id="weaponMaterial"></p>
+          <img id="weaponImage" height="250" />
+        </article>
+        <article class="room-deck" id="roomCard" onclick="pickRoom()">
+          <p>ROOM</p>
+          <p id="roomName"></p>
+        </article>
+      </section>
 
-    <h1 id="mystery"></h1>
-
-    <button id="mysteryBtn" onclick="revealMystery()">REVEAL THE CRIME</button>
-
+      <footer>
+        <h1 id="mystery"></h1>
+        <button id="mysteryBtn" onclick="revealMystery()">
+          REVEAL THE CRIME
+        </button>
+      </footer>
+    </main>
     <script src="clue.js"></script>
   </body>
 </html>
