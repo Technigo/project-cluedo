@@ -263,9 +263,7 @@ const rooms = [
 const killerCard = document.getElementById('killerCard');
 const killerName = document.getElementById('killerName');
 const killerAge = document.getElementById('killerAge');
-const killerOccupation = document.getElementById('killerOccupation');
 const killerImage = document.getElementById('killerImage');
-const killerDescription = document.getElementById('killerDescription');
 const killerFavouriteWeapon = document.getElementById('killerFavouriteWeapon');
 const weaponCard = document.getElementById('weaponCard');
 const weaponName = document.getElementById('weaponName');
@@ -321,8 +319,6 @@ const killerAnimation = () => {
   killerCard.style.background = "";
   killerName.innerHTML = '';
   killerAge.innerHTML = '';
-  // killerOccupation.innerHTML = '';
-  // killerDescription.innerHTML = '';
   killerFavouriteWeapon.innerHTML = '';
   killerImage.style.display = "none";
   killerImage.src = '';
@@ -335,8 +331,6 @@ const pickKiller = () => {
   killerCard.style.background = mystery.killer.color;
   killerName.innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`;
   killerAge.innerHTML = `Age: ${mystery.killer.age}`;
-  // killerOccupation.innerHTML = mystery.killer.occupation;
-  // killerDescription.innerHTML = mystery.killer.description;
   killerFavouriteWeapon.innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
   killerImage.style.display = "inline-block";
   killerImage.src = mystery.killer.image;
@@ -345,22 +339,6 @@ const pickKiller = () => {
 killerCard.onclick = killerAnimation;
 
 // Actions related to Weapon deck
-
-// const weaponAnimation = () => {
-//   weaponLoader.style.display = "block";
-//   weaponName.innerHTML = '';
-//   weaponWeight.innerHTML = '';
-//   setTimeout(pickWeapon, 2000);
-// };
-
-// const pickWeapon = () => {
-//   mystery.weapon = randomSelector(weapons);
-//   weaponLoader.style.display = "none";
-//   weaponName.innerHTML = mystery.weapon.name;
-//   weaponWeight.innerHTML = mystery.weapon.weight;
-// };
-
-// weaponCard.onclick = weaponAnimation;
 
 const favouriteWeaponAnimation = () => {
   if (mystery.killer === undefined) {
@@ -387,20 +365,16 @@ const favouriteWeaponDuplicated = (elementToPopulate, howManyTimes) => {
 
 const pickFavouriteWeapon = (suspect) => {
   const newArrayOfWeapons = weapons.map(a => a.name);
-  // console.log(newArrayOfWeapons);
   const randomWeapons = [
     ...newArrayOfWeapons,
     ...favouriteWeaponDuplicated(suspect.favouriteWeapon, 10)
   ];
-  // console.log(favouriteWeaponDuplicated(suspect.favouriteWeapon, 10));
-  // console.log(randomWeapons);
   mystery.pickedWeapon = randomSelector(randomWeapons);
   const mysteryWeapon = weapons.find((item) => {
     if (item.name === mystery.pickedWeapon) {
       return item;
     };
   });
-  // console.log(mysteryWeapon);
   mystery.weapon = mysteryWeapon;
   mystery.favouriteRoom = mysteryWeapon.favouriteRoom;
   weaponLoader.style.display = "none";
@@ -462,20 +436,6 @@ const pickFavouriteRoom = (weapon) => {
 };
 
 roomCard.onclick = favouriteRoomAnimation;
-
-const roomAnimation = () => {
-  roomLoader.style.display = "block";
-  setTimeout(pickRoom, 2000);
-  roomName.innerHTML = '';
-};
-
-const pickRoom = () => {
-  mystery.room = randomSelector(rooms);
-  roomLoader.style.display = "none";
-  roomName.innerHTML = mystery.room;
-};
-
-// roomCard.onclick = roomAnimation;
 
 // Functions related to revelation of mystery 
 
