@@ -75,6 +75,7 @@ const rope = {
   id: "rope",
   name: "Rope",
   weight: 10,
+  resident: "hall",
   image: "img/rope-1295003_640.png",
 };
 
@@ -82,6 +83,7 @@ const knife = {
   id: "knife",
   name: "Knife",
   weight: 1,
+  resident: "kitchen",
   image: "img/knife-2930492_640.png",
 };
 
@@ -89,6 +91,7 @@ const candlestick = {
   id: "candlestick",
   name: "Candlestick",
   weight: 6,
+  resident: "ball room",
   image: "img/candles-3913775_640.png",
 };
 
@@ -96,6 +99,7 @@ const dumbbell = {
   id: "dumbbell",
   name: "Dumbbell",
   weight: 20,
+  resident: "spa",
   image: "img/black-1295124_640.png",
 };
 
@@ -103,6 +107,7 @@ const poison = {
   id: "poison",
   name: "Poison",
   weight: 2,
+  resident: "conservatory",
   image: "img/poison-576608_640.png",
 };
 
@@ -110,6 +115,7 @@ const axe = {
   id: "axe",
   name: "Axe",
   weight: 50,
+  resident: "patio",
   image: "img/axe-159659_640.png",
 };
 
@@ -117,6 +123,7 @@ const bat = {
   id: "bat",
   name: "Bat",
   weight: 1.5,
+  resident: "billiard room",
   image: "img/base-25755_640.png",
 };
 
@@ -124,6 +131,7 @@ const trophy = {
   id: "trophy",
   name: "Trophy",
   weight: 10,
+  resident: "lounge",
   image: "img/cup-1757500_640.png",
 };
 
@@ -131,6 +139,7 @@ const pistol = {
   id: "pistol",
   name: "Pistol",
   weight: 2,
+  resident: "theater",
   image: "img/gun-5517424_640.png",
 };
 
@@ -180,15 +189,27 @@ const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-const shuffleFavouriteWeapon = (array) => {
-  const favouriteWeapon = array[Math.floor(Math.random() * array.length)];
-  for (let i = 0; i < 5; i++) {
-    array.push(favouriteWeapon);
+// Create new favouriteArray if suspect has a favourite weapon
+const favouriteArray = (weapons) => {
+  if (mystery.killer.favouriteWeapon) {
+    const favouriteWeaponsArray = [
+      ...weapons,
+      mystery.killer.favouriteWeapon,
+      mystery.killer.favouriteWeapon,
+      mystery.killer.favouriteWeapon,
+      mystery.killer.favouriteWeapon,
+      mystery.killer.favouriteWeapon,
+    ];
+
+    return favouriteWeaponsArray;
+  } else {
+    return weapons;
   }
-  array.forEach((item, index) => {
-    console.log(array[index].name);
-  });
-  return array[Math.floor(Math.random() * array.length)].name;
+};
+
+// Randomly select a favourite weapon from an array
+const shuffleFavouriteWeapon = (array) => {
+  return array[Math.floor(Math.random() * array.length)];
 };
 
 // Empty object to store the randomly picked killer,weapon and room.
@@ -201,6 +222,7 @@ let mystery = {
 // *** PICK KILLER *** //
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
+  // Declare variables
   const mysteryReveald = document.getElementById("mysteryReveald");
   const loader = document.getElementById("killerLoader");
   const killerImage = document.getElementById("killerImage");
@@ -245,7 +267,7 @@ const pickKiller = () => {
       killerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} /`;
       killerAge.innerHTML = mystery.killer.age;
       killerOccupation.innerHTML = mystery.killer.occupation;
-      killerFavouriteWeapon.innerHTML = mystery.killer.favouriteWeapon;
+      killerFavouriteWeapon.innerHTML = mystery.killer.favouriteWeapon.name;
       killerDescription.innerHTML = mystery.killer.description;
 
       setTimeout(() => (killerDeckFront.style.opacity = 1), 50);
@@ -268,6 +290,7 @@ const pickKiller = () => {
 // *** PICK WEAPON *** //
 // This function will be invoked when you click on the weapon card.
 const pickWeapon = () => {
+  // Declare variables
   const mysteryReveald = document.getElementById("mysteryReveald");
   const loader = document.getElementById("weaponLoader");
   const weaponName = document.getElementById("weaponName");
@@ -279,7 +302,7 @@ const pickWeapon = () => {
   // Empty the field for old reveals
   mysteryReveald.innerHTML = "";
 
-  // if card front - show weapon details, if card back - empty random selected weapon
+  // If card front - show weapon details, if card back - empty random selected weapon
   if (weaponDeckBack.classList.contains("active")) {
     // Add class active to card front
     weaponDeckFront.classList.toggle("active");
@@ -295,7 +318,8 @@ const pickWeapon = () => {
       weaponDeckBack.style.display = "none";
 
       // Select a random weapon and add to the mystery object.
-      mystery.weapon = randomSelector(weapons);
+      const weaponsFavourite = favouriteArray(weapons);
+      mystery.weapon = randomSelector(weaponsFavourite);
 
       // Show weapon details
       weaponName.innerHTML = mystery.weapon.name;
@@ -321,6 +345,7 @@ const pickWeapon = () => {
 // *** PICK ROOM *** //
 // This function will be invoked when you click on the room card.
 const pickRoom = () => {
+  // Declare variables
   const mysteryReveald = document.getElementById("mysteryReveald");
   const loader = document.getElementById("roomLoader");
   const roomName = document.getElementById("roomName");
@@ -383,7 +408,6 @@ const revealMystery = () => {
     revealMessage = "Pick a card from each deck to reveal the mystery.";
   }
 
-  console.log("revealmessage: " + revealMessage);
   const typedTextSpan = document.querySelector(".mystery-reveald");
   const typingDelay = 20;
   let charIndex = 0;
