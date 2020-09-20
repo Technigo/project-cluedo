@@ -294,7 +294,7 @@ const pickKiller = () => {
       document.getElementById('loaderKiller').style.opacity = 0
       shuffleFavoriteWeapon();
       mystery.killer = randomSelector(suspects)
-      document.getElementById('killerCard').style.background = mystery.killer.color
+      document.getElementById('killerName').style.background = mystery.killer.color
       document.getElementById(
         'killerName'
       ).innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`
