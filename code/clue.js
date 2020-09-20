@@ -75,7 +75,7 @@ const rope = {
   id: "rope",
   name: "Rope",
   weight: 10,
-  resident: "hall",
+  resident: "Hall",
   image: "img/rope-1295003_640.png",
 };
 
@@ -83,7 +83,7 @@ const knife = {
   id: "knife",
   name: "Knife",
   weight: 1,
-  resident: "kitchen",
+  resident: "Kitchen",
   image: "img/knife-2930492_640.png",
 };
 
@@ -91,7 +91,7 @@ const candlestick = {
   id: "candlestick",
   name: "Candlestick",
   weight: 6,
-  resident: "ball room",
+  resident: "Ball room",
   image: "img/candles-3913775_640.png",
 };
 
@@ -99,7 +99,7 @@ const dumbbell = {
   id: "dumbbell",
   name: "Dumbbell",
   weight: 20,
-  resident: "spa",
+  resident: "Spa",
   image: "img/black-1295124_640.png",
 };
 
@@ -107,7 +107,7 @@ const poison = {
   id: "poison",
   name: "Poison",
   weight: 2,
-  resident: "conservatory",
+  resident: "Conservatory",
   image: "img/poison-576608_640.png",
 };
 
@@ -115,7 +115,7 @@ const axe = {
   id: "axe",
   name: "Axe",
   weight: 50,
-  resident: "patio",
+  resident: "Patio",
   image: "img/axe-159659_640.png",
 };
 
@@ -123,7 +123,7 @@ const bat = {
   id: "bat",
   name: "Bat",
   weight: 1.5,
-  resident: "billiard room",
+  resident: "Billiard room",
   image: "img/base-25755_640.png",
 };
 
@@ -131,7 +131,7 @@ const trophy = {
   id: "trophy",
   name: "Trophy",
   weight: 10,
-  resident: "lounge",
+  resident: "Lounge",
   image: "img/cup-1757500_640.png",
 };
 
@@ -139,7 +139,7 @@ const pistol = {
   id: "pistol",
   name: "Pistol",
   weight: 2,
-  resident: "theater",
+  resident: "Theater",
   image: "img/gun-5517424_640.png",
 };
 
@@ -189,21 +189,41 @@ const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-// Create new favouriteArray if suspect has a favourite weapon
-const favouriteArray = (weapons) => {
-  if (mystery.killer.favouriteWeapon) {
-    const favouriteWeaponsArray = [
-      ...weapons,
-      mystery.killer.favouriteWeapon,
-      mystery.killer.favouriteWeapon,
-      mystery.killer.favouriteWeapon,
-      mystery.killer.favouriteWeapon,
-      mystery.killer.favouriteWeapon,
-    ];
+const fillArray = (item, amountOfTimes) => {
+  let result = [];
+  for (let i = 0; i < amountOfTimes; i++) {
+    result.push(item);
+  }
+  return result;
+};
 
-    return favouriteWeaponsArray;
+// Create new weapon array if suspect has a favourite weapon
+const favouriteWeaponArray = (weapons) => {
+  if (mystery.killer.favouriteWeapon) {
+    const newWeaponArray = [
+      ...weapons,
+      ...fillArray(mystery.killer.favouriteWeapon, 5),
+    ];
+    return newWeaponArray;
   } else {
     return weapons;
+  }
+};
+
+// Create new room array if a weapon is picked
+const favouriteRoomArray = (rooms) => {
+  if (mystery.weapon) {
+    const onlyFavouriteRooms = fillArray(mystery.weapon, 8);
+    const newRoomArray = [...rooms];
+
+    onlyFavouriteRooms.forEach((item, index) => {
+      newRoomArray.push(onlyFavouriteRooms[index].resident);
+
+      index++;
+    });
+    return newRoomArray;
+  } else {
+    return rooms;
   }
 };
 
@@ -293,9 +313,10 @@ const pickWeapon = () => {
   // Declare variables
   const mysteryReveald = document.getElementById("mysteryReveald");
   const loader = document.getElementById("weaponLoader");
+  const weaponImage = document.getElementById("weaponImage");
   const weaponName = document.getElementById("weaponName");
   const weaponWeight = document.getElementById("weaponWeight");
-  const weaponImage = document.getElementById("weaponImage");
+  const weaponResident = document.getElementById("weaponResident");
   const weaponDeckFront = document.getElementById("weaponDeckFront");
   const weaponDeckBack = document.getElementById("weaponDeckBack");
 
@@ -317,14 +338,17 @@ const pickWeapon = () => {
       weaponDeckFront.style.display = "flex";
       weaponDeckBack.style.display = "none";
 
+      // If killer is picked, create new array with several favourite weapon added
+      const weaponsFavourite = favouriteWeaponArray(weapons);
+
       // Select a random weapon and add to the mystery object.
-      const weaponsFavourite = favouriteArray(weapons);
       mystery.weapon = randomSelector(weaponsFavourite);
 
       // Show weapon details
+      weaponImage.src = mystery.weapon.image;
       weaponName.innerHTML = mystery.weapon.name;
       weaponWeight.innerHTML = mystery.weapon.weight;
-      weaponImage.src = mystery.weapon.image;
+      weaponResident.innerHTML = mystery.weapon.resident;
 
       setTimeout(() => (weaponDeckFront.style.opacity = 1), 50);
     }, 2000);
@@ -370,8 +394,11 @@ const pickRoom = () => {
       roomDeckFront.style.display = "flex";
       roomDeckBack.style.display = "none";
 
+      // If killer is picked, create new array with several resident room added
+      const roomsFavourite = favouriteRoomArray(rooms);
+
       // Select a random room and add to the mystery object.
-      mystery.room = randomSelector(rooms);
+      mystery.room = randomSelector(roomsFavourite);
 
       // Show room details
       roomName.innerHTML = `${mystery.room}`;
