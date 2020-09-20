@@ -173,7 +173,7 @@ const pistol = {
 
 // *** 1. Dining Room
 const diningRoom = {
-  name: "dining Room",
+  name: "dining room",
   location: "East Wing",
   id: "dining",
   image: "rooms/dining-room.png",
@@ -219,7 +219,7 @@ const library = {
 // *** 6. Billiard Room
 const billiardRoom = {
   name: "billiard room",
-  location: "West/South Wing",
+  location: "South/West Wing",
   id: "billiard",
   image: "rooms/billiard-room.png",
   color: "#F5F5F5",
@@ -246,7 +246,7 @@ const ballRoom = {
 // *** 9. Hall
 const hall = {
   name: "hall",
-  location: "East/West Wing",
+  location: "East Wing",
   id: "hall",
   image: "rooms/hall.png",
   color: "#F5F5F5",
@@ -255,7 +255,7 @@ const hall = {
 // *** 10. Spa
 const spa = {
   name: "spa",
-  location: "East/North Wing",
+  location: "North/East Wing",
   id: "spa",
   image: "rooms/spa.png",
   color: "#F5F5F5",
@@ -263,7 +263,7 @@ const spa = {
 };
 // *** 11. Living Room
 const livingRoom = {
-  name: "living Room",
+  name: "living room",
   location: "South/West Wing",
   id: "livingRoom",
   image: "rooms/living-room.png",
@@ -290,7 +290,7 @@ const theater = {
 };
 // *** 14. Guest House
 const guestHouse = {
-  name: "guest House",
+  name: "guest house",
   location: "South Garden",
   id: "guestHouse",
   image: "rooms/guest-house.png",
@@ -300,7 +300,7 @@ const guestHouse = {
 // *** 15. Patio
 const patio = {
   name: "patio",
-  location: "West/East Wing",
+  location: "West Wing",
   id: "patio",
   image: "rooms/patio.png",
   color: "#F5F5F5",
@@ -349,7 +349,7 @@ const rooms = [
   livingRoom,
   observatory,
   theater,
-  theater,
+  guestHouse,
   patio,
 ];
 
@@ -408,19 +408,13 @@ const pickKiller = () => {
     // *** changing card info ***
 
     // card background color
-    document.getElementById("killerCard").style.background =
-      mystery.killer.color;
+    document.getElementById("killerCard").style.background = mystery.killer.color;
     // heading background color
-    document.getElementById("cardHeadingKiller").style.background =
-      mystery.killer.heading;
+    document.getElementById("cardHeadingKiller").style.background = mystery.killer.heading;
     // killer name
-    document.getElementById(
-      "killerName"
-    ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+    document.getElementById("killerName").innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
     // killer occupation
-    document.getElementById(
-      "killerOccupation"
-    ).innerHTML = `${mystery.killer.occupation}`;
+    document.getElementById("killerOccupation").innerHTML = `${mystery.killer.occupation}`;
     //killer image
     document.getElementById("killerImage").src = `${mystery.killer.image}`;
 
@@ -453,19 +447,13 @@ const pickWeapon = () => {
       // *** changing card info ***
 
       // card background color
-      document.getElementById("weaponCard").style.background =
-        mystery.weapon.color;
+      document.getElementById("weaponCard").style.background = mystery.weapon.color;
       // heading background color
-      document.getElementById("cardHeadingWeapon").style.background =
-        mystery.weapon.heading;
+      document.getElementById("cardHeadingWeapon").style.background = mystery.weapon.heading;
       // weapon name
-      document.getElementById(
-        "weaponName"
-      ).innerHTML = `${mystery.weapon.name}`;
+      document.getElementById("weaponName").innerHTML = `${mystery.weapon.name}`;
       // weapon weight
-      document.getElementById(
-        "weaponWeight"
-      ).innerHTML = `${mystery.weapon.weight} of weight`;
+      document.getElementById("weaponWeight").innerHTML = `${mystery.weapon.weight} of weight`;
       // weapon image
       document.getElementById("weaponImage").src = `${mystery.weapon.image}`;
 
@@ -504,14 +492,11 @@ const pickRoom = () => {
       // card background color
       document.getElementById("roomCard").style.background = mystery.room.color;
       // heading background color
-      document.getElementById("cardHeadingRoom").style.background =
-        mystery.room.heading;
+      document.getElementById("cardHeadingRoom").style.background = mystery.room.heading;
       // room name
       document.getElementById("roomName").innerHTML = `${mystery.room.name}`;
       // room location
-      document.getElementById(
-        "roomLocation"
-      ).innerHTML = `${mystery.room.location}`;
+      document.getElementById("roomLocation").innerHTML = `${mystery.room.location}`;
       // room image
       document.getElementById("roomImage").src = `${mystery.room.image}`;
 
@@ -542,8 +527,7 @@ const shuffleFavouriteWeapon = () => {
 
 const revealMystery = () => {
   if (mystery.killer === null) {
-    document.getElementById("mystery").innerHTML =
-      "Hey, you have to select a killer...";
+    document.getElementById("mystery").innerHTML = "Hey, you have to select a killer...";
   } else if (mystery.weapon === null) {
     document.getElementById("mystery").innerHTML = "Select a weapon!";
   } else if (mystery.room === null) {
@@ -555,13 +539,9 @@ const revealMystery = () => {
       mystery.killer.nickName === "Professor Plum" ||
       mystery.killer.nickName === "Colonel Mustard"
     ) {
-      document.getElementById(
-        "mystery"
-      ).innerHTML = `The murder was committed by the ${mystery.killer.age} years old ${mystery.killer.firstName} ${mystery.killer.lastName} who ${mystery.killer.description}. ${mystery.killer.nickName}'s favourite weapon is the ${mystery.killer.favouriteWeaponId}. ${mystery.killer.lastName} used the ${mystery.weapon.name} to kill the victim with in the ${mystery.room.name}. He found the ${mystery.weapon.name} in the ${mystery.weapon.place}.`;
+      document.getElementById("mystery").innerHTML = `The murder was committed by the ${mystery.killer.age} years old ${mystery.killer.firstName} ${mystery.killer.lastName} who ${mystery.killer.description}. ${mystery.killer.nickName}'s favourite weapon is the ${mystery.killer.favouriteWeaponId}. ${mystery.killer.lastName} used the ${mystery.weapon.name} to kill the victim in the ${mystery.room.name}. He found the ${mystery.weapon.name} in the ${mystery.weapon.place}.`;
     } else {
-      document.getElementById(
-        "mystery"
-      ).innerHTML = `The murder was committed by the ${mystery.killer.age} years old ${mystery.killer.firstName} ${mystery.killer.lastName} who ${mystery.killer.description}. ${mystery.killer.nickName}'s favourite weapon is the ${mystery.killer.favouriteWeaponId}. ${mystery.killer.lastName} used the ${mystery.weapon.name} to kill the victim with in the ${mystery.room.name}. She found the ${mystery.weapon.name} in the ${mystery.weapon.place}.`;
+      document.getElementById("mystery").innerHTML = `The murder was committed by the ${mystery.killer.age} years old ${mystery.killer.firstName} ${mystery.killer.lastName} who ${mystery.killer.description}. ${mystery.killer.nickName}'s favourite weapon is the ${mystery.killer.favouriteWeaponId}. ${mystery.killer.lastName} used the ${mystery.weapon.name} to kill the victim in the ${mystery.room.name}. She found the ${mystery.weapon.name} in the ${mystery.weapon.place}.`;
     }
   }
   //shuffleFavouriteWeapon(); in reaveal button instead!

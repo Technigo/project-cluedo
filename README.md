@@ -1,13 +1,9 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+A page to randomize cards for the game Cluedo. Also randomize "favourite" objekts in arrays. Technigo introduction to JavaScript and the DOM. Built using objects to store the information and functions to render the content.
 
 ## View it live
 
 Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+
+https://hello-cluedo.netlify.app/
