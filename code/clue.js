@@ -6,231 +6,230 @@ let roomPicked = false;
 
 const suspects = [
   {
-    firstName: "Jacob",
-    lastName: "Green",
-    color: "green",
-    description: "Has a lot of connections",
+    firstName: 'Jacob',
+    lastName: 'Green',
+    color: 'green',
+    description: 'Has a lot of connections',
     age: 45,
-    image: "./assets/green.png",
-    occupation: "Entrepreneur",
-    favourite: "knife",
+    image: './assets/green.png',
+    occupation: 'Entrepreneur',
+    favourite: 'knife',
   },
   {
-    firstName: "Victor",
-    lastName: "Plum",
-    color: "purple",
-    description: "Enjoys the outdoors",
+    firstName: 'Victor',
+    lastName: 'Plum',
+    color: 'purple',
+    description: 'Enjoys the outdoors',
     age: 34,
-    image: "./assets/plum.png",
-    occupation: "Professor",
-    favourite: "poison",
+    image: './assets/plum.png',
+    occupation: 'Professor',
+    favourite: 'poison',
   },
   {
-    firstName: "Cassandra",
-    lastName: "Scarlet",
-    color: "red",
-    description: "Collects weapons",
+    firstName: 'Cassandra',
+    lastName: 'Scarlet',
+    color: 'red',
+    description: 'Collects weapons',
     age: 42,
-    image: "./assets/scarlet.png",
-    occupation: "Recruiter",
-    favourite: "pistol",
+    image: './assets/scarlet.png',
+    occupation: 'Recruiter',
+    favourite: 'pistol',
   },
   {
-    firstName: "Eleanor",
-    lastName: "Peacock",
-    color: "blue",
-    description: "Strong swimmer",
+    firstName: 'Eleanor',
+    lastName: 'Peacock',
+    color: 'blue',
+    description: 'Strong swimmer',
     age: 29,
-    image: "./assets/peacock.png",
-    occupation: "Novelist",
-    favourite: "bat",
+    image: './assets/peacock.png',
+    occupation: 'Novelist',
+    favourite: 'bat',
   },
   {
-    firstName: "Jack",
-    lastName: "Mustard",
-    color: "yellow",
-    description: "Collects war memorabilia",
+    firstName: 'Jack',
+    lastName: 'Mustard',
+    color: 'yellow',
+    description: 'Collects war memorabilia',
     age: 63,
-    image: "./assets/mustard.png",
-    occupation: "Colonel",
-    favourite: "pistol",
+    image: './assets/mustard.png',
+    occupation: 'Colonel',
+    favourite: 'pistol',
   },
   {
-    firstName: "Josephine",
-    lastName: "White",
-    color: "white",
-    description: "Avid reader",
+    firstName: 'Josephine',
+    lastName: 'White',
+    color: 'white',
+    description: 'Avid reader',
     age: 45,
-    image: "./assets/white.png",
-    occupation: "Chef",
-    favourite: "axe",
+    image: './assets/white.png',
+    occupation: 'Chef',
+    favourite: 'axe',
   },
 ];
 
 const weapons = [
   {
-    name: "rope",
+    name: 'rope',
     weight: 10,
-    id: "rope",
-    favourite: "patio",
+    id: 'rope',
+    favourite: 'patio',
   },
   {
-    name: "knife",
+    name: 'knife',
     weight: 25,
-    id: "knife",
-    favourite: "kitchen",
+    id: 'knife',
+    favourite: 'kitchen',
   },
   {
-    name: "candlestick",
+    name: 'candlestick',
     weight: 105,
-    id: "candlestick",
-    favourite: "dining room",
+    id: 'candlestick',
+    favourite: 'dining room',
   },
   {
-    name: "dumbbell",
+    name: 'dumbbell',
     weight: 150,
-    id: "dumbbell",
-    favourite: "spa",
+    id: 'dumbbell',
+    favourite: 'spa',
   },
   {
-    name: "poison",
+    name: 'poison',
     weight: 5,
-    id: "poison",
-    favourite: "conservatory",
+    id: 'poison',
+    favourite: 'conservatory',
   },
   {
-    name: "axe",
+    name: 'axe',
     weight: 85,
-    id: "axe",
-    favourite: "observatory",
+    id: 'axe',
+    favourite: 'observatory',
   },
   {
-    name: "bat",
+    name: 'bat',
     weight: 30,
-    id: "bat",
-    favourite: "billiard room",
+    id: 'bat',
+    favourite: 'billiard room',
   },
   {
-    name: "trophy",
+    name: 'trophy',
     weight: 20,
-    id: "trophy",
-    favourite: "living room",
+    id: 'trophy',
+    favourite: 'living room',
   },
   {
-    name: "pistol",
+    name: 'pistol',
     weight: 35,
-    id: "pistol",
-    favourite: "study",
+    id: 'pistol',
+    favourite: 'study',
   },
 ];
 
 const rooms = [
   {
-    name: "dining room",
-    id: "dining room",
+    name: 'dining room',
+    id: 'dining room',
   },
   {
-    name: "conservatory",
-    id: "conservatory",
+    name: 'conservatory',
+    id: 'conservatory',
   },
   {
-    name: "kitchen",
-    id: "kitchen",
+    name: 'kitchen',
+    id: 'kitchen',
   },
   {
-    name: "study",
-    id: "study",
+    name: 'study',
+    id: 'study',
   },
   {
-    name: "library",
-    id: "library",
+    name: 'library',
+    id: 'library',
   },
   {
-    name: "billiard room",
-    id: "billiard room",
+    name: 'billiard room',
+    id: 'billiard room',
   },
   {
-    name: "lounge",
-    id: "lounge",
+    name: 'lounge',
+    id: 'lounge',
   },
   {
-    name: "ballroom",
-    id: "ballroom",
+    name: 'ballroom',
+    id: 'ballroom',
   },
   {
-    name: "hall",
-    id: "hall",
+    name: 'hall',
+    id: 'hall',
   },
   {
-    name: "spa",
-    id: "spa",
+    name: 'spa',
+    id: 'spa',
   },
   {
-    name: "living room",
-    id: "living room",
+    name: 'living room',
+    id: 'living room',
   },
   {
-    name: "observatory",
-    id: "observatory",
+    name: 'observatory',
+    id: 'observatory',
   },
   {
-    name: "theater",
-    id: "theater",
+    name: 'theater',
+    id: 'theater',
   },
   {
-    name: "guest house",
-    id: "guest house",
+    name: 'guest house',
+    id: 'guest house',
   },
   {
-    name: "patio",
-    id: "patio",
+    name: 'patio',
+    id: 'patio',
   },
 ];
 
 const mystery = {
-  killer: "",
-  weapon: "",
-  room: "",
+  killer: '',
+  weapon: '',
+  room: '',
 };
 
 /*** FUNCTIONS ***/
 
 /* Called when the 'Let's Play' button is clicked, toggles the window, hides
  the Reveal button and shuffles the suspects' favourite weapon and the weapons'
-  favourite room */
+ favourite room */
 const startGame = (windowId) => {
   toggleWindow(windowId);
   hideButton();
-  document.getElementsByTagName("BODY")[0].style.backgroundImage =
-    "url(./assets/starry-sky.jpg)";
+  document.getElementsByTagName('BODY')[0].style.background = '#333';
   shuffleFavourite(suspects, weapons);
   shuffleFavourite(weapons, rooms);
 };
 
-/* The function is invoked when the killer card deck is clicked. It checks that
+/* The function is invoked when the 'killer card' deck is clicked. It checks that
  a killer hasn't already been picked, then toggles the loader animation. After 
  3 seconds a killer is randomly selected and added to the mystery object and 
  then displayed  */
 const pickKiller = (loaderId) => {
   if (!killerPicked) {
     toggleAnimation(loaderId);
+    get('info').innerHTML = '';
     setTimeout(function () {
       toggleLoader(loaderId);
-      //shuffleFavourite(suspects, weapons);
       mystery.killer = randomSelector(suspects);
-      style("killerCard").background = mystery.killer.color;
+      style('killerCard').background = mystery.killer.color;
       get(
-        "killerNameAge"
+        'killerNameAge'
       ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}, ${mystery.killer.age}`;
       get(
-        "killerOccupation"
+        'killerOccupation'
       ).innerHTML = `Occupation: ${mystery.killer.occupation}`;
-      get("killerImage").src = mystery.killer.image;
+      get('killerImage').src = mystery.killer.image;
       get(
-        "killerDescription"
+        'killerDescription'
       ).innerHTML = `Description: ${mystery.killer.description}`;
       get(
-        "killerFavouriteWeapon"
+        'killerFavouriteWeapon'
       ).innerHTML = `Weapon of choice: ${capitalizeFirstLetter(
         mystery.killer.favourite
       )}`;
@@ -245,21 +244,24 @@ const pickKiller = (loaderId) => {
 const pickWeapon = (loaderId) => {
   if (killerPicked && !weaponPicked) {
     toggleAnimation(loaderId);
+    get('info').innerHTML = '';
     setTimeout(function () {
       toggleLoader(loaderId);
       //shuffleFavourite(weapons, rooms);
       mystery.weapon = increaseChance(mystery.killer);
-      style("weaponCard").background = mystery.killer.color;
-      get("weaponName").innerHTML = capitalizeFirstLetter(mystery.weapon.name);
-      get("weaponWeight").innerHTML = `Weight: ${mystery.weapon.weight}`;
+      style('weaponCard').background = mystery.killer.color;
+      get('weaponName').innerHTML = capitalizeFirstLetter(mystery.weapon.name);
+      get('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`;
       get(
-        "weaponFavouriteRoom"
+        'weaponFavouriteRoom'
       ).innerHTML = `Likely found in: ${capitalizeFirstLetter(
         mystery.weapon.favourite
       )}`;
       weaponPicked = true;
     }, 1500);
-  } // else show message
+  } else {
+    showInfo(loaderId);
+  }
 };
 
 /* The function is evoked when the user clicks on the room card deck. Checks
@@ -268,15 +270,18 @@ const pickWeapon = (loaderId) => {
 const pickRoom = (loaderId) => {
   if (weaponPicked && !roomPicked) {
     toggleAnimation(loaderId);
+    get('info').innerHTML = '';
     setTimeout(function () {
       toggleLoader(loaderId);
       mystery.room = increaseChance(mystery.weapon);
-      style("roomCard").background = mystery.killer.color;
-      get("roomName").innerHTML = `${capitalizeFirstLetter(mystery.room.name)}`;
+      style('roomCard').background = mystery.killer.color;
+      get('roomName').innerHTML = `${capitalizeFirstLetter(mystery.room.name)}`;
       roomPicked = true;
-      style("revealButton").visibility = "visible";
+      style('revealButton').visibility = 'visible';
     }, 1500);
-  } // else show message
+  } else {
+    showInfo(loaderId);
+  }
 };
 
 /* The function is called when the 'Reveal the Crime' button is clicked. Checks
@@ -285,27 +290,23 @@ const pickRoom = (loaderId) => {
 const revealMystery = (windowId) => {
   if (killerPicked && weaponPicked && roomPicked) {
     toggleWindow(windowId);
-    //document.getElementsByTagName("BODY")[0].style.backgroundImage =
-    //  "url(./assets/red-splatter.jpg)";
     get(
-      "mystery"
+      'mystery'
     ).innerHTML = `The murder was commited by ${mystery.killer.firstName} 
     ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}`;
-    style("mysteryCard").backgroundImage = "url(./assets/red-drip.jpg)";
-    //("url(./assets/red-splatter.jpg)");
-    // style("mysteryCard").background = mystery.killer.color;
+    style('mysteryCard').background = mystery.killer.color;
     get(
-      "mysteryKiller"
+      'mysteryKiller'
     ).innerHTML = `Mystery Killer: ${mystery.killer.firstName} 
     ${mystery.killer.lastName}`;
-    get("mysteryKillerImage").src = mystery.killer.image;
-    get("mysteryRoom").innerHTML = `Room: ${capitalizeFirstLetter(
+    get('mysteryKillerImage').src = mystery.killer.image;
+    get('mysteryRoom').innerHTML = `Room: ${capitalizeFirstLetter(
       mystery.room.name
     )}`;
-    get("mysteryWeapon").innerHTML = `Weapon: ${capitalizeFirstLetter(
+    get('mysteryWeapon').innerHTML = `Weapon: ${capitalizeFirstLetter(
       mystery.weapon.name
     )}`;
-  } // else show message
+  }
 };
 
 const restartGame = () => {
@@ -317,14 +318,6 @@ const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-/* The function is called when a killer is picked. Shuffles the suspects favourite
- weapons */
-const shuffleFavouriteWeapon = () => {
-  suspects.forEach((suspect) => {
-    suspect.favourite = randomSelector(weapons).id;
-  });
-};
-
 /* The function is called when the Let's play button is clicked to shuffle
  favourite weapon and favourite room */
 const shuffleFavourite = (mysteryObject, favouriteObject) => {
@@ -333,19 +326,14 @@ const shuffleFavourite = (mysteryObject, favouriteObject) => {
   });
 };
 
-/* Capitalizes the first letter */
-const capitalizeFirstLetter = (inputToCheck) => {
-  return inputToCheck[0].toUpperCase() + inputToCheck.slice(1);
-};
-
 /* Toggles the loader animation */
 const toggleAnimation = (loaderId) => {
-  get(loaderId).classList.toggle("loader-container-animation");
+  get(loaderId).classList.toggle('loader-container-animation');
 };
 
 /* Hides the loader image when a card is picked */
 const toggleLoader = (loaderId) => {
-  style(loaderId).display = "none";
+  style(loaderId).display = 'none';
 };
 
 /* Hides the current window and displays the next */
@@ -357,13 +345,13 @@ const toggleWindow = (windowId) => {
 
 /* Toggles between classes to hide/display a window */
 const toggleWindowClass = (id) => {
-  get(id).classList.toggle("visible");
-  get(id).classList.toggle("invisible");
+  get(id).classList.toggle('visible');
+  get(id).classList.toggle('invisible');
 };
 
 /* Hides the reveal the crime button when the game is started */
 const hideButton = () => {
-  const button = (style("revealButton").visibility = "hidden");
+  const button = (style('revealButton').visibility = 'hidden');
 };
 
 /* Increases the chance of the referred obeject's favourite property to be picked */
@@ -400,6 +388,22 @@ const randomFavourite = (favourite, arrayDuplicated) => {
   return randomSelector(increasedFavourite);
 };
 
+const showInfo = (loaderId) => {
+  if (
+    loaderId === 'loaderWeapon' ||
+    (loaderId === 'loaderRoom' && !killerPicked)
+  ) {
+    get('info').innerHTML = 'Start by picking a killer card';
+  } else if (loaderId === 'loaderRoom' && pickKiller) {
+    get('info').innerHTML = 'Go ahead, pick a weapon card';
+  }
+};
+
+/* Capitalizes the first letter */
+const capitalizeFirstLetter = (inputToCheck) => {
+  return inputToCheck[0].toUpperCase() + inputToCheck.slice(1);
+};
+
 /* Function that returns an object to which the id refers */
 const get = (id) => {
   return document.getElementById(id);
@@ -412,20 +416,39 @@ const style = (id) => {
 
 /* The fuction is called by the event listener to check which deck is clicked */
 const getLoaderId = (elementId) => {
-  if (elementId === "loaderKiller") {
+  if (elementId === 'loaderKiller') {
     pickKiller(elementId);
-  } else if (elementId === "loaderWeapon") {
+  } else if (elementId === 'loaderWeapon') {
     pickWeapon(elementId);
-  } else if (elementId === "loaderRoom") {
+  } else if (elementId === 'loaderRoom') {
     pickRoom(elementId);
   }
 };
 
+/*** EVENT LISTENERS ***/
+
+/* Event listener attached to the 'Let's play' button. Calls the startGame function */
+const startButton = get('startButton');
+get('startButton').addEventListener('click', () => {
+  startGame(startButton.parentNode.id);
+});
+
 /* Event listener attached to the decks classes. The function loops through the
  array and attaches the event listener to each element before calling the
  getLoaderId function with the loader id as a paramater */
-document.querySelectorAll(".decks").forEach((element) => {
-  element.addEventListener("click", () => {
+document.querySelectorAll('.decks').forEach((element) => {
+  element.addEventListener('click', () => {
     getLoaderId(element.lastElementChild.id);
   });
 });
+
+/* Event listener attached to the 'Reveal the crime' button. Calls the
+ revealMystery function */
+const revealButton = get('revealButton');
+get('revealButton').addEventListener('click', () => {
+  revealMystery(revealButton.parentNode.id);
+});
+
+/* Event listener attached to the 'Play again' button. Calls the restartGame
+ function */
+get('playAgain').addEventListener('click', restartGame);

@@ -9,22 +9,19 @@
     <link rel="shortcut icon" href="./assets/splash.png" type="image/png" />
   </head>
   <body>
-    <!-- <div class="flex-wrapper"> -->
+    <!-- HEADER -->
     <header class="header-wrapper visible" id="startWindow">
       <div class="header-container">
         <h1 class="header-text">CLUEDO</h1>
         <div class="drop"></div>
       </div>
-      <button
-        onclick="startGame(this.parentNode.id)"
-        class="button button-start"
-        id="startButton"
-      >
-        LET'S PLAY
-      </button>
+      <button class="button button-start" id="startButton">LET'S PLAY</button>
     </header>
 
+    <!-- GAME WINDOW -->
     <section class="game-wrapper invisible" id="gameWindow">
+      <h1 class="info-header">Pick a card</h1>
+      <p class="info" id="info"></p>
       <div class="cards-container">
         <article class="decks killer-deck" id="killerCard">
           <p class="p-header">KILLER</p>
@@ -67,15 +64,10 @@
           </div>
         </article>
       </div>
-
-      <button
-        onclick="revealMystery(this.parentNode.id)"
-        class="button"
-        id="revealButton"
-      >
-        REVEAL THE CRIME
-      </button>
+      <button class="button" id="revealButton">REVEAL THE CRIME</button>
     </section>
+
+    <!-- REVEAL WINDOW -->
     <section class="reveal-wrapper invisible" id="revealWindow">
       <h1 class="mystery-reveal" id="mystery"></h1>
       <article class="reveal-deck" id="mysteryCard">
@@ -86,10 +78,9 @@
         <p id="mysteryWeapon"></p>
       </article>
       <div>
-        <button onclick="restartGame()" class="button">PLAY AGAIN</button>
+        <button class="button" id="playAgain">PLAY AGAIN</button>
       </div>
     </section>
-    <!-- </div> -->
     <script src="clue.js"></script>
   </body>
 </html>
