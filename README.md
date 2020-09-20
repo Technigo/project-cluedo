@@ -1,13 +1,15 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Week 5: The focus on this weeks project is to practice objects and arrays and how to manipulate the DOM using JavaScript.
+The theme was the mystery game Cluedo and we had to create objects for the Suspects, Weapons and Rooms and then organise these into arrays.
+We had to create a function for each card set to randomise the cards and then display that selected card on the website. With the final part being the big mystery reveal! 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by created the objects and then organising the objects into arrays. Once I had my shuffle functions I began to look at the optional red requirements. Such as creating a favourite weapon property and also a function to make this randomly selected.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+For this project I focused on the JavaScript side and did not make my site fully screen size responsive. 
+The site can be viewed here:
+https://cluedo-murder-mystery.netlify.app/ 
