@@ -5,8 +5,9 @@ While practicing creating objects and arrays and also connect to the DOM.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Didn't have enough time to try the advanced levels so it is very basic. 
+Would have loved to make it more interaktive with effects and animations. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://loving-jepsen-d5dee3.netlify.app/
