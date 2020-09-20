@@ -88,8 +88,9 @@ p {
   background-image: url("./assets/poker-table.png");
   background-size: cover;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  /* flex-wrap: wrap;
+  justify-content: space-around; */
   align-items: center;
   font-family: 'Nosifer';
   padding: 20px;
@@ -182,3 +183,61 @@ a {
   text-decoration: none;
   color: #ccc;
 }
+
+/* MEDIA QUERIES */
+
+@media (min-width: 768px) {
+  header {
+    height: 75px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  main {
+    top: 75px;
+  }
+
+  .cards {
+    flex-direction: inherit;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .killer-deck {
+    margin: 0 40px 40px 40px;
+  }
+
+  .weapon-deck {
+    margin: 0 40px 40px 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  header {
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  main {
+    top: 100px;
+  }
+
+  /* .cards {
+    flex-direction: inherit;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  } */
+
+  .killer-deck {
+    margin: 0;
+  }
+
+  .weapon-deck {
+    margin: 0;
+  }
+} 
