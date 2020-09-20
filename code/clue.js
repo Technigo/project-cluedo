@@ -169,7 +169,7 @@ const library = {
 
 const billiardRoom = {
   name: 'Billiard Room',
-  image: 'assets/billiard.png',
+  image: 'assets/billiard-room.png',
 }
 
 const lounge = {
