@@ -14,4 +14,4 @@ Styling for the Reaveal crime button was updated with hover animations.
 If I had more time I would have added a favoriteWeapon and created a loading animation.
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Link to project: https://mysterycluedo.netlify.app/
