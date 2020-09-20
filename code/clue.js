@@ -28,7 +28,7 @@ const missScarlet = {
 }
 
 const mrsPeacock = {
-  firstname: 'Eleanor',
+  firstName: 'Eleanor',
   lastName: 'Peacock',
   color: 'blue',
   age: 49,
@@ -47,7 +47,7 @@ const colonelMustard = {
 
 const mrsWhite = {
   firstName: 'Mrs',
-  lastname: 'White',
+  lastName: 'White',
   color: 'white',
   age: 70,
   occupation: 'Housekeeper',
@@ -74,7 +74,7 @@ const candlestick = {
 
 const dumbbell = {
   name: 'dumbbell',
-  weight: 8
+  weight: 8,
 }
 
 const poison = {
@@ -101,6 +101,8 @@ const pistol = {
   name: 'pistol',
   weight: 8
 }
+
+
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
 
@@ -176,7 +178,6 @@ mystery.killer = randomSelector(suspects);
   document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`;
   document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`;
   document.getElementById('killerImage').src = mystery.killer.image;
-  
 }
 
 
@@ -186,8 +187,7 @@ mystery.killer = randomSelector(suspects);
     mystery.weapon = randomSelector(weapons);
 
     document.getElementById('weaponCard').style.background = '#FFFFFF';
-    document.getElementById('weaponName').innerHTML = `${mystery.weapon} ${mystery.weapon.weight}`;
-   
+    document.getElementById('weaponName').innerHTML = `${mystery.weapon.name} ${mystery.weapon.weight} kg`; 
   }
 
   // This function will be invoked when you click on the ROOM CARD.
@@ -196,8 +196,7 @@ mystery.killer = randomSelector(suspects);
     mystery.room = randomSelector(rooms);
 
     document.getElementById('roomCard').style.background = '#FFFFFF';
-    document.getElementById('roomName').innerHTML = `${mystery.room}`;
-    
+    document.getElementById('roomName').innerHTML = `${mystery.room}`;  
   }
 
   document.getElementById('killerCard').onclick = pickKiller;
@@ -206,6 +205,6 @@ mystery.killer = randomSelector(suspects);
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button.
 const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}`
+  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, with a ${mystery.weapon.name} in the ${mystery.room}` 
   document.getElementById("clickMe").onclick = revealMystery;
 }
