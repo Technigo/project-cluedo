@@ -7,7 +7,8 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
-  favouriteWeapon: 'knife'
+  favouriteWeapon: 'knife',
+  weapon: null
 };
 
 const professorPlum = {
@@ -18,7 +19,8 @@ const professorPlum = {
   age: 40,
   image: 'assets/plum.png',
   occupation: 'Professor',
-  favouriteWeapon: 'axe'
+  favouriteWeapon: 'axe',
+  weapon: null
 };
 
 const missScarlet = {
@@ -29,7 +31,8 @@ const missScarlet = {
   age: 26,
   image: 'assets/scarlet.png',
   occupation: 'model',
-  favouriteWeapon: 'bat'
+  favouriteWeapon: 'bat',
+  weapon: null
 };
 
 const mrsPeacock = {
@@ -40,7 +43,8 @@ const mrsPeacock = {
   age: 53,
   image: 'assets/peacock.png',
   occupation: 'Real Estate Agents',
-  favouriteWeapon: 'trophy'
+  favouriteWeapon: 'trophy',
+  weapon: null
 };
 
 const colonelMustard = {
@@ -51,18 +55,20 @@ const colonelMustard = {
   age: 65,
   image: 'assets/mustard.png',
   occupation: 'Pilot',
-  favouriteWeapon: 'poison'
+  favouriteWeapon: 'poison',
+  weapon: null
 };
 
 const mrsWhite = {
-  firstName: '?',
+  firstName: 'Mrs',
   lastName: 'White',
   color: 'green',
   description: '',
   age: 68,
   image: 'assets/white.png',
   occupation: 'Maid',
-  favouriteWeapon: 'pistol'
+  favouriteWeapon: 'pistol',
+  weapon: null
 };
 
 
@@ -160,18 +166,33 @@ const rooms = [
   "Patio"
 ]
 
+// returns the provided suspects favourite weapon as a weapon obj
+const favoriteWeapon = (suspect) => {
+  return weapons.find((weapon) => {return weapon.id === suspect.favouriteWeapon});
+}
 
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-const shuffleFavouriteWeapon = (arrayOfSuspects) => {
+const shuffleWeapon = (arrayOfSuspects) => {
+
   arrayOfSuspects.forEach(suspect => {
-    suspect.favouriteWeapon = randomSelector(weapons);
+    const suspectFavoriteWeapon = favoriteWeapon(suspect)
+    const favoriteArray = [
+        ...weapons,
+        suspectFavoriteWeapon,
+        suspectFavoriteWeapon,
+        suspectFavoriteWeapon,
+        suspectFavoriteWeapon,
+        suspectFavoriteWeapon   
+    ];
+    suspect.weapon = randomSelector(favoriteArray);
   });
 };
 
-shuffleFavouriteWeapon(suspects);
+
+
 
 const killerLoading =  document.getElementById('killerLoading');
 const weaponLoading = document.getElementById('weaponLoading');
@@ -231,7 +252,7 @@ const pickKiller = () => {
 
   document.getElementById(
     'favoriteWeapon'
-  ).innerHTML = `<strong>Favorite weapon:</strong>  ${mystery.killer.favouriteWeapon.name}`
+  ).innerHTML = `<strong>Favorite weapon:</strong>  ${favoriteWeapon(mystery.killer).name}`
 
   document.getElementById(
     'killerImage'
@@ -244,14 +265,17 @@ const pickKiller = () => {
 const pickWeapon = () => {
   weaponLoading.style.display = 'none';
   weaponInfo.style.display = 'block';
-  mystery.weapon = randomSelector(weapons)
+  shuffleWeapon(suspects);
+  mystery.weapon = mystery.killer.weapon.name;
+
+  console.log(mystery.weapon);
 
   document.getElementById(
     'weaponName'
-  ).innerHTML = `${mystery.weapon.name}`
+  ).innerHTML = `${mystery.weapon}`
   document.getElementById(
     'weaponWeight'
-  ).innerHTML = `<strong> Weight: </strong> ${mystery.weapon.weight}`
+  ).innerHTML = `<strong> Weight: </strong> ${favoriteWeapon(mystery.killer).weight}`
 
 };
 
@@ -271,7 +295,7 @@ const revealValdidation = () => {
   if (mystery.killer === null || mystery.weapon === null || mystery.room === null) {
     document.getElementById(
       'revealText'
-    ).innerHTML = `Pick all three cards.`;
+    ).innerHTML = `Pick all three cards.`; 
   } else {
     revealMystery();
   }
@@ -280,7 +304,7 @@ const revealValdidation = () => {
 const revealMystery = () => {
   document.getElementById(
     'revealText'
-  ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
+  ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon}.`;
 };
 
 
