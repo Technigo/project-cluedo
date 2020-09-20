@@ -43,8 +43,9 @@
       </div>
     </section>
 
-    <button>Start playing</button>
+    <button class="startPlay" id="startPlay">Start playing</button>
 
+    <div class="cardShow" id="cardShow">
     <section class="cards">
       <article class="killer-deck" id="killerCard">
         <h2>KILLER</h2>
@@ -67,11 +68,16 @@
         <img id="roomImage" src="" height="100" />
       </article>
     </section>
-
-    <h1 id="mystery"></h1>
-
-    <button>Reveal the crime</button>
-
+    <button class="revealMystery" id="revealMystery">Reveal the crime</button>
+  </div>
+  
+  <div class="mysteryShow" id="mysteryShow">
+  <div id="mystery" class="mystery">
+    <h1 class="mysteryHeader">You solved it!</h1>
+    <p id="mysteryMessage" class="mysteryMessage"></p>
+    <img class="mysteryImg" src="./assets/pointing.png" height="100"/>
+  </div>
+</div>
     <script src="clue.js"></script>
     <footer class="footer">
       <p class="footer-text">Week 5 project: Cluedo Mystery Picker | By: Emma Urman | Technigo Fall Bootcamp 2020 | All images from Unsplash & Pixabay</p>

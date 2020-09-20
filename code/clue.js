@@ -4,7 +4,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'lightgreen',
+  color: 'LightGreen',
   description: 'A money-oriented businessman with a lot of connections in the mafia...',
   age: 45,
   image: 'assets/green.png',
@@ -14,7 +14,7 @@ const mrGreen = {
 const colMustard = {
   firstName: 'William',
   lastName: 'Mustard',
-  color: 'yellow',
+  color: 'Yellow',
   description: 'A dapper and dangerous military man. Also and big game hunter...',
   age: 72,
   image: 'assets/mustard.png',
@@ -24,7 +24,7 @@ const colMustard = {
 const mrsPeacock = {
   firstName: 'Amelia',
   lastName: 'Peacock',
-  color: 'pink',
+  color: 'LightPink',
   description: 'The richest woman in England. Her husbands have all died mysterious deaths...',
   age: 60,
   image: 'assets/peacock.png',
@@ -34,7 +34,7 @@ const mrsPeacock = {
 const profPlum = {
   firstName: 'Oliver',
   lastName: 'Plum',
-  color: 'violet',
+  color: 'Violet',
   description: 'A quick-witted alchemy professor. A bit to interested in experimenting with different potions...',
   age: 46,
   image: 'assets/plum.png',
@@ -44,7 +44,7 @@ const profPlum = {
 const missScarlet = {
   firstName: 'Eveline',
   lastName: 'Scarlett',
-  color: 'salmon',
+  color: 'Salmon',
   description: 'A cunning and mysterious museum curator. Also a master thief...',
   age: 35,
   image: 'assets/scarlett.png',
@@ -54,7 +54,7 @@ const missScarlet = {
 const mrsWhite = {
   firstName: 'Charlotte',
   lastName: 'White',
-  color: 'white',
+  color: 'White',
   description: 'House Keeper at Scaryville Mansion. Knows every secret passage and dark corner of the house...',
   age: 73,
   image: 'assets/white.png',
@@ -255,6 +255,15 @@ const mystery = {
  room: null
 };
 
+//Function to show cards
+const cardShow = () => {
+  const element = document.getElementById("cardShow");
+  element.classList.remove('cardShow');
+} 
+document.getElementById('startPlay').onclick = cardShow;
+
+
+
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects)   // This will randomly select a killer from the suspects. And add that to the mystery object.
@@ -273,8 +282,8 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
   document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}`
-  document.getElementById('weaponLenght').innerHTML = `${mystery.weapon.length}`
+  document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`
+  document.getElementById('weaponLenght').innerHTML = `Lenght: ${mystery.weapon.length}`
   document.getElementById('weaponImage'); weaponImage.src = mystery.weapon.image;
 }
 document.getElementById('weaponCard').onclick = pickWeapon;
@@ -290,5 +299,10 @@ const pickRoom = () => {
 document.getElementById('roomCard').onclick = pickRoom;
 
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+//Function to reveal the mystery
+const revealMystery  = () => {
+  const element = document.getElementById("mysteryShow");
+  element.classList.remove('mysteryShow');
+  document.getElementById("mysteryMessage").innerHTML= `The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`;
+} 
+document.getElementById('revealMystery').onclick = revealMystery;
