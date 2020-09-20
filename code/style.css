@@ -26,6 +26,10 @@ p {
   background-color: #fff;
 }
 
+h2{
+
+}
+
 .cards {
   margin: 50px auto;
   width: 90%;
@@ -34,11 +38,9 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.cards.hover {
-  opacity: 0.5;
-}
 
 .killer-deck {
   width: 250px;
@@ -47,6 +49,14 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+}
+
+.killer-deck:hover {
+  opacity: 0.5;
+}
+
+.killer-deck:active{
+  opacity: 1;
 }
 
 .weapon-deck {
@@ -58,6 +68,16 @@ p {
   border-radius: 16px;
 }
 
+.weapon-deck:hover {
+  opacity: 0.5;
+}
+
+
+.weapon-deck:active{
+  opacity: 1;
+}
+
+
 .room-deck {
   width: 250px;
   height: 400px;
@@ -65,6 +85,14 @@ p {
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
+}
+
+.room-deck:hover {
+  opacity: 0.5;
+}
+
+.room-deck:active{
+  opacity: 1;
 }
 
 #mystery {
@@ -79,6 +107,15 @@ button {
   border-radius: 8px;
   display: block;
   margin: 0 auto;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 img {
