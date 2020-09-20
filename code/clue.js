@@ -1,4 +1,4 @@
-// STEP 1 
+// STEP 1 - Objects
 
 const mrGreen = {
   firstName: "Jacob",
@@ -124,7 +124,7 @@ const pistol = {
   image: "images/weapon/revolver.svg"
 };
 
-//STEP 2
+//STEP 2 - arrays
 
 let rooms = [
   "diningRoom",
@@ -177,14 +177,14 @@ const mystery = {
   room: "",
 };
 
-//STEP 3
+//STEP 3 - Functions
 
 const pickKiller = () => {
 
   mystery.killer = randomSelector(suspects);
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById("killerCard").style.background = mystery.killer.color;
+
   document.getElementById("killerName").innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   document.getElementById("killerAge").innerHTML = `${mystery.killer.age}`;
   document.getElementById("killerImage").src = `${mystery.killer.image}`;
@@ -215,4 +215,6 @@ const revealMystery = () => {
     "mystery"
   ).innerHTML = `The murder was comitted by ${mystery.killer.firstName} in the ${mystery.room} with a ${mystery.weapon.name}`;
   document.getElementById("mysteryBtn").onclick = revealMystery;
+  //Clears the revealMystery, need to setTimeOut
+  location.reload()
 };
