@@ -1,13 +1,15 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
+The assignment was to create a simple Cluedo "mystery reveal" application. You, the game master, picks three cards – suspect, murder weapon, and the room where it happened – and reveal it to the rest of the players.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Technologies used: HTML, CSS, JavaScript. 
+
+As this week was all about Javascript, there's a lot of function calls and some randomisations going on to display the different objects on the DOM. Since all of this is new territory, my goal was to really understand the Javascript parts, which is why I settled for the blue level.
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://cluedo-axel.netlify.app/
