@@ -1,13 +1,12 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Project Cluedo was a challenge of how we used our mind to get the results we wanted by randomising the results.
+It was a great help that we had some of the code in so that we could work and focus on the logic of the assignment
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+It was a straightforward request on the blue level and I feel we made it happen by having our fundamentals strong. I did go back to the online class recordings to figure some of my problems out
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+This project can be viewed live on : https://gettheclue.netlify.app
