@@ -339,7 +339,7 @@ document.getElementById('roomcard').addEventListener('click', pickRoom);
     }
   };
 
-const clearMystery = () => {
+function clearMystery() {
   mystery.killer = "";
   mystery.weapon = "";
   mystery.room = "";
