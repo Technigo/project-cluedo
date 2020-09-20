@@ -16,7 +16,7 @@ const professorPlum = {
   lastName: "Plum",
   color: "thistle",
   description:
-    "A former psychiatrist, lost his medical license for having an affair with a patient.",
+    "A former psychiatrist who lost his medical license for having an affair with a patient.",
   age: 36,
   image: "assets/plum.png",
   occupation: "Professor",
@@ -184,11 +184,19 @@ const rooms = [
   "Patio",
 ];
 
+// Empty object to store the randomly picked killer, weapon and room.
+let mystery = {
+  killer: "",
+  weapon: "",
+  room: "",
+};
+
 // Randomly select an item from an array
 const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
+// Fill an array with similar objects
 const fillArray = (item, amountOfTimes) => {
   let result = [];
   for (let i = 0; i < amountOfTimes; i++) {
@@ -232,19 +240,43 @@ const shuffleFavouriteWeapon = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-// Empty object to store the randomly picked killer,weapon and room.
-let mystery = {
-  killer: "",
-  weapon: "",
-  room: "",
+// Remove active from class if it already exists, add if not
+const toggleActive = (front, back) => {
+  front.classList.toggle("active");
+  back.classList.toggle("active");
+};
+
+// Show card back, hide card front
+const showCardBack = (back, front) => {
+  back.style.display = "flex";
+  front.style.display = "none";
+  front.style.opacity = 0;
+};
+
+// Make card front fade in, hide card back
+const showCardFront = (front, back) => {
+  front.style.display = "flex";
+  back.style.display = "none";
+
+  // Make card fade in
+  setTimeout(() => (front.style.opacity = 1), 50);
+};
+
+// Reset reveal button and reveal message from previous reveals
+const resetReveal = () => {
+  const revealButton = document.getElementById("revealButton");
+  const mysteryReveald = document.getElementById("mysteryReveald");
+  revealButton.classList.remove("reveald");
+  revealButton.innerText = "Reveal the crime";
+  mysteryReveald.innerHTML = "Who did it?";
 };
 
 // *** PICK KILLER *** //
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // Declare variables
-  const mysteryReveald = document.getElementById("mysteryReveald");
   const loader = document.getElementById("killerLoader");
+  const killerColor = document.getElementById("killerCard");
   const killerImage = document.getElementById("killerImage");
   const killerName = document.getElementById("killerName");
   const killerAge = document.getElementById("killerAge");
@@ -256,23 +288,18 @@ const pickKiller = () => {
   const killerDeckFront = document.getElementById("killerDeckFront");
   const killerDeckBack = document.getElementById("killerDeckBack");
 
-  // Empty the field for old reveals
-  mysteryReveald.innerHTML = "";
+  // Restore button and textfield from previous reveals
+  resetReveal();
 
-  // If card front - show killer details, if card back - empty random selected killer
-  if (document.getElementById("killerDeckBack").classList.contains("active")) {
+  // If card front - show killer details, else if card back - empty random selected killer
+  if (killerDeckBack.classList.contains("active")) {
     // Add class active to card front
-    killerDeckFront.classList.toggle("active");
-    killerDeckBack.classList.toggle("active");
+    toggleActive(killerDeckFront, killerDeckBack);
 
     // Start loader
     loader.style.display = "flex";
     setTimeout(() => {
       loader.style.display = "none";
-
-      // Show card front, hide card back
-      killerDeckFront.style.display = "flex";
-      killerDeckBack.style.display = "none";
 
       // Select a random killer from the suspects and add to the mystery object
       mystery.killer = randomSelector(suspects);
@@ -281,8 +308,7 @@ const pickKiller = () => {
       mystery.killer.favouriteWeapon = shuffleFavouriteWeapon(weapons);
 
       // Show killer details
-      document.getElementById("killerCard").style.background =
-        mystery.killer.color;
+      killerColor.style.background = mystery.killer.color;
       killerImage.src = mystery.killer.image;
       killerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName} /`;
       killerAge.innerHTML = mystery.killer.age;
@@ -290,20 +316,18 @@ const pickKiller = () => {
       killerFavouriteWeapon.innerHTML = mystery.killer.favouriteWeapon.name;
       killerDescription.innerHTML = mystery.killer.description;
 
-      setTimeout(() => (killerDeckFront.style.opacity = 1), 50);
+      // Show card front, hide card back
+      showCardFront(killerDeckFront, killerDeckBack);
     }, 2000);
   } else {
     // Add class active to card back
-    killerDeckFront.classList.toggle("active");
-    killerDeckBack.classList.toggle("active");
+    toggleActive(killerDeckFront, killerDeckBack);
 
     mystery.killer = "";
 
-    document.getElementById("killerCard").style.background = "#121212";
     // Show card back, hide card front
-    killerDeckBack.style.display = "flex";
-    killerDeckFront.style.display = "none";
-    killerDeckFront.style.opacity = 0;
+    showCardBack(killerDeckBack, killerDeckFront);
+    killerColor.style.background = "#121212";
   }
 };
 
@@ -311,7 +335,6 @@ const pickKiller = () => {
 // This function will be invoked when you click on the weapon card.
 const pickWeapon = () => {
   // Declare variables
-  const mysteryReveald = document.getElementById("mysteryReveald");
   const loader = document.getElementById("weaponLoader");
   const weaponImage = document.getElementById("weaponImage");
   const weaponName = document.getElementById("weaponName");
@@ -320,23 +343,18 @@ const pickWeapon = () => {
   const weaponDeckFront = document.getElementById("weaponDeckFront");
   const weaponDeckBack = document.getElementById("weaponDeckBack");
 
-  // Empty the field for old reveals
-  mysteryReveald.innerHTML = "";
+  // Restore button and textfield from previous reveals
+  resetReveal();
 
   // If card front - show weapon details, if card back - empty random selected weapon
   if (weaponDeckBack.classList.contains("active")) {
     // Add class active to card front
-    weaponDeckFront.classList.toggle("active");
-    weaponDeckBack.classList.toggle("active");
+    toggleActive(weaponDeckFront, weaponDeckBack);
 
     // Start loader
     loader.style.display = "flex";
     setTimeout(() => {
       loader.style.display = "none";
-
-      // Show card front, hide card back
-      weaponDeckFront.style.display = "flex";
-      weaponDeckBack.style.display = "none";
 
       // If killer is picked, create new array with several favourite weapon added
       const weaponsFavourite = favouriteWeaponArray(weapons);
@@ -350,19 +368,17 @@ const pickWeapon = () => {
       weaponWeight.innerHTML = mystery.weapon.weight;
       weaponResident.innerHTML = mystery.weapon.resident;
 
-      setTimeout(() => (weaponDeckFront.style.opacity = 1), 50);
+      // Show card front, hide card back
+      showCardFront(weaponDeckFront, weaponDeckBack);
     }, 2000);
   } else {
     // Add class active to card back
-    weaponDeckFront.classList.toggle("active");
-    weaponDeckBack.classList.toggle("active");
+    toggleActive(weaponDeckFront, weaponDeckBack);
 
     mystery.weapon = "";
 
     // Show card back, hide card front
-    weaponDeckBack.style.display = "flex";
-    weaponDeckFront.style.display = "none";
-    weaponDeckFront.style.opacity = 0;
+    showCardBack(weaponDeckBack, weaponDeckFront);
   }
 };
 
@@ -370,29 +386,23 @@ const pickWeapon = () => {
 // This function will be invoked when you click on the room card.
 const pickRoom = () => {
   // Declare variables
-  const mysteryReveald = document.getElementById("mysteryReveald");
   const loader = document.getElementById("roomLoader");
   const roomName = document.getElementById("roomName");
   const roomDeckFront = document.getElementById("roomDeckFront");
   const roomDeckBack = document.getElementById("roomDeckBack");
 
-  // Empty the field for old reveals
-  mysteryReveald.innerHTML = "";
+  // Restore button and textfield from previous reveals
+  resetReveal();
 
   // if card front - show weapon details, if card back - empty random selected weapon
   if (roomDeckBack.classList.contains("active")) {
     // Add class active to card front
-    roomDeckFront.classList.toggle("active");
-    roomDeckBack.classList.toggle("active");
+    toggleActive(roomDeckFront, roomDeckBack);
 
     // Start loader
     loader.style.display = "flex";
     setTimeout(() => {
       loader.style.display = "none";
-
-      // Show card front, hide card back
-      roomDeckFront.style.display = "flex";
-      roomDeckBack.style.display = "none";
 
       // If killer is picked, create new array with several resident room added
       const roomsFavourite = favouriteRoomArray(rooms);
@@ -403,48 +413,83 @@ const pickRoom = () => {
       // Show room details
       roomName.innerHTML = `${mystery.room}`;
 
-      setTimeout(() => (roomDeckFront.style.opacity = 1), 50);
+      // Show card front, hide card back
+      showCardFront(roomDeckFront, roomDeckBack);
     }, 2000);
   } else {
     // Add class active to card back
-    roomDeckFront.classList.toggle("active");
-    roomDeckBack.classList.toggle("active");
+    toggleActive(roomDeckFront, roomDeckBack);
 
     mystery.room = "";
 
     // Show card back, hide card front
-    roomDeckBack.style.display = "flex";
-    roomDeckFront.style.display = "none";
-    roomDeckFront.style.opacity = 0;
+    showCardBack(roomDeckBack, roomDeckFront);
   }
 };
 
 // *** REVEAL THE CRIME *** //
-// Will be invoked when you click that button.
+// Will be invoked when you click reveal button.
 const revealMystery = () => {
-  let revealMessage = "";
-  document.getElementById("mysteryReveald").innerHTML = "";
+  const revealButton = document.getElementById("revealButton");
 
-  if (mystery.killer && mystery.weapon && mystery.room) {
-    // document.getElementById("mysteryReveald").innerHTML =
-    revealMessage = `The murder was commited by ${mystery.killer.firstName} ${
-      mystery.killer.lastName
-    }, in the ${mystery.room.toLowerCase()} with a ${mystery.weapon.name.toLowerCase()}.`;
+  // If mystery already is reveald once - the button have a 'Start over' function
+  if (revealButton.classList.contains("reveald")) {
+    // Empty mystery object
+    mystery.killer = "";
+    mystery.weapon = "";
+    mystery.room = "";
+
+    // Show card backs, hide card fronts
+    showCardBack(killerDeckBack, killerDeckFront);
+    document.getElementById("killerCard").style.background = "#121212";
+    showCardBack(weaponDeckBack, weaponDeckFront);
+    showCardBack(roomDeckBack, roomDeckFront);
+
+    // Toggle class active to all decks
+    toggleActive(
+      document.getElementById("killerDeckFront"),
+      document.getElementById("killerDeckBack")
+    );
+    toggleActive(
+      document.getElementById("weaponDeckFront"),
+      document.getElementById("weaponDeckBack")
+    );
+    toggleActive(
+      document.getElementById("roomDeckFront"),
+      document.getElementById("roomDeckBack")
+    );
+
+    // Call function to reset reveal button and reveal message
+    resetReveal();
   } else {
-    // document.getElementById("mysteryReveald").innerHTML =
-    revealMessage = "Pick a card from each deck to reveal the mystery.";
-  }
-
-  const typedTextSpan = document.querySelector(".mystery-reveald");
-  const typingDelay = 20;
-  let charIndex = 0;
-
-  const type = () => {
-    if (charIndex < revealMessage.length) {
-      typedTextSpan.textContent += revealMessage.charAt(charIndex);
-      charIndex++;
-      setTimeout(type, typingDelay);
+    document.getElementById("mysteryReveald").innerHTML = "";
+    let revealMessage = "";
+    // Check if player has drawn cards from all decks
+    if (mystery.killer && mystery.weapon && mystery.room) {
+      revealMessage = `The murder was commited by ${mystery.killer.firstName} ${
+        mystery.killer.lastName
+      }, in the ${mystery.room.toLowerCase()} with a ${mystery.weapon.name.toLowerCase()}.`;
+      // Change text on button and add class reveald
+      setTimeout(() => {
+        revealButton.innerText = "Start over";
+        revealButton.classList.add("reveald");
+      }, 1600);
+    } else {
+      revealMessage = "Pick a card from each deck to reveal the mystery.";
     }
-  };
-  type();
+
+    // Type text animation
+    const typedText = document.getElementById("mysteryReveald");
+    const typingDelay = 20;
+    let charIndex = 0;
+
+    const type = () => {
+      if (charIndex < revealMessage.length) {
+        typedText.textContent += revealMessage.charAt(charIndex);
+        charIndex++;
+        setTimeout(type, typingDelay);
+      }
+    };
+    type();
+  }
 };
