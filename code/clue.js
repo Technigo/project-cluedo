@@ -1,27 +1,26 @@
 ///*** VARIABLES ***//
 
-const killerName = document.getElementById("killerName")
-const killerAge = document.getElementById("killerAge")
-const killerOccupation = document.getElementById("killerOccupation")
+const killerCardElement = document.getElementById("killerCard")
+const weaponCardElement = document.getElementById("weaponCard")
+const roomCardElement = document.getElementById("roomCard")
+const cardElements = document.querySelectorAll(".card")
 
-const weaponName = document.getElementById("weaponName")
-const weaponWeight = document.getElementById("weaponWeight")
+const killerNameElement = document.getElementById("killerName")
+const killerAgeElement = document.getElementById("killerAge")
+const killerOccupationElement = document.getElementById("killerOccupation")
 
-const roomName = document.getElementById("roomName")
-const roomColor = document.getElementById("roomColor")
+const weaponNameElement = document.getElementById("weaponName")
+const weaponWeightElement = document.getElementById("weaponWeight")
 
-const mysteryButton = document.getElementById("mysteryButton")
+const roomNameElement = document.getElementById("roomName")
+const roomColorElement = document.getElementById("roomColor")
 
-const killerCard = document.getElementById("killerCard")
-const weaponCard = document.getElementById("weaponCard")
-const roomCard = document.getElementById("roomCard")
-
-const nameAndInfoClass = [
+const nameAndInfoElements = [
   ...document.querySelectorAll(".name"),
   ...document.querySelectorAll(".info")
 ]
 
-const cardClass = document.querySelectorAll(".card")
+const mysteryButtonElement = document.getElementById("mysteryButton")
 
 //*** KILLERS ***//
 
@@ -131,12 +130,12 @@ const changeCard = card => {
 
 // Changes button when card is clicked
 const changeButton = () => {
-  mysteryButton.innerHTML = "?"
+  mysteryButtonElement.innerHTML = "?"
 
   if (mystery.killer !== null && mystery.weapon !== null && mystery.room !== null) {
-    mysteryButton.style.background = "#EFF066"
+    mysteryButtonElement.style.background = "#EFF066"
   } else {
-    mysteryButton.style.background = "transparent"
+    mysteryButtonElement.style.background = "transparent"
   }
 }
 
@@ -145,9 +144,9 @@ const changeButton = () => {
 const pickKiller = () => {
   mystery.killer = randomSelector(killers)
 
-  killerName.innerHTML = `${mystery.killer.fullName()}`
-  killerAge.innerHTML = `Age: ${mystery.killer.age}`
-  killerOccupation.innerHTML = `Occupation: ${mystery.killer.occupation}`
+  killerNameElement.innerHTML = `${mystery.killer.fullName()}`
+  killerAgeElement.innerHTML = `Age: ${mystery.killer.age}`
+  killerOccupationElement.innerHTML = `Occupation: ${mystery.killer.occupation}`
 
   changeCard("killerCard")
   changeButton()
@@ -158,8 +157,8 @@ const pickKiller = () => {
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
 
-  weaponName.innerHTML = `${mystery.weapon.name}`
-  weaponWeight.innerHTML = `Weight: ${mystery.weapon.weight} kg`
+  weaponNameElement.innerHTML = `${mystery.weapon.name}`
+  weaponWeightElement.innerHTML = `Weight: ${mystery.weapon.weight} kg`
 
   changeCard("weaponCard")
   changeButton()
@@ -170,8 +169,8 @@ const pickWeapon = () => {
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
 
-  roomName.innerHTML = `${mystery.room.name}`
-  roomColor.innerHTML = `Color: ${mystery.room.color}`
+  roomNameElement.innerHTML = `${mystery.room.name}`
+  roomColorElement.innerHTML = `Color: ${mystery.room.color}`
 
   changeCard("roomCard")
   changeButton()
@@ -183,23 +182,23 @@ const pickRoom = () => {
 const revealMystery = () => {
 
   const revealMysteryNow = () => {
-    mysteryButton.innerHTML = (`It was ${mystery.killer.fullName()} with a ${mystery.weapon.name} in the ${mystery.room.name}.`)
-    mysteryButton.style.background = "transparent"
-    mysteryButton.style.opacity = 1.0;
-    nameAndInfoClass.forEach(info => info.innerHTML = "")
-    cardClass.forEach(card => card.style.background = "#30F2C6")
+    mysteryButtonElement.innerHTML = (`It was ${mystery.killer.fullName()} with a ${mystery.weapon.name} in the ${mystery.room.name}.`)
+    mysteryButtonElement.style.background = "transparent"
+    mysteryButtonElement.style.opacity = 1.0;
+    nameAndInfoElements.forEach(info => info.innerHTML = "")
+    cardElements.forEach(card => card.style.background = "#30F2C6")
     Object.keys(mystery).forEach(key => mystery[key] = null)
   }
 
   const pickCard = () => {
     if (mystery.killer === null) {
-      killerName.innerHTML = "Pick a killer"
+      killerNameElement.innerHTML = "Pick a killer"
     }
     if (mystery.weapon === null) {
-      weaponName.innerHTML = "Pick a weapon"
+      weaponNameElement.innerHTML = "Pick a weapon"
     }
     if (mystery.room === null) {
-      roomName.innerHTML = "Pick a room"
+      roomNameElement.innerHTML = "Pick a room"
     }
   }
 
@@ -213,6 +212,6 @@ const revealMystery = () => {
 
 //*** INVOKES FUNCTIONS ***//
 
-killerCard.addEventListener("click", pickKiller);
-weaponCard.addEventListener("click", pickWeapon);
-roomCard.addEventListener("click", pickRoom);
+killerCardElement.addEventListener("click", pickKiller);
+weaponCardElement.addEventListener("click", pickWeapon);
+roomCardElement.addEventListener("click", pickRoom);
