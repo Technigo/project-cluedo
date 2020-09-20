@@ -190,17 +190,12 @@ const favoriteWeapon = (suspect) => {
   return weapons.find((weapon) => {return weapon.id === suspect.favouriteWeapon});
 }
 
-const weaponPlace = (weapon) => { 
-  return rooms.find((room) => {return room === weapon.favoritePlace});
-
-}
  
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
 const shuffleWeapon = (arrayOfSuspects) => {
-
   arrayOfSuspects.forEach(suspect => {
     const suspectFavoriteWeapon = favoriteWeapon(suspect)
     const favoriteArray = [
@@ -216,7 +211,6 @@ const shuffleWeapon = (arrayOfSuspects) => {
 };
 
 const shuffleRoom = (arrayOfweapons) => {
-
   arrayOfweapons.forEach(weapon => {
     const favoritePlace = [
       ...rooms,
@@ -228,35 +222,11 @@ const shuffleRoom = (arrayOfweapons) => {
       weapon.favoritePlace,
       weapon.favoritePlace,
       weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
-      weapon.favoritePlace,
       weapon.favoritePlace
     ];
-
     weapon.place = randomSelector(favoritePlace);
-    console.log(weapon);
   });
 };
-
 
 
 
@@ -361,7 +331,7 @@ const pickRoom = () => {
 const revealValdidation = () => {
   if (mystery.killer === null || mystery.weapon === null || mystery.room === null) {
     document.getElementById(
-      'revealText'
+      'mystery'
     ).innerHTML = `Pick all three cards.`; 
   } else {
     revealMystery();
@@ -370,9 +340,21 @@ const revealValdidation = () => {
 
 const revealMystery = () => {
   document.getElementById(
-    'revealText'
-  ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon}.`;
+    'mystery'
+  ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
 };
+
+//reset
+const resetCards = () => {
+  let mystery = {
+    killer: null,
+    weapon: null,
+    room: null
+  };
+} ; document.getElementById('reset').onclick = resetCards;
+
+// on load
+
 
 
 

@@ -71,6 +71,7 @@ p {
   padding-top: 30px;
   border-radius: 16px;
   margin: 15px;
+  cursor: pointer;
 }
 
 .weapon-deck {
@@ -81,6 +82,7 @@ p {
   padding-top: 30px;
   border-radius: 16px;
   margin: 15px;
+  cursor: pointer;
 }
 
 .room-deck {
@@ -92,24 +94,34 @@ p {
   padding-top: 30px;
   border-radius: 16px;
   margin: 15px;
+  cursor: pointer;
 }
 
 button {
   padding: 20px 25px;
-  background: #BFDCF0;
-  color: rgb(45, 45, 45);
-  border: none;
+  color: #A6C8A6;
+  border: #527262 3px solid;
   font-size: 20px;
-  border-radius: 8px;
+  border-radius: 50px;
   display: block;
   margin: 0 auto;
   font-weight: 900;
   letter-spacing: 1.2px;
+  background-color:  rgb(27, 27, 27);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #A6C8A6;
+  color: #fff;
+  border: rgb(27, 27, 27) 3px solid;
+
 }
 
 .lds-ring {
   display: none;
   position: relative;
+  margin-top: 27%;
   width: 80px;
   height: 80px;
 }
