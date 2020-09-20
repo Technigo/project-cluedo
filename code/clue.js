@@ -269,6 +269,7 @@ const weaponCard = document.getElementById('weaponCard');
 const weaponName = document.getElementById('weaponName');
 const weaponWeight = document.getElementById('weaponWeight');
 const weaponImage = document.getElementById('weaponImage');
+const weaponFavouriteRoom = document.getElementById('weaponFavouriteRoom');
 const roomCard = document.getElementById('roomCard');
 const roomName = document.getElementById('roomName');
 const roomImage = document.getElementById('roomImage');
@@ -349,6 +350,8 @@ const favouriteWeaponAnimation = () => {
     weaponWeight.innerHTML = '';
     weaponImage.src = '';
     weaponImage.style.display = "none";
+    weaponFavouriteRoom.innerHTML = '';
+    revealedMystery.innerHTML = '';
     setTimeout(function () {
       pickFavouriteWeapon(mystery.killer);
     }, 2000);
@@ -383,6 +386,7 @@ const pickFavouriteWeapon = (suspect) => {
   weaponWeight.innerHTML = `Weight: ${mystery.weapon.weight} oz`;
   weaponImage.style.display = "inline-block";
   weaponImage.src = mystery.weapon.image;
+  weaponFavouriteRoom.innerHTML = `Location: ${mystery.weapon.favouriteRoom}`;
 };
 
 weaponCard.onclick = favouriteWeaponAnimation;
@@ -390,7 +394,9 @@ weaponCard.onclick = favouriteWeaponAnimation;
 // Actions related to Room deck
 
 const favouriteRoomAnimation = () => {
-  if (mystery.weapon === undefined) {
+  if (mystery.killer === undefined) {
+    revealedMystery.innerHTML = ('Pick a killer first!');
+  } else if (mystery.weapon === undefined) {
     revealedMystery.innerHTML = ('Pick a weapon first!');
   } else {
     roomLoader.style.display = "block";
