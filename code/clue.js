@@ -3,7 +3,7 @@
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
-  color: 'green',
+  bordercolor: 'green',
   description: 'Hypocritical Anglican priest',
   age: 45,
   image: 'assets/green.png',
@@ -199,3 +199,10 @@ document.getElementById("weaponCard").onclick = pickWeapon;
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
+
+
+
+function revealMystery () {
+  document.getElementById('theMystery').innerHTML =`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}  with a ${mystery.weapon.name} in the ${mystery.room}.`
+  };
+  document.getElementById('button').onclick = revealMystery;
