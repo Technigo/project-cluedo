@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// STEP 1 
 
 const mrGreen = {
   firstName: "Jacob",
@@ -60,7 +60,6 @@ const mrsWhite = {
   occupation: "Head Maid",
 };
 
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
 const rope = {
   name: "rope",
@@ -125,7 +124,8 @@ const pistol = {
   image: "images/weapon/revolver.svg"
 };
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
+//STEP 2
+
 let rooms = [
   "diningRoom",
   "conservatory",
@@ -144,7 +144,6 @@ let rooms = [
   "patio",
 ];
 
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
   mrGreen,
@@ -168,24 +167,20 @@ const weapons = [
   pistol,
 ];
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = (array) => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
-// The values will be set later.
 const mystery = {
   killer: "",
   weapons: "",
   room: "",
 };
 
-// This function will be invoked when you click on the killer card.
+//STEP 3
+
 const pickKiller = () => {
-  // This will randomly select a killer from the suspects. And add that to the mystery object.
+
   mystery.killer = randomSelector(suspects);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
@@ -198,7 +193,7 @@ const pickKiller = () => {
   document.getElementById("killerCard").onclick = pickKiller;
 };
 
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
+
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
 
@@ -214,8 +209,7 @@ const pickRoom = () => {
   document.getElementById("roomCard").onclick = pickRoom;
 };
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
+// STEP 4 
 const revealMystery = () => {
   document.getElementById(
     "mystery"
