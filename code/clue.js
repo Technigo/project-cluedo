@@ -229,6 +229,11 @@ const shuffleRoom = (arrayOfweapons) => {
 };
 
 
+let mystery = {
+  killer: null,
+  weapon: null,
+  room: null
+};
 
 const killerLoading =  document.getElementById('killerLoading');
 const weaponLoading = document.getElementById('weaponLoading');
@@ -242,11 +247,21 @@ const killerInfo = document.getElementById('killerInfo');
 const weaponInfo = document.getElementById('weaponInfo');
 const roomInfo = document.getElementById('roomInfo');
 
-let mystery = {
-  killer: null,
-  weapon: null,
-  room: null
-};
+const killerName =  document.getElementById('killerName');
+const killerAge = document.getElementById('killerAge');
+const killerFavoriteWeapon =  document.getElementById('favoriteWeapon');
+const killerImage =  document.getElementById('killerImage');
+
+const weaponName =  document.getElementById('weaponName');
+const weaponWeight =  document.getElementById('weaponWeight');
+
+const roomName =  document.getElementById('roomName');
+
+const mysteryText = document.getElementById('mystery');
+
+const revealButton = document.getElementById('reveal');
+const resetButton = document.getElementById('reset');
+
 
 
 const showKillerLoading = () => {
@@ -272,46 +287,27 @@ weaponCard.onclick = showWeaponLoading;
 roomCard.onclick = showRoomLoading;
 
 
-
 const pickKiller = () => {
   killerLoading.style.display = 'none';
   killerInfo.style.display = 'block';
   mystery.killer = randomSelector(suspects)
 
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `<strong>Name:</strong>  ${mystery.killer.firstName} ${mystery.killer.lastName}`
-
-  document.getElementById(
-    'killerAge'
-  ).innerHTML = `<strong>Age:</strong>  ${mystery.killer.age}`
-
-  document.getElementById(
-    'favoriteWeapon'
-  ).innerHTML = `<strong>Favorite weapon:</strong>  ${favoriteWeapon(mystery.killer).name}`
-
-  document.getElementById(
-    'killerImage'
-  ).src = mystery.killer.image;
-
+  killerName.innerHTML = `<strong>Name:</strong>  ${mystery.killer.firstName} ${mystery.killer.lastName}`
+  killerAge.innerHTML = `<strong>Age:</strong>  ${mystery.killer.age}`
+  killerFavoriteWeapon.innerHTML = `<strong>Favorite weapon:</strong>  ${favoriteWeapon(mystery.killer).name}`
+  killerImage.src = mystery.killer.image;
 
 };
-
 
 const pickWeapon = () => {
   weaponLoading.style.display = 'none';
   weaponInfo.style.display = 'block';
+
   shuffleWeapon(suspects);
   mystery.weapon = mystery.killer.weapon;
 
-  console.log(mystery.weapon);
-
-  document.getElementById(
-    'weaponName'
-  ).innerHTML = `${mystery.weapon.name}`
-  document.getElementById(
-    'weaponWeight'
-  ).innerHTML = `<strong> Weight: </strong> ${favoriteWeapon(mystery.killer).weight}`
+  weaponName.innerHTML = `${mystery.weapon.name}`
+  weaponWeight.innerHTML = `<strong> Weight: </strong> ${favoriteWeapon(mystery.killer).weight}`
 
 };
 
@@ -319,39 +315,46 @@ const pickWeapon = () => {
 const pickRoom = () => {
   roomLoading.style.display = 'none';
   roomInfo.style.display = 'block';
+
   shuffleRoom(weapons);
   mystery.room = mystery.weapon.place;
 
-  document.getElementById(
-    'roomName'
-  ).innerHTML = `${mystery.room}`
+  roomName.innerHTML = `${mystery.room}`
 };
 
 
 const revealValdidation = () => {
   if (mystery.killer === null || mystery.weapon === null || mystery.room === null) {
-    document.getElementById(
-      'mystery'
-    ).innerHTML = `Pick all three cards.`; 
+   mysteryText.innerHTML = `Pick all three cards.`; 
   } else {
     revealMystery();
   }
-}; document.getElementById('reveal').onclick = revealValdidation;
+}; 
+
 
 const revealMystery = () => {
-  document.getElementById(
-    'mystery'
-  ).innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
+  mysteryText.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`;
 };
+
 
 //reset
 const resetCards = () => {
-  let mystery = {
+  mystery = {
     killer: null,
     weapon: null,
     room: null
   };
-} ; document.getElementById('reset').onclick = resetCards;
+
+  killerInfo.style.display = 'none';
+  weaponInfo.style.display = 'none';
+  roomInfo.style.display = 'none';
+  
+  mysteryText.innerHTML = '';
+  
+}; 
+
+revealButton.onclick = revealValdidation;
+resetButton.onclick = resetCards;
 
 // on load
 
