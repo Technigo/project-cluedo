@@ -1,58 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300;500&display=swap');
+
 body {
-  margin: 0;
   font-family: "Courier New", Courier, monospace;
+  background-image: url(./Images/background-unsplash.jpg);
+  background-size: cover;
 }
 
-p {
-  margin: 1px;
-  font-weight: 300;
-  background-color: #fff;
+
+h1 {
+  margin-top: 100px;
+  font-family: 'Grenze Gotisch', cursive;
+  font-size: 60px;
+  color: rgb(255, 255, 255);
+  text-shadow: 5px 5px 5px rgba(128, 128, 128, 0.753);
+  text-align: center;
 }
+
+
+#mystery {
+  font-family: 'Grenze Gotisch', cursive;
+  font-size: 30px;
+  font-weight: 200;
+  text-shadow: 5px 5px 5px rgba(128, 128, 128, 0.753);
+}
+
+
+p{
+  margin-top: 1px;
+  font-weight: 300;
+  background-color: rgb(255, 255, 255);
+}
+
 
 .cards {
   margin: 50px auto;
   width: 90%;
   height: 600px;
-  background: #ccc;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
+
 .killer-deck {
   width: 250px;
   height: 400px;
-  background: #000;
-  text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  text-align: center;
+  background-image: url(./Images/clue.png);
+  background-position: center;
+  background-size: cover;
+  border: solid 8px;
+  border-color: rgb(255, 255, 255); 
 }
+
+
+#killerImage {
+  height: 200px;
+  border-radius: 60%;
+}
+
 
 .weapon-deck {
   width: 250px;
   height: 400px;
-  background: rgb(10, 53, 10);
-  text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  text-align: center;
+  background-image: url(./Images/clue.png);
+  background-position: center;
+  background-size: cover;
+  border: solid 8px;
+  border-color: rgb(255, 255, 255);
 }
+
 
 .room-deck {
   width: 250px;
   height: 400px;
-  background: midnightblue;
-
-  text-align: center;
   padding-top: 30px;
-  border-radius: 16px;
+  text-align: center;
+  background-image: url(./Images/clue.png);
+  background-position: center;
+  background-size: cover;
+  border: solid 8px;
+  border-color: rgb(255, 255, 255);
 }
 
+
 button {
+  margin: auto;
+  margin-bottom: 150px;
   padding: 8px 16px;
-  background: crimson;
-  border: none;
-  font-size: 20px;
-  border-radius: 8px;
   display: block;
-  margin: 0 auto;
+  font-family: 'Grenze Gotisch', cursive;
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  text-shadow: 5px 5px 5px rgb(255, 255, 255);
+  background: rgb(255, 153, 0);
+  border: solid 8px;
+  border-color: rgb(255, 255, 255);
+}
+
+
+footer {
+  height: auto;
+  width: 100%;
+  margin-bottom: -15px;
+  position: bottom;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.781);
+}
+
+
+#footer {
+  background-color: rgba(255, 255, 255, 0.055);
+}
+
+
+#logo {
+  height: 30px;
+  width: 40px;
+  margin-top: 5px;
 }

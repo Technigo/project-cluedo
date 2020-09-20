@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
-    <title>Technigo Project Cluedo</title>
+    <link rel="icon" type="img/png" href="./Images/spy.png">
+    <title>Murder at Cluedo Manor</title>
   </head>
+
   <body>
+
+    <h1>Who committed the murder at Cluedo Manor?</h1>
+
     <section class="cards">
       <article class="killer-deck" id="killerCard">
         <p>KILLER</p>
@@ -16,11 +21,13 @@
         <p id="killerOccupation"></p>
         <img id="killerImage" src="" height="100"/>
       </article>
+
       <article class="weapon-deck" id="weaponCard">
         <p>WEAPON</p>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
       </article>
+
       <article class="room-deck" id="roomCard">
         <p>ROOM</p>
         <p id="roomName"></p>
@@ -29,7 +36,12 @@
 
     <h1 id="mystery"></h1>
 
-    <button onclick="revealMystery()" id="clickMe">REVEAL THE CRIME</button>
+    <button onclick="revealMystery()" id="clickMe">Reveal the crime</button>
+
+    <footer>
+      <img id="logo" src="./Images/logo.svg">
+        <p id="footer">Created by Therése Larsson / Project Week 5</p>
+    </footer>
 
     <script src="./clue.js"></script>
   </body>
