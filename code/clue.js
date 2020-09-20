@@ -86,42 +86,54 @@ const rope = {
   name: 'rope',
   weight: 10,
   material: 'hampen',
-  id: 'rope'
+  id: 'rope',
+  favouriteRoom: 'hall',
+  secondFavouriteRoom: 'billiard room'
 };
 
 const candlestick = {
   name: 'candlestick',
   weight: 22,
   material: 'silver',
-  id: 'candlestick'
+  id: 'candlestick',
+  favouriteRoom: 'lounge',
+  secondFavouriteRoom: 'dining room'
 };
 
 const revolver = {
   name: 'revolver',
   weight: 30,
   material: 'iron',
-  id: 'revolver'
+  id: 'revolver',
+  favouriteRoom: 'study',
+  secondFavouriteRoom: 'billiard room'
 };
 
 const leadPipe = {
   name: 'lead pipe',
   weight: 52,
   material: 'lead',
-  id: 'lead pipe'
+  id: 'lead pipe',
+  favouriteRoom: 'library',
+  secondFavouriteRoom: 'dining room'
 };
 
 const dagger = {
   name: 'dagger',
   weight: 28,
   material: 'steel',
-  id: 'dagger'
+  id: 'dagger',
+  favouriteRoom: 'conservatory',
+  secondFavouriteRoom: 'ballroom'
 };
 
 const wrench = {
   name: 'wrench',
   weight: 18,
   material: 'stainless steel',
-  id: 'wrench'
+  id: 'wrench',
+  favouriteRoom: 'kitchen',
+  secondFavouriteRoom: 'ballroom'
 };
 
 
@@ -150,7 +162,7 @@ const suspects = [
   profPlum
 ]
 
-const weapons = [
+let weapons = [
   rope, 
   candlestick,
   revolver,
@@ -159,7 +171,7 @@ const weapons = [
   wrench
 ]
 
-const rooms = [
+let rooms = [
   kitchen,
   ballroom,
   conservatory,
@@ -170,7 +182,6 @@ const rooms = [
   lounge,
   diningRoom
 ]
-
 
 
 
@@ -218,6 +229,14 @@ const delayPickRoom = () => {
 
 document.getElementById('roomInner').addEventListener('click', delayPickRoom);
 
+//Function to prepare for adding the favourite weapon
+const findFavouriteWeapon = (weapon) => {
+  if (weapon.id === mystery.killer.favouriteWeapon) {
+    weapons.push(weapon, weapon, weapon, weapon)
+  }
+}
+
+
 //FUNCTIONS THAT WILL BE INVOKED WHEN YOU CLICK ON THE CARD DECKS
 
 // 1. for the killer card deck.
@@ -227,11 +246,20 @@ function pickKiller() {
   // This will randomly select a killer from the suspects, add that to the mystery object and give him/her a random favourite weapon.
   mystery.killer = randomSelector(suspects);
   shuffleFavouriteWeapon(mystery.killer);
+  weapons = [
+    rope, 
+    candlestick, 
+    revolver, 
+    leadPipe, 
+    dagger, 
+    wrench
+  ]
+  weapons.forEach(findFavouriteWeapon);
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerInner').style.background = mystery.killer.color;
 
-  //This will remove the card fronzside styling.
+  //This will remove the card frontside styling.
   document.getElementById('killerCard').classList.remove('active');
   document.getElementById('killerInner').classList.remove('front');
   document.getElementById('killerInner').classList.add('back');
@@ -255,6 +283,30 @@ const pickWeapon = () => {
   document.getElementById('weaponLoader').style.display = 'none';
 
   mystery.weapon = randomSelector(weapons);
+
+  rooms = [
+    kitchen,
+    ballroom,
+    conservatory,
+    billiardRoom,
+    library,
+    study,
+    hall,
+    lounge,
+    diningRoom
+  ]
+
+  rooms.push(
+    mystery.weapon.favouriteRoom,
+    mystery.weapon.favouriteRoom,
+    mystery.weapon.favouriteRoom,
+    mystery.weapon.favouriteRoom,
+  )
+
+  rooms.push(
+    mystery.weapon.secondFavouriteRoom,
+    mystery.weapon.secondFavouriteRoom,
+  )
 
   //This will remove the card frontside styling.
   document.getElementById('weaponCard').classList.remove('active');
