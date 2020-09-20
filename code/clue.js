@@ -1,4 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
+// Objects for all the suspects.
 let suspects = [{
         nickname: 'mrGreen',
         firstName: 'Jacob',
@@ -70,7 +70,7 @@ let suspects = [{
 
 
 
-// CREATE OBJECTS FOR ALL THE favouriteWeaponS, ADD MORE CHARACTERISTICS TO THE favouriteWeaponS IF YOU LIKE.
+// Objects for the wepons.
 const weapons = [{
         name: 'rope',
         weight: 7,
@@ -93,7 +93,7 @@ const weapons = [{
         name: 'dumbbell',
         weight: 12,
         color: 'gold',
-        image: 'assets/dumbbel.jpg'
+        image: 'assets/dumbbell.jpg'
     },
     {
         name: 'poison',
@@ -122,18 +122,45 @@ const weapons = [{
     {
         name: 'pistol',
         weight: 12,
-        color: 'brown',
+        color: 'grey',
         image: 'assets/pistol.jpg'
     }
 ];
 
 
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-const rooms = ["Dining Room", "Conservatory", "Kitchen", "Study", "Library", "Billiard Room", "Lounge", "Ballroom",
-    "Hall", "Spa", "Living Room", "Observatory", "Theater", "Guest House", "Patio"
+// Objects for the rooms.
+const rooms = [{
+        name: 'Dining-room',
+        image: 'assets/dining-room.jpg'
+    },
+    {
+        name: 'Kitchen',
+        image: 'assets/kitchen.png'
+    },
+    {
+        name: 'Study',
+        image: 'assets/study.jpg'
+    },
+    {
+        name: 'Bathroom',
+        image: 'assets/bathroom.jpg'
+    },
+    {
+        name: 'Library',
+        image: 'assets/library.jpg'
+    },
+    {
+        name: 'Bedroom',
+        image: 'assets/bedroom.jpg'
+    },
+    {
+        name: 'Garage',
+        image: 'assets/garage.jpg'
+    }
 ];
 
+//Array with weapons for shuffling favourite weapons.
 let weaponArray = [
     'rope',
     'knife',
@@ -146,7 +173,7 @@ let weaponArray = [
     'pistol'
 ];
 
-
+//Shuffles the weapons and randomly sets new favourite wepons.
 const shufflefavouriteWeapons = (arrayOfSuspects) => {
     arrayOfSuspects.forEach(suspect => {
         suspect.weapon = weaponArray[Math.floor(Math.random() * 9)];
@@ -156,9 +183,8 @@ const shufflefavouriteWeapons = (arrayOfSuspects) => {
 
 shufflefavouriteWeapons(suspects);
 
-console.log(suspects);
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
+// Randomly selects an item from the array you pass into the function
 const randomSelector = array => {
     return array[Math.floor(Math.random() * array.length)]
 }
@@ -195,10 +221,12 @@ const pickWeapon = () => {
     document.getElementById('weaponImage').src = mystery.weapon.image;
 }
 
+// This function will be invoked when you click on the favouriteRoom card.
 const pickRoom = () => {
     // Randomly selects a favouriteWeapon from the rooms-array and adds that to the mystery object
     mystery.room = randomSelector(rooms);
-    document.getElementById('roomName').innerHTML = `${mystery.room}`;
+    document.getElementById('roomName').innerHTML = mystery.room.name;
+    document.getElementById('roomImage').src = mystery.room.image;
 }
 
 
@@ -206,15 +234,14 @@ document.getElementById('killerCard').onclick = pickKiller;
 document.getElementById('weaponCard').onclick = pickWeapon;
 document.getElementById('roomCard').onclick = pickRoom;
 
-// Function that will be invoked when you click the reveal-button. It prints out a message
-//with facts about the murderer.
+// Function that will be invoked when you click the reveal-button. It prints out a message with facts about the murderer.
 const revealMystery = () => {
     if (mystery.killer == "" || mystery.favouriteWeapon == "" || mystery.room == "") {
         document.getElementById('mysteryDisplay').innerHTML = `
-    The murder can 't be resolved yet`;
+    The murder can 't be resolved yet.`;
     } else {
         document.getElementById('mysteryDisplay').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName},
-         in the ${mystery.room } with a ${mystery.weapon.name}. `;
+         in the ${mystery.room.name} with a ${mystery.weapon.name}. `;
         document.getElementById('image').src = mystery.killer.image;
     }
 }
