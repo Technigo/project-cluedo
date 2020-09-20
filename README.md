@@ -9,4 +9,4 @@ The initial problem was to get all the functions to work. The hardest part was p
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+joelscluedo.netlify.app
