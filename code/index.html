@@ -9,34 +9,33 @@
     
     <title>Cluedo</title>
   </head>
+
   <body>
     <h1 id="findKiller">Who is the killer?</h1>
     <h2 id="pickCard">Pick three cards to find out...</h2>
     <section class="cards" id="allCards">
       <article class="killer-deck" id="killerCard" onclick="pickKiller()">
         <p>KILLER</p>
-        <div id="killerLoader">
-        </div>
+      <div id="killerLoader">
+      </div>
         <p id="killerName"></p>
         <p id="killerAge"></p>
         <p id="killerOccupation"></p>
-        
         <img id="killerImage" src="" height="100" />
         <p id="killerDescription"></p>
       </article>
       <article class="weapon-deck" id="weaponCard" onclick="pickWeapon()">
         <p>WEAPON</p>
-        <div id="weaponLoader">
-
-        </div>
+      <div id="weaponLoader">
+      </div>
         <p id="weaponName"></p>
         <p id="weaponWeight"></p>
+        <img id="weaponImage" src="" height="100" />
       </article>
       <article class="room-deck" id="roomCard" onclick="pickRoom()">
         <p>ROOM</p>
-        <div id="roomLoader">
-
-        </div>
+      <div id="roomLoader">
+      </div>
         <p id="roomName"></p>
       </article>
     </section>

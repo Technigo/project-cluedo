@@ -6,19 +6,20 @@ body {
   width: 100%;
   height: auto;
   
-  
 }
 
 p {
   margin: 0px;
   font-weight: 300;
   background-color: #fff;
+  
 }
 
 .favourite-weapon {
   color: white;
   background-color: none;
   text-align: center;
+
 }
 
 h2 {
@@ -40,6 +41,7 @@ img {
   width: 100%;
   height: auto;
   background-size: cover;
+
 }
 
 .cards {
@@ -52,8 +54,6 @@ img {
   
 }
 
-
-
 #killerLoader, #weaponLoader, #roomLoader {
   border: 16px solid #f3f3f3; /* Light grey */
   border-top: 16px solid #3498db; /* Blue */
@@ -62,7 +62,8 @@ img {
   height: 120px;
   animation: spin 2s linear infinite;
   display: none;
-  
+  margin: 0 auto;
+  margin-top: 50%;
   
 }
 
@@ -80,6 +81,7 @@ img {
   border-radius: 16px;
   cursor: pointer;
   border: solid white 5px;
+
 }
 
 .weapon-deck {
@@ -91,6 +93,7 @@ img {
   border-radius: 16px;
   cursor: pointer;
   border: solid white 5px;
+
 }
 
 .room-deck {
@@ -116,11 +119,13 @@ button {
   cursor: pointer;
   color: white;
   width: 150px;
+
 }
 
 button:hover {
   background-color: red;
   color: white;
+
 }
 
 

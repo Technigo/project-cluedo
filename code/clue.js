@@ -71,56 +71,65 @@ const mrsWhite = {
 const rope = {
   name: 'rope',
   weight: 10,
-  id: 'rope'
+  id: 'rope',
+  image: './assets/rope.jpeg'
   
 }
 
 const knife = {
   name: 'knife',
   weight: 5,
-  id: 'knife'
+  id: 'knife',
+  image: './assets/knife.jpeg'
 }
 
 const candlestick = {
   name: 'candlestick',
   weight: 15,
-  id: 'candlestick'
+  id: 'candlestick',
+  image: './assets/candlestick.jpeg'
 }
 
 const dumbbell = {
   name: 'dumbbell',
   weight: 30,
-  id: 'dumbbell'
+  id: 'dumbbell',
+  image: './assets/dumbbell.jpeg'
 }
 
 const poison = {
   name: 'poison',
   weight: 1,
-  id: 'poison'
+  id: 'poison',
+  image: './assets/poison.jpeg'
 }
 
 const axe = {
   name: 'axe',
   weight: 25,
-  id: 'axe'
+  id: 'axe',
+  image: './assets/axe.jpeg'
 }
 
 const bat = {
   name: 'bat',
   weight: 20,
-  id: 'bat'
+  id: 'bat',
+  image: './assets/bat.png'
 }
 
 const trophy = {
   name: 'trophy',
   weight: 15,
-  id: 'trophy'
+  id: 'trophy',
+  image: './assets/trophy.jpeg'
 }
 
 const pistol = {
   name: 'pistol',
   weight: 8,
-  id: 'pistol'
+  id: 'pistol',
+  image: './assets/pistol.jpeg'
 
 }
 
@@ -245,6 +254,7 @@ const killerAnimation = () => {
   document.getElementById('killerName').style.display = 'none';
   document.getElementById('killerAge').style.display = 'none';
   document.getElementById('killerDescription').style.display = 'none';
+  
   setTimeout(pickKiller, 1000);
   
   }
@@ -264,19 +274,21 @@ const pickKiller = () => {
   document.getElementById('killerDescription').style.display = 'block';
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerImage').src = mystery.killer.image;
-  document.getElementById('killerOccupation')
+  
   
   document.getElementById('killerDescription')
   document.getElementById('killerName').innerHTML = 
   `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   document.getElementById('killerAge').innerHTML = `${mystery.killer.age} years old`;
-  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`; 
+  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description} and favourite weapon is ${mystery.killer.favouriteWeapon}`; 
+  
 }
 
 const weaponAnimation = () => {
   document.getElementById('weaponLoader').style.display = 'block';
   document.getElementById('weaponName').style.display = 'none';
   document.getElementById('weaponWeight').style.display = 'none';
+  document.getElementById('weaponImage').style.display = 'none';
   setTimeout(pickWeapon, 1000);
   }
   document.getElementById('weaponCard').addEventListener('click', weaponAnimation);
@@ -286,11 +298,13 @@ const pickWeapon = () => {
   document.getElementById('weaponLoader').style.display = 'none';
   mystery.weapon = randomSelector(weapons);
 
+  document.getElementById('weaponImage').style.display = 'block';
   document.getElementById('weaponCard')
   document.getElementById('weaponName').style.display = 'block';
   document.getElementById('weaponWeight').style.display = 'block';
   document.getElementById('weaponName').innerHTML = `Name: ${mystery.weapon.name}`;
-  document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight} lbs`
+  document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight} lbs`;
+  document.getElementById('weaponImage').src = mystery.weapon.image;
   
 }
 
@@ -344,7 +358,7 @@ const revealMystery = () => {
     }
     
   }
-
+//Reload button to start playing again
   document.getElementById('playAgainButton').addEventListener('click', () => {
     location.reload();
   });
