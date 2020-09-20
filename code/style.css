@@ -63,6 +63,7 @@ p {
   height: 500px;
   background: #000;
   text-align: center;
+  margin-bottom: 10px;
   padding-top: 30px;
   border-radius: 16px;
   -moz-box-shadow: inset 3px 3px 5px 6px #ccc;
@@ -75,6 +76,7 @@ p {
   height: 500px;
   background: rgb(143, 141, 116);
   text-align: center;
+  margin-bottom: 10px;
   padding-top: 30px;
   border-radius: 16px;
   -moz-box-shadow: inset 3px 3px 5px 6px #ccc;
@@ -87,6 +89,7 @@ p {
   height: 500px;
   background: #bdbdb7;
   text-align: center;
+  margin-bottom: 10px;
   padding-top: 30px;
   border-radius: 16px;
   -moz-box-shadow: inset 3px 3px 5px 6px #ccc;
