@@ -1,4 +1,3 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 
 const mrGreen = {
   firstName: 'Jacob',
@@ -193,22 +192,16 @@ const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons)
   document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}`
+  document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight} lbs`
   document.getElementById('weaponImage').src = mystery.weapon.image
 }
 document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms)
-  document.getElementById('roomCard').style.background = mystery.killer.color
   document.getElementById('roomName').innerHTML = `${mystery.room}`
 }
 document.getElementById('roomCard').addEventListener('click', pickRoom)
-
-// CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
-
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
-// 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
   document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`

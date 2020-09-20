@@ -36,6 +36,10 @@ p {
   align-items: center;
 }
 
+.cards.hover {
+  opacity: 0.5;
+}
+
 .killer-deck {
   width: 250px;
   height: 400px;
@@ -58,7 +62,6 @@ p {
   width: 250px;
   height: 400px;
   background: midnightblue;
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
