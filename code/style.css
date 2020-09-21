@@ -133,7 +133,7 @@ div.rotate_left {
 
 .killer-deck {
   width: 250px;
-  height: 400px;
+  height: 500px;
   background: rgb(41, 41, 39);
   border: 1px solid #410202;
   box-shadow: 3px 2px 1px #222222;
@@ -144,7 +144,7 @@ div.rotate_left {
 
 .weapon-deck {
   width: 250px;
-  height: 400px;
+  height: 500px;
   background: rgb(41, 41, 39);
   border: 1px solid #410202;
   box-shadow: 3px 2px 1px #222222;
@@ -155,7 +155,7 @@ div.rotate_left {
 
 .room-deck {
   width: 250px;
-  height: 400px;
+  height: 500px;
   background: rgb(41, 41, 39);
   border: 1px solid #410202;
   box-shadow: 3px 2px 1px #222222;
@@ -262,17 +262,14 @@ button:hover{
 
   .killer-deck {
     margin: 5px;
-    height: fit-content;
    }
    
    .weapon-deck {
      margin: 5px;
-     height: fit-content;
     }
    
    .room-deck {
      margin: 5px;
-     height: fit-content;
     }
   
   p {
@@ -292,17 +289,14 @@ button:hover{
 
   .killer-deck {
     margin: 5px;
-    height: fit-content;
    }
    
    .weapon-deck {
      margin: 5px;
-     height: fit-content;
     }
    
    .room-deck {
      margin: 5px;
-     height: fit-content;
     }
   
   p {
