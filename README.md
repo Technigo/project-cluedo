@@ -1,13 +1,19 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
+- Site should have three clickable cards and a clickable button.
+- You should be able to randomly pick suspects, weapons and rooms.
+- You should be able to reveal the mystery.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+I finsihed the blue level for this project. I wish I would have started with the styling a bit earlier so i could have put more time into the cards when they've been clicked.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I'm still struggling to understand even the basics of JavaScript, which makes it very difficult for me to come up with the code on my own (in CSS I can try different things until I find the right solution, but in JS I don't know yet what to try). I managed to complete this tasks by looking at other peoples code, and with help from my teammates.
+
+## What I learned
+
+When I look at this code, even though I might not be able to come up with it all on my own yet, I understand this better than the pizza-bot project. So I guess I've learned a bit even though I may not think so. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://cluedomysterypicker.netlify.app
