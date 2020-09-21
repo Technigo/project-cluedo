@@ -262,18 +262,18 @@ button:hover{
 
   .killer-deck {
     margin: 5px;
-    height: 400px;
+    height: fit-content;
    }
    
    .weapon-deck {
      margin: 5px;
-     height: 400px;
-   }
+     height: fit-content;
+    }
    
    .room-deck {
      margin: 5px;
-     height: 400px;
-   }
+     height: fit-content;
+    }
   
   p {
     font-size: 0.9rem;
@@ -292,18 +292,18 @@ button:hover{
 
   .killer-deck {
     margin: 5px;
-    height: 400px;
+    height: fit-content;
    }
    
    .weapon-deck {
      margin: 5px;
-     height: 400px;
-   }
+     height: fit-content;
+    }
    
    .room-deck {
      margin: 5px;
-     height: 400px;
-   }
+     height: fit-content;
+    }
   
   p {
     font-size: 0.9rem;
