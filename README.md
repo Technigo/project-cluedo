@@ -9,4 +9,4 @@ I put in picture for the weapons and styled the page with a blood button and sm 
 
 ## View it live
 
-https://app.netlify.com/sites/cluedo-nathalie/settings/general.
+https://cluedo-nathalie.netlify.app
