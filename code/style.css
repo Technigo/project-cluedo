@@ -9,7 +9,7 @@ body {
   background-color: rgb(65, 65, 65);
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Ribeye Marrow', cursive;
   font-size: 38px;
   color: #fff;
@@ -17,6 +17,10 @@ h1, h2 {
 
 h2 {
   background: rgb(138, 22, 45);
+}
+
+h3 {
+  text-align: center;
 }
 
 .ingress {
