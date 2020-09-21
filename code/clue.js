@@ -356,5 +356,8 @@ function clearMystery() {
   document.getElementById('roomName').innerHTML = "";
   document.getElementById('roomImage').src = "";
   document.getElementById('mystery').innerHTML = "";
+  killerIsPicked = false;
+  weaponIsPicked = false;
+  roomIsPicked = false;
 };
  
