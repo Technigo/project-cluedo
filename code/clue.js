@@ -25,7 +25,7 @@ const profPlum = {
 const msScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
-  color: '#9f2d22',
+  color: '#990000',
   description: 'She is a femme fatale',
   age: 25,
   image: 'assets/scarlet.png',
@@ -352,7 +352,7 @@ const favouriteWeaponAnimation = () => {
     weaponImage.style.display = "none";
     weaponFavouriteRoom.innerHTML = '';
     revealedMystery.innerHTML = '';
-    setTimeout(function () {
+    setTimeout(() => {
       pickFavouriteWeapon(mystery.killer);
     }, 2000);
   };
@@ -403,7 +403,7 @@ const favouriteRoomAnimation = () => {
     roomName.innerHTML = '';
     roomImage.src = '';
     roomImage.style.display = "none";
-    setTimeout(function () {
+    setTimeout(() => {
       pickFavouriteRoom(mystery.weapon);
     }, 2000);
   };
@@ -419,20 +419,16 @@ const favouriteRoomDuplicated = (elementToPopulate, howManyTimes) => {
 
 const pickFavouriteRoom = (weapon) => {
   const newArrayOfRooms = rooms.map(a => a.name);
-  console.log(newArrayOfRooms);
   const randomRooms = [
     ...newArrayOfRooms,
     ...favouriteRoomDuplicated(weapon.favouriteRoom, 30)
   ];
-  console.log(favouriteRoomDuplicated(weapon.favouriteRoom, 30));
-  console.log(randomRooms);
   mystery.pickedRoom = randomSelector(randomRooms);
   const mysteryRoom = rooms.find((item) => {
     if (item.name === mystery.pickedRoom) {
       return item;
     };
   });
-  console.log(mysteryRoom);
   mystery.room = mysteryRoom;
   roomLoader.style.display = "none";
   roomCard.style.background = "#C0C0C0";
