@@ -135,11 +135,6 @@ const rooms = [
   'Guest house',
   'Patio'
 ]
-console.log(mrGreen.description)
-console.log(rope.name)
-console.log(rooms.toString())
-
-
 
 // Function that randomly selects one item from the array
 const randomSelector = array => {
