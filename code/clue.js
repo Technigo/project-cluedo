@@ -8,7 +8,7 @@ let suspects = [{
         age: 45,
         image: 'assets/green.png',
         occupation: 'Priest',
-        favouriteWeapon: 'knife'
+        favouriteWeapon: ''
     },
     {
         nickname: 'professorPlum',
@@ -19,7 +19,7 @@ let suspects = [{
         age: 55,
         image: 'assets/plum.png',
         occupation: 'Professor',
-        favouriteWeapon: 'dumbbell'
+        favouriteWeapon: ''
     },
     {
         nickname: 'missScarlet',
@@ -30,7 +30,7 @@ let suspects = [{
         age: 29,
         image: 'assets/scarlet.png',
         occupation: 'Actress',
-        favouriteWeapon: 'candlestick'
+        favouriteWeapon: ''
     },
     {
         nickname: 'mrsPeacock',
@@ -41,7 +41,7 @@ let suspects = [{
         age: 62,
         image: 'assets/peacock.png',
         occupation: 'Housewife',
-        favouriteWeapon: 'poison'
+        favouriteWeapon: ''
     },
     {
         nickname: 'colonelMustard',
@@ -52,7 +52,7 @@ let suspects = [{
         age: 52,
         image: 'assets/mustard.png',
         occupation: 'Military',
-        favouriteWeapon: 'dumbbell'
+        favouriteWeapon: ''
     },
     {
         nickname: 'mrsWhite',
@@ -63,7 +63,7 @@ let suspects = [{
         age: 39,
         image: 'assets/white.png',
         occupation: 'Nurse',
-        favouriteWeapon: 'trophy'
+        favouriteWeapon: ''
     }
 ];
 
