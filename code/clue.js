@@ -291,13 +291,13 @@ const shuffleWeapons = () => {
 
 //Function to increase probability of favourite weapon to be assigned to killer:
 //THIS FUNCTION DOESN'T WORK???
-const increaseChanceOfFavorite = () => {
-  const favWeapon = weapons.find(weapon => weapon.id === mystery.killer.favorite);
-  const favWeaponArray = new Array(7).fill(favWeapon);
-  console.log(favWeaponArray)
-  const calculatedWeapon = [...weapons, ...favWeaponArray];
-  return calculatedWeapon;
-};
+// const increaseChanceOfFavorite = () => {
+//   const favWeapon = weapons.find(weapon => weapon.id === mystery.killer.favorite);
+//   const favWeaponArray = new Array(7).fill(favWeapon);
+//   console.log(favWeaponArray)
+//   const calculatedWeapon = [...weapons, ...favWeaponArray];
+//  return calculatedWeapon;
+// }; 
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
