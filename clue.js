@@ -159,7 +159,6 @@ const pickKiller = () => {
   document.getElementById('killerDescription').innerHTML = `Killer description: ${mystery.killer.description}`
   document.getElementById("killerImage").src = mystery.killer.image
 }
-document.getElementById('killerCard').addEventListener('click', pickKiller)
 
 // Function that picks a weapon
 const pickWeapon = () => {
@@ -169,7 +168,6 @@ const pickWeapon = () => {
   document.getElementById('weaponWeight').innerHTML = `Weapon weight: ${mystery.weapon.weight}`
 
 }
-document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 
 // Function that picks a room
 const pickRoom = () => {
@@ -177,12 +175,15 @@ const pickRoom = () => {
 
   document.getElementById('roomName').innerHTML = `Room where the crime happend: ${mystery.room}`
 }
-document.getElementById('roomCard').addEventListener('click', pickRoom)
 
 //Function that reveals the mystery
 const revealMystery = () => {
-  console.log(`The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}in the ${mystery.room} with a ${mystery.weapon.name} `)
+  console.log(`The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name} `)
   document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}in the ${mystery.room} with a ${mystery.weapon.name} `
 
 }
+
+document.getElementById('roomCard').addEventListener('click', pickRoom)
+document.getElementById('weaponCard').addEventListener('click', pickWeapon)
+document.getElementById('killerCard').addEventListener('click', pickKiller)
 document.getElementById('revealBtn').addEventListener('click', revealMystery)

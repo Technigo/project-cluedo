@@ -6,6 +6,8 @@ body {
   margin: 0;
   font-family: "Courier New", Courier, monospace;
   background-image: url("./assets/house.jpg");
+  background-size: cover; 
+  background-repeat: no-repeat;
 }
 
 p {
@@ -29,7 +31,7 @@ h2 {
   Font-Family: 'Arvo', Serif;
   Font-Size: 22px;
   text-align: center;
-  text-shadow: 2px 2px rgb(233, 229, 229);
+  color:red;
 }
 
 .cards {
@@ -60,7 +62,7 @@ img {
 .buttonDiv {
   display: block;
   width: 400px;
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
   padding-top: 20px;
   left: 0;
   right: 0;
@@ -81,7 +83,7 @@ button {
   border-radius: 30px;
   font-size: 1.5rem;
   font-weight: 600;
-  color: black;
+  color:rgb(235, 3, 3);
   background-size: 100% 100%;
   box-shadow: 0 0 0 3px black inset;
   margin-bottom: 15px;
