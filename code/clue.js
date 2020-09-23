@@ -221,14 +221,6 @@ const observatory = {
  }
  
 
-
-
-
-console.log(colonelMustard.description);
-console.log(rope.color);
-console.log(msScarlett.firstName);
-
-
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [mrGreen, professorPlum, msScarlett, mrsPeacock, colonelMustard, mrsWhite
@@ -257,21 +249,12 @@ guestHouse,
 patio
 ];
 
-console.log(suspects);
-console.log(weapons);
-console.log(rooms);
-console.log(suspects[0]);
-console.log(weapons[weapons.length-1]);
-console.log(rooms[rooms.length-1]);
-
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
-
-
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room.
@@ -283,28 +266,34 @@ const mystery = {
   room: null
 }
 
+const loaderKiller = document.querySelector('.loaderKiller');
+const killerCard = document.getElementById('killerCard');
+const killerName = document.getElementById('killerName');
+const killerImage = document.getElementById('killerImage');
+const killerDescription = document.getElementById('killerDescription');
+const killerOccupation = document.getElementById('killerOccupation');
+const killerAge = document.getElementById('killerAge');
+
 //Function to delay the pickKiller function so the loader can display
 const delayPickKiller = () => {
-  document.getElementById('loaderKiller').style.display = 'block';
-  setTimeout(pickKiller, 1000);
+  loaderKiller.style.display = 'block';
+  setTimeout(pickKiller, 2000);
 }
-document.getElementById('killerCard').addEventListener('click', delayPickKiller);
+  killerCard.addEventListener('click', delayPickKiller);
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   // This will randomly select a killer from the suspects. And add that to the mystery object.
-  document.getElementById('loaderKiller').style.display = 'none'
+  loaderKiller.style.display = 'none'
   mystery.killer = randomSelector(suspects)
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-    document.getElementById('killerImage').src= mystery.killer.image;
-    document.getElementById('killerDescription').innerHTML =mystery.killer.description;
-    document.getElementById('killerOccupation').innerHTML =mystery.killer.occupation;
-    document.getElementById('killerAge').innerHTML=mystery.killer.age;
+  killerCard.style.background = mystery.killer.color
+  killerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  killerImage.src= mystery.killer.image;
+  killerDescription.innerHTML = mystery.killer.description;
+  killerOccupation.innerHTML = mystery.killer.occupation;
+  killerAge.innerHTML=mystery.killer.age;
 
     const shuffleFavouriteWeapon = () => {
       mystery.favouriteWeapon = randomSelector(weapons);
@@ -313,45 +302,50 @@ const pickKiller = () => {
      shuffleFavouriteWeapon();
   }
 
-  
-  //document.getElementById('killerCard').onclick = pickKiller;
-
 //Function to delay the pickKiller function so the loader can display
 
+const loaderWeapon = document.querySelector('.loaderWeapon');
+const weaponCard = document.getElementById('weaponCard');
+const weaponName = document.getElementById('weaponName');
+const weaponImage = document.getElementById('weaponImage');
+const weaponWeight = document.getElementById('weaponWeight');
+
 const delayPickWeapon = () => {
-  document.getElementById('loaderWeapon').style.display = 'block';
-  setTimeout(pickWeapon,1000);
+  loaderWeapon.style.display = 'block';
+  setTimeout(pickWeapon,2000);
 }
 
-document.getElementById('weaponCard').addEventListener('click', delayPickWeapon);
+weaponCard.addEventListener('click', delayPickWeapon);
 
 // CREATE FUNCTIONS pickWeapon and pickRoom in a similar way.
 
 const pickWeapon = () => {
-  document.getElementById('loaderWeapon').style.display = 'none';
+  loaderWeapon.style.display = 'none';
   mystery.weapon = randomSelector(weapons);
-  document.getElementById('weaponCard').style.background = mystery.weapon.color
-  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-  document.getElementById('weaponImage').src= mystery.weapon.image;
-  document.getElementById('weaponWeight').innerHTML = mystery.weapon.weight;
+  weaponCard.style.background = mystery.weapon.color
+  weaponName.innerHTML = `${mystery.weapon.name}`
+  weaponImage.src= mystery.weapon.image;
+  weaponWeight.innerHTML = mystery.weapon.weight;
 }
-//document.getElementById('weaponCard').onclick = pickWeapon;
+
+const loaderRoom = document.querySelector('.loaderRoom');
+const roomcard = document.getElementById('roomCard');
+const roomName = document.getElementById('roomName');
+const roomImage = document.getElementById('roomImage');
 
 const delayPickRoom = () => {
-  document.getElementById('loaderRoom').style.display = 'block';
-  setTimeout(pickRoom,1000);
+  loaderRoom.style.display = 'block';
+  setTimeout(pickRoom,2000);
 }
 
-document.getElementById('roomCard').addEventListener('click', delayPickRoom);
+roomCard.addEventListener('click', delayPickRoom);
 
 const pickRoom = () => {
-  document.getElementById('loaderRoom').style.display = 'none';
-  mystery.room =randomSelector(rooms);
-  document.getElementById('roomName').innerHTML = `${mystery.room.name}`
-  document.getElementById('roomImage').src= mystery.room.image;
+  loaderRoom.style.display = 'none';
+  mystery.room = randomSelector(rooms);
+  roomName.innerHTML = `${mystery.room.name}`
+  roomImage.src= mystery.room.image;
 }
-
-//document.getElementById('roomCard').onclick = pickRoom;
 
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
@@ -359,5 +353,7 @@ const revealMystery = () => {
   document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}.`
 }
 
+const revealButton = document.getElementById('reveal');
+revealButton.onclick = revealMystery;
 
 
