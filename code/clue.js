@@ -11,7 +11,7 @@ const mrGreen = {
 }
 
 const professorPlum = {
-  firstName: "Victor",
+  firstName: 'Victor',
   lastName: 'Plum',
   color:'plum',
   description: 'He loves books',
@@ -21,7 +21,7 @@ const professorPlum = {
 }
 
 const missScarlet = {
-  firstName: "Cassandra",
+  firstName: 'Cassandra',
   lastName: 'Scarlet',
   color: 'red',
   description: 'She loves food and wine',
@@ -31,7 +31,7 @@ const missScarlet = {
 }
 
 const mrsPeacock = {
-  firstName: "Eleanor",
+  firstName: 'Eleanor',
   lastName: 'Peacock',
   color: 'blue',
   description: 'She loves spending money',
@@ -41,7 +41,7 @@ const mrsPeacock = {
 }
 
 const colonelMustard = {
-  firstName: "Jack",
+  firstName: 'Jack',
   lastName: 'Mustard',
   color: 'yellow',
   description: 'He is always angry',
@@ -51,7 +51,7 @@ const colonelMustard = {
 }
 
 const mrsWhite = {
-  firstName: "Betty",
+  firstName: 'Betty',
   lastName: 'White',
   color: 'white',
   description: 'She can convince anybody',
@@ -64,63 +64,63 @@ const mrsWhite = {
 
 const rope = {
   name: 'rope',
-  color: "white",
+  color: 'white',
   weight: 10,
   image: 'assets/rope.jpg',
 }
 
 const knife = {
   name: 'knife',
-  color: "white",
+  color: 'white',
   weight: 2,
   image: 'assets/knife.jpg',
 }
   
 const candlestick = {
   name: 'candlestick',
-  color: "white",
+  color: 'white',
   weight: 12,
   image: 'assets/candlestick.jpg',
 }
 
 const dumbbell = {
   name: 'dumbbell',
-  color: "white",
+  color: 'white',
   weight: 6,
   image: 'assets/dumbbell.jpg',
 }
 
 const poison = {
   name: 'poison',
-  color: "white",
+  color: 'white',
   weight: 0.5,
   image: 'assets/poison.PNG',
 }
 
 const axe = {
   name: 'axe',
-  color: "white",
+  color: 'white',
   weight: 4,
   image: 'assets/axe.jpg',
 }
 
 const bat = {
   name: 'bat',
-  color: "white",
+  color: 'white',
   weight: 1,
   image: 'assets/bat.jpg',
 }
 
 const trophy = {
   name: 'trophy',
-  color: "white",
+  color: 'white',
   weight: 5,
   image: 'assets/trophy.jpg',
 }
 
 const pistol = {
   name: 'pistol',
-  color: "white",
+  color: 'white',
   weight: 3,
   image: 'assets/pistol.jpg',
 }
@@ -265,12 +265,12 @@ document.getElementById('killerCard').onclick = pickKiller;
 
 function pickKiller() {
   mystery.killer = randomSelector(suspects)
-    document.getElementById('killerCard').style.background = mystery.killer.color
-    document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-    document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
-    document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`
-    document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
-    document.getElementById('killerImage'); killerImage.src = mystery.killer.image;
+  document.getElementById('killerCard').style.background = mystery.killer.color
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerDescription').innerHTML = mystery.killer.description
+  document.getElementById('killerAge').innerHTML = mystery.killer.age
+  document.getElementById('killerOccupation').innerHTML = mystery.killer.occupation
+  document.getElementById('killerImage').src = mystery.killer.image;
 }  
 
 
@@ -280,10 +280,10 @@ document.getElementById('weaponCard').onclick = pickWeapon;
 
 function pickWeapon() {
   mystery.weapon = randomSelector(weapons)
-    document.getElementById('weaponCard').style.background = mystery.weapon.color
-    document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
-    document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}`
-    document.getElementById('weaponImage'); weaponImage.src = mystery.weapon.image;
+  document.getElementById('weaponCard').style.background = mystery.weapon.color
+  document.getElementById('weaponName').innerHTML = mystery.weapon.name
+  document.getElementById('weaponWeight').innerHTML = mystery.weapon.weight
+  document.getElementById('weaponImage').src = mystery.weapon.image;
 }  
 
 
@@ -293,8 +293,8 @@ document.getElementById('roomCard').onclick = pickRoom;
 
 function pickRoom() {
   mystery.room = randomSelector(rooms)
-    document.getElementById('roomName').innerHTML = `${mystery.room.name}`
-    document.getElementById('roomCard').style.background = mystery.room.color
+  document.getElementById('roomName').innerHTML = mystery.room.name
+  document.getElementById('roomCard').style.background = mystery.room.color
 }  
 
   
@@ -310,7 +310,9 @@ const mystery = {
 // FUNCTION TO REVEAL THE CRIME
 
 const revealMystery = () => {
-  document.getElementById("mystery").innerHTML= `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.`
-  document.getElementById("clickMe").onclick = revealMystery;
+  if (mystery.killer === null || mystery.weapon === null || mystery.room === null) {
+    document.getElementById("mystery").innerHTML = 'Please pick a killer, a weapon and a room!';
+  } else {
+  document.getElementById("mystery").innerHTML= `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with a ${mystery.weapon.name}.` 
 }
-console.log(revealMystery)
+}
