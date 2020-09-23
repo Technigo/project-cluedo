@@ -11,7 +11,7 @@ const mrGreen = {
   color: "green",
   description: "He has a lot of connections",
   age: 45,
-  image: "assets/mr_green.jpg",
+  image: "./assets/mr_green.jpg",
   occupation: "Entrepreneur",
   favoriteWeapon: "rope",
 };
@@ -23,7 +23,7 @@ const colMustard = {
   color: "yellow",
   description: "He is a dignified and dangerous military man",
   age: 60,
-  image: "assets/col_mustard.jpg",
+  image: "./assets/col_mustard.jpg",
   occupation: "Colonel",
   favoriteWeapon: "pistol",
 };
@@ -35,7 +35,7 @@ const msScarlett = {
   color: "red",
   description: "She is a femme fatale.",
   age: 25,
-  image: "assets/ms_scarlett.jpg",
+  image: "./assets/ms_scarlett.jpg",
   occupation: "Actress",
   favoriteWeapon: "knife",
 };
@@ -47,7 +47,7 @@ const mrWhite = {
   color: "white",
   description: "He is a dominant butler.",
   age: 65,
-  image: "assets/mr_white.jpg",
+  image: "./assets/mr_white.jpg",
   occupation: "Butler",
   favoriteWeapon: "candlestick",
 };
@@ -59,7 +59,7 @@ const mrsPeacock = {
   color: "blue",
   description: "She is an elegant and classy aristocrat.",
   age: 42,
-  image: "assets/mrs_peacock.jpg",
+  image: "./assets/mrs_peacock.jpg",
   occupation: "Socialite",
   favoriteWeapon: "piping",
 };
