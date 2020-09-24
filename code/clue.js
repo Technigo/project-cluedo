@@ -261,13 +261,11 @@ const rooms = [
 // -------------FUNCTIONS----------------
 
 // -------------Random selector----------
-const randomSelector = (array) => {
-  return array[Math.floor(Math.random() * array.length)];
-};
+const randomSelector = array => array[Math.floor(Math.random() * array.length)];
 
 
 // ----------Shuffle suspects favorite weapon--------------
-shuffleFavoriteWeapon = (suspects) => {
+shuffleFavoriteWeapon = suspects => {
   return suspects.map(suspect => {
     const favoriteWeaponArray = [
       ...weapons
@@ -279,7 +277,7 @@ shuffleFavoriteWeapon = (suspects) => {
 // ---------Validate mystery before reveal----------
 const validateMysteryReveal = () => {
   if (mystery.killer && mystery.weapon && mystery.room) {
-      return true;
+      return;
   } 
 };
 
@@ -336,7 +334,7 @@ const getMystery = () => {
   }, 1500);
 };
 
-const showCard = (event) => {
+const showCard = event => {
   loader.classList.toggle("is-active");
   const clickValue = event.currentTarget.id;
   setTimeout(() => {
