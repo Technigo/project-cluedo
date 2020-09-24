@@ -254,8 +254,8 @@ const rooms = [
 ];
 
 const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
-}
+  return array[Math.floor(Math.random() * array.length)];
+};
 
 // Mystery object
 let mystery = {
@@ -276,7 +276,7 @@ const shuffleFavouriteWeapon = () => {
 // Pick killer function
 const pickKiller = () => {
     if (!killerIsPicked) {
-    document.getElementById('killerLoader').style.visibility='visible' 
+    document.getElementById('killerLoader').style.visibility='visible'; 
     setTimeout(function () {
       document.getElementById('killerLoader').style.visibility='hidden'
       shuffleFavouriteWeapon(suspects); //This randomly selects a favourite weapon.
@@ -293,8 +293,6 @@ const pickKiller = () => {
     }
 };
 
-document.getElementById('killerCard').addEventListener('click', pickKiller);
-
 // Pick weapon function
 const pickWeapon = () => {
   if (!weaponIsPicked) {
@@ -310,7 +308,6 @@ const pickWeapon = () => {
 }
 
 };
-document.getElementById('weaponCard').addEventListener('click', pickWeapon);
 
 // Pick room function
 const pickRoom = () => {
@@ -321,13 +318,10 @@ const pickRoom = () => {
       mystery.room = randomSelector(rooms);
       document.getElementById('roomName').innerHTML = mystery.room.name;
       document.getElementById('roomImage').src = mystery.room.image;
-      roomIsPicked = true
+      roomIsPicked = true;
     }, 2500)
   }
 };
-
-document.getElementById('roomcard').addEventListener('click', pickRoom);
-
 
 // Reveal function
 
