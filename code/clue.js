@@ -1,6 +1,18 @@
 const killerCard = document.getElementById("killerCard");
-const weaponCard = document.getElementById("weaponCard")
-const roomCard = document.getElementById("roomCard")
+const weaponCard = document.getElementById("weaponCard");
+const roomCard = document.getElementById("roomCard");
+
+const killerImage = document.getElementById("killerImage");
+const favouriteWeapon = document.getElementById("favouriteWeapon");
+const killerAge = document.getElementById("killerAge");
+const killerName = document.getElementById("killerName");
+
+const weaponImage = document.getElementById("weaponImage");
+const weaponName = document.getElementById("weaponName");
+const weaponWeight = document.getElementById("weaponWeight");
+
+const roomName = document.getElementById("roomName");
+const roomImage = document.getElementById("roomImage");
 
 // STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
 const mrGreen = {
@@ -294,17 +306,12 @@ const mystery = {
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
 
-  const killerImage = document.getElementById("killerImage");
-  const favouriteWeapon = document.getElementById("favouriteWeapon");
-  const killerAge = document.getElementById("killerAge");
-  const killerName = document.getElementById("killerName");
-
   killerImage.style.display = "block";
   favouriteWeapon.style.display = "block";
   killerAge.style.display = "block";
   killerName.style.display = "block";
   killerCard.style.background = mystery.killer.color;
-  document.getElementById("loadingAnimation1").style.display = "none";
+  document.getElementById("loadingKillerAnimation").style.display = "none";
 
   killerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   killerImage.src = `${mystery.killer.image}`;
@@ -315,14 +322,10 @@ const pickKiller = () => {
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
 
-  const weaponImage = document.getElementById("weaponImage");
-  const weaponName = document.getElementById("weaponName");
-  const weaponWeight = document.getElementById("weaponWeight");
-
   weaponName.style.display = "block";
   weaponWeight.style.display = "block";
   weaponImage.style.display =  "block";
-  document.getElementById("loadingAnimation2").style.display = "none";
+  document.getElementById("loadingWeaponAnimation").style.display = "none";
 
   weaponCard.style.background = mystery.weapon.color;
   weaponName.innerHTML = `${mystery.weapon.name}`;
@@ -333,63 +336,47 @@ const pickWeapon = () => {
 const pickRoom = () => {
   mystery.room = randomSelector(rooms);
 
-  const roomCard = document.getElementById("roomCard");
-  const roomName = document.getElementById("roomName");
-  const roomImage = document.getElementById("roomImage");
-
   roomName.style.display = "block";
   roomImage.style.display = "block";
-  document.getElementById("loadingAnimation3").style.display = "none";
+  document.getElementById("loadingRoomAnimation").style.display = "none";
 
   roomCard.style.background = mystery.room.color;
   roomName.innerHTML = `${mystery.room.name}`;
   roomImage.src = `${mystery.room.image}`;
 };
 
-const startAnimation1 = () => {
-  const killerImage = document.getElementById("killerImage");
-  const favouriteWeapon = document.getElementById("favouriteWeapon");
-  const killerAge = document.getElementById("killerAge");
-  const killerName = document.getElementById("killerName");
-
+const startKillerAnimation = () => {
   killerImage.style.display = "none";
   favouriteWeapon.style.display = "none";
   killerAge.style.display = "none";
   killerName.style.display = "none";
-  document.getElementById("loadingAnimation1").style.display = "block";
+  document.getElementById("loadingKillerAnimation").style.display = "block";
 
-  setTimeout(pickKiller, 1500)
+  setTimeout(pickKiller, 1500);
 };
 
-const startAnimation2 = () => {
-  const weaponImage = document.getElementById("weaponImage");
-  const weaponName = document.getElementById("weaponName");
-  const weaponWeight = document.getElementById("weaponWeight");
-
+const startWeaponAnimation = () => {
   weaponName.style.display = "none";
   weaponWeight.style.display = "none";
   weaponImage.style.display = "none";
-  document.getElementById("loadingAnimation2").style.display = "block";
+  document.getElementById("loadingWeaponAnimation").style.display = "block";
 
-  setTimeout(pickWeapon, 1500)
+  setTimeout(pickWeapon, 1500);
 };
 
-const startAnimation3 = () => {
-  const roomName = document.getElementById("roomName");
-  const roomImage = document.getElementById("roomImage");
-
+const startRoomAnimation = () => {
   roomName.style.display = "none";
   roomImage.style.display = "none";
-  document.getElementById("loadingAnimation3").style.display = "block";
+  document.getElementById("loadingRoomAnimation").style.display = "block";
 
-  setTimeout(pickRoom, 1500)
+  setTimeout(pickRoom, 1500);
 };
 
 // CALL FUNCTIONS WHEN CLICK ON CARDS
 
-killerCard.onclick = startAnimation1;
-weaponCard.onclick = startAnimation2;
-roomCard.onclick = startAnimation3;
+killerCard.onclick = startKillerAnimation;
+weaponCard.onclick = startWeaponAnimation;
+roomCard.onclick = startRoomAnimation;
 
 
 // FINAL FUNCTION

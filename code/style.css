@@ -59,37 +59,26 @@ h1 {
   box-shadow: 0 0 7px 7px #822c5b;
 }
 
-.killer-deck {
+.killer-deck, .weapon-deck, .room-deck {
   width: 25%;
   height: 470px;
-  background: #000;
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
   box-shadow: 0 0 5px 5px #822c5b;
   cursor: pointer;
+}
+
+.killer-deck {
+  background: #000;
 }
 
 .weapon-deck {
-  width: 25%;
-  height: 470px;
   background: rgb(10, 53, 10);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-  box-shadow: 0 0 5px 5px #822c5b;
-  cursor: pointer;
 }
 
 .room-deck {
-  width: 25%;
-  height: 470px;
   background: midnightblue;
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
-  box-shadow: 0 0 5px 5px #822c5b;
-  cursor: pointer;
 }
 
 button {
@@ -229,12 +218,7 @@ a {
     margin-bottom: 50px;
   }
 
-  .killer-deck {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .weapon-deck {
+  .killer-deck, .weapon-deck {
     width: 100%;
     margin-bottom: 10px;
   }
@@ -261,7 +245,6 @@ a {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 900px;
-    background: transparent;
     width: 80%;
     height: 700px;
     background-color: #f3f3f3;
