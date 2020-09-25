@@ -192,9 +192,9 @@ const lounge = {
 };
 
 const mystery = {
-  killer: undefined,
-  weapon: undefined,
-  room: undefined,
+  killer: null,
+  weapon: null,
+  room: null,
 };
 
 const killerCard = {
@@ -277,7 +277,7 @@ shuffleFavoriteWeapon = suspects => {
 // ---------Validate mystery before reveal----------
 const validateMysteryReveal = () => {
   if (mystery.killer && mystery.weapon && mystery.room) {
-      return;
+      return true;
   } 
 };
 
@@ -317,6 +317,9 @@ const showMystery = () => {
     showMysteryInfo.title.innerHTML = `Mystery`;
     showMysteryInfo.mysteryReveal.innerHTML = `Mr Black will be killed by ${mystery.killer.title} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`;
     showMysteryInfo.mysteryInfo.innerHTML = `Hush! Remember to keep it a secret!`;
+    document.getElementById("killerCard").removeEventListener("click", showCard);
+    document.getElementById("weaponCard").removeEventListener("click", showCard);
+    document.getElementById("roomCard").removeEventListener("click", showCard);
   } else {
     mysteryText.classList.toggle("is-active");
     showMysteryInfo.title.innerHTML = `Error`;
