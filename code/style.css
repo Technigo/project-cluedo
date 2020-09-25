@@ -53,7 +53,7 @@ header img {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  background-image: url(assets/cluedo_cover.jpeg);
+  background-image: url("assets/cluedo_cover.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   color: black;
@@ -69,7 +69,7 @@ header img {
   background-size: 100% 100%;
 }
 
-#killer.killer-deck {
+.killer.killer-deck {
   padding-top:5px;
 }
 
@@ -86,7 +86,7 @@ header img {
 
 .kdeck p{
   font-size: 16px;
-  margin-bottom:0px;
+  margin-bottom:0;
   }
 
 .killer-deck img {
@@ -186,7 +186,7 @@ button:active {
   transform: translateY(4px);
 }
 
-#mystery {
+.mystery {
   width: auto;
   height: 100px;
   text-align: center;
@@ -197,11 +197,6 @@ button:active {
   border-radius: 16px;
   box-shadow: 10px 10px 10px darkred;
 }
-
-
-
-
-
 /* Desktop */
 @media (min-width: 900px) {
   .cards {
