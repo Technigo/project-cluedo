@@ -190,24 +190,22 @@ const randomSelector = array => {
 // The values will be set later.
 
 let mystery = {
-  killer:'',
-  weapon:'',
-  room:''
+  killer: null,
+  weapon: null,
+  room: null
 }
 
-
-
+// Shuffle weapon function
+const shuffleFavouriteWeapon = () => {
+  mystery.killer.favouriteWeapon = randomSelector(weapons); 
+};
 
 // This function will be invoked when you click on the killer card.
-
 const pickKiller = () => {
+  
   // This will randomly select a killer from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
   
-  // Shuffle weapon function
-  shuffleFavouriteWeapon = () => {
-    mystery.killer.favouriteWeapon = randomSelector(weapons); 
-  };
     shuffleFavouriteWeapon();
     console.log(mystery.killer.favouriteWeapon.name)
 
