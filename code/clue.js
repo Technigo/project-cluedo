@@ -1,5 +1,4 @@
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS, SOMETHING LIKE THIS:
-
+// The suspects
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
@@ -66,75 +65,82 @@ const mrsWhite = {
   favouriteWeapon: 'candlestick'
 }
 
-
-// CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
-
+// The weapons 
 const rope = {
+  id: 'rope',
   name: 'Rope',
   weight: 10,
   color: '#a19c85',
-  mortality: 2,
-  id: 'rope'
+  mortality: 2
+
 }
 const knife = {
+  id: 'knife',
   name: 'Knife',
   weight: 2,
   color: '#a19c85',
-  mortality: 6,
-  id: 'knife'
+  mortality: 6
+
 }
 const candlestick = {
+  id: 'candlestick',
   name: 'Candlestick',
   weight: 30,
   color: '#737275',
-  mortality: 4,
-  id: 'candlestick'
+  mortality: 4
+
 }
 const dumbbell = {
+  id: 'dumbbell',
   name: 'Dumbbell',
   weight: 90,
   color: '#aaa7b0',
-  mortality: 5,
-  id: 'dumbbell'
+  mortality: 5
+
 }
 const poison = {
+  id: 'poison',
   name: 'Poison',
   weight: 3,
   color: '#6e9692',
-  mortality: 8,
-  id: 'poison'
+  mortality: 8
+
 }
 const axe = {
+  id: 'axe',
   name: 'Axe',
   weight: 45,
   color: '#7d9e98',
-  mortality: 7,
-  id: 'axe'
+  mortality: 7
+
 }
 const bat = {
+  id: 'bat',
   name: 'Bat',
   weight: 30,
   color: '#909c76',
-  mortality: 5,
-  id: 'bat'
+  mortality: 5
+
 }
+
 const trophy = {
+  id: 'trophy',
   name: 'Trophy',
   weight: 50,
   color: '#a8ad7d',
-  mortality: 3,
-  id: 'trophy'
+  mortality: 3
+
 }
+
 const pistol = {
+  id: 'pistol',
   name: 'Pistol',
   weight: 70,
   color: '#949081',
-  mortality: 10,
-  id: 'pistol'
+  mortality: 10
 }
 
-// THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
+// The rooms
 const diningRoom = {
   name: 'Dining Room',
   color: '#737260'
@@ -210,9 +216,7 @@ const patio = {
   color: '#755b70'
 }
 
-
-
-// NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
+// Arrays with suspects, weapons and rooms
 
 const suspects = [
   mrGreen,
@@ -254,20 +258,18 @@ const rooms = [
   patio
 ]
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+// A function that will randomly select one item from each array
 
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY.
-// With a killer, a weapon and a room.
+// This object will keep the mystery values - a murder, a weapon and a room. 
 // The values will be set later.
 let mystery = {
-  killer: '',
-  weapon: '',
-  room: ''
+  killer: null,
+  weapon: null,
+  room: null
 }
 
 
@@ -282,7 +284,7 @@ const pickKiller = () => {
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
   document.getElementById('killerAge').innerHTML = ` Age:${mystery.killer.age}`
   document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
-  let favWeapon = weapons.find(weapon => weapon.id === mystery.killer.favouriteWeapon)
+  const favWeapon = weapons.find(weapon => weapon.id === mystery.killer.favouriteWeapon)
   document.getElementById('killerFavouriteWeapon').innerHTML = `Favourite weapon: ${favWeapon.name}`
   document.getElementById('killerDescription').innerHTML = `Description: ${mystery.killer.description}`
 }
@@ -312,25 +314,23 @@ const pickRoom = () => {
 document.getElementById('roomCard').onclick = pickRoom
 
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
+// A revealMystery function that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 const revealMystery = () => {
   if (mystery.killer === '' || mystery.weapon === '' || mystery.room === '') {
-  document.getElementById('mystery').innerHTML = 'Sorry, you have to pick one of each card to reveal the murder mystery'
+    document.getElementById('mystery').innerHTML = 'Sorry, you have to pick one of each card to reveal the murder mystery'
   } else {
-  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}.`
+    document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room.name} with a ${mystery.weapon.name}.`
   }
 }
 
 document.getElementById('revealMystery').onclick = revealMystery
 
-  const shuffleFavouriteWeapon = () => {
-    suspects.forEach((suspect) => {
-      console.log(suspect.firstName, suspect.favouriteWeapon)
-      let randomWeapon = randomSelector(weapons)
-      suspect.favouriteWeapon = randomWeapon.id
-      console.log(suspect.firstName, suspect.favouriteWeapon)
-    })
+const shuffleFavouriteWeapon = () => {
+  suspects.forEach((suspect) => {
+  const randomWeapon = randomSelector(weapons)
+  suspect.favouriteWeapon = randomWeapon.id
+})
   }
-  shuffleFavouriteWeapon()
+shuffleFavouriteWeapon()
