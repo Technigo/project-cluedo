@@ -56,7 +56,7 @@ const mrsWhite = {
   occupation: 'garderner' 
 };
 
-const weapons = [
+const weapon = [
 'rope',
 'knife',
 'candlestick', 
@@ -68,7 +68,7 @@ const weapons = [
 'pistol' 
 ];
 
-const rooms = [
+const room = [
 'diningRoom', 
 'conservatory', 
 'kitchen', 
@@ -83,11 +83,12 @@ const rooms = [
 'observatory', 
 'theater', 
 'guestHouse', 
-'patio'];
+'patio'
+];
 
 // Group OBJECTS (just 'suspects' because i choosed to no give the weapons a discirption (not at least in this point)
 
-const suspects = [
+const killer = [
   mrGreen,
   professorPlum,
   missScarlet,
@@ -105,9 +106,9 @@ const randomSelector = array => {
 
 
 const mystery = {
-  suspects,
-  weapons:[],
-  rooms:[] 
+  killer: null,
+  weapon: null,
+  room: null 
 };
 
 
@@ -115,18 +116,18 @@ const mystery = {
 
 // FUNCTIONS pickKiller
 const pickKiller = () => {
-  mystery.killer = randomSelector(suspects);killerImage.src = mystery.killer.image;
+  mystery.killer = randomSelector(killer);killerImage.src = mystery.killer.image;
   document.getElementById('killerCard').style.background = mystery.killer.color
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 };
-document.getElementById(
+  document.getElementById(
   'killerCard'
   ).addEventListener('click', pickKiller);
 
 
 // FUNCTIONS pickWeapon
 const pickWeapon = () => {
-  mystery.weapon = randomSelector(weapons)
+  mystery.weapon = randomSelector(weapon)
   document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById(
     'weaponName'
@@ -139,7 +140,7 @@ document.getElementById(
 
 // FUNCTIONS pickRoom
  const pickRoom = () => {
-  mystery.room = randomSelector(rooms)
+  mystery.room = randomSelector(room)
   document.getElementById(
     'roomName'
   ).innerHTML = `${mystery.room}`
@@ -153,6 +154,6 @@ document.getElementById(
 // FUNCTION revealMystery 
 
 const revealMystery = () => {
-  const killerAnnoncement = document.getElementById("revealButton").innerText;
-  document.getElementById("killerMessage").innerHTML = `Psst! The murder was committed by ${mrsPeacock.firstName} ${mrsPeacock.lastName}, in the ${rooms[2]} with a ${weapons[8]}.`;
+  document.getElementById("revealButton").innerText;
+  document.getElementById("killerMessage").innerHTML = `Psst! The murder was committed by ${mystery.killer.firstName}, in the ${mystery.room} with a ${mystery.weapon}.`;
 }
