@@ -3,7 +3,7 @@ loader.classList.add("clock");
 const handle = document.createElement("div");
 handle.classList.add("handle");
 
-const showLoader = (card) => {
+const showLoader = card => {
   loader.appendChild(handle);
   card.appendChild(loader);
 };
@@ -69,8 +69,7 @@ const suspects = [
     firstName: "Mrs",
     lastName: "White",
     color: "white",
-    description:
-      "Has been working in the house for as long as anyone can remember",
+    description: "Has been working in the house for as long as anyone can remember",
     age: "unknown",
     image: "assets/white.png",
     occupation: "Housekeeper",
@@ -252,7 +251,6 @@ const mystery = {
 const shuffleFavourite = () => {
   suspects.forEach((suspect) => {
     suspect.favouriteWeapon = randomSelector(weapons).id;
-    console.log(suspect.favouriteWeapon);
   });
 };
 
@@ -265,22 +263,14 @@ const pickKiller = () => {
 
     document.getElementById("killer-card").style.background =
       mystery.killer.color;
-    document.getElementById(
-      "killer-name"
-    ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-    document.getElementById(
-      "killer-occupation"
-    ).innerHTML = `${mystery.killer.occupation}`;
+    document.getElementById("killer-name").innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+    document.getElementById("killer-occupation").innerHTML = `${mystery.killer.occupation}`;
     document.getElementById("killer-image").classList.remove("hidden");
     document.getElementById("killer-container").classList.remove("hidden");
     document.getElementById("third-killer").classList.remove("hidden");
     document.getElementById("killer-image").src = mystery.killer.image;
-    document.getElementById(
-      "killer-description"
-    ).innerHTML = `${mystery.killer.description}`;
-    document.getElementById(
-      "favourite-weapon"
-    ).innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
+    document.getElementById("killer-description").innerHTML = `${mystery.killer.description}`;
+    document.getElementById("favourite-weapon").innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
   }, 2000);
 
   const killerCard = document.getElementById("front-side-killer");
