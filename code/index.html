@@ -18,13 +18,15 @@
   </head>
 
   <body>
-    <h1>CLUEDO</h1>
+    <header>
+      <h1>CLUEDO</h1>
+    </header>
     <section class="cards">
       <!-- KILLER DECK -->
       <article class="deck killer-deck" id="killerCard" onclick="pickKiller()">
         <div id="killerDeckFront" class="front">
           <h3>SUSPECT</h3>
-          <img id="killerImage" class="killer-image" src="" height="150" />
+          <img id="killerImage" class="killer-image" src="" height="150px" />
           <div class="information-container">
             <label class="killer-label">NAME / AGE</label>
             <div class="name-age-container">
@@ -93,7 +95,7 @@
 
     <!-- REVEAL MYSTERY -->
     <section class="reveal">
-      <button id="revealButton" class="" onclick="revealMystery()">Reveal the crime</button>
+      <button id="revealButton" onclick="revealMystery()">Reveal the crime</button>
       <div class="mystery-reveald-container">
         <span id="mysteryReveald" class="mystery-reveald">Who did it?</span>
       </div>      
