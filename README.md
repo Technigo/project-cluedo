@@ -1,13 +1,25 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
+This project was made for Technigo Bootcamp 2020.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+It's a tool for the game leader in [Cluedo](https://sv.wikipedia.org/wiki/Cluedo). By clicking on the three decks of cards you get a randomly generated killer, weapon and room.
+The button prints out the revealed mystery.
 
-## The problem
+The focus on this project was to practice objects and arrays and also to manipulate the DOM with JavaScript.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+
+## How I solved the task
+
+After creating objects for suspects, weapons and rooms, I created arrays to group them together. When clicking on a deck of cards an onclick event invokes a function that generates an item from one of the arrays. The items are stored in a separate object.
+
+After that first step I did most of the styling and indulged in animations. A shaking header, loading animations, cards fading in, typing text and a button with hover effects... 
+This week's motto: More is more! 
+
+There is also som logic behind the sceene that increases the probability that a certain weapon or room will be generated depending on what was previously chosen.
+
+If I had more time I would have explored what I could have done differently with the scrolling text. I discovered that if you click on the button several times before the text typing is done, incorrect text is printed.
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Here is a link to the deployed project: https://projectcluedo.netlify.app/
