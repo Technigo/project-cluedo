@@ -4,7 +4,7 @@ const mrGreen = {
   lastName: 'Green',
   description: 'He has a lot of connections.',
   age: '70 years old',
-  image: 'assets/green.png',
+  image: './assets/green.png',
   occupation: 'Entrepreneur'
 }
 const professorPlum = {
@@ -12,7 +12,7 @@ const professorPlum = {
   lastName: 'Plum',
   description: 'A professor in history and criminal technology.',
   age: '62 years old',
-  image: 'assets/plum.png',
+  image: './assets/plum.png',
   occupation: 'Detective'
 }
 const missScarlet = {
@@ -20,7 +20,7 @@ const missScarlet = {
   lastName: 'Scarlet',
   description: 'A famous actor, been in many movies.',
   age: '47 years old',
-  image: 'assets/scarlet.png',
+  image: './assets/scarlet.png',
   occupation: 'Actor'
 }
 const mrsPeacock = {
@@ -28,7 +28,7 @@ const mrsPeacock = {
   lastName: 'Peacock',
   description: 'Degree in criminal history and writing. Love tea and cookies.',
   age: '59 years old',
-  image: 'assets/peacock.png',
+  image: './assets/peacock.png',
   occupation: 'Author'
 }
 const colonelMustard = {
@@ -36,7 +36,7 @@ const colonelMustard = {
   lastName: 'Mustard',
   description: 'Passion of the military and hunting on his free time.',
   age: '76 years old',
-  image: 'assets/mustard.png',
+  image: './assets/mustard.png',
   occupation: 'Military Officer'
 }
 const mrsWhite = {
@@ -44,7 +44,7 @@ const mrsWhite = {
   lastName: 'White',
   description: 'A nurse that worked as a midwife all her life.',
   age: '74 years old',
-  image: 'assets/white.png',
+  image: './assets/white.png',
   occupation: 'Nurse'
 }
 
@@ -134,38 +134,38 @@ const randomSelector = array => {
 
 //OBJECT THAT KEEPS THE MYSTERY.
 const mystery = {
-killer: '',
-weapon: '',
-room: ''
+killer: null,
+weapon: null,
+room: null
 }
 
 //FUNCTIONS FOR THE PICK CARD KILLER, WEAPON & ROOM.
 const pickKiller = () => {
   mystery.killer = randomSelector(suspects);
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`;
-  document.getElementById('killerImage').src = mystery.killer.image
-  document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`;
-  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`;
+  document.getElementById('killerAge').innerHTML = mystery.killer.age;
+  document.getElementById('killerImage').src = mystery.killer.image;
+  document.getElementById('killerOccupation').innerHTML = mystery.killer.occupation;
+  document.getElementById('killerDescription').innerHTML = mystery.killer.description;
 }
 //Invoking the function when you click on the killer card:
 document.getElementById('killerCard').addEventListener('click', pickKiller);
 
 const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
-  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
+  document.getElementById('weaponName').innerHTML = mystery.weapon.name;
   document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}kg`;
 }
 document.getElementById('weaponCard').addEventListener('click', pickWeapon);
 
 const pickRoom = () => {
   mystery.room = randomSelector(rooms);
-  document.getElementById('roomName').innerHTML = `${mystery.room}`;
+  document.getElementById('roomName').innerHTML = mystery.room;
 }
 document.getElementById('roomCard').addEventListener('click', pickRoom);
 
 
 //FUNCTION FOR CLICKING ON THE BUTTON THAT REVEAL THE MYSTERY/CRIME
 const revealMystery = () => {
-  document.getElementById('revealButton').innerText = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  document.getElementById('revealButton').innerText = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}`
 }
