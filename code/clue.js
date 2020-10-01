@@ -3,7 +3,6 @@ let killerIsPicked = false;
 let weaponIsPicked = false;
 let roomIsPicked = false; 
 
-
 //objects for suspects
 const mrGreen = {
   firstName: 'Jacob',
@@ -60,7 +59,6 @@ const colonelMustard = {
   favouriteWeapon: 'axe' 
 }
 
-
 const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
@@ -71,7 +69,6 @@ const mrsWhite = {
   occupation: 'Housekeeper',
   favouriteWeapon: 'posion' 
 }
-
 
 //objects for weapons
 const rope = {
@@ -130,7 +127,6 @@ const bat = {
   foundIn: 'billiardRoom'
 }
 
-
 const trophy = {
   name: 'trophy',
   weight: 29,
@@ -146,7 +142,6 @@ const pistol = {
   id: 'pistol',
   foundIn: 'lounge'
 }
-
 
 //objects for rooms
 const diningRoom = {
@@ -224,9 +219,6 @@ const patio = {
   id: 'patio'
 }
  
-
-
-
 const suspects = [
   mrGreen,
   professorPlum,
@@ -235,7 +227,6 @@ const suspects = [
   colonelMustard,
   mrsWhite
 ]
-
 
 const weapons = [
   rope,
@@ -248,7 +239,6 @@ const weapons = [
   trophy,
   pistol
 ]
-
 
 const rooms = [
   diningRoom, 
@@ -268,14 +258,10 @@ const rooms = [
   patio
 ]
 
-
-
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
-
-
 
 //object that keeps mystery 
 const mystery = {
@@ -283,8 +269,6 @@ const mystery = {
   weapon: null,
   room: null
 };
-
-
 
 // This function will be invoked when you click the killer card.
 const pickKiller = () => {
@@ -309,7 +293,6 @@ const pickKiller = () => {
   }
 };
 
-
 // This function will be invoked when you click the weapon card.
 const pickWeapon = () => {
   if (killerIsPicked && !weaponIsPicked) {
@@ -322,11 +305,8 @@ const pickWeapon = () => {
       document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`
       weaponIsPicked = true
     }, 2500)
-  } else {
-    alert('Found out who the killer is first');
-  }
+  }else alert('Found out who the killer is first');
 };
-
 
 //This function will be invoked when you click  the room card.
 const pickRoom = () => {
@@ -344,7 +324,6 @@ const pickRoom = () => {
   }
 };
 
-
 //select a random weapon from the weapons array and assigns it to suspects favouriteWeapon. 
 const shuffleFavoriteWeapon = () => {
   suspects.forEach(suspect => {
@@ -352,7 +331,6 @@ const shuffleFavoriteWeapon = () => {
     suspect.favouriteWeapon = randomWeapon
   });
 };
-
 
 //function to increase the probabilty of favourite weapon to be picked. 
 const chanceOfFavouriteWeapon = () => {
@@ -362,7 +340,6 @@ const chanceOfFavouriteWeapon = () => {
   return calculatedWeapon;
 };
 
-
 //function to increase the probability that the room is picked where weapon was found.
 const chanceOfRoom = () => {
   const suspectedRoom = rooms.find(room => room.name === mystery.weapon.foundIn);
@@ -370,9 +347,6 @@ const chanceOfRoom = () => {
   const calculatedRooms = [...rooms, ...suspectedRoomArray];
   return calculatedRooms;
 };
-
-
-
 
 //revealMystery  will be invoked when you click the 'reveal the crime' button.
 const revealMystery = () => {
@@ -389,7 +363,6 @@ const revealMystery = () => {
     document.getElementById('mystery').innerHTML = `The murder was comitted by ${killer} using ${weapon} in the ${room}!`; 
     }
 }
-
 
 //Function will be invoked when you click 'resume game' button
 const restartGame = () => {

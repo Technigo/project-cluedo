@@ -4,7 +4,6 @@ body {
   font-family: 'Amatic SC', cursive;
   font-family: 'Ubuntu Mono', monospace;  
   background-image: radial-gradient(#174959, #0B2F44);
-
 }
 
 h1 {
@@ -25,7 +24,6 @@ p {
   background: #fff;
 }
 
-
 span {
   color: #BB3933;
   font-family: 'Amatic SC', cursive;
@@ -38,7 +36,6 @@ header {
   justify-content: center;
   align-items: center;
   align-self: center;
-  
 }
 
 .cards {
@@ -51,11 +48,9 @@ header {
   align-items: center;
 }
 
-
 .container {
   position: relative;
 }
-
 
 .killer-deck,
 .weapon-deck,
@@ -76,7 +71,6 @@ header {
   margin-top: 10px;
   opacity: 0;
  }
-
 
 .container-reveal {
   display: flex;
@@ -123,7 +117,6 @@ button:hover {
   animation: spin 4s linear infinite;
   opacity: 0;
 }
-
 
 /* Safari */
 @-webkit-keyframes spin {
