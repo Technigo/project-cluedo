@@ -130,7 +130,7 @@ header {
 }
 
 /* Styling of the loaders */
-.loader1, .loader2, .loader3 {
+.killer-loader, .weapon-loader, .room-loader {
   margin-left: 90px;
   margin-top: 80px;
   width: 60px;
@@ -154,7 +154,7 @@ header {
 }
 
 /** Styling of button **/
-button {
+.reveal-button {
   margin: 20px;
   padding: 8px 8px;
   background: #fff; 
@@ -168,7 +168,7 @@ button {
   font-family: 'Cormorant Garamond', serif;
 }
 
-button p {
+.reveal-button p {
   padding: 12px;
 }
 

@@ -250,11 +250,11 @@ const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
-// CREATE AN OBJECT THAT KEEPS THE MYSTERY. With a killer, a weapon and a room. The values are set later down.
-let theMystery = { // Write mystery instead?
- killer: '',
- weapon: '',
- room: ''
+// CREATES AN OBJECT THAT KEEPS THE MYSTERY. With a killer, a weapon and a room. The values are set later down.
+let theMystery = { 
+ killer: null,
+ weapon: null,
+ room: null
 };
 
 // Variables for the pictures 
@@ -263,15 +263,15 @@ const weaponImage = document.getElementById('weaponImage');
 const roomImage = document.getElementById('roomImage');
 
 // PICK-KILLER-FUNCTION! This function will be invoked when you click on the killer card.
-const pickKiller = () => { // Shows loading animation
-  document.getElementById('loader1').style.display = 'block';
-  setTimeout(realPickKiller, 1000); // Delays the realPickKiller function and calls it after 1.5 sec.
+const onKillerCardClicked = () => { // Shows loading animation
+  document.getElementById('killerLoader').style.display = 'block';
+  setTimeout(pickKiller, 1000); // Delays the realPickKiller function and calls it after 1.5 sec.
 };
-document.getElementById('killerCard').addEventListener('click', pickKiller);
+document.getElementById('killerCard').addEventListener('click', onKillerCardClicked);
 
-const realPickKiller = () => { // The REAL function getting the values for the suspects
-  document.getElementById('loader1').style.display = 'none';
-  document.getElementById('killerCard').removeEventListener('click', pickKiller); // So the loader doesn't pops up in next click
+const pickKiller = () => { // The REAL function getting the values for the suspects
+  document.getElementById('killerLoader').style.display = 'none';
+  document.getElementById('killerCard').removeEventListener('click', onKillerCardClicked); // So the loader doesn't pops up in next click
  
   mystery.killer = randomSelector(suspects);  // This will randomly select a killer from the suspects and add that to the mystery object.
 
@@ -281,28 +281,36 @@ const realPickKiller = () => { // The REAL function getting the values for the s
   };
   shuffleFavouriteWeapon();
 
-  // This will change the background color of the card to the one connected to the chosen killer and show the different properties of the killer. 
-  document.getElementById('killerCard').style.background = mystery.killer.color;
-  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-  document.getElementById('killerAge').innerHTML = `Age: ${mystery.killer.age}`;
-  document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`;
+  // Variables with connection to the HTML. 
+  // This will change the background color of the card to the one connected 
+  // to the choosen killer and show the different properties of the killer. 
+  const killerCardstyle =  document.getElementById('killerCard');
+  killerCardstyle.style.background = mystery.killer.color;
+  const killerName = document.getElementById('killerName');
+  killerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+  const killerAge = document.getElementById('killerAge');
+  killerAge.innerHTML = `Age: ${mystery.killer.age}`;
+  const killerOccupation = document.getElementById('killerOccupation')
+  killerOccupation.innerHTML = `Occupation: ${mystery.killer.occupation}`;
   killerImage.src = mystery.killer.image;
-  document.getElementById('killerDescription').innerHTML = `Description: ${mystery.killer.description}`;
-  document.getElementById('favouriteWeapon').innerHTML = `Favourite weapon: ${mystery.favouriteWeapon.name}`;
+  const killerDescription = document.getElementById('killerDescription');
+  killerDescription.innerHTML = `Description: ${mystery.killer.description}`;
+  const favouriteWeapon = document.getElementById('favouriteWeapon')
+  favouriteWeapon.innerHTML = `Favourite weapon: ${mystery.favouriteWeapon.name}`;
 
-  document.getElementById('killerCard').onclick = realPickKiller;
+  document.getElementById('killerCard').onclick = pickKiller;
 };
 
 // PICK-WEAPON-FUNCTION! This function will be invoked when you click on the weapon card.- in the similar way as pickKiller.
-const pickWeapon = () => { // Shows loading animation
-  document.getElementById('loader2').style.display = 'block';
-  setTimeout(realPickWeapon, 1000); // Delays the real pickWeapon function and calls it after 1.5 sec.
+const onWeaponCardClicked = () => { // Shows loading animation
+  document.getElementById('weaponLoader').style.display = 'block';
+  setTimeout(pickWeapon, 1000); // Delays the real pickWeapon function and calls it after 1.5 sec.
 };
-document.getElementById('weaponCard').addEventListener('click', pickWeapon);
+document.getElementById('weaponCard').addEventListener('click', onWeaponCardClicked);
 
-const realPickWeapon = () => { // The REAL function getting the values for the weapons
-  document.getElementById('loader2').style.display = 'none';
-  document.getElementById('weaponCard').removeEventListener('click', pickWeapon); // So the loader doesn't pops up in next click, it looks a bit weird if that happens
+const pickWeapon = () => { // The REAL function getting the values for the weapons
+  document.getElementById('weaponLoader').style.display = 'none';
+  document.getElementById('weaponCard').removeEventListener('click', onWeaponCardClicked); // So the loader doesn't pops up in next click, it looks a bit weird if that happens
 
   mystery.weapon = randomSelector(weapons); // Randomly selects a weapon
       
@@ -311,27 +319,27 @@ const realPickWeapon = () => { // The REAL function getting the values for the w
   document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight} pounds`;
   weaponImage.src = mystery.weapon.image;
 
-  document.getElementById('weaponCard').onclick = realPickWeapon;
+  document.getElementById('weaponCard').onclick = pickWeapon;
 };
 
 // PICK-ROOM-FUNCTION! This function will be invoked when you click on the room card.- in the similar way as pickKiller.
-const pickRoom = () => { // Shows loading animation
-  document.getElementById('loader3').style.display = 'block';
+const onRoomCardClicked = () => { // Shows loading animation
+  document.getElementById('roomLoader').style.display = 'block';
   
-  setTimeout(realPickRoom, 1000); // Delays the real pickRoom function and calls it after 1.5 sec.
+  setTimeout(pickRoom, 1000); // Delays the real pickRoom function and calls it after 1.5 sec.
 };
-document.getElementById('roomCard').addEventListener('click', pickRoom);
+document.getElementById('roomCard').addEventListener('click', onRoomCardClicked);
 
-const realPickRoom = () => { // The REAL function getting the values for the rooms
-  document.getElementById('loader3').style.display = 'none';
-  document.getElementById('roomCard').removeEventListener('click', pickRoom); // So the loader doesn't pops up in next click
+const pickRoom = () => { // The REAL function getting the values for the rooms
+  document.getElementById('roomLoader').style.display = 'none';
+  document.getElementById('roomCard').removeEventListener('click', onRoomCardClicked); // So the loader doesn't pops up in next click
 
   mystery.room = randomSelector(rooms); // Randomly selects a room
 
   document.getElementById('roomName').innerHTML = `${mystery.room.name}`;
   roomImage.src = mystery.room.image;
 
-  document.getElementById('roomCard').onclick = realPickRoom;
+  document.getElementById('roomCard').onclick = pickRoom;
 };
 
 // STEP 4 - A FUNCTION that will be invoked when you click that button. 

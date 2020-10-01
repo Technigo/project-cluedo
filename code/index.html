@@ -25,9 +25,9 @@
         <article 
           class="killer-deck" 
           id="killerCard" 
-          onclick="pickKiller()">
+          onclick="onKillerCardClicked()">
           <p class="boldheading">KILLER</p>
-          <div id="loader1" class="loader1"></div>
+          <div id="killerLoader" class="killer-loader"></div>
           <p id="killerName"></p>
           <p id="killerAge"></p>
           <p id="killerOccupation"></p>
@@ -38,9 +38,9 @@
         <article 
           class="weapon-deck" 
           id="weaponCard" 
-          onclick="pickWeapon()">
+          onclick="onWeaponCardClicked()">
           <p class="boldheading">WEAPON</p>
-          <div id="loader2" class="loader2"></div>
+          <div id="weaponLoader" class="weapon-loader"></div>
           <p id="weaponName"></p>
           <p id="weaponWeight"></p>
           <img id="weaponImage" class="weapon-image" src=""/>
@@ -48,9 +48,9 @@
         <article 
           class="room-deck" 
           id="roomCard" 
-          onclick="pickRoom()">
+          onclick="onRoomCardClicked()">
           <p class="boldheading">ROOM</p>
-          <div id="loader3" class="loader3"></div>
+          <div id="roomLoader" class="room-loader"></div>
           <p id="roomName"></p>
           <img id="roomImage" class="room-image" src=""/>
         </article>
@@ -59,7 +59,7 @@
 
     <!------ REVEALING OF THE MYSTERY ------>
     <h2 id="mystery"></h2>
-    <button onclick="revealMystery()">
+    <button class="reveal-button" onclick="revealMystery()">
       <p>REVEAL THE CRIME!</p>
       <img 
         class="detectivepic" 
