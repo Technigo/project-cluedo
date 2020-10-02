@@ -174,9 +174,7 @@ const rooms = [
 
 // Random selector, takes an array and returns one random item in the array
 
-const randomSelector = (array) => {
-  return array[Math.floor(Math.random() * array.length)];
-};
+const randomSelector = (array) => array[Math.floor(Math.random() * array.length)];
 
 // Mystery object 
 
@@ -192,7 +190,7 @@ const mystery = {
 let i = 0;
 const move = (callback) => {
   document.getElementById('myProgress').style.display = "block";
-  if (i == 0) {
+  if (i === 0) {
     i = 1;
     const elem = document.getElementById("myBar");
     let width = 1;
@@ -226,7 +224,7 @@ const remove = () => {
 //with new weapon from randomSelector. After that displays text "weapons changed"
 
 const shuffleFavouriteWeapon = (suspect) => {
-  suspects.forEach((suspect) => (suspect.favouriteWeapon = randomSelector(weapons).name));
+  suspects.forEach((suspect) => suspect.favouriteWeapon = randomSelector(weapons).name);
   document.getElementById("mystery").innerHTML = "Weapons Changed";
   document.getElementById("mystery").classList.add("h1fade"); 
   setTimeout(remove, 4000);
@@ -296,13 +294,7 @@ document.getElementById('weaponCard').addEventListener('click', (e) => {
 const pickRoom = () => {
   // This will randomly select a room from the suspects. And add that to the mystery object.
   mystery.room = randomSelector(rooms);
-
-  // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
-  // document.getElementById("killerCard").style.background = mystery.killer.color;
-  document.getElementById(
-    "roomName"
-  ).innerHTML = `${mystery.room}`;
-  //document.getElementById("killerImage").src = mystery.killer.image;
+  document.getElementById("roomName").innerHTML = `${mystery.room}`;
 };
 
 //Event handler for picking room
@@ -314,7 +306,7 @@ document.getElementById('roomCard').addEventListener('click', (e) => {
 // FUNCTION revealMystery that will be invoked when you click that button. If all cards not clicked will show fading message.
 
 const revealMystery = () => {
-  if ((mystery.killer == null) || (mystery.weapon == null) || (mystery.room == null)){
+  if (!mystery.killer || !mystery.weapon || !mystery.room){
   document.getElementById("mystery").innerHTML = `You don´t have all the clues yet! Please click all cards`;
   document.getElementById("mystery").classList.add("h1fade"); 
   setTimeout(remove, 6000);
