@@ -120,7 +120,6 @@ article p {
   left: 40%;
   width: 50px;
   height: 50px;
-  /* background: #8a365d; */
   background: #6e1411;
   border-radius: 50%;
   animation-duration: 2.5s;
@@ -175,26 +174,11 @@ article p {
   outline: 0;
 }
 
-@keyframes pulsate {
-  0% {
-/* -webkit-transform: scale(1.0, 1.0);  */
-    opacity: 0.75;
-    background-color: #6e1411;
-  }
-  50% {
-    opacity: 0.75;
-    background-color: #b3201b; 
-  }
-  100% {
-    /* -webkit-transform: scale(1.1, 1.1);  */
-    opacity: 0.75;
-    background-color: #a02621;
-  }
-}
-
 @media(max-width:980px) {
   .main-wrapper {
     padding: 5px;
+    height: 100vh;
+
   }
   .cards {
     width: 100%;
@@ -207,9 +191,17 @@ article p {
   .room-deck {
     width: 220px;
   }
+
+  .loader {
+    left: 38%;
+  }
 }
 
 @media(max-width:690px) {
+  .main-wrapper {
+    height: auto;
+  }
+
   .header-content {
     flex-direction: column;
   }
@@ -223,6 +215,10 @@ article p {
   .weapon-deck,
   .room-deck {
     width: 250px;
+  }
+
+  .loader {
+    left: 40%;
   }
 
   .reveal-mystery {
