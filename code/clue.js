@@ -196,7 +196,7 @@ const pickKiller = () => {
   setTimeout(function() {
     document.querySelector('.killer-deck').classList.remove('shakeX');
     document.querySelector('.killer-deck').classList.remove('bounce');
-    document.querySelector('.killerIcon').classList.add('hide');
+    document.querySelector('.killer-icon').classList.add('hide');
 
     shuffleFavouriteWeapon();
     mystery.killer = randomSelector(suspects)

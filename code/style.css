@@ -28,35 +28,35 @@ body {
   background-color: #c44536;
 }
 
-.cardContent {
+.card-content {
   margin: 1px;
   font-weight: 300;
   background-color: #fff;
 }
 
-.killerIcon {
+.killer-icon {
   margin-top: 60px;
   width: 50%;
   fill: rgba(255,255,255,0.5);
 }
 
-.killerIcon.hide {
+.killer-icon.hide {
   display: none;
 }
 
-.weaponIcon {
+.weapon-icon {
   margin-top: 60px;
   width: 60%;
   fill: rgba(255,255,255,0.3);
 }
 
-.roomIcon {
+.room-icon {
   margin-top: 70px;
   width: 70%;
   fill: rgba(255,255,255,0.3);
 }
 
-.deckTitle {
+.deck-title {
   background-color: #8d0801;
   color: white;
   font-weight: bold;
@@ -107,7 +107,7 @@ button {
   margin: 20px auto;
 }
 
-.revealMessage {
+.reveal-message {
   font-size: 22px;
   color: #ffffff;
   text-align: center;
@@ -128,7 +128,7 @@ button {
   border-radius: 16px;
 }
 
-.detectiveImage {
+.detective-image {
   width: auto;
   margin-left: 30px;
 }
@@ -210,11 +210,11 @@ button {
   .reveal {
     margin-left: 20px;
   }
-  .revealMessage {
+  .reveal-message {
     font-size: 16px;
     text-align: left;
   }
-  .detectiveImage {
+  .detective-image {
     width: 100px;
     height: auto;
     margin-left: 0;
