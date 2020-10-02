@@ -1,13 +1,13 @@
 # Cluedo - Mystery Randomizer
 
-Replace this readme with your own information about your project.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Project Cluedo is about making a boardgame using three decks of cards. Objectives of Cluedo projects is to learn how to use Object, Array and connect javascript with HTLM.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+To improve the code I would create functions to replace repetative codes or execute some similar behaviours of different arrays.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://detectivegame.netlify.app/
+
