@@ -9,7 +9,7 @@ const mrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
   favouriteWeapon: 'Knife',
-}
+};
 
 const profPlum = {
   firstName: 'Victor',
@@ -20,7 +20,7 @@ const profPlum = {
   image: 'assets/plum.png',
   occupation: 'Psychiatrist',
   favouriteWeapon: 'Dumbbell',
-}
+};
 
 const msScarlet = {
   firstName: 'Cassandra',
@@ -31,7 +31,7 @@ const msScarlet = {
   image: 'assets/scarlet.png',
   occupation: 'Escort girl',
   favouriteWeapon: 'Poison',
-}
+};
 
 const mrsPeacock = {
   firstName: 'Eleanor',
@@ -42,7 +42,7 @@ const mrsPeacock = {
   image: 'assets/peacock.png',
   occupation: 'Teacher',
   favouriteWeapon: 'Trophy',
-}
+};
 
 const colMustard = {
   firstName: 'Jack',
@@ -53,7 +53,7 @@ const colMustard = {
   image: 'assets/mustard.png',
   occupation: 'Retired soldier',
   favouriteWeapon: 'Pistol',
-}
+};
 
 const mrsWhite = {
   firstName: 'Mrs',
@@ -64,7 +64,7 @@ const mrsWhite = {
   image: 'assets/white.png',
   occupation: 'Waitress',
   favouriteWeapon: 'Candlestick',
-}
+};
 
 // Weapons
 
@@ -74,7 +74,7 @@ const rope = {
   id: 'Rope',
   favouriteRoom: 'Hall',
   image: 'assets/rope.png',
-}
+};
 
 const knife = {
   name: 'Knife',
@@ -82,7 +82,7 @@ const knife = {
   id: 'Knife',
   favouriteRoom: 'Kitchen',
   image: 'assets/knife.png',
-}
+};
 
 const candlestick = {
   name: 'Candlestick',
@@ -90,7 +90,7 @@ const candlestick = {
   id: 'Candlestick',
   favouriteRoom: 'Ballroom',
   image: 'assets/candlestick.png',
-}
+};
 
 const dumbbell = {
   name: 'Dumbbell',
@@ -98,7 +98,7 @@ const dumbbell = {
   id: 'Dumbbell',
   favouriteRoom: 'Spa',
   image: 'assets/dumbbell.png',
-}
+};
 
 const poison = {
   name: 'Poison',
@@ -106,7 +106,7 @@ const poison = {
   id: 'Poison',
   favouriteRoom: 'Patio',
   image: 'assets/poison.png',
-}
+};
 
 const axe = {
   name: 'Axe',
@@ -114,7 +114,7 @@ const axe = {
   id: 'Axe',
   favouriteRoom: 'Theater',
   image: 'assets/axe.png',
-}
+};
 
 const bat = {
   name: 'Bat',
@@ -122,7 +122,7 @@ const bat = {
   id: 'Bat',
   favouriteRoom: 'Billiard Room',
   image: 'assets/bat.png',
-}
+};
 
 const trophy = {
   name: 'Trophy',
@@ -130,7 +130,7 @@ const trophy = {
   id: 'Trophy',
   favouriteRoom: 'Living Room',
   image: 'assets/trophy.png',
-}
+};
 
 const pistol = {
   name: 'Pistol',
@@ -138,84 +138,84 @@ const pistol = {
   id: 'Pistol',
   favouriteRoom: 'Study',
   image: 'assets/pistol.png',
-}
+};
 
 // Rooms
 
 const diningRoom = {
   name: 'Dining Room',
   image: 'assets/dining-room.png',
-}
+};
 
 const conservatory = {
   name: 'Conservatory',
   image: 'assets/conservatory.png',
-}
+};
 
 const kitchen = {
   name: 'Kitchen',
   image: 'assets/kitchen.png',
-}
+};
 
 const study = {
   name: 'Study',
   image: 'assets/study.png',
-}
+};
 
 const library = {
   name: 'Library',
   image: 'assets/library.png',
-}
+};
 
 const billiardRoom = {
   name: 'Billiard Room',
   image: 'assets/billiard-room.png',
-}
+};
 
 const lounge = {
   name: 'Lounge',
   image: 'assets/lounge.png',
-}
+};
 
 const ballroom = {
   name: 'Ballroom',
   image: 'assets/ball-room.png',
-}
+};
 
 const hall = {
   name: 'Hall',
   image: 'assets/hall.png',
-}
+};
 
 const spa = {
   name: 'Spa',
   image: 'assets/spa.png',
-}
+};
 
 const livingRoom = {
   name: 'Living Room',
   image: 'assets/living-room.png',
-}
+};
 
 const observatory = {
   name: 'Observatory',
   image: 'assets/observatory.png',
-}
+};
 
 const theater = {
   name: 'Theater',
   image: 'assets/theater.png',
-}
+};
 
 const guestHouse = {
   name: 'Guest House',
   image: 'assets/guest-house.png',
-}
+};
 
 const patio = {
   name: 'Patio',
   image: 'assets/patio.png',
-}
+};
 
 // Arrays
 
@@ -285,18 +285,18 @@ const roomLoader = document.getElementById('roomLoader');
 
 const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
-}
+};
 
 // Mystery storage
 
 const mystery = {
-  killer: undefined,
-  favouriteWeapon: undefined,
-  pickedWeapon: undefined,
-  weapon: undefined,
-  favouriteRoom: undefined,
-  pickedRoom: undefined,
-  room: undefined,
+  killer: null,
+  favouriteWeapon: null,
+  pickedWeapon: null,
+  weapon: null,
+  favouriteRoom: null,
+  pickedRoom: null,
+  room: null,
 };
 
 // This function will change favourite weapons of each person
@@ -305,10 +305,10 @@ const shuffleFavouriteWeapon = () => {
   suspects.forEach((item) => {
     item.favouriteWeapon = randomSelector(weapons).name;
   });
-  if (mystery.killer !== undefined) {
+  if (mystery.killer) {
     mystery.favouriteWeapon = mystery.killer.favouriteWeapon;
     killerFavouriteWeapon.innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
-  }
+  };
 };
 
 // Actions related to Killer deck
@@ -342,7 +342,7 @@ killerCard.onclick = killerAnimation;
 // Actions related to Weapon deck
 
 const favouriteWeaponAnimation = () => {
-  if (mystery.killer === undefined) {
+  if (mystery.killer === null) {
     revealedMystery.innerHTML = ('Pick a killer first!');
   } else {
     weaponLoader.style.display = "block";
@@ -381,7 +381,7 @@ const pickFavouriteWeapon = (suspect) => {
   mystery.weapon = mysteryWeapon;
   mystery.favouriteRoom = mysteryWeapon.favouriteRoom;
   weaponLoader.style.display = "none";
-  weaponCard.style.background = "#808080";
+  weaponCard.classList.add('weapon-deck-clicked');
   weaponName.innerHTML = mystery.weapon.name;
   weaponWeight.innerHTML = `Weight: ${mystery.weapon.weight} oz`;
   weaponImage.style.display = "inline-block";
@@ -394,9 +394,9 @@ weaponCard.onclick = favouriteWeaponAnimation;
 // Actions related to Room deck
 
 const favouriteRoomAnimation = () => {
-  if (mystery.killer === undefined) {
+  if (!mystery.killer) {
     revealedMystery.innerHTML = ('Pick a killer first!');
-  } else if (mystery.weapon === undefined) {
+  } else if (!mystery.weapon) {
     revealedMystery.innerHTML = ('Pick a weapon first!');
   } else {
     roomLoader.style.display = "block";
@@ -431,7 +431,7 @@ const pickFavouriteRoom = (weapon) => {
   });
   mystery.room = mysteryRoom;
   roomLoader.style.display = "none";
-  roomCard.style.background = "#C0C0C0";
+  roomCard.classList.add('room-deck-clicked');
   roomName.innerHTML = mystery.room.name;
   roomImage.style.display = "inline-block";
   roomImage.src = mystery.room.image;
@@ -442,11 +442,11 @@ roomCard.onclick = favouriteRoomAnimation;
 // Functions related to revelation of mystery 
 
 const revealMystery = () => {
-  if (mystery.killer === undefined || mystery.weapon === undefined || mystery.room === undefined) {
-    revealedMystery.innerHTML = ('Make sure you have picked a killer, a weapon and a room!');
-  } else {
+  if (mystery.killer && mystery.weapon && mystery.room) {
     revealedMystery.innerHTML = (`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`);
-  }
+  } else {
+    revealedMystery.innerHTML = ('Make sure you have picked a killer, a weapon and a room!');
+  };
 };
 
 const resetMystery = () => {

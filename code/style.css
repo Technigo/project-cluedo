@@ -1,9 +1,11 @@
-html {
+/* html {
   height: 100%;
-}
+} */
 
 body {
   margin: 0;
+  height: 1800px;
+  position: relative;
   font-family: Arial, Helvetica, sans-serif;
   background-image: url("./assets/mahogny.jpg");
 }
@@ -123,6 +125,10 @@ p {
   box-shadow:10px 10px 5px 0px rgba(20,20,20,0.75);
 }
 
+.weapon-deck-clicked {
+  background: #808080;
+}
+
 .room-deck {
   width: 250px;
   height: 400px;
@@ -135,6 +141,10 @@ p {
   padding-top: 20px;
   border-radius: 16px;
   box-shadow:10px 10px 5px 0px rgba(20,20,20,0.75);
+}
+
+.room-deck-clicked {
+  background: #C0C0C0;
 }
 
 .mystery {
@@ -160,6 +170,8 @@ button {
 
 footer {
   width: 100%;
+  position: absolute;
+  bottom: 0;
   background-color: #000;
   color: #ccc;
   text-align: center;
@@ -191,6 +203,10 @@ a {
 /* MEDIA QUERIES */
 
 @media (min-width: 768px) {
+  body {
+    height: 1300px;
+  }
+  
   header {
     height: 75px;
   }
@@ -210,11 +226,11 @@ a {
   }
 
   .killer-deck {
-    margin: 0 45px 40px 45px;
+    margin: 0 43px 40px 43px;
   }
 
   .weapon-deck {
-    margin: 0 45px 40px 45px;
+    margin: 0 43px 40px 43px;
   }
 
   .revelation {
@@ -227,6 +243,10 @@ a {
 }
 
 @media (min-width: 1024px) {
+  body {
+    height: 100vh;
+  }
+
   header {
     height: 100px;
   }
@@ -236,7 +256,7 @@ a {
   }
 
   main {
-    top: 100px;
+    top: 150px;
   }
 
   .killer-deck {
