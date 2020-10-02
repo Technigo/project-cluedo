@@ -101,7 +101,7 @@ const suspects = [
   colonelMustard,
   mrsWhite
 ]
-suspects.forEach((element) => console.log(element));
+
 
 //Array of weapons
 const weapons = [
@@ -115,7 +115,7 @@ const weapons = [
   trophy,
   pistol
 ]
-weapons.forEach((element) => console.log(element));
+
 
 //Array of rooms
 const rooms = [
@@ -178,7 +178,6 @@ const pickRoom = () => {
 
 //Function that reveals the mystery
 const revealMystery = () => {
-  console.log(`The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name} `)
   document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}in the ${mystery.room} with a ${mystery.weapon.name} `
 
 }
