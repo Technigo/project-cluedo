@@ -311,7 +311,7 @@ const shuffleWeapons = () => {
    const calculatedWeapon = [...weapons, ...favWeaponArray]; //Merge arrays using the spread operator to copy over one array into another
   return calculatedWeapon;
  }; 
-
+ 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
   if (!killerIsPicked) {
