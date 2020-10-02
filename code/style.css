@@ -12,12 +12,12 @@ h1 {
   letter-spacing: 30px;
   border: 10px double yellowgreen;
   padding: 50px;
-  margin: 0px 300px 0px 300px;
+  margin: 0px 300px;
   font-size: 60px;
   color: yellow;
 }
 
-h3,h2 {
+h3{
   font-family: 'Mystery Quest', cursive;
   text-align: center;
   color: whitesmoke;
@@ -78,8 +78,7 @@ button {
 }
 
 footer {
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0px;
   border-top: 10px double white;
   border-bottom: 10px double white;
-  
 }
