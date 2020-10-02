@@ -1,162 +1,162 @@
 const Marcel = {
-  firstName: 'Marcel',
-  lastName: 'the Monkey',
-  description: 'He was born to steal',
-  age: 3,
-  image: 'assets/marcel.png',
-  occupation: 'Monkey',
-  favouriteFood: 'Banana'
+  FirstName: 'Marcel',
+  LastName: 'the Monkey',
+  Description: 'He was born to steal',
+  Age: 3,
+  Image: 'assets/marcel.png',
+  Occupation: 'Monkey',
+  FavouriteFood: 'Banana'
 };
 
 const Ross = {
-  firstName: 'Ross',
-  lastName: 'Geller',
-  description: 'A palaeontologist working at the Museum of Natural History and in love with Rachel.',
-  age: 27,
-  image: 'assets/ross.png',
-  occupation: 'Palaeontologist',
-  favouriteFood: 'Muffin'
+  FirstName: 'Ross',
+  LastName: 'Geller',
+  Description: 'A palaeontologist working at the Museum of Natural History and in love with Rachel.',
+  Age: 27,
+  Image: 'assets/ross.png',
+  Occupation: 'Palaeontologist',
+  FavouriteFood: 'Muffin'
 };
 
 const Chandler = {
-  firstName: 'Chandler',
-  lastName: 'Muriel Bing',
-  description: 'Making jokes whe he feels himself uncomfortable and loves Monica.',
-  age: 27,
-  image: 'assets/chandler.png',
-  occupation: 'Transponster',
-  favouriteFood: 'Pizza'
+  FirstName: 'Chandler',
+  LastName: 'Muriel Bing',
+  Description: 'Making jokes whe he feels himself uncomfortable and loves Monica.',
+  Age: 27,
+  Image: 'assets/chandler.png',
+  Occupation: 'Transponster',
+  FavouriteFood: 'Pizza'
 };
 
 const Monica = {
-  firstName: 'Monica',
-  lastName: 'Geller',
-  description: 'Monica was overweight as a child.',
-  age: 26,
-  image: 'assets/monica.png',
-  occupation: 'Chef',
-  favouriteFood: 'Kiwi-lime pie'
+  FirstName: 'Monica',
+  LastName: 'Geller',
+  Description: 'Monica was overweight as a child.',
+  Age: 26,
+  Image: 'assets/monica.png',
+  Occupation: 'Chef',
+  FavouriteFood: 'Kiwi-lime pie'
 };
 
 const Rachel = {
-  firstName: 'Rachel',
-  lastName: 'Green',
-  description: 'A fashion enthusiast and Monica Gellers best friend from childhood.',
-  age: 25,
-  image: 'assets/rachel.png',
-  occupation: 'Waitress',
-  favouriteFood: 'Trifle'
+  FirstName: 'Rachel',
+  LastName: 'Green',
+  Description: 'A fashion enthusiast and Monica Gellers best Friend from childhood.',
+  Age: 25,
+  Image: 'assets/rachel.png',
+  Occupation: 'Waitress',
+  FavouriteFood: 'Trifle'
 };
 
 const Phoebe = {
-  firstName: 'Phoebe',
-  lastName: 'Buffay',
-  description: 'She writes and sings her own strange songs, accompanying herself on the guitar.',
-  age: 27,
-  image: 'assets/phoebe.png',
-  occupation: 'A self-taught musician.',
-  favouriteFood: 'Nothing which had a name'
+  FirstName: 'Phoebe',
+  LastName: 'Buffay',
+  Description: 'She writes and sings her own strange songs, accompanying herself on the guitar.',
+  Age: 27,
+  Image: 'assets/phoebe.png',
+  Occupation: 'A self-taught musician.',
+  FavouriteFood: 'Nothing which had a Name'
 };
 
 const Hamburger = {
-  name: 'Hamburger',
-  taste: 'Taste: 9',
-  image: 'assets/hamburger.jpg'
+  Name: 'Hamburger',
+  Taste: 'Taste: 9',
+  Image: 'assets/hamburger.jpg'
 }
 
 const RachelTrifle = {
-  name: "Rachel's Trifle",
-  taste: 'Taste: 2',
-  image: 'assets/trifle.jpg'
+  Name: "Rachel's Trifle",
+  Taste: 'Taste: 2',
+  Image: 'assets/trifle.jpg'
 }
 
 const Turkey = {
-  name: 'Turkey',
-  taste: 'Taste: 10',
-  image: 'assets/turkey.jpeg'
+  Name: 'Turkey',
+  Taste: 'Taste: 10',
+  Image: 'assets/turkey.jpeg'
 }
 
-const RedBagel = {
-  name: 'Red Bagel',
-  taste: 'Taste: 6',
-  image: 'assets/bagel.jpg'
+const RedBAgel = {
+  Name: 'Red BAgel',
+  Taste: 'Taste: 6',
+  Image: 'assets/bAgel.jpg'
 }
 
 const Pizza = {
-  name: 'Pizza',
-  taste: 'Taste: 7',
-  image: 'assets/pizza.png'
+  Name: 'Pizza',
+  Taste: 'Taste: 7',
+  Image: 'assets/pizza.png'
 }
 
 const Muffin = {
-  name: 'Muffin',
-  taste: 'Taste: 4',
-  image: 'assets/muffin.jpg'
+  Name: 'Muffin',
+  Taste: 'Taste: 4',
+  Image: 'assets/muffin.jpg'
 }
 
 const KiwiPie = {
-  name: 'Kiwi Pie',
-  taste: 'Taste: 3',
-  image: 'assets/pie.jpg'
+  Name: 'Kiwi Pie',
+  Taste: 'Taste: 3',
+  Image: 'assets/pie.jpg'
 }
 
 const Sandwich = {
-  name: 'Sandwich',
-  taste:'Taste: 5',
-  image: 'assets/sandwich.jpg'
+  Name: 'Sandwich',
+  Taste:'Taste: 5',
+  Image: 'assets/sandwich.jpg'
 }
 
 const MonicaDiningRoom = {
-  name: "Monica's Dining Room",
-  image: 'assets/mdr.jpg'
+  Name: "Monica's Dining Room",
+  Image: 'assets/mdr.jpg'
 }
 
 const RossApartment = {
-  name: "Ross' Apartment",
-  image: 'assets/ra.jpg'
+  Name: "Ross' Apartment",
+  Image: 'assets/ra.jpg'
 }
 
 const ChandlerDiningRoom = {
-  name: "Chandler's Dining Room",
-  image: 'assets/cdr.jpg'
+  Name: "Chandler's Dining Room",
+  Image: 'assets/cdr.jpg'
 }
 
 const RachelRoom = {
-  name: "Rachel's Room",
-  image: 'assets/rbr.jpg'
+  Name: "Rachel's Room",
+  Image: 'assets/rbr.jpg'
 }
 
 const MonicaRoom = {
-  name: "Monica's Room",
-  image: 'assets/mbr.png'
+  Name: "Monica's Room",
+  Image: 'assets/mbr.png'
 }
 
 const MonicaLivingRoom = {
-  name: "Monica's Living room",
-  image: 'assets/mlr.jpg'
+  Name: "Monica's Living room",
+  Image: 'assets/mlr.jpg'
 }
 
 const CentralPerk = {
-  name: "Central Perk",
-  image: 'assets/cp.jpg'
+  Name: "Central Perk",
+  Image: 'assets/cp.jpg'
 }
 
 const Balcony = {
-  name: "the Balcony",
-  image: 'assets/balcony.jpg'
+  Name: "the Balcony",
+  Image: 'assets/balcony.jpg'
 }
 
 const Hall = {
-  name: "the Hall",
-  image: 'assets/stairwell.jpg'
+  Name: "the Hall",
+  Image: 'assets/stairwell.jpg'
 }
 
 const ChandlerLivingRoom = {
-  name: "Chandler's Living Room",
-  image: 'assets/clr.jpg'
+  Name: "Chandler's Living Room",
+  Image: 'assets/clr.jpg'
 }
 
-const friend = [
+const Friend = [
   Ross,
   Chandler,
   Monica,
@@ -165,18 +165,18 @@ const friend = [
   Marcel
 ];
 
-const foods = [
+const Foods = [
   Hamburger,
   RachelTrifle,
   Turkey,
-  RedBagel,
+  RedBAgel,
   Pizza,
   Muffin,
   KiwiPie,
   Sandwich,
 ];
 
-const rooms = [
+const Rooms = [
   MonicaDiningRoom,
   RossApartment,
   ChandlerDiningRoom, 
@@ -194,44 +194,44 @@ const randomSelector = array => {
 }
 
 const mystery = {
-  friend: undefined,
-  foods: undefined,
-  rooms: undefined
+  Friend: null,
+  Foods: null,
+  Rooms: null
 }
 
 const pickFriends = () => {
-  mystery.friends = randomSelector(friend)
-  document.getElementById('friendsName').innerHTML = `${mystery.friends.firstName} ${mystery.friends.lastName}`;
-  document.getElementById('friendsAge').innerHTML = `${mystery.friends.age}`;
-  document.getElementById('friendsOccupation').innerHTML = mystery.friends.occupation;
-  document.getElementById('friendsDescription').innerHTML = mystery.friends.description;
-  document.getElementById('friendsImage').src = mystery.friends.image
+  mystery.Friends = randomSelector(Friend)
+  document.getElementById('FriendsName').innerHTML = mystery.Friends.FirstName, mystery.Friends.LastName;
+  document.getElementById('FriendsAge').innerHTML = mystery.Friends.Age;
+  document.getElementById('FriendsOccupation').innerHTML = mystery.Friends.Occupation;
+  document.getElementById('FriendsDescription').innerHTML = mystery.Friends.Description;
+  document.getElementById('FriendsImage').src = mystery.Friends.Image
 }
 
-document.getElementById('friendsCard').onclick = pickFriends
+document.getElementById('FriendsCard').onclick = pickFriends
 
 const pickFoods = () => {
-  mystery.foods = randomSelector(foods)
-  document.getElementById('foodsName').innerHTML = mystery.foods.name;
-  document.getElementById('foodsImage').src = mystery.foods.image
-  document.getElementById('foodsTaste').innerHTML = mystery.foods.taste
+  mystery.Foods = randomSelector(Foods)
+  document.getElementById('FoodsName').innerHTML = mystery.Foods.Name;
+  document.getElementById('FoodsImage').src = mystery.Foods.Image;
+  document.getElementById('FoodsTaste').innerHTML = mystery.Foods.Taste
 }
 
-document.getElementById('foodCard').onclick = pickFoods
+document.getElementById('FoodCard').onclick = pickFoods
 
 const pickRooms = () => {
-  mystery.rooms = randomSelector(rooms)
-  document.getElementById('roomsName').innerHTML = `${mystery.rooms.name}`
-  document.getElementById('roomsImage').src = mystery.rooms.image
+  mystery.Rooms = randomSelector(Rooms)
+  document.getElementById('RoomsName').innerHTML = mystery.Rooms.Name;
+  document.getElementById('RoomsImage').src = mystery.Rooms.Image
 }
 
-document.getElementById('roomsCard').onclick = pickRooms
+document.getElementById('RoomsCard').onclick = pickRooms
 
 const revealMystery = () => {
-  if (mystery.friends === undefined || mystery.foods === undefined || mystery.rooms === undefined ){
+  if (!mystery.Friends || !mystery.Foods || !mystery.Rooms ){
     document.getElementById('mystery').innerHTML = "You must find Joey's food!"
   } else {
-    document.getElementById('mystery').innerHTML = `The ONE who ate Joey's ${mystery.foods.name} was ${mystery.friends.firstName} ${mystery.friends.lastName}, in ${mystery.rooms.name}.`
+    document.getElementById('mystery').innerHTML = `The ONE who ate Joey's ${mystery.Foods.Name} was ${mystery.Friends.FirstName} ${mystery.Friends.LastName}, in ${mystery.Rooms.Name}.`
   }
 }
-document.getElementById('cookButton').onclick = revealMystery
+document.getElementById('CookButton').onclick = revealMystery

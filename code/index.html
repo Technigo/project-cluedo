@@ -4,51 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="icon" sizes="16x16
-    " href="./assets/favicon.png">
+    <link rel="icon" sizes="16x16" href="./assets/favicon.png">
     <link rel="stylesheet" href="style.css" />
     <title>Technigo Project Cluedo powered by Friends</title>
   </head>
   <body>
-    <div class="main-container">
+    <div class="mainContainer">
       <h1>Friends Mystery</h1>
       <h2>Find out who's the one who ate Joey's food!</h2>
 
       <section class="cards"> 
         <!--PERSON CARD-->
-        <article class="friends-container" id="friendsCard"> 
-          <p class="card-name">Who?</p>
-            <div id="container1"></div>
-          <img id="friendsImage" src="" height="200" />
-          <p id="friendsName"></p>
-          <p id="friendsAge"></p>
-          <p id="friendsOccupation"></p>
-          <p id="friendsDescription"></p>
-          <p id="friendsFavoriteFood"></p>
+        <article class="friendsContainer" id="FriendsCard"> 
+          <p class="cardName">Who?</p>
+            <div id="Container1"></div>
+          <img id="FriendsImage" class="FriendsImage" src="" height="200" />
+          <p id="FriendsName"></p>
+          <p id="FriendsAge"></p>
+          <p id="FriendsOccupation"></p>
+          <p id="FriendsDescription"></p>
+          <p id="FriendsFavoriteFood"></p>
         </article>
         <!--FOOD CARD-->
-        <article class="foods-container" id="foodCard"> 
-          <p class="card-name">What?</p>
-            <div id="container2"></div>
-          <img id="foodsImage" src="" height="200" />
-          <p id="foodsName"></p>
-          <p id="foodsTaste"></p>
+        <article class="foodsContainer" id="FoodCard"> 
+          <p class="cardName">What?</p>
+            <div id="Container2"></div>
+          <img id="FoodsImage" class="foodsImage" src="" height="200" />
+          <p id="FoodsName"></p>
+          <p id="FoodsTaste"></p>
         </article>
         <!--ROOM CARD-->
-        <article class="rooms-container" id="roomsCard"> 
-          <p class="card-name">Where?</p>
-            <div id="container3"></div>
-            <img id="roomsImage" src="" height="200"/>
-          <p id="roomsName"></p>
+        <article class="roomsContainer" id="RoomsCard"> 
+          <p class="cardName">Where?</p>
+            <div id="Container3"></div>
+            <img id="RoomsImage" class="roomsImage" src="" height="200"/>
+          <p id="RoomsName"></p>
         </article>
       </section>
 
-      <h2 id="mystery"></h2>
+      <h2 id="mystery" class="mystery"></h2>
 
-      <button id="cookButton">WHO WAS THE ONE WHO ATE JOEY'S FOOD?</button>
+      <button id="CookButton" class="cookButton">WHO WAS THE ONE WHO ATE JOEY'S FOOD?</button>
 
     <div class="refresh">
-      <button id="refreshPage" onclick="window.location.reload();">
+      <button id="RefreshPage" class="refreshPage" onclick="window.location.reload();">
         JEOY DOESN'T SHARE FOOD
       </button>
     </div>
