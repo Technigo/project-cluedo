@@ -1,9 +1,9 @@
+//Variables that are used in the pickKiller etc-functions to be able to just click once on the cards.
 let killerIsPicked = false;
 let weaponIsPicked = false;
 let roomIsPicked = false;
 
-
-// STEP 1 - CREATE OBJECTS FOR ALL THE SUSPECTS:
+//OBJECTS FOR ALL THE SUSPECTS:
 const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
@@ -268,12 +268,12 @@ const rooms = [
   patio
 ];
 
-// THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
-// YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
-//This code generates a random index number. And array.length ensures that the number is relevant to the array in question. 
-//Math.random generates a random number between 0 - 1. If we were to multiply this by 10 then we would get a random number 
-//between 1 - 10. But by using this code it will multiply that random number by the length of the array. 
-//And means that the index number will be between 0 - 11 if the array in question has a length of 12.
+/* THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
+YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
+This code generates a random index number. And array.length ensures that the number is relevant to the array in question. 
+Math.random generates a random number between 0 - 1. If we were to multiply this by 10 then we would get a random number 
+between 1 - 10. But by using this code it will multiply that random number by the length of the array. 
+And means that the index number will be between 0 - 11 if the array in question has a length of 12. */
 const randomSelector = array => { 
   return array[Math.floor(Math.random() * array.length)]
 }
@@ -289,27 +289,25 @@ const mystery = {
 const shuffleWeapons = () => {
   suspects.forEach(suspect => {
     suspect.favorite = randomSelector(weapons).name 
-    //Van suggested I write suspect.favorite = randomSelector(weapons)
-    //This would give me access to the entire weapon object that this suspect prefers, not just the name. 
-    //And that could come in handy later. But if I change this I get [object, object] instead of a weapon on the card. Why?
+    /* Van suggested I write: suspect.favorite = randomSelector(weapons)
+    This would give me access to the entire weapon object that this suspect prefers, not just the name. 
+    And that could come in handy later. But if I change this I get [object, object] instead of a weapon on the card. Why? */
   })
 }
 
-//TASK: Make use of additional favouriteWeapon property created in 🔴 Red level. 
-//Change logic behind generating weapon so it's not completely random anymore and it's more likely to 
-//draw weapon which is the favourite one of a suspect generated in previous step. 
-//You can do that by creating new array of weapon objects, where favourite weapon object occurs more than one time 
-//so probability of picking it is higher.
+/*TASK: Change logic behind generating weapon so it's not completely random anymore and it's more likely to 
+draw weapon which is the favourite one of a suspect generated in previous step. 
+Do this by creating new array of weapon objects, where favourite weapon object occurs more than one time 
+so probability of picking it is higher. */
 
 //Function to increase probability of favourite weapon to be assigned to killer, when weapon-card is clicked:
-//THIS FUNCTION DOESN'T WORK???
  const increaseChanceOfFavorite = () => {
    const favWeapon = weapons.find(weapon => weapon.name === mystery.killer.favorite); //Specifies that fawWeapon is the same as 
 //The find() method: returns the value of the first element in the provided array that satisfies the provided testing function.
-   const favWeaponArray = new Array(7).fill(favWeapon); //Creates a new array with only 7 of favWeapon?
-//   console.log(favWeaponArray)
+   const favWeaponArray = new Array(7).fill(favWeapon); //Creates a new array with 7 items of favWeapon.
    const calculatedWeapon = [...weapons, ...favWeaponArray]; //Merge arrays using the spread operator to copy over one array into another
-  return calculatedWeapon;
+  console.log(calculatedWeapon);
+   return calculatedWeapon;
  }; 
  
 // This function will be invoked when you click on the killer card.
@@ -334,9 +332,9 @@ const pickKiller = () => {
     }, 2500)
   }
 };
-//Added eventlistener below instead of "onclick" in HTML. Don't know which way is the best way to do it. 
-//This only works if the eventlistener is outside of the function. 
-//First param: type of event. Second param: the function to call on event.
+/* Added eventlistener below instead of "onclick" in HTML.
+This only works if the eventlistener is outside of the function. 
+First param: type of event. Second param: the function to call on event. */
 document.getElementById('killerCard').addEventListener('click', pickKiller);
 
 //If pickKiller function is excecuted/card is clicked then excecute this function:
@@ -345,11 +343,10 @@ const pickWeapon = () => {
     document.getElementById('weaponLoader').style.visibility='visible'
     setTimeout(function () {
       document.getElementById('weaponLoader').style.visibility='hidden'
-      //mystery.weapon = randomSelector(weapons); //Randomly select a weapon from weapons and add it to the mystery object
-      //Trying to call increaseChanceOfFavorite-function here below: Is this right?
+      /* calling increaseChanceOfFavorite-function: 
+      This increases chance for weapon to be the weapon assigned to the killer after killer-card is clicked. */
       let chanceFavWeapon = increaseChanceOfFavorite();
-      mystery.weapon = randomSelector(chanceFavWeapon); //Don't know if this does what I want it to? Sometimes when I click weapon-card there is no weapon?
-
+      mystery.weapon = randomSelector(chanceFavWeapon); 
       document.getElementById('weaponCard').style.background = mystery.weapon.color
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
   document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`
@@ -361,14 +358,15 @@ const pickWeapon = () => {
 };
 document.getElementById('weaponCard').addEventListener('click', pickWeapon);
 
-//If pickKiller AND pickWeapon function is excecuted AND if room isn't picked, then excecute this function on the pickroom:
+/* If pickKiller AND pickWeapon-function is excecuted AND if room isn't picked, then excecute this function
+ on the pickroom: */
 const pickRoom = () => {
   if (killerIsPicked && weaponIsPicked && !roomIsPicked) {
     document.getElementById('roomLoader').style.visibility='visible'
-    document.getElementById('revealButton').style.visibility='visible'//Makes the reveal-button visible when the room-card has been clicked.
+    document.getElementById('revealButton').style.visibility='visible'//Makes the reveal-button visible.
     setTimeout(function () {
       document.getElementById('roomLoader').style.visibility='hidden'
-      mystery.room = randomSelector(rooms);//Randomly select a room from rooms and add it to the mystery object
+      mystery.room = randomSelector(rooms);//Randomly select a room from rooms and add it to the mystery object.
       document.getElementById('roomName').innerHTML = `${mystery.room.name}`
       document.getElementById('roomImage').src = `${mystery.room.image}`
       roomIsPicked = true
@@ -377,7 +375,7 @@ const pickRoom = () => {
 };
 document.getElementById('roomCard').addEventListener('click', pickRoom); 
 
-// STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. 
+//Function to be invoked when you click the REVEAL MYSTERY-button: 
 const revealMystery = (mystery) => {
   // If the text is "PLAY AGAIN?" then the mystery has already been revealed
   if (document.getElementById('revealButton').innerText === `PLAY AGAIN?` ) {
