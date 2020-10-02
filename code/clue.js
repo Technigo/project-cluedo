@@ -211,10 +211,8 @@ const pickRoom = () => {
 
 // STEP 4 
 const revealMystery = () => {
-  document.getElementById(
-    "mystery"
-  ).innerHTML = `The murder was comitted by ${mystery.killer.firstName} in the ${mystery.room} with a ${mystery.weapon.name}`;
+  document.getElementById("mystery").innerHTML = `The murder was comitted by ${mystery.killer.firstName} in the ${mystery.room} with a ${mystery.weapon.name}`;
   document.getElementById("mysteryBtn").onclick = revealMystery;
-  //Clears the revealMystery, need to setTimeOut
-  location.reload()
+  //Function that reloads page 10s after revalMystery button is clicked
+  setTimeout(() => window.location.reload(), 10000);
 };
