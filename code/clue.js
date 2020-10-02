@@ -1,7 +1,7 @@
 //variables to prevent clicking cards in wrong order. 
-let killerIsPicked = false;
-let weaponIsPicked = false;
-let roomIsPicked = false; 
+let isKillerPicked = false;
+let isWeaponPicked = false;
+let isRoomPicked = false; 
 
 //objects for suspects
 const mrGreen = {
@@ -13,7 +13,7 @@ const mrGreen = {
   image: 'assets/green.png',
   occupation: 'Entrepreneur',
   favouriteWeapon: 'rope' 
-}
+};
 
 const professorPlum = {
   firstName: 'Victor',
@@ -24,7 +24,7 @@ const professorPlum = {
   image: 'assets/plum.png',
   occupation: 'Retired',
   favouriteWeapon: 'pistol' 
-}
+};
 
 const missScarlet = {
   firstName: 'Cassandra',
@@ -35,7 +35,7 @@ const missScarlet = {
   image: 'assets/scarlet.png',
   occupation: 'Actress',
   favouriteWeapon: 'knife'
-}
+};
 
 const mrsPeacock = {
   firstName: 'Eleanor',
@@ -46,7 +46,7 @@ const mrsPeacock = {
   image: 'assets/peacock.png',
   occupation: 'Socialite',
   favouriteWeapon: 'candlestick' 
-}
+};
 
 const colonelMustard = {
   firstName: 'Colonel',
@@ -57,7 +57,7 @@ const colonelMustard = {
   image: 'assets/mustard.png',
   occupation: 'Colonel',
   favouriteWeapon: 'axe' 
-}
+};
 
 const mrsWhite = {
   firstName: 'Mrs',
@@ -68,7 +68,7 @@ const mrsWhite = {
   image: 'assets/white.png',
   occupation: 'Housekeeper',
   favouriteWeapon: 'posion' 
-}
+};
 
 //objects for weapons
 const rope = {
@@ -77,7 +77,7 @@ const rope = {
   article: 'a',
   id: 'rope',
   foundIn: 'guestHouse'
-}
+};
 
 const knife = {
   name: 'knife',
@@ -85,7 +85,7 @@ const knife = {
   article: 'a',
   id: 'knife',
   foundIn: 'kitchen'
-}
+};
 
 const candelstick = {
   name: 'candelstick',
@@ -93,7 +93,7 @@ const candelstick = {
   article: 'a',
   id: 'candelstick',
   foundIn: 'hall'
-}
+};
 
 const dumbbell = {
   name: 'dumbbell',
@@ -101,7 +101,7 @@ const dumbbell = {
   article: 'a',
   id: 'dumbbell',
   foundIn: 'spa'
-}
+};
 
 const poison = {
   name: 'poison',
@@ -109,7 +109,7 @@ const poison = {
   article: '',
   id: 'poison',
   foundIn: 'library'
-}
+};
 
 const axe = {
   name: 'axe',
@@ -117,7 +117,7 @@ const axe = {
   article: 'an',
   id: 'axe',
   foundIn: 'patio'
-}
+};
 
 const bat = {
   name: 'bat',
@@ -125,7 +125,7 @@ const bat = {
   article: 'a',
   id: 'bat',
   foundIn: 'billiardRoom'
-}
+};
 
 const trophy = {
   name: 'trophy',
@@ -133,7 +133,7 @@ const trophy = {
   article: 'a',
   id: 'trophy',
   foundIn: 'livingRoom'
-}
+};
 
 const pistol = {
   name: 'pistol',
@@ -141,83 +141,83 @@ const pistol = {
   article: 'a',
   id: 'pistol',
   foundIn: 'lounge'
-}
+};
 
 //objects for rooms
 const diningRoom = {
   name: 'dining Room',
-  id: 'dining room'
-}
+  id: 'diningRoom'
+};
 
 const conservatory = {
   name: 'conservatory',
   id: 'conservatory'
-}
+};
 
 const kitchen = {
   name: 'kitchen',
   id: 'kitchen'
-}
+};
 
 const study = {
   name: 'study',
   id: 'study'
-}
+};
 
 const library = {
   name: 'library',
   id: 'library'
-}
+};
 
 const billiardRoom = {
   name: 'billiard Room',
-  id: 'billiard Room'
-}
+  id: 'billiardRoom'
+};
 
 const lounge = {
   name: 'lounge',
   id: 'lounge'
-}
+};
 
 const ballroom = {
   name: 'ballroom',
   id: 'ballroom'
-}
+};
 
 const hall = {
   name: 'hall',
   id: 'hall'
-}
+};
 
 const spa = {
   name: 'spa',
   id: 'spa'
-}
+};
 
 const livingRoom = {
   name: 'living Room',
-  id: 'living Room'
-}
+  id: 'livingRoom'
+};
 
 const observatory = {
   name: 'observatory',
   id: 'observatory'
-}
+};
 
 const theater = {
   name: 'theater',
   id: 'theater'
-}
+};
 
 const guestHouse = {
   name: 'guest House',
-  id: 'guest House'
-}
+  id: 'guestHouse'
+};
 
 const patio = {
   name: 'patio',
   id: 'patio'
-}
+};
  
 const suspects = [
   mrGreen,
@@ -226,7 +226,7 @@ const suspects = [
   mrsPeacock,
   colonelMustard,
   mrsWhite
-]
+];
 
 const weapons = [
   rope,
@@ -238,7 +238,7 @@ const weapons = [
   bat,
   trophy,
   pistol
-]
+];
 
 const rooms = [
   diningRoom, 
@@ -256,12 +256,12 @@ const rooms = [
   theater, 
   guestHouse, 
   patio
-]
+];
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
-}
+  return array[Math.floor(Math.random() * array.length)];
+};
 
 //object that keeps mystery 
 const mystery = {
@@ -272,63 +272,61 @@ const mystery = {
 
 // This function will be invoked when you click the killer card.
 const pickKiller = () => {
-  if (!killerIsPicked) {
-    document.getElementById('loaderKiller').style.opacity = 1
-    setTimeout(function () {
-      document.getElementById('loaderKiller').style.opacity = 0
+  if (!isKillerPicked) {
+    document.getElementById('loaderKiller').style.opacity = 1;
+    setTimeout(() => {
+      document.getElementById('loaderKiller').style.opacity = 0;
       shuffleFavoriteWeapon();
-      mystery.killer = randomSelector(suspects)
-      document.getElementById('killerName').style.background = mystery.killer.color
+      mystery.killer = randomSelector(suspects);
+      document.getElementById('killerName').style.background = mystery.killer.color;
       document.getElementById(
         'killerName'
-      ).innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`
-      document.getElementById('killerAge').innerHTML = (`Age: ${mystery.killer.age}`)
-      document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
-      document.getElementById('killerDescription').innerHTML = `Descripton: ${mystery.killer.description}`
-      document.getElementById('killerFavouriteWeapon').innerHTML = `Preferred weapon: ${mystery.killer.favouriteWeapon}` //red level to check that the fav-weap changes by using function "shuffleFavouriteWeapon"
+      ).innerHTML = `Name: ${mystery.killer.firstName} ${mystery.killer.lastName}`;
+      document.getElementById('killerAge').innerHTML = (`Age: ${mystery.killer.age}`);
+      document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`;
+      document.getElementById('killerDescription').innerHTML = `Descripton: ${mystery.killer.description}`;
+      document.getElementById('killerFavouriteWeapon').innerHTML = `Preferred weapon: ${mystery.killer.favouriteWeapon}`; //red level to check that the fav-weap changes by using function "shuffleFavouriteWeapon"
       document.getElementById('killerImage').src = mystery.killer.image;
       document.getElementById('killerImage').style.opacity = 1;
-      killerIsPicked = true;
-    }, 2500)
-  }
+      isKillerPicked = true;
+    }, 2500);
+  };
 };
 
 // This function will be invoked when you click the weapon card.
 const pickWeapon = () => {
-  if (killerIsPicked && !weaponIsPicked) {
-    document.getElementById('loaderWeapon').style.opacity = 1
-    setTimeout(function() {
-      document.getElementById('loaderWeapon').style.opacity = 0
+  if (isKillerPicked && !isWeaponPicked) {
+    document.getElementById('loaderWeapon').style.opacity = 1;
+    setTimeout(() => {
+      document.getElementById('loaderWeapon').style.opacity = 0;
       let chanceFavWeapon = chanceOfFavouriteWeapon();
-      mystery.weapon = randomSelector(chanceFavWeapon)
-      document.getElementById('weaponName').innerHTML = `Type: ${mystery.weapon.name}`
-      document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`
-      weaponIsPicked = true
-    }, 2500)
+      mystery.weapon = randomSelector(chanceFavWeapon);
+      document.getElementById('weaponName').innerHTML = `Type: ${mystery.weapon.name}`;
+      document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`;
+      isWeaponPicked = true;
+    }, 2500);
   }else alert('Found out who the killer is first');
 };
 
 //This function will be invoked when you click  the room card.
 const pickRoom = () => {
-  if (weaponIsPicked && !roomIsPicked) {
-    document.getElementById('loaderRoom').style.opacity = 1
-    setTimeout(function() { 
-      document.getElementById('loaderRoom').style.opacity = 0
+  if (isWeaponPicked && !isRoomPicked) {
+    document.getElementById('loaderRoom').style.opacity = 1;
+    setTimeout(() => { 
+      document.getElementById('loaderRoom').style.opacity = 0;
       let chanceForSuspectedRoom = chanceOfRoom();
-      mystery.room = randomSelector(chanceForSuspectedRoom) 
-      document.getElementById('roomName').innerHTML = `Where murder was commited: ${mystery.room.name}`
-      roomsIsPicked = true
-    },2500)   
-  } else {
-    alert('Look at the other cards first!')
-  }
+      mystery.room = randomSelector(chanceForSuspectedRoom);
+      document.getElementById('roomName').innerHTML = `Where murder was commited: ${mystery.room.name}`;
+      roomsIsPicked = true;
+    },2500);
+  } else alert('Look at the other cards first!');
 };
 
 //select a random weapon from the weapons array and assigns it to suspects favouriteWeapon. 
 const shuffleFavoriteWeapon = () => {
   suspects.forEach(suspect => {
     let randomWeapon = randomSelector(weapons).id;
-    suspect.favouriteWeapon = randomWeapon
+    suspect.favouriteWeapon = randomWeapon;
   });
 };
 
@@ -350,25 +348,18 @@ const chanceOfRoom = () => {
 
 //revealMystery  will be invoked when you click the 'reveal the crime' button.
 const revealMystery = () => {
-  if (
-    mystery.killer === null ||
-    mystery.weapon === null ||
-    mystery.room === null 
-    ) {
+  if (!mystery.killer || !mystery.weapon || !mystery.room) {
     document.getElementById('mystery').innerHTML = `No mystery has been solved`;
     } else {
       let killer = mystery.killer.firstName + " " + mystery.killer.lastName;
       let weapon = mystery.weapon.article + " " + mystery.weapon.name;
       let room = mystery.room.name;
     document.getElementById('mystery').innerHTML = `The murder was comitted by ${killer} using ${weapon} in the ${room}!`; 
-    }
-}
+    };
+};
 
 //Function will be invoked when you click 'resume game' button
 const restartGame = () => {
   let confirmation = confirm(`Click OK if you want to restart the game?`);
-  
-  if (confirmation === true) {
-    location.reload();
-  }
+  if (confirmation) {location.reload()};
 };
