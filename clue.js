@@ -142,10 +142,10 @@ const randomSelector = array => {
 }
 
 // Object with a killer, a weapon and a room  
-let mystery = {
-  killer: 'unknown',
-  weapon: 'unknown',
-  room: 'none'
+const mystery = {
+  killer: null,
+  weapon: null,
+  room: null
 };
 
 // Function that will be invoked when you click on the killer card.
