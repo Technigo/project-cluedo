@@ -10,16 +10,16 @@ The overall difficulty I had was to understand how to write the functions and to
 
 Had difficulties to use keyframes animation with before and after and opacity. Hard to know how to get it to show/hide with JS. didn't know how to get the whole of the animation to show and hide. Ended up simplifying the animation and removing the before and after to be able to make it show and hide properly using CSS and JS.
 
-I find it hard to using google and SO to find answers when I get stuck on different things. Sometimes I find answers, but I am unable to implement them in my code.
+I find it hard using google and SO to find answers when I get stuck on different things. Sometimes I find answers, but I am unable to implement them in my code.
 
 This week overall has been a struggle for me, but I am nevertheless proud that I managed to finish the project and to complete the red level. The black level seems way out of reach for me at the level I am now.
 
 UPDATE: I worked some more on the code after the code-review and a code coach-session: 
 - I made the PLAY AGAIN-button work so the page reloads, which previously didn't work.
 - I changed the pickRoom-function so that the room card could only be picked once.
-- I made the black level-function to increase chance of favourite weapon on the weapon card to work.
-- I also fixed some minor things in CSS, such as the wrapper-image to cover the whole creen on different media queries, and I made the loader centered on the card at all media queries.
-- I cleaned the code, removed unused code and made single-line cmments in JS into multi-line.
+- I made the black level-function to increase chance of favourite weapon on the weapon card work.
+- I also fixed some minor things in CSS, such as the wrapper-image to cover the whole screen on different media queries, and I made the loader centered on the card at all media queries.
+- I cleaned the code, removed unused code and made single-line comments in JS into multi-line.
 
 
 ## View it live
