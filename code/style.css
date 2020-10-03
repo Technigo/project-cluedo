@@ -192,7 +192,7 @@ article p {
 @media(max-width:980px) {
   .main-wrapper {
     padding: 5px;
-    height: 100vh;
+    height: auto;
 
   }
   .cards {
@@ -201,6 +201,10 @@ article p {
 }
 
 @media(max-width:800px) {
+  p {
+    line-height: 1.6;
+  }
+
   .killer-deck,
   .weapon-deck,
   .room-deck {
