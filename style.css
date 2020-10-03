@@ -86,7 +86,6 @@ p.third-title-font{
   width: 250px;
   height: 400px;
   background: rgba(242, 27, 34, 0.8);
-  background-image: './assets/detective.png';
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
@@ -101,11 +100,16 @@ p.third-title-font{
   border-radius: 16px;
 }
 
+.killer-image{
+  height: 200px;
+}
+
 
 .weapon-image,
 .room-image
 {
-  margin: 35px 0px;
+  margin: 35px 0;
+  height: 130px;
 }
 
 button{
@@ -123,5 +127,5 @@ button{
   font-family: 'Oswald', sans-serif;
   font-size: 2em;
   text-align: center;
-  margin: 0px 50px 35px;
+  margin: 0 50px 35px;
 }

@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./style.css" />
   <title>Cluedo Reminisce</title>
 </head>
 
@@ -15,7 +15,7 @@
     <section class="cards">
       <article class="killer-deck" id="killerCard">
         <p class="title-font">KILLER</p>
-        <img id="killerImage" src="" height="200" />
+        <img class="killer-image" id="killerImage" />
         <p class="second-title-font" id="killerName"></p>
         <p class="third-title-font" id="killerAge"></p>
         <p class="third-title-font" id="killerOccupation"></p>
@@ -24,22 +24,20 @@
       </article>
       <article class="weapon-deck" id="weaponCard">
         <p class="title-font">WEAPON</p>
-        <img class="weapon-image" id="weaponImage" src="" height="130" />
+        <img class="weapon-image" id="weaponImage" />
         <p class="second-title-font" id="weaponName"></p>
         <p class="third-title-font" id="weaponWeight"></p>
       </article>
       <article class="room-deck" id="roomCard">
         <p class="title-font">ROOM</p>
-        <img class="room-image" id="roomImage" src="" height="130" />
+        <img class="room-image" id="roomImage" />
         <p class="second-title-font" id="roomName"></p>
       </article>
     </section>
 
   <h2 class="mystery-reveal-text" id="mystery"></h2>
-
   <button onclick="revealMystery()">REVEAL THE CRIME</button>
 
-  <script src="clue.js"></script>
+  <script src="./clue.js"></script>
 </body>
-
 </html>

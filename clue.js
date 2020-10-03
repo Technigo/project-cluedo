@@ -6,6 +6,7 @@ const mrGreen = {
   color: "#448c4a",
   description: 'He has a lot of connections',
   age: 45,
+  favouriteWeapon: "",
   image: './assets/green.png',
   occupation: 'Entrepreneur',
 }
@@ -16,6 +17,7 @@ const professorPlum = {
   color: '#8b539a',
   description: 'He talks much but say little',
   age: 45,
+  favouriteWeapon: "",
   image: './assets/plum.png',
   occupation: 'Visting STEM professor',
 }
@@ -26,6 +28,7 @@ const missScarlet = {
   color: '#ff8d48',
   description: 'She can stare down a lion',
   age: 30,
+  favouriteWeapon: "",
   image: './assets/scarlet.png',
   occupation: 'Manager of the Batman Zoo',
 }
@@ -36,6 +39,7 @@ const mrsPeacock = {
   color: '#7775c0',
   description: 'She is stronger than you',
   age: 37,
+  favouriteWeapon: "",
   image: './assets/peacock.png',
   occupation: 'Yoga teacher',
 }
@@ -46,6 +50,7 @@ const colonelMustard = {
   color: '#e6b127',
   description: "He was part of Franco's gang",
   age: 73,
+  favouriteWeapon: "",
   image: './assets/mustard.png',
   occupation: 'Colonel',
 }
@@ -56,6 +61,7 @@ const mrsWhite = {
   color: '#e1d2a9',
   description: 'She will not miss one thing',
   age: 63,
+  favouriteWeapon: "",
   image: './assets/white.png',
   occupation: 'Facility consultant',
 }
@@ -65,42 +71,42 @@ const mrsWhite = {
 const rope = {
   name: 'Rope',
   weight: 10,
-  id: "Rope",
+  id: "rope",
   image: './assets/rope.png'
 }
 
 const knife = {
   name: 'Knife',
   weight: 2,
-  id: "Knife",
+  id: "knife",
   image: './assets/knife.png'
 }
 
 const candlestick = {
   name: 'Candlestick',
   weight: 10,
-  id: "Candlestick",
+  id: "candlestick",
   image: './assets/candlestick.png'
 }
 
 const dumbbell = {
   name: 'Dumbbell',
   weight: 16,
-  id: "Dumbbell",
+  id: "dumbbell",
   image: './assets/dumbell.png'
 }
 
 const poison = {
   name: 'Bottole of Poison',
   weight: 0.1,
-  id: "Poison",
+  id: "poison",
   image: './assets/poison.png'
 }
 
 const axe = {
   name: 'Axe',
   weight: 5,
-  id: "Axe",
+  id: "axe",
   image: './assets/axe.png'
 }
 
@@ -114,14 +120,14 @@ const bat = {
 const trophy = {
   name: 'Trophy',
   weight: 8,
-  id: "Trophy",
+  id: "trophy",
   image: './assets/trophy.png'
 }
 
 const pistol = {
   name: 'Pistol',
   weight: 3,
-  id: "Pistol",
+  id: "pistol",
   image: './assets/pistol.png'
 }
 
@@ -251,10 +257,10 @@ const randomSelector = array => {
 
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 
-let mysteryobject = {
-  killer: "",
-  weapon: "",
-  room: "",
+const mysteryobject = {
+  killer: null,
+  weapon: null,
+  room: null,
 }
 
 // This function will be invoked when you click on the killer card.
@@ -269,7 +275,9 @@ const pickKiller = () => {
   document.getElementById('killerAge').innerHTML = `Age: ${mystery.killer.age}`
   document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
   document.getElementById('killerDescription').innerHTML = `Description: ${mystery.killer.description}`
-  document.getElementById("killerFavouriteWeapon").innerHTML = `Favourite weapon: ${shuffleFavouriteWeapon()}`
+ 
+  mystery.killer.favouriteWeapon = shuffleFavouriteWeapon()
+  document.getElementById("killerFavouriteWeapon").innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`
 }
 
 document.getElementById('killerCard').addEventListener('click', pickKiller)
@@ -300,9 +308,7 @@ document.getElementById('roomCard').addEventListener('click', pickRoom)
 
 
 // Shuffle killers favourite weapon
-const shuffleFavouriteWeapon = () => {
-  return randomSelector(weapons).id
-}
+const shuffleFavouriteWeapon = () => randomSelector(weapons).id
 
 
 // CREATE A FUNCTION revealMystery that will be invoked when you click that button. 
