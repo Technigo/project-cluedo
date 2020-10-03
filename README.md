@@ -23,4 +23,5 @@ UPDATE: I worked some more on the code after the code-review and a code coach-se
 
 
 ## View it live
-https://suspicious-mahavira-031870.netlify.app/
+https://cluedo-murder-mystery-hanna.netlify.app/
+
