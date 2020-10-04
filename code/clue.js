@@ -232,21 +232,21 @@ const suspects = [mrGreen, professorPlum, msScarlett, mrsPeacock, colonelMustard
 const weapons = [rope, knife, candleStick, dumbbell, poison, axe, bat, trophy, pistol];
 
 const rooms = [
-diningRoom,
-conservatory, 
-kitchen, 
-study,
-library,
-billiardRoom,
-lounge, 
-ballroom,
-hall,
-spa,
-livingRoom, 
-observatory,
-theater,
-guestHouse,
-patio
+  diningRoom,
+  conservatory, 
+  kitchen, 
+  study,
+  library,
+  billiardRoom,
+  lounge, 
+  ballroom,
+  hall,
+  spa,
+  livingRoom, 
+  observatory,
+  theater,
+  guestHouse,
+  patio
 ];
 
 
@@ -295,10 +295,10 @@ const pickKiller = () => {
   killerOccupation.innerHTML = mystery.killer.occupation;
   killerAge.innerHTML=mystery.killer.age;
 
-    const shuffleFavouriteWeapon = () => {
-      mystery.favouriteWeapon = randomSelector(weapons);
-      document.getElementById('favouriteWeapon').innerHTML = `Favourite weapon: ${mystery.favouriteWeapon.name}`
-     };
+ const shuffleFavouriteWeapon = () => {
+    mystery.favouriteWeapon = randomSelector(weapons);
+    document.getElementById('favouriteWeapon').innerHTML = `Favourite weapon: ${mystery.favouriteWeapon.name}`
+    };
      shuffleFavouriteWeapon();
   }
 
