@@ -172,9 +172,9 @@ const randomSelector = (array) => {
 };
 
 const mystery = {
-  killer: "",
-  weapons: "",
-  room: "",
+  killer: null,
+  weapons: null,
+  room: null,
 };
 
 //STEP 3 - Functions
@@ -211,7 +211,12 @@ const pickRoom = () => {
 
 // STEP 4 
 const revealMystery = () => {
-  document.getElementById("mystery").innerHTML = `The murder was comitted by ${mystery.killer.firstName} in the ${mystery.room} with a ${mystery.weapon.name}`;
+  //RevealMystery validation function, if not all cards picked
+  if (mystery.killer === null || mystery.weapon === null || mystery.room === null) {
+    document.getElementById("mystery").innerHTML = `No picky all cards, no mystery! Please pick all cards :)`
+  } else {
+    document.getElementById("mystery").innerHTML = `The murder was comitted by ${mystery.killer.firstName} in the ${mystery.room} with a ${mystery.weapon.name}`;
+  }
   document.getElementById("mysteryBtn").onclick = revealMystery;
   //Function that reloads page 10s after revalMystery button is clicked
   setTimeout(() => window.location.reload(), 10000);
