@@ -8,18 +8,18 @@
       href="https://fonts.googleapis.com/css?family=Candal"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>CLUE & DO</title>
   </head>
 
   <header>
-    <div>CLUE <span style="color: red">&</span> DO</div>
+    <div>CLUE <span class="highlight">&</span> DO</div>
     <h1>Murder Mistery Picker</h1>
   </header>
   <body>
     <section class="cards">
       <article class="killer-deck" id="killerCard">
-        <div id="loaderKiller"></div>
+        <div id="loaderKiller" class="loader hidden"></div>
         <p>KILLER</p>
         <p id="killerName"></p>
         <p id="killerAge"></p>
@@ -29,13 +29,13 @@
         <p id="favouriteWeapon"></p>
       </article>
       <article class="weapon-deck" id="weaponCard">
-        <div id="loaderWeapon"></div>
+        <div id="loaderWeapon" class="loader hidden"></div>
         <p>WEAPON</p>
         <p id="weaponName"></p>
         <img id="weaponImage" src="" height="250" />
       </article>
       <article class="room-deck" id="roomCard">
-        <div id="loaderRoom"></div>
+        <div id="loaderRoom" class="loader hidden"></div>
         <p>ROOM</p>
         <p id="roomName"></p>
         <img id="roomImage" src="" height="250" />

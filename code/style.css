@@ -1,17 +1,21 @@
 header {
-  font-family: "Candal";
+  font-family: "Candal", Helvetica;
   font-size: 75px;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   margin: 10px;
   padding: 10px;
+}
+
+.highlight {
+  color: #f72828;
 }
 
 body {
   margin: 0;
   font-family: "didot";
   font-size: 15px;
-  background-image: url(./assets/mystery.jpg);
+  background-image: url('./assets/mystery.jpg');
   background-size: contain;
 }
 
@@ -37,7 +41,7 @@ p {
   position: relative;
   width: 268px;
   height: 400px;
-  background: url(./assets/playcard.jpg);
+  background: url('./assets/playcard.jpg');
   opacity: 0.8;
   background-size: 100%;
   text-align: center;
@@ -49,7 +53,7 @@ p {
   position:relative;
   width: 268px;
   height: 400px;
-  background: url(./assets/playcard.jpg);
+  background: url('./assets/playcard.jpg');
   opacity: 0.8;
   background-size: 100%;
   text-align: center;
@@ -61,7 +65,7 @@ p {
   position:relative;
   width: 268px;
   height: 400px;
-  background: url(./assets/playcard.jpg);
+  background: url('./assets/playcard.jpg');
   opacity: 0.8;
   background-size: 100%;
   text-align: center;
@@ -73,8 +77,7 @@ p {
   border-radius: 200px;
 }
 
-#loaderKiller, #loaderWeapon, #loaderRoom{
-  display:none;
+.loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid #ffd571;
@@ -88,6 +91,10 @@ p {
   left:83px;
   -webkit-animation: spin 2s infinite;
   animation: spin 2s infinite;
+}
+
+.hidden { 
+  display:none;
 }
 
 @-webkit-keyframes spin {
@@ -111,7 +118,7 @@ h2 {
   font-weight: bold;
   font-size: 25px;
   font-family: "didot";
-  color: #ffffff;
+  color: #fff;
   text-align: center;
 }
 
@@ -133,6 +140,7 @@ button:hover {
   color: #fff;
   cursor: pointer;
 }
+
 
  /* FOOTER */
 
