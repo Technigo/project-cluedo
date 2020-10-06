@@ -9,7 +9,7 @@ const mrGreen = {
   image: './assets/green.png',
   occupation: 'Entrepreneur',
   favouriteWeapon: 'dumbbell'
-}
+};
 
 const mrPlum = {
   firstName: 'Victor',
@@ -20,7 +20,7 @@ const mrPlum = {
   image: './assets/plum.png',
   occupation: 'Professor',
   favouriteWeapon: 'bat'
-}
+};
 
 const msCassandra = {
   firstName: 'Scarlet',
@@ -31,7 +31,7 @@ const msCassandra = {
   image: './assets/scarlet.png',
   occupation: 'Coder',
   favouriteWeapon: 'trophy'
-}
+};
 
 const mrMustard = {
   firstName: 'Jack',
@@ -42,8 +42,7 @@ const mrMustard = {
   image: './assets/mustard.png',
   occupation: 'colonel',
   favouriteWeapon: 'pistol'
-
-}
+};
 
 const mrsPeacock = {
   firstName: 'Eleanor',
@@ -54,8 +53,7 @@ const mrsPeacock = {
   image: './assets/peacock.png',
   occupation: 'housewife',
   favouriteWeapon: 'poison'
-
-}
+};
 
 const mrsWhite = {
   firstName: 'Sophia',
@@ -66,70 +64,70 @@ const mrsWhite = {
   image: './assets/white.png',
   occupation: 'maid',
   favouriteWeapon: 'rope'
-}
+};
 
 const rope = {
   name: 'rope',
   id: 'rope',
   weight: 10,
   location: 'Patio'
-}
+};
 
 const knife = {
   name: 'knife',
   id: 'knife',
   weight: 8,
   location: 'Kitchen'
-}
+};
 
 const candlestick = {
   name: 'candlestick',
   id: 'candleStick',
   weight: 15,
   location: 'Living Room'
-}
+};
 
 const dumbbell = {
   name: 'dumbbell',
   id: 'dumbBell',
   weight: 12,
   location: 'Billiard Room'
-}
+};
 
 const poison = {
   name: 'poison',
   id: 'poison',
   weight: 1.5,
   location: 'Conservatory'
-}
+};
 
 const axe = {
   name: 'axe',
   id: 'axe',
   weight: 8,
   location: 'Patio'
-}
+};
 
 const bat = {
   name: 'bat',
   id: 'bat',
   weight: 18,
   location: 'Hall'
-}
+};
 
 const trophy = {
   name: 'trophy',
   id: 'trophy',
   weight: 17,
   location: 'Lounge'
-}
+};
 
 const pistol = {
   name: 'pistol',
   id: 'pistol',
   weight: 1,
   location: 'Study'
-}
+};
 
 const suspects = [
   mrGreen,
@@ -138,7 +136,7 @@ const suspects = [
   mrPlum,
   msCassandra,
   mrsWhite
-]
+];
 
 const weapons = [
   knife,
@@ -149,7 +147,7 @@ const weapons = [
   bat,
   trophy,
   pistol
-]
+];
 
 const rooms = [
   'Dining Room', 
@@ -167,91 +165,105 @@ const rooms = [
   'Theater', 
   'Guest House', 
   'Patio',
-]
+];
 
-const randomSelector = (array) => {
+const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
-}
+};
 
 const mystery = {
-  killer: '',
-  weapon: '',
-  room: ''
-}
+  killer: null,
+  weapon: null,
+  room: null
+};
 
 const shuffleFavouriteWeapon = () => {
   suspects.forEach((suspect) => {
-    const randomWeapon = randomSelector(weapons)
+    const randomWeapon = randomSelector(weapons);
     suspect.favouriteWeapon = randomWeapon.id;
-  })
-}
+  });
+};
 
 const pickKiller = () => {
-  document.querySelector('.killer-deck').classList.add('shakeX');
+  const killerDeck = document.querySelector('.killer-deck');
+  const killerIcon = document.querySelector('.killer-icon');
+  const killerCard = document.getElementById('killerCard');
+  const killerName = document.getElementById('killerName');
+  const killerAge = document.getElementById('killerAge');
+  const killerOccupation = document.getElementById('killerOccupation');
+  const killerImage = document.getElementById('killerImage');
+  const killerDescription = document.getElementById('killerDescription');
+  const killerFavouriteWeapon = document.getElementById('favouriteWeapon');
+
+  killerDeck.classList.add('shakeX');
   
   setTimeout(function() {
-    document.querySelector('.killer-deck').classList.add('bounce');
+    killerDeck.classList.add('bounce');
   }, 1000);
 
   setTimeout(function() {
-    document.querySelector('.killer-deck').classList.remove('shakeX');
-    document.querySelector('.killer-deck').classList.remove('bounce');
-    document.querySelector('.killer-icon').classList.add('hide');
+    killerDeck.classList.remove('shakeX');
+    killerDeck.classList.remove('bounce');
+    killerIcon.classList.add('hide');
 
     shuffleFavouriteWeapon();
-    mystery.killer = randomSelector(suspects)
-    document.getElementById('killerCard').style.background = mystery.killer.color
-    document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
-    document.getElementById('killerAge').innerHTML = `${mystery.killer.age}`
-    document.getElementById('killerOccupation').innerHTML = `${mystery.killer.occupation}`
+    mystery.killer = randomSelector(suspects);
+    killerCard.style.background = mystery.killer.color;
+    killerName.innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
+    killerAge.innerHTML = `${mystery.killer.age}`;
+    killerOccupation.innerHTML = `${mystery.killer.occupation}`;
     
-    document.getElementById('killerImage').src = `${mystery.killer.image}`
-    document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
+    killerImage.src = `${mystery.killer.image}`;
+    killerDescription.innerHTML = `${mystery.killer.description}`;
 
-    document.getElementById('favouriteWeapon').innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`
+    killerFavouriteWeapon.innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
 
   }, 1500);
 }
 
 const pickWeapon = () => {
-  document.querySelector('.weapon-deck').classList.add('shakeX');
+  const weaponDeck = document.querySelector('.weapon-deck');
+  const weaponName = document.getElementById('weaponName');
+  weaponDeck.classList.add('shakeX');
   
   setTimeout(function() {
-    document.querySelector('.weapon-deck').classList.add('bounce');
-  }, 1000)
+    weaponDeck.classList.add('bounce');
+  }, 1000);
   
   setTimeout(function() {
-    document.querySelector('.weapon-deck').classList.remove('bounce');
-    document.querySelector('.weapon-deck').classList.remove('shakeX');
+    weaponDeck.classList.remove('bounce');
+    weaponDeck.classList.remove('shakeX');
 
     const favouriteWeapon = weapons.find((item) => {
-        return item.id === mystery.killer.favouriteWeapon;
-      }
-    )
+      return item.id === mystery.killer.favouriteWeapon;
+    });
+
     const weaponsClone = [
       ...weapons,
       favouriteWeapon,
       favouriteWeapon,
       favouriteWeapon,
       favouriteWeapon,
-      favouriteWeapon,
-    ]
+      favouriteWeapon
+    ];
     mystery.weapon = randomSelector(weaponsClone);
   
-    document.getElementById('weaponName').innerHTML = `${mystery.weapon.name} of ${mystery.weapon.weight} pounds`
+    weaponName.innerHTML = `${mystery.weapon.name} of ${mystery.weapon.weight} pounds`;
   }, 1500);
 }
 
 const pickRoom = () => {
-  document.querySelector('.room-deck').classList.add('shakeX');
+  const roomDeck = document.querySelector('.room-deck');
+  const roomName = document.getElementById('roomName');
+  roomDeck.classList.add('shakeX');
   
   setTimeout(function() {
-    document.querySelector('.room-deck').classList.add('bounce');
-  }, 1000)
+    roomDeck.classList.add('bounce');
+  }, 1000);
   
   setTimeout(function() {
-    document.querySelector('.room-deck').classList.remove('bounce');
-    document.querySelector('.room-deck').classList.remove('shakeX');
+    roomDeck.classList.remove('bounce');
+    roomDeck.classList.remove('shakeX');
 
     const suspectRooms = rooms.find((item) => {
       return item === mystery.weapon.location;
@@ -262,15 +274,15 @@ const pickRoom = () => {
       suspectRooms,
       suspectRooms,
       suspectRooms,
-      suspectRooms,
-    ]
+      suspectRooms
+    ];
     mystery.room = randomSelector(roomsClone);
 
-    document.getElementById('roomName').innerHTML = `${mystery.room}`
+    roomName.innerHTML = `${mystery.room}`
   }, 1500);
 }
 
 const revealMystery = () => {
   document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, a ${mystery.killer.age}-year-old ${mystery.killer.occupation}, in the ${mystery.room} with a ${mystery.weapon.name} of ${mystery.weapon.weight} pounds.`;
   document.querySelector('.reveal').classList.add('active');
-}
+};
