@@ -15,8 +15,7 @@ const professorPlum = {
   firstName: "Victor",
   lastName: "Plum",
   color: "thistle",
-  description:
-    "A former psychiatrist who lost his medical license for having an affair with a patient.",
+  description: "A former psychiatrist who lost his medical license for having an affair with a patient.",
   age: 36,
   image: "assets/plum.png",
   occupation: "Professor",
@@ -185,14 +184,14 @@ const rooms = [
 ];
 
 // Empty object to store the randomly picked killer, weapon and room.
-let mystery = {
-  killer: "",
-  weapon: "",
-  room: "",
+const mystery = {
+  killer: null,
+  weapon: null,
+  room: null,
 };
 
 // Randomly select an item from an array
-const randomSelector = (array) => {
+const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
@@ -206,7 +205,7 @@ const fillArray = (item, amountOfTimes) => {
 };
 
 // Create new weapon array if suspect has a favourite weapon
-const favouriteWeaponArray = (weapons) => {
+const favouriteWeaponArray = weapons => {
   if (mystery.killer.favouriteWeapon) {
     const newWeaponArray = [
       ...weapons,
@@ -219,15 +218,13 @@ const favouriteWeaponArray = (weapons) => {
 };
 
 // Create new room array if a weapon is picked
-const favouriteRoomArray = (rooms) => {
+const favouriteRoomArray = rooms => {
   if (mystery.weapon) {
     const onlyFavouriteRooms = fillArray(mystery.weapon, 8);
     const newRoomArray = [...rooms];
 
     onlyFavouriteRooms.forEach((item, index) => {
       newRoomArray.push(onlyFavouriteRooms[index].resident);
-
-      index++;
     });
     return newRoomArray;
   } else {
@@ -236,7 +233,7 @@ const favouriteRoomArray = (rooms) => {
 };
 
 // Randomly select a favourite weapon from an array
-const shuffleFavouriteWeapon = (array) => {
+const shuffleFavouriteWeapon = array => {
   return array[Math.floor(Math.random() * array.length)];
 };
 
@@ -268,7 +265,7 @@ const resetReveal = () => {
   const mysteryReveald = document.getElementById("mysteryReveald");
   revealButton.classList.remove("reveald");
   revealButton.innerText = "Reveal the crime";
-  mysteryReveald.innerHTML = "Who did it?";
+  mysteryReveald.innerText = "Who did it?";
 };
 
 // *** PICK KILLER *** //
@@ -323,7 +320,7 @@ const pickKiller = () => {
     // Add class active to card back
     toggleActive(killerDeckFront, killerDeckBack);
 
-    mystery.killer = "";
+    mystery.killer = null;
 
     // Show card back, hide card front
     showCardBack(killerDeckBack, killerDeckFront);
@@ -435,9 +432,9 @@ const revealMystery = () => {
   // If mystery already is reveald once - the button have a 'Start over' function
   if (revealButton.classList.contains("reveald")) {
     // Empty mystery object
-    mystery.killer = "";
-    mystery.weapon = "";
-    mystery.room = "";
+    mystery.killer = null;
+    mystery.weapon = null;
+    mystery.room = null;
 
     // Show card backs, hide card fronts
     showCardBack(killerDeckBack, killerDeckFront);
@@ -466,9 +463,7 @@ const revealMystery = () => {
     let revealMessage = "";
     // Check if player has drawn cards from all decks
     if (mystery.killer && mystery.weapon && mystery.room) {
-      revealMessage = `The murder was commited by ${mystery.killer.firstName} ${
-        mystery.killer.lastName
-      }, in the ${mystery.room.toLowerCase()} with a ${mystery.weapon.name.toLowerCase()}.`;
+      revealMessage = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.toLowerCase()} with a ${mystery.weapon.name.toLowerCase()}.`;
       // Change text on button and add class reveald
       setTimeout(() => {
         revealButton.innerText = "Start over";
