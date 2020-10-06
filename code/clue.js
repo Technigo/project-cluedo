@@ -160,10 +160,10 @@ const randomSelector = array => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 
-let mystery = {
- suspects, 
- weapons, 
- rooms: []
+const mystery = {
+ killer: null, 
+ weapon: null, 
+ room: null
 }
 
 // This function will be invoked when you click on the killer card.
@@ -173,9 +173,7 @@ const pickKiller = () => {
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('killerCard').style.background = mystery.killer.color
-  document.getElementById(
-    'killerName'
-  ).innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
+  document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`
 }
 
 document.getElementById('killerCard').addEventListener('click', pickKiller)
@@ -188,9 +186,7 @@ const pickWeapon = () => {
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('weaponCard').style.background = mystery.killer.color
-  document.getElementById(
-    'weaponName'
-  ).innerHTML = `${mystery.weapon.name}`
+  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
 }
 
 document.getElementById('weaponCard').addEventListener('click', pickWeapon)
@@ -202,9 +198,7 @@ const pickRooms = () => {
 
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. Feel free to add more things to show about the killer.
   document.getElementById('roomCard').style.background = mystery.killer.color
-  document.getElementById(
-    'roomName'
-  ).innerHTML = `${mystery.room}`
+  document.getElementById('roomName').innerHTML = `${mystery.room}`
 }
 
 document.getElementById('roomCard').addEventListener('click', pickRooms)
@@ -217,7 +211,5 @@ document.getElementById('roomCard').addEventListener('click', pickRooms)
 
 const revealMystery = () => {
   
-  document.getElementById(
-      'message'
-    ).innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`;
+  document.getElementById('message').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`;
   }
