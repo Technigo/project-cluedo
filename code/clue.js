@@ -169,7 +169,7 @@ const rooms = [
   'Patio',
 ]
 
-const randomSelector = (array) => {
+const randomSelector = array => {
   return array[Math.floor(Math.random() * array.length)]
 }
 
