@@ -266,9 +266,9 @@ const randomSelector = array => array[Math.floor(Math.random() * array.length)];
 
 // ----------Shuffle suspects favorite weapon--------------
 shuffleFavoriteWeapon = suspects => {
-  return suspects.map(suspect => {
+  suspects.forEach(suspect => {
     const favoriteWeaponArray = [
-      ...weapons
+      ...weapons,
     ];
     suspect.favoriteWeapon = randomSelector(favoriteWeaponArray);
   });
