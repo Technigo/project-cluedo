@@ -8,7 +8,8 @@
     <title>Technigo Project Cluedo</title>
   </head>
   <body>
-    <header id="page-header"class="header-styling">Cluedo Mystery-picker</header>
+    <header id="page-header">Cluedo Mystery-picker</header>
+    <main>
     <section class="cards">
       <article class="killer-deck" id="killerCard">
         <p id="killer-headline" class="killer-card-headline"></p>
@@ -43,12 +44,17 @@
           </div>
         </div>
       </article>
+      <section class="mystery-reveal-section">
+      <h1 class="mystery-text" id="mystery"></h1>
+    <button id="revealButton" class="mystery-button" type="button" onclick>REVEAL THE CRIME</button>
+    </section>
     </section>
 
-    <h1 class="mystery-text" id="mystery"></h1>
+    
 
-    <button id="revealButton" class="mystery-button" type="button" onclick>REVEAL THE CRIME</button>
-<footer class="footer-style">A project by Lillemor Eriksson, as a part of the Technigo frontend-developer bootcamp.</footer>
+  </main>
+<footer><p>A project by Lillemor Eriksson, as a part of the Technigo frontend-developer bootcamp.
+</p></footer>
     <script src="clue.js"></script>
   </body>
 </html>
