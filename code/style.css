@@ -3,7 +3,7 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background: url(./assets/kamil-feczko-GhxWry42_zQ-unsplash.jpg);
+  background: url("./assets/kamil-feczko-GhxWry42_zQ-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
@@ -24,7 +24,7 @@ header {
 .magnifying-icon {
   width: 48px;
   height: 48px;
-  margin: 0px 20px;
+  margin: 0 20px;
 }
 
 /*** CARD SECTION ***/
@@ -128,7 +128,7 @@ header {
   margin-bottom: 10px;
 }
 
-#mystery {
+.mystery {
   color: white;
   /*font-family: 'Times New Roman', Times, serif;*/
   font-size: 20px;
@@ -145,7 +145,7 @@ button {
   display: block;
   margin: 0 auto;
   box-shadow: 2px 2px 2px white;
-  cursor: url(./assets/icons8-magnifying-glass-tilted-left-48.png),auto;
+  cursor: url("./assets/icons8-magnifying-glass-tilted-left-48.png"),auto;
   outline: none;
   border: 1px solid white;
 }
@@ -154,7 +154,6 @@ button {
 button:active {
   transform: translateY(5px);
   box-shadow: none;
-
 }
 
 /*** FOOTER ***/

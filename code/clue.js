@@ -156,10 +156,10 @@ const roomPatio = 'Patio';
 
 // OBJECT THAT KEEPS THE MYSTERY.
 
-let mystery = {
-  killer: '',
-  weapon: '',
-  room: ''
+const mystery = {
+  killer: null,
+  weapon: null,
+  room: null
 }
 
 // ARRAYS OF ALL SUSPECTS, WEAPONS AND ROOMS
@@ -211,7 +211,7 @@ const randomSelector = array => {
 
 // Function to shuffle the suspects favorite weapon
 const shuffleFavoriteWeapon = () => {
-  favoriteWeapon = weapons[Math.floor(Math.random() * weapons.length)]; //Picks a random weapon from the array and creates a favoriteWeapon object
+  const favoriteWeapon = randomSelector(weapons); //Picks a random weapon from the array using randomSelector function and creates a favoriteWeapon object
   mystery.killer.favoriteWeapon = favoriteWeapon.name;// Assigns the name of favoriteWeapon to choosen killers object
   document.getElementById('favoriteWeapon').innerHTML = `Prefered weapon: ${mystery.killer.favoriteWeapon}`; //Prints favoriteweapon to card
 }
@@ -303,11 +303,11 @@ document.getElementById("roomCard").onclick = loadingPickRoom;
 
 // Function to reveal mystery when clicking the button
 const revealMystery = () => {
-  if (mystery.killer === '') {
+  if (!mystery.killer) {
     document.getElementById('mystery').innerHTML = `Please pick a killer!`;
-  } else if (mystery.weapon === '') {
+  } else if (!mystery.weapon) {
     document.getElementById('mystery').innerHTML = `Please pick a weapon!`;
-  } else if (mystery.room === '') {
+  } else if (!mystery.room) {
     document.getElementById('mystery').innerHTML = `Please pick a room!`;
   } else {
     document.getElementById('mystery').innerHTML = 
