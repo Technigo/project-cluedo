@@ -199,16 +199,16 @@ const mystery = {
   Rooms: null
 }
 
-const pickFriends = () => {
-  mystery.Friends = randomSelector(Friend)
-  document.getElementById('FriendsName').innerHTML = mystery.Friends.FirstName, mystery.Friends.LastName;
-  document.getElementById('FriendsAge').innerHTML = mystery.Friends.Age;
-  document.getElementById('FriendsOccupation').innerHTML = mystery.Friends.Occupation;
-  document.getElementById('FriendsDescription').innerHTML = mystery.Friends.Description;
-  document.getElementById('FriendsImage').src = mystery.Friends.Image
+const pickfriends = () => {
+  mystery.friends = randomSelector(Friend)
+  document.getElementById('friendsName').innerHTML = mystery.friends.FirstName, mystery.friends.LastName;
+  document.getElementById('friendsAge').innerHTML = mystery.friends.Age;
+  document.getElementById('friendsOccupation').innerHTML = mystery.friends.Occupation;
+  document.getElementById('friendsDescription').innerHTML = mystery.friends.Description;
+  document.getElementById('friendsImage').src = mystery.friends.Image
 }
 
-document.getElementById('FriendsCard').onclick = pickFriends
+document.getElementById('friendsCard').onclick = pickfriends
 
 const pickFoods = () => {
   mystery.Foods = randomSelector(Foods)
@@ -228,10 +228,10 @@ const pickRooms = () => {
 document.getElementById('RoomsCard').onclick = pickRooms
 
 const revealMystery = () => {
-  if (!mystery.Friends || !mystery.Foods || !mystery.Rooms ){
+  if (!mystery.friends || !mystery.Foods || !mystery.Rooms ){
     document.getElementById('mystery').innerHTML = "You must find Joey's food!"
   } else {
-    document.getElementById('mystery').innerHTML = `The ONE who ate Joey's ${mystery.Foods.Name} was ${mystery.Friends.FirstName} ${mystery.Friends.LastName}, in ${mystery.Rooms.Name}.`
+    document.getElementById('mystery').innerHTML = `The ONE who ate Joey's ${mystery.Foods.Name} was ${mystery.friends.FirstName} ${mystery.friends.LastName}, in ${mystery.Rooms.Name}.`
   }
 }
 document.getElementById('CookButton').onclick = revealMystery
