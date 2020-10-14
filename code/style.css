@@ -42,8 +42,8 @@ p {
 }
 
 .cards {
-  margin: 0px auto;
-  padding: 0px;
+  margin: 0 auto;
+  padding: 0;
   width: 90%;
   height: 450px;
   background: lightgray;
@@ -181,16 +181,16 @@ article, #revealButton, #restartButton {
 }
 
 #killerName, #weaponName, #roomName {
-  margin-left: 0px;
+  margin-left: 0;
   border: none;
   margin-bottom: 15px;
   background-color: whitesmoke;
-  padding: 0px;
+  padding: 0;
   text-transform: capitalize;
 }
 
 #killerOccupation, #killerAge {
-  margin: 0px;
+  margin: 0;
 }
 
 #killerDescription, #weaponMaterial, #favouriteWeapon {
@@ -226,4 +226,58 @@ h3 {
   text-align: center;
   font-size: 25px;
   color: #900d0d;
+}
+
+
+@media (max-width: 667px){
+  body{
+    display: flex;
+    flex-direction: column;
+  
+  }
+  .game-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: lightgray;
+  }
+
+  .cards{
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;;
+  }
+  
+  .reveal{
+    display: flex;
+    margin-top: 200px;
+  }
+  footer{
+    margin-bottom: 0px;
+    position: block;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+@media (max-width: 1024px){
+body{
+  display: flex;
+  flex-direction: column;
+
+}
+.game-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+}
+
+footer{
+  margin-bottom: 0px;
+  position: block;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }

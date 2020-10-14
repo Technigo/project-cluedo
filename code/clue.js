@@ -10,7 +10,6 @@ const mrGreen = {
   occupation: 'Entrepreneur',
   favouriteWeapon: 'knife',
 }
-console.log(mrGreen.description);
 
 const professorPlum = {
   firstName: 'Victor',
@@ -22,7 +21,6 @@ const professorPlum = {
   occupation: 'Professor',
   favouriteWeapon: 'rope',
 }
-console.log(professorPlum.description);
 
 const missScarlet = {
   firstName: 'Cassandra',
@@ -34,7 +32,6 @@ const missScarlet = {
   occupation: 'Runs an underground brothel',
   favouriteWeapon: 'candlestick',
 }
-console.log(missScarlet.description);
 
 const mrsPeacock = {
   firstName: 'Eleanor',
@@ -46,7 +43,6 @@ const mrsPeacock = {
   occupation: 'Housewife',
   favouriteWeapon: 'dumbbell',
 }
-console.log(mrsPeacock.description);
 
 const colonelMustard = {
   firstName: 'Jack',
@@ -58,7 +54,6 @@ const colonelMustard = {
   occupation: 'War profiteer',
   favouriteWeapon: 'poison',
 }
-console.log(colonelMustard.description);
 
 const mrsWhite = {
   firstName: 'Mrs',
@@ -70,7 +65,6 @@ const mrsWhite = {
   occupation: 'Nurse',
   favouriteWeapon: 'axe',
 }
-console.log(mrsWhite.description);
 
 // CREATE OBJECTS FOR ALL THE WEAPONS, ADD MORE CHARACTERISTICS TO THE WEAPONS IF YOU LIKE.
 
@@ -80,7 +74,6 @@ const rope = {
   id: 'rope',
   image: 'assets/rope.png',
 }
-console.log(rope);
 
 const knife = {
   name: 'Knife',
@@ -88,7 +81,6 @@ const knife = {
   id: 'knife',
   image: 'assets/knife.png',
 }
-console.log(knife);
 
 const candlestick = {
   name: 'Candlestick',
@@ -96,7 +88,6 @@ const candlestick = {
   id: 'candlestick',
   image: 'assets/candlestick.png',
 }
-console.log(candlestick);
 
 const dumbbell = {
   name: 'Dumbbell',
@@ -104,7 +95,6 @@ const dumbbell = {
   id: 'dumbbell',
   image: 'assets/dumbbell.png',
 }
-console.log(dumbbell);
 
 const poison = {
   name: 'Poison',
@@ -112,7 +102,6 @@ const poison = {
   id: 'poison',
   image: 'assets/poison.png'
 }
-console.log(poison);
 
 const axe = {
   name: 'Axe',
@@ -120,31 +109,29 @@ const axe = {
   id: 'axe',
   image: 'assets/axe.png',
 }
-console.log(axe);
 
 const bat = {
   name: 'Bat',
   material: 'wood',
+  id: 'bat',
   image: 'assets/bat.png',
 }
-console.log(bat);
 
 const trophy = {
   name: 'Trophy',
   material: 'silver',
+  id: 'trophy',
   image: 'assets/trophy.png',
 }
-console.log(trophy);
 
 const pistol = {
   name: 'Pistol',
   material: 'metal',
+  id: 'pistol',
   image: 'assets/pistol.png',
 }
-console.log(pistol);
 
 // THE ROOMS ONLY HAS A NAME SO NO NEED FOR OBJECTS THERE.
-
 // NOW GROUP ALL SUSPECTS, WEAPONS AND ROOMS IN ARRAYS LIKE THIS:
 
 const suspects = [
@@ -155,7 +142,6 @@ const suspects = [
   colonelMustard,
   mrsWhite
 ]
-console.log(suspects);
 
 const weapons = [
   rope,
@@ -186,7 +172,6 @@ const rooms = [
   "Guest House",
   "Patio"
 ]
-console.log(rooms);
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
 // YOU DON'T NEED TO CHANGE THIS, JUST TRY TO UNDERSTAND IT. AND HOW TO USE IT.
@@ -197,17 +182,14 @@ const randomSelector = array => {
 // CREATE AN OBJECT THAT KEEPS THE MYSTERY.
 // With a killer, a weapon and a room, the values will be set later.
 let mystery = {
-  killer: '',
-  weapons: '',
-  rooms: '',
+  killer: null,
+  weapons: null,
+  rooms: null,
 };
-console.log(mystery);
 
 // Function to shuffle the suspects favorite weapon
 const shuffleFavouriteWeapon = () => {
-  console.log(mystery.killer);
   randomFavouriteWeapon = weapons[Math.floor(Math.random() * weapons.length)];
-  console.log(mystery.killer.favouriteWeapon);
   mystery.killer.favouriteWeapon = randomFavouriteWeapon.name;
   document.getElementById('favouriteWeapon').innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
 }
@@ -225,16 +207,13 @@ const pickKiller = () => {
   document.getElementById('killerCard').style.background = '#e7cb96'; //mystery.killer.color; (commented out because it looks awful)
   let killerImage = document.getElementById('killerImage');
   killerImage.src = mystery.killer.image;
-  //document.getElementById('killerName').style.background = '#900d0d'; 
   document.getElementById('killerName').style.padding = '15px';
-  //document.getElementById('killerName').style.margin = '0px';
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
   document.getElementById('killerOccupation').innerHTML
   document.getElementById('killerAge').innerHTML = `${mystery.killer.occupation}, ${mystery.killer.age}`;
   document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`;
   shuffleFavouriteWeapon();
 };
-console.log(pickKiller);
 
 const loadingPickKiller = () => {
   //Decides animation timer
@@ -299,7 +278,6 @@ const pickRoom = () => {
   document.getElementById('roomName').innerHTML = `In the ${mystery.rooms}`;
   let roomName = document.getElementById('roomName');
 };
-console.log(pickRoom);
 
 const loadingpickRoom = () => {
   //Decides animation timer
@@ -315,11 +293,6 @@ const loadingpickRoom = () => {
 // Telling the function to start when card onclicks
 document.getElementById("roomCard").onclick = loadingpickRoom;
 
-// COMMENTED OUT ALL OF THOSE TO BE ABLE TO RUN ANIMATION - To show all of this cool stuff in the browser
-//document.getElementById('killerCard').onclick = pickKiller;
-//document.getElementById('weaponCard').onclick = pickWeapon;
-//document.getElementById('roomCard').onclick = pickRoom;
-
 // STEP 4 - CREATE A FUNCTION revealMystery that will be invoked when you click that button. It should show something like:
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 // Get open modal button
@@ -329,7 +302,6 @@ const revealMystery = () => {
   document.getElementById('mystery').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.rooms} with a ${mystery.weapons.name}.`;
   document.getElementById('restartButton').style.display = 'block';
 }
-console.log(revealMystery);
 document.getElementById('reveal').onclick = revealMystery;
 
 // Function to Restart the game
