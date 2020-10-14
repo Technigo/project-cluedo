@@ -9,7 +9,7 @@ const mrGreen = {
   age: 45,
   image: 'assets/green.png',
   occupation: 'Entrepreneur'
-};
+}
 
 const colMustard = {
   firstName: 'William',
@@ -19,7 +19,7 @@ const colMustard = {
   age: 72,
   image: 'assets/mustard.png',
   occupation: 'Military colonel'
-};
+}
 
 const mrsPeacock = {
   firstName: 'Amelia',
@@ -29,7 +29,7 @@ const mrsPeacock = {
   age: 60,
   image: 'assets/peacock.png',
   occupation: 'Grande Dame'
-};
+}
 
 const profPlum = {
   firstName: 'Oliver',
@@ -39,7 +39,7 @@ const profPlum = {
   age: 46,
   image: 'assets/plum.png',
   occupation: 'Professor'
-};
+}
 
 const missScarlet = {
   firstName: 'Eveline',
@@ -49,7 +49,7 @@ const missScarlet = {
   age: 35,
   image: 'assets/scarlett.png',
   occupation: 'Museum Curator'
-};
+}
 
 const mrsWhite = {
   firstName: 'Charlotte',
@@ -59,7 +59,7 @@ const mrsWhite = {
   age: 73,
   image: 'assets/white.png',
   occupation: 'Housekeeper'
-};
+}
 
 // Objects for all weapons
 const rope = {
@@ -68,7 +68,7 @@ const rope = {
   length: '2 m',
   color: 'Wheat',
   image: 'assets/weapon/rope.png'
-};
+}
 
 const knife = {
   name: 'Knife',
@@ -76,7 +76,7 @@ const knife = {
   length: '30 cm',
   color: 'LightCoral',
   image: 'assets/weapon/knife.png'
-};
+}
 
 const candlestick = {
   name: 'Candlestick',
@@ -84,7 +84,7 @@ const candlestick = {
   length: '40 cm',
   color: 'Silver',
   image: 'assets/weapon/candlestick.png'
-};
+}
 
 const dumbbell = {
   name: 'Dumbbell',
@@ -92,7 +92,7 @@ const dumbbell = {
   length: '20 cm',
   color: 'Lavender',
   image: 'assets/weapon/dumbell.png'
-};
+}
 
 const poison = {
   name: 'Poison',
@@ -100,7 +100,7 @@ const poison = {
   length: '10cm',
   color: 'LightGreen',
   image: 'assets/weapon/poison.png'
-};
+}
 
 const axe = {
   name: 'Axe',
@@ -108,7 +108,7 @@ const axe = {
   length: '50 cm',
   color: 'LightSteelBlue',
   image: 'assets/weapon/axe.png'
-};
+}
 
 const bat = {
   name: 'Bat',
@@ -116,7 +116,7 @@ const bat = {
   length: '55 cm',
   color: 'AntiqueWhite',
   image: 'assets/weapon/bat.png'
-};
+}
 
 const trophy = {
   name: 'Trophy',
@@ -124,7 +124,7 @@ const trophy = {
   length: '45 cm',
   color: 'LightYellow',
   image: 'assets/weapon/trophy.png'
-};
+}
 
 const pistol = {
   name: 'Pistol',
@@ -132,74 +132,74 @@ const pistol = {
   length: '35 cm',
   color: 'Thistle',
   image: 'assets/weapon/pistol.png'
-};
+}
 
 // Objects for all rooms
 const diningRoom = {
   name: 'Dining Room',
   color: 'PapayaWhip',
   image: 'assets/room/dining.png'
-};
+}
 
 const kitchen = {
   name: 'Kitchen',
   color: 'SeaShell',
   image: 'assets/room/kitchen.png'
-};
+}
 
 const study = {
   name: 'Study',
   color: 'PapayaWhip',
   image: 'assets/room/study.png'
-};
+}
 
 const library = {
   name: 'Library',
   color: 'SeaShell',
   image: 'assets/room/library.png'
-};
+}
 
 const billiardRoom = {
   name: 'Billiard Room',
   color: 'AntiqueWhite',
   image: 'assets/room/billiard.png'
-};
+}
 
 const lounge = {
   name: 'Lounge',
   color: 'PapayaWhip',
   image: 'assets/room/lounge.png'
-};
+}
 
 const ballroom = {
   name: 'Ballroom',
   color: 'AntiqueWhite',
   image: 'assets/room/ballroom.png'
-};
+}
 
 const spa = {
   name: 'Spa',
   color: 'SeaShell',
   image: 'assets/room/spa.png'
-};
+}
 
 const livingRoom = {
   name: 'Living Room',
   color: 'AntiqueWhite',
   image: 'assets/room/livingroom.png'
-};
+}
 
 const theater = {
   name: 'Theater',
   color: 'PapayaWhip',
   image: 'assets/room/theater.png'
-};
+}
 
 const garden = {
   name: 'Garden',
   color: 'PapayaWhip',
   image: 'assets/room/garden.png'
-};
+}
 
 
 
@@ -226,7 +226,7 @@ const weapons = [
   bat,
   trophy,
   pistol
-];
+]
 
 // Array for rooms
 const rooms = [
@@ -241,7 +241,7 @@ const rooms = [
   livingRoom,
   theater,
   garden
-];
+]
 
 //FUNCTION FOR RANDOMLY SELECTING ONE ITEM FROM THE ARRAY THAT'S PASSED INTO THE FUNCTIONS FOR SUSPECTS, WEAPONS AND ROOMS.
 const randomSelector = array => {
@@ -250,20 +250,20 @@ const randomSelector = array => {
 
 //OBJECT THAT KEEPS THE MYSTERY //
 const mystery = {
- killer: null,
- weapon: null,
- room: null
-};
+  killer: null,
+  weapon: null,
+  room: null
+}
 
 
 // FUNCTIONS FOR CARDS //
 
 //Function to show hidden cards
 const cardShow = () => {
-  const element = document.getElementById("cardShow");
-  element.classList.remove('cardShow');
+  const element = document.getElementById('cardShow')
+  element.classList.remove('card-show')
 } 
-document.getElementById('startPlay').onclick = cardShow;
+document.getElementById('startPlay').onclick = cardShow
 
 
 // This function will be invoked when you click on the killer card.
@@ -274,9 +274,9 @@ const pickKiller = () => {
   document.getElementById('killerAge').innerHTML = `Age: ${mystery.killer.age}`
   document.getElementById('killerOccupation').innerHTML = `Occupation: ${mystery.killer.occupation}`
   document.getElementById('killerImage'); killerImage.src = mystery.killer.image
-  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`;
+  document.getElementById('killerDescription').innerHTML = `${mystery.killer.description}`
 }
-document.getElementById('killerCard').onclick = pickKiller;
+document.getElementById('killerCard').onclick = pickKiller
 
 
 // This function will be invoked when you click on the weapon card.
@@ -286,9 +286,9 @@ const pickWeapon = () => {
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
   document.getElementById('weaponWeight').innerHTML = `Weight: ${mystery.weapon.weight}`
   document.getElementById('weaponLenght').innerHTML = `Lenght: ${mystery.weapon.length}`
-  document.getElementById('weaponImage'); weaponImage.src = mystery.weapon.image;
+  document.getElementById('weaponImage'); weaponImage.src = mystery.weapon.image
 }
-document.getElementById('weaponCard').onclick = pickWeapon;
+document.getElementById('weaponCard').onclick = pickWeapon
 
 
 // This function will be invoked when you click on the room card.
@@ -296,22 +296,22 @@ const pickRoom = () => {
   mystery.room = randomSelector(rooms)   
   document.getElementById('roomCard').style.background = mystery.room.color
   document.getElementById('roomName').innerHTML = `${mystery.room.name}`
-  document.getElementById('roomImage'); roomImage.src = mystery.room.image;
+  document.getElementById('roomImage'); roomImage.src = mystery.room.image
 }
-document.getElementById('roomCard').onclick = pickRoom;
+document.getElementById('roomCard').onclick = pickRoom
 
 // FUNCTION FOR REVEALING MYSTERY //
 //Function to reveal the mystery and verify that all cards are picked
-const revealMystery  = () => {
-  if(mystery.killer && mystery.weapon && mystery.room) {
-  const element = document.getElementById("mysteryShow");
-  element.classList.remove('mysteryShow'); 
-  document.getElementById("mysteryHeader").innerHTML= `You solved it!`;
-  document.getElementById("mysteryMessage").innerHTML= `The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`;
+const revealMystery = () => {
+  if (mystery.killer && mystery.weapon && mystery.room) {
+    const element = document.getElementById('mysteryShow')
+    element.classList.remove('mystery-show')
+    document.getElementById('mysteryHeader').innerHTML = `You solved it!`
+    document.getElementById('mysteryMessage').innerHTML = `The murder was comitted by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room.name}.`
   } else {
-    const element = document.getElementById("mysteryShow");
-    element.classList.remove('mysteryShow');
-    document.getElementById("mysteryMessage").innerHTML= `ERROR! You must pick three cards.`;
+    const element = document.getElementById('mysteryShow')
+    element.classList.remove('mystery-show')
+    document.getElementById('mysteryMessage').innerHTML = `ERROR! You must pick three cards.`
   }
 }
-document.getElementById('revealMystery').onclick = revealMystery;
+document.getElementById('revealMystery').onclick = revealMystery

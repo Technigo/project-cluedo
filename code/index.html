@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Titillium+Web&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ranchers&family=Ribeye+Marrow&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
@@ -19,14 +19,14 @@
       <div class="hero-text">
         <h1> CLUEDO MYSTERY PICKER</h1>
         <p class="ingress">Do you have what it takes to solve the crime...?</p>
-        <button class="startPlay" id="startPlay"><a href="#letter">Start playing</a></button>
+        <button id="startPlay"><a href="#letter">Start playing</a></button>
       </div>
     </div>
     
     <section class="letter" id="letter">
       <div class="container">
         <div class="polaroid rotate_right">
-          <img class="polaroidImg" src="img/splatter.png" alt="Mansion">
+          <img class="polaroid-img" src="./img/splatter.png" alt="Mansion">
           <p class="caption">
             <p>Dear Detective,</p>
             <p>
@@ -42,13 +42,13 @@
         </div>
         
         <div class="polaroid rotate_left">
-          <img class="polaroidImg" src="img/mansion.jpg" alt="Mansion">
+          <img class="polaroid-img" src="./img/mansion.jpg" alt="Mansion">
           <p class="caption">The only thing we know for certain is that the murder was committed at Scaryville Mansion. The rest is up to you to figure out.</p>
         </div>
       </div>
     </section>
     
-    <div class="cardShow" id="cardShow">
+    <div class="card-show" id="cardShow">
       <h3>Pick three cards from the deck below to reveal the mystery.</h3>
       <section class="cards">
         <article class="killer-deck" id="killerCard">
@@ -56,7 +56,7 @@
           <p id="killerName"></p>
           <p id="killerAge"></p>
           <p id="killerOccupation"></p>
-          <img id="killerImage" src="" height="100" />
+          <img id="killerImage" class="killer-image" src=""/>
           <p id="killerDescription"></p>
         </article>
         <article class="weapon-deck" id="weaponCard">
@@ -64,22 +64,22 @@
           <p id="weaponName"></p>
           <p id="weaponWeight"></p>
           <p id="weaponLenght"></p>
-          <img id="weaponImage" src="" height="100" />
+          <img id="weaponImage" class="weapon-image" src=""/>
         </article>
         <article class="room-deck" id="roomCard">
           <h2>ROOM</h2>
           <p id="roomName"></p>
-          <img id="roomImage" src="" height="100" />
+          <img id="roomImage" class="room-image" src=""/>
         </article>
-        <button class="revealMystery" id="revealMystery"><a href="#mysteryShow">Reveal the crime</a></button>
+        <button id="revealMystery"><a href="#mysteryShow">Reveal the crime</a></button>
       </section>
     </div>
     
-    <div class="mysteryShow" id="mysteryShow">
+    <div class="mystery-show" id="mysteryShow">
       <div id="mystery" class="mystery">
-        <h1 class="mysteryHeader" id=mysteryHeader></h1>
-        <p id="mysteryMessage" class="mysteryMessage"></p>
-        <img class="mysteryImg" src="./assets/pointing.png" height="100"/>
+        <h1 id="mysteryHeader" class="mystery-header"></h1>
+        <p id="mysteryMessage" class="mystery-message"></p>
+        <img class="mystery-image" src="./assets/pointing.png" alt="pointing hand"/>
         <button><a href="index.html">Play again?</a></button>
       </div>
     </div>
@@ -88,6 +88,6 @@
       <p class="footer-text">Week 5 project: Cluedo Mystery Picker | By: Emma Urman | Technigo Fall Bootcamp 2020 | All images from Unsplash & Pixabay</p>
     </footer>
 
-    <script src="clue.js"></script>
+    <script src="./clue.js"></script>
   </body>
 </html>
