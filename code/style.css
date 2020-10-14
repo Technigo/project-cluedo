@@ -253,6 +253,7 @@ h3 {
     display: flex;
     margin-top: 200px;
   }
+
   footer{
     margin-bottom: 0px;
     position: block;
@@ -260,7 +261,7 @@ h3 {
     bottom: 0;
     right: 0;
   }
-
+}
 @media (max-width: 1024px){
 body{
   display: flex;
@@ -280,4 +281,5 @@ footer{
   left: 0;
   bottom: 0;
   right: 0;
+}
 }
