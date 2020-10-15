@@ -335,9 +335,9 @@ const pickRoom = () => {
   };
 
 function clearMystery() {
-  mystery.killer = "";
-  mystery.weapon = "";
-  mystery.room = "";
+  mystery.killer = null;
+  mystery.weapon = null;
+  mystery.room = null
   document.getElementById('killerCard').style.background = "";
   document.getElementById('killerName').innerHTML = "";
   document.getElementById('killerAge').innerHTML = "";
