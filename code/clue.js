@@ -1,10 +1,10 @@
-let killerIsPicked = false;
-let weaponIsPicked = false;
-let roomIsPicked = false;
+let isKillerPicked = false;
+let isWeaponPicked = false;
+let isRoomPicked = false;
 
 //Suspect objects
 
-let mrGreen = {
+const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
   color: '#0b6623',
@@ -15,7 +15,7 @@ let mrGreen = {
   favouriteWeapon: 'rope'
 };
 
-let professorPlum = {
+const professorPlum = {
   firstName: 'Victor',
   lastName: 'Plum',
   color: '#4e1245',
@@ -26,7 +26,7 @@ let professorPlum = {
   favouriteWeapon: 'candlestick'
 };
 
-let missScarlet = {
+const missScarlet = {
   firstName: 'Cassandra',
   lastName: 'Scarlet',
   color: '#bc0000',
@@ -37,7 +37,7 @@ let missScarlet = {
   favouriteWeapon: 'pistol'
 };
 
-let mrsPeacock = {
+const mrsPeacock = {
   firstName: 'Eleanor',
   lastName: 'Peacock',
   color: '#111e6c',
@@ -48,7 +48,7 @@ let mrsPeacock = {
   favouriteWeapon: 'knife'
 };
 
-let colonelMustard = {
+const colonelMustard = {
   firstName: 'Jack',
   lastName: 'Mustard',
   color: '#e1ad01',
@@ -59,7 +59,7 @@ let colonelMustard = {
   favouriteWeapon: 'bat'
 };
 
-let mrsWhite = {
+const mrsWhite = {
   firstName: 'Mrs',
   lastName: 'White',
   color: '#d8d8d8',
@@ -259,9 +259,9 @@ const randomSelector = array => {
 
 // Mystery object
 let mystery = {
-  killer: '',
-  weapon: '',
-  room: ''
+  killer: null,
+  weapon: null,
+  room: null
 };
 
 //This shuffles the favourite weapon
@@ -275,7 +275,7 @@ const shuffleFavouriteWeapon = () => {
 
 // Pick killer function
 const pickKiller = () => {
-    if (!killerIsPicked) {
+    if (!isKillerPicked) {
     document.getElementById('killerLoader').style.visibility='visible'; 
     setTimeout(function () {
       document.getElementById('killerLoader').style.visibility='hidden'
@@ -288,22 +288,22 @@ const pickKiller = () => {
       document.getElementById('killerImage').src = mystery.killer.image;
       document.getElementById('killerDescription').innerHTML = mystery.killer.description;
       document.getElementById('favouriteWeapon').innerHTML = `Favourite weapon: ${mystery.killer.favouriteWeapon}`;
-      killerIsPicked = true;
+      isKillerPicked = true;
       }, 2500);
     }
 };
 
 // Pick weapon function
 const pickWeapon = () => {
-  if (!weaponIsPicked) {
+  if (!isWeaponPicked) {
     document.getElementById('weaponLoader').style.visibility='visible';
-    setTimeout(function () {
+    setTimeout (function () {
       document.getElementById('weaponLoader').style.visibility='hidden';
       mystery.weapon = randomSelector(weapons); 
       document.getElementById('weaponImage').src = mystery.weapon.image;
       document.getElementById('weaponName').innerHTML = mystery.weapon.name;
       document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}kg`;
-      weaponIsPicked = true;
+      isWeaponPicked = true;
     }, 2500)
 }
 
@@ -311,14 +311,14 @@ const pickWeapon = () => {
 
 // Pick room function
 const pickRoom = () => {
-    if (!roomIsPicked) {
+    if (!isRoomPicked) {
     document.getElementById('roomLoader').style.visibility='visible';
     setTimeout(function () {
       document.getElementById('roomLoader').style.visibility='hidden';
       mystery.room = randomSelector(rooms);
       document.getElementById('roomName').innerHTML = mystery.room.name;
       document.getElementById('roomImage').src = mystery.room.image;
-      roomIsPicked = true;
+      isRoomPicked = true;
     }, 2500)
   }
 };
@@ -327,7 +327,7 @@ const pickRoom = () => {
 
 //const revealMystery = () => { - this function does not work when created using const keyword
   function revealMystery() {
-    if (killerIsPicked === true && weaponIsPicked === true && roomIsPicked ===true) {
+    if (isKillerPicked && isWeaponPicked && isRoomPicked) { //This does the same as: if (isKillerPicked === true)...
       document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with the ${mystery.weapon.name}`;
 
     }
@@ -350,8 +350,8 @@ function clearMystery() {
   document.getElementById('roomName').innerHTML = "";
   document.getElementById('roomImage').src = "";
   document.getElementById('mystery').innerHTML = "";
-  killerIsPicked = false;
-  weaponIsPicked = false;
-  roomIsPicked = false;
+  isKillerPicked = false;
+  isWeaponPicked = false;
+  isRoomPicked = false;
 };
  
