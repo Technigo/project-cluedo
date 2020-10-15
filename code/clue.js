@@ -1,5 +1,5 @@
 // Objects for all the suspects.
-let suspects = [{
+const suspects = [{
         nickname: 'mrGreen',
         firstName: 'Jacob',
         lastName: 'Green',
@@ -161,7 +161,7 @@ const rooms = [{
 ];
 
 //Array with weapons for shuffling favourite weapons.
-let weaponArray = [
+const weaponArray = [
     'rope',
     'knife',
     'candlestick',
@@ -174,9 +174,9 @@ let weaponArray = [
 ];
 
 //Shuffles the weapons and randomly sets new favourite wepons.
-const shufflefavouriteWeapons = (arrayOfSuspects) => {
+const shufflefavouriteWeapons = arrayOfSuspects => {
     arrayOfSuspects.forEach(suspect => {
-        suspect.weapon = weaponArray[Math.floor(Math.random() * 9)];
+        suspect.weapon = weaponArray[Math.floor(Math.random() * weaponArray.length)];
 
     })
 };
@@ -191,10 +191,10 @@ const randomSelector = array => {
 
 
 // An object with a killer, a favouriteWeapon and a room. The values will be set later.
-let mystery = {
-    killer: '',
-    weapon: '',
-    room: ''
+const mystery = {
+    killer: null,
+    weapon: null,
+    room: null
 }
 
 
@@ -236,9 +236,8 @@ document.getElementById('roomCard').onclick = pickRoom;
 
 // Function that will be invoked when you click the reveal-button. It prints out a message with facts about the murderer.
 const revealMystery = () => {
-    if (mystery.killer == "" || mystery.favouriteWeapon == "" || mystery.room == "") {
-        document.getElementById('mysteryDisplay').innerHTML = `
-    The murder can 't be resolved yet.`;
+    if (mystery.killer === null || mystery.favouriteWeapon === null || mystery.room === null) {
+        document.getElementById('mysteryDisplay').innerHTML = `The murder can 't be resolved yet.`;
     } else {
         document.getElementById('mysteryDisplay').innerHTML = `The murder was commited by ${mystery.killer.firstName} ${mystery.killer.lastName},
          in the ${mystery.room.name} with a ${mystery.weapon.name}. `;

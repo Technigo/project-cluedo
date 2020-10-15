@@ -1,162 +1,228 @@
-    body {
-        margin: 0 auto;
-        font-family: 'PT Sans', sans-serif;
-        background: #c0c0c0;
-    }
-    /* -------header------------ */
+body {
+    margin: 0 auto;
+    font-family: 'PT Sans', sans-serif;
+    background: #c0c0c0;
+    position: relative;
+}
+
+
+/* -------header------------ */
+
+.header {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 20px;
+    background: rgb(120, 120, 120);
+    background: linear-gradient(90deg, rgba(120, 120, 120, 1) 6%, rgba(232, 232, 232, 1) 44%, rgba(184, 184, 184, 1) 94%);
     
-    .header {
-        height: 120px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Fredericka the Great', cursive;
-        font-size: 20px;
-        background: rgb(120, 120, 120);
-        background: linear-gradient(90deg, rgba(120, 120, 120, 1) 6%, rgba(232, 232, 232, 1) 44%, rgba(184, 184, 184, 1) 94%);
-    }
-    
-    .header img {
-        margin: 0 100px;
-        width: 80px;
-    }
-    
-    .header h1 {
-        align-self: center;
-    }
-    /* Main part */
-    
-    .wrapper {
-        margin: 0 auto;
-        width: 100%;
-        background-image: url("./assets/detective1.jpg");
-        background-color: #cccccc;
-        height: 900px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    /* Cards section */
-    
-    .cards {
-        margin: auto;
-        margin-right: 150px;
-        margin-bottom: 100px;
-        width: 50%;
-        height: 500px;
-        display: flex;
-        font-family: 'Laila', serif;
-        font-size: 20px;
-    }
-    
-    .card-title {
-        font-weight: bold;
-        font-size: 20px;
-    }
-    
-    .cards p {
-        margin: 1px;
-        font-weight: 400;
-        background-color: #fff;
-    }
-    
-    .flip-card-front img {
-        width: 100px;
-        margin-top: 30px;
-    }
-    
-    .flip-card-back img {
-        width: 100px;
-        height: 150px;
-        margin-top: 10px;
-    }
-    
-    .flip-card-container {
-        width: 300px;
-        height: 400px;
-        text-align: center;
-        perspective: 1000px;
-        margin: 50px;
-    }
-    
-    .flip-card {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 1s;
-        transform-style: preserve-3d;
-        border-radius: 10px;
-    }
-    
-    .flip-card-container.flip .flip-card {
-        transform: rotateY(180deg);
-    }
-    
-    .flip-card-front,
-    .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        padding-top: 30px;
-        border-radius: 10px;
-    }
-    
-    .flip-card-front {
-        background: rgb(64, 64, 64);
-        background: linear-gradient(90deg, rgba(64, 64, 64, 1) 0%, rgba(128, 128, 128, 1) 48%, rgba(192, 192, 192, 1) 100%);
-    }
-    
-    .flip-card-back {
-        transform: rotateY(180deg);
-    }
-    
-    .color-room {
-        background: #C0C0C0;
-    }
-    /* Message section */
-    
-    .message {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin-right: 200px;
-    }
-    
-    .reveal-button {
-        padding: 10px;
-        background: #ff4d4d;
-        color: #fff;
-        border: none;
-        font-family: 'Laila', serif;
-        font-size: 20px;
-        border-radius: 8px;
-        width: 200px;
-        height: 70px;
-        transition: box-shadow 0.1s, transform 0.1s;
-        align-self: center;
-    }
-    
-    .reveal-button:hover {
-        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
-        cursor: pointer;
-    }
-    
-    .message-display {
-        width: 30%;
-        padding: 20px;
-        border-radius: 5px;
+}
+
+.header img {
+    margin: 0 100px;
+    width: 80px;
+}
+
+.header h1 {
+    align-self: center;
+}
+
+
+/*------- Main part----------- */
+
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    background-image: url("./assets/detective1.jpg");
+    background-color: #cccccc;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*-------- Cards section--------- */
+
+.cards {
+    position: relative;
+    margin: auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    width: 600px;
+    height: 430px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Laila', serif;
+    font-size: 20px;
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.cards p {
+    margin: 1px;
+    font-weight: 400;
+    background-color: #fff;
+}
+
+.flip-card-front img {
+    width: 150px;
+    margin-top: 30px;
+}
+
+.flip-card-back img {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.flip-card-container {
+    min-width: 30%;
+    min-height: 60%;
+    text-align: center;
+    perspective: 1000px;
+    margin: 40px;
+}
+
+.flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+}
+
+.flip-card-container.flip .flip-card {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding-top: 30px;
+    border-radius: 10px;
+}
+
+.flip-card-front {
+    background: rgb(64, 64, 64);
+    background: linear-gradient(90deg, rgba(64, 64, 64, 1) 0%, rgba(128, 128, 128, 1) 48%, rgba(192, 192, 192, 1) 100%);
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.color-room {
+    background: #C0C0C0;
+}
+
+
+/*--------- Message section-------- */
+
+.message {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 200px;
+}
+
+.reveal-button {
+    padding: 10px;
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    font-family: 'Laila', serif;
+    font-size: 20px;
+    border-radius: 8px;
+    width: 200px;
+    height: 70px;
+    transition: box-shadow 0.1s, transform 0.1s;
+    align-self: center;
+}
+
+.reveal-button:hover {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+}
+
+.message-display {
+    width: 30%;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    color: white;
+}
+
+.message img {
+    width: 150px;
+    align-items: center;
+    border-radius: 15px;
+}
+
+/* -------media queries------------ */
+
+
+
+@media (max-width: 787px){
+   
+   .wrapper{
         display: flex;
         flex-direction: column;
-        align-items: center;
-        align-self: center;
-        color: white;
+        background-image: none!important;
+        font-size: 15px;
+        justify-content: center;
+   }
+
+   
+    .cards{
+        flex-direction: column;
+        justify-content: center;
+        width: 300px;
+        margin-top: 350px;
+        margin-bottom: 100px;
+        height: 550px;
     }
-    
-    .message img {
-        width: 150px;
-        align-items: center;
-        border-radius: 15px;
+        .message {
+            margin-top: 270px;
+            margin-left: 37%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        } 
+        
+        .mystery-text{
+            width: 250px;
+                      
+        }
+
+        .header {
+            padding: 20px;
+            font-size: 17px
+        }
+}
+
+@media (max-width: 529px){
+    .header img {
+       margin-left: 10px;
+       margin-right: 10px;
     }
-  
+    .mystery-text{
+        width: 200px;
+                  
+    }
+
+}
