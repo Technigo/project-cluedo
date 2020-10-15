@@ -327,10 +327,11 @@ const pickRoom = () => {
 
 //const revealMystery = () => { - this function does not work when created using const keyword
   function revealMystery() {
-    if (isKillerPicked && isWeaponPicked && isRoomPicked) { //This does the same as: if (isKillerPicked === true)...
+    if (isKillerPicked && isWeaponPicked && isRoomPicked) { //This does the same as: if (isKillerPicked === true)
       document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room.name} with the ${mystery.weapon.name}`;
-
-    }
+    } else {
+        document.getElementById('mystery').innerHTML = 'Click on all the cards above to reveal the crime!';
+      }
   };
 
 function clearMystery() {
