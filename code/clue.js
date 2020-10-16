@@ -1,15 +1,3 @@
-//LAYOUT MODIFICATIONS ON PAGE LOAD
-
-document.getElementById('killerCard').classList.add("active");
-document.getElementById('weaponCard').classList.add("active");
-document.getElementById('roomCard').classList.add("active");
-
-document.getElementById('weaponInner').classList.add("front");
-document.getElementById('killerInner').classList.add("front");
-document.getElementById('roomInner').classList.add("front");
-
-
-
 //OBJECTS FOR ALL SUSPECTS
 
 const mrGreen = {
@@ -193,7 +181,7 @@ const mystery = {
 //RANDOMIZING FUNCTIONS
 
 const randomSelector = array => {
-  return array[Math.floor(Math.random() * array.length)]
+  return array[Math.floor(Math.random() * array.length)];
 };
 
 const shuffleFavouriteWeapon = person => person.favouriteWeapon = randomSelector(weapons).id;
@@ -226,7 +214,7 @@ document.getElementById('roomInner').addEventListener('click', delayPickRoom);
 
 const findFavouriteWeapon = weapon => {
   if (weapon.id === mystery.killer.favouriteWeapon) {
-    weapons.push(weapon, weapon, weapon, weapon)
+    weapons.push(weapon, weapon, weapon, weapon);
   };
 };
 
@@ -334,7 +322,7 @@ const revealMystery = () => {
   const revealText = document.getElementById('revealedMystery');
   revealText.style.display = 'block';
 
-  if (mystery.killer !== null && mystery.weapon !== null && mystery.room !== null) {
+  if (mystery.killer && mystery.weapon && mystery.room) {
     revealText.innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} 
     in the ${mystery.room} with a ${mystery.weapon.name}.`;
   } else {
