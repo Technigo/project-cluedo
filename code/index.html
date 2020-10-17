@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Prata&display=swap" rel="stylesheet">
     <title>Cluedo Murder Mystery</title>
   </head>
   <body>
     <section class="main-wrapper">
+      <!-- HEADER AREA -->
       <header>
         <div class="header-container">
           <div class="header-title">
             <h1>Cluedo</h1>
-            <img src="./assets/magnify-glass.png" alt="Image of a magnify glass" width = "90px;">
+            <img src="./assets/magnify-glass.png" alt="Image of a magnify glass">
           </div>
           <h2>Murder Mystery</h2>
           </div>
@@ -29,49 +30,49 @@
 
         <!-- KILLER CARD -->
         <div class="card-container">
-          <article class="killer-deck" id="killerCard">
+          <article class="deck" id="killerCard">
             <div class="card-front" id="frontOfCard">
               <h4 class="card-title">KILLER</h4>
-              <img  id="loader1" class="loader-image" src="assets/magnify-glass.png" height="90px";/>
+              <img  id="loader1" class="loader-image" src="assets/magnify-glass.png"/>
             </div>
             <div class="card-details" id="cardDetails1">
               <h4 id="killerName"></h4>
-              <img id="killerImage" class="images" src="" alt="Image of suspect" height="230px"/>
+              <img id="killerImage" class="images" src="" alt="Image of suspect"/>
               <p id="killerDescription"></p>
               <p id="faveWeapon"></p>
             </div>
           </article>
 
           <!-- WEAPON CARD -->
-          <article class="weapon-deck" id="weaponCard">
+          <article class="deck" id="weaponCard">
             <div class="card-front" id="frontOfCard">
               <h4 class="card-title">WEAPON</h4>
-              <img  id="loader2" class="loader-image" src="assets/magnify-glass.png" height="90px";/>
+              <img  id="loader2" class="loader-image" src="assets/magnify-glass.png";/>
             </div>
             <div class="card-details" id="cardDetails2">
               <h4 id="weaponName"></h4>
-              <img id="weaponImage" class="images" src="" alt="Image of weapon" height="230px" />
+              <img id="weaponImage" class="images" src="" alt="Image of weapon"/>
               <p id="weaponStrength"></p>
               <p id="weaponLastSeen"></p>
             </div>
           </article>
 
           <!-- ROOM CARD -->
-          <article class="room-deck" id="roomCard">
+          <article class="deck" id="roomCard">
             <div class="card-front" id="frontOfCard">
               <h4 class="card-title">ROOM</h4>
-              <img id="loader3" class="loader-image" src="assets/magnify-glass.png" height="90px";/>
+              <img id="loader3" class="loader-image" src="assets/magnify-glass.png"/>
             </div>
             <div class="card-details" id="cardDetails3">
               <h4 id="roomName"></h4>
-              <img id="roomImage" class="images" src="" alt="Image of room"  height="230px" />
+              <img id="roomImage" class="images" src="" alt="Image of room"/>
               <p id="roomLastSeen"></p>
               <p id="roomfave"></p>
             </div>
           </article>
         </div>
 
-        <!-- REVEAL MYSTERY SECTION -->
+        <!-- REVEAL MYSTERY AREA-->
         <div class="reveal-mystery-container">
           <button onclick="revealMystery()" id="revealMysteryButton">REVEAL THE CRIME</button>
           <p class="mystery-sentance" id="mystery"></p>
@@ -79,6 +80,7 @@
         </div>
       </section>
 
+      <!-- FOOTER AREA -->
       <footer>
         <p>Cluedo murder mystery picker created by Claire Caudwell for the Technigo bootcamp 2020 </p>
       </footer>
