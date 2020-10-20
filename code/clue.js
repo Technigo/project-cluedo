@@ -173,29 +173,33 @@ mystery.killer = randomSelector(suspects);
 
 
 // This function will be invoked when you click on the WEAPON CARD.
-  const pickWeapon = () => {
-
+const pickWeapon = () => {
   mystery.weapon = randomSelector(weapons);
 
-    document.getElementById('weaponCard').style.background = '#5F9EA0';
-    document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}<br> Weight: ${mystery.weapon.weight} kg`; 
-  }
+  document.getElementById('weaponCard').style.background = '#5F9EA0';
+  document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}<br> Weight: ${mystery.weapon.weight} kg`; 
+}
 
   // This function will be invoked when you click on the ROOM CARD.
-  const pickRoom = () => {
+const pickRoom = () => {
 
-  mystery.room = randomSelector(rooms);
+mystery.room = randomSelector(rooms);
 
-    document.getElementById('roomCard').style.background = '#DCDCDC';
-    document.getElementById('roomName').innerHTML = `${mystery.room}`;  
-  }
+  document.getElementById('roomCard').style.background = '#DCDCDC';
+  document.getElementById('roomName').innerHTML = `${mystery.room}`;  
+}
 
-  document.getElementById('killerCard').onclick = pickKiller;
-  document.getElementById('weaponCard').onclick = pickWeapon;
-  document.getElementById('roomCard').onclick = pickRoom;
+document.getElementById('killerCard').onclick = pickKiller;
+document.getElementById('weaponCard').onclick = pickWeapon;
+document.getElementById('roomCard').onclick = pickRoom;
 
 // FUNCTION revealMystery that will be invoked when you click that button.
 const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, with a ${mystery.weapon.name} in the ${mystery.room}` 
-  document.getElementById("clickMe").onclick = revealMystery;
-}
+  if (mystery.killer && mystery.weapon && mystery.room) {
+    document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, with a ${mystery.weapon.name} in the ${mystery.room}`
+  }
+else {
+  document.getElementById('mystery').innerHTML = `Please select all cards`;
+  }
+};
+document.getElementById("clickMe").onclick = revealMystery;
