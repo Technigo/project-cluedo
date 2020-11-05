@@ -1,12 +1,10 @@
 # Cluedo - Mystery Randomizer
-This week’s project was to create a piece of the classic board game Cluedo.
+This project is done as a part of Technigo boot camp. This week’s project was to create a piece of the classic board game Cluedo.
 The focus for the project is to practice objects and arrays and also to manipulate the DOM with JavaScript.
 
-## The problem
+## The project
 
 This week was all about learning how to work with arrays, objects and how to get functions working together. 
-
-I've spent a lot of hours trying to figure out how to shuffle the favourite weapon, but unfortunately I couldn't make it work the way I wanted it to. BUT this really motivated me to learn more about foreach loops and arrays and resulted in many hours of googling and researching. 
 
 I also struggled a bit with the loading animation 
 - loading on click.
