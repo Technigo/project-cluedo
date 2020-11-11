@@ -5,9 +5,9 @@ When all the cards are open there is a button which you can click and it reveals
 
 ## The process
 
-1 Created functions for picking cards and displaying information on them.
-2 Created a function when onclick of the Reveal button the mystery message appears, added if else condition so that if the cards are not open the mystery won't be revealed.
-3 Created the favourite weapon function for random display of favorite weapons of the supects.
+1. Created functions for picking cards and displaying information on them.
+2. Created a function when onclick of the Reveal button the mystery message appears, added if else condition so that if the cards are not open the mystery won't be revealed.
+3. Created the favourite weapon function for random display of favorite weapons of the supects.
 
 ## Focus
 * JavaScript functions
