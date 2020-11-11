@@ -19,6 +19,6 @@ When all the cards are open there is a button which you can click and it reveals
  
  ## View it live
 
-liza-minican-cluedo-project.netlify.app
+https://liza-minican-cluedo-project.netlify.app 
 
 
