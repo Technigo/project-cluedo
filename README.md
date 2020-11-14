@@ -4,7 +4,7 @@ Here's a, sort of, game of Cluedo. There's tre decks of cards and one button, al
 
 ## The problem
 
-It felt like I had a much calmer approach to problems this week. I think it is mostly becouse I didn't even look at the red level things before I was done with the blue level. I think that made me calmer and not so overwhealmed. A lot thanks to my team as well, we have talked a lot about the pressure we put ourself in. 
+It felt like I had a much calmer approach to problems this week. A lot thanks to my team as well, we have talked a lot about the pressure we put ourself in and helped each other when we got stuck in the process. 
 Will take this way of thinking with me to next week aswell and hopefully troughout the course!
 
 ## View it live
