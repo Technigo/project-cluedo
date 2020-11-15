@@ -1,10 +1,11 @@
 # Cluedo - Mystery Randomizer
 
-The assignment was to build a cluedo mystrery picker using objects and arrays in javascript.
+A cluedo mystery picker that lets you guess who is the killer!
 
-## The problem
+## Implementation
 
-I started by doing the iterations and continued with doing some styling to the page. Due to time constraints this week I was unfortunately unable to do any of the more advanced requirements. 
+A website built using JavaScript giving a first introduction to how to use data. 
+
 
 ## View it live
 
