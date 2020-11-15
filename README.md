@@ -1,12 +1,9 @@
 # Cluedo - Mystery Randomizer
 
-This week’s project was to create a piece of the classic board game Cluedo. 
-While practicing creating objects and arrays and also connect to the DOM.
+Created a piece of the classic board game Cluedo. 
+To practice creating objects, arrays and also connecting to the DOM.
 
-## The problem
-
-Didn't have enough time to try the advanced levels so it is very basic. 
-Would have loved to make it more interaktive with effects and animations. 
+It's still very basic. When I have more time I'm gonna come back and make it a little bit more interactive with effects and animations. 
 
 ## View it live
 
