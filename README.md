@@ -1,6 +1,6 @@
 # Cluedo - Mystery Randomizer
 
-This project was about creating a version of the game Cluedo and using Javascript functions, arrays and objects in order to create interactivity. There are three card decks that represent suspects, weapons and rooms and the user has to be able to click on each set of cards to get a suspect, weapon and a room card with descriptions. Each time you click on card a new object has to show. Then there is a reveal mystery button with displays a killer and how the murder happened.
+This project was about creating a version of the game Cluedo and using Javascript functions, arrays and objects in order to create interactivity. There are three card decks that represent suspects, weapons and rooms and the user has to be able to click on each set of cards to get a suspect, weapon and a room card with descriptions. Each time you click on a card a new object has to show. Then there is a reveal mystery button which displays a killer and how the murder happened.
 
 
 ## The problem
