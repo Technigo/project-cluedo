@@ -17,4 +17,4 @@ I would have made a refresh button.
 And I would have created a favourite weapon shuffle.
 
 ## View it live
-https://mysterygame.netlify.app/
+Want to [play](https://mysterygame.netlify.app/)
