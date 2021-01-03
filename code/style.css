@@ -5,9 +5,9 @@ body {
 }
 
 header img {
-width: 50%;
-padding: 40px;
-}
+  width: 50%;
+  padding: 40px;
+  }
 
 header {
   color: white;
@@ -90,7 +90,7 @@ footer {
 
 @media (min-width: 900px) {
   header {
-  flex-direction: row;
-  align-items: center;
+    flex-direction: row;
+    align-items: center;
   }
 }
