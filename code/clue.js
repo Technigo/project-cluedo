@@ -150,9 +150,9 @@ const randomSelector = arrays => {
 // With a killer, a weapon and a room.
 // The values will be set later.
 const mystery = {
-  killer: {},
-  weapon: {},
-  room: {},
+  killer: null,
+  weapon: null,
+  room: null,
 };
 
 // This function will be invoked when you click on the killer card.
