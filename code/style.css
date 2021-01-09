@@ -10,8 +10,11 @@ body {
   text-align: center;
   padding: 30px;
   margin-top: 30px;
-  margin-bottom:  -100px;
   color: #ffffff;
+}
+
+.start-text h1 {
+  margin: 120px 0 10px 0;
 }
 
 p {
@@ -41,7 +44,6 @@ p {
   align-items: center;
   border-radius: 30px;
   max-width: 1200px;
-
 }
 
 .killer-info img {

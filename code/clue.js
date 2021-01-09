@@ -185,7 +185,7 @@ const rooms = [
   'Patio'
 ];
 
-let mystery = {
+const mystery = {
   killer: null,
   weapon: null,
   room: null
@@ -220,9 +220,7 @@ const resetButton = document.getElementById('reset');
 
 
 // returns the provided suspects favourite weapon as a weapon obj
-const favoriteWeapon = (suspect) => {
-  return weapons.find((weapon) => {return weapon.id === suspect.favouriteWeapon});
-}
+const favoriteWeapon = suspect => weapons.find(weapon => weapon.id === suspect.favouriteWeapon);
 
  
 const randomSelector = array => {
@@ -317,7 +315,7 @@ const pickRoom = () => {
 
 
 const revealValdidation = () => {
-  if (mystery.killer === null || mystery.weapon === null || mystery.room === null) {
+  if (!mystery.killer || !mystery.weapon || !mystery.room) {
    mysteryText.innerHTML = `Pick all three cards.`; 
   } else {
     revealMystery();
@@ -352,10 +350,3 @@ roomCard.onclick = showRoomLoading;
 
 revealButton.onclick = revealValdidation;
 resetButton.onclick = resetCards;
-
-
-
-
-
-
-
