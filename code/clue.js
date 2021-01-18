@@ -1,5 +1,4 @@
 // OBJECTS FOR ALL THE SUSPECTS
-
   const mrGreen = {
   firstName: 'Jacob',
   lastName: 'Green',
@@ -55,9 +54,7 @@ const mrsWhite = {
   occupation: 'Headmaster'
 }
 
-
 // CREATED OBJECTS FOR ALL THE WEAPONS
-
 const Rope = {
   name: 'Rope',
   weight: 10
@@ -116,17 +113,13 @@ const randomSelector = array => {
 }
 
 // CREATED AN OBJECT THAT KEEPS THE MYSTERY.
-
 let mystery = { 
   killer: "",
   weapon: "",
   room: "",
 }
 
-
-
 // CREATE FUNCTIONS pickKiller
-
 const pickKiller = () => {
   // This will randomly select a kiler from the suspects. And add that to the mystery object.
   mystery.killer = randomSelector(suspects)
@@ -138,11 +131,9 @@ const pickKiller = () => {
   document.getElementById('killerAge').innerHTML = ` Age: ${mystery.killer.age}`
   document.getElementById('killerDescription').innerHTML = mystery.killer.description
 }
-
 document.getElementById('killerCard').addEventListener('click', pickKiller)
 
 // CREATED FUNCTIONS pickWeapon 
-
 const pickWeapon  = () => {
   // This will randomly select a weapon from the weaponslist. And add that to the mystery object.
   mystery.weapon = randomSelector(weapons)
@@ -151,37 +142,26 @@ const pickWeapon  = () => {
    document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
    document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}kg`
 }
-
    document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 
 // CREATED FUNCTIONS pickRoom 
-
 const pickRoom   = () => {
-
  // This will randomly select a weapon from the weaponslist. And add that to the mystery object.
   mystery.room = randomSelector(rooms)
   // This will change the background color of the card to the one connected to the chosen killer and show the room.
   document.getElementById('roomCard').style.background = mystery.killer.color
   document.getElementById('roomName').innerHTML = `${mystery.room}`
 }
-
 document.getElementById('roomCard').addEventListener('click', pickRoom)
 
 // CREATED A FUNCTION revealMystery that will be invoked when you click that button. 
-
 const revealMystery = () => {
-
 document.getElementById('theMystery').innerHTML =`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`
-
 }
-
 document.getElementById('revealBtn').addEventListener('click', revealMystery)
 
-const restart = () => { 
-  
+const restart = () => {  
 document.location.href = ""; 
-
 }
-
 document.getElementById('resetBtn').addEventListener('click', restart)
 

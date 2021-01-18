@@ -13,7 +13,7 @@ p {
 
 .cards {
   margin: 50px auto;
-  width: 90%;
+  width: 50%;
   height: 600px;
   background: rgb(156, 240, 229);
   display: flex;
@@ -46,12 +46,10 @@ p {
   width: 250px;
   height: 400px;
   background: rgb(49, 119, 116);
-
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
-
 
 .btn {
   display: flex;
