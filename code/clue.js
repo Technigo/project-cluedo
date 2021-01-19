@@ -55,56 +55,69 @@ const mrsWhite = {
 }
 
 // CREATED OBJECTS FOR ALL THE WEAPONS
-const Rope = {
-  name: 'Rope',
+const rope = {
+  name: 'rope',
   weight: 10
 }
-const Knife = {
-  name: 'Knife',
+const knife = {
+  name: 'knife',
   weight: 1
 }
-const Candlestick = {
-  name: 'Candlestick',
+const candlestick = {
+  name: 'candlestick',
   weight: 15
 }
-const Dumbbell = {
-  name: 'Dumbbell',
+const dumbbell = {
+  name: 'dumbbell',
   weight: 30
 }
-const Poison = {
-  name: 'Poison',
+const poison = {
+  name: 'poison',
   weight: 3
 }
-const Axe = {
-  name: 'Axe',
+const axe = {
+  name: 'axe',
   weight: 16
 }
-const Bat = {
-  name: 'Bat',
+const bat = {
+  name: 'bat',
   weight: 9
 }
-const Trophy = {
-  name: 'Trophy',
+const trophy = {
+  name: 'trophy',
   weight: 50
 }
-const Pistol = {
-  name: 'Pistol',
+const pistol = {
+  name: 'pistol',
   weight: 8
 }
 
 // SUSPECTS
 const suspects = [
-  mrGreen, mrsWhite, professorPlum, missScarlet, mrsPeacock, colonelMustard, 
+  mrGreen, 
+  mrsWhite, 
+  professorPlum, 
+  missScarlet, 
+  mrsPeacock, 
+  colonelMustard, 
 ]
 
 // WEAPONS 
 const weapons = [
-   Rope, Knife, Candlestick, Dumbbell, Poison, Axe, Bat, Trophy, Pistol
+  rope, 
+  knife, 
+  candlestick, 
+  dumbbell, 
+  poison, 
+  axe, 
+  bat, 
+  trophy, 
+  pistol,
 ]
 
 // ROOMS
 const rooms = [
-  'Dining room', 'Conservatory', 'Kitchen', 'Study', 'Library', 'Billiard room', 'Lounge', 'Ballroom', 'Hall', 'Spa', 'Living room', 'Observatory', 'Theater','Guest house', 'Patio'
+  'dining room', 'conservatory', 'kitchen', 'study', 'library', 'billiard room', 'lounge', 'ballroom', 'hall', 'spa', 'living room', 'observatory', 'theater','guest house', 'patio'
 ]
 
 // THIS FUNCTION WILL RANDOMLY SELECT ONE ITEM FROM THE ARRAY THAT YOU PASS IN TO THE FUNCTION.
@@ -114,9 +127,9 @@ const randomSelector = array => {
 
 // CREATED AN OBJECT THAT KEEPS THE MYSTERY.
 let mystery = { 
-  killer: "",
-  weapon: "",
-  room: "",
+  killer: null,
+  weapon: null,
+  room: null,
 }
 
 // CREATE FUNCTIONS pickKiller
@@ -132,6 +145,7 @@ const pickKiller = () => {
   document.getElementById('killerDescription').innerHTML = mystery.killer.description
 }
 document.getElementById('killerCard').addEventListener('click', pickKiller)
+
 
 // CREATED FUNCTIONS pickWeapon 
 const pickWeapon  = () => {
