@@ -166,11 +166,43 @@ const pickRoom   = () => {
   document.getElementById('roomCard').style.background = mystery.killer.color
   document.getElementById('roomName').innerHTML = `${mystery.room}`
 }
-document.getElementById('roomCard').addEventListener('click', pickRoom)
+
+// Hey! So, in order to remove event listener, we need to know when to do that. So when is it? Well, it's when we have already picked, for example, room. Only when it's picked (and we can detect that by asking in if-statement if mystery.room is not undefined or null or any other false value), then we should run removeEventListener() method.
+
+//Of course same logic has to be applied for weapon and suspect as well.
+
+//The best moment to do that would be somewhere at the bottom of the file
+
+// TESTED THIS, ROOM GETS PICKED BUT REMOVE EVENTLISTENER IS NOT WORKING
+  // if (mystery.room === null) {
+  //   document.getElementById('roomCard').addEventListener('click', pickRoom)
+  // } else {
+  //   document.getElementById('roomCard').removeEventListener()
+  // }
+
+  // TESTED THIS, ROOM GETS PICKED BUT REMOVE EVENTLISTENER IS NOT WORKING
+  // document.getElementById('roomCard').addEventListener('click', pickRoom)
+  // if (mystery.room === !null) {
+  //   document.getElementById('roomCard').removeEventListener()
+  // }
+
+
+// TESTED THIS WAY, NOT WORKING 
+// const stopPick = () => {
+//   if (mystery.room === null) {
+//     document.getElementById('roomCard').addEventListener('click', pickRoom)
+//   } else {
+//     document.getElementById('roomCard').removeEventListener()
+//   }
+// }
 
 // CREATED A FUNCTION revealMystery that will be invoked when you click that button. 
 const revealMystery = () => {
-document.getElementById('theMystery').innerHTML =`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`
+  if (mystery.killer === null || mystery.weapon === null || mystery.room === null) {
+    document.getElementById('theMystery').innerHTML = 'You must pick a killer, weapon and a room first.'
+  } else {
+    document.getElementById('theMystery').innerHTML =`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} in the ${mystery.room} with a ${mystery.weapon.name}.`
+  }
 }
 document.getElementById('revealBtn').addEventListener('click', revealMystery)
 
@@ -178,4 +210,8 @@ const restart = () => {
 document.location.href = ""; 
 }
 document.getElementById('resetBtn').addEventListener('click', restart)
+
+
+
+
 
