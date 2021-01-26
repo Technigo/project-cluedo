@@ -143,6 +143,7 @@ const pickKiller = () => {
   document.getElementById('killerOccupation').innerHTML = mystery.killer.occupation
   document.getElementById('killerAge').innerHTML = ` Age: ${mystery.killer.age}`
   document.getElementById('killerDescription').innerHTML = mystery.killer.description
+  document.getElementById('killerCard').removeEventListener('click', pickKiller)
 }
 document.getElementById('killerCard').addEventListener('click', pickKiller)
 
@@ -155,6 +156,8 @@ const pickWeapon  = () => {
    document.getElementById('weaponCard').style.background = mystery.killer.color
    document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`
    document.getElementById('weaponWeight').innerHTML = `${mystery.weapon.weight}kg`
+   document.getElementById('weaponCard').removeEventListener('click', pickWeapon)
+   
 }
    document.getElementById('weaponCard').addEventListener('click', pickWeapon)
 
@@ -165,38 +168,12 @@ const pickRoom   = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the room.
   document.getElementById('roomCard').style.background = mystery.killer.color
   document.getElementById('roomName').innerHTML = `${mystery.room}`
+  document.getElementById('roomCard').removeEventListener('click', pickRoom);
 }
-
-// Hey! So, in order to remove event listener, we need to know when to do that. So when is it? Well, it's when we have already picked, for example, room. Only when it's picked (and we can detect that by asking in if-statement if mystery.room is not undefined or null or any other false value), then we should run removeEventListener() method.
-
-//Of course same logic has to be applied for weapon and suspect as well.
-
-//The best moment to do that would be somewhere at the bottom of the file
-
-// TESTED THIS, ROOM GETS PICKED BUT REMOVE EVENTLISTENER IS NOT WORKING
-  // if (mystery.room === null) {
-  //   document.getElementById('roomCard').addEventListener('click', pickRoom)
-  // } else {
-  //   document.getElementById('roomCard').removeEventListener()
-  // }
-
-  // TESTED THIS, ROOM GETS PICKED BUT REMOVE EVENTLISTENER IS NOT WORKING
-  // document.getElementById('roomCard').addEventListener('click', pickRoom)
-  // if (mystery.room === !null) {
-  //   document.getElementById('roomCard').removeEventListener()
-  // }
+document.getElementById('roomCard').addEventListener('click', pickRoom)
 
 
-// TESTED THIS WAY, NOT WORKING 
-// const stopPick = () => {
-//   if (mystery.room === null) {
-//     document.getElementById('roomCard').addEventListener('click', pickRoom)
-//   } else {
-//     document.getElementById('roomCard').removeEventListener()
-//   }
-// }
-
-// CREATED A FUNCTION revealMystery that will be invoked when you click that button. 
+// CREATED A FUNCTION revealMystery that will be invoked when you clicked all cards. 
 const revealMystery = () => {
   if (mystery.killer === null || mystery.weapon === null || mystery.room === null) {
     document.getElementById('theMystery').innerHTML = 'You must pick a killer, weapon and a room first.'

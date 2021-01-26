@@ -5,9 +5,17 @@ body {
   background-color: aquamarine;
 }
 
+.title {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  font-size: 50px;
+}
+
 p {
   margin: 1px;
-  font-weight: 300;
+  font-weight: 100;
+  font-size: 20px;
   background-color: #fff;
 }
 
@@ -24,31 +32,25 @@ p {
   box-shadow: 10px 15px 20px hsl(0, 3%, 13%);
 }
 
-.killer-deck {
+.killer-deck, .weapon-deck, .room-deck  {
   width: 250px;
   height: 400px;
-  background: rgb(103, 221, 152);
   text-align: center;
   padding-top: 30px;
   border-radius: 16px;
 }
 
+.killer-deck {
+  background: rgb(103, 221, 152);
+}
+
+
 .weapon-deck {
-  width: 250px;
-  height: 400px;
   background: rgb(54, 150, 54);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
 }
 
 .room-deck {
-  width: 250px;
-  height: 400px;
   background: rgb(49, 119, 116);
-  text-align: center;
-  padding-top: 30px;
-  border-radius: 16px;
 }
 
 .btn {
@@ -63,4 +65,11 @@ button {
   border-radius: 20px;
   display: block;
   margin: 0 auto;
+}
+
+.mystery-text{
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 30px;
 }
