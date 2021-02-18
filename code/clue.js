@@ -153,7 +153,7 @@ const mystery = {
   killer: null,
   weapon: null,
   room: null,
-};
+}
 
 // This function will be invoked when you click on the killer card.
 const pickKiller = () => {
@@ -162,7 +162,7 @@ const pickKiller = () => {
   // This will change the background color of the card to the one connected to the chosen killer and show the full name of the killer. 
   document.getElementById('killerCard').style.background = mystery.killer.color;
   document.getElementById('killerName').innerHTML = `${mystery.killer.firstName} ${mystery.killer.lastName}`;
-};
+}
 document.getElementById("killerCard").onclick = pickKiller;
 
 
@@ -171,7 +171,7 @@ const pickRoom = () => {
 
   // document.getElementById('roomCard').style.background = mystery.room.color;
   document.getElementById('roomName').innerHTML = `${mystery.room}`;
-};
+}
 document.getElementById("roomCard").onclick = pickRoom;
 
 const pickWeapon = () => {
@@ -179,7 +179,7 @@ const pickWeapon = () => {
 
   document.getElementById('weaponCard').style.background = mystery.weapon.color;
   document.getElementById('weaponName').innerHTML = `${mystery.weapon.name}`;
-};
+}
 document.getElementById("weaponCard").onclick = pickWeapon;
 
 
@@ -187,8 +187,12 @@ document.getElementById("weaponCard").onclick = pickWeapon;
 // 'The murder was committed by Jacob Green, in the living room with a rope.'
 
 
+  const revealMystery = () => {
+    if (mystery.killer === null || mystery.weapon === null || mystery.room === null) {
+    document.getElementById('theMystery').innerHTML = 'Please, pick killer, weapon and room.';
+  }  else {
+    document.getElementById('theMystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName} with the ${mystery.weapon.name} in the ${mystery.room}.`
+  }
+}
+document.getElementById('button').onclick = revealMystery;
 
-function revealMystery () {
-  document.getElementById('theMystery').innerHTML =`The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}  with a ${mystery.weapon.name} in the ${mystery.room}.`
-  };
-  document.getElementById('button').onclick = revealMystery;
