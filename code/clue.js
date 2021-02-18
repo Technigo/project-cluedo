@@ -203,8 +203,13 @@ const pickRoom = () => {
 }
 document.getElementById('roomCard').addEventListener('click', pickRoom)
 
+
 const revealMystery = () => {
-  document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  if (mystery.killer && mystery.room && mystery.weapon) {
+    document.getElementById('mystery').innerHTML = `The murder was committed by ${mystery.killer.firstName} ${mystery.killer.lastName}, in the ${mystery.room} with a ${mystery.weapon.name}.`
+  } else {
+    document.getElementById('mystery').innerHTML = 'Pick one of each card in order to reveal the mystery!'
+  }
 }
 
 document.getElementById('reveal').addEventListener('click', revealMystery)
