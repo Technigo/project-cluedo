@@ -7,4 +7,4 @@ It's still very basic. When I have more time I'm gonna come back and make it a l
 
 ## View it live
 
-https://loving-jepsen-d5dee3.netlify.app/
+cluedoproject.netlify.app
