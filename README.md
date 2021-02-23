@@ -8,4 +8,4 @@ To create this game I had to write multilpe functions that would work with objec
 
 ## View it live
 
-https://wizardly-lovelace-493b3c.netlify.app/
+https://cluedo-sandra-shumanteva.netlify.app/
